@@ -9,10 +9,6 @@ import andorraPassport from '../public/andorra.jpg'
 import angolaPassport from '../public/angola.jpg';
 
 const SelectorPassport = ({ setSelect, setSelectArray, selectArray, select, image, name }) => {
-
-  useEffect(() => {
-    setSelectArray(selectArray = [...selectArray, selectArray[select.selection].passport = select.passport]);
-  }, [select.passport])
   
   return (
     <Button onClick={() => {

@@ -31,6 +31,10 @@ const Selector = () => {
   ])
 
   useEffect(() => {
+    setSelectArray(selectArray = [...selectArray, selectArray[select.selection].passport = select.passport]);
+  }, [select.passport])
+  
+  useEffect(() => {
     console.log(select)
   }, [select])
 
