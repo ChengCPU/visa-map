@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    position: static;
+    fill:grey;
+    stroke: black;
+    background-color: rgb(150, 150, 150);
+}
+
+.angola {
+    cursor: pointer;
+}
+
+.angola:hover {
+    fill: green;
+}
+
+.unitedStates:hover {
+    fill: green
+}
+
+.indonesia:hover {
+    fill: green
+}

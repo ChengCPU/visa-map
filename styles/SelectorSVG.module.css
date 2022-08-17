@@ -1,0 +1,5 @@
+.selector:hover{
+    background-color: rgb(71, 71, 71);
+    transition: 0.5s;
+    cursor: pointer;
+}

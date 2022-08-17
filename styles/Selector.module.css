@@ -1,0 +1,6 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    background-color: rgb(150, 150, 150);
+}
