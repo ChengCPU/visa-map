@@ -11,7 +11,7 @@ import andorraPassport from '../public/andorra.jpg'
 import angolaPassport from '../public/angola.jpg';
 
 const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) => {
-    
+
     const i = () => {
         switch(selectArray[num].passport) {
             case "afghanistan": return afghanistanPassport
