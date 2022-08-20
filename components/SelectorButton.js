@@ -30,7 +30,7 @@ const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) 
   return (
     <Button onClick={() => {
         setOpenDrawer(true);
-        setSelect({ selection: num });
+        setSelect({ selection: num, passport: select.passport });
     }}>
     {(selectArray[num].passport == undefined) ? <SelectorSVG /> : <Passport image={i()}/>}
     </Button>

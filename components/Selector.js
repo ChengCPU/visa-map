@@ -17,6 +17,7 @@ import angolaPassport from '../public/angola.jpg';
 
 import SelectorButton from './SelectorButton';
 import SelectorPassport from './SelectorPassport';
+import TempRemove from './TempRemove';
 
 const Selector = () => {
 
@@ -31,21 +32,24 @@ const Selector = () => {
   ])
 
   useEffect(() => {
-    setSelectArray(selectArray = [...selectArray, selectArray[select.selection].passport = select.passport]);
-  }, [select.passport])
-  
-  useEffect(() => {
     console.log(select)
-  }, [select])
+  }, [select.passport])
+
+
+  useEffect(() => {
+    setSelectArray(selectArray = [...selectArray, selectArray[select.selection].passport = select.passport]);
+    setSelectArray(selectArray = [selectArray[0], selectArray[1], selectArray[2], selectArray[3], selectArray[4]])
+  }, [select.passport])
 
   useEffect(() => {
     console.log(selectArray)
-  }, [selectArray])
+  }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
 
 return (
   <>
   <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
       <div className={styles.container}>
+        <TempRemove setSelectArray={setSelectArray} selectArray={selectArray} select={select}/>
         <SelectorPassport setSelectArray={setSelectArray} setSelect={setSelect} selectArray={selectArray} select={select} image={afghanistanPassport} name={"afghanistan"} />
         <SelectorPassport setSelectArray={setSelectArray} setSelect={setSelect} selectArray={selectArray} select={select} image={albaniaPassport} name={"albania"} />
         <SelectorPassport setSelectArray={setSelectArray} setSelect={setSelect} selectArray={selectArray} select={select} image={algeriaPassport} name={"algeria"} />
