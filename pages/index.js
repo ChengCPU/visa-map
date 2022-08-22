@@ -1,5 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 
+import { ColorContext } from '../components/context/ColorContext';
 
 //MUI drawer component imports
 import * as React from 'react';
@@ -7,9 +8,11 @@ import Drawer from '@mui/material/Drawer';
 
 import Map from '../components/Map'
 import Selector from '../components/Selector'
+import { Button } from '@mui/material';
 
 export default function Home() {
 
+  const [color, setColor] = useState('yellow')
   const [openDrawer, setOpenDrawer] = useState(false)
   const [select, setSelect] = useState({ selection: 0 })
   const [selectArray, setSelectArray] = useState([
@@ -39,19 +42,23 @@ export default function Home() {
   useEffect(() => {
     console.log(selectArray)
   }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
+  
 
   return (
     <>
-      <Map/>
-      <Selector
-      Drawer={Drawer}
-      openDrawer={openDrawer}
-      setOpenDrawer={setOpenDrawer}
-      select={select}
-      setSelect={setSelect}
-      selectArray={selectArray}
-      setSelectArray={setSelectArray}
-      />
+    <Button />
+    <ColorContext.Provider value={{ color, setColor }}>
+    <Map />
+    <Selector
+    Drawer={Drawer}
+    openDrawer={openDrawer}
+    setOpenDrawer={setOpenDrawer}
+    select={select}
+    setSelect={setSelect}
+    selectArray={selectArray}
+    setSelectArray={setSelectArray}
+    />
+    </ColorContext.Provider>
     </>
   )
 }

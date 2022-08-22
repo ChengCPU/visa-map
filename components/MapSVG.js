@@ -71,8 +71,12 @@ import Finland from './countries/Finland'
 import France from './countries/France'
 import FrenchGuiana from './countries/FrenchGuiana'
 
+import { ColorContext } from './context/ColorContext'
+import { useContext } from 'react'
+
 
 const MapSVG = () => {
+
   return (
       <svg version="1.2" viewBox="-10 -50 2200 1000" width="1600" className={styles.main}>
       <Afghanistan />
