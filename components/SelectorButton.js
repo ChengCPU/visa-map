@@ -14,7 +14,7 @@ import angolaPassport from '../public/angola.jpg';
 const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) => {
 
     const { color, setColor } = useContext(ColorContext)
-        
+
     const i = () => {
         switch(selectArray[num].passport) {
             case "afghanistan": return afghanistanPassport
@@ -33,11 +33,11 @@ const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) 
   return (
     <Button onClick={() => {
         setOpenDrawer(true);
-        setSelect({ selection: num, passport: select.passport });
+        setSelect({ selection: num });
     }}>
     {(selectArray[num].passport == undefined) ? <SelectorSVG /> : <Passport image={i()}/>}
     </Button>
   )
 }
 
-export default memo(SelectorButton)
+export default SelectorButton

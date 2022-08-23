@@ -16,11 +16,11 @@ export default function Home() {
   const [openDrawer, setOpenDrawer] = useState(false)
   const [select, setSelect] = useState({ selection: 0 })
   const [selectArray, setSelectArray] = useState([
-    { selection: 0, passport: undefined},
-    { selection: 1, passport: undefined},
-    { selection: 2, passport: undefined},
-    { selection: 3, passport: undefined},
-    { selection: 4, passport: undefined},
+    { selection: 0, passport: null},
+    { selection: 1, passport: null},
+    { selection: 2, passport: null},
+    { selection: 3, passport: null},
+    { selection: 4, passport: null},
   ])
 
   useEffect(() => {
@@ -30,12 +30,16 @@ export default function Home() {
       setColor('hotpink')
       break;
       case "albania": console.log('albania')
+      setColor('red')
       break;
       case "algeria": console.log('algeria')
+      setColor('red')
       break;
       case "andorra": console.log('andorra')
+      setColor('red')
       break;
       case "angola": console.log('angola')
+      setColor('red')
       break;
     }
   }, [select.passport])
