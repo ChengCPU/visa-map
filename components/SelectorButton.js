@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo, useMemo, useContext } from 'react';
+import { ColorContext } from '../components/context/ColorContext';
 import styles from '../styles/Selector.module.css'
 import Button from '@mui/material/Button';
 import SelectorSVG from './SelectorSVG';
@@ -12,6 +13,8 @@ import angolaPassport from '../public/angola.jpg';
 
 const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) => {
 
+    const { color, setColor } = useContext(ColorContext)
+        
     const i = () => {
         switch(selectArray[num].passport) {
             case "afghanistan": return afghanistanPassport
@@ -37,4 +40,4 @@ const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) 
   )
 }
 
-export default SelectorButton
+export default memo(SelectorButton)

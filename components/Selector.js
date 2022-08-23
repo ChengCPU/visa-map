@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 import styles from '../styles/Selector.module.css'
 
 //passport imports
@@ -46,4 +46,4 @@ return (
 )
 }
 
-export default Selector
+export default memo(Selector)

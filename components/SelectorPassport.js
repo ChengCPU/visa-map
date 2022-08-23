@@ -1,12 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 import { Button } from "@mui/material"
 import Passport from "./Passport"
-
-import afghanistanPassport from '../public/afghanistan.jpg';
-import albaniaPassport from '../public/albania.jpg'
-import algeriaPassport from '../public/algeria.jpg';
-import andorraPassport from '../public/andorra.jpg'
-import angolaPassport from '../public/angola.jpg';
 
 const SelectorPassport = ({ setSelect, setSelectArray, selectArray, select, image, name }) => {
   
@@ -19,4 +13,4 @@ const SelectorPassport = ({ setSelect, setSelectArray, selectArray, select, imag
   )
 }
 
-export default SelectorPassport
+export default memo(SelectorPassport)

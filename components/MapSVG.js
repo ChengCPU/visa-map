@@ -72,7 +72,7 @@ import France from './countries/France'
 import FrenchGuiana from './countries/FrenchGuiana'
 
 import { ColorContext } from './context/ColorContext'
-import { useContext } from 'react'
+import { useContext, memo } from 'react'
 
 
 const MapSVG = () => {
@@ -801,4 +801,4 @@ const MapSVG = () => {
   )
 }
 
-export default MapSVG
+export default memo(MapSVG)
