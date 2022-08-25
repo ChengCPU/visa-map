@@ -2,7 +2,7 @@ import { memo, useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const Afghanistan = () => {
 
-    const { color, setColor } = useContext(ColorContext)
+    const { color } = useContext(ColorContext)
 
 return (
 <g className={'afghanistan'}>

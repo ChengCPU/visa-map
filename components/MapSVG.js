@@ -74,7 +74,6 @@ import FrenchGuiana from './countries/FrenchGuiana'
 import { ColorContext } from './context/ColorContext'
 import { useContext, memo } from 'react'
 
-
 const MapSVG = () => {
 
   return (

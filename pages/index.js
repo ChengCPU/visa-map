@@ -10,8 +10,18 @@ import { ColorContext } from '../components/context/ColorContext';
 
 const reducer = (state, action) => {
   switch(action.type) {
-    case "CHANGECOLOR":
-      return {afghanistanColor: 'red', albaniaColor: state.albaniaColor}
+    case "BLUE":
+      return {afghanistanColor: 'blue'}
+    case "GREEN":
+      return {afghanistanColor: 'green'}
+    case "RED":
+      return {afghanistanColor: 'red'}
+    case "YELLOW":
+      return {afghanistanColor: 'yellow'}
+    case "PURPLE":
+      return {afghanistanColor: 'purple'}
+    case "BLACK":
+      return {afghanistanColor: 'black'}
     default:
       return state;
   }
@@ -20,8 +30,7 @@ const reducer = (state, action) => {
 export default function Home() {
   //beggining useReducer declaration
   const [state, dispatch] = useReducer(reducer, {
-    afghanistanColor: 'blue',
-    albaniaColor: 'purple'
+    afghanistanColor: true
   })
 
   //beggining useState declaration
@@ -41,27 +50,30 @@ export default function Home() {
     console.log(select)
     console.log(selectArray)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": console.log('afghanistan')
-      setColor('hotpink')
+      case "afghanistan": dispatch({ type: "BLUE" });
       break;
-      case "albania": console.log('albania')
-      setColor('red')
+      case "albania": dispatch({ type: "GREEN" });
       break;
-      case "algeria": console.log('algeria')
-      setColor('red')
+      case "algeria": dispatch({ type: "RED" });
       break;
-      case "andorra": console.log('andorra')
-      setColor('red')
+      case "andorra": dispatch({ type: "YELLOW" });
       break;
-      case "angola": console.log('angola')
-      setColor('red')
+      case "angola": dispatch({ type: "PURPLE" });
       break;
     }
   }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
 
+  useEffect(() => {
+    console.log(state.afghanistanColor)
+  }, [state.afghanistanColor])
+
+  const value = {
+    color: state.afghanistanColor
+  }
+
   return (
     <>
-    <ColorContext.Provider value={{ color, setColor }}>
+    <ColorContext.Provider value={value}>
     <Map />
     <Selector
     Drawer={Drawer}
@@ -73,10 +85,16 @@ export default function Home() {
     setSelectArray={setSelectArray}
     />
     <button onClick={() => {
-      dispatch({ type: "CHANGECOLOR" });
-      console.log(state.afghanistanColor)
+      setSelectArray([
+        { selection: 0, passport: undefined},
+        { selection: 1, passport: undefined},
+        { selection: 2, passport: undefined},
+        { selection: 3, passport: undefined},
+        { selection: 4, passport: undefined},
+      ])
+      dispatch({ type: "BLACK" });
     }}
-    >test</button>
+    >reset</button>
     </ColorContext.Provider>
     </>
   )
