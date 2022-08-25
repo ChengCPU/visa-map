@@ -10,16 +10,17 @@ import { ColorContext } from '../components/context/ColorContext';
 
 const reducer = (state, action) => {
   switch(action.type) {
-    case "BLUE":
-      return {afghanistanColor: 'blue'}
-    case "GREEN":
+    case "AFGHANISTAN":
+      console.log('a')
+    case "ALBANIA":
       return {afghanistanColor: 'green'}
-    case "RED":
+    case "ALGERIA":
       return {afghanistanColor: 'red'}
-    case "YELLOW":
+    case "ANDORRA":
       return {afghanistanColor: 'yellow'}
-    case "PURPLE":
+    case "ANGOLA":
       return {afghanistanColor: 'purple'}
+
     case "BLACK":
       return {afghanistanColor: 'black'}
     default:
@@ -34,7 +35,6 @@ export default function Home() {
   })
 
   //beggining useState declaration
-  const [color, setColor] = useState('red')
   const [openDrawer, setOpenDrawer] = useState(false)
   const [select, setSelect] = useState({ selection: 0 })
   const [selectArray, setSelectArray] = useState([
@@ -50,15 +50,15 @@ export default function Home() {
     console.log(select)
     console.log(selectArray)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": dispatch({ type: "BLUE" });
+      case "afghanistan": dispatch({ type: "AFGHANISTAN" });
       break;
-      case "albania": dispatch({ type: "GREEN" });
+      case "albania": dispatch({ type: "ALBANIA" });
       break;
-      case "algeria": dispatch({ type: "RED" });
+      case "algeria": dispatch({ type: "ALGERIA" });
       break;
-      case "andorra": dispatch({ type: "YELLOW" });
+      case "andorra": dispatch({ type: "ANDORRA" });
       break;
-      case "angola": dispatch({ type: "PURPLE" });
+      case "angola": dispatch({ type: "ANGOLA" });
       break;
     }
   }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
