@@ -1,5 +1,5 @@
 //react imports
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 //MUI drawer component imports
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
@@ -8,7 +8,21 @@ import Map from '../components/Map'
 import Selector from '../components/Selector'
 import { ColorContext } from '../components/context/ColorContext';
 
+const reducer = (state, action) => {
+  switch(action.type) {
+    case "CHANGECOLOR":
+      return {afghanistanColor: 'red', albaniaColor: state.albaniaColor}
+    default:
+      return state;
+  }
+};
+
 export default function Home() {
+  //beggining useReducer declaration
+  const [state, dispatch] = useReducer(reducer, {
+    afghanistanColor: 'blue',
+    albaniaColor: 'purple'
+  })
 
   //beggining useState declaration
   const [color, setColor] = useState('red')
@@ -58,6 +72,11 @@ export default function Home() {
     selectArray={selectArray}
     setSelectArray={setSelectArray}
     />
+    <button onClick={() => {
+      dispatch({ type: "CHANGECOLOR" });
+      console.log(state.afghanistanColor)
+    }}
+    >test</button>
     </ColorContext.Provider>
     </>
   )
