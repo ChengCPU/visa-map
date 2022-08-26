@@ -1,39 +1,15 @@
 //react imports
-import { useState, useEffect, useReducer } from 'react';
+import { useState, useEffect } from 'react';
 //MUI drawer component imports
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
 //component imports
 import Map from '../components/Map'
 import Selector from '../components/Selector'
+//context imports
 import { ColorContext } from '../components/context/ColorContext';
 
-const reducer = (state, action) => {
-  switch(action.type) {
-    case "AFGHANISTAN":
-      console.log('a')
-    case "ALBANIA":
-      return {afghanistanColor: 'green'}
-    case "ALGERIA":
-      return {afghanistanColor: 'red'}
-    case "ANDORRA":
-      return {afghanistanColor: 'yellow'}
-    case "ANGOLA":
-      return {afghanistanColor: 'purple'}
-
-    case "BLACK":
-      return {afghanistanColor: 'black'}
-    default:
-      return state;
-  }
-};
-
 export default function Home() {
-  //beggining useReducer declaration
-  const [state, dispatch] = useReducer(reducer, {
-    afghanistanColor: true
-  })
-
   //beggining useState declaration
   const [openDrawer, setOpenDrawer] = useState(false)
   const [select, setSelect] = useState({ selection: 0 })
@@ -44,32 +20,49 @@ export default function Home() {
     { selection: 3, passport: undefined},
     { selection: 4, passport: undefined},
   ])
+  const [assignedColors, setAssignedColors] = useState({
+    afghanistanColor: 'rgb(150,150,150)',
+    albaniaColor: 'rgb(150,150,150)',
+    algeriaColor: 'rgb(150,150,150)',
+    andorraColor: 'rgb(150,150,150)',
+    angolaColor: 'rgb(150,150,150)'
+  })
+
+  const value = {
+    afghanistanColor: assignedColors.afghanistanColor,
+    albaniaColor: assignedColors.albaniaColor,
+    algeriaColor: assignedColors.algeriaColor,
+    andorraColor: assignedColors.andorraColor,
+    angolaColor: assignedColors.angolaColor
+  }
+
+  const a = () => {
+    setAssignedColors({
+      afghanistanColor: 'rgb(255,20,147)',
+      albaniaColor: 'rgb(150,150,150)',
+      algeriaColor: 'rgb(150,150,150)',
+      andorraColor: 'rgb(50,205,50)',
+      angolaColor: 'rgb(150,150,150)'
+    })
+  }
 
   //log select state, read currently selected selectArray passport and log passport
   useEffect(() => {
     console.log(select)
     console.log(selectArray)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": dispatch({ type: "AFGHANISTAN" });
+      case "afghanistan": a()
       break;
-      case "albania": dispatch({ type: "ALBANIA" });
+      case "albania": a()
       break;
-      case "algeria": dispatch({ type: "ALGERIA" });
+      case "algeria": a()
       break;
-      case "andorra": dispatch({ type: "ANDORRA" });
+      case "andorra": a()
       break;
-      case "angola": dispatch({ type: "ANGOLA" });
+      case "angola": a()
       break;
     }
   }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
-
-  useEffect(() => {
-    console.log(state.afghanistanColor)
-  }, [state.afghanistanColor])
-
-  const value = {
-    color: state.afghanistanColor
-  }
 
   return (
     <>
@@ -92,7 +85,13 @@ export default function Home() {
         { selection: 3, passport: undefined},
         { selection: 4, passport: undefined},
       ])
-      dispatch({ type: "BLACK" });
+      setAssignedColors({
+        afghanistanColor: 'rgb(150,150,150)',
+        albaniaColor: 'rgb(150,150,150)',
+        algeriaColor: 'rgb(150,150,150)',
+        andorraColor: 'rgb(150,150,150)',
+        angolaColor: 'rgb(150,150,150)'
+      })
     }}
     >reset</button>
     </ColorContext.Provider>
