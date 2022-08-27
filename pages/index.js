@@ -28,15 +28,7 @@ export default function Home() {
     angolaColor: 'rgb(150,150,150)'
   })
 
-  const value = {
-    afghanistanColor: assignedColors.afghanistanColor,
-    albaniaColor: assignedColors.albaniaColor,
-    algeriaColor: assignedColors.algeriaColor,
-    andorraColor: assignedColors.andorraColor,
-    angolaColor: assignedColors.angolaColor
-  }
-
-  const a = () => {
+  const a = (...c) => {
     setAssignedColors({
       afghanistanColor: 'rgb(255,20,147)',
       albaniaColor: 'rgb(150,150,150)',
@@ -46,10 +38,19 @@ export default function Home() {
     })
   }
 
+  const value = {
+    afghanistanColor: assignedColors.afghanistanColor,
+    albaniaColor: assignedColors.albaniaColor,
+    algeriaColor: assignedColors.algeriaColor,
+    andorraColor: assignedColors.andorraColor,
+    angolaColor: assignedColors.angolaColor
+  }
+
   //log select state, read currently selected selectArray passport and log passport
   useEffect(() => {
     console.log(select)
     console.log(selectArray)
+    console.log(select.selection)
     switch(selectArray[select.selection].passport) {
       case "afghanistan": a()
       break;
@@ -65,7 +66,6 @@ export default function Home() {
   }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
 
   return (
-    <>
     <ColorContext.Provider value={value}>
     <Map />
     <Selector
@@ -95,6 +95,5 @@ export default function Home() {
     }}
     >reset</button>
     </ColorContext.Provider>
-    </>
   )
 }
