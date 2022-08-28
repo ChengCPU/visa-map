@@ -6,6 +6,7 @@ import Drawer from '@mui/material/Drawer';
 //component imports
 import Map from '../components/Map'
 import Selector from '../components/Selector'
+import { b } from './_logic'
 //context imports
 import { ColorContext } from '../components/context/ColorContext';
 
@@ -30,11 +31,11 @@ export default function Home() {
 
   const a = (...c) => {
     setAssignedColors({
-      afghanistanColor: 'rgb(255,20,147)',
-      albaniaColor: 'rgb(150,150,150)',
-      algeriaColor: 'rgb(150,150,150)',
-      andorraColor: 'rgb(50,205,50)',
-      angolaColor: 'rgb(150,150,150)'
+      afghanistanColor: c[0][0],
+      albaniaColor: c[0][1],
+      algeriaColor: c[0][2],
+      andorraColor: c[0][3],
+      angolaColor: c[0][4]
     })
   }
 
@@ -52,13 +53,13 @@ export default function Home() {
     console.log(selectArray)
     console.log(select.selection)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a()
+      case "afghanistan": a(b())
       break;
       case "albania": a()
       break;
       case "algeria": a()
       break;
-      case "andorra": a()
+      case "andorra": a(b())
       break;
       case "angola": a()
       break;
