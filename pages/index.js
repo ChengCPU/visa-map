@@ -29,13 +29,14 @@ export default function Home() {
     angolaColor: 'rgb(150,150,150)'
   })
 
-  const a = (...c) => {
+  const a = () => {
+    b(select.passport)
     setAssignedColors({
-      afghanistanColor: c[0][0],
-      albaniaColor: c[0][1],
-      algeriaColor: c[0][2],
-      andorraColor: c[0][3],
-      angolaColor: c[0][4]
+      afghanistanColor: b(select.passport),
+      albaniaColor: b(select.passport),
+      algeriaColor: b(select.passport),
+      andorraColor: b(select.passport),
+      angolaColor: b(select.passport)
     })
   }
 
@@ -53,13 +54,13 @@ export default function Home() {
     console.log(selectArray)
     console.log(select.selection)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a(b())
+      case "afghanistan": a()
       break;
       case "albania": a()
       break;
       case "algeria": a()
       break;
-      case "andorra": a(b())
+      case "andorra": a()
       break;
       case "angola": a()
       break;

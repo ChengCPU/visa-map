@@ -1,0 +1,16 @@
+{
+    "afghanistan": {
+        "afghanistan": "rgb(255,20,147)",
+        "albania": "rgb(150,150,150)",
+        "algeria": "rgb(150,150,150)",
+        "andorra": "rgb(50,205,50)",
+        "angola": "rgb(150,150,150)"
+    },
+    "albania": {
+        "afghanistan": "rgb(150,150,150)",
+        "albania": "rgb(255,20,147)",
+        "algeria": "rgb(150,150,150)",
+        "andorra": "rgb(50,205,50)",
+        "angola": "rgb(150,150,150)"
+    }
+}

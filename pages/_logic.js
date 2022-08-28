@@ -1,5 +1,7 @@
-const homeCountry = 'rgb(255,20,147)'
-const visaRequired = 'rgb(150,150,150)'
-export const b = () => {
-    return [homeCountry, visaRequired, visaRequired, visaRequired, visaRequired]
+export const b = (country) => {
+    fetch('visaPolicy.json')
+        .then((res) => res.json())
+        .then((data) => {
+            return data
+    })
 }
