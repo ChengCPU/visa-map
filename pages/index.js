@@ -6,7 +6,7 @@ import Drawer from '@mui/material/Drawer';
 //component imports
 import Map from '../components/Map'
 import Selector from '../components/Selector'
-import { b } from './_logic'
+import { a } from './_logic'
 //context imports
 import { ColorContext } from '../components/context/ColorContext';
 
@@ -29,17 +29,6 @@ export default function Home() {
     angolaColor: 'rgb(150,150,150)'
   })
 
-  const a = () => {
-    b(select.passport)
-    setAssignedColors({
-      afghanistanColor: b(select.passport),
-      albaniaColor: b(select.passport),
-      algeriaColor: b(select.passport),
-      andorraColor: b(select.passport),
-      angolaColor: b(select.passport)
-    })
-  }
-
   const value = {
     afghanistanColor: assignedColors.afghanistanColor,
     albaniaColor: assignedColors.albaniaColor,
@@ -54,15 +43,15 @@ export default function Home() {
     console.log(selectArray)
     console.log(select.selection)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a()
+      case "afghanistan": a('afghanistan' , setAssignedColors)
       break;
-      case "albania": a()
+      case "albania": a('albania' , setAssignedColors)
       break;
-      case "algeria": a()
+      case "algeria": a('algeria' , setAssignedColors)
       break;
-      case "andorra": a()
+      case "andorra": a('andorra' , setAssignedColors)
       break;
-      case "angola": a()
+      case "angola": a('angola' , setAssignedColors)
       break;
     }
   }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
