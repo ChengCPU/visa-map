@@ -20,6 +20,11 @@ export default function Home() {
     { selection: 2, passport: undefined},
     { selection: 3, passport: undefined},
     { selection: 4, passport: undefined},
+    { selection: 5, passport: undefined},
+    { selection: 6, passport: undefined},
+    { selection: 7, passport: undefined},
+    { selection: 8, passport: undefined},
+    { selection: 9, passport: undefined}
   ])
   const [assignedColors, setAssignedColors] = useState({
     afghanistanColor: 'rgb(150,150,150)',
@@ -41,20 +46,19 @@ export default function Home() {
   useEffect(() => {
     console.log(select)
     console.log(selectArray)
-    console.log(select.selection)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a('afghanistan' , setAssignedColors)
+      case "afghanistan": a('afghanistan' , setAssignedColors, select)
       break;
-      case "albania": a('albania' , setAssignedColors)
+      case "albania": a('albania' , setAssignedColors, select)
       break;
-      case "algeria": a('algeria' , setAssignedColors)
+      case "algeria": a('algeria' , setAssignedColors, select)
       break;
-      case "andorra": a('andorra' , setAssignedColors)
+      case "andorra": a('andorra' , setAssignedColors, select)
       break;
-      case "angola": a('angola' , setAssignedColors)
+      case "angola": a('angola' , setAssignedColors, select)
       break;
     }
-  }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport])
+  }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport, selectArray[5].passport, selectArray[6].passport, selectArray[7].passport, selectArray[8].passport, selectArray[9].passport])
 
   return (
     <ColorContext.Provider value={value}>
@@ -75,6 +79,11 @@ export default function Home() {
         { selection: 2, passport: undefined},
         { selection: 3, passport: undefined},
         { selection: 4, passport: undefined},
+        { selection: 5, passport: undefined},
+        { selection: 6, passport: undefined},
+        { selection: 7, passport: undefined},
+        { selection: 8, passport: undefined},
+        { selection: 9, passport: undefined}
       ])
       setAssignedColors({
         afghanistanColor: 'rgb(150,150,150)',
