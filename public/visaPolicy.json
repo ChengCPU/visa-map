@@ -4,34 +4,47 @@
         "albania": "rgb(150,150,150)",
         "algeria": "rgb(150,150,150)",
         "andorra": "rgb(50,205,50)",
-        "angola": "rgb(150,150,150)"
+        "angola": "rgb(150,150,150)",
+        "anguilla": "rgb(150,150,150)"
     },
     "albania": {
         "afghanistan": "rgb(150,150,150)",
         "albania": "rgb(255,20,147)",
         "algeria": "rgb(150,150,150)",
         "andorra": "rgb(50,205,50)",
-        "angola": "rgb(150,150,150)"
+        "angola": "rgb(150,150,150)",
+        "anguilla": "rgb(150,150,150)"
     },
     "algeria": {
         "afghanistan": "rgb(150,150,150)",
         "albania": "rgb(150,150,150)",
         "algeria": "rgb(255,20,147)",
         "andorra": "rgb(50,205,50)",
-        "angola": "rgb(150,150,150)"
+        "angola": "rgb(150,150,150)",
+        "anguilla": "rgb(150,150,150)"
     },
     "andorra": {
         "afghanistan": "rgb(150,150,150)",
         "albania": "rgb(50,205,50)",
         "algeria": "rgb(150,150,150)",
         "andorra": "rgb(255,20,147)",
-        "angola": "rgb(150,150,150)"
+        "angola": "rgb(150,150,150)",
+        "anguilla": "rgb(50,205,50)"
     },
     "angola": {
         "afghanistan": "rgb(150,150,150)",
         "albania": "rgb(150,150,150)",
         "algeria": "rgb(150,150,150)",
         "andorra": "rgb(50,205,50)",
-        "angola": "rgb(255,20,147)"
+        "angola": "rgb(255,20,147)",
+        "anguilla": "rgb(150,150,150)"
+    },
+    "anguilla": {
+        "afghanistan": "rgb(150,150,150)",
+        "albania": "rgb(150,150,150)",
+        "algeria": "rgb(150,150,150)",
+        "andorra": "rgb(50,205,50)",
+        "angola": "rgb(150,150,150)",
+        "anguilla": "rgb(255,20,147)"
     }
 }

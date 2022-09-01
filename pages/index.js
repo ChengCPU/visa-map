@@ -24,14 +24,16 @@ export default function Home() {
     { selection: 6, passport: undefined},
     { selection: 7, passport: undefined},
     { selection: 8, passport: undefined},
-    { selection: 9, passport: undefined}
+    { selection: 9, passport: undefined},
+    { selection: 10, passport: undefined}
   ])
   const [assignedColors, setAssignedColors] = useState({
     afghanistanColor: 'rgb(150,150,150)',
     albaniaColor: 'rgb(150,150,150)',
     algeriaColor: 'rgb(150,150,150)',
     andorraColor: 'rgb(150,150,150)',
-    angolaColor: 'rgb(150,150,150)'
+    angolaColor: 'rgb(150,150,150)',
+    anguillaColor: 'rgb(150,150,150)'
   })
 
   const value = {
@@ -39,7 +41,8 @@ export default function Home() {
     albaniaColor: assignedColors.albaniaColor,
     algeriaColor: assignedColors.algeriaColor,
     andorraColor: assignedColors.andorraColor,
-    angolaColor: assignedColors.angolaColor
+    angolaColor: assignedColors.angolaColor,
+    anguillaColor: assignedColors.anguillaColor
   }
 
   //log select state, read currently selected selectArray passport and log passport
@@ -47,18 +50,20 @@ export default function Home() {
     console.log(select)
     console.log(selectArray)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a('afghanistan' , setAssignedColors, select)
+      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors)
       break;
-      case "albania": a('albania' , setAssignedColors, select)
+      case "albania": a('albania' , setAssignedColors, assignedColors)
       break;
-      case "algeria": a('algeria' , setAssignedColors, select)
+      case "algeria": a('algeria' , setAssignedColors, assignedColors)
       break;
-      case "andorra": a('andorra' , setAssignedColors, select)
+      case "andorra": a('andorra' , setAssignedColors, assignedColors)
       break;
-      case "angola": a('angola' , setAssignedColors, select)
+      case "angola": a('angola' , setAssignedColors, assignedColors)
+      break;
+      case "anguilla": a('anguilla' , setAssignedColors, assignedColors)
       break;
     }
-  }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport, selectArray[5].passport, selectArray[6].passport, selectArray[7].passport, selectArray[8].passport, selectArray[9].passport])
+  }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport, selectArray[5].passport, selectArray[6].passport, selectArray[7].passport, selectArray[8].passport, selectArray[9].passport, selectArray[10].passport])
 
   return (
     <ColorContext.Provider value={value}>
@@ -83,14 +88,16 @@ export default function Home() {
         { selection: 6, passport: undefined},
         { selection: 7, passport: undefined},
         { selection: 8, passport: undefined},
-        { selection: 9, passport: undefined}
+        { selection: 9, passport: undefined},
+        { selection: 10, passport: undefined}
       ])
       setAssignedColors({
         afghanistanColor: 'rgb(150,150,150)',
         albaniaColor: 'rgb(150,150,150)',
         algeriaColor: 'rgb(150,150,150)',
         andorraColor: 'rgb(150,150,150)',
-        angolaColor: 'rgb(150,150,150)'
+        angolaColor: 'rgb(150,150,150)',
+        anguillaColor: 'rgb(150,150,150)'
       })
     }}
     >reset</button>

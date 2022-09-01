@@ -7,6 +7,7 @@ import albaniaPassport from '../public/albania.jpg'
 import algeriaPassport from '../public/algeria.jpg';
 import andorraPassport from '../public/andorra.jpg'
 import angolaPassport from '../public/angola.jpg';
+import anguillaPassport from '../public/anguilla.jpg'
 
 //component imports
 import SelectorButton from './SelectorButton';
@@ -21,7 +22,7 @@ const Selector = ({
 
   useEffect(() => {
     setSelectArray(selectArray = [...selectArray, selectArray[select.selection].passport = select.passport]);
-    setSelectArray(selectArray = [selectArray[0], selectArray[1], selectArray[2], selectArray[3], selectArray[4], selectArray[5], selectArray[6], selectArray[7], selectArray[8], selectArray[9]])
+    setSelectArray(selectArray = [selectArray[0], selectArray[1], selectArray[2], selectArray[3], selectArray[4], selectArray[5], selectArray[6], selectArray[7], selectArray[8], selectArray[9], selectArray[10]])
   }, [select.passport, openDrawer])
 
 return (
@@ -33,6 +34,7 @@ return (
         <SelectorPassport setSelectArray={setSelectArray} setSelect={setSelect} selectArray={selectArray} select={select} image={algeriaPassport} name={"algeria"} />
         <SelectorPassport setSelectArray={setSelectArray} setSelect={setSelect} selectArray={selectArray} select={select} image={andorraPassport} name={"andorra"} />
         <SelectorPassport setSelectArray={setSelectArray} setSelect={setSelect} selectArray={selectArray} select={select} image={angolaPassport} name={"angola"} />
+        <SelectorPassport setSelectArray={setSelectArray} setSelect={setSelect} selectArray={selectArray} select={select} image={anguillaPassport} name={"anguilla"} />
       </div>
   </Drawer>
       <div className={styles.container}>
