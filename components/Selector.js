@@ -22,7 +22,7 @@ const Selector = ({
 
   useEffect(() => {
     setSelectArray(selectArray = [...selectArray, selectArray[select.selection].passport = select.passport]);
-    setSelectArray(selectArray = [selectArray[0], selectArray[1], selectArray[2], selectArray[3], selectArray[4], selectArray[5], selectArray[6], selectArray[7], selectArray[8], selectArray[9], selectArray[10]])
+    setSelectArray(selectArray = [selectArray[0], selectArray[1], selectArray[2], selectArray[3], selectArray[4], selectArray[5], selectArray[6], selectArray[7], selectArray[8], selectArray[9]])
   }, [select.passport, openDrawer])
 
 return (
