@@ -7,6 +7,7 @@ import { a } from './_logic'
 import { ColorContext } from '../components/context/ColorContext';
 
 export default function Home() {
+  const [rerender, setRerender] = useState(false)
   const [openDrawer, setOpenDrawer] = useState(false)
   const [select, setSelect] = useState({ selection: 0 })
   const [selectArray, setSelectArray] = useState([
@@ -87,7 +88,7 @@ export default function Home() {
     },
     {
       selection: 7,
-      afghanistanColor: "afghantest",
+      afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
@@ -114,28 +115,28 @@ export default function Home() {
     }
   ])
   const priority = {
-    afghanistanColor: assignedColors.afghanistanColor,
-    albaniaColor: assignedColors.albaniaColor,
-    algeriaColor: assignedColors.algeriaColor,
-    andorraColor: assignedColors.andorraColor,
-    angolaColor: assignedColors.angolaColor,
-    anguillaColor: assignedColors.aguillaColor
+    afghanistanColor: assignedColors[select.selection].afghanistanColor,
+    albaniaColor: assignedColors[select.selection].albaniaColor,
+    algeriaColor: assignedColors[select.selection].algeriaColor,
+    andorraColor: assignedColors[select.selection].andorraColor,
+    angolaColor: assignedColors[select.selection].angolaColor,
+    anguillaColor: assignedColors[select.selection].anguillaColor
   }
   useEffect(() => {
     console.log(select)
     console.log(selectArray)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select)
+      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select, rerender, setRerender)
       break;
-      case "albania": a('albania' , setAssignedColors, assignedColors, select)
+      case "albania": a('albania' , setAssignedColors, assignedColors, select, rerender, setRerender)
       break;
-      case "algeria": a('algeria' , setAssignedColors, assignedColors, select)
+      case "algeria": a('algeria' , setAssignedColors, assignedColors, select, rerender, setRerender)
       break;
-      case "andorra": a('andorra' , setAssignedColors, assignedColors, select)
+      case "andorra": a('andorra' , setAssignedColors, assignedColors, select, rerender, setRerender)
       break;
-      case "angola": a('angola' , setAssignedColors, assignedColors, select)
+      case "angola": a('angola' , setAssignedColors, assignedColors, select, rerender, setRerender)
       break;
-      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select)
+      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender)
       break;
     }
   }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport, selectArray[5].passport, selectArray[6].passport, selectArray[7].passport, selectArray[8].passport, selectArray[9].passport])
@@ -174,14 +175,98 @@ export default function Home() {
         { selection: 8, passport: undefined},
         { selection: 9, passport: undefined}
       ])
-      setAssignedColors({
-        afghanistanColor: 'rgb(150,150,150)',
-        albaniaColor: 'rgb(150,150,150)',
-        algeriaColor: 'rgb(150,150,150)',
-        andorraColor: 'rgb(150,150,150)',
-        angolaColor: 'rgb(150,150,150)',
-        anguillaColor: 'rgb(150,150,150)'
-      })
+      setAssignedColors([
+        {
+          selection: 0,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 1,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 2,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 3,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 4,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 5,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 6,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 7,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 8,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        },
+        {
+          selection: 9,
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)"
+        }
+      ])
     }}
     >reset</button>
     </ColorContext.Provider>
