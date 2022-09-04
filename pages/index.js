@@ -114,14 +114,7 @@ export default function Home() {
       anguillaColor: "rgb(150,150,150)"
     }
   ])
-  const priority = {
-    afghanistanColor: assignedColors[select.selection].afghanistanColor,
-    albaniaColor: assignedColors[select.selection].albaniaColor,
-    algeriaColor: assignedColors[select.selection].algeriaColor,
-    andorraColor: assignedColors[select.selection].andorraColor,
-    angolaColor: assignedColors[select.selection].angolaColor,
-    anguillaColor: assignedColors[select.selection].anguillaColor
-  }
+
   useEffect(() => {
     console.log(select)
     console.log(selectArray)
@@ -139,16 +132,25 @@ export default function Home() {
       case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender)
       break;
     }
-  }, [selectArray[0].passport, selectArray[1].passport, selectArray[2].passport, selectArray[3].passport, selectArray[4].passport, selectArray[5].passport, selectArray[6].passport, selectArray[7].passport, selectArray[8].passport, selectArray[9].passport])
+  }, [selectArray])
 
-  const value = {
-    afghanistanColor: priority.afghanistanColor,
-    albaniaColor: priority.albaniaColor,
-    algeriaColor: priority.algeriaColor,
-    andorraColor: priority.andorraColor,
-    angolaColor: priority.angolaColor,
-    anguillaColor: priority.anguillaColor
-  }
+  const [value, setValue] = useState({
+    afghanistanColor: assignedColors[select.selection].afghanistanColor,
+    albaniaColor: assignedColors[select.selection].albaniaColor,
+    algeriaColor: assignedColors[select.selection].algeriaColor,
+    andorraColor: assignedColors[select.selection].andorraColor,
+    angolaColor: assignedColors[select.selection].angolaColor,
+    anguillaColor: assignedColors[select.selection].anguillaColor
+  })
+
+  useEffect(() => {setValue({
+    afghanistanColor: assignedColors[select.selection].afghanistanColor,
+    albaniaColor: assignedColors[select.selection].albaniaColor,
+    algeriaColor: assignedColors[select.selection].algeriaColor,
+    andorraColor: assignedColors[select.selection].andorraColor,
+    angolaColor: assignedColors[select.selection].angolaColor,
+    anguillaColor: assignedColors[select.selection].anguillaColor
+  })}, [rerender])
 
   return (
     <ColorContext.Provider value={value}>
