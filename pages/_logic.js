@@ -1,4 +1,4 @@
-export const a = (country, setAssignedColors, assignedColors, select, rerender, setRerender) => {
+export const a = (country, setAssignedColors, assignedColors, select, rerender, setRerender, selectArray) => {
     fetch('visaPolicy.json')
         .then((res) => res.json())
         .then((data) => {
@@ -11,8 +11,10 @@ export const a = (country, setAssignedColors, assignedColors, select, rerender, 
             angolaColor: data[country].angola,
             anguillaColor: data[country].anguilla
         });
-        setRerender(!rerender)
+        console.log(select)
+        console.log(selectArray)
         console.log(assignedColors)
+        setRerender(!rerender)
     })
 }
 

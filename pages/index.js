@@ -116,20 +116,18 @@ export default function Home() {
   ])
 
   useEffect(() => {
-    console.log(select)
-    console.log(selectArray)
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select, rerender, setRerender)
+      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
       break;
-      case "albania": a('albania' , setAssignedColors, assignedColors, select, rerender, setRerender)
+      case "albania": a('albania' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
       break;
-      case "algeria": a('algeria' , setAssignedColors, assignedColors, select, rerender, setRerender)
+      case "algeria": a('algeria' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
       break;
-      case "andorra": a('andorra' , setAssignedColors, assignedColors, select, rerender, setRerender)
+      case "andorra": a('andorra' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
       break;
-      case "angola": a('angola' , setAssignedColors, assignedColors, select, rerender, setRerender)
+      case "angola": a('angola' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
       break;
-      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender)
+      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
       break;
     }
   }, [selectArray])
@@ -143,14 +141,16 @@ export default function Home() {
     anguillaColor: assignedColors[select.selection].anguillaColor
   })
 
-  useEffect(() => {setValue({
-    afghanistanColor: assignedColors[select.selection].afghanistanColor,
-    albaniaColor: assignedColors[select.selection].albaniaColor,
-    algeriaColor: assignedColors[select.selection].algeriaColor,
-    andorraColor: assignedColors[select.selection].andorraColor,
-    angolaColor: assignedColors[select.selection].angolaColor,
-    anguillaColor: assignedColors[select.selection].anguillaColor
-  })}, [rerender])
+  useEffect(() => {
+    setValue({
+      afghanistanColor: assignedColors[select.selection].afghanistanColor,
+      albaniaColor: assignedColors[select.selection].albaniaColor,
+      algeriaColor: assignedColors[select.selection].algeriaColor,
+      andorraColor: assignedColors[select.selection].andorraColor,
+      angolaColor: assignedColors[select.selection].angolaColor,
+      anguillaColor: assignedColors[select.selection].anguillaColor
+    })
+  }, [rerender])
 
   return (
     <ColorContext.Provider value={value}>
@@ -269,6 +269,7 @@ export default function Home() {
           anguillaColor: "rgb(150,150,150)"
         }
       ])
+      setRerender(!rerender)
     }}
     >reset</button>
     </ColorContext.Provider>
