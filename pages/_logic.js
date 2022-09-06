@@ -11,6 +11,17 @@ export const a = (country, setAssignedColors, assignedColors, select, rerender, 
             angolaColor: data[country].angola,
             anguillaColor: data[country].anguilla
         });
+        if(assignedColors[0].afghanistanColor === "rgb(255,20,147)" && assignedColors[1].afghanistanColor === "rgb(255,20,147)") {
+            setAssignedColors(assignedColors = assignedColors, assignedColors[select.selection] = { 
+                selection: select.selection,
+                afghanistanColor: "rgb(50,205,50)",
+                albaniaColor: assignedColors[select.selection].albaniaColor,
+                algeriaColor: assignedColors[select.selection].algeriaColor,
+                andorraColor: assignedColors[select.selection].andorraColor,
+                angolaColor: assignedColors[select.selection].angolaColor,
+                anguillaColor: assignedColors[select.selection].anguillaColor
+            });
+        }
         console.log(select)
         console.log(selectArray)
         console.log(assignedColors)

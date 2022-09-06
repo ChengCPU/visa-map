@@ -114,6 +114,14 @@ export default function Home() {
       anguillaColor: "rgb(150,150,150)"
     }
   ])
+  const [value, setValue] = useState({
+    afghanistanColor: assignedColors[select.selection].afghanistanColor,
+    albaniaColor: assignedColors[select.selection].albaniaColor,
+    algeriaColor: assignedColors[select.selection].algeriaColor,
+    andorraColor: assignedColors[select.selection].andorraColor,
+    angolaColor: assignedColors[select.selection].angolaColor,
+    anguillaColor: assignedColors[select.selection].anguillaColor
+  })
 
   useEffect(() => {
     switch(selectArray[select.selection].passport) {
@@ -130,16 +138,7 @@ export default function Home() {
       case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
       break;
     }
-  }, [selectArray])
-
-  const [value, setValue] = useState({
-    afghanistanColor: assignedColors[select.selection].afghanistanColor,
-    albaniaColor: assignedColors[select.selection].albaniaColor,
-    algeriaColor: assignedColors[select.selection].algeriaColor,
-    andorraColor: assignedColors[select.selection].andorraColor,
-    angolaColor: assignedColors[select.selection].angolaColor,
-    anguillaColor: assignedColors[select.selection].anguillaColor
-  })
+  }, [select])
 
   useEffect(() => {
     setValue({
