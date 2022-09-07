@@ -24,88 +24,69 @@ export default function Home() {
   ])
   const [assignedColors, setAssignedColors] = useState([
     {
-      selection: 0,
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 1,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 2,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 3,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 4,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 5,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 6,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 7,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 8,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
       anguillaColor: "rgb(150,150,150)"
-    },
-    {
-      selection: 9,
+    },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
@@ -114,42 +95,41 @@ export default function Home() {
       anguillaColor: "rgb(150,150,150)"
     }
   ])
-  const [value, setValue] = useState({
-    afghanistanColor: assignedColors[select.selection].afghanistanColor,
-    albaniaColor: assignedColors[select.selection].albaniaColor,
-    algeriaColor: assignedColors[select.selection].algeriaColor,
-    andorraColor: assignedColors[select.selection].andorraColor,
-    angolaColor: assignedColors[select.selection].angolaColor,
-    anguillaColor: assignedColors[select.selection].anguillaColor
-  })
 
   useEffect(() => {
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
+      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
       break;
-      case "albania": a('albania' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
+      case "albania": a('albania' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
       break;
-      case "algeria": a('algeria' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
+      case "algeria": a('algeria' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
       break;
-      case "andorra": a('andorra' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
+      case "andorra": a('andorra' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
       break;
-      case "angola": a('angola' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
+      case "angola": a('angola' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
       break;
-      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray)
+      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
       break;
     }
   }, [select])
 
-  useEffect(() => {
-    setValue({
-      afghanistanColor: assignedColors[select.selection].afghanistanColor,
-      albaniaColor: assignedColors[select.selection].albaniaColor,
-      algeriaColor: assignedColors[select.selection].algeriaColor,
-      andorraColor: assignedColors[select.selection].andorraColor,
-      angolaColor: assignedColors[select.selection].angolaColor,
-      anguillaColor: assignedColors[select.selection].anguillaColor
-    })
-  }, [rerender])
+  const [priority, setPriority] = useState({
+    afghanistanColor: "rgb(150,150,150)",
+    albaniaColor: "rgb(150,150,150)",
+    algeriaColor: "rgb(150,150,150)",
+    andorraColor: "rgb(150,150,150)",
+    angolaColor: "rgb(150,150,150)",
+    anguillaColor: "rgb(150,150,150)"
+  })
+
+  const value = {
+    afghanistanColor: priority.afghanistanColor,
+    albaniaColor: priority.albaniaColor,
+    algeriaColor: priority.algeriaColor,
+    andorraColor: priority.andorraColor,
+    angolaColor: priority.angolaColor,
+    anguillaColor: priority.anguillaColor
+  }
 
   return (
     <ColorContext.Provider value={value}>

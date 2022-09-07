@@ -1,12 +1,11 @@
 const colors = [
     "afghanistanColor", "albaniaColor", "algeriaColor", "andorraColor", "angolaColor", "anguillaColor"
 ]
-export const a = (country, setAssignedColors, assignedColors, select, rerender, setRerender, selectArray) => {
+export const a = (country, setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority) => {
     fetch('visaPolicy.json')
         .then((res) => res.json())
         .then((data) => {
         setAssignedColors(assignedColors, assignedColors[select.selection] = { 
-            selection: select.selection,
             afghanistanColor: data[country].afghanistan,
             albaniaColor: data[country].albania,
             algeriaColor: data[country].algeria,
@@ -16,14 +15,17 @@ export const a = (country, setAssignedColors, assignedColors, select, rerender, 
         });
         for(let i = 0; i < assignedColors.length; i++) {
             for(let x = 0; x < colors.length; x++) {
-              if(assignedColors[i][colors[x]] == "rgb(255,20,147)") {
-                setAssignedColors(assignedColors, assignedColors[select.selection][colors[x]] = "rgb(255,20,147)");
-              }
+              switch(assignedColors[i][colors[x]]) {
+                case "rgb(255,20,147)": setPriority(priority, priority[colors[x]] = "rgb(255,20,147)");
+                    console.log('a')
+                    break;
+                }
             }
         }
         console.log(select)
         console.log(selectArray)
         console.log(assignedColors)
+        console.log(priority)
         setRerender(!rerender)
     })
 }
