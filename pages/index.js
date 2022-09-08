@@ -7,6 +7,7 @@ import { a } from './_logic'
 import { ColorContext } from '../components/context/ColorContext';
 
 export default function Home() {
+  const [calculation, setCalculation] = useState(true)
   const [rerender, setRerender] = useState(false)
   const [openDrawer, setOpenDrawer] = useState(false)
   const [select, setSelect] = useState({ selection: 0 })
@@ -98,17 +99,17 @@ export default function Home() {
 
   useEffect(() => {
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
+      case "afghanistan": a('afghanistan' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority, calculation, setCalculation)
       break;
-      case "albania": a('albania' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
+      case "albania": a('albania' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority, calculation, setCalculation)
       break;
-      case "algeria": a('algeria' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
+      case "algeria": a('algeria' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority, calculation, setCalculation)
       break;
-      case "andorra": a('andorra' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
+      case "andorra": a('andorra' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority, calculation, setCalculation)
       break;
-      case "angola": a('angola' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
+      case "angola": a('angola' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority, calculation, setCalculation)
       break;
-      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority)
+      case "anguilla": a('anguilla' , setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority, calculation, setCalculation)
       break;
     }
   }, [select])
@@ -156,99 +157,14 @@ export default function Home() {
         { selection: 8, passport: undefined},
         { selection: 9, passport: undefined}
       ])
-      setAssignedColors([
-        {
-          selection: 0,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 1,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 2,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 3,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 4,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 5,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 6,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 7,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 8,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        },
-        {
-          selection: 9,
-          afghanistanColor: "rgb(150,150,150)",
-          albaniaColor: "rgb(150,150,150)",
-          algeriaColor: "rgb(150,150,150)",
-          andorraColor: "rgb(150,150,150)",
-          angolaColor: "rgb(150,150,150)",
-          anguillaColor: "rgb(150,150,150)"
-        }
-      ])
-      setRerender(!rerender)
+      setPriority({
+        afghanistanColor: "rgb(150,150,150)",
+        albaniaColor: "rgb(150,150,150)",
+        algeriaColor: "rgb(150,150,150)",
+        andorraColor: "rgb(150,150,150)",
+        angolaColor: "rgb(150,150,150)",
+        anguillaColor: "rgb(150,150,150)"
+      })
     }}
     >reset</button>
     </ColorContext.Provider>
