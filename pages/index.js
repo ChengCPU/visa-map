@@ -30,70 +30,90 @@ export default function Home() {
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     },{
       afghanistanColor: "rgb(150,150,150)",
       albaniaColor: "rgb(150,150,150)",
       algeriaColor: "rgb(150,150,150)",
       andorraColor: "rgb(150,150,150)",
       angolaColor: "rgb(150,150,150)",
-      anguillaColor: "rgb(150,150,150)"
+      anguillaColor: "rgb(150,150,150)",
+      antiguaAndBarbudaColor: "rgb(150,150,150)",
+      argentinaColor: "rgb(150,150,150)"
     }
   ])
 
@@ -120,7 +140,9 @@ export default function Home() {
     algeriaColor: "rgb(150,150,150)",
     andorraColor: "rgb(150,150,150)",
     angolaColor: "rgb(150,150,150)",
-    anguillaColor: "rgb(150,150,150)"
+    anguillaColor: "rgb(150,150,150)",
+    antiguaAndBarbudaColor: "rgb(150,150,150)",
+    argentinaColor: "rgb(150,150,150)"
   })
 
   const value = {
@@ -129,7 +151,9 @@ export default function Home() {
     algeriaColor: priority.algeriaColor,
     andorraColor: priority.andorraColor,
     angolaColor: priority.angolaColor,
-    anguillaColor: priority.anguillaColor
+    anguillaColor: priority.anguillaColor,
+    antiguaAndBarbudaColor: priority.antiguaAndBarbudaColor,
+    argentinaColor: priority.argentinaColor
   }
 
   return (
@@ -163,8 +187,103 @@ export default function Home() {
         algeriaColor: "rgb(150,150,150)",
         andorraColor: "rgb(150,150,150)",
         angolaColor: "rgb(150,150,150)",
-        anguillaColor: "rgb(150,150,150)"
+        anguillaColor: "rgb(150,150,150)",
+        antiguaAndBarbudaColor: "rgb(150,150,150)",
+        argentinaColor: "rgb(150,150,150)"
       })
+      setAssignedColors([
+        {
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        },{
+          afghanistanColor: "rgb(150,150,150)",
+          albaniaColor: "rgb(150,150,150)",
+          algeriaColor: "rgb(150,150,150)",
+          andorraColor: "rgb(150,150,150)",
+          angolaColor: "rgb(150,150,150)",
+          anguillaColor: "rgb(150,150,150)",
+          antiguaAndBarbudaColor: "rgb(150,150,150)",
+          argentinaColor: "rgb(150,150,150)"
+        }
+      ])
     }}
     >reset</button>
     </ColorContext.Provider>
