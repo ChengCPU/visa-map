@@ -1,5 +1,5 @@
 const colors = [
-    "afghanistanColor", "albaniaColor", "algeriaColor", "andorraColor", "angolaColor", "anguillaColor", "antiguaAndBarbudaColor", "argentinaColor"
+    "afghanistanColor", "albaniaColor", "algeriaColor", "andorraColor", "angolaColor", "anguillaColor", "antiguaAndBarbudaColor", "argentinaColor", "armeniaColor", "arubaColor", "australiaColor", "austriaColor", "azerbaijanColor", "bahamasColor", "bahrainColor", "bangladeshColor", "barbadosColor", "belarusColor", "belgiumColor", "belizeColor", "beninColor", "bermudaColor", "bhutanColor", "boliviaColor", "bosniaAndHerzegovinaColor", "botswanaColor", "brazilColor"
 ]
 export const a = (country, setAssignedColors, assignedColors, select, rerender, setRerender, selectArray, priority, setPriority, calculation, setCalculation) => {
     fetch('visaPolicy.json')
@@ -13,7 +13,26 @@ export const a = (country, setAssignedColors, assignedColors, select, rerender, 
             angolaColor: data[country].angola,
             anguillaColor: data[country].anguilla,
             antiguaAndBarbudaColor: data[country].antiguaAndBarbuda,
-            argentinaColor: data[country].argentina
+            argentinaColor: data[country].argentina,
+            armeniaColor: data[country].armenia,
+            arubaColor: data[country].aruba,
+            australiaColor: data[country].australia,
+            austriaColor: data[country].austria,
+            azerbaijanColor: data[country].azerbaijan,
+            bahamasColor: data[country].bahamas,
+            bahrainColor: data[country].bahrain,
+            bangladeshColor: data[country].bangladesh,
+            barbadosColor: data[country].barbados,
+            belarusColor: data[country].belarus,
+            belgiumColor: data[country].belgium,
+            belizeColor: data[country].belize,
+            beninColor: data[country].benin,
+            bermudaColor: data[country].bermuda,
+            bhutanColor: data[country].bhutan,
+            boliviaColor: data[country].bolivia,
+            bosniaAndHerzegovinaColor: data[country].bosniaAndHerzegovina,
+            botswanaColor: data[country].botswana,
+            brazilColor: data[country].brazil
         });
         for(let x = 0; x < assignedColors.length; x++) {
             for(let y = 0; y < colors.length; y++) {
@@ -43,3 +62,12 @@ export const a = (country, setAssignedColors, assignedColors, select, rerender, 
 }
 
 //visa policy of antigua and barbuda needs fixing (evisa)
+//visa policy of australia needs fixing (evisa)
+//visa policy of austria needs fixing (schengen)
+//visa policy of azerbaijan needs fixing (evisa)
+//visa policy of bahrain needs fixing (evisa)
+//visa policy of bangladesh needs fixing (visa on arrival)
+//visa policy of belarus needs fixing (air/land travel restrictions)
+//visa policy of belgium needs fixing (schengen)
+//visa policy of bolivia needs fixing (air/land travel restrictions)
+//visa policy of bolivia needs fixing (hard visas)

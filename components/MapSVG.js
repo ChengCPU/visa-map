@@ -90,6 +90,7 @@ const MapSVG = () => {
       <Bangladesh />
       <Belarus />
       <Belgium />
+      <Belize />
       <Benin />
       <Bhutan />
       <Bolivia />
@@ -776,7 +777,6 @@ const MapSVG = () => {
       <Bahamas />
       <Bahrain />
       <Barbados />
-      <Belize />
       <Bermuda />
       <BouvetIsland />
       <BritishIndianOceanTerritory />

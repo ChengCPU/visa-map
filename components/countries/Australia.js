@@ -1,10 +1,14 @@
+import { memo, useContext } from 'react'
+import { ColorContext } from '../context/ColorContext'
 const Australia = () => {
+
+    const { australiaColor } = useContext(ColorContext)
 
 return (
 <g className={'australia'}>
     <style jsx>{`
     .australia {
-    fill: red
+    fill: ${australiaColor};
     }
     `}</style>
 <path d="M 1743 763.6 1746.7 765.8 1750 764.9 1754.9 763.7 1757.7 764.1 1753.2 771.7 1749.9 773.8 1745.9 779 1745.3 777.2 1738.7 781.6 1737.9 781.3 1734.9 781.1 1735.4 775.7 1737.4 771.5 1738 765.9 1740 763 1743 763.6 Z" />
@@ -13,4 +17,4 @@ return (
 )
 }
     
-export default Australia
+export default memo(Australia)
