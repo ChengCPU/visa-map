@@ -1,25 +1,4 @@
 html,
 body {
-  background-color: rgb(50, 50, 50);
-  padding: 0;
-  margin: 0;
-  display: flex;
-  place-content: center center;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: rgb(25, 25, 25);
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-#page-wrap {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-

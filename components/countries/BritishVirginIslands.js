@@ -1,27 +1,21 @@
+import { memo, useContext } from 'react'
+import { ColorContext } from '../context/ColorContext'
 const BritishVirginIslands = () => {
 
+    const { britishVirginIslandsColor } = useContext(ColorContext)
+
 return (
-<>
 <g className={'britishVirginIslands'}>
-<style jsx>{`
+    <style jsx>{`
     .britishVirginIslands {
-    fill: red;
-    }
-`}</style>
-<path d="M626.1 383.4l-0.4 0.2-0.1 0-0.3 0.2-0.1-0.1 0.1-0.3 0.6-0.1 0.2 0.1z" />
-</g>
-<g className={'c'}>
-<style jsx>{`
-    .c {
-    fill: yellow;
-    stroke: #000000;
+    fill: ${britishVirginIslandsColor};
     stroke-width: 1;
     }
-`}</style>
-<circle r="5" cy="500" cx="520"/>
+    `}</style>
+<path d="M626.1 383.4l-0.4 0.2-0.1 0-0.3 0.2-0.1-0.1 0.1-0.3 0.6-0.1 0.2 0.1z" />
+<circle r="5" cy="500" cx="520" stroke="black"/>
 </g>
-</>
 )
 }
 
-export default BritishVirginIslands
+export default memo(BritishVirginIslands)

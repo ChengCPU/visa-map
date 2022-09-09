@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from '../styles/MapSVG.module.css'
 import Afghanistan from './countries/Afghanistan'
 import Albania from './countries/Albania'
@@ -70,9 +71,6 @@ import Fiji from './countries/Fiji'
 import Finland from './countries/Finland'
 import France from './countries/France'
 import FrenchGuiana from './countries/FrenchGuiana'
-
-import { ColorContext } from './context/ColorContext'
-import { useContext, memo } from 'react'
 
 const MapSVG = () => {
 

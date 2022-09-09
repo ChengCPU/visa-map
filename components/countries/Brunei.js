@@ -1,27 +1,21 @@
+import { memo, useContext } from 'react'
+import { ColorContext } from '../context/ColorContext'
 const Brunei = () => {
 
+    const { bruneiColor } = useContext(ColorContext)
+
 return (
-<>
 <g className={'brunei'}>
-<style jsx>{`
+    <style jsx>{`
     .brunei {
-    fill: red;
-    }
-`}</style>
-<path d="M1633.1 472.8l2.2-2.4 4.6-3.6-0.1 3.2-0.1 4.1-2.7-0.2-1.1 2.2-2.8-3.3z" />
-</g>
-<g className={'c'}>
-<style jsx>{`
-    .c {
-    fill: yellow;
-    stroke: #000000;
+    fill: ${bruneiColor};
     stroke-width: 1;
     }
-`}</style>
-<circle r="5" cy="500" cx="525"/>
+    `}</style>
+<path d="M1633.1 472.8l2.2-2.4 4.6-3.6-0.1 3.2-0.1 4.1-2.7-0.2-1.1 2.2-2.8-3.3z" />
+<circle r="5" cy="500" cx="525" stroke="black"/>
 </g>
-</>
 )
 }
 
-export default Brunei
+export default memo(Brunei)
