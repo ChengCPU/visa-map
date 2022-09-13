@@ -504,19 +504,29 @@ export const a = (country, assignedColors, setAssignedColors, select, selectArra
             zambiaColor: data[country].zambia,
             zimbabweColor: data[country].zimbabwe
         });
-        for(let x = 0; x < assignedColors.length; x++) {
-            for(let y = 0; y < colors.length; y++) {
-              switch(assignedColors[x][colors[y]]) {
+        for(let main = 0; main < assignedColors.length; main++) {
+            for(let subMain = 0; subMain < colors.length; subMain++) {
+              switch(assignedColors[main][colors[subMain]]) {
                 case "rgb(255,20,147)":
-                    setPriority(priority, priority[colors[y]] = "rgb(255,20,147)");
+                    setPriority(priority, priority[colors[subMain]] = "rgb(255,20,147)");
                 break;
                 case "rgb(50,205,50)":
-                    for(let w = 0; w < assignedColors.length; w++) {
-                        if(assignedColors[w][colors[y]] == "rgb(255,20,147)") {
+                    for(let a = 0; a < assignedColors.length; a++) {
+                        if(assignedColors[a][colors[subMain]] == "rgb(255,20,147)") {
                             break;
                         }
-                        if(w == 9) {
-                            setPriority(priority, priority[colors[y]] = "rgb(50,205,50)");
+                        if(a == 9) {
+                            setPriority(priority, priority[colors[subMain]] = "rgb(50,205,50)");
+                        }
+                    }
+                break;
+                case "rgb(255,255,92)":
+                    for(let b = 0; b < assignedColors.length; b++) {
+                        if(assignedColors[b][colors[subMain]] == "rgb(255,20,147)" || assignedColors[b][colors[subMain]] == "rgb(50,205,50)") {
+                            break;
+                        }
+                        if(b == 9) {
+                            setPriority(priority, priority[colors[subMain]] = "rgb(255,255,92)");
                         }
                     }
                 break;
@@ -530,14 +540,3 @@ export const a = (country, assignedColors, setAssignedColors, select, selectArra
         setRerender(!rerender)
     })
 }
-
-//visa policy of antigua and barbuda needs fixing (evisa)
-//visa policy of australia needs fixing (evisa)
-//visa policy of austria needs fixing (schengen)
-//visa policy of azerbaijan needs fixing (evisa)
-//visa policy of bahrain needs fixing (evisa)
-//visa policy of bangladesh needs fixing (visa on arrival)
-//visa policy of belarus needs fixing (air/land travel restrictions)
-//visa policy of belgium needs fixing (schengen)
-//visa policy of bolivia needs fixing (air/land travel restrictions)
-//visa policy of bolivia needs fixing (hard visas)
