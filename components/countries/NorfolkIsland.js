@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react'
+import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const NorfolkIsland = () => {
 
@@ -12,9 +12,9 @@ return (
     stroke-width: 1;
     }
     `}</style>
-<circle r="5" cy="230" cx="993" stroke="black"/>
+<circle r="5" cy="220" cx="400" stroke="black"/>
 </g>
 )
 }
 
-export default memo(NorfolkIsland)
+export default NorfolkIsland

@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react'
+import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const Montserrat = () => {
 
@@ -12,10 +12,10 @@ return (
     stroke-width: 1;
     }
     `}</style>
-<path d="M638.2 393.9l0.2 0.4 0 0.3-0.2 0.2-0.2-0.1-0.1-0.3 0.3-0.5z" stroke="black"/>
+<path d="M638.2 393.9l0.2 0.4 0 0.3-0.2 0.2-0.2-0.1-0.1-0.3 0.3-0.5z" />
 <circle r="5" cy="200" cx="1300" stroke="black"/>
 </g>
 )
 }
 
-export default memo(Montserrat)
+export default Montserrat

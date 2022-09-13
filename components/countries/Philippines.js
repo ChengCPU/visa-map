@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react'
+import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const Philippines = () => {
 
@@ -23,4 +23,4 @@ return (
 )
 }
 
-export default memo(Philippines)
+export default Philippines

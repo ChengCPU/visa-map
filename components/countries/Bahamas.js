@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react'
+import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const Bahamas = () => {
     
@@ -35,4 +35,4 @@ return (
 )
 }
 
-export default memo(Bahamas)
+export default Bahamas
