@@ -265,7 +265,6 @@ const MapSVG = () => {
       <Bangladesh />
       <Belarus />
       <Belgium />
-      <Belize />
       <Benin />
       <Bhutan />
       <Bolivia />
@@ -282,12 +281,12 @@ const MapSVG = () => {
       <Chile />
       <China />
       <Colombia />
+      <CostaRica />
       <Congo />
       <Croatia />
       <Cuba />
       <CzechRepublic />
       <Denmark />
-      <Djibouti />
       <DominicanRepublic />
       <Ecuador />
       <Egypt />
@@ -334,6 +333,7 @@ const MapSVG = () => {
       <Malawi />
       <Malaysia />
       <Mali />
+      <Mauritania />
       <Mexico />
       <Moldova />
       <Mongolia />
@@ -348,6 +348,7 @@ const MapSVG = () => {
       <Niger />
       <Nigeria />
       <NorthKorea />
+      <NorthMacedonia />
       <Norway />
       <Oman />
       <Pakistan />
@@ -412,6 +413,7 @@ const MapSVG = () => {
       <Bahamas />
       <Bahrain />
       <Barbados />
+      <Belize />
       <Bermuda />
       <Bonaire />
       <BouvetIsland />
@@ -423,8 +425,8 @@ const MapSVG = () => {
       <CaymanIslands />
       <Comoros />
       <CookIslands />
-      <CostaRica />
       <Curacao />
+      <Djibouti />
       <Cyprus />
       <Dominica />
       <EastTimor />
@@ -458,7 +460,6 @@ const MapSVG = () => {
       <Malta />
       <MarshallIslands />
       <Martinique />
-      <Mauritania />
       <Mauritius />
       <Mayotte />
       <Micronesia />
@@ -471,7 +472,6 @@ const MapSVG = () => {
       <NorfolkIsland />
       <NorthernCyprus />
       <NorthernMarianaIslands />
-      <NorthMacedonia />
       <Palau />
       <Palestine />
       <PitcairnIslands />

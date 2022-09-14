@@ -12,7 +12,7 @@ return (
     stroke-width: 1;
     }
     `}</style>
-<circle r="5" cy="380" cx="1300" stroke="black"/>
+<circle r="5" cy="854" cx="1000" stroke="black"/>
 </g>
 )
 }

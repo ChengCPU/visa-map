@@ -12,8 +12,7 @@ return (
     stroke-width: 1;
     }
     `}</style>
-<path d="M642.2 417.4l-0.1 0.1-0.5-0.3 0-0.4 0.2-0.3 0.2-0.5 0.4 0 0.1 0.4-0.1 0.8-0.2 0.2z" />
-<circle r="5" cy="700" cx="1000" stroke="black"/>
+<circle r="3.5" cy="419" cx="642" stroke="black"/>
 </g>
 )
 }
