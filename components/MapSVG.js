@@ -226,6 +226,7 @@ import Thailand from './countries/Thailand'
 import Togo from './countries/Togo'
 import Tokelau from './countries/Tokelau'
 import Tonga from './countries/Tonga'
+import Transnistria from './countries/Transnistria'
 import TrinidadAndTobago from './countries/TrinidadAndTobago'
 import Tunisia from './countries/Tunisia'
 import Turkey from './countries/Turkey'
@@ -322,7 +323,6 @@ const MapSVG = () => {
       <Jordan />
       <Kazakhstan />
       <Kenya />
-      <Kuwait />
       <Kyrgyzstan />
       <Laos />
       <Latvia />
@@ -394,7 +394,6 @@ const MapSVG = () => {
       <UnitedArabEmirates />
       <UnitedKingdom />
       <UnitedStates />
-      <UnitedStatesVirginIslands />
       <Uruguay />
       <Uzbekistan />
       <Venezuela />
@@ -451,6 +450,7 @@ const MapSVG = () => {
       <Jersey />
       <Kiribati />
       <Kosovo />
+      <Kuwait />
       <Lebanon />
       <Lesotho />
       <Liechtenstein />
@@ -497,9 +497,11 @@ const MapSVG = () => {
       <SouthOssetia />
       <Tokelau />
       <Tonga />
+      <Transnistria />
       <TrinidadAndTobago />
       <TurksAndCaicos />
       <Tuvalu />
+      <UnitedStatesVirginIslands />
       <Vanuatu />
       <VaticanCity />
       <WallisAndFutuna />

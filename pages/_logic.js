@@ -225,6 +225,7 @@ const colors = [
     "togoColor",
     "tokelauColor",
     "tongaColor",
+    "transnistriaColor",
     "trinidadAndTobagoColor",
     "tunisiaColor",
     "turkeyColor",
@@ -480,6 +481,7 @@ export const a = (country, assignedColors, setAssignedColors, select, selectArra
             togoColor: data[country].togo,
             tokelauColor: data[country].tokelau,
             tongaColor: data[country].tonga,
+            transnistriaColor: data[country].transnistria,
             trinidadAndTobagoColor: data[country].trinidadAndTobago,
             tunisiaColor: data[country].tunisia,
             turkeyColor: data[country].turkey,
@@ -507,26 +509,45 @@ export const a = (country, assignedColors, setAssignedColors, select, selectArra
         for(let main = 0; main < assignedColors.length; main++) {
             for(let subMain = 0; subMain < colors.length; subMain++) {
               switch(assignedColors[main][colors[subMain]]) {
-                case "rgb(255,20,147)":
+                case "rgb(255,20,147)": //home country (pink)
                     setPriority(priority, priority[colors[subMain]] = "rgb(255,20,147)");
                 break;
-                case "rgb(50,205,50)":
+                case "rgb(50,205,50)": //visa free (green)
                     for(let a = 0; a < assignedColors.length; a++) {
-                        if(assignedColors[a][colors[subMain]] == "rgb(255,20,147)") {
-                            break;
-                        }
-                        if(a == 9) {
-                            setPriority(priority, priority[colors[subMain]] = "rgb(50,205,50)");
+                        switch(assignedColors[a][colors[subMain]]) {
+                            case "rgb(255,20,147)":
+                                break;
+                            default: if(a == 9) {
+                                setPriority(priority, priority[colors[subMain]] = "rgb(50,205,50)");
+                            }
                         }
                     }
                 break;
-                case "rgb(255,255,92)":
+                case "rgb(255,255,92)": //visa on arrival (yellow)
                     for(let b = 0; b < assignedColors.length; b++) {
-                        if(assignedColors[b][colors[subMain]] == "rgb(255,20,147)" || assignedColors[b][colors[subMain]] == "rgb(50,205,50)") {
-                            break;
+                        switch(assignedColors[b][colors[subMain]]) {
+                            case "rgb(255,20,147)":
+                                break;
+                            case "rgb(50,205,50)":
+                                break;
+                            default: if(b == 9) {
+                                setPriority(priority, priority[colors[subMain]] = "rgb(255,255,92)");
+                            }
                         }
-                        if(b == 9) {
-                            setPriority(priority, priority[colors[subMain]] = "rgb(255,255,92)");
+                    }
+                break;
+                case "rgb(135,206,250)": //evisa (blue)
+                    for(let c = 0; c < assignedColors.length; c++) {
+                        switch(assignedColors[c][colors[subMain]]) {
+                            case "rgb(255,20,147)":
+                                break;
+                            case "rgb(50,205,50)":
+                                break;
+                            case "rgb(255,255,92)":
+                                break;
+                            default: if(c == 9) {
+                                setPriority(priority, priority[colors[subMain]] = "rgb(135,206,250)");
+                            }
                         }
                     }
                 break;
