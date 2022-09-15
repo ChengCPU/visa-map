@@ -250,7 +250,7 @@ const colors = [
     "zambiaColor",
     "zimbabweColor"
 ]
-export const a = (country, assignedColors, setAssignedColors, select, selectArray, priority, setPriority, rerender, setRerender) => {
+export const a = (country, assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender) => {
     fetch('visaPolicy.json')
         .then((res) => res.json())
         .then((data) => {
@@ -555,7 +555,6 @@ export const a = (country, assignedColors, setAssignedColors, select, selectArra
             }
         }
         console.log(select)
-        console.log(selectArray)
         console.log(assignedColors)
         console.log(priority)
         setRerender(!rerender)

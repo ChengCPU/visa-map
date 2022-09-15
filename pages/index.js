@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { a } from './_logic'; //import map render function from _logic
 import { ColorContext } from '../components/context/ColorContext';
 import Drawer from '@mui/material/Drawer';
@@ -7,7 +7,7 @@ import Selector from '../components/Selector';
 
 export default function Home() {
   //base variable used to reset color values
-  const base = {
+  const colors = {
     abkhaziaColor: "rgb(150,150,150)",
     afghanistanColor: "rgb(150,150,150)",
     albaniaColor: "rgb(150,150,150)",
@@ -275,6 +275,7 @@ export default function Home() {
     { selection: 8, passport: undefined},
     { selection: 9, passport: undefined},
   ])
+  //selector button-specific colors
   const [assignedColors, setAssignedColors] = useState([
     {
       abkhaziaColor: "rgb(150,150,150)",
@@ -2788,6 +2789,7 @@ export default function Home() {
       zimbabweColor: "rgb(150,150,150)"
     }
   ])
+  //priority has the 
   const [priority, setPriority] = useState({
     abkhaziaColor: "rgb(150,150,150)",
     afghanistanColor: "rgb(150,150,150)",
@@ -3293,19 +3295,23 @@ export default function Home() {
     zambiaColor: priority.zambiaColor,
     zimbabweColor: priority.zimbabweColor,
   }
+  //function that takes in logic function
+  const b = () => {
+    a(selectArray[select.selection].passport, assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
+  }
   useEffect(() => {
     switch(selectArray[select.selection].passport) {
-      case "afghanistan": a(selectArray[select.selection].passport,assignedColors,setAssignedColors,select,selectArray,priority,setPriority,rerender,setRerender)
+      case "afghanistan": b()
       break;
-      case "albania": a(selectArray[select.selection].passport,assignedColors,setAssignedColors,select,selectArray,priority,setPriority,rerender,setRerender)
+      case "albania": b()
       break;
-      case "algeria": a(selectArray[select.selection].passport,assignedColors,setAssignedColors,select,selectArray,priority,setPriority,rerender,setRerender)
+      case "algeria": b()
       break;
-      case "andorra": a(selectArray[select.selection].passport,assignedColors,setAssignedColors,select,selectArray,priority,setPriority,rerender,setRerender)
+      case "andorra": b()
       break;
-      case "angola": a(selectArray[select.selection].passport,assignedColors,setAssignedColors,select,selectArray,priority,setPriority,rerender,setRerender)
+      case "angola": b()
       break;
-      case "anguilla": a(selectArray[select.selection].passport,assignedColors,setAssignedColors,select,selectArray,priority,setPriority,rerender,setRerender)
+      case "anguilla": b()
       break;
     }
   }, [select])
@@ -3335,8 +3341,8 @@ export default function Home() {
         { selection: 8, passport: undefined},
         { selection: 9, passport: undefined}
       ])
-      setPriority(base)
-      setAssignedColors([base,base,base,base,base,base,base,base,base,base])
+      setPriority(colors)
+      setAssignedColors([colors,colors,colors,colors,colors,colors,colors,colors,colors,colors])
     }}
     >reset</button>
     <button onClick={() => {
