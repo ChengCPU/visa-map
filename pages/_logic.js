@@ -517,7 +517,7 @@ export const a = (country, assignedColors, setAssignedColors, select, priority, 
                         switch(assignedColors[a][colors[subMain]]) {
                             case "rgb(255,20,147)":
                                 break;
-                            default: if(a == 9) {
+                            default: if(a == 10) {
                                 setPriority(priority, priority[colors[subMain]] = "rgb(50,205,50)");
                             }
                         }
@@ -530,7 +530,7 @@ export const a = (country, assignedColors, setAssignedColors, select, priority, 
                                 break;
                             case "rgb(50,205,50)":
                                 break;
-                            default: if(b == 9) {
+                            default: if(b == 10) {
                                 setPriority(priority, priority[colors[subMain]] = "rgb(255,255,92)");
                             }
                         }
@@ -545,7 +545,7 @@ export const a = (country, assignedColors, setAssignedColors, select, priority, 
                                 break;
                             case "rgb(255,255,92)":
                                 break;
-                            default: if(c == 9) {
+                            default: if(c == 10) {
                                 setPriority(priority, priority[colors[subMain]] = "rgb(135,206,250)");
                             }
                         }
