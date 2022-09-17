@@ -1,9 +1,8 @@
-import { useEffect, memo } from "react";
 import { Button } from "@mui/material"
 import Passport from "./Passport"
 
-const SelectorPassport = ({ setSelect, setSelectArray, selectArray, select, image, name }) => {
-  
+const SelectorPassport = ({ setSelect, select, image, name }) => {
+
   return (
     <Button onClick={() => {
         setSelect({ ...select, passport: name });
@@ -13,4 +12,4 @@ const SelectorPassport = ({ setSelect, setSelectArray, selectArray, select, imag
   )
 }
 
-export default memo(SelectorPassport)
+export default SelectorPassport
