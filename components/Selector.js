@@ -39,7 +39,7 @@ const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, select
         <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={9} />
       </div>
       <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[0].passport = undefined)
+          setSelectArray(selectArray, selectArray[select.selection].passport = undefined)
           setRerender(!rerender)
           console.log(selectArray)
         }}>1</button>

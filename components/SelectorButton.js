@@ -8,8 +8,8 @@ import andorraPassport from '../public/andorra.jpg'
 import angolaPassport from '../public/angola.jpg';
 import anguillaPassport from '../public/anguilla.jpg'
 
-const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num }) => {
-    
+const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) => {
+
     const i = () => {
         switch(selectArray[num].passport) {
             case "afghanistan": return afghanistanPassport
@@ -29,9 +29,9 @@ const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num }) => {
   return (
     <Button onClick={() => {
         setOpenDrawer(true);
-        setSelect({ selection: num });
+        setSelect({ selection: num, passport: select.passport });
     }}>
-    {(selectArray[num].passport == undefined) ? <SelectorSVG /> : <Passport image={i()}/>}
+    {(selectArray[num].passport == null) ? <SelectorSVG /> : <Passport image={i()}/>}
     </Button>
   )
 }

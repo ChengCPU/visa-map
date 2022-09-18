@@ -2,12 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import { a } from './_logic'; //import map render function from _logic
 import { ColorContext } from '../components/context/ColorContext';
 import { Drawer } from '@mui/material';
+import usePrevious from './_usePrevious'
 import Map from '../components/Map';
 import Selector from '../components/Selector';
 
 export default function Home() {
   //base variable used to reset color values
-  const base = {
+  const color = {
     abkhaziaColor: "rgb(150,150,150)",
     afghanistanColor: "rgb(150,150,150)",
     albaniaColor: "rgb(150,150,150)",
@@ -260,23 +261,23 @@ export default function Home() {
   }
   const [rerender, setRerender] = useState(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState(false) //MUI drawer toggle
-  const [select, setSelect] = useState({ selection: 0, passport: undefined }) //used to keep track of which button is currently selected
+  const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   //selectArray keeps track of which passport is currently selected
   const [selectArray, setSelectArray] = useState([
-    { selection: 0, passport: undefined},
-    { selection: 1, passport: undefined},
-    { selection: 2, passport: undefined},
-    { selection: 3, passport: undefined},
-    { selection: 4, passport: undefined},
-    { selection: 5, passport: undefined},
-    { selection: 6, passport: undefined},
-    { selection: 7, passport: undefined},
-    { selection: 8, passport: undefined},
-    { selection: 9, passport: undefined},
-    { selection: 10, passport: undefined}
+    { selection: 0, passport: null},
+    { selection: 1, passport: null},
+    { selection: 2, passport: null},
+    { selection: 3, passport: null},
+    { selection: 4, passport: null},
+    { selection: 5, passport: null},
+    { selection: 6, passport: null},
+    { selection: 7, passport: null},
+    { selection: 8, passport: null},
+    { selection: 9, passport: null},
+    { selection: 10, passport: null}
   ])
-  const [assignedColors, setAssignedColors] = useState([base,base,base,base,base,base,base,base,base,base,base])
-  const [priority, setPriority] = useState(base)
+  const [assignedColors, setAssignedColors] = useState([color,color,color,color,color,color,color,color,color,color,color])
+  const [priority, setPriority] = useState(color)
   //value is passed in as context to the country components
   const value = {
     abkhaziaColor: priority.abkhaziaColor,
@@ -533,6 +534,7 @@ export default function Home() {
   const b = () => {
     a(selectArray[select.selection].passport, assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
   }
+
   useEffect(() => {
     setSelectArray(selectArray, selectArray[select.selection].passport = select.passport);
     switch(selectArray[select.selection].passport) {
@@ -549,13 +551,7 @@ export default function Home() {
       case "anguilla": b()
       break;
     }
-    console.log(rerender)
-    console.log(openDrawer)
-    console.log(select)
-    console.log(selectArray)
-    console.log(assignedColors)
-    console.log(priority)
-  }, [select])
+  }, [select.passport])
 
   return (
     <ColorContext.Provider value={value}>
@@ -573,20 +569,20 @@ export default function Home() {
     />
     <button onClick={() => {
       setSelectArray([
-        { selection: 0, passport: undefined},
-        { selection: 1, passport: undefined},
-        { selection: 2, passport: undefined},
-        { selection: 3, passport: undefined},
-        { selection: 4, passport: undefined},
-        { selection: 5, passport: undefined},
-        { selection: 6, passport: undefined},
-        { selection: 7, passport: undefined},
-        { selection: 8, passport: undefined},
-        { selection: 9, passport: undefined},
-        { selection: 10, passport: undefined}
+        { selection: 0, passport: null},
+        { selection: 1, passport: null},
+        { selection: 2, passport: null},
+        { selection: 3, passport: null},
+        { selection: 4, passport: null},
+        { selection: 5, passport: null},
+        { selection: 6, passport: null},
+        { selection: 7, passport: null},
+        { selection: 8, passport: null},
+        { selection: 9, passport: null},
+        { selection: 10, passport: null}
       ])
-      setPriority(base)
-      setAssignedColors([base,base,base,base,base,base,base,base,base,base,base])
+      setPriority(color)
+      setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
     }}
     >reset</button>
     <button onClick={() => {
