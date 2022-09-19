@@ -264,17 +264,17 @@ export default function Home() {
   const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   //selectArray keeps track of which passport is currently selected
   const [selectArray, setSelectArray] = useState([
-    { selection: 0, passport: null},
-    { selection: 1, passport: null},
-    { selection: 2, passport: null},
-    { selection: 3, passport: null},
-    { selection: 4, passport: null},
-    { selection: 5, passport: null},
-    { selection: 6, passport: null},
-    { selection: 7, passport: null},
-    { selection: 8, passport: null},
-    { selection: 9, passport: null},
-    { selection: 10, passport: null}
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
   ])
   const [assignedColors, setAssignedColors] = useState([color,color,color,color,color,color,color,color,color,color,color])
   const [priority, setPriority] = useState(color)
@@ -532,12 +532,12 @@ export default function Home() {
   }
   //function that takes in logic function
   const b = () => {
-    a(selectArray[select.selection].passport, assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
+    a(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
   }
 
   useEffect(() => {
-    setSelectArray(selectArray, selectArray[select.selection].passport = select.passport);
-    switch(selectArray[select.selection].passport) {
+    setSelectArray(selectArray, selectArray[select.selection] = select.passport);
+    switch(selectArray[select.selection]) {
       case "afghanistan": b()
       break;
       case "albania": b()
@@ -569,17 +569,17 @@ export default function Home() {
     />
     <button onClick={() => {
       setSelectArray([
-        { selection: 0, passport: null},
-        { selection: 1, passport: null},
-        { selection: 2, passport: null},
-        { selection: 3, passport: null},
-        { selection: 4, passport: null},
-        { selection: 5, passport: null},
-        { selection: 6, passport: null},
-        { selection: 7, passport: null},
-        { selection: 8, passport: null},
-        { selection: 9, passport: null},
-        { selection: 10, passport: null}
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ])
       setPriority(color)
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])

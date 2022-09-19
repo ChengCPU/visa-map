@@ -11,7 +11,7 @@ import anguillaPassport from '../public/anguilla.jpg'
 const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) => {
 
     const i = () => {
-        switch(selectArray[num].passport) {
+        switch(selectArray[num]) {
             case "afghanistan": return afghanistanPassport
                 break;
             case "albania": return albaniaPassport
@@ -31,7 +31,7 @@ const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) 
         setOpenDrawer(true);
         setSelect({ selection: num, passport: select.passport });
     }}>
-    {(selectArray[num].passport == null) ? <SelectorSVG /> : <Passport image={i()}/>}
+    {(selectArray[num] == null) ? <SelectorSVG /> : <Passport image={i()}/>}
     </Button>
   )
 }

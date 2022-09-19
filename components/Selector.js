@@ -38,56 +38,6 @@ const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, select
         <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={8} />
         <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={9} />
       </div>
-      <button onClick={() => {
-          setSelectArray(selectArray, selectArray[select.selection].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>1</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[1].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>2</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[2].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>3</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[3].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>4</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[4].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>5</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[5].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>6</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[6].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>7</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[7].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>8</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[8].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>9</button>
-        <button onClick={() => {
-          setSelectArray(selectArray = selectArray, selectArray[9].passport = undefined)
-          setRerender(!rerender)
-          console.log(selectArray)
-        }}>10</button>
     </>
   )
 }

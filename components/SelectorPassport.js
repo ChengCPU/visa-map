@@ -5,7 +5,7 @@ const SelectorPassport = ({ setSelect, select, image, name }) => {
 
   return (
     <Button onClick={() => {
-        setSelect({ ...select, passport: name });
+        setSelect({ selection: select.selection, passport: name });
     }}>
         <Passport image={image}/>
     </Button>
