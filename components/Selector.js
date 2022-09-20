@@ -11,19 +11,19 @@ import anguillaPassport from '../public/anguilla.jpg'
 import SelectorButton from './SelectorButton';
 import SelectorPassport from './SelectorPassport';
 
-const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, rerender, setRerender, setSelectArray }) => {
+const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, rerender, setRerender, setSelectArray, toggle, setToggle }) => {
   return (
     <>
     <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <div className={styles.container} onClick={() => {
           setOpenDrawer(false)
           }}>
-          <SelectorPassport setSelect={setSelect} select={select} image={afghanistanPassport} name={"afghanistan"} />
-          <SelectorPassport setSelect={setSelect} select={select} image={albaniaPassport} name={"albania"} />
-          <SelectorPassport setSelect={setSelect} select={select} image={algeriaPassport} name={"algeria"} />
-          <SelectorPassport setSelect={setSelect} select={select} image={andorraPassport} name={"andorra"} />
-          <SelectorPassport setSelect={setSelect} select={select} image={angolaPassport} name={"angola"} />
-          <SelectorPassport setSelect={setSelect} select={select} image={anguillaPassport} name={"anguilla"} />
+          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={afghanistanPassport} name={"afghanistan"} />
+          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={albaniaPassport} name={"albania"} />
+          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={algeriaPassport} name={"algeria"} />
+          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={andorraPassport} name={"andorra"} />
+          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={angolaPassport} name={"angola"} />
+          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={anguillaPassport} name={"anguilla"} />
         </div>
     </Drawer>
       <div className={styles.container}>

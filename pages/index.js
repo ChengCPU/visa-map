@@ -259,6 +259,7 @@ export default function Home() {
     zambiaColor: "rgb(150,150,150)",
     zimbabweColor: "rgb(150,150,150)"
   }
+  const [toggle, setToggle] = useState(false)
   const [rerender, setRerender] = useState(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState(false) //MUI drawer toggle
   const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
@@ -551,7 +552,7 @@ export default function Home() {
       case "anguilla": b()
       break;
     }
-  }, [select.passport])
+  }, [toggle])
 
   return (
     <ColorContext.Provider value={value}>
@@ -566,6 +567,8 @@ export default function Home() {
       rerender={rerender}
       setRerender={setRerender}
       setSelectArray={setSelectArray}
+      toggle={toggle}
+      setToggle={setToggle}
     />
     <button onClick={() => {
       setSelectArray([

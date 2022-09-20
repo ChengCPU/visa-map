@@ -4,7 +4,7 @@ const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
     ref.current = value;
-  },[value.passport]);
+  },[value]);
   return ref.current;
 }
 
