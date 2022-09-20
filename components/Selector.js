@@ -1,42 +1,19 @@
 import { memo } from 'react';
 import styles from '../styles/Selector.module.css'
-//passport imports
-import afghanistanPassport from '../public/afghanistan.jpg';
-import albaniaPassport from '../public/albania.jpg'
-import algeriaPassport from '../public/algeria.jpg';
-import andorraPassport from '../public/andorra.jpg'
-import angolaPassport from '../public/angola.jpg';
-import anguillaPassport from '../public/anguilla.jpg'
 //component imports
-import SelectorButton from './SelectorButton';
-import SelectorPassport from './SelectorPassport';
+import SelectorButtonContainer from './Selector/SelectorButtonContainer'
+import SelectorPassportContainer from './Selector/SelectorPassportContainer'
 
-const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, rerender, setRerender, setSelectArray, toggle, setToggle }) => {
+const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, rerender, toggle, setToggle }) => {
   return (
     <>
     <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
-        <div className={styles.container} onClick={() => {
-          setOpenDrawer(false)
-          }}>
-          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={afghanistanPassport} name={"afghanistan"} />
-          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={albaniaPassport} name={"albania"} />
-          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={algeriaPassport} name={"algeria"} />
-          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={andorraPassport} name={"andorra"} />
-          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={angolaPassport} name={"angola"} />
-          <SelectorPassport toggle={toggle} setToggle={setToggle} setSelect={setSelect} select={select} image={anguillaPassport} name={"anguilla"} />
-        </div>
+      <div className={styles.container} onClick={() => setOpenDrawer(false)}>
+        <SelectorPassportContainer toggle={toggle} setToggle={setToggle} select={select} setSelect={setSelect} />
+      </div>
     </Drawer>
       <div className={styles.container}>
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={0} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={1} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={2} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={3} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={4} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={5} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={6} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={7} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={8} />
-        <SelectorButton setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select} num={9} />
+        <SelectorButtonContainer setOpenDrawer={setOpenDrawer} selectArray={selectArray} setSelect={setSelect} select={select}/>
       </div>
     </>
   )

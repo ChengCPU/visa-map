@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { a } from './_logic'; //import map render function from _logic
 import { ColorContext } from '../components/context/ColorContext';
 import { Drawer } from '@mui/material';
-import usePrevious from './_usePrevious'
 import Map from '../components/Map';
 import Selector from '../components/Selector';
 
@@ -235,6 +234,7 @@ export default function Home() {
     togoColor: "rgb(150,150,150)",
     tokelauColor: "rgb(150,150,150)",
     tongaColor: "rgb(150,150,150)",
+    transnistriaColor: "rgb(150,150,150)",
     trinidadAndTobagoColor: "rgb(150,150,150)",
     tunisiaColor: "rgb(150,150,150)",
     turkeyColor: "rgb(150,150,150)",
@@ -259,26 +259,13 @@ export default function Home() {
     zambiaColor: "rgb(150,150,150)",
     zimbabweColor: "rgb(150,150,150)"
   }
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false) //used by SelectorPassport to trigger useEffect
   const [rerender, setRerender] = useState(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState(false) //MUI drawer toggle
   const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
-  //selectArray keeps track of which passport is currently selected
-  const [selectArray, setSelectArray] = useState([
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ])
-  const [assignedColors, setAssignedColors] = useState([color,color,color,color,color,color,color,color,color,color,color])
-  const [priority, setPriority] = useState(color)
+  const [selectArray, setSelectArray] = useState([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
+  const [assignedColors, setAssignedColors] = useState([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
+  const [priority, setPriority] = useState(color) //priority is the color that is passed onto each country component as context
   //value is passed in as context to the country components
   const value = {
     abkhaziaColor: priority.abkhaziaColor,
@@ -507,6 +494,7 @@ export default function Home() {
     togoColor: priority.togoColor,
     tokelauColor: priority.tokelauColor,
     tongaColor: priority.tongaColor,
+    transnistriaColor: priority.transnistriaColor,
     trinidadAndTobagoColor: priority.trinidadAndTobagoColor,
     tunisiaColor: priority.tunisiaColor,
     turkeyColor: priority.turkeyColor,
@@ -535,7 +523,7 @@ export default function Home() {
   const b = () => {
     a(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
   }
-
+  
   useEffect(() => {
     setSelectArray(selectArray, selectArray[select.selection] = select.passport);
     switch(selectArray[select.selection]) {
@@ -565,29 +553,14 @@ export default function Home() {
       setSelect={setSelect}
       selectArray={selectArray}
       rerender={rerender}
-      setRerender={setRerender}
-      setSelectArray={setSelectArray}
       toggle={toggle}
       setToggle={setToggle}
     />
     <button onClick={() => {
-      setSelectArray([
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ])
+      setSelectArray([null,null,null,null,null,null,null,null,null,null,null])
       setPriority(color)
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
-    }}
-    >reset</button>
+    }}>reset</button>
     <button onClick={() => {
       setPriority({
         abkhaziaColor: "rgb(50,205,50)",
@@ -840,8 +813,7 @@ export default function Home() {
         zambiaColor: "rgb(50,205,50)",
         zimbabweColor: "rgb(50,205,50)"
       })
-    }}
-    >test</button>
+    }}>test</button>
     </ColorContext.Provider>
   )
 }
