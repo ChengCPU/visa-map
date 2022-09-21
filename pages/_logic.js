@@ -557,3 +557,6 @@ export const a = (country, assignedColors, setAssignedColors, select, priority, 
         setRerender(!rerender)
     })
 }
+export const c = (selectArray, setSelectArray, select) => {
+    setSelectArray(selectArray, selectArray[select.selection] = select.passport);
+}
