@@ -819,37 +819,38 @@ export const c = (selectArray, assignedColors, setAssignedColors, priority, setP
                     zambiaColor: data[selectArray[passports]].zambia,
                     zimbabweColor: data[selectArray[passports]].zimbabwe
                 });
-                for(let subMain = 0; subMain < colors.length; subMain++) {
-                    switch(assignedColors[passports][colors[subMain]]) {
+                for(let main = 0; main < assignedColors.length; main++) {
+                    for(let subMain = 0; subMain < colors.length; subMain++) {
+                      switch(assignedColors[main][colors[subMain]]) {
                         case "rgb(255,20,147)": //home country (pink)
                             setPriority(priority, priority[colors[subMain]] = "rgb(255,20,147)");
                         break;
                         case "rgb(50,205,50)": //visa free (green)
-                            for(let a = 0; a < passports; a++) {
+                            for(let a = 0; a < assignedColors.length; a++) {
                                 switch(assignedColors[a][colors[subMain]]) {
                                     case "rgb(255,20,147)":
                                         break;
-                                    default: if(a == passports) {
+                                    default: if(a == assignedColors.length - 1) {
                                         setPriority(priority, priority[colors[subMain]] = "rgb(50,205,50)");
                                     }
                                 }
                             }
                         break;
                         case "rgb(255,255,92)": //visa on arrival (yellow)
-                            for(let b = 0; b < passports; b++) {
+                            for(let b = 0; b < assignedColors.length; b++) {
                                 switch(assignedColors[b][colors[subMain]]) {
                                     case "rgb(255,20,147)":
                                         break;
                                     case "rgb(50,205,50)":
                                         break;
-                                    default: if(b == passports) {
+                                    default: if(b == assignedColors.length - 1) {
                                         setPriority(priority, priority[colors[subMain]] = "rgb(255,255,92)");
                                     }
                                 }
                             }
                         break;
                         case "rgb(135,206,250)": //evisa (blue)
-                            for(let c = 0; c < passports; c++) {
+                            for(let c = 0; c < assignedColors.length; c++) {
                                 switch(assignedColors[c][colors[subMain]]) {
                                     case "rgb(255,20,147)":
                                         break;
@@ -857,12 +858,13 @@ export const c = (selectArray, assignedColors, setAssignedColors, priority, setP
                                         break;
                                     case "rgb(255,255,92)":
                                         break;
-                                    default: if(c == passports) {
+                                    default: if(c == assignedColors.length - 1) {
                                         setPriority(priority, priority[colors[subMain]] = "rgb(135,206,250)");
                                     }
                                 }
                             }
                         break;
+                        }
                     }
                 }
             }
