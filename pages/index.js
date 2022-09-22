@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { a, b, c, reset } from './_logic'; //import map render function from _logic
+import { mainCalculation, subCalculation, selectArrayCalculation, reset } from './_logic'; //import map render function from _logic
 import { ColorContext } from '../components/context/ColorContext';
 import { Drawer } from '@mui/material';
 import Map from '../components/Map';
 import Selector from '../components/Selector';
 
 export default function Home() {
+  //base rgb variable used to reset rgb values
   const color = {
     abkhaziaColor: "rgb(150,150,150)",
     afghanistanColor: "rgb(150,150,150)",
@@ -258,9 +259,8 @@ export default function Home() {
     zambiaColor: "rgb(150,150,150)",
     zimbabweColor: "rgb(150,150,150)"
   }
-  //base variable used to reset color values
   const [toggle, setToggle] = useState(false) //used by SelectorPassport to trigger useEffect
-  const [secondToggle, setSecondToggle] = useState(false)
+  const [secondToggle, setSecondToggle] = useState(false) //used by reset function to trigger secondToggle useEffect
   const [rerender, setRerender] = useState(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState(false) //MUI drawer toggle
   const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
@@ -521,34 +521,28 @@ export default function Home() {
     zimbabweColor: priority.zimbabweColor,
   }
   //function that takes in logic function
-  const aContainer = () => {
-    a(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
+  const mainCalculationContainer = () => {
+    mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
   }
 
   useEffect(() => {
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
       reset(setAssignedColors, setPriority, secondToggle, setSecondToggle); return
     }
-    b(selectArray, setSelectArray, select)
+    selectArrayCalculation(selectArray, setSelectArray, select)
     switch(selectArray[select.selection]) {
-      case "afghanistan": aContainer()
-      break;
-      case "albania": aContainer()
-      break;
-      case "algeria": aContainer()
-      break;
-      case "andorra": aContainer()
-      break;
-      case "angola": aContainer()
-      break;
-      case "anguilla": aContainer()
-      break;
+      case "afghanistan": mainCalculationContainer(); break
+      case "albania": mainCalculationContainer(); break
+      case "algeria": mainCalculationContainer(); break
+      case "andorra": mainCalculationContainer(); break
+      case "angola": mainCalculationContainer(); break
+      case "anguilla": mainCalculationContainer(); break
     }
   }, [toggle])
 
   useEffect(() => {
-    c(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender)
-    b(selectArray, setSelectArray, select)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender)
+    selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 
   return (
