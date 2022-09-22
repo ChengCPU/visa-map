@@ -1,264 +1,11 @@
 import { useState, useEffect } from 'react';
-import { a, c } from './_logic'; //import map render function from _logic
+import { a, b, c, reset } from './_logic'; //import map render function from _logic
 import { ColorContext } from '../components/context/ColorContext';
 import { Drawer } from '@mui/material';
 import Map from '../components/Map';
 import Selector from '../components/Selector';
-const colors = [
-  "abkhaziaColor",
-  "afghanistanColor", 
-  "albaniaColor",
-  "algeriaColor",
-  "americanSamoaColor",
-  "andorraColor",
-  "angolaColor",
-  "anguillaColor",
-  "antiguaAndBarbudaColor",
-  "argentinaColor",
-  "armeniaColor",
-  "arubaColor",
-  "australiaColor",
-  "austriaColor",
-  "azerbaijanColor",
-  "bahamasColor",
-  "bahrainColor",
-  "bangladeshColor",
-  "barbadosColor",
-  "belarusColor",
-  "belgiumColor",
-  "belizeColor",
-  "beninColor",
-  "bermudaColor",
-  "bhutanColor",
-  "boliviaColor",
-  "bonaireColor",
-  "bosniaAndHerzegovinaColor",
-  "botswanaColor",
-  "bouvetIslandColor",
-  "brazilColor",
-  "britishIndianOceanTerritory",
-  "britishVirginIslandsColor",
-  "bruneiColor",
-  "bulgariaColor",
-  "burkinaFasoColor",
-  "burundiColor",
-  "cambodiaColor",
-  "cameroonColor",
-  "canadaColor",
-  "capeVerdeColor",
-  "caymanIslandsColor",
-  "centralAfricanRepublicColor",
-  "chadColor",
-  "chileColor",
-  "chinaColor",
-  "colombiaColor",
-  "comorosColor",
-  "congoColor",
-  "cookIslandsColor",
-  "costaRicaColor",
-  "croatiaColor",
-  "cubaColor",
-  "curacaoColor",
-  "cyprusColor",
-  "czechRepublicColor",
-  "denmarkColor",
-  "djiboutiColor",
-  "dominicaColor",
-  "dominicanRepublicColor",
-  "eastTimorColor",
-  "ecuadorColor",
-  "egyptColor",
-  "elSalvadorColor",
-  "equatorialGuineaColor",
-  "eritreaColor",
-  "estoniaColor",
-  "eswatiniColor",
-  "ethiopiaColor",
-  "falklandIslandsColor",
-  "faroeIslandsColor",
-  "fijiColor",
-  "finlandColor",
-  "franceColor",
-  "frenchGuianaColor",
-  "frenchPolynesiaColor",
-  "gabonColor",
-  "gambiaColor",
-  "georgiaColor",
-  "germanyColor",
-  "ghanaColor",
-  "gibraltarColor",
-  "greeceColor",
-  "greenlandColor",
-  "grenadaColor",
-  "guadeloupeColor",
-  "guamColor",
-  "guatemalaColor",
-  "guernseyColor",
-  "guineaColor",
-  "guineaBissauColor",
-  "guyanaColor",
-  "haitiColor",
-  "heardIslandAndMcDonaldIslandsColor",
-  "hondurasColor",
-  "hongKongColor",
-  "hungaryColor",
-  "icelandColor",
-  "indiaColor",
-  "indonesiaColor",
-  "iranColor",
-  "iraqColor",
-  "irelandColor",
-  "isleOfManColor",
-  "israelColor",
-  "italyColor",
-  "ivoryCoastColor",
-  "jamaicaColor",
-  "janMayenColor",
-  "japanColor",
-  "jerseyColor",
-  "jordanColor",
-  "kazakhstanColor",
-  "kenyaColor",
-  "kiribatiColor",
-  "kosovoColor",
-  "kuwaitColor",
-  "kyrgyzstanColor",
-  "laosColor",
-  "latviaColor",
-  "lebanonColor",
-  "lesothoColor",
-  "liberiaColor",
-  "libyaColor",
-  "liechtensteinColor",
-  "lithuaniaColor",
-  "luxembourgColor",
-  "macaoColor",
-  "madagascarColor",
-  "malawiColor",
-  "malaysiaColor",
-  "maldivesColor",
-  "maliColor",
-  "maltaColor",
-  "marshallIslandsColor",
-  "martiniqueColor",
-  "mauritaniaColor",
-  "mauritiusColor",
-  "mayotteColor",
-  "mexicoColor",
-  "micronesiaColor",
-  "moldovaColor",
-  "monacoColor",
-  "mongoliaColor",
-  "montenegroColor",
-  "montserratColor",
-  "moroccoColor",
-  "mozambiqueColor",
-  "myanmarColor",
-  "namibiaColor",
-  "nauruColor",
-  "nepalColor",
-  "netherlandsColor",
-  "newCaledoniaColor",
-  "newZealandColor",
-  "nicaraguaColor",
-  "nigerColor",
-  "nigeriaColor",
-  "niueColor",
-  "norfolkIslandColor",
-  "northernCyprusColor",
-  "northernMarianaIslandsColor",
-  "northKoreaColor",
-  "northMacedoniaColor",
-  "norwayColor",
-  "omanColor",
-  "pakistanColor",
-  "palauColor",
-  "palestineColor",
-  "panamaColor",
-  "papuaNewGuineaColor",
-  "paraguayColor",
-  "peruColor",
-  "philippinesColor",
-  "pitcairnIslandsColor",
-  "polandColor",
-  "portugalColor",
-  "qatarColor",
-  "republicOfTheCongoColor",
-  "reunionColor",
-  "romaniaColor",
-  "russiaColor",
-  "rwandaColor",
-  "sabaColor",
-  "saintBarthelemyColor",
-  "saintHelenaColor",
-  "saintKittsAndNevisColor",
-  "saintLuciaColor",
-  "saintMartinColor",
-  "saintPierreAndMiquelonColor",
-  "saintVincentAndTheGrenadinesColor",
-  "samoaColor",
-  "sanMarinoColor",
-  "saoTomeAndPrincipeColor",
-  "saudiArabiaColor",
-  "senegalColor",
-  "serbiaColor",
-  "seychellesColor",
-  "sierraLeoneColor",
-  "singaporeColor",
-  "sintEustatiusColor",
-  "sintMaartenColor",
-  "slovakiaColor",
-  "sloveniaColor",
-  "solomonIslandsColor",
-  "somaliaColor",
-  "southAfricaColor",
-  "southGeorgiaAndTheSouthSandwichIslandsColor",
-  "southKoreaColor",
-  "southOssetiaColor",
-  "southSudanColor",
-  "spainColor",
-  "sriLankaColor",
-  "sudanColor",
-  "surinameColor",
-  "svalbardColor",
-  "swedenColor",
-  "switzerlandColor",
-  "syriaColor",
-  "taiwanColor",
-  "tajikistanColor",
-  "tanzaniaColor",
-  "thailandColor",
-  "togoColor",
-  "tokelauColor",
-  "tongaColor",
-  "transnistriaColor",
-  "trinidadAndTobagoColor",
-  "tunisiaColor",
-  "turkeyColor",
-  "turkmenistanColor",
-  "turksAndCaicosColor",
-  "tuvaluColor",
-  "ugandaColor",
-  "ukraineColor",
-  "unitedArabEmiratesColor",
-  "unitedKingdomColor",
-  "unitedStatesColor",
-  "unitedStatesVirginIslandsColor",
-  "uruguayColor",
-  "uzbekistanColor",
-  "vanuatuColor",
-  "vaticanCityColor",
-  "venezuelaColor",
-  "vietnamColor",
-  "wallisAndFutunaColor",
-  "westernSaharaColor",
-  "yemenColor",
-  "zambiaColor",
-  "zimbabweColor"
-]
 
 export default function Home() {
-  //base variable used to reset color values
   const color = {
     abkhaziaColor: "rgb(150,150,150)",
     afghanistanColor: "rgb(150,150,150)",
@@ -511,7 +258,9 @@ export default function Home() {
     zambiaColor: "rgb(150,150,150)",
     zimbabweColor: "rgb(150,150,150)"
   }
+  //base variable used to reset color values
   const [toggle, setToggle] = useState(false) //used by SelectorPassport to trigger useEffect
+  const [secondToggle, setSecondToggle] = useState(false)
   const [rerender, setRerender] = useState(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState(false) //MUI drawer toggle
   const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
@@ -772,30 +521,35 @@ export default function Home() {
     zimbabweColor: priority.zimbabweColor,
   }
   //function that takes in logic function
-  const b = () => {
+  const aContainer = () => {
     a(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
   }
-  
+
   useEffect(() => {
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      console.log(selectArray)
+      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle); return
     }
-    c(selectArray, setSelectArray, select)
+    b(selectArray, setSelectArray, select)
     switch(selectArray[select.selection]) {
-      case "afghanistan": b()
+      case "afghanistan": aContainer()
       break;
-      case "albania": b()
+      case "albania": aContainer()
       break;
-      case "algeria": b()
+      case "algeria": aContainer()
       break;
-      case "andorra": b()
+      case "andorra": aContainer()
       break;
-      case "angola": b()
+      case "angola": aContainer()
       break;
-      case "anguilla": b()
+      case "anguilla": aContainer()
       break;
     }
   }, [toggle])
+
+  useEffect(() => {
+    c(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender)
+    b(selectArray, setSelectArray, select)
+  }, [secondToggle])
 
   return (
     <ColorContext.Provider value={value}>

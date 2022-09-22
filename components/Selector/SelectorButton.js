@@ -26,6 +26,7 @@ const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) 
                 break;
         }
     }
+    
   return (
     <Button onClick={() => {
         setOpenDrawer(true);
