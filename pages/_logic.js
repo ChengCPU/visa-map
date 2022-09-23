@@ -541,7 +541,6 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                         case "rgb(255,179,191)": break;
                         case "rgb(50,205,50)": break;
                         case "rgb(161,224,123)": break;
-                        case "rgb(135,206,250)": {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}; break;
                     default: if(d == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,255,92)")}}
                 }
             break;
@@ -551,8 +550,8 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                         case "rgb(255,20,147)": break;
                         case "rgb(255,179,191)": break;
                         case "rgb(50,205,50)": break;
-                        case "rgb(255,255,92)": break;
                         case "rgb(161,224,123)": break;
+                        case "rgb(255,255,92)": {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}; break;
                     default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}
                 }
             break;
@@ -856,7 +855,6 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                                 case "rgb(255,179,191)": break;
                                 case "rgb(50,205,50)": break;
                                 case "rgb(161,224,123)": break;
-                                case "rgb(135,206,250)": {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}; break;
                             default: if(d == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,255,92)")}
                             }
                         }
@@ -868,7 +866,7 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                                 case "rgb(255,179,191)": break;
                                 case "rgb(50,205,50)": break;
                                 case "rgb(161,224,123)": break;
-                                case "rgb(255,255,92)": break;
+                                case "rgb(255,255,92)": {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}; break;
                             default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}
                             }
                         }
