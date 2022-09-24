@@ -514,16 +514,14 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                 for(let a = 0; a < assignedColors.length; a++) {
                     switch(assignedColors[a][colors[sub]]) {
                         case "rgb(255,20,147)": break;
-                    default: if(a == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,179,191)")}}
-                }
+                    default: if(a == assignedColors.length - 1) setPriority(priority, priority[colors[sub]] = "rgb(255,179,191)")}}
             break;
             case "rgb(50,205,50)": //visa free (green)
                 for(let b = 0; b < assignedColors.length; b++) {
                     switch(assignedColors[b][colors[sub]]) {
                         case "rgb(255,20,147)": break;
                         case "rgb(255,179,191)": break;
-                    default: if(b == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(50,205,50)")}}
-                }
+                    default: if(b == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(50,205,50)")}}}
             break;
             case "rgb(161,224,123)": //visa on arrival/evisa (light green)
                 for(let c = 0; c < assignedColors.length; c++) {
@@ -531,8 +529,7 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                         case "rgb(255,20,147)": break;
                         case "rgb(255,179,191)": break;
                         case "rgb(50,205,50)": break;
-                    default: if(c == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}
-                }
+                    default: if(c == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}}
             break;
             case "rgb(255,255,92)": //visa on arrival (yellow)
                 for(let d = 0; d < assignedColors.length; d++) {
@@ -541,8 +538,7 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                         case "rgb(255,179,191)": break;
                         case "rgb(50,205,50)": break;
                         case "rgb(161,224,123)": break;
-                    default: if(d == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,255,92)")}}
-                }
+                    default: if(d == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,255,92)")}}}
             break;
             case "rgb(135,206,250)": //evisa (blue)
                 for(let e = 0; e < assignedColors.length; e++) {
@@ -551,9 +547,14 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                         case "rgb(255,179,191)": break;
                         case "rgb(50,205,50)": break;
                         case "rgb(161,224,123)": break;
-                        case "rgb(255,255,92)": {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}; break;
-                    default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}
-                }
+                        case "rgb(255,255,92)": 
+                        for(let z = 0; z < assignedColors.length; z++) {
+                            switch(assignedColors[z][colors[sub]]) {
+                                case "rgb(255,20,147)": break;
+                                case "rgb(255,179,191)": break;
+                                case "rgb(50,205,50)": break;
+                            default: if(z == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}}
+                    default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}}
             break;
             }
         }
@@ -827,17 +828,14 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                         for(let a = 0; a < assignedColors.length; a++) {
                             switch(assignedColors[a][colors[sub]]) {
                                 case "rgb(255,20,147)": break;
-                            default: if(a == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,179,191)")}}
-                        }
+                            default: if(a == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,179,191)")}}}
                     break;
                     case "rgb(50,205,50)": //visa free (green)
                         for(let b = 0; b < assignedColors.length; b++) {
                             switch(assignedColors[b][colors[sub]]) {
                                 case "rgb(255,20,147)": break;
                                 case "rgb(255,179,191)": break;
-                            default: if(b == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(50,205,50)")}
-                            }
-                        }
+                            default: if(b == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(50,205,50)")}}}
                     break;
                     case "rgb(161,224,123)": //visa on arrival/evisa (light green)
                         for(let c = 0; c < assignedColors.length; c++) {
@@ -845,8 +843,7 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                                 case "rgb(255,20,147)": break;
                                 case "rgb(255,179,191)": break;
                                 case "rgb(50,205,50)": break;
-                            default: if(c == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}
-                        }
+                            default: if(c == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}}
                     break;
                     case "rgb(255,255,92)": //visa on arrival (yellow)
                         for(let d = 0; d < assignedColors.length; d++) {
@@ -855,9 +852,7 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                                 case "rgb(255,179,191)": break;
                                 case "rgb(50,205,50)": break;
                                 case "rgb(161,224,123)": break;
-                            default: if(d == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,255,92)")}
-                            }
-                        }
+                            default: if(d == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,255,92)")}}}
                     break;
                     case "rgb(135,206,250)": //evisa (blue)
                         for(let e = 0; e < assignedColors.length; e++) {
@@ -866,10 +861,8 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                                 case "rgb(255,179,191)": break;
                                 case "rgb(50,205,50)": break;
                                 case "rgb(161,224,123)": break;
-                                case "rgb(255,255,92)": {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}; break;
-                            default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}
-                            }
-                        }
+                                case "rgb(255,255,92)": break;
+                            default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}}
                     break;
                     }
                 }
