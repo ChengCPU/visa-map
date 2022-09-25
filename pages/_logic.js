@@ -855,14 +855,20 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                             default: if(d == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(255,255,92)")}}}
                     break;
                     case "rgb(135,206,250)": //evisa (blue)
-                        for(let e = 0; e < assignedColors.length; e++) {
-                            switch(assignedColors[e][colors[sub]]) {
-                                case "rgb(255,20,147)": break;
-                                case "rgb(255,179,191)": break;
-                                case "rgb(50,205,50)": break;
-                                case "rgb(161,224,123)": break;
-                                case "rgb(255,255,92)": break;
-                            default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}}
+                    for(let e = 0; e < assignedColors.length; e++) {
+                        switch(assignedColors[e][colors[sub]]) {
+                            case "rgb(255,20,147)": break;
+                            case "rgb(255,179,191)": break;
+                            case "rgb(50,205,50)": break;
+                            case "rgb(161,224,123)": break;
+                            case "rgb(255,255,92)": 
+                            for(let z = 0; z < assignedColors.length; z++) {
+                                switch(assignedColors[z][colors[sub]]) {
+                                    case "rgb(255,20,147)": break;
+                                    case "rgb(255,179,191)": break;
+                                    case "rgb(50,205,50)": break;
+                                default: if(z == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}}
+                        default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}}
                     break;
                     }
                 }
