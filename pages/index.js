@@ -522,7 +522,7 @@ export default function Home() {
   }
   //function that takes in logic function
   const mainCalculationContainer = () => {
-    mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender)
+    mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray)
   }
 
   useEffect(() => {
