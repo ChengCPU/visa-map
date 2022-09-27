@@ -531,6 +531,7 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
     for(let main = 0; main < assignedColors.length; main++) {
         for(let sub = 0; sub < colors.length; sub++) {
             switch(assignedColors[main][colors[sub]]) {
+            case "rgb(255,0,0)": setPriority(priority, priority[colors[sub]] = "rgb(255,0,0)"); break; //permit required
             case "rgb(255,20,147)": setPriority(priority, priority[colors[sub]] = "rgb(255,20,147)"); break; //home country (pink)
             case "rgb(255,179,191)": //freedom of movement (light pink)
                 for(let a = 0; a < assignedColors.length; a++) {
@@ -880,6 +881,7 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
             for(let main = 0; main < assignedColors.length; main++) {
                 for(let sub = 0; sub < colors.length; sub++) {
                     switch(assignedColors[main][colors[sub]]) {
+                    case "rgb(255,0,0)": setPriority(priority, priority[colors[sub]] = "rgb(255,0,0)"); break; //permit required
                     case "rgb(255,20,147)": setPriority(priority, priority[colors[sub]] = "rgb(255,20,147)"); break; //home country (pink)
                     case "rgb(255,179,191)": //freedom of movement (light pink)
                         for(let a = 0; a < assignedColors.length; a++) {
