@@ -19,4 +19,4 @@ const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, select
   )
 }
 
-export default memo(Selector)
+export default Selector

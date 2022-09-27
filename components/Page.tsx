@@ -1,4 +1,4 @@
-function Page({ isServer }) {
+const Page = ({ isServer }) => {
   return <div>Is this page on the server? - {isServer ? 'YES' : 'NO'}</div>;
 }
 

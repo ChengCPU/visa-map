@@ -7,7 +7,7 @@ import Selector from '../components/Selector';
 
 export default function Home() {
   //base rgb variable used to reset rgb values
-  const color = {
+  const color: object = {
     abkhaziaColor: "rgb(150,150,150)",
     afghanistanColor: "rgb(150,150,150)",
     albaniaColor: "rgb(150,150,150)",
@@ -259,10 +259,10 @@ export default function Home() {
     zambiaColor: "rgb(150,150,150)",
     zimbabweColor: "rgb(150,150,150)"
   }
-  const [toggle, setToggle] = useState(false) //used by SelectorPassport to trigger useEffect
-  const [secondToggle, setSecondToggle] = useState(false) //used by reset function to trigger secondToggle useEffect
-  const [rerender, setRerender] = useState(false) //used to rerender map
-  const [openDrawer, setOpenDrawer] = useState(false) //MUI drawer toggle
+  const [toggle, setToggle] = useState<boolean>(false) //used by SelectorPassport to trigger useEffect
+  const [secondToggle, setSecondToggle] = useState<boolean>(false) //used by reset function to trigger secondToggle useEffect
+  const [rerender, setRerender] = useState<boolean>(false) //used to rerender map
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
   const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
   const [assignedColors, setAssignedColors] = useState([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport

@@ -250,28 +250,7 @@ const colors = [
     "zambiaColor",
     "zimbabweColor"
 ]
-const israelConfirmationRequired = [
-    "afghanistan",
-    "indonesia",
-    "iran",
-    "iraq",
-    "jordan",
-    "kuwait",
-    "lebanon",
-    "libya",
-    "malaysia",
-    "mauritania",
-    "northKorea",
-    "oman",
-    "pakistan",
-    "qatar",
-    "saudiArabia",
-    "somalia",
-    "sudan",
-    "syria",
-    "tunisia",
-    "yemen"
-]
+
 export const mainCalculation = (country, assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray) => {
     fetch('visaPolicy.json')
     .then((res) => res.json())
@@ -579,7 +558,18 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                                 default: if(z == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}}
                     default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}}
             break;
-            case "rgb(0,0,0)": //confirmation required
+            case "rgb(200,200,200)": //simplified visa (light grey)
+                for(let h = 0; h < assignedColors.length; h++) {
+                    switch(assignedColors[h][colors[sub]]) {
+                        case "rgb(255,20,147)": break;
+                        case "rgb(255,179,191)": break;
+                        case "rgb(50,205,50)": break;
+                        case "rgb(161,224,123)": break;
+                        case "rgb(255,255,92)": break;
+                        case "rgb(135,206,250)": break;
+                    default: if(h == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(200,200,200)")}}}
+            break;
+            case "rgb(0,0,0)": //confirmation required (black)
                 for(let f = 0; f < assignedColors.length; f++) {
                     switch(assignedColors[f][colors[sub]]) {
                         case "rgb(255,20,147)": break;
@@ -588,6 +578,7 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                         case "rgb(161,224,123)": break;
                         case "rgb(255,255,92)": break;
                         case "rgb(135,206,250)": break;
+                        case "rgb(200,200,200)": break;
                         case "rgb(150,150,150)": 
                             for(let g = 0; g < selectArray.length; g++) {
                                 switch(selectArray[g]) {
@@ -929,7 +920,18 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                                         default: if(z == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(161,224,123)")}}}
                             default: if(e == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(135,206,250)")}}}
                     break;
-                    case "rgb(0,0,0)": //confirmation required
+                    case "rgb(200,200,200)": //simplified visa (light grey)
+                        for(let h = 0; h < assignedColors.length; h++) {
+                            switch(assignedColors[h][colors[sub]]) {
+                                case "rgb(255,20,147)": break;
+                                case "rgb(255,179,191)": break;
+                                case "rgb(50,205,50)": break;
+                                case "rgb(161,224,123)": break;
+                                case "rgb(255,255,92)": break;
+                                case "rgb(135,206,250)": break;
+                            default: if(h == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(200,200,200)")}}}
+                    break;
+                    case "rgb(0,0,0)": //confirmation required (black)
                     for(let f = 0; f < assignedColors.length; f++) {
                         switch(assignedColors[f][colors[sub]]) {
                             case "rgb(255,20,147)": break;
@@ -938,6 +940,7 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                             case "rgb(161,224,123)": break;
                             case "rgb(255,255,92)": break;
                             case "rgb(135,206,250)": break;
+                            case "rgb(200,200,200)": break;
                             case "rgb(150,150,150)": 
                                 for(let g = 0; g < selectArray.length; g++) {
                                     switch(selectArray[g]) {
