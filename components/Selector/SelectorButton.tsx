@@ -7,7 +7,8 @@ import albaniaPassport from '/public/albania.jpg'
 import algeriaPassport from '/public/algeria.jpg';
 import andorraPassport from '/public/andorra.jpg'
 import angolaPassport from '/public/angola.jpg';
-import anguillaPassport from '/public/anguilla.jpg'
+import anguillaPassport from '/public/anguilla.jpg';
+import antiguaAndBarbudaPassport from '/public/antiguaAndBarbuda.jpg';
 
 const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) => {
 
@@ -20,6 +21,7 @@ const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) 
             case "andorra": return andorraPassport
             case "angola": return angolaPassport
             case "anguilla": return anguillaPassport
+            case "antiguaAndBarbuda": return antiguaAndBarbudaPassport
         }
     }
   return (

@@ -7,6 +7,7 @@ import algeriaPassport from '/public/algeria.jpg';
 import andorraPassport from '/public/andorra.jpg'
 import angolaPassport from '/public/angola.jpg';
 import anguillaPassport from '/public/anguilla.jpg'
+import antiguaAndBarbudaPassport from '/public/antiguaAndBarbuda.jpg'
 
 const SelectorPassportContainer = ({ setOpenDrawer, toggle, setToggle, select, setSelect }) => {
   return (
@@ -21,6 +22,7 @@ const SelectorPassportContainer = ({ setOpenDrawer, toggle, setToggle, select, s
     <SelectorPassport setOpenDrawer={setOpenDrawer} toggle={toggle} setToggle={setToggle} select={select} setSelect={setSelect} image={angolaPassport} name={"angola"} />
     <br />
     <SelectorPassport setOpenDrawer={setOpenDrawer} toggle={toggle} setToggle={setToggle} select={select} setSelect={setSelect} image={anguillaPassport} name={"anguilla"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} toggle={toggle} setToggle={setToggle} select={select} setSelect={setSelect} image={antiguaAndBarbudaPassport} name={"antiguaAndBarbuda"} />
     </>
   )
 }

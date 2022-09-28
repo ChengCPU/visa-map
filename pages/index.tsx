@@ -538,6 +538,7 @@ export default function Home() {
       case "andorra": mainCalculationContainer(); break
       case "angola": mainCalculationContainer(); break
       case "anguilla": mainCalculationContainer(); break
+      case "antiguaAndBarbuda": mainCalculationContainer(); break
     }
   }, [toggle])
 
