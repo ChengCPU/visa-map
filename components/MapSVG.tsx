@@ -253,7 +253,8 @@ import Zimbabwe from './countries/Zimbabwe'
 
 const MapSVG = () => {
   return (
-      <svg version="1.2" viewBox="-10 -50 2200 1000" width="1600" className={styles.main}>
+      <div className={styles.container}>
+      <svg version="1.2" viewBox="-10 -50 2200 1000" width="1600">
       <Afghanistan />
       <Albania />
       <Algeria />
@@ -506,6 +507,7 @@ const MapSVG = () => {
       <VaticanCity />
       <WallisAndFutuna />
       </svg>
+      </div>
   )
 }
 

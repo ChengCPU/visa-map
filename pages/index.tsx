@@ -531,6 +531,7 @@ export default function Home() {
     }
     selectArrayCalculation(selectArray, setSelectArray, select)
     switch(selectArray[select.selection]) {
+      case "abkhazia": mainCalculationContainer(); break
       case "afghanistan": mainCalculationContainer(); break
       case "albania": mainCalculationContainer(); break
       case "algeria": mainCalculationContainer(); break

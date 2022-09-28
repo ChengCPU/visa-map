@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import styles from '../styles/Selector.module.css'
 //component imports
 import SelectorButtonContainer from './Selector/SelectorButtonContainer'
@@ -8,8 +7,8 @@ const Selector = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, select
   return (
     <>
     <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
-      <div className={styles.container} onClick={() => setOpenDrawer(false)}>
-        <SelectorPassportContainer toggle={toggle} setToggle={setToggle} select={select} setSelect={setSelect} />
+      <div>
+        <SelectorPassportContainer setOpenDrawer={setOpenDrawer} toggle={toggle} setToggle={setToggle} select={select} setSelect={setSelect} />
       </div>
     </Drawer>
       <div className={styles.container}>

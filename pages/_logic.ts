@@ -605,6 +605,21 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
                                     case null: break;
                                 default: setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)"); g = selectArray.length}}}}
             break;
+            case "unrecognised": //passport not recognised
+                for(let i = 0; i < assignedColors.length; i++) {
+                    switch(assignedColors[i][colors[sub]]) {
+                            case "rgb(255,0,0)": break;
+                            case "rgb(255,20,147)": break;
+                            case "rgb(255,179,191)": break;
+                            case "rgb(50,205,50)": break;
+                            case "rgb(161,224,123)": break;
+                            case "rgb(255,255,92)": break;
+                            case "rgb(135,206,250)": break;
+                            case "rgb(200,200,200)": break;
+                            case "rgb(0,0,0)": break;
+                            case "rgb(150,150,150)": setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")
+                        default: if(i == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(0,0,0)")}}}
+            break;
             }
         }
     }
@@ -932,40 +947,55 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
                             default: if(h == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(200,200,200)")}}}
                     break;
                     case "rgb(0,0,0)": //confirmation required (black)
-                    for(let f = 0; f < assignedColors.length; f++) {
-                        switch(assignedColors[f][colors[sub]]) {
-                            case "rgb(255,20,147)": break;
-                            case "rgb(255,179,191)": break;
-                            case "rgb(50,205,50)": break;
-                            case "rgb(161,224,123)": break;
-                            case "rgb(255,255,92)": break;
-                            case "rgb(135,206,250)": break;
-                            case "rgb(200,200,200)": break;
-                            case "rgb(150,150,150)": 
-                                for(let g = 0; g < selectArray.length; g++) {
-                                    switch(selectArray[g]) {
-                                        case "afghanistan": setPriority(priority, priority[colors[sub]] = "rgb(0,0,0)"); break;
-                                        case "indonesia": console.log('indonesia'); break;
-                                        case "iran": console.log('iran'); break;
-                                        case "iraq": console.log('iraq'); break;
-                                        case "jordan": console.log('jordan'); break;
-                                        case "kuwait": console.log('kuwait'); break;
-                                        case "lebanon": console.log('lebanon'); break;
-                                        case "libya": console.log('libya'); break;
-                                        case "malaysia": console.log('malaysia'); break;
-                                        case "mauritania": console.log('mauritania'); break;
-                                        case "northKorea": console.log('northKorea'); break;
-                                        case "oman": console.log('oman'); break;
-                                        case "pakistan": console.log('pakistan'); break;
-                                        case "qatar": console.log('qatar'); break;
-                                        case "saudiArabia": console.log('saudiArabia'); break;
-                                        case "somalia": console.log('somalia'); break;
-                                        case "sudan": console.log('sudan'); break;
-                                        case "syria": console.log('syria'); break;
-                                        case "tunisia": console.log('tunisia'); break;
-                                        case "yemen": console.log('yemen'); break;
-                                        case null: break;
-                                    default: setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)"); g = selectArray.length}}}}
+                        for(let f = 0; f < assignedColors.length; f++) {
+                            switch(assignedColors[f][colors[sub]]) {
+                                case "rgb(255,20,147)": break;
+                                case "rgb(255,179,191)": break;
+                                case "rgb(50,205,50)": break;
+                                case "rgb(161,224,123)": break;
+                                case "rgb(255,255,92)": break;
+                                case "rgb(135,206,250)": break;
+                                case "rgb(200,200,200)": break;
+                                case "rgb(150,150,150)": 
+                                    for(let g = 0; g < selectArray.length; g++) {
+                                        switch(selectArray[g]) {
+                                            case "afghanistan": setPriority(priority, priority[colors[sub]] = "rgb(0,0,0)"); break;
+                                            case "indonesia": console.log('indonesia'); break;
+                                            case "iran": console.log('iran'); break;
+                                            case "iraq": console.log('iraq'); break;
+                                            case "jordan": console.log('jordan'); break;
+                                            case "kuwait": console.log('kuwait'); break;
+                                            case "lebanon": console.log('lebanon'); break;
+                                            case "libya": console.log('libya'); break;
+                                            case "malaysia": console.log('malaysia'); break;
+                                            case "mauritania": console.log('mauritania'); break;
+                                            case "northKorea": console.log('northKorea'); break;
+                                            case "oman": console.log('oman'); break;
+                                            case "pakistan": console.log('pakistan'); break;
+                                            case "qatar": console.log('qatar'); break;
+                                            case "saudiArabia": console.log('saudiArabia'); break;
+                                            case "somalia": console.log('somalia'); break;
+                                            case "sudan": console.log('sudan'); break;
+                                            case "syria": console.log('syria'); break;
+                                            case "tunisia": console.log('tunisia'); break;
+                                            case "yemen": console.log('yemen'); break;
+                                            case null: break;
+                                        default: setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)"); g = selectArray.length}}}}
+                    break;
+                    case "unrecognised": //passport not recognised
+                        for(let i = 0; i < assignedColors.length; i++) {
+                            switch(assignedColors[i][colors[sub]]) {
+                                    case "rgb(255,0,0)": break;
+                                    case "rgb(255,20,147)": break;
+                                    case "rgb(255,179,191)": break;
+                                    case "rgb(50,205,50)": break;
+                                    case "rgb(161,224,123)": break;
+                                    case "rgb(255,255,92)": break;
+                                    case "rgb(135,206,250)": break;
+                                    case "rgb(200,200,200)": break;
+                                    case "rgb(0,0,0)": break;
+                                    case "rgb(150,150,150)": setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")
+                                default: if(i == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(0,0,0)")}}}
                     break;
                     }
                 }
