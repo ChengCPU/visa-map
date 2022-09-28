@@ -265,8 +265,8 @@ export default function Home() {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
   const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
-  const [assignedColors, setAssignedColors] = useState([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
-  const [priority, setPriority] = useState(color) //priority is the color that is passed onto each country component as context
+  const [assignedColors, setAssignedColors] = useState<object>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
+  const [priority, setPriority] = useState<object>(color) //priority is the color that is passed onto each country component as context
   //value is passed in as context to the country components
   const value = {
     abkhaziaColor: priority.abkhaziaColor,
