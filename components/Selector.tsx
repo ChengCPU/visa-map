@@ -1,7 +1,7 @@
-import styles from '../styles/Selector.module.css'
 //component imports
 import SelectorButtonContainer from './Selector/SelectorButtonContainer'
 import SelectorPassportContainer from './Selector/SelectorPassportContainer'
+
 interface Props {
   Drawer: any;
   openDrawer: boolean;
@@ -12,20 +12,19 @@ interface Props {
   };
   setSelect: Function;
   selectArray:null | string[];
+  setSelectArray: Function;
   toggle: boolean;
   setToggle: Function;
+  setPriority: Function;
+  setAssignedColors: Function;
 }
-const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, toggle, setToggle }) => {
+const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, setSelectArray, toggle, setToggle, setPriority, setAssignedColors }) => {
   return (
     <>
     <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
-      <div>
-        <SelectorPassportContainer setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} />
-      </div>
+      <SelectorPassportContainer setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} />
     </Drawer>
-      <div className={styles.container}>
-        <SelectorButtonContainer setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray}/>
-      </div>
+      <SelectorButtonContainer setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} setSelectArray={setSelectArray} setPriority={setPriority} setAssignedColors={setAssignedColors}/>
     </>
   )
 }

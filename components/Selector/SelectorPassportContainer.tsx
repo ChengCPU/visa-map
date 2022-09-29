@@ -1,3 +1,4 @@
+import styles from '../../styles/SelectorPassportContainer.module.css'
 import SelectorPassport from './SelectorPassport'
 //passport imports
 import abkhaziaPassport from '/public/abkhazia.jpg'
@@ -21,7 +22,7 @@ interface Props {
 
 const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, toggle, setToggle }) => {
   return (
-    <>
+    <div className={styles.container}>
     <h1>A</h1>
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={abkhaziaPassport} name={"abkhazia"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={afghanistanPassport} name={"afghanistan"} />
@@ -33,7 +34,7 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
     <br />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={anguillaPassport} name={"anguilla"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={antiguaAndBarbudaPassport} name={"antiguaAndBarbuda"} />
-    </>
+    </div>
   )
 }
 
