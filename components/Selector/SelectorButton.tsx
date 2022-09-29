@@ -9,8 +9,17 @@ import andorraPassport from '/public/andorra.jpg'
 import angolaPassport from '/public/angola.jpg';
 import anguillaPassport from '/public/anguilla.jpg';
 import antiguaAndBarbudaPassport from '/public/antiguaAndBarbuda.jpg';
-
-const SelectorButton = ({ selectArray, setOpenDrawer, setSelect, num, select }) => {
+interface Props {
+  setOpenDrawer: Function;
+  select: {
+    selection: number;
+    passport: null | string;
+  };
+  setSelect: Function;
+  selectArray:null | string[];
+  num: number;
+}
+const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, num }) => {
 
     const i = () => {
         switch(selectArray[num]) {

@@ -7,7 +7,7 @@ import Selector from '../components/Selector';
 
 export default function Home() {
   //base rgb variable used to reset rgb values
-  const color: object = {
+  const color:object = {
     abkhaziaColor: "rgb(150,150,150)",
     afghanistanColor: "rgb(150,150,150)",
     albaniaColor: "rgb(150,150,150)",
@@ -263,9 +263,9 @@ export default function Home() {
   const [secondToggle, setSecondToggle] = useState<boolean>(false) //used by reset function to trigger secondToggle useEffect
   const [rerender, setRerender] = useState<boolean>(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
-  const [select, setSelect] = useState({ selection: 0, passport: null }) //used to keep track of which button is currently selected
-  const [selectArray, setSelectArray] = useState([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
-  const [assignedColors, setAssignedColors] = useState<object>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
+  const [select, setSelect] = useState<{selection: number,passport: null | string}>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
+  const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
+  const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
   const [priority, setPriority] = useState<object>(color) //priority is the color that is passed onto each country component as context
   //value is passed in as context to the country components
   const value = {
@@ -518,28 +518,17 @@ export default function Home() {
     westernSaharaColor: priority.westernSaharaColor,
     yemenColor: priority.yemenColor,
     zambiaColor: priority.zambiaColor,
-    zimbabweColor: priority.zimbabweColor,
+    zimbabweColor: priority.zimbabweColor
   }
   //function that takes in logic function
-  const mainCalculationContainer = () => {
+  const mainCalculationContainer:Function = () => {
     mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray)
   }
 
   useEffect(() => {
-    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle); return
-    }
-    selectArrayCalculation(selectArray, setSelectArray, select)
-    switch(selectArray[select.selection]) {
-      case "abkhazia": mainCalculationContainer(); break
-      case "afghanistan": mainCalculationContainer(); break
-      case "albania": mainCalculationContainer(); break
-      case "algeria": mainCalculationContainer(); break
-      case "andorra": mainCalculationContainer(); break
-      case "angola": mainCalculationContainer(); break
-      case "anguilla": mainCalculationContainer(); break
-      case "antiguaAndBarbuda": mainCalculationContainer(); break
-    }
+    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {reset(setAssignedColors, setPriority, secondToggle, setSecondToggle); return}
+    selectArrayCalculation(selectArray, setSelectArray, select);
+    if(selectArray[select.selection] != null) {mainCalculationContainer()}
   }, [toggle])
 
   useEffect(() => {
@@ -557,7 +546,6 @@ export default function Home() {
       select={select}
       setSelect={setSelect}
       selectArray={selectArray}
-      rerender={rerender}
       toggle={toggle}
       setToggle={setToggle}
     />
@@ -567,6 +555,7 @@ export default function Home() {
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
     }}>reset</button>
     <button onClick={() => {
+      console.log(Drawer)
       setPriority({
         abkhaziaColor: "rgb(50,205,50)",
         afghanistanColor: "rgb(50,205,50)",

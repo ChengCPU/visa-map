@@ -251,7 +251,7 @@ import Yemen from './countries/Yemen'
 import Zambia from './countries/Zambia'
 import Zimbabwe from './countries/Zimbabwe'
 
-const MapSVG = () => {
+const MapSVG:React.FC = () => {
   return (
       <div className={styles.container}>
       <svg version="1.2" viewBox="-10 -50 2200 1000" width="1600">

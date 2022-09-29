@@ -1,6 +1,6 @@
 import MapSVG from "./MapSVG"
 
-const Map = () => {
+const Map:React.FC = () => {
   return (
     <MapSVG />
   )

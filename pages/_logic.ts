@@ -1,4 +1,8 @@
-const colors = [
+interface Select {
+    selection: number,
+    passport: null | string;
+}
+const colors:string[] = [
     "abkhaziaColor",
     "afghanistanColor", 
     "albaniaColor",
@@ -250,8 +254,7 @@ const colors = [
     "zambiaColor",
     "zimbabweColor"
 ]
-
-export const mainCalculation = (country, assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray) => {
+export const mainCalculation:Function = (country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, selectArray:null | string[]) => {
     fetch('visaPolicy.json')
     .then((res) => res.json())
     .then((data) => {
@@ -638,7 +641,7 @@ export const mainCalculation = (country, assignedColors, setAssignedColors, sele
     setRerender(!rerender)
     })
 }
-export const subCalculation = (selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender) => {
+export const subCalculation:Function = (selectArray:null | string[], assignedColors:object[], setAssignedColors:Function, priority:object, setPriority:Function, rerender:boolean, setRerender:Function) => {
     fetch('visaPolicy.json')
     .then((res) => res.json())
     .then((data) => {
@@ -1030,11 +1033,11 @@ export const subCalculation = (selectArray, assignedColors, setAssignedColors, p
     setRerender(!rerender)
     })
 }
-export const selectArrayCalculation = (selectArray, setSelectArray, select) => {
+export const selectArrayCalculation:Function = (selectArray:null | string[], setSelectArray:Function, select:Select) => {
     setSelectArray(selectArray, selectArray[select.selection] = select.passport);
 }
-export const reset = (setAssignedColors, setPriority, secondToggle, setSecondToggle) => {
-    const color = {
+export const reset:Function = (setAssignedColors:Function, setPriority:Function, secondToggle:boolean, setSecondToggle:Function) => {
+    const color:object = {
         abkhaziaColor: "rgb(150,150,150)",
         afghanistanColor: "rgb(150,150,150)",
         albaniaColor: "rgb(150,150,150)",

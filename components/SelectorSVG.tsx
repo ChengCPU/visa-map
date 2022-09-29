@@ -1,6 +1,6 @@
 import styles from '../styles/SelectorSVG.module.css'
 
-const SelectorSVG = () => {
+const SelectorSVG:React.FC = () => {
   return (
     <svg
     version="1.1"
@@ -10,8 +10,7 @@ const SelectorSVG = () => {
     height="90.8"
     viewBox="0 0 64 90.8"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnssvgjs="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg">
    <defs
       id="defs1353" />
    <g
