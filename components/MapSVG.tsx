@@ -48,7 +48,6 @@ import Chile from './countries/Chile'
 import China from './countries/China'
 import Colombia from './countries/Colombia'
 import Comoros from './countries/Comoros'
-import Congo from './countries/Congo'
 import CookIslands from './countries/CookIslands'
 import CostaRica from './countries/CostaRica'
 import Croatia from './countries/Croatia'
@@ -56,6 +55,7 @@ import Cuba from './countries/Cuba'
 import Curacao from './countries/Curacao'
 import Cyprus from './countries/Cyprus'
 import CzechRepublic from './countries/CzechRepublic'
+import DemocraticRepublicOfTheCongo from './countries/DemocraticRepublicOfTheCongo'
 import Denmark from './countries/Denmark'
 import Djibouti from './countries/Djibouti'
 import Dominica from './countries/Dominica'
@@ -284,10 +284,10 @@ const MapSVG:React.FC = () => {
       <China />
       <Colombia />
       <CostaRica />
-      <Congo />
       <Croatia />
       <Cuba />
       <CzechRepublic />
+      <DemocraticRepublicOfTheCongo />
       <Denmark />
       <DominicanRepublic />
       <Ecuador />

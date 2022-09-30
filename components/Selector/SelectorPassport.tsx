@@ -14,7 +14,6 @@ interface Props {
 }
 
 const SelectorPassport:React.FC<Props> = ({ setOpenDrawer, select, setSelect, toggle, setToggle, image, name }) => {
-
   return (
     <Button onClick={() => {
       setSelect({ selection: select.selection, passport: name });
