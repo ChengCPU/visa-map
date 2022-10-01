@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { mainCalculation, subCalculation, selectArrayCalculation, reset } from './_logic'; //import map render function from _logic
 import { ColorContext } from '../components/context/ColorContext';
 import { Drawer } from '@mui/material';
-import Map from '../components/Map';
+import Map from '../components/Map/Map';
 import Selector from '../components/Selector';
+import Head from 'next/head';
 
 export default function Home() {
   //base rgb variable used to reset rgb values
@@ -265,6 +266,7 @@ export default function Home() {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
   const [select, setSelect] = useState<{selection: number,passport: null | string}>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
+  const [legendArray, setLegendArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) 
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
   const [priority, setPriority] = useState<object>(color) //priority is the color that is passed onto each country component as context
   //value is passed in as context to the country components
@@ -538,7 +540,13 @@ export default function Home() {
 
   return (
     <ColorContext.Provider value={value}>
-    <Map />
+    <Head>
+      <title>Visa-map</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <Map 
+      legendArray={legendArray}
+    />
     <Selector
       Drawer={Drawer}
       openDrawer={openDrawer}

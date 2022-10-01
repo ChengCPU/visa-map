@@ -1,36 +1,83 @@
 import styles from '../../styles/SelectorPassportContainer.module.css'
 import SelectorPassport from './SelectorPassport'
 //passport imports
-import abkhazia from '/public/abkhazia.png'
-import afghanistan from '/public/afghanistan.png';
-import albania from '/public/albania.png'
-import algeria from '/public/algeria.png';
-import andorra from '/public/andorra.png'
-import angola from '/public/angola.png';
-import anguilla from '/public/anguilla.png';
-import antiguaAndBarbuda from '/public/antiguaAndBarbuda.png';
-import argentina from '/public/argentina.png';
-import armenia from '/public/armenia.png';
-import australia from '/public/australia.png';
-import austria from '/public/austria.png';
-import azerbaijan from '/public/azerbaijan.png';
-import bahamas from '/public/bahamas.png';
-import bahrain from '/public/bahrain.png';
-import bangladesh from '/public/bangladesh.png';
-import barbados from '/public/barbados.png';
-import belarus from '/public/belarus.png';
-import belgium from '/public/belgium.png';
-import belize from '/public/belize.png';
-import benin from '/public/benin.png';
-import bhutan from '/public/bhutan.png';
-import bolivia from '/public/bolivia.png';
-import bosniaAndHerzegovina from '/public/bosniaAndHerzegovina.png';
-import botswana from '/public/botswana.png';
-import brazil from '/public/brazil.png';
-import brunei from '/public/brunei.png';
-import bulgaria from '/public/bulgaria.png';
-import burkinaFaso from '/public/burkinaFaso.png';
-import burundi from '/public/burundi.png';
+import abkhazia from '/public/passports/abkhazia.png'
+import afghanistan from '/public/passports/afghanistan.png';
+import albania from '/public/passports/albania.png'
+import algeria from '/public/passports/algeria.png';
+import andorra from '/public/passports/andorra.png'
+import angola from '/public/passports/angola.png';
+import anguilla from '/public/passports/anguilla.png';
+import antiguaAndBarbuda from '/public/passports/antiguaAndBarbuda.png';
+import argentina from '/public/passports/argentina.png';
+import armenia from '/public/passports/armenia.png';
+import australia from '/public/passports/australia.png';
+import austria from '/public/passports/austria.png';
+import azerbaijan from '/public/passports/azerbaijan.png';
+import bahamas from '/public/passports/bahamas.png';
+import bahrain from '/public/passports/bahrain.png';
+import bangladesh from '/public/passports/bangladesh.png';
+import barbados from '/public/passports/barbados.png';
+import belarus from '/public/passports/belarus.png';
+import belgium from '/public/passports/belgium.png';
+import belize from '/public/passports/belize.png';
+import benin from '/public/passports/benin.png';
+import bhutan from '/public/passports/bhutan.png';
+import bolivia from '/public/passports/bolivia.png';
+import bosniaAndHerzegovina from '/public/passports/bosniaAndHerzegovina.png';
+import botswana from '/public/passports/botswana.png';
+import brazil from '/public/passports/brazil.png';
+import brunei from '/public/passports/brunei.png';
+import bulgaria from '/public/passports/bulgaria.png';
+import burkinaFaso from '/public/passports/burkinaFaso.png';
+import burundi from '/public/passports/burundi.png';
+import cambodia from '/public/passports/cambodia.png';
+import cameroon from '/public/passports/cameroon.png';
+import canada from '/public/passports/canada.png';
+import capeVerde from '/public/passports/capeVerde.png';
+import centralAfricanRepublic from '/public/passports/centralAfricanRepublic.png';
+import chad from '/public/passports/chad.png';
+import chile from '/public/passports/chile.png';
+import china from '/public/passports/china.png';
+import colombia from '/public/passports/colombia.png';
+import comoros from '/public/passports/comoros.png';
+import costaRica from '/public/passports/costaRica.png';
+import croatia from '/public/passports/croatia.png';
+import cuba from '/public/passports/cuba.png';
+import cyprus from '/public/passports/cyprus.png';
+import czechRepublic from '/public/passports/czechRepublic.png';
+import democraticRepublicOfTheCongo from '/public/passports/democraticRepublicOfTheCongo.png';
+import denmark from '/public/passports/denmark.png';
+import djibouti from '/public/passports/djibouti.png';
+import dominica from '/public/passports/dominica.png';
+import dominicanRepublic from '/public/passports/dominicanRepublic.png';
+import ecuador from '/public/passports/ecuador.png';
+import egypt from '/public/passports/egypt.png';
+import elSalvador from '/public/passports/elSalvador.png';
+import equatorialGuinea from '/public/passports/equatorialGuinea.png';
+import eritrea from '/public/passports/eritrea.png';
+import estonia from '/public/passports/estonia.png';
+import eswatini from '/public/passports/eswatini.png';
+import ethiopia from '/public/passports/ethiopia.png';
+import fiji from '/public/passports/fiji.png';
+import finland from '/public/passports/finland.png';
+import france from '/public/passports/france.png';
+import gabon from '/public/passports/gabon.png';
+import gambia from '/public/passports/gambia.png';
+import georgia from '/public/passports/georgia.png';
+import germany from '/public/passports/germany.png';
+import ghana from '/public/passports/ghana.png';
+import greece from '/public/passports/greece.png';
+import grenada from '/public/passports/grenada.png';
+import guatemala from '/public/passports/guatemala.png';
+import guinea from '/public/passports/guinea.png';
+import guineaBissau from '/public/passports/guineaBissau.png';
+import guyana from '/public/passports/guyana.png';
+import haiti from '/public/passports/haiti.png';
+import honduras from '/public/passports/honduras.png';
+import hongKong from '/public/passports/hongKong.png';
+import hungary from '/public/passports/hungary.png';
+import ivoryCoast from '/public/passports/ivoryCoast.png';
 interface Props {
   setOpenDrawer: Function;
   select: {
@@ -87,6 +134,75 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
     <br />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={burkinaFaso} name={"burkinaFaso"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={burundi} name={"burundi"} />
+    <br />
+    <h1 className={styles.text}>C</h1>
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={cambodia} name={"cambodia"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={cameroon} name={"cameroon"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={canada} name={"canada"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={capeVerde} name={"capeVerde"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={centralAfricanRepublic} name={"centralAfricanRepublic"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={chad} name={"chad"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={chile} name={"chile"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={china} name={"china"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={colombia} name={"colombia"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={comoros} name={"comoros"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={costaRica} name={"costaRica"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={croatia} name={"croatia"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={cuba} name={"cuba"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={cyprus} name={"cyprus"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={czechRepublic} name={"czechRepublic"} />
+    <br />
+    <h1 className={styles.text}>D</h1>
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={democraticRepublicOfTheCongo} name={"democraticRepublicOfTheCongo"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={denmark} name={"denmark"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={djibouti} name={"djibouti"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={dominica} name={"dominica"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={dominicanRepublic} name={"dominicanRepublic"} />
+    <br />
+    <h1 className={styles.text}>E</h1>
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={ecuador} name={"ecuador"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={egypt} name={"egypt"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={elSalvador} name={"elSalvador"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={equatorialGuinea} name={"equatorialGuinea"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={eritrea} name={"eritrea"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={estonia} name={"estonia"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={eswatini} name={"eswatini"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={ethiopia} name={"ethiopia"} />
+    <br />
+    <h1 className={styles.text}>F</h1>
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={fiji} name={"fiji"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={finland} name={"finland"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={france} name={"france"} />
+    <br />
+    <h1 className={styles.text}>G</h1>
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={gabon} name={"gabon"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={gambia} name={"gambia"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={georgia} name={"georgia"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={germany} name={"germany"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={ghana} name={"ghana"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={greece} name={"greece"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={grenada} name={"grenada"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={guatemala} name={"guatemala"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={guinea} name={"guinea"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={guineaBissau} name={"guineaBissau"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={guyana} name={"guyana"} />
+    <br />
+    <h1 className={styles.text}>H</h1>
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={haiti} name={"haiti"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={honduras} name={"honduras"} />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={hongKong} name={"hongKong"} />
+    <br />
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={hungary} name={"hungary"} />
     </div>
   )
 }

@@ -1,13 +1,15 @@
 .container {
+    align-content: space-around;
     padding: 0 0.5rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     display: flex;
     align-items: center;
+    position: fixed;
+    left:0px;
+    height:40px;
+    width:100%;
     margin-top: -10px;
-    margin-bottom: 0px;
-    margin-right: -8px;
-    margin-left: -8px;
     background-color: #111111;
 }
 
@@ -18,3 +20,14 @@
 .button:hover {
     background-color: #32CD32;
 }
+
+/* padding: 0 0.5rem;
+padding-top: 10px;
+padding-bottom: 10px;
+display: flex;
+align-items: center;
+margin-top: -10px;
+margin-bottom: 0px;
+margin-right: -8px;
+margin-left: -8px;
+background-color: #111111; */
