@@ -403,7 +403,6 @@ const MapSVG:React.FC = () => {
       <Yemen />
       <Zambia />
       <Zimbabwe />
-      //microstates
       <Abkhazia />
       <AmericanSamoa />
       <Andorra />

@@ -521,12 +521,12 @@ export default function Home() {
     zambiaColor: priority.zambiaColor,
     zimbabweColor: priority.zimbabweColor
   }
-  //function that takes in logic function
-  const mainCalculationContainer:Function = () => {
-    mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray)
-  }
 
   useEffect(() => {
+    //function that takes in logic function
+    const mainCalculationContainer:Function = () => {
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray)
+    }
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {reset(setAssignedColors, setPriority, secondToggle, setSecondToggle); return}
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {mainCalculationContainer()}
