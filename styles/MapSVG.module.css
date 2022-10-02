@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-content: space-around;
-    /* border: 1px solid red */
+    position: relative;
 }
 
 /* border: 1px solid red; */

@@ -266,7 +266,6 @@ export default function Home() {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
   const [select, setSelect] = useState<{selection: number,passport: null | string}>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
-  const [legendArray, setLegendArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) 
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
   const [priority, setPriority] = useState<object>(color) //priority is the color that is passed onto each country component as context
   //value is passed in as context to the country components
@@ -544,9 +543,7 @@ export default function Home() {
       <title>Visa-map</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Map 
-      legendArray={legendArray}
-    />
+    <Map />
     <Selector
       Drawer={Drawer}
       openDrawer={openDrawer}

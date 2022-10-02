@@ -5,6 +5,7 @@
     padding-bottom: 4px;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: fixed;
     left:0px;
     height:40px;

@@ -254,7 +254,7 @@ import Zimbabwe from '../countries/Zimbabwe'
 const MapSVG:React.FC = () => {
   return (
       <div className={styles.container}>
-      <svg version="1.2" viewBox="-20 -50 2080 918" width="1890">
+      <svg version="1.2" viewBox="-20 -15 2080 890" width="1890">
       <Afghanistan />
       <Albania />
       <Algeria />
