@@ -1,3 +1,8 @@
 import { createContext } from 'react';
-
-export const ColorContext = createContext()
+const defaultState = {
+    value: null
+}
+interface ContextTypes {
+    value: any;
+}
+export const ColorContext = createContext<ContextTypes>(defaultState);

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
-import { mainCalculation, subCalculation, selectArrayCalculation, reset } from './_logic'; //import map render function from _logic
 import { ColorContext } from '../components/context/ColorContext';
 import { Drawer } from '@mui/material';
+import selectArrayCalculation from '../logic/_selectArrayCalculation';
+import reset from '../logic/_reset'
+import mainCalculation from '../logic/_mainCalculation'
+import subCalculation from '../logic/_subCalculation'
 import Map from '../components/Map/Map';
 import Selector from '../components/Selector';
 import Head from 'next/head';
@@ -267,9 +270,9 @@ export default function Home() {
   const [select, setSelect] = useState<{selection: number,passport: null | string}>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
-  const [priority, setPriority] = useState<object>(color) //priority is the color that is passed onto each country component as context
+  const [priority, setPriority] = useState<any>(color) //priority is the color that is passed onto each country component as context
   //value is passed in as context to the country components
-  const value = {
+  const value:any = {
     abkhaziaColor: priority.abkhaziaColor,
     afghanistanColor: priority.afghanistanColor,
     albaniaColor: priority.albaniaColor,
