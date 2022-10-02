@@ -1,8 +1,9 @@
-import Image from 'next/image';
-
-const Passport = ({ image }) => {
+interface Props {
+  image: any
+}
+const Passport:React.FC<Props> = ({ image }) => {
   return (
-    <Image
+    <img
       src={image}
       width={64}
       height={90.8}
