@@ -1,6 +1,7 @@
 import { Button } from "@mui/material"
 import SelectorSVG from '../SelectorSVG';
 import Passport from './Passport';
+//passport imports
 import abkhazia from '/public/passports/abkhazia.png';
 import afghanistan from '/public/passports/afghanistan.png';
 import albania from '/public/passports/albania.png'
@@ -22,11 +23,13 @@ import belarus from '/public/passports/belarus.png';
 import belgium from '/public/passports/belgium.png';
 import belize from '/public/passports/belize.png';
 import benin from '/public/passports/benin.png';
+import bermuda from '/public/passports/bermuda.png';
 import bhutan from '/public/passports/bhutan.png';
 import bolivia from '/public/passports/bolivia.png';
 import bosniaAndHerzegovina from '/public/passports/bosniaAndHerzegovina.png';
 import botswana from '/public/passports/botswana.png';
 import brazil from '/public/passports/brazil.png';
+import britishVirginIslands from '/public/passports/britishVirginIslands.png';
 import brunei from '/public/passports/brunei.png';
 import bulgaria from '/public/passports/bulgaria.png';
 import burkinaFaso from '/public/passports/burkinaFaso.png';
@@ -35,6 +38,7 @@ import cambodia from '/public/passports/cambodia.png';
 import cameroon from '/public/passports/cameroon.png';
 import canada from '/public/passports/canada.png';
 import capeVerde from '/public/passports/capeVerde.png';
+import caymanIslands from '/public/passports/caymanIslands.png';
 import centralAfricanRepublic from '/public/passports/centralAfricanRepublic.png';
 import chad from '/public/passports/chad.png';
 import chile from '/public/passports/chile.png';
@@ -47,6 +51,7 @@ import cuba from '/public/passports/cuba.png';
 import cyprus from '/public/passports/cyprus.png';
 import czechRepublic from '/public/passports/czechRepublic.png';
 import democraticRepublicOfTheCongo from '/public/passports/democraticRepublicOfTheCongo.png';
+import eastTimor from '/public/passports/eastTimor.png';
 import denmark from '/public/passports/denmark.png';
 import djibouti from '/public/passports/djibouti.png';
 import dominica from '/public/passports/dominica.png';
@@ -77,7 +82,133 @@ import haiti from '/public/passports/haiti.png';
 import honduras from '/public/passports/honduras.png';
 import hongKong from '/public/passports/hongKong.png';
 import hungary from '/public/passports/hungary.png';
+import iceland from '/public/passports/iceland.png';
+import india from '/public/passports/india.png';
+import indonesia from '/public/passports/indonesia.png';
+import iran from '/public/passports/iran.png';
+import iraq from '/public/passports/iraq.png';
+import ireland from '/public/passports/ireland.png'
+import israel from '/public/passports/israel.png';
+import italy from '/public/passports/italy.png';
 import ivoryCoast from '/public/passports/ivoryCoast.png';
+import jamaica from '/public/passports/jamaica.png';
+import japan from '/public/passports/japan.png';
+import jordan from '/public/passports/jordan.png';
+import kazakhstan from '/public/passports/kazakhstan.png';
+import kenya from '/public/passports/kenya.png';
+import kiribati from '/public/passports/kiribati.png';
+import kosovo from '/public/passports/kosovo.png';
+import kuwait from '/public/passports/kuwait.png';
+import kyrgyzstan from '/public/passports/kyrgyzstan.png';
+import laos from '/public/passports/laos.png';
+import latvia from '/public/passports/latvia.png';
+import lebanon from '/public/passports/lebanon.png';
+import lesotho from '/public/passports/lesotho.png';
+import liberia from '/public/passports/liberia.png';
+import libya from '/public/passports/libya.png';
+import liechtenstein from '/public/passports/liechtenstein.png';
+import lithuania from '/public/passports/lithuania.png';
+import luxembourg from '/public/passports/luxembourg.png';
+import macao from '/public/passports/macao.png';
+import madagascar from '/public/passports/madagascar.png';
+import malawi from '/public/passports/malawi.png';
+import malaysia from '/public/passports/malaysia.png';
+import maldives from '/public/passports/maldives.png';
+import mali from '/public/passports/mali.png';
+import malta from '/public/passports/malta.png';
+import marshallIslands from '/public/passports/marshallIslands.png';
+import mauritania from '/public/passports/mauritania.png';
+import mauritius from '/public/passports/mauritius.png';
+import mexico from '/public/passports/mexico.png';
+import micronesia from '/public/passports/micronesia.png';
+import moldova from '/public/passports/moldova.png';
+import monaco from '/public/passports/monaco.png';
+import mongolia from '/public/passports/mongolia.png';
+import montenegro from '/public/passports/montenegro.png';
+import montserrat from '/public/passports/montserrat.png';
+import morocco from '/public/passports/morocco.png';
+import mozambique from '/public/passports/mozambique.png';
+import myanmar from '/public/passports/myanmar.png';
+import namibia from '/public/passports/namibia.png';
+import nauru from '/public/passports/nauru.png';
+import nepal from '/public/passports/nepal.png';
+import netherlands from '/public/passports/netherlands.png';
+import newZealand from '/public/passports/newZealand.png';
+import nicaragua from '/public/passports/nicaragua.png';
+import niger from '/public/passports/niger.png';
+import nigeria from '/public/passports/nigeria.png';
+import northKorea from '/public/passports/northKorea.png';
+import northMacedonia from '/public/passports/northMacedonia.png';
+import norway from '/public/passports/norway.png';
+import oman from '/public/passports/oman.png';
+import pakistan from '/public/passports/pakistan.png';
+import palau from '/public/passports/palau.png';
+import palestine from '/public/passports/palestine.png';
+import panama from '/public/passports/panama.png';
+import papuaNewGuinea from '/public/passports/papuaNewGuinea.png';
+import paraguay from '/public/passports/paraguay.png';
+import peru from '/public/passports/peru.png';
+import philippines from '/public/passports/philippines.png';
+import poland from '/public/passports/poland.png';
+import portugal from '/public/passports/portugal.png';
+import qatar from '/public/passports/qatar.png';
+import romania from '/public/passports/romania.png';
+import russia from '/public/passports/russia.png';
+import rwanda from '/public/passports/rwanda.png';
+import saintHelena from '/public/passports/saintHelena.png';
+import saintKittsAndNevis from '/public/passports/saintKittsAndNevis.png';
+import saintLucia from '/public/passports/saintLucia.png';
+import saintVincentAndTheGrenadines from '/public/passports/saintVincentAndTheGrenadines.png';
+import samoa from '/public/passports/samoa.png';
+import sanMarino from '/public/passports/sanMarino.png';
+import saoTomeAndPrincipe from '/public/passports/saoTomeAndPrincipe.png';
+import saudiArabia from '/public/passports/saudiArabia.png';
+import senegal from '/public/passports/senegal.png';
+import serbia from '/public/passports/serbia.png';
+import seychelles from '/public/passports/seychelles.png';
+import sierraLeone from '/public/passports/sierraLeone.png';
+import singapore from '/public/passports/singapore.png';
+import slovakia from '/public/passports/slovakia.png';
+import slovenia from '/public/passports/slovenia.png';
+import solomonIslands from '/public/passports/solomonIslands.png';
+import somalia from '/public/passports/somalia.png';
+import southAfrica from '/public/passports/southAfrica.png';
+import southKorea from '/public/passports/southKorea.png';
+import southOssetia from '/public/passports/southOssetia.png';
+import southSudan from '/public/passports/southSudan.png';
+import spain from '/public/passports/spain.png';
+import sriLanka from '/public/passports/sriLanka.png';
+import sudan from '/public/passports/sudan.png';
+import suriname from '/public/passports/suriname.png';
+import sweden from '/public/passports/sweden.png';
+import switzerland from '/public/passports/switzerland.png';
+import syria from '/public/passports/syria.png';
+import taiwan from '/public/passports/taiwan.png';
+import tajikistan from '/public/passports/tajikistan.png';
+import tanzania from '/public/passports/tanzania.png';
+import thailand from '/public/passports/thailand.png';
+import togo from '/public/passports/togo.png';
+import tonga from '/public/passports/tonga.png';
+import trinidadAndTobago from '/public/passports/trinidadAndTobago.png';
+import tunisia from '/public/passports/tunisia.png';
+import turkey from '/public/passports/turkey.png';
+import turkmenistan from '/public/passports/turkmenistan.png';
+import turksAndCaicos from '/public/passports/turksAndCaicos.png';
+import tuvalu from '/public/passports/tuvalu.png';
+import uganda from '/public/passports/uganda.png';
+import ukraine from '/public/passports/ukraine.png';
+import unitedArabEmirates from '/public/passports/unitedArabEmirates.png';
+import unitedKingdom from '/public/passports/unitedKingdom.png';
+import unitedStates from '/public/passports/unitedStates.png';
+import uruguay from '/public/passports/uruguay.png';
+import uzbekistan from '/public/passports/uzbekistan.png';
+import vanuatu from '/public/passports/vanuatu.png';
+import vaticanCity from '/public/passports/vaticanCity.png';
+import venezuela from '/public/passports/venezuela.png';
+import vietnam from '/public/passports/vietnam.png';
+import yemen from '/public/passports/yemen.png';
+import zambia from '/public/passports/zambia.png';
+import zimbabwe from '/public/passports/zimbabwe.png';
 interface Props {
   setOpenDrawer: Function;
   select: {
@@ -112,11 +243,13 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
             case "belgium": return belgium
             case "belize": return belize
             case "benin": return benin
+            case "bermuda": return bermuda
             case "bhutan": return bhutan
             case "bolivia": return bolivia
             case "bosniaAndHerzegovina": return bosniaAndHerzegovina
             case "botswana": return botswana
             case "brazil": return brazil
+            case "britishVirginIslands": return britishVirginIslands
             case "brunei": return brunei
             case "bulgaria": return bulgaria
             case "burkinaFaso": return burkinaFaso
@@ -125,6 +258,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
             case "cameroon": return cameroon
             case "canada": return canada
             case "capeVerde": return capeVerde
+            case "caymanIslands": return caymanIslands
             case "centralAfricanRepublic": return centralAfricanRepublic
             case "chad": return chad
             case "chile": return chile
@@ -141,6 +275,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
             case "djibouti": return djibouti
             case "dominica": return dominica
             case "dominicanRepublic": return dominicanRepublic
+            case "eastTimor": return eastTimor
             case "ecuador": return ecuador
             case "egypt": return egypt
             case "elSalvador": return elSalvador
@@ -167,6 +302,133 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
             case "honduras": return honduras
             case "hongKong": return hongKong
             case "hungary": return hungary
+            case "iceland": return iceland
+            case "india": return india
+            case "indonesia": return indonesia
+            case "iran": return iran
+            case "iraq": return iraq
+            case "ireland": return ireland
+            case "israel": return israel
+            case "italy": return italy
+            case "ivoryCoast": return ivoryCoast
+            case "jamaica": return jamaica
+            case "japan": return japan
+            case "jordan": return jordan
+            case "kazakhstan": return kazakhstan
+            case "kenya": return kenya
+            case "kiribati": return kiribati
+            case "kosovo": return kosovo
+            case "kuwait": return kuwait
+            case "kyrgyzstan": return kyrgyzstan
+            case "laos": return laos
+            case "latvia": return latvia
+            case "lebanon": return lebanon
+            case "lesotho": return lesotho
+            case "liberia": return liberia
+            case "libya": return libya
+            case "liechtenstein": return liechtenstein
+            case "lithuania": return lithuania
+            case "luxembourg": return luxembourg
+            case "macao": return macao
+            case "madagascar": return madagascar
+            case "malawi": return malawi
+            case "malaysia": return malaysia
+            case "maldives": return maldives
+            case "mali": return mali
+            case "malta": return malta
+            case "marshallIslands": return marshallIslands
+            case "mauritania": return mauritania
+            case "mauritius": return mauritius
+            case "mexico": return mexico
+            case "micronesia": return micronesia
+            case "moldova": return moldova
+            case "monaco": return monaco
+            case "mongolia": return mongolia
+            case "montenegro": return montenegro
+            case "montserrat": return montserrat
+            case "morocco": return morocco
+            case "mozambique": return mozambique
+            case "myanmar": return myanmar
+            case "namibia": return namibia
+            case "nauru": return nauru
+            case "nepal": return nepal
+            case "netherlands": return netherlands
+            case "newZealand": return newZealand
+            case "nicaragua": return nicaragua
+            case "niger": return niger
+            case "nigeria": return nigeria
+            case "northKorea": return northKorea
+            case "northMacedonia": return northMacedonia
+            case "norway": return norway
+            case "oman": return oman
+            case "pakistan": return pakistan
+            case "palau": return palau
+            case "palestine": return palestine
+            case "panama": return panama
+            case "papuaNewGuinea": return papuaNewGuinea
+            case "paraguay": return paraguay
+            case "peru": return peru
+            case "philippines": return philippines
+            case "poland": return poland
+            case "portugal": return portugal
+            case "qatar": return qatar
+            case "romania": return romania
+            case "russia": return russia
+            case "rwanda": return rwanda
+            case "saintHelena": return saintHelena
+            case "saintKittsAndNevis": return saintKittsAndNevis
+            case "saintLucia": return saintLucia
+            case "saintVincentAndTheGrenadines": return saintVincentAndTheGrenadines
+            case "samoa": return samoa
+            case "sanMarino": return sanMarino
+            case "saoTomeAndPrincipe": return saoTomeAndPrincipe
+            case "saudiArabia": return saudiArabia
+            case "senegal": return senegal
+            case "serbia": return serbia
+            case "seychelles": return seychelles
+            case "sierraLeone": return sierraLeone
+            case "singapore": return singapore
+            case "slovakia": return slovakia
+            case "slovenia": return slovenia
+            case "solomonIslands": return solomonIslands
+            case "somalia": return somalia
+            case "southAfrica": return southAfrica
+            case "southKorea": return southKorea
+            case "southOssetia": return southOssetia
+            case "southSudan": return southSudan
+            case "spain": return spain
+            case "sriLanka": return sriLanka
+            case "sudan": return sudan
+            case "suriname": return suriname
+            case "sweden": return sweden
+            case "switzerland": return switzerland
+            case "syria": return syria
+            case "taiwan": return taiwan
+            case "tajikistan": return tajikistan
+            case "tanzania": return tanzania
+            case "thailand": return thailand
+            case "togo": return togo
+            case "tonga": return tonga
+            case "trinidadAndTobago": return trinidadAndTobago
+            case "tunisia": return tunisia
+            case "turkey": return turkey
+            case "turkmenistan": return turkmenistan
+            case "turksAndCaicos": return turksAndCaicos
+            case "tuvalu": return tuvalu
+            case "uganda": return uganda
+            case "ukraine": return ukraine
+            case "unitedArabEmirates": return unitedArabEmirates
+            case "unitedKingdom": return unitedKingdom
+            case "unitedStates": return unitedStates
+            case "uruguay": return uruguay
+            case "uzbekistan": return uzbekistan
+            case "vanuatu": return vanuatu
+            case "vaticanCity": return vaticanCity
+            case "venezuela": return venezuela
+            case "vietnam": return vietnam
+            case "yemen": return yemen
+            case "zambia": return zambia
+            case "zimbabwe": return zimbabwe
         }
     }
   return (
