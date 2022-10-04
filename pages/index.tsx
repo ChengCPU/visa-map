@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { ColorContext } from '../components/context/ColorContext';
 import { Drawer } from '@mui/material';
 import selectArrayCalculation from '../logic/_selectArrayCalculation';
-import reset from '../logic/_reset'
-import mainCalculation from '../logic/_mainCalculation'
-import subCalculation from '../logic/_subCalculation'
+import reset from '../logic/_reset';
+import mainCalculation from '../logic/_mainCalculation';
+import subCalculation from '../logic/_subCalculation';
 import Map from '../components/Map/Map';
 import Selector from '../components/Selector';
 import Head from 'next/head';
@@ -524,7 +524,7 @@ export default function Home() {
     zambiaColor: priority.zambiaColor,
     zimbabweColor: priority.zimbabweColor
   }
-
+  
   useEffect(() => {
     //function that takes in logic function
     const mainCalculationContainer:Function = () => {

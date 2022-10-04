@@ -1,5 +1,5 @@
-import Legend from './Map/Legend/Legend'
-import styles from '../styles/Header.module.css'
+import Legend from './Map/Legend/Legend';
+import styles from '../styles/Header.module.css';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';

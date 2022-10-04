@@ -1,4 +1,4 @@
-import { Button } from "@mui/material"
+import { Button } from "@mui/material";
 import SelectorSVG from '../SelectorSVG';
 import Passport from './Passport';
 //passport imports
@@ -152,6 +152,7 @@ import philippines from '/public/passports/philippines.png';
 import poland from '/public/passports/poland.png';
 import portugal from '/public/passports/portugal.png';
 import qatar from '/public/passports/qatar.png';
+import republicOfTheCongo from '/public/passports/republicOfTheCongo.png';
 import romania from '/public/passports/romania.png';
 import russia from '/public/passports/russia.png';
 import rwanda from '/public/passports/rwanda.png';
@@ -219,6 +220,7 @@ interface Props {
   selectArray:null | string[];
   num: number;
 }
+
 const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, num }) => {
     const i = () => {
         switch(selectArray[num]) {
@@ -372,6 +374,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
             case "poland": return poland
             case "portugal": return portugal
             case "qatar": return qatar
+            case "republicOfTheCongo": return republicOfTheCongo
             case "romania": return romania
             case "russia": return russia
             case "rwanda": return rwanda

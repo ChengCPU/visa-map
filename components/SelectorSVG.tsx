@@ -1,4 +1,4 @@
-import styles from '../styles/SelectorSVG.module.css'
+import styles from '../styles/SelectorSVG.module.css';
 
 const SelectorSVG:React.FC = () => {
   return (

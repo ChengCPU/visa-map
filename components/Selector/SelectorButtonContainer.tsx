@@ -1,5 +1,5 @@
-import styles from '../../styles/SelectorButtonContainer.module.css'
-import SelectorButton from './SelectorButton'
+import styles from '../../styles/SelectorButtonContainer.module.css';
+import SelectorButton from './SelectorButton';
 interface Props {
   setOpenDrawer: Function;
   select: {

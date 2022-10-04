@@ -1,5 +1,5 @@
-import styles from '../../styles/SelectorPassportContainer.module.css'
-import SelectorPassport from './SelectorPassport'
+import styles from '../../styles/SelectorPassportContainer.module.css';
+import SelectorPassport from './SelectorPassport';
 //passport imports
 import abkhazia from '/public/passports/abkhazia.png';
 import afghanistan from '/public/passports/afghanistan.png';
@@ -151,6 +151,7 @@ import philippines from '/public/passports/philippines.png';
 import poland from '/public/passports/poland.png';
 import portugal from '/public/passports/portugal.png';
 import qatar from '/public/passports/qatar.png';
+import republicOfTheCongo from '/public/passports/republicOfTheCongo.png';
 import romania from '/public/passports/romania.png';
 import russia from '/public/passports/russia.png';
 import rwanda from '/public/passports/rwanda.png';
@@ -446,8 +447,10 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={qatar} name={"qatar"} />
     <br />
     <h1 className={styles.text}>R</h1>
+    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={republicOfTheCongo} name={"republicOfTheCongo"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={romania} name={"romania"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={russia} name={"russia"} />
+    <br />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={rwanda} name={"rwanda"} />
     <br />
     <h1 className={styles.text}>S</h1>

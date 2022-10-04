@@ -1,7 +1,6 @@
 //component imports
-import SelectorButtonContainer from './Selector/SelectorButtonContainer'
-import SelectorPassportContainer from './Selector/SelectorPassportContainer'
-
+import SelectorButtonContainer from './Selector/SelectorButtonContainer';
+import SelectorPassportContainer from './Selector/SelectorPassportContainer';
 interface Props {
   Drawer: any;
   openDrawer: boolean;
@@ -18,6 +17,7 @@ interface Props {
   setPriority: Function;
   setAssignedColors: Function;
 }
+
 const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, setSelectArray, toggle, setToggle, setPriority, setAssignedColors }) => {
   return (
     <>

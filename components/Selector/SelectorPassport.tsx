@@ -1,5 +1,5 @@
-import { Button } from "@mui/material"
-import Passport from "./Passport"
+import { Button } from "@mui/material";
+import Passport from "./Passport";
 interface Props {
   setOpenDrawer: Function;
   select: {

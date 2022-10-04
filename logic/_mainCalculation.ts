@@ -1,7 +1,4 @@
-interface Select {
-    selection: number,
-    passport: null | string;
-}
+interface Select {selection: number,passport: null | string;}
 const colors:string[] = [
     "abkhaziaColor",
     "afghanistanColor", 
@@ -254,6 +251,7 @@ const colors:string[] = [
     "zambiaColor",
     "zimbabweColor"
 ]
+
 export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, selectArray:null | string[]) {
     fetch('visaPolicy.json')
     .then((res) => res.json())
