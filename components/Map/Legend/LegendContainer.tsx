@@ -1,7 +1,5 @@
-interface Props {
-	text: string;
-	color: string
-}
+interface Props {text: string;color: string}
+
 const Legend:React.FC<Props> = ({ text, color }) => {
 	return (
 	<>

@@ -1,4 +1,5 @@
-import MapSVG from './MapSVG'
+import MapSVG from './MapSVG';
+
 const Map:React.FC = () => {
   return (
     <>

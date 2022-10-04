@@ -1,4 +1,4 @@
-import LegendContainer from './LegendContainer'
+import LegendContainer from './LegendContainer';
 
 const Legend:React.FC = () => {
   return (
