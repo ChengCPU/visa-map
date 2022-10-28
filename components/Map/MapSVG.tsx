@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import styles from '../../styles/MapSVG.module.css'
+import Legend from './Legend/Legend'
 import Abkhazia from '../countries/Abkhazia'
 import Afghanistan from '../countries/Afghanistan'
 import Albania from '../countries/Albania'
@@ -253,6 +254,7 @@ import Zimbabwe from '../countries/Zimbabwe'
 
 const MapSVG:React.FC = () => {
   return (
+      <>
       <div className={styles.container}>
       <svg version="1.2" viewBox="-20 -15 2080 890" width="1890">
       <Afghanistan />
@@ -507,6 +509,8 @@ const MapSVG:React.FC = () => {
       <WallisAndFutuna />
       </svg>
       </div>
+      <Legend />
+      </>
   )
 }
 

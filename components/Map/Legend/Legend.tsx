@@ -15,7 +15,6 @@ const Legend:React.FC = () => {
     <LegendContainer text={'E-visa/eTA'} color={"rgb(135,206,250)"}/>
     <LegendContainer text={'Simplified visa'} color={"rgb(200,200,200)"}/>
     <LegendContainer text={'Passport not recognised/Confirmation required'} color={"rgb(0,0,0)"}/>
-    
     </>
   )
 }
