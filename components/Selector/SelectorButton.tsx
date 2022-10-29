@@ -14,6 +14,8 @@ interface Props {
   num: number;
 }
 
+let test:null = null
+
 const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, num }) => {
 
   const passports = useContext(PassportContext)
@@ -231,7 +233,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
         }
     }
   return (
-    <Button onClick={() => {
+    <Button title={selectArray[num] == null ? null : selectArray[num].charAt(0).toUpperCase() + selectArray[num].slice(1)}onClick={() => {
         setOpenDrawer(true);
         setSelect({ selection: num, passport: select.passport });
     }}>
