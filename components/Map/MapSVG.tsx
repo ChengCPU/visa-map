@@ -508,8 +508,8 @@ const MapSVG:React.FC = () => {
       <VaticanCity />
       <WallisAndFutuna />
       </svg>
-      </div>
       <Legend />
+      </div>
       </>
   )
 }

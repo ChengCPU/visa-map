@@ -1,21 +1,59 @@
-import LegendContainer from './LegendContainer';
+import Rectangle from './Rectangle'
+import Text from './Text'
+import styles from '../../../styles/Legend.module.css'
 
 const Legend:React.FC = () => {
   return (
-    <>
-    <LegendContainer text={'Host'} color={"rgb(255,20,147)"}/>
-    <LegendContainer text={'Freedom of movement'} color={"rgb(255,179,191)"}/>
-    <LegendContainer text={'MERCOSUR FoM'} color={"rgb(0,135,93)"}/>
-    <LegendContainer text={'EU/EFTA FoM'} color={"rgb(0,51,153)"}/>
-    <LegendContainer text={'GCC FoM'} color={"rgb(153,123,61)"}/>
-    <LegendContainer text={'OECS FoM'} color={"rgb(255,145,0)"}/>
-    <LegendContainer text={'Visa-Free'} color={"rgb(50,205,50)"}/>
-    <LegendContainer text={'Visa-on-Arrival/E-visa'} color={"rgb(161,224,123)"}/>
-    <LegendContainer text={'Visa-on-Arrival'} color={"rgb(255,255,92)"}/>
-    <LegendContainer text={'E-visa/eTA'} color={"rgb(135,206,250)"}/>
-    <LegendContainer text={'Simplified visa'} color={"rgb(200,200,200)"}/>
-    <LegendContainer text={'Passport not recognised/Confirmation required'} color={"rgb(0,0,0)"}/>
-    </>
+    <div className={styles.main}>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(255,20,147)"}/>
+        <Text text={'Home country'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(255,179,191)"}/>
+        <Text text={'Freedom of movement'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(0,135,93)"}/>
+        <Text text={'MERCOSUR FoM'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(0,51,153)"}/>
+        <Text text={'EU/EFTA FoM'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(153,123,61)"}/>
+        <Text text={'GCC FoM'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(255,145,0)"}/>
+        <Text text={'OECS FoM'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(50,205,50)"}/>
+        <Text text={'Visa free'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(161,224,123)"}/>
+        <Text text={'Visa on arrival/E-visa'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(255,255,92)"}/>
+        <Text text={'Visa on arrival'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(135,206,250)"}/>
+        <Text text={'E-visa/eTA'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(200,200,200)"}/>
+        <Text text={'Simplified visa'}/>
+      </div>
+      <div className={styles.container}>
+        <Rectangle color={"rgb(0,0,0)"}/>
+        <Text text={'Unrecognized/Confirmation required'}/>
+      </div>
+    </div>
   )
 }
 

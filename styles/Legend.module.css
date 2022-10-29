@@ -1,0 +1,9 @@
+.main {
+    position: absolute;
+    left: 0;
+}
+
+.container {
+    display: flex;
+    height: 20px;
+}
