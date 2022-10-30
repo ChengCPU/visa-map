@@ -251,8 +251,13 @@ import WesternSahara from '../countries/WesternSahara'
 import Yemen from '../countries/Yemen'
 import Zambia from '../countries/Zambia'
 import Zimbabwe from '../countries/Zimbabwe'
+type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
+interface Props {
+  legend: LegendType;
+  rerender: boolean;
+}
 
-const MapSVG:React.FC = () => {
+const MapSVG:React.FC<Props> = ({ legend, rerender }) => {
   return (
       <>
       <div className={styles.container}>
@@ -508,7 +513,9 @@ const MapSVG:React.FC = () => {
       <VaticanCity />
       <WallisAndFutuna />
       </svg>
-      <Legend />
+      <Legend
+        legend={legend}
+      />
       </div>
       </>
   )

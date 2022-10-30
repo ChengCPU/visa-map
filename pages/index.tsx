@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { ColorContext } from '../components/context/ColorContext';
 import { PassportContext } from '../components/context/PassportContext';
 import { Drawer } from '@mui/material';
-import selectArrayCalculation from '../logic/_selectArrayCalculation';
-import reset from '../logic/_reset';
-import mainCalculation from '../logic/_mainCalculation';
-import subCalculation from '../logic/_subCalculation';
+import selectArrayCalculation from '../logic/selectArrayCalculation';
+import reset from '../logic/reset';
+import mainCalculation from '../logic/mainCalculation';
+import subCalculation from '../logic/subCalculation';
 import Map from '../components/Map/Map';
 import Selector from '../components/Selector';
 import Head from 'next/head';
@@ -218,6 +218,7 @@ import yemen from '/public/passports/yemen.webp';
 import zambia from '/public/passports/zambia.webp';
 import zimbabwe from '/public/passports/zimbabwe.webp';
 const passportsProvider:any = {abkhazia,afghanistan,albania,algeria,andorra,angola,anguilla,antiguaAndBarbuda,argentina,armenia,australia,austria,azerbaijan,bahamas,bahrain,bangladesh,barbados,belarus,belgium,belize,benin,bermuda,bhutan,bolivia,bosniaAndHerzegovina,botswana,brazil,britishVirginIslands,brunei,bulgaria,burkinaFaso,burundi,cambodia,cameroon,canada,capeVerde,caymanIslands,centralAfricanRepublic,chad,chile,china,colombia,comoros,costaRica,croatia,cuba,cyprus,czechRepublic,democraticRepublicOfTheCongo,eastTimor,denmark,djibouti,dominica,dominicanRepublic,ecuador,egypt,elSalvador,equatorialGuinea,eritrea,estonia,eswatini,ethiopia,fiji,finland,france,gabon,gambia,georgia,germany,ghana,greece,grenada,guatemala,guinea,guineaBissau,guyana,haiti,honduras,hongKong,hungary,iceland,india,indonesia,iran,iraq,ireland,israel,italy,ivoryCoast,jamaica,japan,jordan,kazakhstan,kenya,kiribati,kuwait,kyrgyzstan,laos,latvia,lebanon,lesotho,liberia,libya,liechtenstein,lithuania,luxembourg,macao,madagascar,malawi,malaysia,maldives,mali,malta,marshallIslands,mauritania,mauritius,mexico,micronesia,moldova,monaco,mongolia,montenegro,montserrat,morocco,mozambique,myanmar,namibia,nauru,nepal,netherlands,newZealand,nicaragua,niger,nigeria,northKorea,northMacedonia,norway,oman,pakistan,palau,palestine,panama,papuaNewGuinea,paraguay,peru,philippines,poland,portugal,qatar,republicOfTheCongo,romania,russia,rwanda,saintHelena,saintKittsAndNevis,saintLucia,saintVincentAndTheGrenadines,samoa,sanMarino,saoTomeAndPrincipe,saudiArabia,senegal,serbia,seychelles,sierraLeone,singapore,slovakia,slovenia,solomonIslands,somalia,southAfrica,southKorea,southOssetia,southSudan,spain,sriLanka,sudan,suriname,sweden,switzerland,syria,taiwan,tajikistan,tanzania,thailand,togo,tonga,trinidadAndTobago,tunisia,turkey,turkmenistan,turksAndCaicos,tuvalu,uganda,ukraine,unitedArabEmirates,unitedKingdom,unitedStates,uruguay,uzbekistan,vanuatu,vaticanCity,venezuela,vietnam,yemen,zambia,zimbabwe}
+type Legend = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
 
 export default function Home() {
   //base rgb variable used to reset rgb values
@@ -481,6 +482,7 @@ export default function Home() {
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
   const [priority, setPriority] = useState<any>(color) //priority is the color that is passed onto each country component as context
+  const [legend, setLegend] = useState<Legend>({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
   //value is passed in as context to the country components
   const colorProvider:any = {
     abkhaziaColor: priority.abkhaziaColor,
@@ -738,7 +740,7 @@ export default function Home() {
   useEffect(() => {
     //function that takes in logic function
     const mainCalculationContainer:Function = () => {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray)
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend)
     }
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {reset(setAssignedColors, setPriority, secondToggle, setSecondToggle); return}
     selectArrayCalculation(selectArray, setSelectArray, select);
@@ -757,7 +759,10 @@ export default function Home() {
       <title>Visa-map</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Map />
+    <Map
+      legend={legend}
+      rerender={rerender}
+    />
     <Selector
       Drawer={Drawer}
       openDrawer={openDrawer}

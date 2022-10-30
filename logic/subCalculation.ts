@@ -666,6 +666,6 @@ export default function subCalculation(selectArray:null | string[], assignedColo
                                             case "rgb(200,200,200)": break; //simplified visa (light grey)
                                         default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
                     break;}}}}}
-    setRerender(!rerender)
-    })
+                    setRerender(!rerender)
+                    })
 }
