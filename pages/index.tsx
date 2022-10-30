@@ -736,19 +736,17 @@ export default function Home() {
     zambiaColor: priority.zambiaColor,
     zimbabweColor: priority.zimbabweColor
   }
-  
+
   useEffect(() => {
     //function that takes in logic function
-    const mainCalculationContainer:Function = () => {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend)
-    }
-    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {reset(setAssignedColors, setPriority, secondToggle, setSecondToggle); return}
+    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend); return}
     selectArrayCalculation(selectArray, setSelectArray, select);
-    if(selectArray[select.selection] != null) {mainCalculationContainer()}
+    if(selectArray[select.selection] != null) {mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend)}
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender)
+    setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 
@@ -775,6 +773,8 @@ export default function Home() {
       setToggle={setToggle}
       setPriority={setPriority}
       setAssignedColors={setAssignedColors}
+      legend={legend}
+      setLegend={setLegend}
     />
     </ColorContext.Provider>
     </PassportContext.Provider>

@@ -1,5 +1,6 @@
 import styles from '../../styles/SelectorButtonContainer.module.css';
 import SelectorButton from './SelectorButton';
+type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
 interface Props {
   setOpenDrawer: Function;
   select: {
@@ -11,9 +12,11 @@ interface Props {
   setSelectArray: Function;
   setPriority: Function;
   setAssignedColors: Function;
+  legend: LegendType;
+  setLegend: Function;
 }
 
-const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors}) => {
+const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, legend, setLegend }) => {
   const color:object = {
     abkhaziaColor: "rgb(149,150,150)",
     afghanistanColor: "rgb(149,150,150)",
@@ -282,6 +285,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
       setSelectArray([null,null,null,null,null,null,null,null,null,null,null])
       setPriority(color)
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
+      setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
     }}>reset</button>
     </div>
   )

@@ -252,7 +252,6 @@ const colors:string[] = [
     "zambiaColor",
     "zimbabweColor"
 ]
-
 export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function) {
     fetch('visaPolicy.json')
     .then((res) => res.json())
@@ -666,7 +665,6 @@ export default function mainCalculation(country:string, assignedColors:object[],
                                 case "rgb(135,206,250)": break; //evisa (blue)
                                 case "rgb(200,200,200)": break; //simplified visa (light grey)
                             default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
-        break;}}}
-        legendCalculation(priority, legend, setLegend, rerender, setRerender)
-        })
-}
+break;}}}
+legendCalculation(priority, legend, setLegend, rerender, setRerender)
+})}

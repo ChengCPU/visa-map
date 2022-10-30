@@ -1,4 +1,4 @@
-export default function reset(setAssignedColors:Function, setPriority:Function, secondToggle:boolean, setSecondToggle:Function): void {
+export default function reset(setAssignedColors:Function, setPriority:Function, secondToggle:boolean, setSecondToggle:Function, legend:any, setLegend:Function): void {
     const color:object = {
         abkhaziaColor: "rgb(149,150,150)",
         afghanistanColor: "rgb(149,150,150)",
@@ -254,4 +254,5 @@ export default function reset(setAssignedColors:Function, setPriority:Function, 
     setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
     setPriority(color)
     setSecondToggle(!secondToggle)
+    setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
 }
