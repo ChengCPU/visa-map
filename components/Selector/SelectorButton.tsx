@@ -14,8 +14,6 @@ interface Props {
   num: number;
 }
 
-let test:null = null
-
 const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, num }) => {
 
   const passports = useContext(PassportContext)
@@ -117,7 +115,6 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
             case "kazakhstan": return passports.kazakhstan
             case "kenya": return passports.kenya
             case "kiribati": return passports.kiribati
-            case "kosovo": return passports.kosovo
             case "kuwait": return passports.kuwait
             case "kyrgyzstan": return passports.kyrgyzstan
             case "laos": return passports.laos

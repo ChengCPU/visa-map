@@ -160,7 +160,6 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={passports.kenya} name={"kenya"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={passports.kiribati} name={"kiribati"} />
     <br />
-    <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={passports.kosovo} name={"kosovo"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={passports.kuwait} name={"kuwait"} />
     <SelectorPassport setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} toggle={toggle} setToggle={setToggle} image={passports.kyrgyzstan} name={"kyrgyzstan"} />
     <br />

@@ -372,7 +372,6 @@ export default function subCalculation(selectArray:null | string[], assignedColo
                 kazakhstanColor: data[selectArray[passports]].kazakhstan,
                 kenyaColor: data[selectArray[passports]].kenya,
                 kiribatiColor: data[selectArray[passports]].kiribati,
-                kosovoColor: data[selectArray[passports]].kosovo,
                 kuwaitColor: data[selectArray[passports]].kuwait,
                 kyrgyzstanColor: data[selectArray[passports]].kyrgyzstan,
                 laosColor: data[selectArray[passports]].laos,
