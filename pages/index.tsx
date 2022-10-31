@@ -745,7 +745,6 @@ export default function Home() {
   }, [toggle])
 
   useEffect(() => {
-    setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
     subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])

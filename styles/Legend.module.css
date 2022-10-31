@@ -1,6 +1,8 @@
 .main {
-    position: absolute;
-    left: 0;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    position: relative;
 }
 
 .container {

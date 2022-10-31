@@ -261,7 +261,7 @@ const MapSVG:React.FC<Props> = ({ legend, rerender }) => {
   return (
       <>
       <div className={styles.container}>
-      <svg version="1.2" viewBox="-20 -15 2080 890" width="1890">
+      <svg version="1.2" viewBox="-50 -25 2190 890" width="1890">
       <Afghanistan />
       <Albania />
       <Algeria />
@@ -513,9 +513,6 @@ const MapSVG:React.FC<Props> = ({ legend, rerender }) => {
       <VaticanCity />
       <WallisAndFutuna />
       </svg>
-      <Legend
-        legend={legend}
-      />
       </div>
       </>
   )
