@@ -739,9 +739,13 @@ export default function Home() {
 
   useEffect(() => {
     //function that takes in logic function
-    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend); return}
+    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
+      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend); return
+    }
     selectArrayCalculation(selectArray, setSelectArray, select);
-    if(selectArray[select.selection] != null) {mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend)}
+    if(selectArray[select.selection] != null) {
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend)
+    }
   }, [toggle])
 
   useEffect(() => {
@@ -758,7 +762,6 @@ export default function Home() {
     </Head>
     <Map
       legend={legend}
-      rerender={rerender}
     />
     <Selector
       Drawer={Drawer}

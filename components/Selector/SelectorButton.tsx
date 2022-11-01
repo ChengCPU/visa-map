@@ -16,10 +16,10 @@ interface Props {
 
 const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, num }) => {
 
-  const passports = useContext(PassportContext)
+  const passports = useContext(PassportContext) //useContext makes the passport imports available through passports variable
 
     const i = () => {
-        switch(selectArray[num]) {
+        switch(selectArray[num]) { //the [num] prop is a number ranging from 0-9 that is representative of each 10 selector button components
             case "abkhazia" : return passports.abkhazia
             case "afghanistan": return passports.afghanistan
             case "albania": return passports.albania
@@ -230,11 +230,13 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
         }
     }
   return (
-    <Button title={selectArray[num] == null ? null : selectArray[num].charAt(0).toUpperCase() + selectArray[num].slice(1)}onClick={() => {
+    <Button title={selectArray[num] == null ? null : selectArray[num].charAt(0).toUpperCase() + selectArray[num].slice(1)} onClick={() => {
         setOpenDrawer(true);
         setSelect({ selection: num, passport: select.passport });
     }}>
-    {(selectArray[num] == null) ? <SelectorSVG /> : <Passport image={i()}/>}
+    {(selectArray[num] == null) ? <SelectorSVG /> : <Passport image={i()}/>} 
+    {/* If selectArray[num] does not equal a string, it will render the selectorSVG.
+    If it does equal a string and match a country, it will render the passport component and run the i() function*/}
     </Button>
   )
 }

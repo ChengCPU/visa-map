@@ -250,7 +250,7 @@ const defaultState = {
     yemen: undefined,
     zambia: undefined,
     zimbabwe: undefined
-};
+};//context requires type declaration, provided here
 interface ContextTypes {
     abkhazia: object;
     afghanistan: object;
@@ -502,6 +502,6 @@ interface ContextTypes {
     yemen: object;
     zambia: object;
     zimbabwe: object
-};
+};//context requires type declaration, provided here
 
-export const PassportContext = createContext<ContextTypes>(defaultState);
+export const PassportContext = createContext<ContextTypes>(defaultState); //provides passports imports through context

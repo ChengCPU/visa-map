@@ -7,6 +7,8 @@ const Rectangle:React.FC<Props> = ({ color }) => {
         <style jsx>{`
             .rectangle {
             fill: ${color};
+            stroke: #111111;
+            stroke-width: 1;
         }`}</style>
     </rect>
     </svg>

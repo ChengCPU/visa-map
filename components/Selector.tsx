@@ -41,8 +41,7 @@ const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, s
         setPriority={setPriority}
         setAssignedColors={setAssignedColors}
         legend={legend}
-        setLegend={setLegend}
-      />
+        setLegend={setLegend} />
     </>
   )
 }

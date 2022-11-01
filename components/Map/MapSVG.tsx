@@ -1,6 +1,5 @@
 import { memo } from 'react'
 import styles from '../../styles/MapSVG.module.css'
-import Legend from './Legend/Legend'
 import Abkhazia from '../countries/Abkhazia'
 import Afghanistan from '../countries/Afghanistan'
 import Albania from '../countries/Albania'
@@ -251,15 +250,9 @@ import WesternSahara from '../countries/WesternSahara'
 import Yemen from '../countries/Yemen'
 import Zambia from '../countries/Zambia'
 import Zimbabwe from '../countries/Zimbabwe'
-type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
-interface Props {
-  legend: LegendType;
-  rerender: boolean;
-}
 
-const MapSVG:React.FC<Props> = ({ legend, rerender }) => {
+const MapSVG:React.FC = () => {
   return (
-      <>
       <div className={styles.container}>
       <svg version="1.2" viewBox="-50 -25 2190 890" width="1890">
       <Afghanistan />
@@ -410,6 +403,7 @@ const MapSVG:React.FC<Props> = ({ legend, rerender }) => {
       <Yemen />
       <Zambia />
       <Zimbabwe />
+      {/* Cutoff point, all country components below are rendered on top of the previous country components*/}
       <Abkhazia />
       <AmericanSamoa />
       <Andorra />
@@ -514,7 +508,6 @@ const MapSVG:React.FC<Props> = ({ legend, rerender }) => {
       <WallisAndFutuna />
       </svg>
       </div>
-      </>
   )
 }
 
