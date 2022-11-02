@@ -6,7 +6,6 @@ import selectArrayCalculation from '../logic/selectArrayCalculation';
 import reset from '../logic/reset';
 import mainCalculation from '../logic/mainCalculation';
 import subCalculation from '../logic/subCalculation';
-import percentageCalculation from '../logic/percentageCalculation';
 import Map from '../components/Map/Map';
 import Selector from '../components/Selector';
 import Head from 'next/head';
@@ -742,7 +741,7 @@ export default function Home() {
   useEffect(() => {
     //function that takes in logic function
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend); return
+      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend, percentage, setPercentage); return
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
@@ -751,7 +750,7 @@ export default function Home() {
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 

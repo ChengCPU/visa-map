@@ -1,5 +1,4 @@
 import legendCalculation from './legendCalculation'
-import percentageCalculation from './percentageCalculation'
 interface Select {selection: number,passport: null | string;}
 const colors:string[] = [
     "abkhaziaColor",
@@ -253,7 +252,7 @@ const colors:string[] = [
     "zambiaColor",
     "zimbabweColor"
 ]
-export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function, percentage:string, setPercentage:Function) {
+export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function, percentage:number, setPercentage:Function) {
     fetch('visaPolicy.json')
     .then((res) => res.json())
     .then((data) => {
@@ -668,7 +667,11 @@ export default function mainCalculation(country:string, assignedColors:object[],
                             default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
 break;}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
+let count = 0
 for(let x = 0; x < colors.length; x++) {
-percentageCalculation(percentage, setPercentage, priority, setPriority, rerender, setRerender, x)
+    if(priority[colors[x]] != "rgb(149,150,150)") {
+        count++
+        setPercentage(count)
+    }
 }
 })}

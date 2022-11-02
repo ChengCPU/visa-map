@@ -14,7 +14,7 @@ interface Props {
   setAssignedColors: Function;
   legend: LegendType;
   setLegend: Function;
-  percentage: string;
+  percentage: number;
 }
 
 const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, legend, setLegend, percentage }) => {
