@@ -6,6 +6,7 @@ import selectArrayCalculation from '../logic/selectArrayCalculation';
 import reset from '../logic/reset';
 import mainCalculation from '../logic/mainCalculation';
 import subCalculation from '../logic/subCalculation';
+import percentageCalculation from '../logic/percentageCalculation';
 import Map from '../components/Map/Map';
 import Selector from '../components/Selector';
 import Head from 'next/head';
@@ -483,6 +484,7 @@ export default function Home() {
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
   const [priority, setPriority] = useState<any>(color) //priority is the color that is passed onto each country component as context
   const [legend, setLegend] = useState<Legend>({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
+  const [percentage, setPercentage]= useState<number>(0)
   //value is passed in as context to the country components
   const colorProvider:any = {
     abkhaziaColor: priority.abkhaziaColor,
@@ -744,7 +746,7 @@ export default function Home() {
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend)
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
     }
   }, [toggle])
 
@@ -777,6 +779,7 @@ export default function Home() {
       setAssignedColors={setAssignedColors}
       legend={legend}
       setLegend={setLegend}
+      percentage={percentage}
     />
     </ColorContext.Provider>
     </PassportContext.Provider>

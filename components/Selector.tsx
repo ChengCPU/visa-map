@@ -19,9 +19,10 @@ interface Props {
   setAssignedColors: Function;
   legend: LegendType;
   setLegend: Function;
+  percentage: string;
 }
 
-const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, setSelectArray, toggle, setToggle, setPriority, setAssignedColors, legend, setLegend }) => {
+const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, setSelectArray, toggle, setToggle, setPriority, setAssignedColors, legend, setLegend, percentage }) => {
   return (
     <>
     <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
@@ -41,7 +42,8 @@ const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, s
         setPriority={setPriority}
         setAssignedColors={setAssignedColors}
         legend={legend}
-        setLegend={setLegend} />
+        setLegend={setLegend}
+        percentage={percentage} />
     </>
   )
 }
