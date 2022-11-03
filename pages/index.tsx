@@ -738,6 +738,7 @@ export default function Home() {
     zimbabweColor: priority.zimbabweColor
   }
 
+  //test
   useEffect(() => {
     //function that takes in logic function
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
