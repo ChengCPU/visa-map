@@ -673,7 +673,7 @@ legendCalculation(priority, legend, setLegend, rerender, setRerender)
 
 let count = 0
 for(let x = 0; x < colors.length; x++) {
-    if(priority[colors[x]] != "rgb(149,150,150)") {
+    if(priority[colors[x]] != "rgb(149,150,150)" && priority[colors[x]] != "rgb(150,150,150)" && priority[colors[x]] != "rgb(0,0,0)" && priority[colors[x]] != "rgb(255,0,0)") {
         count++
         setPercentage(count)
     }
