@@ -15,10 +15,8 @@
 }
 
 .text {
-    justify-content: left;
-    align-content: space-around;
     position:fixed;
-    left:0px;
+    left:30px;
     color: #ffffff;
 }
 
