@@ -15,9 +15,10 @@ interface Props {
   legend: LegendType;
   setLegend: Function;
   percentage: number;
+  setPercentage: Function;
 }
 
-const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, legend, setLegend, percentage }) => {
+const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, legend, setLegend, percentage, setPercentage }) => {
   const color:object = {
     abkhaziaColor: "rgb(149,150,150)",
     afghanistanColor: "rgb(149,150,150)",
@@ -272,9 +273,9 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
   }
   return (
     <div className={styles.container}>
-    <div className={styles.text}>
-      <h1>{String(percentage) + "%"}</h1>
-    </div>
+      <div className={styles.text}>
+        <h1>{String(percentage * 100 / 250) + "%"}</h1>
+      </div>
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={0} />
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={1} />
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={2} />
@@ -290,6 +291,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
       setPriority(color)
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
       setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
+      setPercentage(0)
     }}>reset</button>
     </div>
   )

@@ -17,19 +17,11 @@
 .text {
     justify-content: left;
     align-content: space-around;
-    padding: 0 0.5rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: flex;
-    align-items: center;
     position:fixed;
     left:0px;
-    bottom:0px;
-    height:110px;
-    width:100%;
-    color: white;
-    background-color: #111111;
+    color: #ffffff;
 }
+
 /* display: flex;
 justify-content: center;
 align-content: space-around;

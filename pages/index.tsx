@@ -779,6 +779,7 @@ export default function Home() {
       legend={legend}
       setLegend={setLegend}
       percentage={percentage}
+      setPercentage={setPercentage}
     />
     </ColorContext.Provider>
     </PassportContext.Provider>
