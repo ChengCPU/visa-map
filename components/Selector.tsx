@@ -1,7 +1,7 @@
 //component imports
 import SelectorButtonContainer from './Selector/SelectorButtonContainer';
 import SelectorPassportContainer from './Selector/SelectorPassportContainer';
-type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
+type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean};
 interface Props {
   Drawer: any;
   openDrawer: boolean;
@@ -21,7 +21,7 @@ interface Props {
   setLegend: Function;
   percentage: number;
   setPercentage: Function;
-}
+};
 
 const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, setSelectArray, toggle, setToggle, setPriority, setAssignedColors, legend, setLegend, percentage, setPercentage }) => {
   return (

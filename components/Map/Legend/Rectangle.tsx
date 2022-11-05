@@ -1,4 +1,4 @@
-interface Props {color: string}
+interface Props {color: string};
 
 const Rectangle:React.FC<Props> = ({ color }) => {
 	return (

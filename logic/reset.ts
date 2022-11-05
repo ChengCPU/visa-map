@@ -250,7 +250,7 @@ export default function reset(setAssignedColors:Function, setPriority:Function, 
         yemenColor: "rgb(149,150,150)",
         zambiaColor: "rgb(149,150,150)",
         zimbabweColor: "rgb(149,150,150)"
-    }
+    };
     setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
     setPriority(color)
     setSecondToggle(!secondToggle)

@@ -1,6 +1,6 @@
 import styles from '../../styles/SelectorButtonContainer.module.css';
 import SelectorButton from './SelectorButton';
-type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
+type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean};
 interface Props {
   setOpenDrawer: Function;
   select: {
@@ -16,7 +16,7 @@ interface Props {
   setLegend: Function;
   percentage: number;
   setPercentage: Function;
-}
+};
 
 const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, legend, setLegend, percentage, setPercentage }) => {
   const color:object = {
