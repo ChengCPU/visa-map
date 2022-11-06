@@ -249,7 +249,7 @@ const colors:string[] = [
     "yemenColor",
     "zambiaColor",
     "zimbabweColor"
-];
+]
 
 export default function legendCalculation(priority:object, legend:any, setLegend:Function, rerender:boolean, setRerender:Function) {
     for(let a = 0; a < colors.length; a++) {

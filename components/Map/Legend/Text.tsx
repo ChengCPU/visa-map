@@ -1,4 +1,4 @@
-interface Props {text: string};
+interface Props {text: string}
 
 const Text:React.FC<Props> = ({ text }) => {
 	return (

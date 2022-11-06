@@ -1,4 +1,4 @@
-import legendCalculation from './legendCalculation';
+import legendCalculation from './legendCalculation'
 
 const colors:string[] = [
     "abkhaziaColor",
@@ -251,7 +251,7 @@ const colors:string[] = [
     "yemenColor",
     "zambiaColor",
     "zimbabweColor"
-];
+]
 export default function subCalculation(selectArray:null | string[], assignedColors:object[], setAssignedColors:Function, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function, percentage:number, setPercentage:Function): void {
     fetch('visaPolicy.json')
     .then((res) => res.json())

@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { PassportContext } from '../context/PassportContext';
+import { useContext } from 'react'
+import { PassportContext } from '../context/PassportContext'
 import styles from '../../styles/SelectorPassportContainer.module.css';
 import SelectorPassport from './SelectorPassport';
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
   setSelect: Function;
   toggle: boolean;
   setToggle: Function;
-};
+}
 
 const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, toggle, setToggle }) => {
 

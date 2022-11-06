@@ -1,5 +1,5 @@
-import legendCalculation from './legendCalculation';
-interface Select {selection: number,passport: null | string};
+import legendCalculation from './legendCalculation'
+interface Select {selection: number,passport: null | string;}
 const colors:string[] = [
     "abkhaziaColor",
     "afghanistanColor", 
@@ -251,7 +251,7 @@ const colors:string[] = [
     "yemenColor",
     "zambiaColor",
     "zimbabweColor"
-];
+]
 export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function, percentage:number, setPercentage:Function) {
     fetch('visaPolicy.json')
     .then((res) => res.json())

@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { PassportContext } from '../context/PassportContext';
+import { useContext } from 'react'
+import { PassportContext } from '../context/PassportContext'
 import { Button } from "@mui/material";
 import SelectorSVG from '../SelectorSVG';
 import Passport from './Passport';
@@ -12,7 +12,7 @@ interface Props {
   setSelect: Function;
   selectArray:null | string[];
   num: number;
-};
+}
 
 const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, num }) => {
 
