@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { PassportContext } from '../context/PassportContext'
 import { Button } from "@mui/material";
-import SelectorSVG from '../SelectorSVG';
+import SelectorSVG from './SelectorSVG';
 import Passport from './Passport';
 interface Props {
   setOpenDrawer: Function;
