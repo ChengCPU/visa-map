@@ -3,6 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: static;
     width:100%;
+}
+
+.mainRow {
+    background-color: black;
 }

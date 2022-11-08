@@ -765,6 +765,8 @@ export default function Home() {
     <Map
       legend={legend}
     />
+    <br />
+    <br />
     <Table />
     <Selector
       Drawer={Drawer}
