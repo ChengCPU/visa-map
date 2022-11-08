@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-content: space-around;
-    position: relative;
+    position: static;
 }
 
 .container {
     display: flex;
     height: 20px;
+    position: static;
 }

@@ -12,7 +12,7 @@ const Legend:React.FC<Props> = ({ legend }) => {
       <div className={styles.container}>
         <Rectangle color={"rgb(255,20,147)"}/>
         <Text text={'Home country'}/>
-      </div> : null}
+      </div> : <br />}
       {(legend.FoM == true) ?
       <div className={styles.container}>
         <Rectangle color={"rgb(255,179,191)"}/>
