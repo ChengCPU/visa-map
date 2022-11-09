@@ -1,9 +1,13 @@
-import styles from '../../styles/Table.module.css';
-import Passport from '../Selector/Passport';
+import styles from '../styles/Table.module.css';
+import Passport from '../components/Selector/Passport';
 import unitedStates from '/public/passports/unitedStates.webp';
 
 const Table:React.FC = () => {
   return (
+    <>
+    <br />
+    <br />
+    <br />
 	<div className={styles.container}>
     <table>
 			<tbody>
@@ -226,6 +230,7 @@ const Table:React.FC = () => {
 			</tbody>
 	</table>
 	</div>
+    </>
   )
 }
 

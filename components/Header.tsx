@@ -7,6 +7,7 @@ const Header:React.FC = () => {
   return (
     <Stack direction="row" spacing={1} className={styles.container}>
       <Link href='/'><Button className={styles.button} variant="contained">Home</Button></Link>
+      <Link href='/table'><Button className={styles.button} variant="contained">Table</Button></Link>
     </Stack>
   )
 }

@@ -8,7 +8,6 @@ import mainCalculation from '../logic/mainCalculation';
 import subCalculation from '../logic/subCalculation';
 import Map from '../components/Map/Map';
 import Selector from '../components/Selector/Selector';
-import Table from '../components/Table/Table';
 import Head from 'next/head';
 //passport imports
 import abkhazia from '/public/passports/abkhazia.webp';
@@ -767,7 +766,6 @@ export default function Home() {
     />
     <br />
     <br />
-    <Table />
     <Selector
       Drawer={Drawer}
       openDrawer={openDrawer}
