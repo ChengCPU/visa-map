@@ -1,3 +1,4 @@
+import { Drawer } from '@mui/material';
 //component imports
 import SelectorButtonContainer from './SelectorButtonContainer';
 import SelectorPassportContainer from './SelectorPassportContainer';
@@ -23,7 +24,7 @@ interface Props {
   setPercentage: Function;
 }
 
-const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, selectArray, setSelectArray, toggle, setToggle, setPriority, setAssignedColors, legend, setLegend, percentage, setPercentage }) => {
+const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, toggle, setToggle, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage}) => {
   return (
     <>
     <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
@@ -42,7 +43,6 @@ const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, s
         setSelectArray={setSelectArray}
         setPriority={setPriority}
         setAssignedColors={setAssignedColors}
-        legend={legend}
         setLegend={setLegend}
         percentage={percentage}
         setPercentage={setPercentage} />
