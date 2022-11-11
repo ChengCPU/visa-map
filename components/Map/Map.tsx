@@ -29,23 +29,7 @@ interface Props {
 }
 
 const Map:React.FC<Props>= ({ select, selectArray, priority, setPriority, assignedColors, setAssignedColors, legend, setLegend, toggle, secondToggle, setSecondToggle, percentage, setPercentage, setSelectArray, rerender, setRerender }) => {
-
-  useEffect(() => {
-    //function that takes in logic function
-    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend, percentage, setPercentage); return
-    }
-    selectArrayCalculation(selectArray, setSelectArray, select);
-    if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
-    }
-  }, [toggle])
-
-  useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
-    selectArrayCalculation(selectArray, setSelectArray, select)
-  }, [secondToggle])
-
+  
   return (
     <>
     <br />

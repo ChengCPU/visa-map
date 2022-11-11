@@ -12,13 +12,12 @@ interface Props {
     passport: null | string;
   };
   setSelect: Function;
-  selectArray:null | string[];
-  setSelectArray: Function;
   toggle: boolean;
   setToggle: Function;
+  selectArray:null | string[];
+  setSelectArray: Function;
   setPriority: Function;
   setAssignedColors: Function;
-  legend: LegendType;
   setLegend: Function;
   percentage: number;
   setPercentage: Function;

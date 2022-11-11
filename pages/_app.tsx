@@ -1,10 +1,14 @@
+import { PassportContext } from '../components/context/PassportContext';
+import { ColorContext } from '../components/context/ColorContext';
+import { useState, useEffect } from 'react';
+import { Drawer } from '@mui/material';
+import reset from '../logic/reset';
+import selectArrayCalculation from '../logic/selectArrayCalculation';
+import mainCalculation from '../logic/mainCalculation';
+import subCalculation from '../logic/subCalculation';
 import '../styles/globals.css';
 import Header from '../components/Header';
 import Selector from '../components/Selector/Selector';
-import { PassportContext } from '../components/context/PassportContext';
-import { ColorContext } from '../components/context/ColorContext';
-import { useState } from 'react';
-import { Drawer } from '@mui/material';
 //passport imports
 import abkhazia from '/public/passports/abkhazia.webp';
 import afghanistan from '/public/passports/afghanistan.webp';
@@ -734,6 +738,21 @@ function MyApp({ Component, pageProps }) {
     zimbabweColor: priority.zimbabweColor
   }
 
+  useEffect(() => {
+    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
+      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend, percentage, setPercentage); return
+    }
+    selectArrayCalculation(selectArray, setSelectArray, select);
+    if(selectArray[select.selection] != null) {
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
+    }
+  }, [toggle])
+
+  useEffect(() => {
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
+    selectArrayCalculation(selectArray, setSelectArray, select)
+  }, [secondToggle])
+
   return (
     <ColorContext.Provider value={colorProvider}>
     <PassportContext.Provider value={passportsProvider}>
@@ -753,7 +772,6 @@ function MyApp({ Component, pageProps }) {
         setLegend={setLegend}
         percentage={percentage}
         setPercentage={setPercentage}
-        legend={legend}
       />
       <Component {...pageProps} 
         select={select}
