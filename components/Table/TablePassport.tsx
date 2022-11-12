@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { PassportContext } from '../context/PassportContext'
 import Passport from '../Selector/Passport';
-import SelectorSVG from '../Selector/SelectorSVG';
+import TablePassportSVG from './TablePassportSVG';
 interface Props {
   selectArray:null | string[];
   num: number;
@@ -223,7 +223,7 @@ const SelectorButton:React.FC<Props> = ({ selectArray, num }) => {
         }
     }
   return (
-    (selectArray[num] == null) ? <SelectorSVG /> : <Passport image={i()}/>
+    (selectArray[num] == null) ? <TablePassportSVG /> : <Passport image={i()}/>
   )
 }
 

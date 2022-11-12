@@ -28,7 +28,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<th><TablePassport selectArray={selectArray} num={8}/></th>
 					<th><TablePassport selectArray={selectArray} num={9}/></th>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -40,7 +40,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -52,7 +52,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -64,7 +64,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -76,7 +76,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -88,7 +88,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -100,7 +100,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -112,7 +112,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -124,7 +124,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -136,7 +136,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -148,7 +148,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -160,7 +160,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -172,7 +172,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -184,7 +184,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -196,7 +196,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -208,7 +208,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
@@ -220,7 +220,7 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<td>Test 9</td>
 					<td>Test 10</td>
 				</tr>
-				<tr>
+				<tr className={styles.subRow}>
 					<td>Test 1</td>
 					<td>Test 2</td>
 					<td>Test 3</td>
