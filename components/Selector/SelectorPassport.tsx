@@ -20,7 +20,7 @@ const SelectorPassport:React.FC<Props> = ({ setOpenDrawer, select, setSelect, to
       setToggle(!toggle)
       setOpenDrawer(false)
     }}>
-        <Passport image={image}/>
+      <Passport image={image}/>
     </Button>
   )
 }

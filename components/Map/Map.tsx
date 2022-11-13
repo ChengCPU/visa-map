@@ -1,10 +1,5 @@
 import MapSVG from './MapSVG';
 import Legend from './Legend/Legend'
-import reset from '../../logic/reset';
-import selectArrayCalculation from '../../logic/selectArrayCalculation';
-import mainCalculation from '../../logic/mainCalculation';
-import subCalculation from '../../logic/subCalculation';
-import { useEffect } from 'react';
 type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
 interface Props {
   select: {

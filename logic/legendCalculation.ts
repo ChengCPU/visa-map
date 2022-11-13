@@ -252,20 +252,20 @@ const colors:string[] = [
 ]
 
 export default function legendCalculation(priority:object, legend:any, setLegend:Function, rerender:boolean, setRerender:Function) {
-    for(let a = 0; a < colors.length; a++) {
-        switch(priority[colors[a]]) {
-            case "rgb(255,20,147)": setLegend(legend, legend.HC = true); setRerender(!rerender); break;
-            case "rgb(255,145,0)": setLegend(legend, legend.OECSFoM = true); setRerender(!rerender); break;
-            case "rgb(0,135,93)": setLegend(legend, legend.MFoM = true); setRerender(!rerender); break;
-            case "rgb(0,51,153)": setLegend(legend, legend.EUFoM = true); setRerender(!rerender); break;
-            case "rgb(153,123,61)": setLegend(legend, legend.GCCFoM = true); setRerender(!rerender); break;
-            case "rgb(255,179,191)": setLegend(legend, legend.FoM = true); setRerender(!rerender); break;
-            case "rgb(50,205,50)": setLegend(legend, legend.VF = true); setRerender(!rerender); break;
-            case "rgb(161,224,123)": setLegend(legend, legend.VoAEV = true); setRerender(!rerender); break;
-            case "rgb(255,255,92)": setLegend(legend, legend.VoA = true); setRerender(!rerender); break;
-            case "rgb(135,206,250)": setLegend(legend, legend.EV = true); setRerender(!rerender); break;
-            case "rgb(118,65,171)": setLegend(legend, legend.SP = true); setRerender(!rerender); break;
-            case "rgb(0,0,0)": setLegend(legend, legend.CR = true); setRerender(!rerender); break;
-        }
+  for(let a = 0; a < colors.length; a++) {
+    switch(priority[colors[a]]) {
+      case "rgb(255,20,147)": setLegend(legend, legend.HC = true); setRerender(!rerender); break;
+      case "rgb(255,145,0)": setLegend(legend, legend.OECSFoM = true); setRerender(!rerender); break;
+      case "rgb(0,135,93)": setLegend(legend, legend.MFoM = true); setRerender(!rerender); break;
+      case "rgb(0,51,153)": setLegend(legend, legend.EUFoM = true); setRerender(!rerender); break;
+      case "rgb(153,123,61)": setLegend(legend, legend.GCCFoM = true); setRerender(!rerender); break;
+      case "rgb(255,179,191)": setLegend(legend, legend.FoM = true); setRerender(!rerender); break;
+      case "rgb(50,205,50)": setLegend(legend, legend.VF = true); setRerender(!rerender); break;
+      case "rgb(161,224,123)": setLegend(legend, legend.VoAEV = true); setRerender(!rerender); break;
+      case "rgb(255,255,92)": setLegend(legend, legend.VoA = true); setRerender(!rerender); break;
+      case "rgb(135,206,250)": setLegend(legend, legend.EV = true); setRerender(!rerender); break;
+      case "rgb(118,65,171)": setLegend(legend, legend.SP = true); setRerender(!rerender); break;
+      case "rgb(0,0,0)": setLegend(legend, legend.CR = true); setRerender(!rerender); break;
     }
+  }
 }
