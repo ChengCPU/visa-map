@@ -1,6 +1,4 @@
 import styles from '../styles/Table.module.css';
-import Passport from '../components/Selector/Passport';
-import unitedStates from '/public/passports/unitedStates.webp';
 import TablePassport from '../components/Table/TablePassport';
 interface Props {
 	selectArray:null | string[];
@@ -14,9 +12,9 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 	<br />
 	<br />
 	<div className={styles.container}>
-    <table>
+    <table cellSpacing="0" cellPadding="0">
 			<tbody>
-				<tr className={styles.mainRow}>
+				<tr>
 					<th><TablePassport selectArray={selectArray} num={0}/></th>
 					<th><TablePassport selectArray={selectArray} num={1}/></th>
 					<th><TablePassport selectArray={selectArray} num={2}/></th>
@@ -29,208 +27,208 @@ const Table:React.FC<Props> = ({ selectArray }) => {
 					<th><TablePassport selectArray={selectArray} num={9}/></th>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 				<tr className={styles.subRow}>
-					<td>Test 1</td>
-					<td>Test 2</td>
-					<td>Test 3</td>
-					<td>Test 4</td>
-					<td>Test 5</td>
-					<td>Test 6</td>
-					<td>Test 7</td>
-					<td>Test 8</td>
-					<td>Test 9</td>
-					<td>Test 10</td>
+					<td className={styles.text}>text 1</td>
+					<td className={styles.text}>text 2</td>
+					<td className={styles.text}>text 3</td>
+					<td className={styles.text}>text 4</td>
+					<td className={styles.text}>text 5</td>
+					<td className={styles.text}>text 6</td>
+					<td className={styles.text}>text 7</td>
+					<td className={styles.text}>text 8</td>
+					<td className={styles.text}>text 9</td>
+					<td className={styles.text}>text 10</td>
 				</tr>
 			</tbody>
 	</table>

@@ -5,12 +5,17 @@
     justify-content: center;
     position: static;
     width:100%;
+    border-spacing: 0;
 }
 
 .mainRow {
-    
+
 }
 
 .subRow {
     background-color: white;
+}
+
+.text {
+    padding: 10px;
 }
