@@ -1,11 +1,11 @@
 .container {
-    align-content: space-around;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: static;
-    width:100%;
-    border-spacing: 0;
+  align-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  width:100%;
+  border-spacing: 0;
 }
 
 .mainRow {
@@ -13,10 +13,10 @@
 }
 
 .subRow {
-    background-color: white;
+  background-color: white;
 }
 
 .text {
-    padding: 10px;
-    border: 1px solid #ff0000;
+  padding: 10px;
+  border: 1px solid #222222;
 }

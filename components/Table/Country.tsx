@@ -8,7 +8,7 @@ const Country:React.FC<Props> = ({ country, flag }) => {
 			<style jsx>{`
 			.country {
 			padding: 10px;
-			border: 1px solid #ff0000;
+			border: 1px solid #222222;
 			}
 			`}</style>
     {country.charAt(0).toUpperCase() + country.slice(1) + flag}</td>
