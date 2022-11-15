@@ -268,4 +268,8 @@ export default function legendCalculation(priority:object, legend:any, setLegend
       case "rgb(0,0,0)": setLegend(legend, legend.CR = true); setRerender(!rerender); break;
     }
   }
+  for(let b = 0; b < colors.length; b++) {
+    if(priority[colors[b]] == "rgb(118,65,171)") {return}
+    if(b == colors.length - 1) {setLegend(legend, legend.SP = false)}
+  }
 }
