@@ -1,8 +1,8 @@
 interface Props {
-	country: string;
   flag: string;
+	country: string;
 }
-const Country:React.FC<Props> = ({ country, flag }) => {
+const Country:React.FC<Props> = ({ flag, country }) => {
   return (
     <td className={'country'}>
 			<style jsx>{`
@@ -11,7 +11,7 @@ const Country:React.FC<Props> = ({ country, flag }) => {
 			border: 1px solid #222222;
 			}
 			`}</style>
-    {country.charAt(0).toUpperCase() + country.slice(1) + flag}</td>
+    {flag + country.charAt(0).toUpperCase() + country.slice(1)}</td>
   )
 }
 
