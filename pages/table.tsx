@@ -276,7 +276,7 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors }) => {
     return main.map(main => 
     <tr className={styles.subRow}>
       <Country country={countries[main]} flag={flags[main]} />
-      {sub.map(sub => <td className={'text'} key={Math.random()}>
+      {sub.map(sub => <td className={'text'} key={sub}>
         <style jsx>{`
           .text {
           padding: 10px;
