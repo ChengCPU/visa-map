@@ -274,7 +274,7 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors }) => {
 
   const renderTables = (main:number[], sub:number[], flags:string[]) => {
     return main.map(main => 
-    <tr className={styles.subRow}>
+    <tr className={styles.subRow} key={main}>
       <Country country={countries[main]} flag={flags[main]} />
       {sub.map(sub => <td className={'text'} key={sub}>
         <style jsx>{`
