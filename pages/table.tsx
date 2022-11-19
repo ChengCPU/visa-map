@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Country from '../components/Table/Country';
 import styles from '../styles/Table.module.css';
 import TablePassport from '../components/Table/TablePassport';
@@ -265,10 +266,14 @@ const colors:string[] = [
 const Table:React.FC<Props> = ({ selectArray, assignedColors }) => {
 
   const calcVisaRequirements = (sub) => {
-    switch(assignedColors[sub][colors[0]]) {
-      case 7: return "visa-free"
-      case 14: return "visa required"
-      case 12: return "simplified visa"
+    for(let a = 0; a < assignedColors.length; a++) {
+      if(selectArray[a] != null && a == sub) {
+        switch(assignedColors[a][colors[sub]]) {
+          case 7: return "visa-free"
+          case 14: return "visa required"
+          case 12: return "simplified visa"
+        }
+      }
     }
   }
 
