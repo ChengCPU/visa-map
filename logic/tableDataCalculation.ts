@@ -1,3 +1,3 @@
-export default function tableDataCalculation(tableData:any, setTableData: Function) {
-  setTableData(tableData, tableData[4][5] = "five")
+export default function tableDataCalculation(tableData:any, setTableData: Function, a:number) {
+  setTableData(tableData, tableData[a][5] = "five")
 }

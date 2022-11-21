@@ -253,7 +253,7 @@ const colors:string[] = [
     "zambiaColor",
     "zimbabweColor"
 ]
-export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function, percentage:number, setPercentage:Function, tableData:string[], setTableData:Function) {
+export default function mainCalculation(selectArray:null | string[], country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function, percentage:number, setPercentage:Function, tableData:string[], setTableData:Function) {
     fetch('visaPolicy.json')
     .then((res) => res.json())
     .then((data) => {
@@ -668,7 +668,11 @@ export default function mainCalculation(country:string, assignedColors:object[],
                             default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
 break;}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
-tableDataCalculation(tableData, setTableData)
+for(let a = 0; a < selectArray.length; a++) {
+  if(selectArray[a] !== null) {
+    tableDataCalculation(tableData, setTableData, a)
+  }
+}
 let count = 0
 for(let x = 0; x < colors.length; x++) {
     if(priority[colors[x]] != "rgb(149,150,150)" && priority[colors[x]] != "rgb(150,150,150)" && priority[colors[x]] != "rgb(0,0,0)" && priority[colors[x]] != "rgb(255,0,0)") {

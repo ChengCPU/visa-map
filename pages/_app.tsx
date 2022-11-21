@@ -756,12 +756,12 @@ function MyApp({ Component, pageProps }) {
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, tableData, setTableData)
+      mainCalculation(selectArray, selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, tableData, setTableData)
     }
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, tableData, setTableData)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 
