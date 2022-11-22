@@ -271,16 +271,9 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, tableData, setTabl
     return main.map(main => 
     <tr className={styles.subRow} key={main}>
       <Country country={countries[main]} flag={flags[main]} />
-      <td className={styles.text}>{[tableData[main]][0]}</td>
-      <td className={styles.text}>{[tableData[main]][1]}</td>
-      <td className={styles.text}>{[tableData[main]][2]}</td>
-      <td className={styles.text}>{[tableData[main]][3]}</td>
-      <td className={styles.text}>{[tableData[main]][4]}</td>
-      <td className={styles.text}>{[tableData[main]][5]}</td>
-      <td className={styles.text}>{[tableData[main]][6]}</td>
-      <td className={styles.text}>{[tableData[main]][7]}</td>
-      <td className={styles.text}>{[tableData[main]][8]}</td>
-      <td className={styles.text}>{[tableData[main]][9]}</td>
+      {sub.map(sub =>
+        <td className={styles.text} key={sub} onClick={() => console.log(tableData[main]?.[sub])}>{tableData[main]?.[sub]}</td>
+      )}
     </tr>)
   }
 
