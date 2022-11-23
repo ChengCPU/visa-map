@@ -673,7 +673,7 @@ break;}}}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
 for(let a = 0; a < selectArray.length; a++) {
   if(selectArray[a] !== null) {
-    tableDataCalculation(tableData, setTableData, a)
+    tableDataCalculation(assignedColors, tableData, setTableData, a)
   }
 }
 let count = 0
