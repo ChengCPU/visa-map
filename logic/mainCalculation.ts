@@ -668,9 +668,15 @@ export default function mainCalculation(selectArray:null | string[], country:str
               default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
 break;}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
+let visaPolicy = ""
 for(let a = 0; a < selectArray.length; a++) {
   if(selectArray[a] != null) {
-    tableDataCalculation(assignedColors, tableData, setTableData, a)
+    switch(assignedColors[a][colors[a]]) {
+      case 7: visaPolicy = "Visa-free"; break;
+      case 14: visaPolicy = "Visa required"; break;
+    }
+    tableDataCalculation(assignedColors, tableData, setTableData, a, visaPolicy)
+    visaPolicy = ""
   }
 }
 let count = 0
