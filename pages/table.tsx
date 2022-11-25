@@ -267,6 +267,10 @@ const colors:string[] = [
 
 const Table:React.FC<Props> = ({ selectArray, assignedColors, tableData, setTableData }) => {
 
+  const renderPassports = (sub: number[]) => {
+    return sub.map(sub => <th key={sub}><TablePassport selectArray={selectArray} num={sub}/></th>)
+  }
+
   const renderTables = (main:number[], sub:number[], flags:string[]) => {
     return main.map(main => 
     <tr className={styles.subRow} key={main}>
@@ -287,16 +291,7 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, tableData, setTabl
 			<tbody>
 				<tr>
           <th></th>
-					<th><TablePassport selectArray={selectArray} num={0}/></th>
-					<th><TablePassport selectArray={selectArray} num={1}/></th>
-					<th><TablePassport selectArray={selectArray} num={2}/></th>
-					<th><TablePassport selectArray={selectArray} num={3}/></th>
-					<th><TablePassport selectArray={selectArray} num={4}/></th>
-					<th><TablePassport selectArray={selectArray} num={5}/></th>
-					<th><TablePassport selectArray={selectArray} num={6}/></th>
-					<th><TablePassport selectArray={selectArray} num={7}/></th>
-					<th><TablePassport selectArray={selectArray} num={8}/></th>
-					<th><TablePassport selectArray={selectArray} num={9}/></th>
+          {renderPassports(sub)}
 				</tr>
         {renderTables(main, sub, flags)}
 			</tbody>
