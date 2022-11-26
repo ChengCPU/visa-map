@@ -11,6 +11,7 @@ interface Props {
 const countries:string[] = ["abkhazia","afghanistan", "albania","algeria","americanSamoa","andorra","angola","anguilla","antiguaAndBarbuda","argentina","armenia","aruba","australia","austria","azerbaijan","bahamas","bahrain","bangladesh","barbados","belarus","belgium","belize","benin","bermuda","bhutan","bolivia","bonaire","bosniaAndHerzegovina","botswana","bouvetIsland","brazil","britishIndianOceanTerritory","britishVirginIslands","brunei","bulgaria","burkinaFaso","burundi","cambodia","cameroon","canada","capeVerde","caymanIslands","centralAfricanRepublic","chad","chile","china","colombia","comoros","cookIslands","costaRica","croatia","cuba","curacao","cyprus","czechRepublic","democraticRepublicOfTheCongo","denmark","djibouti","dominica","dominicanRepublic","eastTimor","ecuador","egypt","elSalvador","equatorialGuinea","eritrea","estonia","eswatini","ethiopia","falklandIslands","faroeIslands","fiji","finland","france","frenchGuiana","frenchPolynesia","gabon","gambia","georgia","germany","ghana","gibraltar","greece","greenland","grenada","guadeloupe","guam","guatemala","guernsey","guinea","guineaBissau","guyana","haiti","heardIslandAndMcDonaldIslands","honduras","hongKong","hungary","iceland","india","indonesia","iran","iraq","ireland","isleOfMan","israel","italy","ivoryCoast","jamaica","janMayen","japan","jersey","jordan","kazakhstan","kenya","kiribati","kosovo","kuwait","kyrgyzstan","laos","latvia","lebanon","lesotho","liberia","libya","liechtenstein","lithuania","luxembourg","macao","madagascar","malawi","malaysia","maldives","mali","malta","marshallIslands","martinique","mauritania","mauritius","mayotte","mexico","micronesia","moldova","monaco","mongolia","montenegro","montserrat","morocco","mozambique","myanmar","namibia","nauru","nepal","netherlands","newCaledonia","newZealand","nicaragua","niger","nigeria","niue","norfolkIsland","northernCyprus","northernMarianaIslands","northKorea","northMacedonia","norway","oman","pakistan","palau","palestine","panama","papuaNewGuinea","paraguay","peru","philippines","pitcairnIslands","poland","portugal","qatar","republicOfTheCongo","reunion","romania","russia","rwanda","saba","saintBarthelemy","saintHelena","saintKittsAndNevis","saintLucia","saintMartin","saintPierreAndMiquelon","saintVincentAndTheGrenadines","samoa","sanMarino","saoTomeAndPrincipe","saudiArabia","senegal","serbia","seychelles","sierraLeone","singapore","sintEustatius","sintMaarten","slovakia","slovenia","solomonIslands","somalia","southAfrica","southGeorgiaAndTheSouthSandwichIslands","southKorea","southOssetia","southSudan","spain","sriLanka","sudan","suriname","svalbard","sweden","switzerland","syria","taiwan","tajikistan","tanzania","thailand","togo","tokelau","tonga","transnistria","trinidadAndTobago","tunisia","turkey","turkmenistan","turksAndCaicos","tuvalu","uganda","ukraine","unitedArabEmirates","unitedKingdom","unitedStates","unitedStatesVirginIslands","uruguay","uzbekistan","vanuatu","vaticanCity","venezuela","vietnam","wallisAndFutuna","westernSahara","yemen","zambia","zimbabwe"]
 const flags:string[] = ["", "🇦🇫", "🇦🇱", "🇩🇿", "🇦🇸", "🇦🇩", "🇦🇴", "🇦🇮", "🇦🇬", "🇦🇷", "🇦🇲", "🇦🇼", "🇦🇺", "🇦🇹",  "🇦🇿",  "🇧🇸",  "🇧🇭"]
 const main:number[] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+const main2:number[] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 const sub:number[] = [0,1,2,3,4,5,6,7,8,9]
 const colors:string[] = [
   "abkhaziaColor",
@@ -267,6 +268,24 @@ const colors:string[] = [
 
 const Table:React.FC<Props> = ({ selectArray, assignedColors, tableData, setTableData }) => {
 
+  const visaPolicyCalculation = (main:number) => {
+    switch(assignedColors[main]?.[colors[main]]) {
+      case "rgb(50,205,50)": return "Visa-free";
+      case "rgb(161,224,123)": return "Visa on arrival/E-visa";
+      case "rgb(255,255,92)": return "Visa on arrival";
+      case "rgb(135,206,250)": return "E-visa";
+      case "rgb(200,200,200)": return "Simplified visa";
+      case "rgb(149,150,150)": return "Visa required";
+      case 7: return "Visa-free";
+      case 8: return "Visa on arrival/E-visa";
+      case 9: return "Visa on arrival";
+      case 10: return "E-visa";
+      case 12: return "Simplified visa"
+      case 14: return "Visa required";
+      default: return assignedColors[main]?.[colors[main]]
+    }
+  }
+
   const renderPassports = (sub: number[]) => {
     return sub.map(sub => <th key={sub}><TablePassport selectArray={selectArray} num={sub}/></th>)
   }
@@ -276,7 +295,7 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, tableData, setTabl
     <tr className={styles.subRow} key={main}>
       <Country country={countries[main]} flag={flags[main]} />
       {sub.map(sub =>
-        <td className={styles.text} key={sub} onClick={() => console.log(tableData[main]?.[sub])}>{tableData[main]?.[sub]}</td>
+        <td className={styles.text} key={sub}>{(selectArray[sub] != null) ? visaPolicyCalculation(main) : null}</td>
       )}
     </tr>)
   }
