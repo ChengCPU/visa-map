@@ -639,36 +639,37 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         default: if(sv == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(200,200,200)")}}}
     break;
     case 13: //confirmation required (black)
-      for(let cr = 0; cr < assignedColors.length; cr++) {
-        switch(assignedColors[cr][colors[sub]]) {
-          case "rgb(255,20,147)": break; //home country (pink)
-          case "rgb(255,145,0)": break; //OECS freedom of movement (orange)
-          case "rgb(0,135,93)": break; //MERCSOUR freedom of movement (dark green)
-          case "rgb(0,51,153)": break; //EU freedom of movement (dark blue)
-          case "rgb(153,123,61)": break; //GCC freedom of movement (brown)
-          case "rgb(255,179,191)": break; //freedom of movement (light pink)
-          case "rgb(50,205,50)": break; //visa free (green)
-          case "rgb(161,224,123)": break; //visa on arrival/evisa (light green)
-          case "rgb(255,255,92)": break; //visa on arrival (yellow)
-          case "rgb(135,206,250)": break; //evisa (blue)
-          case "rgb(200,200,200)": break; //simplified visa (light grey)
-          case "rgb(118,65,171)": break; //Special permit/police check (purple)
-          case "rgb(149,150,150)": setPriority(priority, priority[colors[sub]] = "rgb(0,0,0)"); break;
-          case 14: 
-            for(let crCalc = 0; crCalc < assignedColors.length; crCalc++) {
-              switch(assignedColors[crCalc][colors[sub]]) {
-                case "rgb(255,20,147)": break; //home country (pink)
-                case "rgb(255,145,0)": break; //OECS freedom of movement (orange)
-                case "rgb(0,135,93)": break; //MERCSOUR freedom of movement (dark green)
-                case "rgb(0,51,153)": break; //EU freedom of movement (dark blue)
-                case "rgb(153,123,61)": break; //GCC freedom of movement (brown)
-                case "rgb(255,179,191)": break; //freedom of movement (light pink)
-                case "rgb(50,205,50)": break; //visa free (green)
-                case "rgb(161,224,123)": break; //visa on arrival/evisa (light green)
-                case "rgb(255,255,92)": break; //visa on arrival (yellow)
-                case "rgb(135,206,250)": break; //evisa (blue)
-                case "rgb(200,200,200)": break; //simplified visa (light grey)
-              default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
+    for(let cr = 0; cr < assignedColors.length; cr++) {
+      switch(assignedColors[cr][colors[sub]]) {
+        case "rgb(255,20,147)": break; //home country (pink)
+        case "rgb(255,145,0)": break; //OECS freedom of movement (orange)
+        case "rgb(0,135,93)": break; //MERCSOUR freedom of movement (dark green)
+        case "rgb(0,51,153)": break; //EU freedom of movement (dark blue)
+        case "rgb(153,123,61)": break; //GCC freedom of movement (brown)
+        case "rgb(255,179,191)": break; //freedom of movement (light pink)
+        case "rgb(50,205,50)": break; //visa free (green)
+        case "rgb(161,224,123)": break; //visa on arrival/evisa (light green)
+        case "rgb(255,255,92)": break; //visa on arrival (yellow)
+        case "rgb(135,206,250)": break; //evisa (blue)
+        case "rgb(118,65,171)": break; //Special permit/police check (purple)
+        case "rgb(200,200,200)": break; //simplified visa (light grey)
+        case "rgb(149,150,150)": setPriority(priority, priority[colors[sub]] = "rgb(0,0,0)"); break;
+        case 14:
+          for(let crCalc = 0; crCalc < assignedColors.length; crCalc++) {
+            switch(assignedColors[crCalc][colors[sub]]) {
+              case "rgb(255,20,147)": break; //home country (pink)
+              case "rgb(255,145,0)": break; //OECS freedom of movement (orange)
+              case "rgb(0,135,93)": break; //MERCSOUR freedom of movement (dark green)
+              case "rgb(0,51,153)": break; //EU freedom of movement (dark blue)
+              case "rgb(153,123,61)": break; //GCC freedom of movement (brown)
+              case "rgb(255,179,191)": break; //freedom of movement (light pink)
+              case "rgb(50,205,50)": break; //visa free (green)
+              case "rgb(161,224,123)": break; //visa on arrival/evisa (light green)
+              case "rgb(255,255,92)": break; //visa on arrival (yellow)
+              case "rgb(135,206,250)": break; //evisa (blue)
+              case "rgb(118,65,171)": break; //Special permit/police check (purple)
+              case "rgb(200,200,200)": break; //simplified visa (light grey)
+            default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
 break;}}}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
 let visaPolicy = ""
