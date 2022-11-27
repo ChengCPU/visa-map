@@ -1,7 +1,7 @@
 html,
 body {
   background-color: #222222;
-  overflow: hidden;
+  overflow: visible;
 }
 /* * {
   border: 1px solid red;

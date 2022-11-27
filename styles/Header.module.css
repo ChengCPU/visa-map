@@ -1,25 +1,25 @@
 .container {
-    align-content: space-around;
-    padding: 0 0.5rem;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left:0px;
-    height:40px;
-    width:100%;
-    margin-top: -10px;
-    background-color: #111111;
+  align-content: space-around;
+  padding: 0 0.5rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left:0px;
+  top:0px;
+  height:40px;
+  width:100%;
+  background-color: #111111;
 }
 
 .button {
-    background-color: #32CD32;
+  background-color: #32CD32;
 }
 
 .button:hover {
-    background-color: #32CD32;
+  background-color: #32CD32;
 }
 
 /* padding: 0 0.5rem;
