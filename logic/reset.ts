@@ -1,4 +1,4 @@
-export default function reset(setAssignedColors:Function, setPriority:Function, secondToggle:boolean, setSecondToggle:Function, legend:any, setLegend:Function, percentage:number, setPercentage:Function, setTableData:Function): void {
+export default function reset(setAssignedColors:Function, setPriority:Function, secondToggle:boolean, setSecondToggle:Function, setLegend:Function, setPercentage:Function): void {
   const color:object = {
       abkhaziaColor: "rgb(149,150,150)",
       afghanistanColor: "rgb(149,150,150)",
@@ -255,17 +255,5 @@ export default function reset(setAssignedColors:Function, setPriority:Function, 
   setPriority(color)
   setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
   setPercentage(0)
-  setTableData([
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null]
-  ])
   setSecondToggle(!secondToggle)
 }

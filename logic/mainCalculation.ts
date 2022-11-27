@@ -1,6 +1,6 @@
 import legendCalculation from './legendCalculation';
-import tableDataCalculation from './tableDataCalculation';
 interface Select {selection: number,passport: null | string;}
+type Legend = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
 const colors:string[] = [
     "abkhaziaColor",
     "afghanistanColor", 
@@ -253,7 +253,7 @@ const colors:string[] = [
     "zambiaColor",
     "zimbabweColor"
 ]
-export default function mainCalculation(selectArray:null | string[], country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:any, setLegend:Function, percentage:number, setPercentage:Function, tableData:string[], setTableData:Function) {
+export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, setPercentage:Function) {
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {
@@ -669,17 +669,6 @@ export default function mainCalculation(selectArray:null | string[], country:str
               default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[sub]] = "rgb(150,150,150)")}}}}}
 break;}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
-let visaPolicy = ""
-for(let a = 0; a < selectArray.length; a++) {
-  if(selectArray[a] != null) {
-    switch(assignedColors[a][colors[a]]) {
-      case 7: visaPolicy = "Visa-free"; break;
-      case 14: visaPolicy = "Visa required"; break;
-    }
-    tableDataCalculation(assignedColors, tableData, setTableData, a, visaPolicy)
-    visaPolicy = ""
-  }
-}
 let count = 0
 for(let x = 0; x < colors.length; x++) {
   if(priority[colors[x]] != "rgb(149,150,150)" && priority[colors[x]] != "rgb(150,150,150)" && priority[colors[x]] != "rgb(0,0,0)" && priority[colors[x]] != "rgb(255,0,0)") {

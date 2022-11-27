@@ -484,18 +484,6 @@ function MyApp({ Component, pageProps }) {
   const [percentage, setPercentage]= useState<number>(0)
   const [priority, setPriority] = useState<any>(color) //priority is the color that is passed onto each country component as context
   const [legend, setLegend] = useState<Legend>({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
-  const [tableData, setTableData] = useState<any>([
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null, null]
-  ])
   //value is passed in as context to the country components
   const colorProvider:any = {
     abkhaziaColor: priority.abkhaziaColor,
@@ -752,23 +740,22 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, legend, setLegend, percentage, setPercentage, setTableData); return
+      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setLegend, setPercentage); return
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray, selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, tableData, setTableData)
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, setPercentage)
     }
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, tableData, setTableData)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, setPercentage)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 
   return (
     <ColorContext.Provider value={colorProvider}>
     <PassportContext.Provider value={passportsProvider}>
-      <Header />
       <Selector
         Drawer={Drawer}
         openDrawer={openDrawer}
@@ -784,7 +771,6 @@ function MyApp({ Component, pageProps }) {
         setLegend={setLegend}
         percentage={percentage}
         setPercentage={setPercentage}
-        setTableData={setTableData}
       />
       <Component {...pageProps} 
         select={select}
@@ -803,9 +789,8 @@ function MyApp({ Component, pageProps }) {
         setSelectArray={setSelectArray}
         rerender={rerender}
         setRerender={setRerender}
-        tableData={tableData}
-        setTableData={setTableData}
       />
+      <Header />
     </PassportContext.Provider>
     </ColorContext.Provider>
   )

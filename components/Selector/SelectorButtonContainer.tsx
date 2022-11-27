@@ -14,10 +14,9 @@ interface Props {
   setLegend: Function;
   percentage: number;
   setPercentage: Function;
-  setTableData: Function;
 }
 
-const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage, setTableData }) => {
+const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage }) => {
   const color:object = {
     abkhaziaColor: "rgb(149,150,150)",
     afghanistanColor: "rgb(149,150,150)",
@@ -291,18 +290,6 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
       setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
       setPercentage(0)
-      setTableData([
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null]
-      ])
     }}>reset</button>
     </div>
   )
