@@ -6,7 +6,8 @@ const Text:React.FC<Props> = ({ text }) => {
     <style jsx>{`
     .text {
     color: white;
-    }`}</style>
+    }
+    `}</style>
 	{text}</p>
 	)
 }

@@ -2,16 +2,16 @@ import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const BouvetIsland = () => {
 
-    const { bouvetIslandColor } = useContext(ColorContext)
+  const { bouvetIslandColor } = useContext(ColorContext)
 
 return (
 <g className={'bouvetIsland'}>
-    <style jsx>{`
-    .bouvetIsland {
-    fill: ${bouvetIslandColor};
-    stroke-width: 1;
-    }
-    `}</style>
+  <style jsx>{`
+  .bouvetIsland {
+  fill: ${bouvetIslandColor};
+  stroke-width: 1;
+  }
+  `}</style>
 <circle r="5" cy="854" cx="1000" stroke="black"/>
 </g>
 )

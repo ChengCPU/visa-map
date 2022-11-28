@@ -2,16 +2,16 @@ import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const Philippines = () => {
 
-    const { philippinesColor } = useContext(ColorContext)
+  const { philippinesColor } = useContext(ColorContext)
 
 return (
 <g className={'philippines'}>
-    <style jsx>{`
-    .philippines {
-    fill: ${philippinesColor};
-    stroke-width: 1;
-    }
-    `}</style>
+  <style jsx>{`
+  .philippines {
+  fill: ${philippinesColor};
+  stroke-width: 1;
+  }
+  `}</style>
 <path d="M 1700.5 447.8 1701.4 452.1 1702 455.7 1700.4 461.5 1697.9 455 1695.5 458.3 1697.6 463 1696.2 466 1689.3 462.3 1687.4 457.6 1688.9 454.6 1685.1 451.5 1683.5 454.2 1680.9 453.9 1676.9 457.5 1675.9 455.6 1677.7 450.2 1681.1 448.4 1684 446 1686.2 448.9 1690.4 447.2 1691.1 444.3 1695.1 444.1 1694.3 439.2 1699.2 442.2 1699.9 445.4 1700.5 447.8 Z" stroke="black"/>
 <path d="M 1685.9 435.8 1684.1 437.9 1682.7 442 1681.1 443.9 1677.2 439.5 1678.2 437.7 1679.5 435.9 1679.7 432 1682.8 431.6 1682.3 435.9 1685.9 429.7 1685.9 435.8 Z" stroke="black"/>
 <path d="M 1655.6 442 1648.5 448.1 1650.9 443.6 1654.7 439.6 1657.7 435.2 1660 428.8 1661.6 434.1 1658.1 437.6 1655.6 442 Z" stroke="black"/>

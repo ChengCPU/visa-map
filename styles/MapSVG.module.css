@@ -1,8 +1,8 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-content: space-around;
-    position: static;
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  position: static;
 }
 
 /* border: 1px solid red; */

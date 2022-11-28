@@ -2,16 +2,16 @@ import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const NewCaledonia = () => {
 
-    const { newCaledoniaColor } = useContext(ColorContext)
+  const { newCaledoniaColor } = useContext(ColorContext)
 
 return (
 <g className={'newCaledonia'}>
-    <style jsx>{`
-    .newCaledonia {
-    fill: ${newCaledoniaColor};
-    stroke-width: 1;
-    }
-    `}</style>
+  <style jsx>{`
+  .newCaledonia {
+  fill: ${newCaledoniaColor};
+  stroke-width: 1;
+  }
+  `}</style>
 <path d="M 1915.2 646.9 1915 647 1914.8 647.4 1914.4 647.2 1914.6 646.7 1914.7 646.5 1915 646.6 1915.2 646.9 Z" />
 <path d="M 1919.6 639.1 1919.5 639.2 1919.7 639.6 1920 639.6 1920.4 639.4 1920.3 640 1920.1 640.2 1920 640.6 1919.5 640.9 1919.1 640.7 1919.1 640.6 1918.8 640.3 1918.9 640.1 1918.7 639.9 1918.8 639.5 1918.7 639.1 1918.8 639.1 1919.2 639.2 1919.6 639.1 Z" />
 <path d="M 1916.9 634.8 1916.7 635.3 1916.7 635.7 1916.5 636 1916.8 636.2 1917 636.3 1917.1 636.5 1917 636.7 1917.3 637.1 1917.1 637.1 1916.9 637.6 1916.7 637.8 1916.4 637.7 1916.2 637.4 1916.1 637.2 1915.5 637.1 1915.2 636.6 1915.2 636.4 1915.1 636.1 1915.4 636.1 1915.7 635.9 1916.1 635.6 1916.2 635.3 1915.8 635.1 1915.4 635.2 1915.6 634.8 1915.9 634.7 1916.1 634.8 1916.5 634.5 1916.9 634.8 Z" />

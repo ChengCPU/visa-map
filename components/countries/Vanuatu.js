@@ -2,16 +2,16 @@ import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const Vanuatu = () => {
 
-    const { vanuatuColor } = useContext(ColorContext)
+  const { vanuatuColor } = useContext(ColorContext)
 
 return (
 <g className={'vanuatu'}>
-    <style jsx>{`
-    .vanuatu {
-    fill: ${vanuatuColor};
-    stroke-width: 1;
-    }
-    `}</style>
+  <style jsx>{`
+  .vanuatu {
+  fill: ${vanuatuColor};
+  stroke-width: 1;
+  }
+  `}</style>
 <path d="M 1931.8 631.8 1931.3 631.6 1931.5 631.2 1932 631.1 1932.2 631.5 1932.1 631.7 1931.8 631.8 Z" />
 <path d="M 1930.6 628 1930.4 628 1930.1 627.9 1929.7 627.4 1929.6 627 1929.6 626.6 1929.8 626.4 1929.9 626 1930.2 625.9 1930.6 625.9 1930.4 626.2 1930.4 626.7 1931.1 627.2 1930.8 627.5 1930.6 628 Z" />
 <path d="M 1930.6 622.1 1930.9 622.1 1931 622.3 1930.5 622.4 1930.6 622.7 1931 622.9 1931.1 623.2 1931 623.6 1930.6 623.7 1930.2 623.4 1929.8 623.4 1929.6 623.2 1929.3 623 1929.4 622.6 1929.4 622.3 1929.6 621.8 1929.9 621.4 1930.4 621.4 1930.6 621.5 1930.5 621.9 1930.6 622.1 Z" />

@@ -1,12 +1,12 @@
 .main {
-    display: flex;
-    justify-content: center;
-    align-content: space-around;
-    position: static;
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  position: static;
 }
 
 .container {
-    display: flex;
-    height: 20px;
-    position: static;
+  display: flex;
+  height: 20px;
+  position: static;
 }

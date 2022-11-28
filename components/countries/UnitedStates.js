@@ -2,16 +2,16 @@ import { memo, useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const UnitedStates = () => {
 
-    const { unitedStatesColor } = useContext(ColorContext)
+  const { unitedStatesColor } = useContext(ColorContext)
 
 return (
 <g className={'unitedStates'}>
-    <style jsx>{`
-    .unitedStates {
-    fill: ${unitedStatesColor};
-    stroke-width: 1;
-    }
-    `}</style>
+  <style jsx>{`
+  .unitedStates {
+  fill: ${unitedStatesColor};
+  stroke-width: 1;
+  }
+  `}</style>
 <path d="M 118.8 379.3 117.7 380.4 116.5 379.5 117.1 377.7 116.7 375.3 117.2 374.6 118.4 373.6 118.3 372.3 118.7 371.7 119.1 371.8 121 372.9 121.9 373.5 122.6 374.3 123.5 376.6 123.3 376.9 120.8 378.3 118.8 379.3 Z" stroke="black"/>
 <path d="M 118.1 369.3 116.1 369.7 115.5 368.4 115 367.9 115 367.5 115.7 366.9 117.5 367.5 118.7 368.5 118.1 369.3 Z" stroke="black"/>
 <path d="M 115.1 365.9 114.8 366.6 111.8 366.4 112.4 365.6 115.1 365.9 Z" stroke="black"/>

@@ -2,16 +2,16 @@ import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 const AntiguaAndBarbuda = () => {
 
-    const { antiguaAndBarbudaColor } = useContext(ColorContext)
+  const { antiguaAndBarbudaColor } = useContext(ColorContext)
 
 return (
 <g className={'antiguaAndBarbuda'}>
-    <style jsx>{`
-    .antiguaAndBarbuda {
-    fill: ${antiguaAndBarbudaColor};
-    stroke-width: 1;
-    }
-    `}</style>
+  <style jsx>{`
+  .antiguaAndBarbuda {
+  fill: ${antiguaAndBarbudaColor};
+  stroke-width: 1;
+  }
+  `}</style>
 <circle r="3.25" cy="397" cx="642" stroke="black"/>
 </g>
 )

@@ -1,11 +1,11 @@
 .container {
-    color: white;
-    background-color:#000000;
-    font-family: Verdana,sans-serif;
+  color: white;
+  background-color:#000000;
+  font-family: Verdana,sans-serif;
 }
 
 .text {
-    background-color: #222222;
-    color: white;
-    text-align: center;
+  background-color: #222222;
+  color: white;
+  text-align: center;
 }
