@@ -739,7 +739,6 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    console.log(typeof priority)
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
       reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setLegend, setPercentage); return
     }

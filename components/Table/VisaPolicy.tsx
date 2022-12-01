@@ -1,8 +1,8 @@
 interface Props {
   assignedColors: object[];
   selectArray: null | string[];
-  main: number;
-  sub: number;
+  verticalColumn: number;
+  horizontalColumn: number;
 }
 const colors:string[] = [
   "abkhaziaColor",
@@ -257,25 +257,10 @@ const colors:string[] = [
   "zimbabweColor"
 ]
 
-const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, main, sub }) => {
+const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, verticalColumn, horizontalColumn }) => {
 
   const colorCalculation = () => {
-    switch(assignedColors[sub]?.[colors[main]]) {
-      case "rgb(255,20,147)": return "rgb(255,20,147)";
-      case "rgb(255,0,0)": return "rgb(255,0,0)";
-      case "rgb(255,145,0)": return "rgb(255,145,0)";
-      case "rgb(0,135,93)": return "rgb(0,135,93)";
-      case "rgb(0,51,153)": return "rgb(0,51,153)";
-      case "rgb(153,123,61)": return "rgb(153,123,61)";
-      case "rgb(255,179,191)": return "rgb(255,179,191)";
-      case "rgb(50,205,50)": return "rgb(50,205,50)";
-      case "rgb(161,224,123)": return "rgb(161,224,123)";
-      case "rgb(255,255,92)": return "rgb(255,255,92)";
-      case "rgb(135,206,250)": return "rgb(135,206,250)";
-      case "rgb(118,65,171)": return "rgb(118,65,171)";
-      case "rgb(200,200,200)": return "rgb(200,200,200)";
-      case "rgb(0,0,0)": return "rgb(0,0,0)";
-      case "rgb(149,150,150)": return "rgb(149,150,150)";
+    switch(assignedColors[horizontalColumn]?.[colors[verticalColumn]]) {
       case 0: return "rgb(255,20,147)";
       case 1: return "rgb(255,0,0)";
       case 2: return "rgb(255,145,0)";
@@ -296,22 +281,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, main, sub }) 
   }
 
   const visaPolicyCalculation = (main:number) => {
-    switch(assignedColors[sub]?.[colors[main]]) {
-      case "rgb(255,20,147)": return "Home country";
-      case "rgb(255,0,0)": return "Permit required";
-      case "rgb(255,145,0)": return "OECS freedom of movement";
-      case "rgb(0,135,93)": return "MERCSOUR freedom of movement";
-      case "rgb(0,51,153)": return "EU freedom of movement";
-      case "rgb(153,123,61)": return "GCC freedom of movement";
-      case "rgb(255,179,191)": return "freedom of movement";
-      case "rgb(50,205,50)": return "Visa-free";
-      case "rgb(161,224,123)": return "Visa on arrival/E-visa";
-      case "rgb(255,255,92)": return "Visa on arrival";
-      case "rgb(135,206,250)": return "E-visa";
-      case "rgb(118,65,171)": return "Special permit/police check";
-      case "rgb(200,200,200)": return "Simplified visa";
-      case "rgb(0,0,0)": return "Confirmation required";
-      case "rgb(149,150,150)": return "Visa required";
+    switch(assignedColors[horizontalColumn]?.[colors[verticalColumn]]) {
       case 0: return "Home country";
       case 1: return "Permit required";
       case 2: return "OECS freedom of movement";
@@ -336,10 +306,10 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, main, sub }) 
       .text {
         padding: 10px;
         border: 1px solid #222222;
-        background-color: ${(selectArray[sub] != null) ? colorCalculation() : "#333333"};
+        background-color: ${(selectArray[horizontalColumn] != null) ? colorCalculation() : "#333333"};
       }
     `}</style>
-    {(selectArray[sub] != null) ? visaPolicyCalculation(main) : null}
+    {(selectArray[horizontalColumn] != null) ? visaPolicyCalculation(verticalColumn) : null}
     </td>
   )
 }

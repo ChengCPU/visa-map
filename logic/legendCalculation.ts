@@ -253,8 +253,8 @@ const colors:string[] = [
 type Legend = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
 
 export default function legendCalculation(priority:object, legend:Legend, setLegend:Function, rerender:boolean, setRerender:Function) {
-  for(let a = 0; a < colors.length; a++) {
-    switch(priority[colors[a]]) {
+  for(let legendCalculationMain = 0; legendCalculationMain < colors.length; legendCalculationMain++) {
+    switch(priority[colors[legendCalculationMain]]) {
       case "rgb(255,20,147)": setLegend(legend, legend.HC = true); setRerender(!rerender); break;
       case "rgb(255,145,0)": setLegend(legend, legend.OECSFoM = true); setRerender(!rerender); break;
       case "rgb(0,135,93)": setLegend(legend, legend.MFoM = true); setRerender(!rerender); break;
@@ -269,8 +269,8 @@ export default function legendCalculation(priority:object, legend:Legend, setLeg
       case "rgb(0,0,0)": setLegend(legend, legend.CR = true); setRerender(!rerender); break;
     }
   }
-  for(let b = 0; b < colors.length; b++) {
-    if(priority[colors[b]] == "rgb(118,65,171)") {return}
-    if(b == colors.length - 1) {setLegend(legend, legend.SP = false)}
+  for(let specialPermitCalculation = 0; specialPermitCalculation < colors.length; specialPermitCalculation++) {
+    if(priority[colors[specialPermitCalculation]] == "rgb(118,65,171)") {return}
+    if(specialPermitCalculation == colors.length - 1) {setLegend(legend, legend.SP = false)}
   }
 }
