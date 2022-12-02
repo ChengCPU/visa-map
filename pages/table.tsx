@@ -50,16 +50,17 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors }) => {
           {renderPassports(horizontalColumn)}
 				</tr>
           {renderTables(verticalColumn, horizontalColumn, flags)}
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
 			</tbody>
 	</table>
 	</div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
   </>
   )
 }
