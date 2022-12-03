@@ -7,7 +7,7 @@ interface Props {
   horizontalColumn: number;
 }
 
-const SelectorButton:React.FC<Props> = ({ selectArray, horizontalColumn }) => {
+const TablePassport:React.FC<Props> = ({ selectArray, horizontalColumn }) => {
 
   const passports = useContext(PassportContext) //useContext makes the passport imports available through passports variable
 
@@ -228,4 +228,4 @@ const SelectorButton:React.FC<Props> = ({ selectArray, horizontalColumn }) => {
   )
 }
 
-export default SelectorButton
+export default TablePassport
