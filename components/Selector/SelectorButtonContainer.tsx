@@ -1,4 +1,5 @@
 import styles from '../../styles/SelectorButtonContainer.module.css';
+import ProgressBar from '../ProgressBar';
 import SelectorButton from './SelectorButton';
 interface Props {
   setOpenDrawer: Function;
@@ -272,7 +273,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
   return (
     <div className={styles.container}>
       <div className={styles.text}>
-        <h1>{String(percentage * 100 / 250) + "%"}</h1>
+        <ProgressBar percentage={percentage * 100 / 250} />
       </div>
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={0} />
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={1} />
