@@ -8,8 +8,8 @@ const Stats:React.FC<Props> = ({ selectArray }) => {
 
   const renderPassports = (verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
-      <tr>
-        <th><StatsPassport selectArray={selectArray} verticalColumn={verticalColumn} /></th>
+      <tr key={verticalColumn}>
+        <th><StatsPassport key={verticalColumn} selectArray={selectArray} verticalColumn={verticalColumn} /></th>
       </tr>
     )
   }
