@@ -305,6 +305,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, verticalColum
     <td className={'text'}><style jsx>{`
       .text {
         padding: 10px;
+        color: ${(assignedColors[horizontalColumn]?.[colors[verticalColumn]] == 13) ? '#FFFFFF' : '#222222'};
         border: 1px solid #222222;
         background-color: ${(selectArray[horizontalColumn] != null) ? colorCalculation() : "#333333"};
       }
