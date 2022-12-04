@@ -16,7 +16,7 @@ const ProgressBar:React.FC<Props> = ({ percentage }) => {
       // Customize the path, i.e. the "completed progress"
       path: {
         // Path color
-        stroke: 'rgb(50,205,50)',
+        stroke: 'rgb(255,255,255)',
         // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
         strokeLinecap: 'butt',
         // Customize transition animation
@@ -28,7 +28,7 @@ const ProgressBar:React.FC<Props> = ({ percentage }) => {
       // Customize the circle behind the path, i.e. the "total progress"
       trail: {
         // Trail color
-        stroke: '#d6d6d6',
+        stroke: '#222222',
         // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
         strokeLinecap: 'butt',
         // Rotate the trail
@@ -40,7 +40,7 @@ const ProgressBar:React.FC<Props> = ({ percentage }) => {
         // Text color
         fill: '#ffffff',
         // Text size
-        fontSize: '16px',
+        fontSize: '20px',
       },
       // Customize background - only used when the `background` prop is true
       background: {
