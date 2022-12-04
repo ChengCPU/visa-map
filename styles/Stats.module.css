@@ -1,0 +1,13 @@
+.container {
+  align-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  width:100%;
+  border-spacing: 0;
+}
+
+.subRow {
+  background-color: #333333;
+}
