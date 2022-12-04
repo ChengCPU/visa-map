@@ -756,22 +756,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <ColorContext.Provider value={colorProvider}>
     <PassportContext.Provider value={passportsProvider}>
-      <Selector
-        Drawer={Drawer}
-        openDrawer={openDrawer}
-        setOpenDrawer={setOpenDrawer}
-        select={select}
-        setSelect={setSelect}
-        toggle={toggle}
-        setToggle={setToggle}
-        selectArray={selectArray}
-        setSelectArray={setSelectArray}
-        setPriority={setPriority}
-        setAssignedColors={setAssignedColors}
-        setLegend={setLegend}
-        percentage={percentage}
-        setPercentage={setPercentage}
-      />
       <Component {...pageProps} 
         select={select}
         selectArray={selectArray}
@@ -789,6 +773,22 @@ function MyApp({ Component, pageProps }) {
         setSelectArray={setSelectArray}
         rerender={rerender}
         setRerender={setRerender}
+      />
+      <Selector
+        Drawer={Drawer}
+        openDrawer={openDrawer}
+        setOpenDrawer={setOpenDrawer}
+        select={select}
+        setSelect={setSelect}
+        toggle={toggle}
+        setToggle={setToggle}
+        selectArray={selectArray}
+        setSelectArray={setSelectArray}
+        setPriority={setPriority}
+        setAssignedColors={setAssignedColors}
+        setLegend={setLegend}
+        percentage={percentage}
+        setPercentage={setPercentage}
       />
       <Header />
     </PassportContext.Provider>
