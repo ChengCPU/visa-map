@@ -13,21 +13,29 @@ const Stats:React.FC<Props> = ({ selectArray }) => {
     <br />
     <br />
     <br />
-    <br />
-    <br />
     <div className={styles.container}>
     <table cellSpacing="0" cellPadding="0">
-			<tbody>
-        {(selectArray[0] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={0} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[1] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={1} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[2] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={2} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[3] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={3} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[4] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={4} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[5] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={5} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[6] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={6} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[7] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={7} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[8] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={8} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
-        {(selectArray[9] !== null) ? <tr><th><StatsPassport selectArray={selectArray} number={9} /></th><th><ProgressBar percentage={45} /></th></tr> : null}
+			<tbody className={styles.table}>
+        <tr>
+          <th>
+            <StatsPassport selectArray={selectArray} verticalColumn={0} />
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <p>Visa-free</p>
+            <ProgressBar percentage={45} width={'75px'} height={'75px'} color={'rgb(50,205,50)'} />
+            <br />
+            <p>Visa on arrival/E-visa</p>
+            <ProgressBar percentage={45} width={'75px'} height={'75px'} color={'rgb(161,224,123)'} />
+            <br />
+            <p>Visa on arrival</p>
+            <ProgressBar percentage={45} width={'75px'} height={'75px'} color={'rgb(255,255,92)'} />
+            <br />
+            <p>E-visa</p>
+            <ProgressBar percentage={45} width={'75px'} height={'75px'} color={'rgb(135,206,250)'} />
+          </th>
+        </tr>
 			</tbody>
     </table>
     </div>
