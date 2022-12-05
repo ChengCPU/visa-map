@@ -4,15 +4,15 @@ import Passport from '../Selector/Passport';
 import StatsPassportSVG from './StatsPassportSVG';
 interface Props {
   selectArray:null | string[];
-  number: number;
+  verticalColumn: number;
 }
 
-const StatsPassport:React.FC<Props> = ({ selectArray, number }) => {
+const StatsPassport:React.FC<Props> = ({ selectArray, verticalColumn }) => {
 
   const passports = useContext(PassportContext) //useContext makes the passport imports available through passports variable
 
   const passportCalculation = () => {
-    switch(selectArray[number]) { //the [num] prop is a number ranging from 0-9 that is representative of each 10 selector button components
+    switch(selectArray[verticalColumn]) { //the [num] prop is a number ranging from 0-9 that is representative of each 10 selector button components
       case "abkhazia" : return passports.abkhazia
       case "afghanistan": return passports.afghanistan
       case "albania": return passports.albania
@@ -224,7 +224,7 @@ const StatsPassport:React.FC<Props> = ({ selectArray, number }) => {
   }
 
   return (
-    (selectArray[number] == null) ? <StatsPassportSVG /> : <Passport image={passportCalculation()}/>
+    (selectArray[verticalColumn] == null) ? <StatsPassportSVG /> : <Passport image={passportCalculation()}/>
   )
 }
 

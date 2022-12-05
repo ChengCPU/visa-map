@@ -273,7 +273,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
   return (
     <div className={styles.container}>
       <div className={styles.text}>
-        <ProgressBar percentage={percentage * 100 / 250} />
+        <ProgressBar percentage={percentage * 100 / 250} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
       </div>
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={0} />
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={1} />
