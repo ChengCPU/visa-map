@@ -2,11 +2,14 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 interface Props {
   percentage:number;
+  width:string;
+  height:string;
+  color:string;
 }
 
-const ProgressBar:React.FC<Props> = ({ percentage }) => {
+const ProgressBar:React.FC<Props> = ({ percentage, width, height, color }) => {
   return (
-    <div style={{ width: 100, height: 100 }}>
+    <div style={{ width: width, height: height, color: color }}>
       <CircularProgressbar 
       value={percentage}
       text={`${percentage}%`}
@@ -16,7 +19,7 @@ const ProgressBar:React.FC<Props> = ({ percentage }) => {
       // Customize the path, i.e. the "completed progress"
       path: {
         // Path color
-        stroke: 'rgb(255,255,255)',
+        stroke: `${color}`,
         // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
         strokeLinecap: 'butt',
         // Customize transition animation
