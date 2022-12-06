@@ -4,21 +4,21 @@ import { Button } from "@mui/material";
 import SelectorSVG from './SelectorSVG';
 import Passport from './Passport';
 interface Props {
-  setOpenDrawer: Function;
-  select: {
-    selection: number;
-    passport: null | string;
+  setOpenDrawer:Function;
+  select:{
+    selection:number;
+    passport:null | string;
   };
-  setSelect: Function;
+  setSelect:Function;
   selectArray:null | string[];
-  num: number;
+  num:number;
 }
 
 const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, num }) => {
 
   const passports = useContext(PassportContext) //useContext makes the passport imports available through passports variable
 
-  const i = () => {
+  const passportCalculation = () => {
     switch(selectArray[num]) { //the [num] prop is a number ranging from 0-9 that is representative of each 10 selector button components
       case "abkhazia" : return passports.abkhazia
       case "afghanistan": return passports.afghanistan
@@ -235,7 +235,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
       setOpenDrawer(true);
       setSelect({ selection: num, passport: select.passport });
     }}>
-    {(selectArray[num] == null) ? <SelectorSVG /> : <Passport image={i()}/>} 
+    {(selectArray[num] == null) ? <SelectorSVG /> : <Passport image={passportCalculation()}/>} 
     {/* If selectArray[num] does not equal a string, it will render the selectorSVG.
     If it does equal a string and match a country, it will render the passport component and run the i() function*/}
     </Button>

@@ -2,23 +2,23 @@
 import SelectorButtonContainer from './SelectorButtonContainer';
 import SelectorPassportContainer from './SelectorPassportContainer';
 interface Props {
-  Drawer: any;
-  openDrawer: boolean;
-  setOpenDrawer: Function;
-  select: {
-    selection: number;
-    passport: null | string;
+  Drawer:any;
+  openDrawer:boolean;
+  setOpenDrawer:Function;
+  select:{
+    selection:number;
+    passport:null | string;
   };
-  setSelect: Function;
-  toggle: boolean;
-  setToggle: Function;
+  setSelect:Function;
+  toggle:boolean;
+  setToggle:Function;
   selectArray:null | string[];
-  setSelectArray: Function;
-  setPriority: Function;
-  setAssignedColors: Function;
-  setLegend: Function;
-  percentage: number;
-  setPercentage: Function;
+  setSelectArray:Function;
+  setPriority:Function;
+  setAssignedColors:Function;
+  setLegend:Function;
+  percentage:any;
+  setPercentage:Function;
 }
 
 const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, toggle, setToggle, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage }) => {

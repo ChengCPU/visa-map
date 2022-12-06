@@ -1,8 +1,8 @@
 interface Props {
-  assignedColors: object[];
-  selectArray: null | string[];
-  verticalColumn: number;
-  horizontalColumn: number;
+  assignedColors:object[];
+  selectArray:null | string[];
+  verticalColumn:number;
+  horizontalColumn:number;
 }
 const colors:string[] = [
   "abkhaziaColor",

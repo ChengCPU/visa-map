@@ -2,19 +2,19 @@ import styles from '../../styles/SelectorButtonContainer.module.css';
 import ProgressBar from '../ProgressBar';
 import SelectorButton from './SelectorButton';
 interface Props {
-  setOpenDrawer: Function;
-  select: {
+  setOpenDrawer:Function;
+  select:{
     selection: number;
     passport: null | string;
   };
-  setSelect: Function;
+  setSelect:Function;
   selectArray:null | string[];
-  setSelectArray: Function;
-  setPriority: Function;
-  setAssignedColors: Function;
-  setLegend: Function;
-  percentage: number;
-  setPercentage: Function;
+  setSelectArray:Function;
+  setPriority:Function;
+  setAssignedColors:Function;
+  setLegend:Function;
+  percentage:any;
+  setPercentage:Function;
 }
 
 const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage }) => {
@@ -270,10 +270,11 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
     zambiaColor: "rgb(149,150,150)",
     zimbabweColor: "rgb(149,150,150)"
   }
+
   return (
     <div className={styles.container}>
       <div className={styles.text}>
-        <ProgressBar percentage={percentage * 100 / 250} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
+        <ProgressBar percentage={percentage * 100 / 250} verticalColumn={null} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
       </div>
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={0} />
     <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={1} />

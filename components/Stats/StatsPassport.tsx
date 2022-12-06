@@ -4,7 +4,7 @@ import Passport from '../Selector/Passport';
 import StatsPassportSVG from './StatsPassportSVG';
 interface Props {
   selectArray:null | string[];
-  verticalColumn: number;
+  verticalColumn:number;
 }
 
 const StatsPassport:React.FC<Props> = ({ selectArray, verticalColumn }) => {

@@ -1,16 +1,16 @@
 import { Button } from "@mui/material";
 import Passport from "./Passport";
 interface Props {
-  setOpenDrawer: Function;
-  select: {
-    selection: number;
-    passport: null | string;
+  setOpenDrawer:Function;
+  select:{
+    selection:number;
+    passport:null | string;
   };
-  setSelect: Function;
-  toggle: boolean;
-  setToggle: Function;
-  image: object;
-  name: string;
+  setSelect:Function;
+  toggle:boolean;
+  setToggle:Function;
+  image:object;
+  name:string;
 }
 
 const SelectorPassport:React.FC<Props> = ({ setOpenDrawer, select, setSelect, toggle, setToggle, image, name }) => {

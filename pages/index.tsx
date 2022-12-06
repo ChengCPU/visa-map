@@ -1,8 +1,8 @@
 import Map from '../components/Map/Map';
 import Head from 'next/head';
-type LegendType = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
+type LegendType = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
 interface Props {
-  legend: LegendType;
+  legend:LegendType;
 }
 
 export default function Home({ legend }:Props) {

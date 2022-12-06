@@ -4,7 +4,7 @@ import Passport from '../Selector/Passport';
 import TablePassportSVG from './TablePassportSVG';
 interface Props {
   selectArray:null | string[];
-  horizontalColumn: number;
+  horizontalColumn:number;
 }
 
 const TablePassport:React.FC<Props> = ({ selectArray, horizontalColumn }) => {

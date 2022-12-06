@@ -1,6 +1,6 @@
 interface Props {
-  flag: string;
-	country: string;
+  flag:string;
+	country:string;
 }
 const Country:React.FC<Props> = ({ flag, country }) => {
   return (

@@ -1,4 +1,4 @@
-interface Props {color: string}
+interface Props {color:string}
 
 const Rectangle:React.FC<Props> = ({ color }) => {
 	return (
@@ -9,7 +9,8 @@ const Rectangle:React.FC<Props> = ({ color }) => {
       fill: ${color};
       stroke: #111111;
       stroke-width: 1;
-      }`}</style>
+      }
+      `}</style>
     </rect>
     </svg>
 	)

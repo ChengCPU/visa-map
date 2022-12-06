@@ -1,5 +1,5 @@
 import Image from 'next/image';
-interface Props {image: any};
+interface Props {image:any};
 
 const Passport:React.FC<Props> = ({ image }) => {
   return (
