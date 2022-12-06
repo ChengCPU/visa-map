@@ -1,6 +1,7 @@
 import legendCalculation from './legendCalculation';
-interface Select {selection: number,passport: null | string;}
-type Legend = {HC: boolean, FoM: boolean, OECSFoM: boolean, MFoM: boolean, EUFoM: boolean, GCCFoM: boolean, VF: boolean, VoAEV: boolean, VoA: boolean, EV: boolean, SP: boolean, CR: boolean}
+import percentageCalculation from './percentageCalculation';
+interface Select {selection:number,passport:null | string;}
+type Legend = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
 const colors:string[] = [
   "abkhaziaColor",
   "afghanistanColor", 
@@ -669,11 +670,5 @@ export default function mainCalculation(country:string, assignedColors:object[],
               default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = "rgb(150,150,150)")}}}}}
 break;}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
-let count = 0
-for(let x = 0; x < colors.length; x++) {
-  if(priority[colors[x]] != "rgb(149,150,150)" && priority[colors[x]] != "rgb(150,150,150)" && priority[colors[x]] != "rgb(0,0,0)" && priority[colors[x]] != "rgb(255,0,0)") {
-    count++
-    setPercentage(count)
-  }
-}
+percentageCalculation(priority, setPercentage)
 })}
