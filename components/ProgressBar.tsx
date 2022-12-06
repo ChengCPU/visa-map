@@ -1,18 +1,25 @@
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 interface Props {
-  percentage:number;
+  percentage:any;
+  verticalColumn:number | null;
   width:string;
   height:string;
   color:string;
 }
 
-const ProgressBar:React.FC<Props> = ({ percentage, width, height, color }) => {
+const ProgressBar:React.FC<Props> = ({ percentage, verticalColumn, width, height, color }) => {
+
+  const valueCalculation = () => {
+    if(verticalColumn == null) {return percentage}
+    return 0
+  }
+
   return (
     <div style={{ width: width, height: height, color: color }}>
       <CircularProgressbar 
-      value={percentage}
-      text={`${percentage}%`}
+      value={valueCalculation()}
+      text={`${valueCalculation()}%`}
       styles={{
       // Customize the root svg element
       root: {},
