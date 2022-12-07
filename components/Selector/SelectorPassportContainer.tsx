@@ -21,18 +21,19 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
   const renderPassports = (passportsRenderArray:any) => {
     return passportsRenderArray.map(passportsRenderArray =>
       (passportsRenderArray == 'br') 
-        ? <br /> 
-        : (typeof(passportsRenderArray) == 'string') 
-        ? <h1 className={styles.text}>{passportsRenderArray}</h1> 
-        : <SelectorPassport
-            setOpenDrawer={setOpenDrawer}
-            select={select}
-            setSelect={setSelect}
-            toggle={toggle}
-            setToggle={setToggle}
-            image={passports[passportsArray[passportsRenderArray]]}
-            name={passportsArray[passportsRenderArray]} 
-          />
+      ? <br key={Math.random()} />
+      : (typeof(passportsRenderArray) == 'string') 
+      ? <h1 key={Math.random()} className={styles.text}>{passportsRenderArray}</h1> 
+      : <SelectorPassport
+          key={Math.random()}
+          setOpenDrawer={setOpenDrawer}
+          select={select}
+          setSelect={setSelect}
+          toggle={toggle}
+          setToggle={setToggle}
+          image={passports[passportsArray[passportsRenderArray]]}
+          name={passportsArray[passportsRenderArray]} 
+        />
     )
   }
 

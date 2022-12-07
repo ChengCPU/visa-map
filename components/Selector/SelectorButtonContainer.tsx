@@ -16,6 +16,7 @@ interface Props {
   percentage:any;
   setPercentage:Function;
 }
+const selectorButtonArray = [0,1,2,3,4,5,6,7,8,9]
 
 const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage }) => {
   const color:object = {
@@ -270,28 +271,84 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
     zambiaColor: "rgb(149,150,150)",
     zimbabweColor: "rgb(149,150,150)"
   }
+  const renderSelectorButtons = (selectorButtonArray:number[]) => {
+    return selectorButtonArray.map(selectorButtonArray =>
+      <SelectorButton key={selectorButtonArray} setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={selectorButtonArray} />
+    )
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.text}>
-        <ProgressBar percentage={percentage * 100 / 250} verticalColumn={null} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
+        <ProgressBar percentage={percentage} verticalColumn={null} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
       </div>
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={0} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={1} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={2} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={3} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={4} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={5} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={6} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={7} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={8} />
-    <SelectorButton setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={9} />
+      {renderSelectorButtons(selectorButtonArray)}
     <button onClick={() => {
       setSelectArray([null,null,null,null,null,null,null,null,null,null,null])
       setPriority(color)
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
       setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
-      setPercentage(0)
+      setPercentage([{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },{
+        total:null,
+        visaFree:null,
+        visaOnArrivalEVisa:null,
+        visaOnArrival:null,
+        eVisa:null
+      },0])
     }}>reset</button>
     </div>
   )
