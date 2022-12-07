@@ -253,7 +253,7 @@ const colors:string[] = [
   "zambiaColor",
   "zimbabweColor"
 ]
-export default function subCalculation(selectArray:null | string[], assignedColors:object[], setAssignedColors:Function, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, setPercentage:Function): void {
+export default function subCalculation(selectArray:null | string[], assignedColors:object[], setAssignedColors:Function, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, percentage:any, setPercentage:Function): void {
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {
@@ -672,5 +672,5 @@ export default function subCalculation(selectArray:null | string[], assignedColo
             default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = "rgb(150,150,150)")}}}}}
 break;}}}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
-percentageCalculation(priority, setPercentage)
+percentageCalculation(selectArray, priority, assignedColors, percentage, setPercentage)
 })}

@@ -11,8 +11,8 @@ interface Props {
 const ProgressBar:React.FC<Props> = ({ percentage, verticalColumn, width, height, color }) => {
 
   const valueCalculation = () => {
-    if(verticalColumn == null) {return percentage}
-    return 0
+    if(verticalColumn == null) {return percentage[10] * 100 / 250}
+    return percentage * 100 / 250
   }
 
   return (

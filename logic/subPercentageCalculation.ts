@@ -1,4 +1,3 @@
-import subPercentageCalculation from './subPercentageCalculation';
 const colors:string[] = [
   "abkhaziaColor",
   "afghanistanColor", 
@@ -252,20 +251,95 @@ const colors:string[] = [
   "zimbabweColor"
 ]
 
-export default function percentageCalculation(selectArray:null | string[], priority:any, assignedColors:any, percentage:any, setPercentage:Function) {
-  let globalCount = 0
+export default function percentageCalculation(selectArray:null | string[], assignedColors:any, percentage:any, setPercentage:Function, key:string) {
+  let totalCount = 0, visaFreeCount = 0, visaOnArrivalEVisaCount = 0, visaOnArrivalCount = 0, eVisaCount = 0
 
-  for(let global = 0; global < colors.length; global++) {
-    if(priority[colors[global]] != "rgb(149,150,150)" && priority[colors[global]] != "rgb(150,150,150)" && priority[colors[global]] != "rgb(0,0,0)" && priority[colors[global]] != "rgb(255,0,0)" && priority[colors[global]] != "rgb(200,200,200)") {
-      globalCount++
-      if(global == colors.length - 1) {
-        setPercentage(percentage, percentage[10] = globalCount)
+  switch(key) {
+  case 'total':
+    for(let selectArrayCalculation = 0; selectArrayCalculation < selectArray.length - 1; selectArrayCalculation++) {
+      if(selectArray[selectArrayCalculation] != null && percentage[selectArrayCalculation].total == null) {
+        for(let total = 0; total < colors.length; total++) {
+          switch(assignedColors[selectArrayCalculation][colors[total]]){
+            case 0: totalCount++; break;
+            case 2: totalCount++; break;
+            case 3: totalCount++; break;
+            case 4: totalCount++; break;
+            case 5: totalCount++; break;
+            case 6: totalCount++; break;
+            case 7: totalCount++; break;
+            case 8: totalCount++; break;
+            case 9: totalCount++; break;
+            case 10: totalCount++; break;
+            case 11: totalCount++; break;
+          }
+          if(total == colors.length - 1) {
+            setPercentage(percentage, percentage[selectArrayCalculation].total = totalCount)
+          }
+        }
+      }
+    }
+  break;
+  case 'visaFree':
+    for(let selectArrayCalculation = 0; selectArrayCalculation < selectArray.length - 1; selectArrayCalculation++) {
+      if(selectArray[selectArrayCalculation] != null && percentage[selectArrayCalculation].visaFree == null) {
+        for(let visaFree = 0; visaFree < colors.length; visaFree++) {
+          switch(assignedColors[selectArrayCalculation][colors[visaFree]]){
+            case 0: visaFreeCount++; break;
+            case 2: visaFreeCount++; break;
+            case 3: visaFreeCount++; break;
+            case 4: visaFreeCount++; break;
+            case 5: visaFreeCount++; break;
+            case 6: visaFreeCount++; break;
+            case 7: visaFreeCount++; break;
+          }
+          if(visaFree == colors.length - 1) {
+            setPercentage(percentage, percentage[selectArrayCalculation].visaFree = visaFreeCount)
+          }
+        }
+      }
+    }
+  break;
+  case 'visaOnArrivalEVisa':
+    for(let selectArrayCalculation = 0; selectArrayCalculation < selectArray.length - 1; selectArrayCalculation++) {
+      if(selectArray[selectArrayCalculation] != null && percentage[selectArrayCalculation].visaOnArrivalEVisa == null) {
+        for(let visaOnArrivalEVisa = 0; visaOnArrivalEVisa < colors.length; visaOnArrivalEVisa++) {
+          switch(assignedColors[selectArrayCalculation][colors[visaOnArrivalEVisa]]){
+            case 8: visaOnArrivalEVisaCount++; break;
+          }
+          if(visaOnArrivalEVisa == colors.length - 1) {
+            setPercentage(percentage, percentage[selectArrayCalculation].visaOnArrivalEVisa = visaOnArrivalEVisaCount)
+          }
+        }
+      }
+    }
+  break;
+  case 'visaOnArrival':
+    for(let selectArrayCalculation = 0; selectArrayCalculation < selectArray.length - 1; selectArrayCalculation++) {
+      if(selectArray[selectArrayCalculation] != null && percentage[selectArrayCalculation].visaOnArrival == null) {
+        for(let visaOnArrival = 0; visaOnArrival < colors.length; visaOnArrival++) {
+          switch(assignedColors[selectArrayCalculation][colors[visaOnArrival]]){
+            case 9: visaOnArrivalCount++; break;
+          }
+          if(visaOnArrival == colors.length - 1) {
+            setPercentage(percentage, percentage[selectArrayCalculation].visaOnArrival = visaOnArrivalCount)
+          }
+        }
+      }
+    }
+  break;
+  case 'eVisa':
+    for(let selectArrayCalculation = 0; selectArrayCalculation < selectArray.length - 1; selectArrayCalculation++) {
+      if(selectArray[selectArrayCalculation] != null && percentage[selectArrayCalculation].eVisa == null) {
+        for(let eVisa = 0; eVisa < colors.length; eVisa++) {
+          switch(assignedColors[selectArrayCalculation][colors[eVisa]]){
+            case 10: eVisaCount++; break;
+          }
+          if(eVisa == colors.length - 1) {
+            setPercentage(percentage, percentage[selectArrayCalculation].eVisa = eVisaCount)
+          }
+        }
       }
     }
   }
-  subPercentageCalculation(selectArray, assignedColors, percentage, setPercentage, 'total')
-  subPercentageCalculation(selectArray, assignedColors, percentage, setPercentage, 'visaFree')
-  subPercentageCalculation(selectArray, assignedColors, percentage, setPercentage, 'visaOnArrivalEVisa')
-  subPercentageCalculation(selectArray, assignedColors, percentage, setPercentage, 'visaOnArrival')
-  subPercentageCalculation(selectArray, assignedColors, percentage, setPercentage, 'eVisa')
+  
 }

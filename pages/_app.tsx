@@ -474,6 +474,7 @@ function MyApp({ Component, pageProps }) {
   zambiaColor: "rgb(149,150,150)",
   zimbabweColor: "rgb(149,150,150)"
   }
+
   const [secondToggle, setSecondToggle] = useState<boolean>(false) //used by reset function to trigger secondToggle useEffect
   const [rerender, setRerender] = useState<boolean>(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
@@ -481,7 +482,67 @@ function MyApp({ Component, pageProps }) {
   const [select, setSelect] = useState<{selection: number,passport: null | string}>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
-  const [percentage, setPercentage]= useState<any>(0)
+  const [percentage, setPercentage]= useState<any>([{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  },{
+    total:null,
+    visaFree:null,
+    visaOnArrivalEVisa:null,
+    visaOnArrival:null,
+    eVisa:null
+  }, 0])
   const [priority, setPriority] = useState<any>(color) //priority is the color that is passed onto each country component as context
   const [legend, setLegend] = useState<Legend>({HC:false, FoM:false, OECSFoM:false, MFoM:false, EUFoM:false, GCCFoM:false, VF:false, VoAEV:false, VoA:false, EV:false, SP:false, CR:false})
   //value is passed in as context to the country components
@@ -744,12 +805,12 @@ function MyApp({ Component, pageProps }) {
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, setPercentage)
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, selectArray)
     }
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, setPercentage)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 
@@ -760,6 +821,7 @@ function MyApp({ Component, pageProps }) {
         legend={legend}
         selectArray={selectArray}
         assignedColors={assignedColors}
+        percentage={percentage}
       />
       <Selector
         Drawer={Drawer}
