@@ -274,6 +274,7 @@ export default function percentageCalculation(selectArray:null | string[], assig
           }
           if(total == colors.length - 1) {
             setPercentage(percentage, percentage[selectArrayCalculation].total = totalCount)
+            totalCount = 0
           }
         }
       }
@@ -294,6 +295,7 @@ export default function percentageCalculation(selectArray:null | string[], assig
           }
           if(visaFree == colors.length - 1) {
             setPercentage(percentage, percentage[selectArrayCalculation].visaFree = visaFreeCount)
+            visaFreeCount = 0
           }
         }
       }
@@ -308,6 +310,7 @@ export default function percentageCalculation(selectArray:null | string[], assig
           }
           if(visaOnArrivalEVisa == colors.length - 1) {
             setPercentage(percentage, percentage[selectArrayCalculation].visaOnArrivalEVisa = visaOnArrivalEVisaCount)
+            visaOnArrivalEVisaCount = 0
           }
         }
       }
@@ -322,6 +325,7 @@ export default function percentageCalculation(selectArray:null | string[], assig
           }
           if(visaOnArrival == colors.length - 1) {
             setPercentage(percentage, percentage[selectArrayCalculation].visaOnArrival = visaOnArrivalCount)
+            visaOnArrivalCount = 0
           }
         }
       }
@@ -336,6 +340,7 @@ export default function percentageCalculation(selectArray:null | string[], assig
           }
           if(eVisa == colors.length - 1) {
             setPercentage(percentage, percentage[selectArrayCalculation].eVisa = eVisaCount)
+            eVisaCount = 0
           }
         }
       }
