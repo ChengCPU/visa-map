@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext, useState } from 'react'
 import { PassportContext } from '../context/PassportContext'
 import styles from '../../styles/SelectorPassportContainer.module.css';
@@ -52,9 +53,8 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
       <br />
     {foundPassports && foundPassports.length > 0 ? (
       foundPassports.map((passportsMap) => (
-        <>
+        <React.Fragment key={foundPassports.indexOf(passportsMap)}>
         <SelectorPassport
-          key={Math.random()}
           setOpenDrawer={setOpenDrawer}
           select={select}
           setSelect={setSelect}
@@ -64,7 +64,7 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
           name={convertCountryNames(passportsMap)} 
         />
         {((foundPassports.indexOf(passportsMap) + 1) % 3 == 0 && passportsArray.indexOf(passportsMap) != 0) ? <br /> : null}
-        </>
+        </React.Fragment>
       ))
     ) : (
       <p>No results found</p>
