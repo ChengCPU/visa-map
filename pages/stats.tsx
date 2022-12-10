@@ -11,18 +11,18 @@ const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
 
   const renderPassports = (verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
-      (selectArray[verticalColumn]) ?
+      (selectArray[verticalColumn] != null) ?
       <th key={verticalColumn * 10}>
         <StatsPassport selectArray={selectArray} verticalColumn={verticalColumn} />
       </th>
-      : <br />
+      : null
     )
   }
 
   const renderStats = (verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
-      (selectArray[verticalColumn]) ?
-      <th key={verticalColumn * 20}>
+      (selectArray[verticalColumn] != null) ?
+      <th key={verticalColumn * 100}>
       <p>Total</p>
       <ProgressBar percentage={percentage[verticalColumn].total} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(255,255,255)'} />
       <br />
@@ -38,7 +38,7 @@ const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
       <p>E-visa</p>
       <ProgressBar percentage={percentage[verticalColumn].eVisa} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(135,206,250)'} />
       </th>
-      : <br />
+      : null
     )
   }
 
