@@ -22,7 +22,7 @@ const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
   const renderStats = (verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
       (selectArray[verticalColumn] != null) ?
-      <th key={verticalColumn * 100}>
+      <th key={verticalColumn * 100} className={styles.container}>
       <p>Total</p>
       <ProgressBar percentage={percentage[verticalColumn].total} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(255,255,255)'} />
       <br />
