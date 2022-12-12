@@ -53,6 +53,7 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
       <br />
     {foundPassports && foundPassports.length > 0 ? (
       foundPassports.map((passportsMap) => (
+        // Renders with .map a react fragment with the SelectorPassport component and on the third SelectorPassport, a break component is rendered
         <React.Fragment key={foundPassports.indexOf(passportsMap)}>
         <SelectorPassport
           setOpenDrawer={setOpenDrawer}
