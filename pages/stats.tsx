@@ -5,40 +5,34 @@ interface Props {
   selectArray:null | string[];
   percentage:any;
 }
-const verticalColumn:number[] = [0,1,2,3,4,5,6,7,8,9]
+const horizontalColumn:number[] = [0,1,2,3,4,5,6,7,8,9]
+const verticalColumn:number[] = [0,1,2,3,4]
+const verticalColumnText:string[] = ['Total', 'Visa-free', 'Visa on arrival/E-visa','Visa on arrival', 'E-visa']
+const verticalColumnSelection:string[] = ['total', 'visaFree', 'visaOnArrivalEVisa', 'visaOnArrival', 'eVisa']
+const verticalColumnRGB:string[] = ['rgb(255,255,255)', 'rgb(50,205,50)', 'rgb(161,224,123)', 'rgb(255,255,92)', 'rgb(135,206,250)']
 
 const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
 
-  const renderPassports = (verticalColumn:number[]) => {
-    return verticalColumn.map(verticalColumn =>
-      (selectArray[verticalColumn] != null) ?
-      <th key={verticalColumn * 10}>
-        <StatsPassport selectArray={selectArray} verticalColumn={verticalColumn} />
-      </th>
-      : null
-    )
+  const renderPassports = (horizontalColumn: number[]) => {
+    return horizontalColumn.map(horizontalColumn => <th key={horizontalColumn}><StatsPassport selectArray={selectArray} horizontalColumn={horizontalColumn}/></th>)
   }
 
-  const renderStats = (verticalColumn:number[]) => {
-    return verticalColumn.map(verticalColumn =>
-      (selectArray[verticalColumn] != null) ?
-      <th key={verticalColumn * 100} className={styles.container}>
-      <p>Total</p>
-      <ProgressBar percentage={percentage[verticalColumn].total} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(255,255,255)'} />
-      <br />
-      <p>Visa-free</p>
-      <ProgressBar percentage={percentage[verticalColumn].visaFree} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(50,205,50)'} />
-      <br />
-      <p>Visa on arrival/E-visa</p>
-      <ProgressBar percentage={percentage[verticalColumn].visaOnArrivalEVisa} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(161,224,123)'} />
-      <br />
-      <p>Visa on arrival</p>
-      <ProgressBar percentage={percentage[verticalColumn].visaOnArrival} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(255,255,92)'} />
-      <br />
-      <p>E-visa</p>
-      <ProgressBar percentage={percentage[verticalColumn].eVisa} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={'rgb(135,206,250)'} />
+  const renderTables = (verticalColumn:number[], horizontalColumn:number[]) => {
+    return verticalColumn.map(verticalColumn => 
+    <tr>
+      <th>
+        <p className={styles.text}>{verticalColumnText[verticalColumn]}</p>
       </th>
-      : null
+      {horizontalColumn.map(horizontalColumn =>
+        (selectArray[horizontalColumn] != null) ? (
+        <th>
+        <ProgressBar percentage={percentage[horizontalColumn][verticalColumnSelection[verticalColumn]]} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={verticalColumnRGB[verticalColumn]} />
+        </th>
+        ) : (
+          <th></th>
+        )
+      )}
+    </tr>
     )
   }
 
@@ -49,13 +43,12 @@ const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
     <br />
     <div className={styles.container}>
     <table cellSpacing="0" cellPadding="0">
-			<tbody className={styles.table}>
+			<tbody>
         <tr>
-          {renderPassports(verticalColumn)}
+          <th></th>
+          {renderPassports(horizontalColumn)}
         </tr>
-        <tr>
-          {renderStats(verticalColumn)}
-        </tr>
+          {renderTables(verticalColumn, horizontalColumn)}
 			</tbody>
     </table>
     </div>
