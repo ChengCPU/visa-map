@@ -19,7 +19,7 @@ const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
 
   const renderTables = (verticalColumn:number[], horizontalColumn:number[]) => {
     return verticalColumn.map(verticalColumn => 
-    <tr className={styles.subRow}>
+    <tr key={verticalColumn} className={styles.subRow}>
       <td className={styles.cell}>
         <p className={styles.text}>{verticalColumnText[verticalColumn]}</p>
       </td>
