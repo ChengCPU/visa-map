@@ -6,7 +6,7 @@ interface Props {
   setLanguage:Function;
 }
 
-const LanguageSelect:React.FC<Props> = ({ language }) => {
+const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -15,6 +15,19 @@ const LanguageSelect:React.FC<Props> = ({ language }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const menuItemOnClick = (prop) => {
+    setLanguage(prop)
+    handleClose()
+  }
+
+  const languageArray = ['🇬🇧EN', '🇪🇸ES', '🇵🇹PT', '🇫🇷FR']
+  const renderMenuItems = (languageArray:string[]) => {
+    return languageArray.map(languageArray =>
+      (language != languageArray) ?
+      <MenuItem key={languageArray} onClick={() => menuItemOnClick(languageArray)}>{languageArray}</MenuItem>
+      : null
+    )
+  }
 
   return (
     <div className={styles.languageSelect}>
@@ -27,9 +40,7 @@ const LanguageSelect:React.FC<Props> = ({ language }) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>🇪🇸ES</MenuItem>
-        <MenuItem onClick={handleClose}>🇵🇹PT</MenuItem>
-        <MenuItem onClick={handleClose}>🇫🇷FR</MenuItem>
+      {renderMenuItems(languageArray)}
       </Menu>
     </div>
   );
