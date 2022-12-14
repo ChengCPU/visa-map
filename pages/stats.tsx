@@ -14,22 +14,22 @@ const verticalColumnRGB:string[] = ['rgb(255,255,255)', 'rgb(50,205,50)', 'rgb(1
 const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
 
   const renderPassports = (horizontalColumn: number[]) => {
-    return horizontalColumn.map(horizontalColumn => <th key={horizontalColumn}><StatsPassport selectArray={selectArray} horizontalColumn={horizontalColumn}/></th>)
+    return horizontalColumn.map(horizontalColumn => <td key={horizontalColumn}><StatsPassport selectArray={selectArray} horizontalColumn={horizontalColumn}/></td>)
   }
 
   const renderTables = (verticalColumn:number[], horizontalColumn:number[]) => {
     return verticalColumn.map(verticalColumn => 
     <tr className={styles.subRow}>
-      <th>
+      <td className={styles.cell}>
         <p className={styles.text}>{verticalColumnText[verticalColumn]}</p>
-      </th>
+      </td>
       {horizontalColumn.map(horizontalColumn =>
         (selectArray[horizontalColumn] != null) ? (
-        <th>
+        <td className={styles.cell}>
         <ProgressBar percentage={percentage[horizontalColumn][verticalColumnSelection[verticalColumn]]} verticalColumn={verticalColumn} width={'75px'} height={'75px'} color={verticalColumnRGB[verticalColumn]} />
-        </th>
+        </td>
         ) : (
-          <th></th>
+          <td className={styles.cell}></td>
         )
       )}
     </tr>
@@ -42,7 +42,7 @@ const Stats:React.FC<Props> = ({ selectArray, percentage }) => {
     <br />
     <br />
     <div className={styles.container}>
-    <table cellSpacing="2" cellPadding="0">
+    <table cellSpacing="0" cellPadding="0">
 			<tbody>
         <tr>
           <th></th>
