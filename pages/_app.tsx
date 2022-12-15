@@ -1,12 +1,14 @@
+import '../styles/globals.css';
 import { PassportContext } from '../components/context/PassportContext';
 import { ColorContext } from '../components/context/ColorContext';
 import { useState, useEffect } from 'react';
 import { Drawer } from '@mui/material';
+//logic imports
 import reset from '../logic/reset';
 import selectArrayCalculation from '../logic/selectArrayCalculation';
 import mainCalculation from '../logic/mainCalculation';
 import subCalculation from '../logic/subCalculation';
-import '../styles/globals.css';
+//component imports
 import Header from '../components/Header';
 import Selector from '../components/Selector/Selector';
 //passport imports
@@ -763,6 +765,7 @@ function MyApp({ Component, pageProps }) {
         selectArray={selectArray}
         assignedColors={assignedColors}
         percentage={percentage}
+        language={language}
       />
       <Selector
         Drawer={Drawer}
