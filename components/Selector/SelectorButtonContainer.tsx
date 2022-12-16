@@ -273,7 +273,9 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
   }
   const renderSelectorButtons = (selectorButtonArray:number[]) => {
     return selectorButtonArray.map(selectorButtonArray =>
+      (selectorButtonArray == 0 || selectArray[selectorButtonArray - 1] != null) ?
       <SelectorButton key={selectorButtonArray} setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArray={selectArray} num={selectorButtonArray} />
+      : null
     )
   }
 
