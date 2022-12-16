@@ -288,7 +288,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, verticalColum
       case 3: return "MERCSOUR freedom of movement";
       case 4: return "EU freedom of movement";
       case 5: return "GCC freedom of movement";
-      case 6: return "freedom of movement";
+      case 6: return "Freedom of movement";
       case 7: return "Visa-free";
       case 8: return "Visa on arrival/E-visa";
       case 9: return "Visa on arrival";
