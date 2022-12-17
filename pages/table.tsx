@@ -24,7 +24,7 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, language }) => {
     switch(language){
       case '🇬🇧EN': return countriesEN
       case '🇪🇸ES': return countriesES
-      case '🇵🇹PT': return countriesEN
+      case '🇵🇹PT': return countriesPT
       case '🇫🇷FR': return countriesFR
     }
   }
