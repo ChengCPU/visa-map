@@ -13,6 +13,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
       <Link href='/'><Button className={styles.button} variant="contained">Home</Button></Link>
       <Link href='/table'><Button className={styles.button} variant="contained">Table</Button></Link>
       <Link href='/stats'><Button className={styles.button} variant="contained">Stats</Button></Link>
+      <Link href='/rank'><Button className={styles.button} variant="contained">Rank</Button></Link>
       <LanguageSelect
         language={language}
         setLanguage={setLanguage}
