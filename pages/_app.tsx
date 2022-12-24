@@ -8,6 +8,7 @@ import reset from '../logic/reset';
 import selectArrayCalculation from '../logic/selectArrayCalculation';
 import mainCalculation from '../logic/mainCalculation';
 import subCalculation from '../logic/subCalculation';
+import fetchData from '../logic/fetchData';
 //component imports
 import Header from '../components/Header';
 import Selector from '../components/Selector/Selector';
@@ -488,6 +489,7 @@ function MyApp({ Component, pageProps }) {
   const [priority, setPriority] = useState<any>(color) //priority is the color that is passed onto each country component as context
   const [legend, setLegend] = useState<Legend>({HC:false, FoM:false, OECSFoM:false, MFoM:false, EUFoM:false, GCCFoM:false, VF:false, VoAEV:false, VoA:false, EV:false, SP:false, CR:false})
   const [language, setLanguage] = useState<string>('🇬🇧EN')
+  const [visaPolicyData, setVisaPolicyData] = useState([])
   //value is passed in as context to the country components
   const colorProvider:any = {
     abkhaziaColor: priority.abkhaziaColor,
@@ -743,6 +745,10 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
+    fetchData(setVisaPolicyData)
+  }, [])
+
+  useEffect(() => {
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
       reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setLegend, percentage, setPercentage); return
     }
@@ -766,6 +772,7 @@ function MyApp({ Component, pageProps }) {
         assignedColors={assignedColors}
         percentage={percentage}
         language={language}
+        visaPolicyData={visaPolicyData}
       />
       <Selector
         Drawer={Drawer}
