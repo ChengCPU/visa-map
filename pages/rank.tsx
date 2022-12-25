@@ -34,6 +34,19 @@ const Rank:React.FC<Props> = ({ visaPolicyData }) => {
           float: left;
         }
         `}</style></div>
+        <div className={'visaOnArrival'}><style jsx>{`
+        .visaOnArrival {
+          margin: 0px;
+          padding: 8px 0px 0px; 
+          width: 420px;
+          height: 20px;
+          background: rgb(255, 255, 0);
+          position:absolute;
+          text-align: left;
+          float: left;
+        }
+        `}</style></div>
+        <p className={styles.textVoa}>20</p>
         <div className={'visaFree'}><style jsx>{`
         .visaFree {
           margin: 0px;
@@ -46,12 +59,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData }) => {
           float: left;
         }
         `}</style></div>
-        <p className={'text'}><style jsx>{`
-        .text {
-          margin: 5px;
-          position:absolute;
-        }
-        `}</style>{visaPolicyData[verticalColumn]?.[1]}</p>
+        <p className={styles.textVf}>{visaPolicyData[verticalColumn]?.[1]}</p>
       </td>
     </tr>
     )
