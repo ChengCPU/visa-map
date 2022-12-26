@@ -32,21 +32,26 @@ const Rank:React.FC<Props> = ({ visaPolicyData }) => {
           position:relative;
           text-align: left;
           float: left;
-        }
-        `}</style></div>
+        }`}</style></div>
         <div className={'visaOnArrival'}><style jsx>{`
         .visaOnArrival {
           margin: 0px;
           padding: 8px 0px 0px; 
-          width: 420px;
+          width: ${(visaPolicyData[verticalColumn]?.[1] * 2) + 10 * 2}px;
           height: 20px;
           background: rgb(255, 255, 0);
           position:absolute;
           text-align: left;
           float: left;
-        }
-        `}</style></div>
-        <p className={styles.textVoa}>20</p>
+        }`}</style></div>
+        <p className={'textVoa'}><style jsx>{`
+        .textVoa {
+          margin: 5px;
+          margin-left: ${(visaPolicyData[verticalColumn]?.[1] * 2) + 2}px;
+          text-align: center;
+          position:absolute;
+        }`}</style>
+        10</p>
         <div className={'visaFree'}><style jsx>{`
         .visaFree {
           margin: 0px;
@@ -57,9 +62,14 @@ const Rank:React.FC<Props> = ({ visaPolicyData }) => {
           position:absolute;
           text-align: left;
           float: left;
-        }
-        `}</style></div>
-        <p className={styles.textVf}>{visaPolicyData[verticalColumn]?.[1]}</p>
+        }`}</style></div>
+        <p className={'textVf'}><style jsx>{`
+        .textVf {
+          margin: 5px;
+          text-align: center;
+          position:absolute;
+        }`}</style>
+        {visaPolicyData[verticalColumn]?.[1]}</p>
       </td>
     </tr>
     )

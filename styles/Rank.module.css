@@ -8,15 +8,3 @@
   inline-size: 90px;
   overflow-wrap: break-word;
 }
-
-.textVf {
-  margin: 5px;
-  text-align: center;
-  position:absolute;
-}
-
-.textVoa {
-  margin: 5px;
-  text-align: center;
-  position:absolute;
-}
