@@ -8,3 +8,14 @@
   inline-size: 90px;
   overflow-wrap: break-word;
 }
+
+.progressBar {
+  margin: 0px;
+  padding: 5px 4px 3px;
+  width: 412px;
+  height: 20px;
+  background: rgb(255, 255, 255);
+  position:relative;
+  text-align: left;
+  float: left;
+}
