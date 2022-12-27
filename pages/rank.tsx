@@ -45,8 +45,8 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
   const renderRank = (verticalColumn) => {
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
-      <td><Passport image={passports[rankRender[verticalColumn][0]]}/></td>
-      <td><div className={styles.text}><p>{countries[passportsArray.indexOf(rankRender[verticalColumn][0])].charAt(0).toUpperCase() + countries[passportsArray.indexOf(rankRender[verticalColumn][0])].slice(1)}</p></div></td>
+      <td><Passport image={passports[rankRender?.[verticalColumn]?.[0]]}/></td>
+      <td><div className={styles.text}><p>{countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.slice(1)}</p></div></td>
       <td>
         <div className={styles.progressBar}></div>
         <VisaOnArrival
