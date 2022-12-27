@@ -490,6 +490,7 @@ function MyApp({ Component, pageProps }) {
   const [legend, setLegend] = useState<Legend>({HC:false, FoM:false, OECSFoM:false, MFoM:false, EUFoM:false, GCCFoM:false, VF:false, VoAEV:false, VoA:false, EV:false, SP:false, CR:false})
   const [language, setLanguage] = useState<string>('🇬🇧EN')
   const [visaPolicyData, setVisaPolicyData] = useState([])
+  const [rankRender, setRankRender] = useState([])
   //value is passed in as context to the country components
   const colorProvider:any = {
     abkhaziaColor: priority.abkhaziaColor,
@@ -745,7 +746,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    fetchData(setVisaPolicyData)
+    fetchData(setVisaPolicyData, setRankRender)
   }, [])
 
   useEffect(() => {
@@ -773,6 +774,7 @@ function MyApp({ Component, pageProps }) {
         percentage={percentage}
         language={language}
         visaPolicyData={visaPolicyData}
+        rankRender={rankRender}
       />
       <Selector
         Drawer={Drawer}

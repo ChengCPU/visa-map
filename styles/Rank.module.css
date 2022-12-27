@@ -5,6 +5,7 @@
 }
 
 .text {
+  color: rgb(255, 255, 255);
   inline-size: 90px;
   overflow-wrap: break-word;
 }

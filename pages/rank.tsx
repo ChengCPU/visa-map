@@ -13,9 +13,10 @@ let verticalColumn:number[] = []
   }
 interface Props {
   visaPolicyData:any;
+  rankRender:any;
 }
 
-const Rank:React.FC<Props> = ({ visaPolicyData }) => {
+const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
 
   const passports = useContext(PassportContext)
 
@@ -37,16 +38,15 @@ const Rank:React.FC<Props> = ({ visaPolicyData }) => {
       case 'visaOnArrival':
         return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + 2
       case 'visaOnArrivalEvisa':
-        return (visaPolicyData[verticalColumn]?.[1] * 2)
+        return (visaPolicyData[verticalColumn]?.[1] * 2) + 1
     }
   }
 
   const renderRank = (verticalColumn) => {
-    console.log(visaPolicyData)
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
-      <td><Passport image={passports[passportsArray[verticalColumn]]}/></td>
-      <td><div className={styles.text}><p>{countries[verticalColumn].charAt(0).toUpperCase() + countries[verticalColumn].slice(1)}</p></div></td>
+      <td><Passport image={passports[rankRender[verticalColumn][0]]}/></td>
+      <td><div className={styles.text}><p>{countries[passportsArray.indexOf(rankRender[verticalColumn][0])].charAt(0).toUpperCase() + countries[passportsArray.indexOf(rankRender[verticalColumn][0])].slice(1)}</p></div></td>
       <td>
         <div className={styles.progressBar}></div>
         <VisaOnArrival
