@@ -6,31 +6,28 @@ export default function fetchData(setVisaPolicyData:Function, setRankRender:Func
   let visaFreeCount = 0
   let visaOnArrivalEVisaCount = 0;
   let visaOnArrivalCount = 0
+  let eVisaCount = 0
   const rankData = []
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {
     for(const passport of passportsArray) {
       for(let countriesLoop = 0; countriesLoop < countriesAndTerritories.length; countriesLoop++) {
-        if(data[passport][countriesAndTerritories[countriesLoop]] == 8 || countriesLoop == countriesAndTerritories.length - 1) {
-          visaOnArrivalEVisaCount++
-        }
-        if(data[passport][countriesAndTerritories[countriesLoop]] == 9 || countriesLoop == countriesAndTerritories.length - 1) {
-          visaOnArrivalCount++
-        }
+        if(data[passport][countriesAndTerritories[countriesLoop]] == 8 || countriesLoop == countriesAndTerritories.length - 1) {visaOnArrivalEVisaCount++}
+        if(data[passport][countriesAndTerritories[countriesLoop]] == 9 || countriesLoop == countriesAndTerritories.length - 1) {visaOnArrivalCount++}
+        if(data[passport][countriesAndTerritories[countriesLoop]] == 10 || countriesLoop == countriesAndTerritories.length - 1) {eVisaCount++}
         if(data[passport][countriesAndTerritories[countriesLoop]] == 2 || data[passport][countriesAndTerritories[countriesLoop]] == 3 || data[passport][countriesAndTerritories[countriesLoop]] == 4 || data[passport][countriesAndTerritories[countriesLoop]] == 5 || data[passport][countriesAndTerritories[countriesLoop]] == 6 || data[passport][countriesAndTerritories[countriesLoop]] == 7 || countriesLoop == countriesAndTerritories.length - 1) {
           visaFreeCount++
           if(countriesLoop == countriesAndTerritories.length - 1) {
+            visaFreeCount--
             visaOnArrivalEVisaCount--
             visaOnArrivalCount--
-            visaFreeCount--
-            rankData.push([passport, visaFreeCount, visaOnArrivalEVisaCount, visaOnArrivalCount])
+            eVisaCount--
+            rankData.push([passport, visaFreeCount, visaOnArrivalEVisaCount, visaOnArrivalCount, eVisaCount])
           }
         }
       }
-      visaFreeCount = 0
-      visaOnArrivalCount = 0
-      visaOnArrivalEVisaCount = 0
+      visaFreeCount = 0;visaOnArrivalEVisaCount = 0;visaOnArrivalCount = 0;eVisaCount = 0
     }
     setVisaPolicyData(rankData)
     insertionSort(rankData, setRankRender)
