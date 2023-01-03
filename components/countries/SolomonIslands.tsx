@@ -5,11 +5,12 @@ const SolomonIslands:React.FC = () => {
   const { solomonIslandsColor } = useContext(ColorContext)
 
 return (
+<>
 <g className={'solomonIslands'}>
   <style jsx>{`
   .solomonIslands {
   fill: ${solomonIslandsColor};
-  stroke-width: 0.60;
+  stroke-width: 0.70;
   }
   `}</style>
 <path d="M 1926.8 576.2 1927.1 576.4 1927 576.8 1927.3 576.8 1927.3 577 1926.5 577 1926.2 576.5 1926.4 576.2 1926.8 576.2 Z" stroke="black"/>
@@ -46,6 +47,16 @@ return (
 <path d="M 1869.3 546 1869.3 546.5 1869.1 546.3 1869.1 546.1 1869.3 546 Z" stroke="black"/>
 <path d="M 1872.2 544.5 1872.5 544.6 1872.9 545.1 1873.2 545.3 1873.5 545.4 1873.8 545.7 1874.6 546.1 1875 546.6 1875 547 1875.1 547.6 1875.3 547.8 1875.6 548.1 1875.8 548.1 1875.9 548.5 1876.6 548.8 1877 548.7 1877.1 548.8 1877.1 549.1 1876.8 549.2 1876.6 549.5 1876.1 549.3 1875.3 548.9 1874.8 548.9 1874.5 548.5 1873.8 548.1 1873.2 547.1 1872.6 546.1 1872.1 545.8 1871.4 545.1 1871.4 544.6 1871.4 544.4 1871.7 544.2 1872 544.3 1872.2 544.5 Z" stroke="black"/>
 </g>
+<g className={'solomonIslands'}>
+  <style jsx>{`
+  .solomonIslands {
+  fill: ${solomonIslandsColor};
+  stroke-width: 1;
+  }
+  `}</style>
+<circle r="5" cy="556" cx="1887" stroke="black"/>
+</g>
+</>
 )
 }
 
