@@ -1,9 +1,10 @@
 import Passport from '../components/Selector/Passport';
 import { useContext } from 'react';
 import { PassportContext } from '../components/context/PassportContext';
-import VisaOnArrivalEvisa from '../components/Rank/VisaOnArrivalEvisa';
-import VisaOnArrival from '../components/Rank/VisaOnArrival';
+import VisaRequired from '../components/Rank/VisaRequired';
 import EVisa from '../components/Rank/EVisa';
+import VisaOnArrival from '../components/Rank/VisaOnArrival';
+import VisaOnArrivalEvisa from '../components/Rank/VisaOnArrivalEvisa';
 import VisaFree from '../components/Rank/VisaFree';
 import styles from '../styles/Rank.module.css';
 const countries:any = ['abkhazia','afghanistan','albania','algeria','andorra','angola','anguilla','antigua and Barbuda','argentina','armenia','australia','austria','azerbaijan','bahamas','bahrain','bangladesh','barbados','belarus','belgium','belize','benin','bermuda','bhutan','bolivia','bosnia and Herzegovina','botswana','brazil','british Virgin Islands','brunei','bulgaria','burkina Faso','burundi','cambodia','cameroon','canada','cape Verde','cayman Islands','central African Republic','chad','chile','china','colombia','comoros','costa Rica','croatia','cuba','cyprus','czech Republic','democratic Republic of the Congo','denmark','djibouti','dominica','dominican Republic','east Timor','ecuador','egypt','el Salvador','equatorial Guinea','eritrea','estonia','eswatini','ethiopia','fiji','finland','france','gabon','gambia','georgia','germany','ghana','greece','grenada','guatemala','guinea','guinea Bissau','guyana','haiti','honduras','hong Kong','hungary','iceland','india','indonesia','iran','iraq','ireland','israel','italy','ivory Coast','jamaica','japan','jordan','kazakhstan','kenya','kiribati','kuwait','kyrgyzstan','laos','latvia','lebanon','lesotho','liberia','libya','liechtenstein','lithuania','luxembourg','macao','madagascar','malawi','malaysia','maldives','mali','malta','marshall Islands','mauritania','mauritius','mexico','micronesia','moldova','monaco','mongolia','montenegro','montserrat','morocco','mozambique','myanmar','namibia','nauru','nepal','netherlands','new Zealand','nicaragua','niger','nigeria','north Korea','north Macedonia','norway','oman','pakistan','palau','palestine','panama','papua New Guinea','paraguay','peru','philippines','poland','portugal','qatar','republic of the Congo','romania','russia','rwanda','saint Helena','saint Kitts and Nevis','saint Lucia','saint Vincent and the Grenadines','samoa','san Marino','sao Tome and Principe','saudi Arabia','senegal','serbia','seychelles','sierra Leone','singapore','slovakia','slovenia','solomon Islands','somalia','south Africa','south Korea','south Ossetia','south Sudan','spain','sri Lanka','sudan','suriname','sweden','switzerland','syria','taiwan','tajikistan','tanzania','thailand','togo','tonga','trinidad and Tobago','tunisia','turkey','turkmenistan','turks and Caicos','tuvalu','uganda','ukraine','united Arab Emirates','united Kingdom','united States','uruguay','uzbekistan','vanuatu','vatican City','venezuela','vietnam','yemen','zambia','zimbabwe']
@@ -21,8 +22,10 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
 
   const passports = useContext(PassportContext)
 
-  const widthCalculation = (visaPolicy, verticalColumn) => {
+  const widthCalculation = (visaPolicy:string, verticalColumn:any) => {
     switch(visaPolicy) {
+      case 'visaRequired':
+        return 500
       case 'evisa':
         return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + (visaPolicyData[verticalColumn]?.[3] * 2) + (visaPolicyData[verticalColumn]?.[4] * 2)
       case 'visaOnArrival':
@@ -36,8 +39,10 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
     }
   }
 
-  const marginCalculation = (visaPolicy, verticalColumn) => {
+  const marginCalculation = (visaPolicy:string, verticalColumn:any) => {
     switch(visaPolicy) {
+      case 'visaRequired':
+        return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + (visaPolicyData[verticalColumn]?.[3] * 2) + (visaPolicyData[verticalColumn]?.[4] * 2) + 2
       case 'evisa':
         return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + (visaPolicyData[verticalColumn]?.[3] * 2) + 2
       case 'visaOnArrival':
@@ -47,18 +52,25 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
     }
   }
 
-  const textRender = (verticalColumn) => {
+  const textRender = (verticalColumn:any) => {
     if(rankRender[verticalColumn]?.[0] == undefined) {return}
     return countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.slice(1)
   }
 
-  const renderRank = (verticalColumn) => {
+  const renderRank = (verticalColumn:any) => {
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
       <td><Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/></td>
       <td><div className={styles.text}><p>{textRender(verticalColumn)}</p></div></td>
       <td>
+        <p className={styles.text}>{visaPolicyData[verticalColumn][6]}</p>
         <div className={styles.progressBar}></div>
+        <VisaRequired
+          widthCalculation={widthCalculation}
+          marginCalculation={marginCalculation}
+          verticalColumn={verticalColumn}
+          visaPolicyData={visaPolicyData}
+        />
         <EVisa
           widthCalculation={widthCalculation}
           marginCalculation={marginCalculation}
