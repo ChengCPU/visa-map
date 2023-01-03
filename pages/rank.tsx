@@ -63,7 +63,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
       <td><Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/></td>
       <td><div className={styles.text}><p>{textRender(verticalColumn)}</p></div></td>
       <td>
-        <p className={styles.text}>{visaPolicyData[verticalColumn][6]}</p>
+        <p className={styles.text}>{visaPolicyData[verticalColumn]?.[6]}</p>
         <div className={styles.progressBar}></div>
         <VisaRequired
           widthCalculation={widthCalculation}
