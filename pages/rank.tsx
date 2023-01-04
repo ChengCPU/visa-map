@@ -57,13 +57,16 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
     return countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.slice(1)
   }
 
-  const renderRank = (verticalColumn:any) => {
+  const passportRankRender = (verticalColumn:any) => {
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
+      <td className={styles.rank}>
+      <p>{verticalColumn + 1}</p>
+      </td>
       <td><Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/></td>
       <td><div className={styles.text}><p>{textRender(verticalColumn)}</p></div></td>
       <td>
-        <p className={styles.text}>{visaPolicyData[verticalColumn]?.[6]}</p>
+        <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
         <div className={styles.progressBar}></div>
         <VisaRequired
           widthCalculation={widthCalculation}
@@ -106,7 +109,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
     <br />
     <table cellSpacing="0" cellPadding="20" className={styles.container}>
       <tbody>
-      {renderRank(verticalColumn)}
+      {passportRankRender(verticalColumn)}
       </tbody>
     </table>
     <br />
@@ -120,3 +123,9 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender }) => {
 }
 
 export default Rank
+
+/*
+  <div className={styles.rank}>
+  <span>{verticalColumn}</span> Passport Power Rank
+  </div>
+*/

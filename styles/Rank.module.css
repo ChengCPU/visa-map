@@ -20,3 +20,11 @@
   text-align: left;
   float: left;
 }
+
+.rank {
+  color: rgb(255, 255, 255);
+  position: relative;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: proxima,sans-serif;
+}
