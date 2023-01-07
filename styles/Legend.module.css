@@ -1,12 +1,10 @@
 .main {
-  display: flex;
+  display: relative;
   justify-content: center;
   align-content: space-around;
-  position: static;
+  position: absolute;
 }
 
 .container {
-  display: flex;
-  height: 20px;
-  position: static;
+  height: 30px;
 }
