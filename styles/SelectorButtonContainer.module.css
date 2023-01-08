@@ -20,6 +20,12 @@
   color: #ffffff;
 }
 
+.button {
+  border-color: red;
+  background-color: red;
+  user-select: none;
+}
+
 /* display: flex;
 justify-content: center;
 align-content: space-around;

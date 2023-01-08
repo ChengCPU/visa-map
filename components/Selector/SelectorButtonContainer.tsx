@@ -285,7 +285,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
         <ProgressBar percentage={percentage} verticalColumn={null} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
       </div>
       {renderSelectorButtons(selectorButtonArray)}
-    <button onClick={() => {
+    <button className={styles.button} onClick={() => {
       setSelectArray([null,null,null,null,null,null,null,null,null,null,null])
       setPriority(color)
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
@@ -351,7 +351,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
         visaOnArrival:null,
         eVisa:null
       },0])
-    }}>reset</button>
+    }}>X</button>
     </div>
   )
 }
