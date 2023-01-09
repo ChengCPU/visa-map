@@ -4,6 +4,11 @@ body {
   overflow: visible;
   font-family: proxima,sans-serif;
 }
+
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper{
+  background-color: black;
+}
+
 /* * {
   border: 1px solid red;
 } */
