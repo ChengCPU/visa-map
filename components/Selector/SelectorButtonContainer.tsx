@@ -15,10 +15,12 @@ interface Props {
   setLegend:Function;
   percentage:any;
   setPercentage:Function;
+  setDiff:Function;
 }
 const selectorButtonArray = [0,1,2,3,4,5,6,7,8,9]
+const percentageArray = [{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},0]
 
-const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage }) => {
+const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage, setDiff }) => {
   const color:object = {
     abkhaziaColor: "rgb(149,150,150)",
     afghanistanColor: "rgb(149,150,150)",
@@ -290,67 +292,8 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
       setPriority(color)
       setAssignedColors([color,color,color,color,color,color,color,color,color,color,color])
       setLegend({HC: false, FoM: false, OECSFoM: false, MFoM: false, EUFoM: false, GCCFoM: false, VF: false, VoAEV: false, VoA: false, EV: false, SP: false, CR: false})
-      setPercentage([{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },{
-        total:null,
-        visaFree:null,
-        visaOnArrivalEVisa:null,
-        visaOnArrival:null,
-        eVisa:null
-      },0])
+      setPercentage(percentageArray)
+      setDiff([])
     }}>X</button>
     </div>
   )
