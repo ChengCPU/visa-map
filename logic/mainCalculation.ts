@@ -1,5 +1,6 @@
 import legendCalculation from './legendCalculation';
 import percentageCalculation from './percentageCalculation';
+import diffCalculation from './diffCalculation';
 interface Select {selection:number,passport:null | string;}
 type Legend = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
 const colors:string[] = [
@@ -254,7 +255,7 @@ const colors:string[] = [
   "zambiaColor",
   "zimbabweColor"
 ]
-export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, percentage:any, setPercentage:Function, selectArray:null | string[]) {
+export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, percentage:any, setPercentage:Function, selectArray:null | string[], diff, setDiff) {
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {
@@ -671,4 +672,5 @@ export default function mainCalculation(country:string, assignedColors:object[],
 break;}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
 percentageCalculation(selectArray, priority, assignedColors, percentage, setPercentage)
+diffCalculation(selectArray, assignedColors, diff, setDiff)
 })}
