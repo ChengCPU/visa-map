@@ -1,8 +1,11 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
+import { DiffContext } from '../context/DiffContext'
+
 const Andorra:React.FC = () => {
 
   const { andorraColor } = useContext(ColorContext)
+  const { andorraDiff } = useContext(DiffContext)
 
 return (
 <g className={'andorra'}>
@@ -12,7 +15,16 @@ return (
   stroke-width: 1;
   }
   `}</style>
+<defs>
+  <pattern id="ad" x="0" y="0" width="1" height="1" viewBox="0 0 10 10">
+    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+  </pattern>
+</defs>
+{(andorraDiff == 1) ?
+<circle fill="url(#ad)" r="4" cy="230" cx="993" stroke="black"/>
+:
 <circle r="4" cy="230" cx="993" stroke="black"/>
+}
 </g>
 )
 }
