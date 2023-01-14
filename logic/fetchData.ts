@@ -13,10 +13,10 @@ export default function fetchData(setVisaPolicyData:Function, setRankRender:Func
         if(data[passport][countriesAndTerritories[countriesLoop]] == 9 || countriesLoop == countriesAndTerritories.length - 1) {visaOnArrivalCount++}
         if(data[passport][countriesAndTerritories[countriesLoop]] == 10 || countriesLoop == countriesAndTerritories.length - 1) {eVisaCount++}
         if(data[passport][countriesAndTerritories[countriesLoop]] == 14 || data[passport][countriesAndTerritories[countriesLoop]] == 12 || data[passport][countriesAndTerritories[countriesLoop]] == 11 || data[passport][countriesAndTerritories[countriesLoop]] == 13 || countriesLoop == countriesAndTerritories.length - 1) {visaRequiredCount++}
-        if(data[passport][countriesAndTerritories[countriesLoop]] == 2 || data[passport][countriesAndTerritories[countriesLoop]] == 3 || data[passport][countriesAndTerritories[countriesLoop]] == 4 || data[passport][countriesAndTerritories[countriesLoop]] == 5 || data[passport][countriesAndTerritories[countriesLoop]] == 6 || data[passport][countriesAndTerritories[countriesLoop]] == 7 || countriesLoop == countriesAndTerritories.length - 1) {
+        if(data[passport][countriesAndTerritories[countriesLoop]] == 0 || data[passport][countriesAndTerritories[countriesLoop]] == 2 || data[passport][countriesAndTerritories[countriesLoop]] == 3 || data[passport][countriesAndTerritories[countriesLoop]] == 4 || data[passport][countriesAndTerritories[countriesLoop]] == 5 || data[passport][countriesAndTerritories[countriesLoop]] == 6 || data[passport][countriesAndTerritories[countriesLoop]] == 7 || countriesLoop == countriesAndTerritories.length - 1) {
           visaFreeCount++
           if(countriesLoop == countriesAndTerritories.length - 1) {
-            visaFreeCount--;visaOnArrivalEVisaCount--;visaOnArrivalCount--;eVisaCount--;visaRequiredCount--
+            visaFreeCount - 2;visaOnArrivalEVisaCount--;visaOnArrivalCount--;eVisaCount--;visaRequiredCount--
             total = visaFreeCount + visaOnArrivalEVisaCount + visaOnArrivalCount + eVisaCount
             rankData.push([passport, visaFreeCount, visaOnArrivalEVisaCount, visaOnArrivalCount, eVisaCount, visaRequiredCount, total])
           }
