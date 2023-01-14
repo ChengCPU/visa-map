@@ -1,8 +1,11 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
+import { DiffContext } from '../context/DiffContext'
+
 const Brunei:React.FC = () => {
 
   const { bruneiColor } = useContext(ColorContext)
+  const { bruneiDiff } = useContext(DiffContext)
 
 return (
 <g className={'brunei'}>
@@ -12,8 +15,22 @@ return (
   stroke-width: 1;
   }
   `}</style>
+<defs>
+  <pattern id="bn" x="0" y="0" width="1" height="1" viewBox="0 0 10 10">
+    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+  </pattern>
+</defs>
+{(bruneiDiff == 1) ?
+<>
+<path fill="url(#bn)" d="M1633.1 472.8l2.2-2.4 4.6-3.6-0.1 3.2-0.1 4.1-2.7-0.2-1.1 2.2-2.8-3.3z" />
+<circle fill="url(#bn)" r="5" cy="472" cx="1637.5" stroke="black"/>
+</>
+:
+<>
 <path d="M1633.1 472.8l2.2-2.4 4.6-3.6-0.1 3.2-0.1 4.1-2.7-0.2-1.1 2.2-2.8-3.3z" />
 <circle r="5" cy="472" cx="1637.5" stroke="black"/>
+</>
+}
 </g>
 )
 }
