@@ -1,8 +1,11 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
+import { DiffContext } from '../context/DiffContext'
+
 const Tonga:React.FC = () => {
 
   const { tongaColor } = useContext(ColorContext)
+  const { tongaDiff } = useContext(DiffContext)
 
 return (
 <g className={'tonga'}>
@@ -12,7 +15,16 @@ return (
   stroke-width: 1;
   }
   `}</style>
+<defs>
+  <pattern id="to" x="0" y="0" width="1" height="1" viewBox="0 0 10 10">
+    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+  </pattern>
+</defs>
+{(tongaDiff == 1) ?
+<circle fill="url(#to)" r="5" cy="630" cx="13" stroke="black"/>
+:
 <circle r="5" cy="630" cx="13" stroke="black"/>
+}
 </g>
 )
 }

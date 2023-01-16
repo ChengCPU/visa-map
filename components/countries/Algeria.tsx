@@ -16,7 +16,7 @@ return (
   }
   `}</style>
 <defs>
-  <pattern id="dz" x="0" y="0" width="1" height="1" viewBox="0 0 86 86">
+  <pattern id="dz" x="0" y="0" width="1" height="1" viewBox="0 0 76 76">
     <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
   </pattern>
 </defs>

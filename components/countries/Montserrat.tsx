@@ -1,8 +1,11 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
+import { DiffContext } from '../context/DiffContext'
+
 const Montserrat:React.FC = () => {
 
   const { montserratColor } = useContext(ColorContext)
+  const { montserratDiff } = useContext(DiffContext)
 
 return (
 <g className={'montserrat'}>
@@ -12,7 +15,16 @@ return (
   stroke-width: 1;
   }
   `}</style>
+<defs>
+  <pattern id="ms" x="0" y="0" width="1" height="1" viewBox="0 0 10 10">
+    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+  </pattern>
+</defs>
+{(montserratDiff == 1) ?
+<circle fill="url(#ms)" r="2.5" cy="401" cx="637" stroke="black"/>
+:
 <circle r="2.5" cy="401" cx="637" stroke="black"/>
+}
 </g>
 )
 }
