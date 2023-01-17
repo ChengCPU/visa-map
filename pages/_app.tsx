@@ -1006,7 +1006,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setLegend, percentage, setPercentage); return
+      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setLegend, percentage, setPercentage, diff, setDiff); return
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
@@ -1015,7 +1015,7 @@ function MyApp({ Component, pageProps }) {
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, diff, setDiff)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 

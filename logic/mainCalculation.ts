@@ -255,7 +255,7 @@ const colors:string[] = [
   "zambiaColor",
   "zimbabweColor"
 ]
-export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, percentage:any, setPercentage:Function, selectArray:null | string[], diff, setDiff) {
+export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, percentage:any, setPercentage:Function, selectArray:null | string[], diff:any, setDiff:Function) {
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {

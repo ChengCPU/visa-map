@@ -1,5 +1,6 @@
 import legendCalculation from './legendCalculation';
 import percentageCalculation from './percentageCalculation';
+import diffCalculation from './diffCalculation';
 type Legend = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
 const colors:string[] = [
   "abkhaziaColor",
@@ -253,7 +254,7 @@ const colors:string[] = [
   "zambiaColor",
   "zimbabweColor"
 ]
-export default function subCalculation(selectArray:null | string[], assignedColors:object[], setAssignedColors:Function, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, percentage:any, setPercentage:Function): void {
+export default function subCalculation(selectArray:null | string[], assignedColors:object[], setAssignedColors:Function, priority:object, setPriority:Function, rerender:boolean, setRerender:Function, legend:Legend, setLegend:Function, percentage:any, setPercentage:Function, diff:any, setDiff:Function): void {
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {
@@ -673,4 +674,5 @@ export default function subCalculation(selectArray:null | string[], assignedColo
 break;}}}}}
 legendCalculation(priority, legend, setLegend, rerender, setRerender)
 percentageCalculation(selectArray, priority, assignedColors, percentage, setPercentage)
+diffCalculation(selectArray, assignedColors, diff, setDiff)
 })}
