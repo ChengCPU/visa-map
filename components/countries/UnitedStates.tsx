@@ -1,6 +1,7 @@
 import { memo, useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 import { DiffContext } from '../context/DiffContext'
+import gridCalculation from '../../logic/gridCalculation'
 
 const UnitedStates:React.FC = () => {
 
@@ -17,10 +18,10 @@ return (
   `}</style>
 <defs>
   <pattern id="us" x="0" y="0" width="1" height="1" viewBox="70 0 100 100">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(unitedStatesColor)}/>
   </pattern>
   <pattern id="us2" x="0" y="0" width="1" height="1" viewBox="70 0 64 64">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(unitedStatesColor)}/>
   </pattern>
 </defs>
 {(unitedStatesDiff == 1) ?

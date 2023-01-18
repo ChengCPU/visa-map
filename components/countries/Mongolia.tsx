@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 import { DiffContext } from '../context/DiffContext'
+import gridCalculation from '../../logic/gridCalculation'
 
 const Mongolia:React.FC = () => {
 
@@ -17,7 +18,7 @@ return (
   `}</style>
 <defs>
   <pattern id="mn" x="0" y="0" width="1" height="1" viewBox="40 0 50 50">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(mongoliaColor)}/>
   </pattern>
 </defs>
 {(mongoliaDiff == 1) ?

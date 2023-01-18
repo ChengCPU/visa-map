@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 import { DiffContext } from '../context/DiffContext'
+import gridCalculation from '../../logic/gridCalculation'
 
 const Russia:React.FC = () => {
 
@@ -17,22 +18,22 @@ return (
   `}</style>
 <defs>
   <pattern id="ru" x="0" y="0" width="1" height="1" viewBox="170 0 150 150">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(russiaColor)}/>
   </pattern>
   <pattern id="ru2" x="0" y="0" width="1" height="1" viewBox="0 30 33 33">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(russiaColor)}/>
   </pattern>
   <pattern id="ru3" x="0" y="0" width="1" height="1" viewBox="30 30 22 22">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(russiaColor)}/>
   </pattern>
   <pattern id="ru4" x="0" y="0" width="1" height="1" viewBox="30 30 8 8">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(russiaColor)}/>
   </pattern>
   <pattern id="ru5" x="0" y="0" width="1" height="1" viewBox="60 30 8 8">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(russiaColor)}/>
   </pattern>
   <pattern id="ru6" x="0" y="0" width="1" height="1" viewBox="60 30 6 6">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(russiaColor)}/>
   </pattern>
 </defs>
 {(russiaDiff == 1) ?

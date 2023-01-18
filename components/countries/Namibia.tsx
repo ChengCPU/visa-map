@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 import { DiffContext } from '../context/DiffContext'
+import gridCalculation from '../../logic/gridCalculation'
 
 const Namibia:React.FC = () => {
 
@@ -17,7 +18,7 @@ return (
   `}</style>
 <defs>
   <pattern id="na" x="0" y="0" width="1" height="1" viewBox="0 10 50 50">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(namibiaColor)}/>
   </pattern>
 </defs>
 {(namibiaDiff == 1) ?

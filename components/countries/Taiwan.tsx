@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { ColorContext } from '../context/ColorContext'
 import { DiffContext } from '../context/DiffContext'
+import gridCalculation from '../../logic/gridCalculation'
 
 const Taiwan:React.FC = () => {
 
@@ -17,7 +18,7 @@ return (
   `}</style>
 <defs>
   <pattern id="tw" x="0" y="0" width="1" height="1" viewBox="0 10 7 7">
-    <image width="1500" height="1500" xlinkHref="./gridvf.png"/>
+    <image width="1500" height="1500" xlinkHref={gridCalculation(taiwanColor)}/>
   </pattern>
 </defs>
 {(taiwanDiff == 1) ?
