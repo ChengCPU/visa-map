@@ -19,7 +19,48 @@ export default function diffCalculation(selectArray:null | string[], assignedCol
   }
 
   for(let x = 0; x < colors.length; x++) {
-    if(ac(x, 0) != 0 && ac(x, 0) && ac(x, 0) != 2 && ac(x, 0) != 3 && ac(x, 0) != 4 && ac(x, 0) != 5 && ac(x, 0) != 6 && ac(x, 0) != 7 && ac(x, y()) == 7) {
+    //OECS freedom of movement
+    if(ac(x, 0) != 2 && ac(x, 0) != 0 && ac(x, y()) == 2) {
+      diffObject[colors[x]] = 1
+    }
+    //OECS freedom of movement
+    if(ac(x, 0) != 3 && ac(x, 0) != 0 && ac(x, y()) == 3) {
+      diffObject[colors[x]] = 1
+    }
+    //EU freedom of movement
+    if(ac(x, 0) != 4 && ac(x, 0) != 0 && ac(x, y()) == 4) {
+      diffObject[colors[x]] = 1
+    }
+    //GCC freedom of movement
+    if(ac(x, 0) != 5 && ac(x, 0) != 0 && ac(x, y()) == 5) {
+      diffObject[colors[x]] = 1
+    }
+    //Freedom of movement
+    if(ac(x, 0) != 5 && ac(x, 0) != 0 && ac(x, y()) == 5) {
+      diffObject[colors[x]] = 1
+    }
+    //visa free
+    if(ac(x, 0) != 7 && ac(x, 0) != 6 && ac(x, 0) != 5 && ac(x, 0) != 4 && ac(x, 0) != 3 && ac(x, 0) != 2 && ac(x, 0) != 0 && ac(x, y()) == 7) {
+      diffObject[colors[x]] = 1
+    }
+    //visa on arrival/evisa
+    if(ac(x,0) != 8 && ac(x, 0) != 7 && ac(x, 0) != 6 && ac(x, 0) != 5 && ac(x, 0) != 4 && ac(x, 0) != 3 && ac(x, 0) != 2 && ac(x, 0) != 0 && ac(x, y()) == 8) {
+      diffObject[colors[x]] = 1
+    }
+    //visa on arrival
+    if(ac(x,0) != 9 && ac(x,0) != 8 && ac(x, 0) != 7 && ac(x, 0) != 6 && ac(x, 0) != 5 && ac(x, 0) != 4 && ac(x, 0) != 3 && ac(x, 0) != 2 && ac(x, 0) != 0 && ac(x, y()) == 9) {
+      diffObject[colors[x]] = 1
+    }
+    //evisa
+    if(ac(x, 0) != 10 && ac(x, 0) != 9 && ac(x, 0) != 8 && ac(x, 0) != 7 && ac(x, 0) != 6 && ac(x, 0) != 5 && ac(x, 0) != 4 && ac(x, 0) != 3 && ac(x, 0) != 2 && ac(x, 0) != 0 && ac(x, y()) == 10) {
+      diffObject[colors[x]] = 1
+    }
+    //special permit
+    if(ac(x, 0) != 11 && ac(x, 0) != 10 && ac(x, 0) != 9 && ac(x, 0) != 8 && ac(x, 0) != 7 && ac(x, 0) != 6 && ac(x, 0) != 0 && ac(x, y()) == 11) {
+      diffObject[colors[x]] = 1
+    }
+    //simplified visa
+    if(ac(x, 0) != 12 && ac(x, 0) != 11 && ac(x, 0) != 10 && ac(x, 0) != 9 && ac(x, 0) != 8 && ac(x, 0) != 7 && ac(x, 0) != 6 && ac(x, 0) != 0 && ac(x, y()) == 12) {
       diffObject[colors[x]] = 1
     }
   }
