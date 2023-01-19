@@ -17,7 +17,7 @@ return (
   }
   `}</style>
 <defs>
-  <pattern id="gl" x="0" y="0" width="1" height="1" viewBox="30 0 80 80">
+  <pattern id="gl" x="0" y="0" width="1" height="1" viewBox="35 0 80 80">
     <image width="1500" height="1500" xlinkHref={gridCalculation(greenlandColor)}/>
   </pattern>
 </defs>

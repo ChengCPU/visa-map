@@ -17,6 +17,9 @@ return (
   }
   `}</style>
 <defs>
+  <pattern id="0" x="0" y="0" width="1" height="1" viewBox="10 0 40 40">
+    <image width="1500" height="1500" xlinkHref="./grideufom.png"/>
+  </pattern>
   <pattern id="bg" x="0" y="0" width="1" height="1" viewBox="5 0 14 14">
     <image width="1500" height="1500" xlinkHref={gridCalculation(bulgariaColor)}/>
   </pattern>

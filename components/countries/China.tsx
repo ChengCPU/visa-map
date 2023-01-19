@@ -17,6 +17,9 @@ return (
   }
   `}</style>
 <defs>
+  <pattern id="0" x="0" y="0" width="1" height="1" viewBox="0 0 10 10">
+    <image width="1500" height="1500" xlinkHref="./gridsp.png"/>
+  </pattern>
   <pattern id="cn" x="0" y="0" width="1" height="1" viewBox="40 0 180 180">
     <image width="1500" height="1500" xlinkHref={gridCalculation(chinaColor)}/>
   </pattern>
