@@ -17,8 +17,8 @@ return (
   }
   `}</style>
 <defs>
-  <pattern id="cn" x="0" y="0" width="1" height="1" viewBox="1000 0 1000 1000">
-    <image width="10000" height="10000" xlinkHref={gridCalculation(chinaColor)}/>
+  <pattern id="cn" x="0" y="0" width="1" height="1" viewBox="40 0 180 180">
+    <image width="1500" height="1500" xlinkHref={gridCalculation(chinaColor)}/>
   </pattern>
   <pattern id="cn2" x="0" y="0" width="1" height="1" viewBox="0 0 10 10">
     <image width="1500" height="1500" xlinkHref={gridCalculation(chinaColor)}/>
