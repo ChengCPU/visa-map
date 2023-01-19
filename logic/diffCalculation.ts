@@ -23,7 +23,7 @@ export default function diffCalculation(selectArray:null | string[], assignedCol
     if(ac(x, 0) != 2 && ac(x, 0) != 0 && ac(x, y()) == 2) {
       diffObject[colors[x]] = 1
     }
-    //OECS freedom of movement
+    //Mercosur freedom of movement
     if(ac(x, 0) != 3 && ac(x, 0) != 0 && ac(x, y()) == 3) {
       diffObject[colors[x]] = 1
     }
@@ -36,7 +36,7 @@ export default function diffCalculation(selectArray:null | string[], assignedCol
       diffObject[colors[x]] = 1
     }
     //Freedom of movement
-    if(ac(x, 0) != 5 && ac(x, 0) != 0 && ac(x, y()) == 5) {
+    if(ac(x, 0) != 6 && ac(x, 0) != 0 && ac(x, y()) == 6) {
       diffObject[colors[x]] = 1
     }
     //visa free
