@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import styles from '../../styles/MapSVG.module.css';
 import Abkhazia from '../countries/Abkhazia';
 import Afghanistan from '../countries/Afghanistan';
@@ -511,4 +510,4 @@ const MapSVG:React.FC = () => {
   )
 }
 
-export default memo(MapSVG)
+export default MapSVG
