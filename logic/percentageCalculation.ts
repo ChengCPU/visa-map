@@ -252,7 +252,7 @@ const colors:string[] = [
   "zimbabweColor"
 ]
 
-export default function percentageCalculation(selectArray:null | string[], priority:any, assignedColors:any, percentage:any, setPercentage:Function) {
+export default function percentageCalculation(selectArray:null | string[], priority:object, assignedColors:object[], percentage:object, setPercentage:Function) {
   let globalCount = 0
 
   for(let global = 0; global < colors.length; global++) {

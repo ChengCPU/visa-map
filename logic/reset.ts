@@ -1,4 +1,4 @@
-export default function reset(setAssignedColors:Function, setPriority:Function, secondToggle:boolean, setSecondToggle:Function, setLegend:Function, percentage:any, setPercentage:Function, diff:any, setDiff:Function): void {
+export default function reset(setAssignedColors:Function, setPriority:Function, secondToggle:boolean, setSecondToggle:Function, setLegend:Function, percentage:object, setPercentage:Function, setDiff:Function): void {
   const color:object = {
     abkhaziaColor: "rgb(149,150,150)",
     afghanistanColor: "rgb(149,150,150)",
