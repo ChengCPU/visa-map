@@ -1,11 +1,3 @@
-.button {
-  background-color: #ffffff;
-}
-
-.button:hover {
-  background-color: #ffffff; 
-}
-
 .languageSelect {
   right:40px;
   position: absolute;

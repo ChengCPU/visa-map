@@ -43,7 +43,7 @@ const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
       {renderMenuItems(languageArray)}
       </Menu>
     </div>
-  );
+  )
 }
 
 export default LanguageSelect
