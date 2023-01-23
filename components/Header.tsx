@@ -32,9 +32,9 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
   return (
     <ThemeProvider theme={theme}>
     <Stack direction="row" spacing={1} className={styles.container}>
-      <Link href='/'><Button className={styles.button} variant="contained">Home</Button></Link>
-      <Link href='/table'><Button className={styles.button} variant="contained">Table</Button></Link>
-      <Link href='/rank'><Button className={styles.button} variant="contained">Rank</Button></Link>
+      <Link href='/'><Button className={styles.text} variant="contained">Home</Button></Link>
+      <Link href='/table'><Button className={styles.text} variant="contained">Table</Button></Link>
+      <Link href='/rank'><Button className={styles.text} variant="contained">Rank</Button></Link>
       <LanguageSelect
         language={language}
         setLanguage={setLanguage}

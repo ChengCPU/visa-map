@@ -19,6 +19,10 @@
   position: absolute;
 }
 
+.text {
+  color: #ffffff
+}
+
 /* padding: 0 0.5rem;
 padding-top: 10px;
 padding-bottom: 10px;
