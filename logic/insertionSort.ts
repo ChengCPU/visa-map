@@ -1,7 +1,6 @@
 export default function insertionSort(rankData:any, setRankRender:Function) {
   const unsortedData = rankData
   let tempDataVf
-  let tempDataVf2
 
   for (let i = 0; i < unsortedData.length; i++) {
   let current = unsortedData[i][6];
@@ -16,22 +15,26 @@ export default function insertionSort(rankData:any, setRankRender:Function) {
   }
 
   const sortedData = unsortedData.reverse()
-  let count = 0
-  let secondCount = 0
-  for(let sortedDataLoop = 0; sortedDataLoop < sortedData.length; sortedDataLoop++) {
-    if(sortedData[sortedDataLoop][6] == sortedData[sortedDataLoop + 1]?.[6] && sortedData[sortedDataLoop][6] == sortedData[sortedDataLoop + 2]?.[6]) {
-      count++
-      for(let z = 0; z < count; z++) {
-        if(sortedData[sortedDataLoop][1] < sortedData[sortedDataLoop + z]?.[1] && sortedData[sortedDataLoop - 1][1] >= sortedData[sortedDataLoop + z]?.[1]) {
-          tempDataVf = sortedData[sortedDataLoop + z]
-          sortedData[sortedDataLoop + z] = sortedData[sortedDataLoop]
-          sortedData[sortedDataLoop] = tempDataVf
-          continue
-        }
-      }
+  const lessThanVisaFreeCheck = (x:number) => {
+    if(sortedData[x]?.[1] < sortedData[x + 1]?.[1] && sortedData[x]?.[6] == sortedData[x + 1]?.[6]) {
+      tempDataVf = sortedData[x + 1]
+      sortedData[x + 1] = sortedData[x]
+      sortedData[x] = tempDataVf
     }
-    if(sortedData[sortedDataLoop][6] != sortedData[sortedDataLoop + 1]?.[6]) {
-      count = 0
+  }
+  const visaOnArrivalEvisaCheck = (x:number) => {
+    if(sortedData[x]?.[2] < sortedData[x + 1]?.[2] && sortedData[x]?.[6] == sortedData[x + 1]?.[6] && sortedData[x + 1]?.[1] >= sortedData[x]?.[1]) {
+      tempDataVf = sortedData[x + 1]
+      sortedData[x + 1] = sortedData[x]
+      sortedData[x] = tempDataVf
+    }
+  }
+  for(let v = 0; v < 5; v++) {
+    for(let z = 0; z < sortedData.length; z++) {
+      lessThanVisaFreeCheck(z)
+    }
+    for(let v = 0; v < sortedData.length; v++) {
+      visaOnArrivalEvisaCheck(v)
     }
   }
   setRankRender(sortedData)
