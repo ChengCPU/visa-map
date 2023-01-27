@@ -1002,7 +1002,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    fetchData(setVisaPolicyData, setRankRender)
+    fetchData(setVisaPolicyData, setRankRender, 1)
   }, [])
 
   useEffect(() => {
@@ -1032,6 +1032,8 @@ function MyApp({ Component, pageProps }) {
         language={language}
         visaPolicyData={visaPolicyData}
         rankRender={rankRender}
+        setVisaPolicyData={setVisaPolicyData}
+        setRankRender={setRankRender}
       />
       <Selector
         Drawer={Drawer}

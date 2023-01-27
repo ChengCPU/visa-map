@@ -33,18 +33,9 @@ export default function insertionSort(rankData:any, setRankRender:Function) {
     for(let z = 0; z < sortedData.length; z++) {
       lessThanVisaFreeCheck(z)
     }
-    for(let v = 0; v < sortedData.length; v++) {
-      visaOnArrivalEvisaCheck(v)
+    for(let t = 0; t < sortedData.length; t++) {
+      visaOnArrivalEvisaCheck(t)
     }
   }
   setRankRender(sortedData)
 }
-/*
-  for(let rankDataLoop = 0; rankDataLoop < sortedData.length; rankDataLoop++) {
-    if(sortedData[rankDataLoop][1] < sortedData[rankDataLoop + 1]?.[1] || sortedData[rankDataLoop - 1]?.[1] > sortedData[rankDataLoop]?.[1]) {
-      tempDataVf = sortedData[rankDataLoop + 1]
-      sortedData[rankDataLoop + 1] = sortedData[rankDataLoop]
-      sortedData[rankDataLoop] = tempDataVf
-    }
-  }
-*/
