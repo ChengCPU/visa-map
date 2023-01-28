@@ -1,6 +1,8 @@
 //component imports
 import SelectorButtonContainer from './SelectorButtonContainer';
 import SelectorPassportContainer from './SelectorPassportContainer';
+import { Drawer } from '@mui/material';
+import { styled } from '@mui/material/styles';
 interface Props {
   Drawer:any;
   openDrawer:boolean;
@@ -22,17 +24,23 @@ interface Props {
   setDiff:Function;
 }
 
-const Selector:React.FC<Props> = ({ Drawer, openDrawer, setOpenDrawer, select, setSelect, toggle, setToggle, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage, setDiff }) => {
+const CustomizedDrawer = styled(Drawer)`
+  .MuiDrawer-paper {
+    background-color: #000000;
+  }
+`
+
+const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, select, setSelect, toggle, setToggle, selectArray, setSelectArray, setPriority, setAssignedColors, setLegend, percentage, setPercentage, setDiff }) => {
   return (
     <>
-    <Drawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
+    <CustomizedDrawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
       <SelectorPassportContainer
         setOpenDrawer={setOpenDrawer}
         select={select}
         setSelect={setSelect}
         toggle={toggle}
         setToggle={setToggle} />
-    </Drawer>
+    </CustomizedDrawer>
       <SelectorButtonContainer
         setOpenDrawer={setOpenDrawer}
         select={select}
