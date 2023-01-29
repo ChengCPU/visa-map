@@ -1,6 +1,7 @@
 import LanguageSelect from './LanguageSelect';
 import Link from 'next/link';
 import { Button, Stack, createTheme, ThemeProvider } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import styles from '../styles/Header.module.css';
 interface Props {
   language:string;
@@ -8,33 +9,30 @@ interface Props {
 }
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#32cd32',
-    },
-    secondary: {
-      main: '#ffffff',
-    },
-  },
   components: {
     // Name of the component
     MuiButton: {
       defaultProps: {
-        // The props to change the default for.
-        disableRipple: true, // No more ripple, on the whole application 💣!
+        disableRipple: true,
+        disableElevation: true,
       },
     },
   }
 });
+
+const CustomizedButton = styled(Button)`
+  background-color: #32cd32;
+  color: #FFFFFF;
+`
 
 
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
   return (
     <ThemeProvider theme={theme}>
     <Stack direction="row" spacing={1} className={styles.container}>
-      <Link href='/'><Button className={styles.text} variant="contained">Home</Button></Link>
-      <Link href='/table'><Button className={styles.text} variant="contained">Table</Button></Link>
-      <Link href='/rank'><Button className={styles.text} variant="contained">Rank</Button></Link>
+      <Link href='/'><CustomizedButton variant="contained">Home</CustomizedButton></Link>
+      <Link href='/table'><CustomizedButton variant="contained">Table</CustomizedButton></Link>
+      <Link href='/rank'><CustomizedButton variant="contained">Rank</CustomizedButton></Link>
       <LanguageSelect
         language={language}
         setLanguage={setLanguage}
