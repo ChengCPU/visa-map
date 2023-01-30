@@ -1,6 +1,7 @@
 import Passport from '../components/Selector/Passport';
 import { useContext, useState } from 'react';
 import { PassportContext } from '../components/context/PassportContext';
+import SortBy from '../components/Rank/SortBy';
 import VisaRequired from '../components/Rank/VisaRequired';
 import EVisa from '../components/Rank/EVisa';
 import VisaOnArrival from '../components/Rank/VisaOnArrival';
@@ -19,9 +20,11 @@ interface Props {
   rankRender:any;
   setVisaPolicyData:Function;
   setRankRender:Function;
+  sortBy:string;
+  setSortBy:Function;
 }
 
-const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender }) => {
+const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy }) => {
 
   const passports = useContext(PassportContext)
 
@@ -117,17 +120,14 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <tbody>
       <tr>
         <td>
-          <button onClick={() => {
-            if(toggle == false) {
-              fetchData(setVisaPolicyData, setRankRender, 2)
-              setToggle(true)
-            } 
-            if(toggle == true) {
-              fetchData(setVisaPolicyData, setRankRender, 1)
-              setToggle(false)
-            }
-          }
-          }>Sort:</button>
+        </td>
+        <td>
+          <SortBy 
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+            setVisaPolicyData={setVisaPolicyData}
+            setRankRender={setRankRender}
+          />
         </td>
       </tr>
       {passportRankRender(verticalColumn)}
