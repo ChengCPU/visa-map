@@ -22,11 +22,11 @@ export default function diffCalculation(selectArray:null | string[], assignedCol
     //Mercosur freedom of movement
     if(assignedColors[0][colors[x]] != 3 && assignedColors[0][colors[x]] != 0 && assignedColors[y()][colors[x]] == 3) {diffObject[colors[x]] = 1}
     //EU freedom of movement
-    if(assignedColors[0][colors[x]] != 4 && assignedColors[0][colors[x]] != 0 && assignedColors[y()][colors[x]] == 4) {diffObject[colors[x]] = 1}
+    if(assignedColors[0][colors[x]] != 4 && assignedColors[0][colors[x]] != 0 && assignedColors[0][colors[x]] != 0 && assignedColors[y()][colors[x]] == 4) {diffObject[colors[x]] = 1}
     //GCC freedom of movement
     if(assignedColors[0][colors[x]] != 5 && assignedColors[0][colors[x]] != 0 && assignedColors[y()][colors[x]] == 5) {diffObject[colors[x]] = 1}
     //Freedom of movement
-    if(assignedColors[0][colors[x]] != 6 && assignedColors[0][colors[x]] != 0 && assignedColors[y()][colors[x]] == 6) {diffObject[colors[x]] = 1}
+    if(assignedColors[0][colors[x]] != 6 && assignedColors[0][colors[x]] != 4 && assignedColors[0][colors[x]] != 0 && assignedColors[y()][colors[x]] == 6) {diffObject[colors[x]] = 1}
     //visa free
     if(assignedColors[0][colors[x]] != 7 && assignedColors[0][colors[x]] != 6 && assignedColors[0][colors[x]] != 5 && assignedColors[0][colors[x]] != 4 && assignedColors[0][colors[x]] != 3 && assignedColors[0][colors[x]] != 2 && assignedColors[0][colors[x]] != 0 && assignedColors[y()][colors[x]] == 7) {diffObject[colors[x]] = 1}
     //visa on arrival/evisa
