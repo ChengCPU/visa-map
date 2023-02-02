@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Menu, MenuItem, createTheme, ThemeProvider } from '@mui/material';
+import { Button, Menu, MenuItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import fetchData from '../../logic/fetchData';
 interface Props {
@@ -8,6 +8,12 @@ interface Props {
   setVisaPolicyData:Function;
   setRankRender:Function;
 }
+
+const CustomizedButton = styled(Button)`
+  background-color: #32cd32;
+  color: #FFFFFF;
+  left: 222px;
+`
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankRender }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -27,11 +33,7 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
     }
     handleClose()
   }
-
-  /*
-    overflow-wrap: break-word;
-    inline-size: 60px;
-  */
+  
   const sortArray = ['Sort by: Total', 'Sort by: Visa-free']
   const renderMenuItems = (sortArray:string[]) => {
     return sortArray.map(sortArray =>
@@ -43,7 +45,7 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
 
   return (
     <div>
-      <button onClick={handleClick}>{sortBy}</button>
+      <CustomizedButton onClick={handleClick}>{sortBy}</CustomizedButton>
       <Menu
         anchorEl={anchorEl}
         open={open}

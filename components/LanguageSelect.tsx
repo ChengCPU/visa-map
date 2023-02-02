@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import styles from '../styles/Header.module.css';
 interface Props {
   language:string;
   setLanguage:Function;
 }
+
+const CustomizedButton = styled(Button)`
+  background-color: #32cd32;
+  color: #FFFFFF;
+`
 
 const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -31,7 +37,7 @@ const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
 
   return (
     <div className={styles.languageSelect}>
-      <Button onClick={handleClick} className={styles.button}>{language}</Button>
+      <CustomizedButton onClick={handleClick}>{language}</CustomizedButton>
       <Menu
         anchorEl={anchorEl}
         open={open}

@@ -116,8 +116,9 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <table cellSpacing="0" cellPadding="20" className={styles.container}>
       <tbody>
       <tr>
-        <td>
-        </td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td>
           <SortBy 
             sortBy={sortBy}

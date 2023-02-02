@@ -25,7 +25,6 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
 `
 
-
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
   return (
     <ThemeProvider theme={theme}>
