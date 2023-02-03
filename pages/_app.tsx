@@ -1003,7 +1003,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    fetchData(setVisaPolicyData, setRankRender, 1)
+    fetchData(setVisaPolicyData, setRankRender, 1, 'Descending')
   }, [])
 
   useEffect(() => {

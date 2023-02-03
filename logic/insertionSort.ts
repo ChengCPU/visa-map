@@ -1,4 +1,4 @@
-export default function insertionSort(rankData:any, setRankRender:Function) {
+export default function insertionSort(rankData:any, setRankRender:Function, sort:string) {
   const unsortedData = rankData
   let tempDataVf
 
@@ -13,7 +13,7 @@ export default function insertionSort(rankData:any, setRankRender:Function) {
   unsortedData[j + 1] = current2;
   unsortedData[j + 1][6] = current;
   }
-
+  
   const sortedData = unsortedData.reverse()
   const lessThanVisaFreeCheck = (x:number) => {
     if(sortedData[x]?.[1] < sortedData[x + 1]?.[1] && sortedData[x]?.[6] == sortedData[x + 1]?.[6]) {
@@ -36,6 +36,9 @@ export default function insertionSort(rankData:any, setRankRender:Function) {
     for(let t = 0; t < sortedData.length; t++) {
       visaOnArrivalEvisaCheck(t)
     }
+  }
+  if(sort == 'Descending') {
+    sortedData.reverse()
   }
   setRankRender(sortedData)
 }

@@ -26,15 +26,17 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
   };
   const menuItemOnClick = (prop) => {
     setSortBy(prop)
-    if(prop == 'Sort by: Total') {
-      fetchData(setVisaPolicyData, setRankRender, 1)
-    } else {
-      fetchData(setVisaPolicyData, setRankRender, 2)
+    switch(prop) {
+      case 'Sort by: Total (Descending)': fetchData(setVisaPolicyData, setRankRender, 1, 'Descending'); break;
+      case 'Sort by: Total (Ascending)': fetchData(setVisaPolicyData, setRankRender, 1, 'Ascending'); break;
+      case 'Sort by: Visa-free (Descending)': fetchData(setVisaPolicyData, setRankRender, 2, 'Descending'); break;
+      case 'Sort by: Visa-free (Ascending)': fetchData(setVisaPolicyData, setRankRender, 2, 'Ascending'); break;
+      
     }
     handleClose()
   }
   
-  const sortArray = ['Sort by: Total', 'Sort by: Visa-free']
+  const sortArray = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)']
   const renderMenuItems = (sortArray:string[]) => {
     return sortArray.map(sortArray =>
       (sortBy != sortArray) ?
