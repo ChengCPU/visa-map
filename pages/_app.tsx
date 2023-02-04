@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { PassportContext } from '../components/context/PassportContext';
 import { ColorContext } from '../components/context/ColorContext';
 import { DiffContext } from '../components/context/DiffContext';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import { Drawer } from '@mui/material';
 //logic imports
 import reset from '../logic/reset';
@@ -480,10 +480,10 @@ function MyApp({ Component, pageProps }) {
   zimbabweColor: "rgb(149,150,150)"
   }
 
+  const [toggle, setToggle] = useState<boolean>(false) //used by SelectorPassport to trigger useEffect
   const [secondToggle, setSecondToggle] = useState<boolean>(false) //used by reset function to trigger secondToggle useEffect
   const [rerender, setRerender] = useState<boolean>(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
-  const [toggle, setToggle] = useState<boolean>(false) //used by SelectorPassport to trigger useEffect
   const [select, setSelect] = useState<Select>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
