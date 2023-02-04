@@ -37,7 +37,7 @@ export default function insertionSort(rankData:any, setRankRender:Function, sort
       visaOnArrivalEvisaCheck(t)
     }
   }
-  if(sort == 'Descending') {
+  if(sort == 'Ascending') {
     sortedData.reverse()
   }
   setRankRender(sortedData)
