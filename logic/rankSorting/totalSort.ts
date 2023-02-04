@@ -1,4 +1,4 @@
-export default function insertionSort(rankData:any, setRankRender:Function, sort:string) {
+export default function totalSort(rankData:any, setRankRender:Function, sort:string) {
   const unsortedData = rankData
   let tempDataVf
 

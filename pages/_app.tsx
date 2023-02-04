@@ -9,7 +9,7 @@ import reset from '../logic/reset';
 import selectArrayCalculation from '../logic/selectArrayCalculation';
 import mainCalculation from '../logic/mainCalculation';
 import subCalculation from '../logic/subCalculation';
-import fetchData from '../logic/fetchData';
+import fetchSortData from '../logic/rankSorting/fetchSortData';
 //component imports
 import Header from '../components/Header';
 import Selector from '../components/Selector/Selector';
@@ -1003,7 +1003,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    fetchData(setVisaPolicyData, setRankRender, 1, 'Descending')
+    fetchSortData(setVisaPolicyData, setRankRender, 1, 'Descending')
   }, [])
 
   useEffect(() => {

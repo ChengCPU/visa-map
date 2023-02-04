@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import fetchData from '../../logic/fetchData';
+import fetchSortData from '../../logic/rankSorting/fetchSortData';
 interface Props {
   sortBy:string;
   setSortBy:Function;
@@ -27,10 +27,10 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
   const menuItemOnClick = (prop) => {
     setSortBy(prop)
     switch(prop) {
-      case 'Sort by: Total (Descending)': fetchData(setVisaPolicyData, setRankRender, 1, 'Descending'); break;
-      case 'Sort by: Total (Ascending)': fetchData(setVisaPolicyData, setRankRender, 1, 'Ascending'); break;
-      case 'Sort by: Visa-free (Descending)': fetchData(setVisaPolicyData, setRankRender, 2, 'Descending'); break;
-      case 'Sort by: Visa-free (Ascending)': fetchData(setVisaPolicyData, setRankRender, 2, 'Ascending'); break;
+      case 'Sort by: Total (Descending)': fetchSortData(setVisaPolicyData, setRankRender, 1, 'Descending'); break;
+      case 'Sort by: Total (Ascending)': fetchSortData(setVisaPolicyData, setRankRender, 1, 'Ascending'); break;
+      case 'Sort by: Visa-free (Descending)': fetchSortData(setVisaPolicyData, setRankRender, 2, 'Descending'); break;
+      case 'Sort by: Visa-free (Ascending)': fetchSortData(setVisaPolicyData, setRankRender, 2, 'Ascending'); break;
       
     }
     handleClose()
