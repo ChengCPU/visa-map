@@ -3,7 +3,7 @@ const TablePassportSVG:React.FC = () => {
   <svg
     version="1.1"
     id="svg55"
-    width="64"
+    width="185"
     height="90.8"
     viewBox="0 0 64 90.8"
     xmlnsXlink="http://www.w3.org/1999/xlink"

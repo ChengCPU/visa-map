@@ -30,14 +30,15 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, language }) => {
   }
 
   const renderPassports = (horizontalColumn: number[]) => {
-    return horizontalColumn.map(horizontalColumn => <th key={horizontalColumn}><TablePassport selectArray={selectArray} horizontalColumn={horizontalColumn}/></th>)
+    return horizontalColumn.map(horizontalColumn => (selectArray[horizontalColumn] != null || horizontalColumn == 0) ? <th key={horizontalColumn}><TablePassport selectArray={selectArray} horizontalColumn={horizontalColumn}/></th> : null)
   }
 
   const renderTables = (verticalColumn:number[], horizontalColumn:number[], flags:string[]) => {
-    return verticalColumn.map(verticalColumn => 
+    return verticalColumn.map(verticalColumn =>
     <tr className={styles.subRow} key={verticalColumn}>
       <Country country={languageCaculation()[verticalColumn]} flag={flags[verticalColumn]} />
       {horizontalColumn.map(horizontalColumn =>
+        (selectArray[horizontalColumn] != null || horizontalColumn == 0) ?
         <VisaPolicy
           key={horizontalColumn}
           assignedColors={assignedColors}
@@ -45,6 +46,7 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, language }) => {
           verticalColumn={verticalColumn}
           horizontalColumn={horizontalColumn}
         />
+        : null
       )}
     </tr>
     )
