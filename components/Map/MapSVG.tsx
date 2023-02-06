@@ -1,4 +1,5 @@
 import styles from '../../styles/MapSVG.module.css';
+import { useState, useEffect } from 'react'
 import Abkhazia from '../countries/Abkhazia';
 import Afghanistan from '../countries/Afghanistan';
 import Albania from '../countries/Albania';
