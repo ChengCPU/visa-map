@@ -12,7 +12,7 @@ interface Props {
 const CustomizedButton = styled(Button)`
   background-color: #32cd32;
   color: #FFFFFF;
-  left: 222px;
+  left: 100px;
 `
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankRender }) => {
