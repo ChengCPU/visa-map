@@ -1,7 +1,13 @@
-.container {
+.containerDesktop {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.containerMobile {
+  display: flex;
+  align-items: left;
+  justify-content: left;
 }
 
 .text {
@@ -10,7 +16,18 @@
   overflow-wrap: break-word;
 }
 
-.progressBar {
+.progressBarMobile {
+  margin: 0px;
+  padding: 0px 0px 0px;
+  width: 362px;
+  background: rgb(255, 255, 255);
+  position:relative;
+  text-align: left;
+  float: left;
+  margin-right: 140px;
+}
+
+.progressBarDesktop {
   margin: 0px;
   padding: 5px 4px 3px;
   width: 492px;

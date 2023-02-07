@@ -21,9 +21,10 @@ interface Props {
   setRankRender:Function;
   sortBy:string;
   setSortBy:Function;
+  mobile:boolean;
 }
 
-const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy }) => {
+const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy, mobile }) => {
 
   const passports = useContext(PassportContext)
 
@@ -62,7 +63,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     return countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + countries[passportsArray.indexOf(rankRender?.[verticalColumn]?.[0])]?.slice(1)
   }
 
-  const passportRankRender = (verticalColumn:any) => {
+  const passportRankRenderDesktop = (verticalColumn:any) => {
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
       <td className={styles.rank}>
@@ -72,7 +73,51 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <td><div className={styles.text}><p>{textRender(verticalColumn)}</p></div></td>
       <td>
         <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
-        <div className={styles.progressBar}></div>
+        <div className={styles.progressBarDesktop}></div>
+        <VisaRequired
+          widthCalculation={widthCalculation}
+          marginCalculation={marginCalculation}
+          verticalColumn={verticalColumn}
+          visaPolicyData={visaPolicyData}
+        />
+        <EVisa
+          widthCalculation={widthCalculation}
+          marginCalculation={marginCalculation}
+          verticalColumn={verticalColumn}
+          visaPolicyData={visaPolicyData}
+        />
+        <VisaOnArrival
+          widthCalculation={widthCalculation}
+          marginCalculation={marginCalculation}
+          verticalColumn={verticalColumn}
+          visaPolicyData={visaPolicyData}
+        />
+        <VisaOnArrivalEvisa
+          widthCalculation={widthCalculation}
+          marginCalculation={marginCalculation}
+          verticalColumn={verticalColumn}
+          visaPolicyData={visaPolicyData}
+        />
+        <VisaFree
+          widthCalculation={widthCalculation}
+          marginCalculation={marginCalculation}
+          verticalColumn={verticalColumn}
+          visaPolicyData={visaPolicyData}
+        />
+      </td>
+    </tr>
+    )
+  }
+
+  const passportRankRenderMobile = (verticalColumn:any) => {
+    return verticalColumn.map(verticalColumn =>
+    <tr key={verticalColumn}>
+      <td>
+      <p className={styles.rank}>{verticalColumn + 1}</p>
+      <Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/>
+      <div className={styles.text}><p>{textRender(verticalColumn)}</p></div>
+      <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
+        <div className={styles.progressBarMobile}></div>
         <VisaRequired
           widthCalculation={widthCalculation}
           marginCalculation={marginCalculation}
@@ -113,12 +158,15 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <br />
     <br />
     <br />
-    <table cellSpacing="0" cellPadding="20" className={styles.container}>
+    <table cellSpacing="0" cellPadding="20" className={(mobile == true) ? styles.containerMobile : styles.containerDesktop}>
       <tbody>
       <tr>
+        {(mobile == true) ? null : 
+        <>
         <td></td>
         <td></td>
         <td></td>
+        </>}
         <td>
           <SortBy 
             sortBy={sortBy}
@@ -128,7 +176,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
           />
         </td>
       </tr>
-      {passportRankRender(verticalColumn)}
+      {(mobile == true) ? passportRankRenderMobile(verticalColumn) : passportRankRenderDesktop(verticalColumn)}
       </tbody>
     </table>
     <br />
@@ -137,6 +185,13 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <br />
     <br />
     <br />
+    {(mobile == true) ?
+    <>
+    <br />
+    <br />
+    <br />
+    </>
+    : null}
     </>
   )
 }
