@@ -26,7 +26,7 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
 `
 
-const Header:React.FC<Props> = ({ language, setLanguage, windowSize }) => {
+const Header:React.FC<Props> = ({ language, setLanguage }) => {
   return (
     <ThemeProvider theme={theme}>
     <Stack direction="row" spacing={1} className={styles.container}>
@@ -37,16 +37,6 @@ const Header:React.FC<Props> = ({ language, setLanguage, windowSize }) => {
         language={language}
         setLanguage={setLanguage}
       />
-      <h3 className={'text'}><style jsx>{`
-        .text {
-          color: white;
-        }
-      `}</style>{'Width: ' + windowSize.width}</h3>
-      <h3 className={'text'}><style jsx>{`
-        .text {
-          color: white;
-        }
-      `}</style>{'Height: ' + windowSize.height}</h3>
     </Stack>
     </ThemeProvider>
   )
