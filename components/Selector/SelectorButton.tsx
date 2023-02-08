@@ -160,7 +160,6 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, select, setSelect, sele
       case "oman": return passports.oman
       case "pakistan": return passports.pakistan
       case "palau": return passports.palau
-      case "palestine": return passports.palestine
       case "panama": return passports.panama
       case "papuaNewGuinea": return passports.papuaNewGuinea
       case "paraguay": return passports.paraguay

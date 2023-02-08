@@ -168,7 +168,6 @@ const defaultState = {
   oman:undefined,
   pakistan:undefined,
   palau:undefined,
-  palestine:undefined,
   panama:undefined,
   papuaNewGuinea:undefined,
   paraguay:undefined,
@@ -420,7 +419,6 @@ interface ContextTypes {
   oman:object;
   pakistan:object;
   palau:object;
-  palestine:object;
   panama:object;
   papuaNewGuinea:object;
   paraguay:object;
