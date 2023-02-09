@@ -252,9 +252,16 @@ import Zambia from '../countries/Zambia';
 import Zimbabwe from '../countries/Zimbabwe';
 
 const MapSVG:React.FC = () => {
+
+  const [svgWidth, setSvgWidth] = useState(0)
+
+  useEffect(() => {
+    setSvgWidth(document.body.clientWidth - 2)
+  }, [])
+
   return (
     <div className={styles.container}>
-    <svg version="1.2" viewBox="-50 -25 2190 890" width="1890">
+    <svg version="1.2" viewBox="-50 -25 2190 890" width={svgWidth}>
     <Afghanistan />
     <Albania />
     <Algeria />
