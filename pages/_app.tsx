@@ -7,8 +7,8 @@ import { Drawer } from '@mui/material';
 //logic imports
 import reset from '../logic/reset';
 import selectArrayCalculation from '../logic/selectArrayCalculation';
-import mainCalculation from '../logic/mainCalculation';
-import subCalculation from '../logic/subCalculation';
+import mainCalculation from '../logic/visaPolicyCalculation/mainCalculation';
+import subCalculation from '../logic/visaPolicyCalculation/subCalculation';
 import fetchSortData from '../logic/rankSorting/fetchSortData';
 import fetchWindowSize from '../logic/fetchWindowSize';
 //component imports

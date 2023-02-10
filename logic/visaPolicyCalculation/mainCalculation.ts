@@ -1,5 +1,5 @@
-import legendCalculation from './legendCalculation';
-import percentageCalculation from './percentageCalculation';
+import legendCalculation from '../legendCalculation';
+import percentageCalculation from '../percentageCalculation';
 import diffCalculation from './diffCalculation';
 interface Select {selection:number,passport:null | string;}
 type Legend = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
