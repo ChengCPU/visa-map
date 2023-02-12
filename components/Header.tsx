@@ -6,7 +6,6 @@ import styles from '../styles/Header.module.css';
 interface Props {
   language:string;
   setLanguage:Function;
-  windowSize:any;
 }
 
 const theme = createTheme({
