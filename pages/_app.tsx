@@ -236,7 +236,6 @@ function MyApp({ Component, pageProps }) {
   const [select, setSelect] = useState<Select>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
-  const [percentage, setPercentage]= useState<object>([{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null},{total:null,visaFree:null,visaOnArrivalEVisa:null,visaOnArrival:null,eVisa:null}, 0])
   const [priority, setPriority] = useState<any>(color) //priority is the color that is passed onto each country component as context
   const [legend, setLegend] = useState<Legend>({HC:false, FoM:false, OECSFoM:false, MFoM:false, EUFoM:false, GCCFoM:false, VF:false, VoAEV:false, VoA:false, EV:false, SP:false, CR:false})
   const [language, setLanguage] = useState<string>('🇬🇧EN')
@@ -257,16 +256,16 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setLegend, percentage, setPercentage, setDiff); return
+      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setLegend, setDiff); return
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, selectArray, diff, setDiff)
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, legend, setLegend, selectArray, diff, setDiff)
     }
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, percentage, setPercentage, diff, setDiff)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, legend, setLegend, diff, setDiff)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 
@@ -278,7 +277,6 @@ function MyApp({ Component, pageProps }) {
         legend={legend}
         selectArray={selectArray}
         assignedColors={assignedColors}
-        percentage={percentage}
         language={language}
         visaPolicyData={visaPolicyData}
         rankRender={rankRender}
@@ -301,8 +299,6 @@ function MyApp({ Component, pageProps }) {
         setPriority={setPriority}
         setAssignedColors={setAssignedColors}
         setLegend={setLegend}
-        percentage={percentage}
-        setPercentage={setPercentage}
         setDiff={setDiff}
       />
       <Header
