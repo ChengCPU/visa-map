@@ -25,13 +25,28 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
 `
 
+const headerEN = ['Map', 'Table', 'Rank']
+const headerES = ['Mapa', 'Tabla', 'Rango']
+const headerPT = ['Mapa', 'Tabela', 'Classificação']
+const headerFR = ['Carte', 'Tableau', 'Rang']
+
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
+
+  const languageCaculation = () => {
+    switch(language){
+      case '🇬🇧EN': return headerEN
+      case '🇪🇸ES': return headerES
+      case '🇵🇹PT': return headerPT
+      case '🇫🇷FR': return headerFR
+    }
+  }
+
   return (
     <ThemeProvider theme={theme}>
     <Stack direction="row" spacing={1} className={styles.container}>
-      <Link href='/'><CustomizedButton variant="contained">Home</CustomizedButton></Link>
-      <Link href='/table'><CustomizedButton variant="contained">Table</CustomizedButton></Link>
-      <Link href='/rank'><CustomizedButton variant="contained">Rank</CustomizedButton></Link>
+      <Link href='/'><CustomizedButton variant="contained">{languageCaculation()[0]}</CustomizedButton></Link>
+      <Link href='/table'><CustomizedButton variant="contained">{languageCaculation()[1]}</CustomizedButton></Link>
+      <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
       <LanguageSelect
         language={language}
         setLanguage={setLanguage}
