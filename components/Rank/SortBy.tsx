@@ -12,7 +12,7 @@ interface Props {
 const CustomizedButton = styled(Button)`
   background-color: #32cd32;
   color: #FFFFFF;
-  left: 100px;
+  left: 250px;
 `
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankRender }) => {
@@ -31,7 +31,6 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
       case 'Sort by: Total (Ascending)': fetchSortData(setVisaPolicyData, setRankRender, 1, 'Ascending'); break;
       case 'Sort by: Visa-free (Descending)': fetchSortData(setVisaPolicyData, setRankRender, 2, 'Descending'); break;
       case 'Sort by: Visa-free (Ascending)': fetchSortData(setVisaPolicyData, setRankRender, 2, 'Ascending'); break;
-      
     }
     handleClose()
   }
