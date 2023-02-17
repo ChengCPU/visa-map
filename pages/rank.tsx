@@ -1,6 +1,7 @@
 import Passport from '../components/Selector/Passport';
 import { useContext } from 'react';
 import { PassportContext } from '../components/context/PassportContext';
+import { WidthContext } from '../components/context/WidthContext';
 import SortBy from '../components/Rank/SortBy';
 import VisaRequired from '../components/Rank/VisaRequired';
 import EVisa from '../components/Rank/EVisa';
@@ -27,6 +28,7 @@ interface Props {
 const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy, mobile }) => {
 
   const passports = useContext(PassportContext)
+  const width = useContext(WidthContext)
 
   const widthCalculation = (visaPolicy:string, verticalColumn:any) => {
     switch(visaPolicy) {
@@ -158,10 +160,10 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <br />
     <br />
     <br />
-    <table cellSpacing="0" cellPadding="20" className={(mobile == true) ? styles.containerMobile : styles.containerDesktop}>
+    <table cellSpacing="0" cellPadding="20" className={(width.width <= 800) ? styles.containerMobile : styles.containerDesktop}>
       <tbody>
       <tr>
-        {(mobile == true) ? null : 
+        {(width.width <= 800) ? null : 
         <>
         <td></td>
         <td></td>
@@ -176,7 +178,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
           />
         </td>
       </tr>
-      {(mobile == true) ? passportRankRenderMobile(verticalColumn) : passportRankRenderDesktop(verticalColumn)}
+      {(width.width <= 800) ? passportRankRenderMobile(verticalColumn) : passportRankRenderDesktop(verticalColumn)}
       </tbody>
     </table>
     <br />
@@ -185,7 +187,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <br />
     <br />
     <br />
-    {(mobile == true) ?
+    {(width.width <= 800) ?
     <>
     <br />
     <br />

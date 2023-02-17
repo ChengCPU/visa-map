@@ -1,5 +1,6 @@
 import styles from '../../styles/MapSVG.module.css';
-import { useState, useEffect } from 'react'
+import { useContext } from 'react';
+import { WidthContext } from '../context/WidthContext';
 import Abkhazia from '../countries/Abkhazia';
 import Afghanistan from '../countries/Afghanistan';
 import Albania from '../countries/Albania';
@@ -253,15 +254,11 @@ import Zimbabwe from '../countries/Zimbabwe';
 
 const MapSVG:React.FC = () => {
 
-  const [svgWidth, setSvgWidth] = useState(0)
-
-  useEffect(() => {
-    setSvgWidth(document.body.clientWidth - 2)
-  }, [])
+  const width = useContext(WidthContext)
 
   return (
     <div className={styles.container}>
-    <svg version="1.2" viewBox="-50 -25 2190 890" width={svgWidth}>
+    <svg version="1.2" viewBox="-50 -25 2190 890" width={width.width}>
     <Afghanistan />
     <Albania />
     <Algeria />
