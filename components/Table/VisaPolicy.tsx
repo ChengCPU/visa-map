@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../context/LanguageContext'
 interface Props {
   assignedColors:object[];
   selectArray:null | string[];
@@ -5,8 +7,23 @@ interface Props {
   horizontalColumn:number;
 }
 const colors:string[] = ["abkhaziaColor","afghanistanColor","albaniaColor","algeriaColor","americanSamoaColor","andorraColor","angolaColor","anguillaColor","antiguaAndBarbudaColor","argentinaColor","armeniaColor","arubaColor","australiaColor","austriaColor","azerbaijanColor","bahamasColor","bahrainColor","bangladeshColor","barbadosColor","belarusColor","belgiumColor","belizeColor","beninColor","bermudaColor","bhutanColor","boliviaColor","bonaireColor","bosniaAndHerzegovinaColor","botswanaColor","bouvetIslandColor","brazilColor","britishIndianOceanTerritory","britishVirginIslandsColor","bruneiColor","bulgariaColor","burkinaFasoColor","burundiColor","cambodiaColor","cameroonColor","canadaColor","capeVerdeColor","caymanIslandsColor","centralAfricanRepublicColor","chadColor","chileColor","chinaColor","colombiaColor","comorosColor","cookIslandsColor","costaRicaColor","croatiaColor","cubaColor","curacaoColor","cyprusColor","czechRepublicColor","democraticRepublicOfTheCongoColor","denmarkColor","djiboutiColor","dominicaColor","dominicanRepublicColor","eastTimorColor","ecuadorColor","egyptColor","elSalvadorColor","equatorialGuineaColor","eritreaColor","estoniaColor","eswatiniColor","ethiopiaColor","falklandIslandsColor","faroeIslandsColor","fijiColor","finlandColor","franceColor","frenchGuianaColor","frenchPolynesiaColor","gabonColor","gambiaColor","georgiaColor","germanyColor","ghanaColor","gibraltarColor","greeceColor","greenlandColor","grenadaColor","guadeloupeColor","guamColor","guatemalaColor","guernseyColor","guineaColor","guineaBissauColor","guyanaColor","haitiColor","heardIslandAndMcDonaldIslandsColor","hondurasColor","hongKongColor","hungaryColor","icelandColor","indiaColor","indonesiaColor","iranColor","iraqColor","irelandColor","isleOfManColor","israelColor","italyColor","ivoryCoastColor","jamaicaColor","janMayenColor","japanColor","jerseyColor","jordanColor","kazakhstanColor","kenyaColor","kiribatiColor","kosovoColor","kuwaitColor","kyrgyzstanColor","laosColor","latviaColor","lebanonColor","lesothoColor","liberiaColor","libyaColor","liechtensteinColor","lithuaniaColor","luxembourgColor","macaoColor","madagascarColor","malawiColor","malaysiaColor","maldivesColor","maliColor","maltaColor","marshallIslandsColor","martiniqueColor","mauritaniaColor","mauritiusColor","mayotteColor","mexicoColor","micronesiaColor","moldovaColor","monacoColor","mongoliaColor","montenegroColor","montserratColor","moroccoColor","mozambiqueColor","myanmarColor","namibiaColor","nauruColor","nepalColor","netherlandsColor","newCaledoniaColor","newZealandColor","nicaraguaColor","nigerColor","nigeriaColor","niueColor","norfolkIslandColor","northernCyprusColor","northernMarianaIslandsColor","northKoreaColor","northMacedoniaColor","norwayColor","omanColor","pakistanColor","palauColor","palestineColor","panamaColor","papuaNewGuineaColor","paraguayColor","peruColor","philippinesColor","pitcairnIslandsColor","polandColor","portugalColor","qatarColor","republicOfTheCongoColor","reunionColor","romaniaColor","russiaColor","rwandaColor","sabaColor","saintBarthelemyColor","saintHelenaColor","saintKittsAndNevisColor","saintLuciaColor","saintMartinColor","saintPierreAndMiquelonColor","saintVincentAndTheGrenadinesColor","samoaColor","sanMarinoColor","saoTomeAndPrincipeColor","saudiArabiaColor","senegalColor","serbiaColor","seychellesColor","sierraLeoneColor","singaporeColor","sintEustatiusColor","sintMaartenColor","slovakiaColor","sloveniaColor","solomonIslandsColor","somaliaColor","southAfricaColor","southGeorgiaAndTheSouthSandwichIslandsColor","southKoreaColor","southOssetiaColor","southSudanColor","spainColor","sriLankaColor","sudanColor","surinameColor","svalbardColor","swedenColor","switzerlandColor","syriaColor","taiwanColor","tajikistanColor","tanzaniaColor","thailandColor","togoColor","tokelauColor","tongaColor","transnistriaColor","trinidadAndTobagoColor","tunisiaColor","turkeyColor","turkmenistanColor","turksAndCaicosColor","tuvaluColor","ugandaColor","ukraineColor","unitedArabEmiratesColor","unitedKingdomColor","unitedStatesColor","unitedStatesVirginIslandsColor","uruguayColor","uzbekistanColor","vanuatuColor","vaticanCityColor","venezuelaColor","vietnamColor","wallisAndFutunaColor","westernSaharaColor","yemenColor","zambiaColor","zimbabweColor"]
+const namesEN = ["Home country", "Permit required", "OECS freedom of movement", "MERCSOUR freedom of movement", "EU freedom of movement", "GCC freedom of movement", "Freedom of movement", "Visa-free", "Visa on arrival/E-visa", "Visa on arrival", "E-visa", "Special permit/Police check", "Simplified visa", "Confirmation required", "Visa required"]
+const namesES = ["País de origen", "Permiso requerido", "OECS libertad de movimiento", "MERCSOUR libertad de movimiento", "EU libertad de movimiento", "GCC libertad de movimiento", "Libertad de movimiento", "Visado libre", "Visado a llegada/Visado electronico", "Visado a llegada", "Visado electronico", "Permiso especial/Verificación de antecedentes", "Visado simplificado", "Confirmación requerida", "Visado requerido"]
+const namesPT = ["País natal", "Permissão necessária", "OECS liberdade de movimento", "MERCSOUR liberdade de movimento", "EU liberdade de movimento", "GCC liberdade de movimento", " Liberdade de movimento", "Sem visto", "Visto na chegada/Visto eletrônico", "Visto na chegada", "Visto eletrônico", "Permissão especial/Verificação de antecedentes", "Visto simplificado", "Necessária confirmação", "Visto necessário"]
+const namesFR = ["Pays natal", "Permis requis", "OECS liberté de mouvement", "MERCSOUR liberté de mouvement", "EU liberté de mouvement", "GCC liberté de mouvement", "Liberté de mouvement", "Sans visa", "Visa à l'arrivée/Visa électronique", "Visa à l'arrivée", "Visa électronique", "Permis spécial/Vérification des antécédents", "Visa simplifié", "Confirmation requise", "Visa requis"]
 
 const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, verticalColumn, horizontalColumn }) => {
+
+  const { language } = useContext(LanguageContext)
+
+  const languageCaculation = (num:number) => {
+    switch(language){
+      case '🇬🇧EN': return namesEN[num]
+      case '🇪🇸ES': return namesES[num]
+      case '🇵🇹PT': return namesPT[num]
+      case '🇫🇷FR': return namesFR[num]
+    }
+  }
 
   const colorCalculation = () => {
     switch(assignedColors[horizontalColumn]?.[colors[verticalColumn]]) {
@@ -31,21 +48,21 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, verticalColum
 
   const visaPolicyCalculation = (main:number) => {
     switch(assignedColors[horizontalColumn]?.[colors[verticalColumn]]) {
-      case 0: return "Home country";
-      case 1: return "Permit required";
-      case 2: return "OECS freedom of movement";
-      case 3: return "MERCSOUR freedom of movement";
-      case 4: return "EU freedom of movement";
-      case 5: return "GCC freedom of movement";
-      case 6: return "Freedom of movement";
-      case 7: return "Visa-free";
-      case 8: return "Visa on arrival/E-visa";
-      case 9: return "Visa on arrival";
-      case 10: return "E-visa";
-      case 11: return "Special permit/police check";
-      case 12: return "Simplified visa";
-      case 13: return "Confirmation required";
-      case 14: return "Visa required";
+      case 0: return languageCaculation(0);
+      case 1: return languageCaculation(1);
+      case 2: return languageCaculation(2);
+      case 3: return languageCaculation(3);
+      case 4: return languageCaculation(4);
+      case 5: return languageCaculation(5);
+      case 6: return languageCaculation(6);
+      case 7: return languageCaculation(7);
+      case 8: return languageCaculation(8);
+      case 9: return languageCaculation(9);
+      case 10: return languageCaculation(10);
+      case 11: return languageCaculation(11);
+      case 12: return languageCaculation(12);
+      case 13: return languageCaculation(13);
+      case 14: return languageCaculation(14);
       default: return null;
     }
   }
