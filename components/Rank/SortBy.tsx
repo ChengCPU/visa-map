@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
+import { LanguageContext } from '../context/LanguageContext';
 import { styled } from '@mui/material/styles';
 import fetchSortData from '../../logic/rankSorting/fetchSortData';
 interface Props {
@@ -14,8 +15,25 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
   left: 250px;
 `
+const sortArrayEN = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)']
+const sortArrayES = ['Ordenar por: Total (Descendente)', 'Ordenar por: Total (Ascendente)', 'Ordenar por: Visado Libre (Descendente)', 'Ordenar por: Visado Libre (Ascendente)']
+const sortArrayPT = ['Ordenar por: Total (Decrescente)', 'Ordenar por: Total (Crescente)', 'Ordenar por: Sem Visto (Descendente)', 'Ordenar por: Sem Visto (Crescente)']
+const sortArrayFR = ['Trier par : Total (Descendant)', 'Trier par : Total (Croissant)', 'Trier par: Sans Visa (Décroissant)', 'Trier par: Sans Visa (Croissant)']
+
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankRender }) => {
+
+  const { language } = useContext(LanguageContext)
+
+  const languageCaculation = () => {
+    switch(language){
+      case '🇬🇧EN': return sortArrayEN
+      case '🇪🇸ES': return sortArrayES
+      case '🇵🇹PT': return sortArrayPT
+      case '🇫🇷FR': return sortArrayFR
+    }
+  }
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -39,14 +57,14 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
   const renderMenuItems = (sortArray:string[]) => {
     return sortArray.map(sortArray =>
       (sortBy != sortArray) ?
-      <MenuItem key={sortArray} onClick={() => menuItemOnClick(sortArray)}>{sortArray}</MenuItem>
+      <MenuItem key={sortArray} onClick={() => menuItemOnClick(sortArray)}>{languageCaculation()[sortArrayEN.indexOf(sortArray)]}</MenuItem>
       : null
     )
   }
 
   return (
     <div>
-      <CustomizedButton onClick={handleClick}>{sortBy}</CustomizedButton>
+      <CustomizedButton onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButton>
       <Menu
         anchorEl={anchorEl}
         open={open}
