@@ -120,36 +120,11 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <div className={styles.text}><p>{textRender(verticalColumn)}</p></div>
       <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
         <div className={styles.progressBarMobile}></div>
-        <VisaRequired
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <EVisa
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <VisaOnArrival
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <VisaOnArrivalEvisa
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <VisaFree
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
+        <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
       </td>
     </tr>
     )
