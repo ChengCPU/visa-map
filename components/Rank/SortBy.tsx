@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { LanguageContext } from '../context/LanguageContext';
+import { WidthContext } from '../context/WidthContext';
 import { styled } from '@mui/material/styles';
 import fetchSortData from '../../logic/rankSorting/fetchSortData';
 interface Props {
@@ -10,11 +11,17 @@ interface Props {
   setRankRender:Function;
 }
 
-const CustomizedButton = styled(Button)`
+const CustomizedButtonDesktop = styled(Button)`
   background-color: #32cd32;
   color: #FFFFFF;
   left: 250px;
 `
+const CustomizedButtonMobile = styled(Button)`
+  background-color: #32cd32;
+  color: #FFFFFF;
+  left: 0px;
+`
+
 const sortArrayEN = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)']
 const sortArrayES = ['Ordenar por: Total (Descendente)', 'Ordenar por: Total (Ascendente)', 'Ordenar por: Visado Libre (Descendente)', 'Ordenar por: Visado Libre (Ascendente)']
 const sortArrayPT = ['Ordenar por: Total (Decrescente)', 'Ordenar por: Total (Crescente)', 'Ordenar por: Sem Visto (Decrescente)', 'Ordenar por: Sem Visto (Crescente)']
@@ -23,6 +30,7 @@ const sortArrayFR = ['Trier par: Total (Décroissant)', 'Trier par: Total (Crois
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankRender }) => {
 
+  const width = useContext(WidthContext)
   const { language } = useContext(LanguageContext)
 
   const languageCaculation = () => {
@@ -64,7 +72,11 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
 
   return (
     <div>
-      <CustomizedButton onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButton>
+      {(width.width <= 800) ?
+      <CustomizedButtonMobile onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonMobile>
+      :
+      <CustomizedButtonDesktop onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonDesktop>
+      }
       <Menu
         anchorEl={anchorEl}
         open={open}
