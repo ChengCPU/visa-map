@@ -87,40 +87,15 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <p>{verticalColumn + 1}</p>
       </td>
       <td><Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/></td>
-      <td><div className={styles.text}><p>{textRender(verticalColumn)}</p></div></td>
+      <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
       <td>
         <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
         <div className={styles.progressBarDesktop}></div>
-        <VisaRequired
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <EVisa
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <VisaOnArrival
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <VisaOnArrivalEvisa
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
-        <VisaFree
-          widthCalculation={widthCalculation}
-          marginCalculation={marginCalculation}
-          verticalColumn={verticalColumn}
-          visaPolicyData={visaPolicyData}
-        />
+        <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+        <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
       </td>
     </tr>
     )
@@ -132,7 +107,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <td>
       <p className={styles.rank}>{verticalColumn + 1}</p>
       <Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/>
-      <div className={styles.text}><p>{textRender(verticalColumn)}</p></div>
+      <p className={styles.text}>{textRender(verticalColumn)}</p>
       <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
         <div className={styles.progressBarMobile}></div>
         <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
