@@ -130,6 +130,16 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <br />
     <br />
     <br />
+    {(width.width <= 800) ?
+      <div className={styles.centered}>
+        <SortBy
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          setVisaPolicyData={setVisaPolicyData}
+          setRankRender={setRankRender}
+        />
+      </div>
+    : null}
     <table cellSpacing="0" cellPadding="20" className={(width.width <= 800) ? styles.containerMobile : styles.containerDesktop}>
       <tbody>
       <tr>

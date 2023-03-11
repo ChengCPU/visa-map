@@ -19,7 +19,7 @@ const CustomizedButtonDesktop = styled(Button)`
 const CustomizedButtonMobile = styled(Button)`
   background-color: #32cd32;
   color: #FFFFFF;
-  left: 0px;
+  left: 18px;
 `
 
 const sortArrayEN = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)']
