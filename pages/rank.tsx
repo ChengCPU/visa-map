@@ -114,7 +114,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <td>
         <div className={styles.visaPolicyText}>
         <p>{visaPolicyData[verticalColumn]?.[1]}  🟩 Visa-free</p>
-        <p>{visaPolicyData[verticalColumn]?.[2]}  🟧 Visa on Arrival/E-visa</p>
+        <p>{visaPolicyData[verticalColumn]?.[2]}  🟧 VoA/E-visa</p>
         <p>{visaPolicyData[verticalColumn]?.[3]}  🟨 Visa on Arrival</p>
         <p>{visaPolicyData[verticalColumn]?.[4]}  🟦 E-visa</p>
         <p>{visaPolicyData[verticalColumn]?.[5]}  ⬜ Visa Required</p>
