@@ -110,7 +110,8 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <p className={styles.text}>{textRender(verticalColumn)}</p>
       <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
       </td>
-      {(width.width <= 800) ?
+      {
+      (width.width <= 800) ?
       <td>
         <div className={styles.visaPolicyText}>
         <p>{visaPolicyData[verticalColumn]?.[1]}  🟩 Visa-free</p>
@@ -120,7 +121,9 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
         <p>{visaPolicyData[verticalColumn]?.[5]}  ⬜ Visa Required</p>
         </div>
       </td>
-      : null}
+      :
+      null
+      }
     </tr>
     )
   }
@@ -130,20 +133,25 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <br />
     <br />
     <br />
-    {(width.width <= 800) ?
-      <div className={styles.centered}>
-        <SortBy
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          setVisaPolicyData={setVisaPolicyData}
-          setRankRender={setRankRender}
-        />
-      </div>
-    : null}
+    {
+    (width.width <= 800) ?
+    <div className={styles.centered}>
+      <SortBy
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        setVisaPolicyData={setVisaPolicyData}
+        setRankRender={setRankRender}
+      />
+    </div>
+    : null
+    }
     <table cellSpacing="0" cellPadding="20" className={(width.width <= 800) ? styles.containerMobile : styles.containerDesktop}>
       <tbody>
       <tr>
-        {(width.width <= 800) ? null : 
+        {
+        (width.width <= 800) ?
+        null
+        : 
         <>
         <td></td>
         <td></td>
@@ -168,7 +176,8 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     <br />
     <br />
     <br />
-    {(width.width <= 800) ?
+    {
+    (width.width <= 800) ?
     <>
     <br />
     <br />

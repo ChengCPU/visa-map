@@ -14,10 +14,16 @@ const Map:React.FC<Props>= ({ legend }) => {
     <>
     <br />
     <br />
-    {(width.width <= 800) ? <br /> : null}
+    {
+    (width.width <= 800) ?
+    <br />
+    :
+    null
+    }
     <div className={styles.container}>
     <MapSVG />
-    {(width.width <= 800) ?
+    {
+    (width.width <= 800) ?
     <>
     <br />
     <br />

@@ -40,10 +40,13 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
 
   return (
     <div className={styles.container}>
-      {(width.width <= 800) ? null :
-        <div className={styles.text}>
-          <ProgressBar percentage={percentage} verticalColumn={null} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
-        </div>
+      {
+      (width.width <= 800) ?
+      null
+      :
+      <div className={styles.text}>
+        <ProgressBar percentage={percentage} verticalColumn={null} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
+      </div>
       }
       {renderSelectorButtons(selectorButtonArray)}
     <button className={styles.button} onClick={() => {
