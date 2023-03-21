@@ -17,9 +17,7 @@ const countriesFR:string[] = ['abkhazie','afghanistan', 'albanie','algérie','an
 const passportsArray:string[] = ['abkhazia','afghanistan','albania','algeria','andorra','angola','anguilla','antiguaAndBarbuda','argentina','armenia','australia','austria','azerbaijan','bahamas','bahrain','bangladesh','barbados','belarus','belgium','belize','benin','bermuda','bhutan','bolivia','bosniaAndHerzegovina','botswana','brazil','britishVirginIslands','brunei','bulgaria','burkinaFaso','burundi','cambodia','cameroon','canada','capeVerde','caymanIslands','centralAfricanRepublic','chad','chile','china','colombia','comoros','costaRica','croatia','cuba','cyprus','czechRepublic','democraticRepublicOfTheCongo','denmark','djibouti','dominica','dominicanRepublic','eastTimor','ecuador','egypt','elSalvador','equatorialGuinea','eritrea','estonia','eswatini','ethiopia','fiji','finland','france','gabon','gambia','georgia','germany','ghana','greece','grenada','guatemala','guinea','guineaBissau','guyana','haiti','honduras','hongKong','hungary','iceland','india','indonesia','iran','iraq','ireland','israel','italy','ivoryCoast','jamaica','japan','jordan','kazakhstan','kenya','kiribati','kuwait','kyrgyzstan','laos','latvia','lebanon','lesotho','liberia','libya','liechtenstein','lithuania','luxembourg','macao','madagascar','malawi','malaysia','maldives','mali','malta','marshallIslands','mauritania','mauritius','mexico','micronesia','moldova','monaco','mongolia','montenegro','montserrat','morocco','mozambique','myanmar','namibia','nauru','nepal','netherlands','newZealand','nicaragua','niger','nigeria','northKorea','northMacedonia','norway','oman','pakistan','palau','panama','papuaNewGuinea','paraguay','peru','philippines','poland','portugal','qatar','republicOfTheCongo','romania','russia','rwanda','saintHelena','saintKittsAndNevis','saintLucia','saintVincentAndTheGrenadines','samoa','sanMarino','saoTomeAndPrincipe','saudiArabia','senegal','serbia','seychelles','sierraLeone','singapore','slovakia','slovenia','solomonIslands','somalia','southAfrica','southKorea','southOssetia','southSudan','spain','sriLanka','sudan','suriname','sweden','switzerland','syria','taiwan','tajikistan','tanzania','thailand','togo','tonga','trinidadAndTobago','tunisia','turkey','turkmenistan','turksAndCaicos','tuvalu','uganda','ukraine','unitedArabEmirates','unitedKingdom','unitedStates','uruguay','uzbekistan','vanuatu','vaticanCity','venezuela','vietnam','yemen','zambia','zimbabwe']
 
 let verticalColumn:number[] = []
-  for(let passportCount = 0; passportCount < passportsArray.length; passportCount++) {
-    verticalColumn.push(passportCount)
-  }
+for(let passportCount = 0; passportCount < passportsArray.length; passportCount++) {verticalColumn.push(passportCount)}
 interface Props {
   visaPolicyData:any;
   rankRender:any;
@@ -105,20 +103,35 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
       <td>
-      <p className={styles.rank}>{verticalColumn + 1}</p>
-      <Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/>
-      <p className={styles.text}>{textRender(verticalColumn)}</p>
-      <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
+        <p className={styles.rank}>{verticalColumn + 1}</p>
+        <Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/>
+        <p className={styles.text}>{textRender(verticalColumn)}</p>
+        <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
       </td>
       {
       (width.width <= 800) ?
       <td>
         <div className={styles.visaPolicyText}>
-        <p>{visaPolicyData[verticalColumn]?.[1]}  🟩 Visa-free</p>
-        <p>{visaPolicyData[verticalColumn]?.[2]}  🟧 VoA/E-visa</p>
-        <p>{visaPolicyData[verticalColumn]?.[3]}  🟨 Visa on Arrival</p>
-        <p>{visaPolicyData[verticalColumn]?.[4]}  🟦 E-visa</p>
-        <p>{visaPolicyData[verticalColumn]?.[5]}  ⬜ Visa Required</p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <p>{visaPolicyData[verticalColumn]?.[1]}</p>
+                <p>{visaPolicyData[verticalColumn]?.[2]}</p>
+                <p>{visaPolicyData[verticalColumn]?.[3]}</p>
+                <p>{visaPolicyData[verticalColumn]?.[4]}</p>
+                <p>{visaPolicyData[verticalColumn]?.[5]}</p>
+              </td>
+              <td>
+                <p>🟩 Visa-free</p>
+                <p>🟧 VoA/E-visa</p>
+                <p>🟨 Visa on Arrival</p>
+                <p>🟦 E-visa</p>
+                <p>⬜ Visa Required</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         </div>
       </td>
       :
