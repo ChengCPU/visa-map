@@ -1,4 +1,3 @@
-import styles from '../../styles/MapSVG.module.css';
 import { useContext } from 'react';
 import { WidthContext } from '../context/WidthContext';
 import Abkhazia from '../countries/Abkhazia';
@@ -251,6 +250,7 @@ import WesternSahara from '../countries/WesternSahara';
 import Yemen from '../countries/Yemen';
 import Zambia from '../countries/Zambia';
 import Zimbabwe from '../countries/Zimbabwe';
+import styles from '../../styles/MapSVG.module.css';
 
 const MapSVG:React.FC = () => {
 

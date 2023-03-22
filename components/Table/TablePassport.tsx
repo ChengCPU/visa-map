@@ -1,5 +1,5 @@
-import { useContext } from 'react'
-import { PassportContext } from '../context/PassportContext'
+import { useContext } from 'react';
+import { PassportContext } from '../context/PassportContext';
 import Passport from '../Selector/Passport';
 import TablePassportSVG from './TablePassportSVG';
 interface Props {

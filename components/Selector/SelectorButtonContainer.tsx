@@ -1,9 +1,8 @@
 import { useContext } from 'react';
-import styles from '../../styles/SelectorButtonContainer.module.css';
+import { WidthContext } from '../context/WidthContext';
 import ProgressBar from '../ProgressBar';
 import SelectorButton from './SelectorButton';
-import { WidthContext } from '../context/WidthContext';
-
+import styles from '../../styles/SelectorButtonContainer.module.css';
 interface Props {
   setOpenDrawer:Function;
   select:{

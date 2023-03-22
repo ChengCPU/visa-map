@@ -1,6 +1,6 @@
-import Rectangle from './Rectangle'
-import Text from './Text'
-import styles from '../../../styles/Legend.module.css'
+import Rectangle from './Rectangle';
+import Text from './Text';
+import styles from '../../../styles/Legend.module.css';
 type LegendType = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
 interface Props {legend:LegendType;} //props interface assigns LegendType to legend
 

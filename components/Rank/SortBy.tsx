@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
 import { LanguageContext } from '../context/LanguageContext';
 import { WidthContext } from '../context/WidthContext';
+import { Button, Menu, MenuItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import fetchSortData from '../../logic/rankSorting/fetchSortData';
 interface Props {
