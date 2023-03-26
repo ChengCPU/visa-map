@@ -13,10 +13,16 @@ const InfoBox:React.FC<Props> = ({ mousePos }) => {
     <div className={'infoBox'}><style jsx>{`
     .infoBox {
       position: absolute;
-      left: ${mousePos[0] + 'px'};
-      top: ${mousePos[1] + 'px'};
+      left: ${mousePos[0] + 5 + 'px'};
+      top: ${mousePos[1] + 5 + 'px'};
     }`}</style>
-      <p>X: {mousePos[0]} Y: {mousePos[1]}</p>
+      <table>
+        <tbody>
+          <tr>
+            <td><p>X: {mousePos[0]} Y: {mousePos[1]}</p></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
