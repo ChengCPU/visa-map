@@ -1,20 +1,24 @@
-import { Button, Stack, createTheme, ThemeProvider } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import Link from 'next/link';
-import LanguageSelect from './LanguageSelect';
-import styles from '../styles/Header.module.css';
 interface Props {
-  mousePos:any;
+  mousePos:number | boolean[];
+  hover:boolean;
 }
 
-const InfoBox:React.FC<Props> = ({ mousePos }) => {
+const InfoBox:React.FC<Props> = ({ mousePos, hover }) => {
 
   return (
+    (hover == true) ?
     <div className={'infoBox'}><style jsx>{`
     .infoBox {
+      background-color: white;
       position: absolute;
       left: ${mousePos[0] + 5 + 'px'};
       top: ${mousePos[1] + 5 + 'px'};
+      user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+      pointer-events:none;
     }`}</style>
       <table>
         <tbody>
@@ -24,6 +28,8 @@ const InfoBox:React.FC<Props> = ({ mousePos }) => {
         </tbody>
       </table>
     </div>
+    :
+    null
   )
 }
 
