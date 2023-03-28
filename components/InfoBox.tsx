@@ -13,6 +13,7 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover }) => {
       position: absolute;
       left: ${mousePos[0] + 5 + 'px'};
       top: ${mousePos[1] + 5 + 'px'};
+      border-radius: 8px;
       user-select: none;
       -moz-user-select: none;
       -khtml-user-select: none;
