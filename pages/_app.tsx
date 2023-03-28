@@ -246,7 +246,7 @@ function MyApp({ Component, pageProps }) {
   const [sortBy, setSortBy] = useState<string>('Sort by: Total (Descending)')
   const [percentage, setPercentage] = useState<number>(0)
   const [width, setWidth] = useState(0)
-  const [mousePos, setMousePos] = useState<number[]>([]);
+  const [mousePos, setMousePos] = useState<number[]>([])
   const [hover, setHover] = useState(false)
 
   //value is passed in as context to the country components
@@ -256,10 +256,7 @@ function MyApp({ Component, pageProps }) {
   const widthProvider:any = { width: width }
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePos([event.clientX, event.clientY])
-    };
-
+    const handleMouseMove = (event) => {setMousePos([event.clientX, event.clientY])}
     window.addEventListener('mousemove', handleMouseMove)
 
     return () => {
