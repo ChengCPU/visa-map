@@ -206,6 +206,7 @@ import Slovakia from '../countries/Slovakia';
 import Slovenia from '../countries/Slovenia';
 import SolomonIslands from '../countries/SolomonIslands';
 import Somalia from '../countries/Somalia';
+import Somaliland from '../countries/Somaliland';
 import SouthAfrica from '../countries/SouthAfrica';
 import SouthGeorgiaAndTheSouthSandwichIslands from '../countries/SouthGeorgiaAndTheSouthSandwichIslands';
 import SouthKorea from '../countries/SouthKorea';
@@ -498,6 +499,7 @@ const MapSVG:React.FC = () => {
     <Singapore />
     <SintEustatius />
     <SintMaarten />
+    <Somaliland />
     <SouthGeorgiaAndTheSouthSandwichIslands />
     <SouthOssetia />
     <Tokelau />
