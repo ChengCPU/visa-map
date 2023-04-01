@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
-import { LanguageContext } from '../context/LanguageContext';
-import { WidthContext } from '../context/WidthContext';
+import { LanguageContext } from '../../logic/context/LanguageContext';
+import { WidthContext } from '../../logic/context/WidthContext';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import fetchSortData from '../../logic/rankSorting/fetchSortData';

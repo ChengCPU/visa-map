@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext, useState } from 'react';
-import { PassportContext } from '../context/PassportContext';
+import { PassportContext } from '../../logic/context/PassportContext';
 import SelectorPassport from './SelectorPassport';
 import styles from '../../styles/SelectorPassportContainer.module.css';
 interface Props {

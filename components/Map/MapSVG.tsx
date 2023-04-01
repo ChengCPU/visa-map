@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WidthContext } from '../context/WidthContext';
+import { WidthContext } from '../../logic/context/WidthContext';
 import Abkhazia from '../countries/Abkhazia';
 import Afghanistan from '../countries/Afghanistan';
 import Albania from '../countries/Albania';

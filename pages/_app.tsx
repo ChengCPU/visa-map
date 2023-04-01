@@ -1,8 +1,8 @@
-import { PassportContext } from '../components/context/PassportContext';
-import { ColorContext } from '../components/context/ColorContext';
-import { DiffContext } from '../components/context/DiffContext';
-import { LanguageContext } from '../components/context/LanguageContext';
-import { WidthContext } from '../components/context/WidthContext';
+import { PassportContext } from '../logic/context/PassportContext';
+import { ColorContext } from '../logic/context/ColorContext';
+import { DiffContext } from '../logic/context/DiffContext';
+import { LanguageContext } from '../logic/context/LanguageContext';
+import { WidthContext } from '../logic/context/WidthContext';
 import { useState, useEffect } from 'react';
 import { Drawer } from '@mui/material';
 //logic imports

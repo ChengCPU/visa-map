@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { PassportContext } from '../components/context/PassportContext';
-import { WidthContext } from '../components/context/WidthContext';
-import { LanguageContext } from '../components/context/LanguageContext';
+import { PassportContext } from '../logic/context/PassportContext';
+import { WidthContext } from '../logic/context/WidthContext';
+import { LanguageContext } from '../logic/context/LanguageContext';
 import Passport from '../components/Selector/Passport';
 import SortBy from '../components/Rank/SortBy';
 import VisaRequired from '../components/Rank/VisaRequired';

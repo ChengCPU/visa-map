@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LanguageContext } from '../context/LanguageContext';
+import { LanguageContext } from '../../logic/context/LanguageContext';
 interface Props {
   assignedColors:object[];
   selectArray:null | string[];

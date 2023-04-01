@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WidthContext } from '../context/WidthContext';
+import { WidthContext } from '../../logic/context/WidthContext';
 import ProgressBar from '../ProgressBar';
 import SelectorButton from './SelectorButton';
 import styles from '../../styles/SelectorButtonContainer.module.css';

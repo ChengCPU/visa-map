@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WidthContext } from '../context/WidthContext';
+import { WidthContext } from '../../logic/context/WidthContext';
 import MapSVG from './MapSVG';
 import Legend from './Legend/Legend';
 import styles from '../../styles/Map.module.css';

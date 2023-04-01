@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { ColorContext } from '../context/ColorContext'
-import { DiffContext } from '../context/DiffContext'
+import { ColorContext } from '../../logic/context/ColorContext'
+import { DiffContext } from '../../logic/context/DiffContext'
 import gridCalculation from '../../logic/gridCalculation'
 
 const Bolivia:React.FC = () => {

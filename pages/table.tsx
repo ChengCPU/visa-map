@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LanguageContext } from '../components/context/LanguageContext';
+import { LanguageContext } from '../logic/context/LanguageContext';
 import Country from '../components/Table/Country';
 import VisaPolicy from '../components/Table/VisaPolicy';
 import TablePassport from '../components/Table/TablePassport';
