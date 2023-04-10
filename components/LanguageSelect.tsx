@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import styles from '../styles/Header.module.css';
 interface Props {
   language:string;
   setLanguage:Function;
@@ -36,7 +35,13 @@ const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
   }
 
   return (
-    <div className={styles.languageSelect}>
+    <div className={'container'}>
+      <style jsx>{`
+      .container {
+        right:40px;
+        position: absolute;
+      }
+      `}</style>
       <CustomizedButton onClick={handleClick}>{language}</CustomizedButton>
       <Menu
         anchorEl={anchorEl}
