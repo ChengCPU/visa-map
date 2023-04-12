@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
+import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 import gridCalculation from '../../logic/gridCalculation'
 
 const Abkhazia:React.FC = () => {
 
   const { abkhaziaColor } = useContext(ColorContext)
   const { abkhaziaDiff } = useContext(DiffContext)
+  const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
-<g className={'abkhazia'}>
+<g className={'abkhazia'} onMouseOver={() => setCountrySelect('abkhazia')}>
   <style jsx>{`
   .abkhazia {
   fill: ${abkhaziaColor};

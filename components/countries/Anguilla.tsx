@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
+import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 import gridCalculation from '../../logic/gridCalculation'
 
 const Anguilla:React.FC = () => {
 
   const { anguillaColor } = useContext(ColorContext)
   const { anguillaDiff } = useContext(DiffContext)
+  const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
-<g className={'anguilla'}>
+<g className={'anguilla'} onMouseOver={() => setCountrySelect('anguilla')}>
   <style jsx>{`
   .anguilla {
   fill: ${anguillaColor};

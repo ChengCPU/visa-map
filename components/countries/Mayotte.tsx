@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
+import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 import gridCalculation from '../../logic/gridCalculation'
 
 const Mayotte:React.FC = () => {
 
   const { mayotteColor } = useContext(ColorContext)
   const { mayotteDiff } = useContext(DiffContext)
+  const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
-<g className={'mayotte'}>
+<g className={'mayotte'} onMouseOver={() => setCountrySelect('mayotte')}>
   <style jsx>{`
   .mayotte {
   fill: ${mayotteColor};

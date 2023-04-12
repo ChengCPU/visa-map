@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
+import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 import gridCalculation from '../../logic/gridCalculation'
 
 const Niue:React.FC = () => {
 
   const { niueColor } = useContext(ColorContext)
   const { niueDiff } = useContext(DiffContext)
+  const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
-<g className={'niue'}>
+<g className={'niue'} onMouseOver={() => setCountrySelect('niue')}>
   <style jsx>{`
   .niue {
   fill: ${niueColor};

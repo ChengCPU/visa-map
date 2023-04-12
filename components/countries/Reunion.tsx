@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
+import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 import gridCalculation from '../../logic/gridCalculation'
 
 const Reunion:React.FC = () => {
 
   const { reunionColor } = useContext(ColorContext)
   const { reunionDiff } = useContext(DiffContext)
+  const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
-<g className={'reunion'}>
+<g className={'reunion'} onMouseOver={() => setCountrySelect('reunion')}>
   <style jsx>{`
   .reunion {
   fill: ${reunionColor};

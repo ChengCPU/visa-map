@@ -4,9 +4,9 @@ import MapSVG from './MapSVG';
 import Legend from './Legend/Legend';
 import styles from '../../styles/Map.module.css';
 type LegendType = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
-interface Props {legend:LegendType;}
+interface Props {legend:LegendType; setHover:Function;}
 
-const Map:React.FC<Props>= ({ legend }) => {
+const Map:React.FC<Props>= ({ legend, setHover }) => {
 
   const width = useContext(WidthContext)
   
@@ -21,7 +21,7 @@ const Map:React.FC<Props>= ({ legend }) => {
     null
     }
     <div className={styles.container}>
-    <MapSVG />
+    <MapSVG setHover={setHover}/>
     {
     (width.width <= 800) ?
     <>

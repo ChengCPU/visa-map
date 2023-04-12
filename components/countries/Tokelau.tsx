@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
+import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 import gridCalculation from '../../logic/gridCalculation'
 
 const Tokelau:React.FC = () => {
 
   const { tokelauColor } = useContext(ColorContext)
   const { tokelauDiff } = useContext(DiffContext)
+  const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
-<g className={'tokelau'}>
+<g className={'tokelau'} onMouseOver={() => setCountrySelect('tokelau')}>
   <style jsx>{`
   .tokelau {
   fill: ${tokelauColor};

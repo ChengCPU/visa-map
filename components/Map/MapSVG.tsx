@@ -252,14 +252,18 @@ import Yemen from '../countries/Yemen';
 import Zambia from '../countries/Zambia';
 import Zimbabwe from '../countries/Zimbabwe';
 import styles from '../../styles/MapSVG.module.css';
+interface Props {
+  setHover:Function;
+}
 
-const MapSVG:React.FC = () => {
+const MapSVG:React.FC<Props> = ({ setHover }) => {
 
   const width = useContext(WidthContext)
 
   return (
     <div className={styles.container}>
     <svg version="1.2" viewBox="-50 -25 2190 890" width={width.width}>
+    <g onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
     <Afghanistan />
     <Albania />
     <Algeria />
@@ -512,6 +516,7 @@ const MapSVG:React.FC = () => {
     <Vanuatu />
     <VaticanCity />
     <WallisAndFutuna />
+    </g>
     </svg>
     </div>
   )
