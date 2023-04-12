@@ -36,9 +36,6 @@ const Map:React.FC<Props>= ({ legend, setHover }) => {
     </>
     : null
     }
-    <Legend
-      legend={legend}
-    />
     </div>
     </>
   )
