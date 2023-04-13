@@ -39,6 +39,8 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priority }) =
         return 'Simplified visa'
       case 'rgb(149,150,150)':
         return 'Visa required'
+      case 'rgb(255,0,0)':
+        return 'Government approval required'
       case 'rgb(0,0,0)':
         return 'Admission refused'
     }
