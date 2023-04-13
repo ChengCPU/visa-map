@@ -29,7 +29,6 @@ import Bolivia from '../countries/Bolivia';
 import Bonaire from '../countries/Bonaire';
 import BosniaAndHerzegovina from '../countries/BosniaAndHerzegovina';
 import Botswana from '../countries/Botswana';
-import BouvetIsland from '../countries/BouvetIsland';
 import Brazil from '../countries/Brazil';
 import BritishIndianOceanTerritory from '../countries/BritishIndianOceanTerritory';
 import BritishVirginIslands from '../countries/BritishVirginIslands';
@@ -93,7 +92,6 @@ import Guinea from '../countries/Guinea';
 import GuineaBissau from '../countries/GuineaBissau';
 import Guyana from '../countries/Guyana';
 import Haiti from '../countries/Haiti';
-import HeardIslandAndMcDonaldIslands from '../countries/HeardIslandAndMcDonaldIslands';
 import Honduras from '../countries/Honduras';
 import HongKong from '../countries/HongKong';
 import Hungary from '../countries/Hungary';
@@ -208,7 +206,6 @@ import SolomonIslands from '../countries/SolomonIslands';
 import Somalia from '../countries/Somalia';
 import Somaliland from '../countries/Somaliland';
 import SouthAfrica from '../countries/SouthAfrica';
-import SouthGeorgiaAndTheSouthSandwichIslands from '../countries/SouthGeorgiaAndTheSouthSandwichIslands';
 import SouthKorea from '../countries/SouthKorea';
 import SouthOssetia from '../countries/SouthOssetia';
 import SouthSudan from '../countries/SouthSudan';
@@ -425,7 +422,6 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
     <Belize />
     <Bermuda />
     <Bonaire />
-    <BouvetIsland />
     <BritishIndianOceanTerritory />
     <BritishVirginIslands />
     <Brunei />
@@ -452,7 +448,6 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
     <Guadeloupe />
     <Guam />
     <Guernsey />
-    <HeardIslandAndMcDonaldIslands />
     <HongKong />
     <IsleOfMan />
     <Jamaica />
@@ -504,7 +499,6 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
     <SintEustatius />
     <SintMaarten />
     <Somaliland />
-    <SouthGeorgiaAndTheSouthSandwichIslands />
     <SouthOssetia />
     <Tokelau />
     <Tonga />
