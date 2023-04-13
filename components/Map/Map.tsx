@@ -2,10 +2,9 @@ import { useContext } from 'react';
 import { WidthContext } from '../../logic/context/WidthContext';
 import MapSVG from './MapSVG';
 import styles from '../../styles/Map.module.css';
-type LegendType = {HC:boolean, FoM:boolean, OECSFoM:boolean, MFoM:boolean, EUFoM:boolean, GCCFoM:boolean, VF:boolean, VoAEV:boolean, VoA:boolean, EV:boolean, SP:boolean, CR:boolean}
-interface Props {legend:LegendType; setHover:Function;}
+interface Props {setHover:Function;}
 
-const Map:React.FC<Props>= ({ legend, setHover }) => {
+const Map:React.FC<Props>= ({ setHover }) => {
 
   const width = useContext(WidthContext)
   
