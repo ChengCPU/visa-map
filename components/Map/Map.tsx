@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { WidthContext } from '../../logic/context/WidthContext';
 import MapSVG from './MapSVG';
-import styles from '../../styles/Map.module.css';
 interface Props {setHover:Function;}
 
 const Map:React.FC<Props>= ({ setHover }) => {
@@ -18,7 +17,12 @@ const Map:React.FC<Props>= ({ setHover }) => {
     :
     null
     }
-    <div className={styles.container}>
+    <div className={'container'}><style jsx>{`
+    .container {
+      position: relative;
+      margin-left: 10px;
+    }
+    `}</style>
     <MapSVG setHover={setHover}/>
     {
     (width.width <= 800) ?
