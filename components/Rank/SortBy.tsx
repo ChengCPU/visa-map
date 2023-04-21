@@ -22,11 +22,10 @@ const CustomizedButtonMobile = styled(Button)`
   left: 18px;
 `
 
-const sortArrayEN = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)']
-const sortArrayES = ['Ordenar por: Total (Descendente)', 'Ordenar por: Total (Ascendente)', 'Ordenar por: Visado Libre (Descendente)', 'Ordenar por: Visado Libre (Ascendente)']
-const sortArrayPT = ['Ordenar por: Total (Decrescente)', 'Ordenar por: Total (Crescente)', 'Ordenar por: Sem Visto (Decrescente)', 'Ordenar por: Sem Visto (Crescente)']
-const sortArrayFR = ['Trier par: Total (Décroissant)', 'Trier par: Total (Croissant)', 'Trier par: Sans Visa (Décroissant)', 'Trier par: Sans Visa (Croissant)']
-
+const sortArrayEN = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)', 'Sort by: Alphabetical order (Descending)', 'Sort by: Alphabetical order (Ascending)']
+const sortArrayES = ['Ordenar por: Total (Descendente)', 'Ordenar por: Total (Ascendente)', 'Ordenar por: Visado Libre (Descendente)', 'Ordenar por: Visado Libre (Ascendente)', 'Ordenar por: Orden alfabetico (Descendente)', 'Ordenar por: Orden alfabetico (Ascendente)']
+const sortArrayPT = ['Ordenar por: Total (Decrescente)', 'Ordenar por: Total (Crescente)', 'Ordenar por: Sem Visto (Decrescente)', 'Ordenar por: Sem Visto (Crescente)', 'Ordenar por: Ordem alfabética (Decrescente)', 'Ordenar por: Ordem alfabética (Crescente)']
+const sortArrayFR = ['Trier par: Total (Décroissant)', 'Trier par: Total (Croissant)', 'Trier par: Sans Visa (Décroissant)', 'Trier par: Sans Visa (Croissant)', 'Trier par: Ordre alphabétique (Décroissant)', 'Trier par: Ordre alphabétique (Croissant)']
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankRender }) => {
 
@@ -57,11 +56,13 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, setVisaPolicyData, setRankR
       case 'Sort by: Total (Ascending)': fetchSortData(setVisaPolicyData, setRankRender, 1, 'Ascending'); break;
       case 'Sort by: Visa-free (Descending)': fetchSortData(setVisaPolicyData, setRankRender, 2, 'Descending'); break;
       case 'Sort by: Visa-free (Ascending)': fetchSortData(setVisaPolicyData, setRankRender, 2, 'Ascending'); break;
+      case 'Sort by: Alphabetical order (Descending)': fetchSortData(setVisaPolicyData, setRankRender, 3, 'Descending'); break;
+      case 'Sort by: Alphabetical order (Ascending)': fetchSortData(setVisaPolicyData, setRankRender, 3, 'Ascending'); break;
     }
     handleClose()
   }
   
-  const sortArray = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)']
+  const sortArray = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)', 'Sort by: Alphabetical order (Descending)', 'Sort by: Alphabetical order (Ascending)']
   const renderMenuItems = (sortArray:string[]) => {
     return sortArray.map(sortArray =>
       (sortBy != sortArray) ?
