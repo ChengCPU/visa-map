@@ -2,7 +2,6 @@ import React from 'react';
 import { useContext, useState } from 'react';
 import { PassportContext } from '../../logic/context/PassportContext';
 import SelectorPassport from './SelectorPassport';
-import styles from '../../styles/SelectorPassportContainer.module.css';
 interface Props {
   setOpenDrawer:Function;
   select:{
@@ -46,7 +45,7 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <input
         type="search"
         value={input}
