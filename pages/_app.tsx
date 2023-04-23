@@ -232,7 +232,6 @@ function MyApp({ Component, pageProps }) {
 
   const [toggle, setToggle] = useState<boolean>(false) //used by SelectorPassport to trigger useEffect
   const [secondToggle, setSecondToggle] = useState<boolean>(false) //used by reset function to trigger secondToggle useEffect
-  const [rerender, setRerender] = useState<boolean>(false) //used to rerender map
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
   const [select, setSelect] = useState<Select>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
@@ -279,12 +278,12 @@ function MyApp({ Component, pageProps }) {
     }
     selectArrayCalculation(selectArray, setSelectArray, select);
     if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, rerender, setRerender, selectArray, diff, setDiff, setPercentage)
+      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, selectArray, diff, setDiff, setPercentage)
     }
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, rerender, setRerender, diff, setDiff, setPercentage)
+    subCalculation(selectArray, assignedColors, setAssignedColors, priority, setPriority, diff, setDiff, setPercentage)
     selectArrayCalculation(selectArray, setSelectArray, select)
   }, [secondToggle])
 
