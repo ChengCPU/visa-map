@@ -1,10 +1,7 @@
-import styles from '../../styles/SelectorSVG.module.css';
-
 const SelectorSVG:React.FC = () => {
   return (
 	<svg
 		version="1.1"
-		className={styles.selector}
 		id="svg1349"
 		width="64"
 		height="90.8"
