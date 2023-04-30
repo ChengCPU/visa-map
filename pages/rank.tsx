@@ -27,7 +27,7 @@ interface Props {
   mobile:boolean;
 }
 
-const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy, mobile }) => {
+const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy }) => {
 
   const passports = useContext(PassportContext)
   const width = useContext(WidthContext)
