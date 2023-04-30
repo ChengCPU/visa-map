@@ -256,6 +256,9 @@ function MyApp({ Component, pageProps }) {
   const countrySelectProvider:any = { setCountrySelect: setCountrySelect }
 
   useEffect(() => {
+    setWidth(document.body.clientWidth - 2)
+    fetchSortData(setVisaPolicyData, setRankRender, 1, 'Descending')
+
     const handleMouseMove = (event) => {setMousePos([event.clientX, event.clientY])}
     window.addEventListener('mousemove', handleMouseMove)
 
@@ -265,11 +268,6 @@ function MyApp({ Component, pageProps }) {
         handleMouseMove
       )
     }
-  }, [])
-  
-  useEffect(() => {
-    setWidth(document.body.clientWidth - 2)
-    fetchSortData(setVisaPolicyData, setRankRender, 1, 'Descending')
   }, [])
 
   useEffect(() => {
