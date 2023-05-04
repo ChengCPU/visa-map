@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Guadeloupe:React.FC = () => {
 
   const { guadeloupeColor } = useContext(ColorContext)
-  const { guadeloupeDiff } = useContext(DiffContext)
+  const { GP } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(guadeloupeColor)}/>
   </pattern>
 </defs>
-{(guadeloupeDiff == 1) ?
+{(GP == 1) ?
 <circle fill="url(#gp)" r="2.5" cy="403" cx="642" stroke="black"/>
 :
 <circle r="2.5" cy="403" cx="642" stroke="black"/>

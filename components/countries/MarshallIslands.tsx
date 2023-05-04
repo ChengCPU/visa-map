@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const MarshallIslands:React.FC = () => {
 
   const { marshallIslandsColor } = useContext(ColorContext)
-  const { marshallIslandsDiff } = useContext(DiffContext)
+  const { MH } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(marshallIslandsColor)}/>
   </pattern>
 </defs>
-{(marshallIslandsDiff == 1) ?
+{(MH == 1) ?
 <circle fill="url(#mh)" r="5" cy="456" cx="1953" stroke="black"/>
 :
 <circle r="5" cy="456" cx="1953" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const CapeVerde:React.FC = () => {
 
   const { capeVerdeColor } = useContext(ColorContext)
-  const { capeVerdeDiff } = useContext(DiffContext)
+  const { CV } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(capeVerdeColor)}/>
   </pattern>
 </defs>
-{(capeVerdeDiff == 1) ?
+{(CV == 1) ?
 <circle fill="url(#cv)" r="5" cy="400" cx="853" stroke="black"/>
 :
 <circle r="5" cy="400" cx="853" stroke="black"/>

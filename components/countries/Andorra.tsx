@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Andorra:React.FC = () => {
 
   const { andorraColor } = useContext(ColorContext)
-  const { andorraDiff } = useContext(DiffContext)
+  const { AD } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(andorraColor)}/>
   </pattern>
 </defs>
-{(andorraDiff == 1) ?
+{(AD == 1) ?
 <circle fill="url(#ad)" r="4" cy="230" cx="993" stroke="black"/>
 :
 <circle r="4" cy="230" cx="993" stroke="black"/>

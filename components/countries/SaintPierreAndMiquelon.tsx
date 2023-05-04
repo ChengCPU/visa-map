@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SaintPierreAndMiquelon:React.FC = () => {
 
   const { saintPierreAndMiquelonColor } = useContext(ColorContext)
-  const { saintPierreAndMiquelonDiff } = useContext(DiffContext)
+  const { PM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(saintPierreAndMiquelonColor)}/>
   </pattern>
 </defs>
-{(saintPierreAndMiquelonDiff == 1) ?
+{(PM == 1) ?
 <circle fill="url(#pm)" r="5" cy="202" cx="707" stroke="black"/>
 :
 <circle r="5" cy="202" cx="707" stroke="black"/>

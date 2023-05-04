@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Bahrain:React.FC = () => {
 
   const { bahrainColor } = useContext(ColorContext)
-  const { bahrainDiff } = useContext(DiffContext)
+  const { BH } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -22,7 +22,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(bahrainColor)}/>
   </pattern>
 </defs>
-{(bahrainDiff == 1) ?
+{(BH == 1) ?
 <>
 <path fill="url(#bh)" d="M1264.1 333.3l0.3 0.1 0.2-0.1 0.4 0.7-0.1 0.2 0.1 0.9 0 0.7-0.2 0.4-0.1-0.4-0.6-0.8 0.1-0.4-0.2-0.7 0-0.4 0.1-0.2z" />
 <circle fill="url(#bh)" r="4" cy="333" cx="1264" stroke="black"/>

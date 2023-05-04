@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Indonesia:React.FC = () => {
 
   const { indonesiaColor } = useContext(ColorContext)
-  const { indonesiaDiff } = useContext(DiffContext)
+  const { ID } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -35,7 +35,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(indonesiaColor)}/>
   </pattern>
 </defs>
-{(indonesiaDiff == 1) ?
+{(ID == 1) ?
 <>
 <path fill="url(#id)" d="M 1667.5 567.6 1665.1 567.7 1658 563.2 1663.4 561.9 1666.2 563.9 1668 565.8 1667.5 567.6 Z" stroke="black"/>
 <path fill="url(#id)" d="M 1692.3 558.9 1692.8 560.2 1692.7 562.1 1688.6 566.9 1683.6 568.3 1683 567.6 1683.7 565.4 1686.5 561.5 1692.3 558.9 Z" stroke="black"/>

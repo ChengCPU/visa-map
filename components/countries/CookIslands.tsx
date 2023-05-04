@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const CookIslands:React.FC = () => {
 
   const { cookIslandsColor } = useContext(ColorContext)
-  const { cookIslandsDiff } = useContext(DiffContext)
+  const { CK } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(cookIslandsColor)}/>
   </pattern>
 </defs>
-{(cookIslandsDiff == 1) ?
+{(CK == 1) ?
 <circle fill="url(#ck)" r="5" cy="631" cx="100" stroke="black"/>
 :
 <circle r="5" cy="631" cx="100" stroke="black"/>

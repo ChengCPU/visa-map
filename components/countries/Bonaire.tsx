@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Bonaire:React.FC = () => {
 
   const { bonaireColor } = useContext(ColorContext)
-  const { bonaireDiff } = useContext(DiffContext)
+  const { XB } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(bonaireColor)}/>
   </pattern>
 </defs>
-{(bonaireDiff == 1) ?
+{(XB == 1) ?
 <circle fill="url(#xb)" r="2.5" cy="424" cx="606" stroke="black"/>
 :
 <circle r="2.5" cy="424" cx="606" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Curacao:React.FC = () => {
 
   const { curacaoColor } = useContext(ColorContext)
-  const { curacaoDiff } = useContext(DiffContext)
+  const { CW } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(curacaoColor)}/>
   </pattern>
 </defs>
-{(curacaoDiff == 1) ?
+{(CW == 1) ?
 <circle fill="url(#cw)" r="2.5" cy="424" cx="598" stroke="black"/>
 :
 <circle r="2.5" cy="424" cx="598" stroke="black"/>

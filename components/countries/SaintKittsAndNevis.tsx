@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SaintKittsAndNevis:React.FC = () => {
 
   const { saintKittsAndNevisColor } = useContext(ColorContext)
-  const { saintKittsAndNevisDiff } = useContext(DiffContext)
+  const { KN } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -26,7 +26,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(saintKittsAndNevisColor)}/>
   </pattern>
 </defs>
-{(saintKittsAndNevisDiff == 1) ?
+{(KN == 1) ?
 <circle fill="url(#kn)" r="3.25" cy="395" cx="635" stroke="black"/>
 :
 <circle r="3.25" cy="395" cx="635" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SaintHelena:React.FC = () => {
 
   const { saintHelenaColor } = useContext(ColorContext)
-  const { saintHelenaDiff } = useContext(DiffContext)
+  const { SH } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(saintHelenaColor)}/>
   </pattern>
 </defs>
-{(saintHelenaDiff == 1) ?
+{(SH == 1) ?
 <circle fill="url(#sh)" r="5" cy="600" cx="947" stroke="black"/>
 :
 <circle r="5" cy="600" cx="947" stroke="black"/>

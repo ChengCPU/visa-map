@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Tonga:React.FC = () => {
 
   const { tongaColor } = useContext(ColorContext)
-  const { tongaDiff } = useContext(DiffContext)
+  const { TO } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(tongaColor)}/>
   </pattern>
 </defs>
-{(tongaDiff == 1) ?
+{(TO == 1) ?
 <circle fill="url(#to)" r="5" cy="630" cx="13" stroke="black"/>
 :
 <circle r="5" cy="630" cx="13" stroke="black"/>

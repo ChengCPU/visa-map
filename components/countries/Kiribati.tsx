@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Kiribati:React.FC = () => {
 
   const { kiribatiColor } = useContext(ColorContext)
-  const { kiribatiDiff } = useContext(DiffContext)
+  const { KI } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(kiribatiColor)}/>
   </pattern>
 </defs>
-{(kiribatiDiff == 1) ?
+{(KI == 1) ?
 <circle fill="url(#ki)" r="5" cy="490" cx="1960" stroke="black"/>
 :
 <circle r="5" cy="490" cx="1960" stroke="black"/>

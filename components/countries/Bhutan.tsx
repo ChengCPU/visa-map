@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Bhutan:React.FC = () => {
 
   const { bhutanColor } = useContext(ColorContext)
-  const { bhutanDiff } = useContext(DiffContext)
+  const { BT } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(bhutanColor)}/>
   </pattern>
 </defs>
-{(bhutanDiff == 1) ?
+{(BT == 1) ?
 <path fill="url(#bt)" d="M1488.8 323.5l2.6 2.1 0.5 3.9-4.5 0.2-4.7-0.4-3.2 1-5.5-2.5-0.4-1.2 2.6-4.8 2.6-1.6 4.3 1.4 2.9 0.2 2.8 1.7z" stroke="black"/>
 :
 <path d="M1488.8 323.5l2.6 2.1 0.5 3.9-4.5 0.2-4.7-0.4-3.2 1-5.5-2.5-0.4-1.2 2.6-4.8 2.6-1.6 4.3 1.4 2.9 0.2 2.8 1.7z" stroke="black"/>

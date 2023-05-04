@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const PapuaNewGuineaColor:React.FC = () => {
 
   const { papuaNewGuineaColor } = useContext(ColorContext)
-  const { papuaNewGuineaDiff } = useContext(DiffContext)
+  const { PG } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -26,7 +26,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(papuaNewGuineaColor)}/>
   </pattern>
 </defs>
-{(papuaNewGuineaDiff == 1) ?
+{(PG == 1) ?
 <>
 <path fill="url(#pg)" d="M 1868.1 545.6 1866.5 546.3 1864.2 543.8 1862 539.7 1861.2 534.8 1862 534.2 1862.5 536.1 1864.1 537.6 1866.5 541.6 1869 543.8 1868.1 545.6 Z" stroke="black"/>
 <path fill="url(#pg2)" d="M 1846.7 537 1843.7 537.5 1842.7 539.3 1839.5 540.9 1836.5 542.4 1833.4 542.4 1828.9 540.5 1825.8 538.7 1826.4 536.7 1831.4 537.7 1834.6 537.2 1835.6 534.1 1836.5 533.9 1836.8 537.3 1840 536.9 1841.8 534.7 1845.1 532.4 1844.7 528.6 1848.1 528.5 1849.2 529.5 1848.8 533.1 1846.7 537 Z" stroke="black"/>

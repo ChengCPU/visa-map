@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Micronesia:React.FC = () => {
 
   const { micronesiaColor } = useContext(ColorContext)
-  const { micronesiaDiff } = useContext(DiffContext)
+  const { FM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(micronesiaColor)}/>
   </pattern>
 </defs>
-{(micronesiaDiff == 1) ?
+{(FM == 1) ?
 <circle fill="url(#fm)" r="5" cy="457" cx="1881" stroke="black"/>
 :
 <circle r="5" cy="457" cx="1881" stroke="black"/>

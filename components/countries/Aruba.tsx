@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Aruba:React.FC = () => {
 
   const { arubaColor } = useContext(ColorContext)
-  const { arubaDiff } = useContext(DiffContext)
+  const { AW } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(arubaColor)}/>
   </pattern>
 </defs>
-{(arubaDiff == 1) ?
+{(AW == 1) ?
 <circle fill="url(#aw)" r="2.5" cy="422" cx="590" stroke="black"/>
 :
 <circle r="2.5" cy="422" cx="590" stroke="black"/>

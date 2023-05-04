@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SanMarino:React.FC = () => {
 
   const { sanMarinoColor } = useContext(ColorContext)
-  const { sanMarinoDiff } = useContext(DiffContext)
+  const { SM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(sanMarinoColor)}/>
   </pattern>
 </defs>
-{(sanMarinoDiff == 1) ?
+{(SM == 1) ?
 <circle fill="url(#sm)" r="4" cy="223" cx="1053" stroke="black"/>
 :
 <circle r="4" cy="223" cx="1053" stroke="black"/>

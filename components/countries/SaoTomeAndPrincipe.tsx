@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SaoTomeAndPrincipe:React.FC = () => {
 
   const { saoTomeAndPrincipeColor } = useContext(ColorContext)
-  const { saoTomeAndPrincipeDiff } = useContext(DiffContext)
+  const { ST } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(saoTomeAndPrincipeColor)}/>
   </pattern>
 </defs>
-{(saoTomeAndPrincipeDiff == 1) ?
+{(ST == 1) ?
 <circle fill="url(#st)" r="5" cy="500" cx="1025" stroke="black"/>
 :
 <circle r="5" cy="500" cx="1025" stroke="black"/>

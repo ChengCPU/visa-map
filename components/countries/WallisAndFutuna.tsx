@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const WallisAndFutuna:React.FC = () => {
 
   const { wallisAndFutunaColor } = useContext(ColorContext)
-  const { wallisAndFutunaDiff } = useContext(DiffContext)
+  const { WF } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(wallisAndFutunaColor)}/>
   </pattern>
 </defs>
-{(wallisAndFutunaDiff == 1) ?
+{(WF == 1) ?
 <circle fill="url(#wf)" r="5" cy="590" cx="2015" stroke="black"/>
 :
 <circle r="5" cy="590" cx="2015" stroke="black"/>

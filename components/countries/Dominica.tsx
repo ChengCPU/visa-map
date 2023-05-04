@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Dominica:React.FC = () => {
 
   const { dominicaColor } = useContext(ColorContext)
-  const { dominicaDiff } = useContext(DiffContext)
+  const { DM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(dominicaColor)}/>
   </pattern>
 </defs>
-{(dominicaDiff == 1) ?
+{(DM == 1) ?
 <circle fill="url(#dm)" r="3.25" cy="409" cx="643" stroke="black"/>
 :
 <circle r="3.25" cy="409" cx="643" stroke="black"/>

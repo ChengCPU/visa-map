@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Fiji:React.FC = () => {
 
   const { fijiColor } = useContext(ColorContext)
-  const { fijiDiff } = useContext(DiffContext)
+  const { FJ } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(fijiColor)}/>
   </pattern>
 </defs>
-{(fijiDiff == 1) ?
+{(FJ == 1) ?
 <>
 <path fill="url(#fj)" d="M 1989.1 624.9 1988.8 625 1988.9 624.6 1989.1 624.9 Z" />
 <path fill="url(#fj)" d="M 1981.6 623.3 1981.8 623.5 1982.1 623.6 1982.1 623.9 1981.6 624.1 1981.1 623.8 1980.6 624.1 1980.3 624.1 1980.1 624.4 1980.2 624.7 1979.8 624.6 1979.7 624.8 1979.3 624.7 1979.2 624.8 1978.8 624.6 1979.1 624.5 1979.3 624.4 1979.5 624.2 1979.9 624.3 1980.2 624 1980.4 623.7 1980.9 623.6 1981.4 623.3 1981.6 623.3 Z" />

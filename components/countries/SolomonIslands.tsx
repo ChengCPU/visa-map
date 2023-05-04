@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SolomonIslands:React.FC = () => {
 
   const { solomonIslandsColor } = useContext(ColorContext)
-  const { solomonIslandsDiff } = useContext(DiffContext)
+  const { SB } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -24,7 +24,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(solomonIslandsColor)}/>
   </pattern>
 </defs>
-{(solomonIslandsDiff == 1) ?
+{(SB == 1) ?
 <>
 <path fill="url(#sb)" d="M 1926.8 576.2 1927.1 576.4 1927 576.8 1927.3 576.8 1927.3 577 1926.5 577 1926.2 576.5 1926.4 576.2 1926.8 576.2 Z" stroke="black"/>
 <path fill="url(#sb)" d="M 1888.5 575.6 1888.7 575.6 1889.7 576.4 1890.2 576.7 1891.1 577.4 1891 577.7 1890.8 577.7 1890.6 577.9 1890.4 577.6 1890.3 577.6 1890.1 577.4 1890 577 1889.6 576.9 1889.6 576.6 1889.3 576.5 1889.2 576.6 1889 576.6 1888.1 576.2 1887.9 575.8 1888.2 575.4 1888.5 575.6 Z" stroke="black"/>
@@ -105,7 +105,7 @@ return (
   stroke-width: 1;
   }
   `}</style>
-{(solomonIslandsDiff == 1) ?
+{(SB == 1) ?
 <circle fill="url(#sb)" r="5" cy="556" cx="1887" stroke="black"/>
 :
 <circle r="5" cy="556" cx="1887" stroke="black"/>

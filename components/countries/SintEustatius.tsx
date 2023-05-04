@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SintEustatius:React.FC = () => {
 
   const { sintEustatiusColor } = useContext(ColorContext)
-  const { sintEustatiusDiff } = useContext(DiffContext)
+  const { XE } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(sintEustatiusColor)}/>
   </pattern>
 </defs>
-{(sintEustatiusDiff == 1) ?
+{(XE == 1) ?
 <circle fill="url(#xe)" r="2.5" cy="393.5" cx="629" stroke="black"/>
 :
 <circle r="2.5" cy="393.5" cx="629" stroke="black"/>

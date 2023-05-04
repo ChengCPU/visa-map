@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Bermuda:React.FC = () => {
 
   const { bermudaColor } = useContext(ColorContext)
-  const { bermudaDiff } = useContext(DiffContext)
+  const { BM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(bermudaColor)}/>
   </pattern>
 </defs>
-{(bermudaDiff == 1) ?
+{(BM == 1) ?
 <circle fill="url(#bm)" r="5" cy="294" cx="637" stroke="black"/>
 :
 <circle r="5" cy="294" cx="637" stroke="black"/>

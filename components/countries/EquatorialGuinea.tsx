@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const EquatorialGuinea:React.FC = () => {
 
   const { equatorialGuineaColor } = useContext(ColorContext)
-  const { equatorialGuineaDiff } = useContext(DiffContext)
+  const { GQ } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(equatorialGuineaColor)}/>
   </pattern>
 </defs>
-{(equatorialGuineaDiff == 1) ?
+{(GQ == 1) ?
 <>
 <path fill="url(#gq)" d="M1050.3 487.3l0 7.7-8.2 0-1.9 0.3-1.1-0.9 1.9-7.2 9.3 0.1z" />
 <circle fill="url(#gq)" r="5" cy="491" cx="1045" stroke="black"/>

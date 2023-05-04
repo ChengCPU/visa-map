@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Liechtenstein:React.FC = () => {
 
   const { liechtensteinColor } = useContext(ColorContext)
-  const { liechtensteinDiff } = useContext(DiffContext)
+  const { LI } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(liechtensteinColor)}/>
   </pattern>
 </defs>
-{(liechtensteinDiff == 1) ?
+{(LI == 1) ?
 <circle fill="url(#li)" r="4" cy="200" cx="1038" stroke="black"/>
 :
 <circle r="4" cy="200" cx="1038" stroke="black"/>

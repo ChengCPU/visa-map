@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Eswatini:React.FC = () => {
 
   const { eswatiniColor } = useContext(ColorContext)
-  const { eswatiniDiff } = useContext(DiffContext)
+  const { SZ } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(eswatiniColor)}/>
   </pattern>
 </defs>
-{(eswatiniDiff == 1) ?
+{(SZ == 1) ?
 <>
 <path fill="url(#sz)" d="M1161.7 667.7l0.6 2.9 0.3 2.9-1.4 2.8-3.2 0.7-3.1-3.5 0.1-2.2 1.7-2.4 0.6-1.9 1.7-0.4 2.7 1.1z" />
 <circle fill="url(#sz)" r="5" cy="672" cx="1161" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SouthOssetia:React.FC = () => {
 
   const { southOssetiaColor } = useContext(ColorContext)
-  const { southOssetiaDiff } = useContext(DiffContext)
+  const { XO } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(southOssetiaColor)}/>
   </pattern>
 </defs>
-{(southOssetiaDiff == 1) ?
+{(XO == 1) ?
 <circle fill="url(#xo)" r="3.5" cy="229" cx="1212" stroke="black"/>
 :
 <circle r="3.5" cy="229" cx="1212" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const AmericanSamoa:React.FC = () => {
 
   const { americanSamoaColor } = useContext(ColorContext)
-  const { americanSamoaDiff } = useContext(DiffContext)
+  const { AS } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(americanSamoaColor)}/>
   </pattern>
 </defs>
-{(americanSamoaDiff) ?
+{(AS == 1) ?
 <circle fill="url(#as)" r="5" cy="596" cx="29" stroke="black"/>
 :
 <circle r="5" cy="596" cx="29" stroke="black"/>

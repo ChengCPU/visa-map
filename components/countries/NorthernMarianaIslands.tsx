@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const NorthernMarianaIslands:React.FC = () => {
 
   const { northernMarianaIslandsColor } = useContext(ColorContext)
-  const { northernMarianaIslandsDiff } = useContext(DiffContext)
+  const { MP } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(northernMarianaIslandsColor)}/>
   </pattern>
 </defs>
-{(northernMarianaIslandsDiff == 1) ?
+{(MP == 1) ?
 <circle fill="url(#mp)" r="5" cy="396" cx="1802" stroke="black"/>
 :
 <circle r="5" cy="396" cx="1802" stroke="black"/>

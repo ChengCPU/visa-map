@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Monaco:React.FC = () => {
 
   const { monacoColor } = useContext(ColorContext)
-  const { monacoDiff } = useContext(DiffContext)
+  const { MC } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(monacoColor)}/>
   </pattern>
 </defs>
-{(monacoDiff == 1) ?
+{(MC == 1) ?
 <circle fill="url(#mc)" r="4" cy="224" cx="1021" stroke="black"/>
 :
 <circle r="4" cy="224" cx="1021" stroke="black"/>

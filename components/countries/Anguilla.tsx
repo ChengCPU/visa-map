@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Anguilla:React.FC = () => {
 
   const { anguillaColor } = useContext(ColorContext)
-  const { anguillaDiff } = useContext(DiffContext)
+  const { AI } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(anguillaColor)}/>
   </pattern>
 </defs>
-{(anguillaDiff == 1) ?
+{(AI == 1) ?
 <circle fill="url(#ai)" r="2.5" cy="380" cx="635" stroke="black"/>
 :
 <circle r="2.5" cy="380" cx="635" stroke="black"/>

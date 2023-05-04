@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Kuwait:React.FC = () => {
 
   const { kuwaitColor } = useContext(ColorContext)
-  const { kuwaitDiff } = useContext(DiffContext)
+  const { KW } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -24,7 +24,7 @@ return (
   </pattern>
 </defs>
 <path d="M1247.5 309.4l1.5 2.8-0.3 1.5 2.4 4.8-3.9 0.2-1.7-3.1-5-0.6 3.3-6.2 3.7 0.6z" />
-{(kuwaitDiff == 1) ?
+{(KW == 1) ?
 <circle fill="url(#kw)" r="5" cy="313" cx="1247" stroke="black"/>
 :
 <circle r="5" cy="313" cx="1247" stroke="black"/>

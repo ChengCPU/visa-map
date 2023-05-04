@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const VaticanCity:React.FC = () => {
 
   const { vaticanCityColor } = useContext(ColorContext)
-  const { vaticanCityDiff } = useContext(DiffContext)
+  const { VA } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(vaticanCityColor)}/>
   </pattern>
 </defs>
-{(vaticanCityDiff == 1) ?
+{(VA == 1) ?
 <circle fill="url(#va)" r="4" cy="235" cx="1053" stroke="black"/>
 :
 <circle r="4" cy="235" cx="1053" stroke="black"/>

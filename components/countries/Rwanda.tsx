@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Rwanda:React.FC = () => {
 
   const { rwandaColor } = useContext(ColorContext)
-  const { rwandaDiff } = useContext(DiffContext)
+  const { RW } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(rwandaColor)}/>
   </pattern>
 </defs>
-{(rwandaDiff == 1) ?
+{(RW == 1) ?
 <>
 <path fill="url(#rw)" d="M1158.8 509.1l2.2 3.6-0.3 3.8-1.6 0.8-3.1-0.4-1.7 3.7-3.5-0.5 0.6-3.6 0.8-0.5 0.2-3.8 1.6-1.8 1.4 0.7 3.4-2z" />
 <circle fill="url(#rw)" r="5" cy="515" cx="1155" stroke="black"/>

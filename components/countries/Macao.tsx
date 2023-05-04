@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Macao:React.FC = () => {
 
   const { macaoColor } = useContext(ColorContext)
-  const { macaoDiff } = useContext(DiffContext)
+  const { MO } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(macaoColor)}/>
   </pattern>
 </defs>
-{(macaoDiff == 1) ?
+{(MO == 1) ?
 <circle fill="url(#mo)" r="4" cy="360" cx="1614" stroke="black"/>
 :
 <circle r="4" cy="360" cx="1614" stroke="black"/>

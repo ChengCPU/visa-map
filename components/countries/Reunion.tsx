@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Reunion:React.FC = () => {
 
   const { reunionColor } = useContext(ColorContext)
-  const { reunionDiff } = useContext(DiffContext)
+  const { RE } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(reunionColor)}/>
   </pattern>
 </defs>
-{(reunionDiff == 1) ?
+{(RE == 1) ?
 <circle fill="url(#re)" r="4" cy="635" cx="1295" stroke="black"/>
 :
 <circle r="4" cy="635" cx="1295" stroke="black"/>

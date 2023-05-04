@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Ireland:React.FC = () => {
 
   const { irelandColor } = useContext(ColorContext)
-  const { irelandDiff } = useContext(DiffContext)
+  const { IE } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(irelandColor)}/>
   </pattern>
 </defs>
-{(irelandDiff == 1) ?
+{(IE == 1) ?
 <path fill="url(#ie)" d="M956.7 158.2l0.7 4.4-3.9 5.5-8.8 3.6-6.8-0.9 4.3-6.4-2.1-6.2 6.7-4.8 3.7-2.8 0.9 3.2-1.2 3.3 3-0.1 3.5 1.2z" stroke="black"/>
 :
 <path d="M956.7 158.2l0.7 4.4-3.9 5.5-8.8 3.6-6.8-0.9 4.3-6.4-2.1-6.2 6.7-4.8 3.7-2.8 0.9 3.2-1.2 3.3 3-0.1 3.5 1.2z" stroke="black"/>

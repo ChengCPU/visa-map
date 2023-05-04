@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Jersey:React.FC = () => {
 
   const { jerseyColor } = useContext(ColorContext)
-  const { jerseyDiff } = useContext(DiffContext)
+  const { JE } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(jerseyColor)}/>
   </pattern>
 </defs>
-{(jerseyDiff == 1) ?
+{(JE == 1) ?
 <circle fill="url(#je)" r="4" cy="185" cx="973" stroke="black"/>
 :
 <circle r="4" cy="185" cx="973" stroke="black"/>

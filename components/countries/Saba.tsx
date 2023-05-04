@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Saba:React.FC = () => {
 
   const { sabaColor } = useContext(ColorContext)
-  const { sabaDiff } = useContext(DiffContext)
+  const { XS } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(sabaColor)}/>
   </pattern>
 </defs>
-{(sabaDiff == 1) ?
+{(XS == 1) ?
 <circle fill="url(#xs)" r="2.5" cy="392" cx="624" stroke="black"/>
 :
 <circle r="2.5" cy="392" cx="624" stroke="black"/>

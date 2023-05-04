@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Vanuatu:React.FC = () => {
 
   const { vanuatuColor } = useContext(ColorContext)
-  const { vanuatuDiff } = useContext(DiffContext)
+  const { VU } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(vanuatuColor)}/>
   </pattern>
 </defs>
-{(vanuatuDiff == 1) ?
+{(VU == 1) ?
 <>
 <path fill="url(#vu)" d="M 1931.8 631.8 1931.3 631.6 1931.5 631.2 1932 631.1 1932.2 631.5 1932.1 631.7 1931.8 631.8 Z" />
 <path fill="url(#vu)" d="M 1930.6 628 1930.4 628 1930.1 627.9 1929.7 627.4 1929.6 627 1929.6 626.6 1929.8 626.4 1929.9 626 1930.2 625.9 1930.6 625.9 1930.4 626.2 1930.4 626.7 1931.1 627.2 1930.8 627.5 1930.6 628 Z" />

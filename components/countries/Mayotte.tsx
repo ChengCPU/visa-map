@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Mayotte:React.FC = () => {
 
   const { mayotteColor } = useContext(ColorContext)
-  const { mayotteDiff } = useContext(DiffContext)
+  const { YT } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(mayotteColor)}/>
   </pattern>
 </defs>
-{(mayotteDiff == 1) ?
+{(YT == 1) ?
 <circle fill="url(#yt)" r="4" cy="585" cx="1242" stroke="black"/>
 :
 <circle r="4" cy="585" cx="1242" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SaintBarthelemy:React.FC = () => {
 
   const { saintBarthelemyColor } = useContext(ColorContext)
-  const { saintBarthelemyDiff } = useContext(DiffContext)
+  const { BL } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(saintBarthelemyColor)}/>
   </pattern>
 </defs>
-{(saintBarthelemyDiff == 1) ?
+{(BL == 1) ?
 <circle fill="url(#bl)" r="2.5" cy="388" cx="627" stroke="black"/>
 :
 <circle r="2.5" cy="388" cx="627" stroke="black"/>

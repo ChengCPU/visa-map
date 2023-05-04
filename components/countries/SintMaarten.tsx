@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SintMaarten:React.FC = () => {
 
   const { sintMaartenColor } = useContext(ColorContext)
-  const { sintMaartenDiff } = useContext(DiffContext)
+  const { SX } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(sintMaartenColor)}/>
   </pattern>
 </defs>
-{(sintMaartenDiff == 1) ?
+{(SX == 1) ?
 <circle fill="url(#sx)" r="2.5" cy="384" cx="630" stroke="black"/>
 :
 <circle r="2.5" cy="384" cx="630" stroke="black"/>

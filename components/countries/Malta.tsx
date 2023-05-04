@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Malta:React.FC = () => {
 
   const { maltaColor } = useContext(ColorContext)
-  const { maltaDiff } = useContext(DiffContext)
+  const { MT } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(maltaColor)}/>
   </pattern>
 </defs>
-{(maltaDiff == 1) ?
+{(MT == 1) ?
 <circle fill="url(#mt)" r="4" cy="271" cx="1062" stroke="black"/>
 :
 <circle r="4" cy="271" cx="1062" stroke="black"/>

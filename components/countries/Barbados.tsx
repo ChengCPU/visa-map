@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Barbados:React.FC = () => {
     
   const { barbadosColor } = useContext(ColorContext)
-  const { barbadosDiff } = useContext(DiffContext)
+  const { BB } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(barbadosColor)}/>
   </pattern>
 </defs>
-{(barbadosDiff == 1) ?
+{(BB == 1) ?
 <circle fill="url(#bb)" r="3.25" cy="422" cx="655" stroke="black"/>
 :
 <circle r="3.25" cy="422" cx="655" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Comoros:React.FC = () => {
 
   const { comorosColor } = useContext(ColorContext)
-  const { comorosDiff } = useContext(DiffContext)
+  const { KM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(comorosColor)}/>
   </pattern>
 </defs>
-{(comorosDiff == 1) ?
+{(KM == 1) ?
 <circle fill="url(#km)" r="5" cy="576" cx="1234" stroke="black"/>
 :
 <circle r="5" cy="576" cx="1234" stroke="black"/>

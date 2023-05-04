@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Gibraltar:React.FC = () => {
 
   const { gibraltarColor } = useContext(ColorContext)
-  const { gibraltarDiff } = useContext(DiffContext)
+  const { GI } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(gibraltarColor)}/>
   </pattern>
 </defs>
-{(gibraltarDiff == 1) ?
+{(GI == 1) ?
 <circle fill="url(#gi)" r="4" cy="270" cx="958" stroke="black"/>
 :
 <circle r="4" cy="270" cx="958" stroke="black"/>

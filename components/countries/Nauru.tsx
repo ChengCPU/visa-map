@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Nauru:React.FC = () => {
 
   const { nauruColor } = useContext(ColorContext)
-  const { nauruDiff } = useContext(DiffContext)
+  const { NR } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(nauruColor)}/>
   </pattern>
 </defs>
-{(nauruDiff == 1) ?
+{(NR == 1) ?
 <circle fill="url(#nr)" r="5" cy="505" cx="1933" stroke="black"/>
 :
 <circle r="5" cy="505" cx="1933" stroke="black"/>

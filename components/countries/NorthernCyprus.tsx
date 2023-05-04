@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const NorthernCyprus:React.FC = () => {
 
   const { northernCyprusColor } = useContext(ColorContext)
-  const { northernCyprusDiff } = useContext(DiffContext)
+  const { RC } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(northernCyprusColor)}/>
   </pattern>
 </defs>
-{(northernCyprusDiff == 1) ?
+{(RC == 1) ?
 <circle fill="url(#rc)" r="3" cy="274.5" cx="1165" stroke="black"/>
 :
 <circle r="3" cy="274.5" cx="1165" stroke="black"/>

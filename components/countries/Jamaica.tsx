@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Jamaica:React.FC = () => {
 
   const { jamaicaColor } = useContext(ColorContext)
-  const { jamaicaDiff } = useContext(DiffContext)
+  const { JM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(jamaicaColor)}/>
   </pattern>
 </defs>
-{(jamaicaDiff == 1) ?
+{(JM == 1) ?
 <circle fill="url(#jm)" r="5" cy="386" cx="554.5" stroke="black"/>
 :
 <circle r="5" cy="386" cx="554.5" stroke="black"/>

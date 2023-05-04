@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SaintLucia:React.FC = () => {
 
   const { saintLuciaColor } = useContext(ColorContext)
-  const { saintLuciaDiff } = useContext(DiffContext)
+  const { LC } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(saintLuciaColor)}/>
   </pattern>
 </defs>
-{(saintLuciaDiff == 1) ?
+{(LC == 1) ?
 <circle fill="url(#lc)" r="3.25" cy="419" cx="645" stroke="black"/>
 :
 <circle r="3.25" cy="419" cx="645" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Grenada:React.FC = () => {
 
   const { grenadaColor } = useContext(ColorContext)
-  const { grenadaDiff } = useContext(DiffContext)
+  const { GD } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(grenadaColor)}/>
   </pattern>
 </defs>
-{(grenadaDiff == 1) ?
+{(GD == 1) ?
 <circle fill="url(#gd)" r="3.25" cy="428" cx="638" stroke="black"/>
 :
 <circle r="3.25" cy="428" cx="638" stroke="black"/>

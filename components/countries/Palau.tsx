@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Palau:React.FC = () => {
 
   const { palauColor } = useContext(ColorContext)
-  const { palauDiff } = useContext(DiffContext)
+  const { PW } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(palauColor)}/>
   </pattern>
 </defs>
-{(palauDiff == 1) ?
+{(PW == 1) ?
 <circle fill="url(#pw)" r="5" cy="453" cx="1747" stroke="black"/>
 :
 <circle r="5" cy="453" cx="1747" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Montserrat:React.FC = () => {
 
   const { montserratColor } = useContext(ColorContext)
-  const { montserratDiff } = useContext(DiffContext)
+  const { MS } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(montserratColor)}/>
   </pattern>
 </defs>
-{(montserratDiff == 1) ?
+{(MS == 1) ?
 <circle fill="url(#ms)" r="2.5" cy="401" cx="637" stroke="black"/>
 :
 <circle r="2.5" cy="401" cx="637" stroke="black"/>

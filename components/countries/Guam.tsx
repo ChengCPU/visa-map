@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Guam:React.FC = () => {
 
   const { guamColor } = useContext(ColorContext)
-  const { guamDiff } = useContext(DiffContext)
+  const { GU } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(guamColor)}/>
   </pattern>
 </defs>
-{(guamDiff == 1) ?
+{(GU == 1) ?
 <circle fill="url(#gu)" r="5" cy="414" cx="1800" stroke="black"/>
 :
 <circle r="5" cy="414" cx="1800" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const NewCaledonia:React.FC = () => {
 
   const { newCaledoniaColor } = useContext(ColorContext)
-  const { newCaledoniaDiff } = useContext(DiffContext)
+  const { NC } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(newCaledoniaColor)}/>
   </pattern>
 </defs>
-{(newCaledoniaDiff == 1) ?
+{(NC == 1) ?
 <>
 <path fill="url(#nc)" d="M 1915.2 646.9 1915 647 1914.8 647.4 1914.4 647.2 1914.6 646.7 1914.7 646.5 1915 646.6 1915.2 646.9 Z" />
 <path fill="url(#nc)" d="M 1919.6 639.1 1919.5 639.2 1919.7 639.6 1920 639.6 1920.4 639.4 1920.3 640 1920.1 640.2 1920 640.6 1919.5 640.9 1919.1 640.7 1919.1 640.6 1918.8 640.3 1918.9 640.1 1918.7 639.9 1918.8 639.5 1918.7 639.1 1918.8 639.1 1919.2 639.2 1919.6 639.1 Z" />

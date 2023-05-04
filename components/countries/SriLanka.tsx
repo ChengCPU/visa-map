@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const SriLanka:React.FC = () => {
 
   const { sriLankaColor } = useContext(ColorContext)
-  const { sriLankaDiff } = useContext(DiffContext)
+  const { LK } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(sriLankaColor)}/>
   </pattern>
 </defs>
-{(sriLankaDiff == 1) ?
+{(LK == 1) ?
 <path fill="url(#lk)" d="M1445.9 462l-4.8 1.5-2.9-5.1-1.4-9.2 2-10.4 4.1 3.5 2.8 4.5 3.1 6.7-0.6 6.7-2.3 1.8z" stroke="black"/>
 :
 <path d="M1445.9 462l-4.8 1.5-2.9-5.1-1.4-9.2 2-10.4 4.1 3.5 2.8 4.5 3.1 6.7-0.6 6.7-2.3 1.8z" stroke="black"/>

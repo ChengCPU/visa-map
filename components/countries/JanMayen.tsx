@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const JanMayen:React.FC = () => {
 
   const { janMayenColor } = useContext(ColorContext)
-  const { janMayenDiff } = useContext(DiffContext)
+  const { XM } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(janMayenColor)}/>
   </pattern>
 </defs>
-{(janMayenDiff == 1) ?
+{(XM == 1) ?
 <circle fill="url(#xm)" r="5" cy="60" cx="952" stroke="black"/>
 :
 <circle r="5" cy="60" cx="952" stroke="black"/>

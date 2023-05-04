@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Martinique:React.FC = () => {
 
   const { martiniqueColor } = useContext(ColorContext)
-  const { martiniqueDiff } = useContext(DiffContext)
+  const { MQ } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(martiniqueColor)}/>
   </pattern>
 </defs>
-{(martiniqueDiff == 1) ?
+{(MQ == 1) ?
 <circle fill="url(#mq)" r="2.5" cy="413" cx="648" stroke="black"/>
 :
 <circle r="2.5" cy="413" cx="648" stroke="black"/>

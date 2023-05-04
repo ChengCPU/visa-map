@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Transnistria:React.FC = () => {
 
   const { transnistriaColor } = useContext(ColorContext)
-  const { transnistriaDiff } = useContext(DiffContext)
+  const { XT } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(transnistriaColor)}/>
   </pattern>
 </defs>
-{(transnistriaDiff == 1) ?
+{(XT == 1) ?
 <circle fill="url(#xt)" r="2.5" cy="198" cx="1132.7" stroke="black"/>
 :
 <circle r="2.5" cy="198" cx="1132.7" stroke="black"/>

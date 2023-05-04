@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Abkhazia:React.FC = () => {
 
   const { abkhaziaColor } = useContext(ColorContext)
-  const { abkhaziaDiff } = useContext(DiffContext)
+  const { AB } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(abkhaziaColor)}/>
   </pattern>
 </defs>
-{(abkhaziaDiff == 1) ?
+{(AB == 1) ?
 <circle fill="url(#ab)" r="3.5" cy="227" cx="1199" stroke="black"/>
 :
 <circle r="3.5" cy="227" cx="1199" stroke="black"/>

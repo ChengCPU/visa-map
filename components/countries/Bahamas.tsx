@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Bahamas:React.FC = () => {
     
   const { bahamasColor } = useContext(ColorContext)
-  const { bahamasDiff } = useContext(DiffContext)
+  const { BS } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(bahamasColor)}/>
   </pattern>
 </defs>
-{(bahamasDiff == 1) ?
+{(BS == 1) ?
 <>
 <path fill="url(#bs)" d="M 580.4 366 580 366.5 579.8 367 579.2 367.3 578.7 367.3 578.6 367.2 578.2 367.4 577.7 367.5 577.1 367.3 576.7 367.4 576.6 366.9 576.9 366.7 577.1 366.4 577.5 366.2 577.8 365.8 578.2 365.8 578.5 365.6 578.7 365.9 579.2 366.1 579.7 365.9 580.4 364.9 580.7 364.9 580.7 365.1 580.4 366 Z" />
 <path fill="url(#bs)" d="M 580.6 364.3 580.4 363.7 581 363.4 581.3 363.7 581.3 363.9 581 364 580.6 364.3 Z" />

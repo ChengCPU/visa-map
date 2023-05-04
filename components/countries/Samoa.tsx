@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Samoa:React.FC = () => {
 
   const { samoaColor } = useContext(ColorContext)
-  const { samoaDiff } = useContext(DiffContext)
+  const { WS } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(samoaColor)}/>
   </pattern>
 </defs>
-{(samoaDiff == 1) ?
+{(WS == 1) ?
 <circle fill="url(#ws)" r="5" cy="590" cx="20" stroke="black"/>
 :
 <circle r="5" cy="590" cx="20" stroke="black"/>

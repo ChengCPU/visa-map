@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const FrenchPolynesia:React.FC = () => {
 
   const { frenchPolynesiaColor } = useContext(ColorContext)
-  const { frenchPolynesiaDiff } = useContext(DiffContext)
+  const { PF } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(frenchPolynesiaColor)}/>
   </pattern>
 </defs>
-{(frenchPolynesiaDiff == 1) ?
+{(PF == 1) ?
 <circle fill="url(#pf)" r="5" cy="614" cx="172" stroke="black"/>
 :
 <circle r="5" cy="614" cx="172" stroke="black"/>

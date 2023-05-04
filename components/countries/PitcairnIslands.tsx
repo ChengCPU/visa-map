@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const PitcairnIslands:React.FC = () => {
 
   const { pitcairnIslandsColor } = useContext(ColorContext)
-  const { pitcairnIslandsDiff } = useContext(DiffContext)
+  const { PN } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(pitcairnIslandsColor)}/>
   </pattern>
 </defs>
-{(pitcairnIslandsDiff == 1) ?
+{(PN == 1) ?
 <circle fill="url(#pn)" r="5" cy="660" cx="300" stroke="black"/>
 :
 <circle r="5" cy="660" cx="300" stroke="black"/>

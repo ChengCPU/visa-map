@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Guernsey:React.FC = () => {
 
   const { guernseyColor } = useContext(ColorContext)
-  const { guernseyDiff } = useContext(DiffContext)
+  const { GG } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(guernseyColor)}/>
   </pattern>
 </defs>
-{(guernseyDiff == 1) ?
+{(GG == 1) ?
 <circle fill="url(#gg)" r="4" cy="185" cx="965" stroke="black"/>
 :
 <circle r="4" cy="185" cx="965" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Svalbard:React.FC = () => {
 
   const { svalbardColor } = useContext(ColorContext)
-  const { svalbardDiff } = useContext(DiffContext)
+  const { XV } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(svalbardColor)}/>
   </pattern>
 </defs>
-{(svalbardDiff == 1) ?
+{(XV == 1) ?
 <>
 <path fill="url(#xv)" d="M 1076.6 25.2 1069 27.1 1062.2 26 1064.4 24.8 1061.8 23.3 1069.1 22.4 1071 24.1 1076.6 25.2 Z" stroke="black"/>
 <path fill="url(#xv)" d="M 1051 16.7 1063.6 20.1 1055 21.9 1053.8 25.3 1050.8 26.2 1049.9 30.2 1045.5 30.4 1037 27.5 1040 25.8 1034.3 24.4 1026.6 20.5 1023.4 17 1032.7 15.4 1035 16.9 1040 16.9 1041 15.4 1046.2 15.2 1051 16.7 Z" stroke="black"/>

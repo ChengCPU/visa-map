@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Burundi:React.FC = () => {
 
   const { burundiColor } = useContext(ColorContext)
-  const { burundiDiff } = useContext(DiffContext)
+  const { BI } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -22,7 +22,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(burundiColor)}/>
   </pattern>
 </defs>
-{(burundiDiff == 1) ?
+{(BI == 1) ?
 <>
 <path fill="url(#bi)" d="M1154.9 530.4l-0.6 0.1 0-0.3-2-6.1-0.01-0.06-0.09-1.04-1.4-2.9 3.5 0.5 1.7-3.7 3.1 0.4 0.3 2.5 1.2 1.5 0 2.1-1.4 1.3-2.3 3.4-2 2.3z" />
 <circle fill="url(#bi)" r="5" cy="525" cx="1156" stroke="black"/>

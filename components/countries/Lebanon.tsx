@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Lebanon:React.FC = () => {
 
   const { lebanonColor } = useContext(ColorContext)
-  const { lebanonDiff } = useContext(DiffContext)
+  const { LB } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(lebanonColor)}/>
   </pattern>
 </defs>
-{(lebanonDiff == 1) ?
+{(LB == 1) ?
 <>
 <path fill="url(#lb)" d="M1179.1 288.2l-1.4 0.1-0.4 1.1-1.8 0 1.3-5.3 2.2-4.5 0-0.2 2.5 0.3 1.2 2.5-2.7 2.5-0.9 3.5z" />
 <circle fill="url(#lb)" r="4" cy="284" cx="1179" stroke="black"/>

@@ -7,7 +7,7 @@ import gridCalculation from '../../logic/gridCalculation'
 const Kosovo:React.FC = () => {
 
   const { kosovoColor } = useContext(ColorContext)
-  const { kosovoDiff } = useContext(DiffContext)
+  const { XK } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
@@ -23,7 +23,7 @@ return (
     <image width="1500" height="1500" xlinkHref={gridCalculation(kosovoColor)}/>
   </pattern>
 </defs>
-{(kosovoDiff == 1) ?
+{(XK == 1) ?
 <circle fill="url(#xk)" r="4" cy="228" cx="1095" stroke="black"/>
 :
 <circle r="4" cy="228" cx="1095" stroke="black"/>
