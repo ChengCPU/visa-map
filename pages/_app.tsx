@@ -271,13 +271,9 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   useEffect(() => {
-    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) {
-      reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setDiff); return
-    }
+    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) { reset(setAssignedColors, setPriority, secondToggle, setSecondToggle, setDiff); return }
     selectArrayCalculation(selectArray, setSelectArray, select);
-    if(selectArray[select.selection] != null) {
-      mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, selectArray, diff, setDiff, setPercentage)
-    }
+    if(selectArray[select.selection] != null) { mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priority, setPriority, selectArray, diff, setDiff, setPercentage) }
   }, [toggle])
 
   useEffect(() => {
