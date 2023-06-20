@@ -19,22 +19,11 @@ const countriesWithPassports:string[] = ['abkhazia','afghanistan','albania','alg
 const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, toggle, setToggle }) => {
 
   const passports = useContext(PassportContext)
-  
-  const [input, setInput] = useState('');
-  const [foundPassports, setFoundPassports] = useState(countriesWithPassports);
 
-  const filter = (e) => {
-    const keyword = e.target.value;
-    if (keyword !== '') {
-      const results = countriesWithPassports.filter((a) => {
-        return a.toLowerCase().startsWith(keyword.toLowerCase());
-      });
-      setFoundPassports(results)
-    } else {
-      setFoundPassports(countriesWithPassports);
-    }
-    setInput(keyword);
-  };
+  const [filterValue, setFilterValue] = useState<string>('');
+  const filteredOptions = countriesWithPassports.filter(option =>
+    option.toLowerCase().includes(filterValue.toLowerCase())
+  );
 
   const convertCountryNames = (passportsMap) => {
     return passportsArray[countriesWithPassports.indexOf(passportsMap)]
@@ -48,16 +37,16 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
     <div>
       <input
         type="search"
-        value={input}
-        onChange={filter}
+        value={filterValue}
+        onChange={e => setFilterValue(e.target.value)}
         className="input"
         placeholder="Filter"
       />
       <br />
-    {foundPassports && foundPassports.length > 0 ? (
-      foundPassports.map((passportsMap) => (
+    {filteredOptions && filteredOptions.length > 0 ? (
+      filteredOptions.map((passportsMap) => (
         // Renders with .map a react fragment with the SelectorPassport component and on the third SelectorPassport, a break component is rendered
-        <React.Fragment key={foundPassports.indexOf(passportsMap)}>
+        <React.Fragment key={filteredOptions.indexOf(passportsMap)}>
         <SelectorPassport
           setOpenDrawer={setOpenDrawer}
           select={select}
@@ -68,7 +57,7 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, select, setS
           name={convertCountryNamesSpaces(passportsMap)}
           passportName={convertCountryNames(passportsMap)} 
         />
-        {((foundPassports.indexOf(passportsMap) + 1) % 3 == 0 && passportsArray.indexOf(passportsMap) != 0) ? <br /> : null}
+        {((filteredOptions.indexOf(passportsMap) + 1) % 3 == 0 && passportsArray.indexOf(passportsMap) != 0) ? <br /> : null}
         </React.Fragment>
       ))
     ) : (
