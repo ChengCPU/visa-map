@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
 import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
-import gridCalculation from '../../logic/gridCalculation'
 
 const Guernsey:React.FC = () => {
 
@@ -19,9 +18,11 @@ return (
   }
   `}</style>
 <defs>
-  <pattern id="gg" x="0" y="0" width="1" height="1" viewBox="0 0 10 10">
-    <image width="1500" height="1500" xlinkHref={gridCalculation(guernseyColor)}/>
+  <pattern id="gg" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect className="checker" x="0" width="2" height="2" y="0"/>
+    <rect className="checker" x="2" width="2" height="2" y="2"/>
   </pattern>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#gg)" />
 </defs>
 {(GG == 1) ?
 <circle fill="url(#gg)" r="4" cy="185" cx="965" stroke="black"/>
