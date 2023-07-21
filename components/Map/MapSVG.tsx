@@ -89,7 +89,6 @@ import Grenada from '../countries/Grenada';
 import Guadeloupe from '../countries/Guadeloupe';
 import Guam from '../countries/Guam';
 import Guatemala from '../countries/Guatemala';
-import Guernsey from '../countries/Guernsey';
 import Guinea from '../countries/Guinea';
 import GuineaBissau from '../countries/GuineaBissau';
 import Guyana from '../countries/Guyana';
@@ -103,14 +102,12 @@ import Indonesia from '../countries/Indonesia';
 import Iran from '../countries/Iran';
 import Iraq from '../countries/Iraq';
 import Ireland from '../countries/Ireland';
-import IsleOfMan from '../countries/IsleOfMan';
 import Israel from '../countries/Israel';
 import Italy from '../countries/Italy';
 import IvoryCoast from '../countries/IvoryCoast';
 import Jamaica from '../countries/Jamaica';
 import JanMayen from '../countries/JanMayen';
 import Japan from '../countries/Japan';
-import Jersey from '../countries/Jersey';
 import Jordan from '../countries/Jordan';
 import Kazakhstan from '../countries/Kazakhstan';
 import Kenya from '../countries/Kenya';
@@ -159,7 +156,6 @@ import Nicaragua from '../countries/Nicaragua';
 import Niger from '../countries/Niger';
 import Nigeria from '../countries/Nigeria';
 import Niue from '../countries/Niue';
-import NorfolkIsland from '../countries/NorfolkIsland';
 import NorthernCyprus from '../countries/NorthernCyprus';
 import NorthernMarianaIslands from '../countries/NorthernMarianaIslands';
 import NorthKorea from '../countries/NorthKorea';
@@ -459,12 +455,9 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
     <Grenada />
     <Guadeloupe />
     <Guam />
-    <Guernsey />
     <HongKong />
-    <IsleOfMan />
     <Jamaica />
     <JanMayen />
-    <Jersey />
     <Kiribati />
     <Kosovo />
     <Kuwait />
@@ -486,7 +479,6 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
     <Nauru />
     <NewCaledonia />
     <Niue />
-    <NorfolkIsland />
     <NorthernCyprus />
     <NorthernMarianaIslands />
     <Palau />
