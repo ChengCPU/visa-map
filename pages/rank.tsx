@@ -33,6 +33,8 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
   const width = useContext(WidthContext)
   const { language } = useContext(LanguageContext)
 
+  const order = rankRender[rankRender.length - 1]
+
   const languageCaculation = () => {
     switch(language){
       case '🇬🇧EN': return countriesEN
@@ -81,7 +83,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
       <td className={styles.rank}>
-      <p>{verticalColumn + 1}</p>
+      <p>{order?.[verticalColumn]}</p>
       </td>
       <td><Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/></td>
       <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
@@ -102,7 +104,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
       <td>
-        <p className={styles.rank}>{verticalColumn + 1}</p>
+        <p className={styles.rank}>{order?.[verticalColumn]}</p>
         <Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/>
         <p className={styles.text}>{textRender(verticalColumn)}</p>
         <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
