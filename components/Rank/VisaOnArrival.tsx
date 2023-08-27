@@ -23,6 +23,7 @@ const VisaOnArrival:React.FC<Props> = ({ widthCalculation, marginCalculation, ve
       margin-left: ${marginCalculation('visaOnArrival', verticalColumn)}px;
       text-align: center;
       position:absolute;
+      user-select: none;
     }`}</style>
     {(visaPolicyData[verticalColumn]?.[3] == 0) ? null : visaPolicyData[verticalColumn]?.[3]}</p>
     </>

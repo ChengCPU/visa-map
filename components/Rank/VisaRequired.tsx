@@ -23,6 +23,7 @@ const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, ver
       margin-left: ${marginCalculation('visaRequired', verticalColumn)}px;
       text-align: center;
       position:absolute;
+      user-select: none;
     }`}</style>
     {(visaPolicyData[verticalColumn]?.[5] == 0) ? null : visaPolicyData[verticalColumn]?.[5]}</p>
     </>

@@ -23,6 +23,7 @@ const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalCo
       margin-left: ${marginCalculation('evisa', verticalColumn)}px;
       text-align: center;
       position:absolute;
+      user-select: none;
     }`}</style>
     {(visaPolicyData[verticalColumn]?.[4] == 0) ? null : visaPolicyData[verticalColumn]?.[4]}</p>
     </>

@@ -22,6 +22,7 @@ const VisaFree:React.FC<Props> = ({ widthCalculation, verticalColumn, visaPolicy
       margin: 5px;
       text-align: center;
       position:absolute;
+      user-select: none;
     }`}</style>
     {visaPolicyData[verticalColumn]?.[1]}</p>
     </>
