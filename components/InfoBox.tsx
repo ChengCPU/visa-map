@@ -72,6 +72,8 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priority }) =
         return languageCaculation()[13]
       case 'rgb(149,150,150)':
         return languageCaculation()[14]
+      case 'rgb(150,150,150)':
+        return languageCaculation()[14]
     }
   }
 
