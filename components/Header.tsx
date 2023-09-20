@@ -25,10 +25,10 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
 `
 
-const headerEN = ['Map', 'Table', 'Rank']
-const headerES = ['Mapa', 'Tabla', 'Rango']
-const headerPT = ['Mapa', 'Tabela', 'Classificação']
-const headerFR = ['Carte', 'Tableau', 'Rang']
+const headerEN = ['Map', 'Table', 'Rank', 'Visa']
+const headerES = ['Mapa', 'Tabla', 'Rango', 'Visado']
+const headerPT = ['Mapa', 'Tabela', 'Classificação', 'Visado']
+const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa']
 
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
 
@@ -47,6 +47,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
       <Link href='/'><CustomizedButton variant="contained">{languageCaculation()[0]}</CustomizedButton></Link>
       <Link href='/table'><CustomizedButton variant="contained">{languageCaculation()[1]}</CustomizedButton></Link>
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
+      <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation()[3]}</CustomizedButton></Link>
       <LanguageSelect
         language={language}
         setLanguage={setLanguage}

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Map from '../components/Map/Map';
 import Head from 'next/head';
 import InfoBox from '../components/InfoBox';
@@ -7,9 +8,21 @@ interface Props {
   setHover:Function;
   countrySelect:string;
   priority:any;
+  setPriority:Function;
+  setSelectorLoad:Function;
+  tempPriority:any;
+  tempDiff:any;
+  setDiff:Function;
 }
 
-export default function Home({ mousePos, hover, setHover, countrySelect, priority }:Props) {
+export default function Home({ mousePos, hover, setHover, countrySelect, priority, setPriority, setSelectorLoad, tempPriority, tempDiff, setDiff }:Props) {
+
+  useEffect(() => {
+    setSelectorLoad(true)
+    setPriority(tempPriority)
+    setDiff(tempDiff)
+  })
+
   return (
     <>
     <Head>

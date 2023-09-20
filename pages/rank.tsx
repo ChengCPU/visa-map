@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { PassportContext } from '../logic/context/PassportContext';
 import { WidthContext } from '../logic/context/WidthContext';
 import { LanguageContext } from '../logic/context/LanguageContext';
@@ -25,9 +25,14 @@ interface Props {
   sortBy:string;
   setSortBy:Function;
   mobile:boolean;
+  setSelectorLoad:Function;
 }
 
-const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy }) => {
+const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy, setSelectorLoad }) => {
+
+  useEffect(() => {
+    setSelectorLoad(false);
+  })
 
   const passports = useContext(PassportContext)
   const width = useContext(WidthContext)

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { LanguageContext } from '../logic/context/LanguageContext';
 import Country from '../components/Table/Country';
 import VisaPolicy from '../components/Table/VisaPolicy';
@@ -14,10 +14,15 @@ for(let countryCount = 0; countryCount < countriesEN.length; countryCount++) {ve
 interface Props {
 	selectArray:null | string[];
   assignedColors:object[];
+  setSelectorLoad:Function;
 }
 
-const Table:React.FC<Props> = ({ selectArray, assignedColors }) => {
+const Table:React.FC<Props> = ({ selectArray, assignedColors, setSelectorLoad }) => {
 
+  useEffect(() => {
+    setSelectorLoad(true);
+  })
+  
   const { language } = useContext(LanguageContext)
 
   const languageCaculation = () => {
