@@ -101,8 +101,6 @@ export default function individualVisaPolicyCalculation(countryCode:string, setP
     case 'WF':
   }
 
-  console.log(color)
-
   color.frenchGuianaColor = color.franceColor
   color.greenlandColor = color.denmarkColor
 
