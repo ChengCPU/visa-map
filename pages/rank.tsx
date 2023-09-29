@@ -93,7 +93,10 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <td><Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/></td>
       <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
       <td>
-        <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
+        <div className={styles.textDiv}>
+          <p>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
+          <p>{'Freedom of Movement: ' + visaPolicyData[verticalColumn]?.[7]}</p>
+        </div>
         <div className={styles.progressBarDesktop}></div>
         <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
         <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
@@ -113,6 +116,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
         <Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/>
         <p className={styles.text}>{textRender(verticalColumn)}</p>
         <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
+        <p className={styles.text}>{'Freedom of Movement: ' + visaPolicyData[verticalColumn]?.[7]}</p>
       </td>
       {
       (width.width <= 800) ?

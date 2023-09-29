@@ -12,8 +12,15 @@
 
 .text {
   color: rgb(255, 255, 255);
-  inline-size: 98px;
+  inline-size: 110px;
   overflow-wrap: break-word;
+}
+
+.textDiv {
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
 }
 
 .visaPolicyText {
