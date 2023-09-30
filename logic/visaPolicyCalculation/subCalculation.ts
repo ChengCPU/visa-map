@@ -19,11 +19,11 @@ export default function subCalculation(selectArray:null | string[], assignedColo
           case 'rgb(255,20,147)': break; //home country (pink)
         default: if(OECSfom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(255,145,0)')}}}
     break;
-    case 3: //MERCSOUR freedom of movement ()
-      for(let MERCSOURfom = 0; MERCSOURfom < assignedColors.length; MERCSOURfom++) {
-        switch(assignedColors[MERCSOURfom][colors[subColorCalculation]]) {
+    case 3: //MERCOSUR freedom of movement ()
+      for(let MERCOSURfom = 0; MERCOSURfom < assignedColors.length; MERCOSURfom++) {
+        switch(assignedColors[MERCOSURfom][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
-        default: if(MERCSOURfom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(0,135,93)')}}}
+        default: if(MERCOSURfom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(0,135,93)')}}}
     break;
     case 4: //EU freedom of movement (dark blue)
       for(let EUfom = 0; EUfom < assignedColors.length; EUfom++) {
@@ -42,7 +42,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         switch(assignedColors[fom][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
           case 'rgb(255,145,0)': break; //OECS freedom of movement
-          case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+          case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
         default: if(fom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(255,179,191)')}}}
@@ -52,7 +52,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         switch(assignedColors[vf][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
           case 'rgb(255,145,0)': break; //OECS freedom of movement
-          case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+          case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
@@ -63,7 +63,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         switch(assignedColors[voaEv][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
           case 'rgb(255,145,0)': break; //OECS freedom of movement
-          case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+          case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
@@ -75,7 +75,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         switch(assignedColors[voa][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
           case 'rgb(255,145,0)': break; //OECS freedom of movement
-          case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+          case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
@@ -88,7 +88,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         switch(assignedColors[ev][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
           case 'rgb(255,145,0)': break; //OECS freedom of movement
-          case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+          case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
@@ -109,7 +109,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         switch(assignedColors[sppc][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
           case 'rgb(255,145,0)': break; //OECS freedom of movement (orange)
-          case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+          case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
@@ -124,7 +124,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
         switch(assignedColors[sv][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
           case 'rgb(255,145,0)': break; //OECS freedom of movement (orange)
-          case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+          case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
@@ -140,7 +140,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
       switch(assignedColors[cr][colors[subColorCalculation]]) {
         case 'rgb(255,20,147)': break; //home country (pink)
         case 'rgb(255,145,0)': break; //OECS freedom of movement (orange)
-        case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+        case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
         case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
         case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
         case 'rgb(255,179,191)': break; //freedom of movement (light pink)
@@ -156,7 +156,7 @@ export default function subCalculation(selectArray:null | string[], assignedColo
             switch(assignedColors[crCalc][colors[subColorCalculation]]) {
               case 'rgb(255,20,147)': break; //home country (pink)
               case 'rgb(255,145,0)': break; //OECS freedom of movement (orange)
-              case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
+              case 'rgb(0,135,93)': break; //MERCOSUR freedom of movement (dark green)
               case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
               case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
               case 'rgb(255,179,191)': break; //freedom of movement (light pink)
