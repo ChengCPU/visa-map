@@ -29,6 +29,9 @@ export default function fetchSortData(setVisaPolicyData:Function, setRankRender:
       [visaFreeCount, visaOnArrivalEVisaCount, visaOnArrivalCount, eVisaCount, visaRequiredCount, total, freedomOfMovement] = [0,0,0,0,0,0,0]
     }
 
+    //Adding extra freedom of movement count to denmark due to territories being classified as home country
+    rankData[49][7] += 2
+    
     //Adding extra freedom of movement count to france due to territories being classified as home country
     rankData[64][7] += 11
 
