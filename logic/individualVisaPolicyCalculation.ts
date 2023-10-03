@@ -69,12 +69,10 @@ export default function individualVisaPolicyCalculation(countryCode:string, setP
     case 'CW': color.curacaoColor = 'rgb(255,20,147)'; break
     case 'FK': color.falklandIslandsColor = 'rgb(255,20,147)'; break
     case 'FO': color.faroeIslandsColor = 'rgb(255,20,147)'; break
-    case 'PF':
-    case 'GI':
-    case 'GP':
-    case 'GU':
-    case 'GG':
-    case 'IM':
+    case 'PF': color.frenchPolynesiaColor = 'rgb(255,20,147)'; break
+    case 'GI': color.gibraltarColor = 'rgb(255,20,147)'; break
+    case 'GP': color.guadeloupeColor = 'rgb(255,20,147)'; break
+    case 'GU': color.guamColor = 'rgb(255,20,147)'; break
     case 'XM':
     case 'JE':
     case 'MQ':
