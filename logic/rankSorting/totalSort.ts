@@ -2,10 +2,10 @@ export default function totalSort(rankData:any, setRankRender:Function, sort:str
   const unsortedData:(string | number)[][] = rankData
 
   for(let i = 0; i < unsortedData.length; i++) {
-    let current:any = unsortedData[i][6];
+    let current:string | number = unsortedData[i]?.[6];
     let current2:(string | number)[] = unsortedData[i];
     let j:number;
-    
+
     for(j = i - 1; j >= 0 && unsortedData[j][6] > current; j--) {
       unsortedData[j + 1] = unsortedData[j]
       unsortedData[j + 1][6] = unsortedData[j][6]
@@ -21,7 +21,7 @@ export default function totalSort(rankData:any, setRankRender:Function, sort:str
   let tempDataVoa:(string | number)[]
   let tempDataFom:(string | number)[]
   
-  const lessThanVisaFreeCheck = (x:number) => {
+  const lessThanVisaFreeCheck:Function = (x:number) => {
     if(sortedData[x]?.[1] < sortedData[x + 1]?.[1] && sortedData[x]?.[6] == sortedData[x + 1]?.[6]) {
       tempDataVf = sortedData[x + 1]
       sortedData[x + 1] = sortedData[x]
@@ -31,7 +31,7 @@ export default function totalSort(rankData:any, setRankRender:Function, sort:str
     }
   }
 
-  const visaOnArrivalEvisaCheck = (x:number) => {
+  const visaOnArrivalEvisaCheck:Function = (x:number) => {
     if(sortedData[x]?.[2] < sortedData[x + 1]?.[2] && sortedData[x]?.[6] == sortedData[x + 1]?.[6] && sortedData[x + 1]?.[1] >= sortedData[x]?.[1]) {
       tempDataVoa = sortedData[x + 1]
       sortedData[x + 1] = sortedData[x]
@@ -41,7 +41,7 @@ export default function totalSort(rankData:any, setRankRender:Function, sort:str
     }
   }
 
-  const freedomOfMovementCheck = (x:number) => {
+  const freedomOfMovementCheck:Function = (x:number) => {
     if(sortedData[x]?.[7] < sortedData[x + 1]?.[7] && sortedData[x]?.[1] == sortedData[x + 1]?.[1] && sortedData[x]?.[2] == sortedData[x + 1]?.[2] && sortedData[x]?.[3] == sortedData[x + 1]?.[3] && sortedData[x]?.[4] == sortedData[x + 1]?.[4] && sortedData[x]?.[5] == sortedData[x + 1]?.[5] && sortedData[x]?.[6] == sortedData[x + 1]?.[6]) {
       tempDataFom = sortedData[x + 1]
       sortedData[x + 1] = sortedData[x]
@@ -67,7 +67,7 @@ export default function totalSort(rankData:any, setRankRender:Function, sort:str
     sortedData.reverse()
   }
 
-  const tempArray = Array.from({ length: rankData.length }, (_, index) => index + 1);
+  const tempArray:number[] = Array.from({ length: rankData.length }, (_, index) => index + 1);
 
   let count:number = 0
   for(let i = 0; i < rankData.length - 1; i++) {
