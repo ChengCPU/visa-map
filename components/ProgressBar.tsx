@@ -17,7 +17,7 @@ const ProgressBar:React.FC<Props> = ({ verticalColumn, width, height, color, per
 
   return (
     <div style={{ width: width, height: height, color: color }}>
-      <CircularProgressbar 
+      <CircularProgressbar
       value={valueCalculation()}
       text={`${valueCalculation()}%`}
       styles={{

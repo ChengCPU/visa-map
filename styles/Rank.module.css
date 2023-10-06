@@ -39,12 +39,15 @@
 
 .progressBarDesktop {
   margin: 0px;
-  padding: 5px 4px 3px;
   width: 492px;
   height: 20px;
   position:relative;
   text-align: left;
   float: left;
+}
+
+.progressBarsContainer {
+  width: 500px;
 }
 
 .rank {
