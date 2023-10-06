@@ -100,11 +100,11 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
         </div>
         <div>
         <div className={styles.progressBarDesktop}>
-          <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
-          <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
-          <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
-          <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
-          <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} visaPolicyData={visaPolicyData} />
+          <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[5]} />
+          <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[4]} />
+          <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[3]} />
+          <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[2]} />
+          <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[1]} />
         </div>
         </div>
         <br/><br/>

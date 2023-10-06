@@ -2,10 +2,10 @@ interface Props {
   widthCalculation:Function;
   marginCalculation:Function;
   verticalColumn:number;
-  visaPolicyData:any;
+  count:number;
 }
 
-const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, visaPolicyData }) => {
+const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
   return (
     <>
     <div className={'evisa'}><style jsx>{`.evisa {
@@ -25,7 +25,7 @@ const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalCo
       position:absolute;
       user-select: none;
     }`}</style>
-    {(visaPolicyData[verticalColumn]?.[4] == 0) ? null : visaPolicyData[verticalColumn]?.[4]}</p>
+    {(count == 0) ? null : count}</p>
     </>
   )
 }

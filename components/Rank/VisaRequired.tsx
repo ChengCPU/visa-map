@@ -2,10 +2,10 @@ interface Props {
   widthCalculation:Function;
   marginCalculation:Function;
   verticalColumn:number;
-  visaPolicyData:any;
+  count:number;
 }
 
-const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, visaPolicyData }) => {
+const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
   return (
     <>
     <div className={'visaRequired'}><style jsx>{`.visaRequired {
@@ -25,7 +25,7 @@ const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, ver
       position:absolute;
       user-select: none;
     }`}</style>
-    {(visaPolicyData[verticalColumn]?.[5] == 0) ? null : visaPolicyData[verticalColumn]?.[5]}</p>
+    {(count == 0) ? null : count}</p>
     </>
   )
 }
