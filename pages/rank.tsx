@@ -95,10 +95,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
       <td>
       <div className={styles.progressBarsContainer}>
-        <div className={styles.textDiv}>
-          <p>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
-        </div>
-        <div>
+        <p className={styles.textDiv}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
         <div className={styles.progressBarDesktop}>
           <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[5]} />
           <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[4]} />
@@ -106,17 +103,14 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
           <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[2]} />
           <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[1]} />
         </div>
-        </div>
-        <br/><br/>
-        <div>
-        <div className={styles.textDiv}>
-        <p>{'Freedom of Movement: ' + visaPolicyData[verticalColumn]?.[7]}</p>
-        </div>
+        <br/>
+        <br/>
+        <br/>
+        <p className={styles.textDiv}>{'Freedom of Movement: ' + visaPolicyData[verticalColumn]?.[7]}</p>
         <div className={styles.progressBarDesktop}>
-          <FreedomOfMovement max={43} count={visaPolicyData[verticalColumn]?.[7]}/>
+          <FreedomOfMovement max={42.4} count={visaPolicyData[verticalColumn]?.[7]}/>
         </div>
-        </div>
-        </div>
+      </div>
       </td>
     </tr>
     )

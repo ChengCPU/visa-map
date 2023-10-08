@@ -39,6 +39,7 @@
 
 .progressBarDesktop {
   margin: 0px;
+  margin-top: 10px;
   width: 492px;
   height: 20px;
   position:relative;
