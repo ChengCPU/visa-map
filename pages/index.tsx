@@ -28,6 +28,7 @@ export default function Home({ mousePos, hover, setHover, countrySelect, priorit
     <Head>
       <title>Visa-map</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="shortcut icon" href="/favicon.png" />
     </Head>
     <Map
       setHover={setHover}
