@@ -2,7 +2,7 @@ import diffCalculation from './diffCalculation';
 import percentageCalculation from '../percentageCalculation';
 interface Select {selection:number,passport:null | string;}
 const colors:string[] = ['abkhaziaColor','afghanistanColor','albaniaColor','algeriaColor','americanSamoaColor','andorraColor','angolaColor','anguillaColor','antiguaAndBarbudaColor','argentinaColor','armeniaColor','artsakhColor','arubaColor','ascensionIslandColor','australiaColor','austriaColor','azerbaijanColor','bahamasColor','bahrainColor','bangladeshColor','barbadosColor','belarusColor','belgiumColor','belizeColor','beninColor','bermudaColor','bhutanColor','boliviaColor','bonaireColor','bosniaAndHerzegovinaColor','botswanaColor','brazilColor','britishIndianOceanTerritoryColor','britishVirginIslandsColor','bruneiColor','bulgariaColor','burkinaFasoColor','burundiColor','cambodiaColor','cameroonColor','canadaColor','capeVerdeColor','caymanIslandsColor','centralAfricanRepublicColor','chadColor','chileColor','chinaColor','colombiaColor','comorosColor','cookIslandsColor','costaRicaColor','croatiaColor','cubaColor','curacaoColor','cyprusColor','czechRepublicColor','democraticRepublicOfTheCongoColor','denmarkColor','djiboutiColor','dominicaColor','dominicanRepublicColor','eastTimorColor','ecuadorColor','egyptColor','elSalvadorColor','equatorialGuineaColor','eritreaColor','estoniaColor','eswatiniColor','ethiopiaColor','falklandIslandsColor','faroeIslandsColor','fijiColor','finlandColor','franceColor','frenchGuianaColor','frenchPolynesiaColor','gabonColor','gambiaColor','georgiaColor','germanyColor','ghanaColor','gibraltarColor','greeceColor','greenlandColor','grenadaColor','guadeloupeColor','guamColor','guatemalaColor','guineaColor','guineaBissauColor','guyanaColor','haitiColor','hondurasColor','hongKongColor','hungaryColor','icelandColor','indiaColor','indonesiaColor','iranColor','iraqColor','irelandColor','israelColor','italyColor','ivoryCoastColor','jamaicaColor','janMayenColor','japanColor','jordanColor','kazakhstanColor','kenyaColor','kiribatiColor','kosovoColor','kuwaitColor','kyrgyzstanColor','laosColor','latviaColor','lebanonColor','lesothoColor','liberiaColor','libyaColor','liechtensteinColor','lithuaniaColor','luxembourgColor','macaoColor','madagascarColor','malawiColor','malaysiaColor','maldivesColor','maliColor','maltaColor','marshallIslandsColor','martiniqueColor','mauritaniaColor','mauritiusColor','mayotteColor','mexicoColor','micronesiaColor','moldovaColor','monacoColor','mongoliaColor','montenegroColor','montserratColor','moroccoColor','mozambiqueColor','myanmarColor','namibiaColor','nauruColor','nepalColor','netherlandsColor','newCaledoniaColor','newZealandColor','nicaraguaColor','nigerColor','nigeriaColor','niueColor','northernCyprusColor','northernMarianaIslandsColor','northKoreaColor','northMacedoniaColor','norwayColor','omanColor','pakistanColor','palauColor','palestineColor','panamaColor','papuaNewGuineaColor','paraguayColor','peruColor','philippinesColor','pitcairnIslandsColor','polandColor','portugalColor','qatarColor','republicOfTheCongoColor','reunionColor','romaniaColor','russiaColor','rwandaColor','sabaColor','saintBarthelemyColor','saintHelenaColor','saintKittsAndNevisColor','saintLuciaColor','saintMartinColor','saintPierreAndMiquelonColor','saintVincentAndTheGrenadinesColor','samoaColor','sanMarinoColor','saoTomeAndPrincipeColor','saudiArabiaColor','senegalColor','serbiaColor','seychellesColor','sierraLeoneColor','singaporeColor','sintEustatiusColor','sintMaartenColor','slovakiaColor','sloveniaColor','solomonIslandsColor','somaliaColor','somalilandColor','southAfricaColor','southKoreaColor','southOssetiaColor','southSudanColor','spainColor','sriLankaColor','sudanColor','surinameColor','svalbardColor','swedenColor','switzerlandColor','syriaColor','taiwanColor','tajikistanColor','tanzaniaColor','thailandColor','togoColor','tokelauColor','tongaColor','transnistriaColor','trinidadAndTobagoColor','tristanDaCunhaColor','tunisiaColor','turkeyColor','turkmenistanColor','turksAndCaicosColor','tuvaluColor','ugandaColor','ukraineColor','unitedArabEmiratesColor','unitedKingdomColor','unitedStatesColor','unitedStatesVirginIslandsColor','uruguayColor','uzbekistanColor','vanuatuColor','vaticanCityColor','venezuelaColor','vietnamColor','wallisAndFutunaColor','westernSaharaColor','yemenColor','zambiaColor','zimbabweColor']
-export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priority:object, setPriority:Function, selectArray:null | string[], diff:object, setDiff:Function, setPercentage:Function) {
+export default function mainCalculation(country:string, assignedColors:object[], setAssignedColors:Function, select:Select, priorityRef:any, selectArray:null | string[], diff:object, setDiff:Function, setPercentage:Function) {
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {
@@ -10,31 +10,31 @@ export default function mainCalculation(country:string, assignedColors:object[],
   for(let mainColorCalculation = 0; mainColorCalculation < assignedColors.length; mainColorCalculation++) {
   for(let subColorCalculation = 0; subColorCalculation < colors.length; subColorCalculation++) {
   switch(assignedColors[mainColorCalculation][colors[subColorCalculation]]) {
-    case 0: setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(255,20,147)'); break; //home country (pink)
-    case 1: setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(255,0,0)'); break; //permit required (red)
+    case 0: priorityRef.current[colors[subColorCalculation]] = 'rgb(255,20,147)'; break; //home country (pink)
+    case 1: priorityRef.current[colors[subColorCalculation]] = 'rgb(255,0,0)'; break; //permit required (red)
     case 2: //OECS freedom of movement (orange)
       for(let OECSfom = 0; OECSfom < assignedColors.length; OECSfom++) {
         switch(assignedColors[OECSfom][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
-        default: if(OECSfom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(255,145,0)')}}}
+        default: if(OECSfom == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(255,145,0)'}}}
     break;
     case 3: //MERCSOUR freedom of movement (dark green)
       for(let MERCSOURfom = 0; MERCSOURfom < assignedColors.length; MERCSOURfom++) {
         switch(assignedColors[MERCSOURfom][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
-        default: if(MERCSOURfom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(0,135,93)')}}}
+        default: if(MERCSOURfom == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(0,135,93)'}}}
     break;
     case 4: //EU freedom of movement (dark blue)
       for(let EUfom = 0; EUfom < assignedColors.length; EUfom++) {
         switch(assignedColors[EUfom][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
-        default: if(EUfom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(0,51,153)')}}}
+        default: if(EUfom == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(0,51,153)'}}}
     break;
     case 5: //GCC freedom of movement (brown)
       for(let GCCfom = 0; GCCfom < assignedColors.length; GCCfom++) {
         switch(assignedColors[GCCfom][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break; //home country (pink)
-        default: if(GCCfom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(153,123,61)')}}}
+        default: if(GCCfom == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(153,123,61)'}}}
     break;
     case 6: //freedom of movement (light pink)
       for(let fom = 0; fom < assignedColors.length; fom++) {
@@ -44,7 +44,7 @@ export default function mainCalculation(country:string, assignedColors:object[],
           case 'rgb(0,135,93)': break; //MERCSOUR freedom of movement (dark green)
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
-        default: if(fom == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(255,179,191)')}}}
+        default: if(fom == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(255,179,191)'}}}
     break;
     case 7: //visa free (green)
       for(let vf = 0; vf < assignedColors.length; vf++) {
@@ -55,7 +55,7 @@ export default function mainCalculation(country:string, assignedColors:object[],
           case 'rgb(0,51,153)': break; //EU freedom of movement (dark blue)
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
-        default: if(vf == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(50,205,50)')}}}
+        default: if(vf == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(50,205,50)'}}}
     break;
     case 8: //visa on arrival/evisa (light green)
       for(let voaEv = 0; voaEv < assignedColors.length; voaEv++) {
@@ -67,7 +67,7 @@ export default function mainCalculation(country:string, assignedColors:object[],
           case 'rgb(153,123,61)': break; //GCC freedom of movement (brown)
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
           case 'rgb(50,205,50)': break; //visa free (green)
-        default: if(voaEv == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(161,224,123)')}}}
+        default: if(voaEv == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(161,224,123)'}}}
     break;
     case 9: //visa on arrival (yellow)
       for(let voa = 0; voa < assignedColors.length; voa++) {
@@ -80,7 +80,7 @@ export default function mainCalculation(country:string, assignedColors:object[],
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
           case 'rgb(50,205,50)': break; //visa free (green)
           case 'rgb(161,224,123)': break; //visa on arrival/evisa (light green)
-        default: if(voa == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(255,255,92)')}}}
+        default: if(voa == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(255,255,92)'}}}
     break;
     case 10: //evisa (blue)
       for(let ev = 0; ev < assignedColors.length; ev++) {
@@ -99,8 +99,8 @@ export default function mainCalculation(country:string, assignedColors:object[],
                 case 'rgb(255,20,147)': break; //home country (pink)
                 case 'rgb(255,179,191)': break; //freedom of movement (light pink)
                 case 'rgb(50,205,50)': break; //visa free (green)
-              default: if(voaEvCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(161,224,123)')}}}
-        default: if(ev == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(135,206,250)')}}}
+              default: if(voaEvCalc == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(161,224,123)'}}}
+        default: if(ev == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(135,206,250)'}}}
     break;
     case 11: //Special permit/police check (purple)
       for(let sppc = 0; sppc < assignedColors.length; sppc++) {
@@ -115,7 +115,7 @@ export default function mainCalculation(country:string, assignedColors:object[],
           case 'rgb(161,224,123)': break; //visa on arrival/evisa (light green)
           case 'rgb(255,255,92)': break; //visa on arrival (yellow)
           case 'rgb(135,206,250)': break; //evisa (blue)
-        default: if(sppc == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(118,65,171)')}}}
+        default: if(sppc == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(118,65,171)'}}}
     break;
     case 12: //simplified visa (light grey)
       for(let sv = 0; sv < assignedColors.length; sv++) {
@@ -131,7 +131,7 @@ export default function mainCalculation(country:string, assignedColors:object[],
           case 'rgb(255,255,92)': break; //visa on arrival (yellow)
           case 'rgb(135,206,250)': break; //evisa (blue)
           case 'rgb(118,65,171)': break; //Special permit/police check (purple)
-        default: if(sv == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(200,200,200)')}}}
+        default: if(sv == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(200,200,200)'}}}
     break;
     case 13: //confirmation required (black)
       for(let cr = 0; cr < assignedColors.length; cr++) {
@@ -148,7 +148,7 @@ export default function mainCalculation(country:string, assignedColors:object[],
           case 'rgb(135,206,250)': break; //evisa (blue)
           case 'rgb(118,65,171)': break; //Special permit/police check (purple)
           case 'rgb(200,200,200)': break; //simplified visa (light grey)
-          case 'rgb(149,150,150)': setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(0,0,0)'); break;
+          case 'rgb(149,150,150)': priorityRef.current[colors[subColorCalculation]] = 'rgb(0,0,0)'; break;
           case 14:
             for(let crCalc = 0; crCalc < assignedColors.length; crCalc++) {
               switch(assignedColors[crCalc][colors[subColorCalculation]]) {
@@ -164,8 +164,8 @@ export default function mainCalculation(country:string, assignedColors:object[],
                 case 'rgb(135,206,250)': break; //evisa (blue)
                 case 'rgb(118,65,171)': break; //Special permit/police check (purple)
                 case 'rgb(200,200,200)': break; //simplified visa (light grey)
-              default: if(crCalc == assignedColors.length - 1) {setPriority(priority, priority[colors[subColorCalculation]] = 'rgb(150,150,150)')}}}}}
+              default: if(crCalc == assignedColors.length - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(150,150,150)'}}}}}
 break;}}}
 diffCalculation(selectArray, assignedColors, diff, setDiff)
-percentageCalculation(priority, setPercentage)
+percentageCalculation(priorityRef, setPercentage)
 })}

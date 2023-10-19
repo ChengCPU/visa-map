@@ -15,7 +15,7 @@ interface Props {
   setToggle:Function;
   selectArray:null | string[];
   setSelectArray:Function;
-  setPriority:Function;
+  priorityRef:any;
   setAssignedColors:Function;
   setDiff:Function;
   percentage:number;
@@ -31,7 +31,7 @@ const CustomizedDrawer = styled(Drawer)`
   }
 `
 
-const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, select, setSelect, toggle, setToggle, selectArray, setSelectArray, setPriority, setAssignedColors, setDiff, percentage, setPercentage, selectorLoad, setTempPriority, setTempDiff }) => {
+const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, select, setSelect, toggle, setToggle, selectArray, setSelectArray, priorityRef, setAssignedColors, setDiff, percentage, setPercentage, selectorLoad, setTempPriority, setTempDiff }) => {
   return (
     <>
     <CustomizedDrawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
@@ -48,7 +48,7 @@ const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, select, setSelect
         setSelect={setSelect}
         selectArray={selectArray}
         setSelectArray={setSelectArray}
-        setPriority={setPriority}
+        priorityRef={priorityRef}
         setAssignedColors={setAssignedColors}
         setDiff={setDiff}
         percentage={percentage}

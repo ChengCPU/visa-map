@@ -15,10 +15,10 @@ interface Props {
   mousePos:number | boolean[];
   hover:boolean;
   countrySelect:string;
-  priority:any;
+  priorityRef:any;
 }
 
-const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priority }) => {
+const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }) => {
 
   const { language } = useContext(LanguageContext)
 
@@ -108,8 +108,8 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priority }) =
             <td>
               <p>{flags[countries.indexOf(countrySelect)] + ' ' + languageCaculation2()[countries.indexOf(countrySelect)]?.charAt(0).toUpperCase() + languageCaculation2()[countries.indexOf(countrySelect)]?.slice(1)}</p>
               <div className={'legend'}>
-                <Rectangle color={priority[countrySelect + 'Color']}/>
-                <p>{rgbToText(priority[countrySelect + 'Color'])}</p>
+                <Rectangle color={priorityRef.current[countrySelect + 'Color']}/>
+                <p>{rgbToText(priorityRef.current[countrySelect + 'Color'])}</p>
               </div>
             </td>
           </tr>

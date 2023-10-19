@@ -7,19 +7,18 @@ interface Props {
   hover:boolean;
   setHover:Function;
   countrySelect:string;
-  priority:any;
-  setPriority:Function;
+  priorityRef:any;
   setSelectorLoad:Function;
   tempPriority:any;
   tempDiff:any;
   setDiff:Function;
 }
 
-export default function Home({ mousePos, hover, setHover, countrySelect, priority, setPriority, setSelectorLoad, tempPriority, tempDiff, setDiff }:Props) {
+export default function Home({ mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriority, tempDiff, setDiff }:Props) {
 
   useEffect(() => {
     setSelectorLoad(true)
-    setPriority(tempPriority)
+    priorityRef.current = tempPriority
     setDiff(tempDiff)
   })
 
@@ -37,7 +36,7 @@ export default function Home({ mousePos, hover, setHover, countrySelect, priorit
       mousePos={mousePos}
       hover={hover}
       countrySelect={countrySelect}
-      priority={priority}
+      priorityRef={priorityRef}
     />
     </>
   )
