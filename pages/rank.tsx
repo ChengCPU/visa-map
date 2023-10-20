@@ -21,7 +21,6 @@ for(let passportCount = 0; passportCount < passportsArray.length; passportCount+
 interface Props {
   visaPolicyData:any;
   rankRender:any;
-  setVisaPolicyData:Function;
   setRankRender:Function;
   sortBy:string;
   setSortBy:Function;
@@ -29,7 +28,7 @@ interface Props {
   setSelectorLoad:Function;
 }
 
-const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, setRankRender, sortBy, setSortBy, setSelectorLoad }) => {
+const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setRankRender, sortBy, setSortBy, setSelectorLoad }) => {
 
   useEffect(() => {
     setSelectorLoad(false);
@@ -55,28 +54,28 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       case 'visaRequired':
         return 500
       case 'evisa':
-        return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + (visaPolicyData[verticalColumn]?.[3] * 2) + (visaPolicyData[verticalColumn]?.[4] * 2)
+        return (visaPolicyData.current[verticalColumn]?.[1] * 2) + (visaPolicyData.current[verticalColumn]?.[2] * 2) + (visaPolicyData.current[verticalColumn]?.[3] * 2) + (visaPolicyData.current[verticalColumn]?.[4] * 2)
       case 'visaOnArrival':
-        return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + (visaPolicyData[verticalColumn]?.[3] * 2)
+        return (visaPolicyData.current[verticalColumn]?.[1] * 2) + (visaPolicyData.current[verticalColumn]?.[2] * 2) + (visaPolicyData.current[verticalColumn]?.[3] * 2)
       case 'visaOnArrivalEvisa':
-        if(visaPolicyData[verticalColumn]?.[2] == 0) {return 0}
-        if(visaPolicyData[verticalColumn]?.[2] < 7) {return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + 2}
-        return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2)
+        if(visaPolicyData.current[verticalColumn]?.[2] == 0) {return 0}
+        if(visaPolicyData.current[verticalColumn]?.[2] < 7) {return (visaPolicyData.current[verticalColumn]?.[1] * 2) + (visaPolicyData.current[verticalColumn]?.[2] * 2) + 2}
+        return (visaPolicyData.current[verticalColumn]?.[1] * 2) + (visaPolicyData.current[verticalColumn]?.[2] * 2)
       case 'visaFree':
-        return visaPolicyData[verticalColumn]?.[1] * 2
+        return visaPolicyData.current[verticalColumn]?.[1] * 2
     }
   }
 
   const marginCalculation = (visaPolicy:string, verticalColumn:any) => {
     switch(visaPolicy) {
       case 'visaRequired':
-        return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + (visaPolicyData[verticalColumn]?.[3] * 2) + (visaPolicyData[verticalColumn]?.[4] * 2) + 2
+        return (visaPolicyData.current[verticalColumn]?.[1] * 2) + (visaPolicyData.current[verticalColumn]?.[2] * 2) + (visaPolicyData.current[verticalColumn]?.[3] * 2) + (visaPolicyData.current[verticalColumn]?.[4] * 2) + 2
       case 'evisa':
-        return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + (visaPolicyData[verticalColumn]?.[3] * 2) + 2
+        return (visaPolicyData.current[verticalColumn]?.[1] * 2) + (visaPolicyData.current[verticalColumn]?.[2] * 2) + (visaPolicyData.current[verticalColumn]?.[3] * 2) + 2
       case 'visaOnArrival':
-        return (visaPolicyData[verticalColumn]?.[1] * 2) + (visaPolicyData[verticalColumn]?.[2] * 2) + 2
+        return (visaPolicyData.current[verticalColumn]?.[1] * 2) + (visaPolicyData.current[verticalColumn]?.[2] * 2) + 2
       case 'visaOnArrivalEvisa':
-        return (visaPolicyData[verticalColumn]?.[1] * 2) + 1
+        return (visaPolicyData.current[verticalColumn]?.[1] * 2) + 1
     }
   }
 
@@ -95,20 +94,20 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
       <td>
       <div className={styles.progressBarsContainer}>
-        <p className={styles.textDiv}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
+        <p className={styles.textDiv}>{'Total: ' + visaPolicyData.current[verticalColumn]?.[6]}</p>
         <div className={styles.progressBarDesktop}>
-          <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[5]} />
-          <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[4]} />
-          <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[3]} />
-          <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[2]} />
-          <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData[verticalColumn]?.[1]} />
+          <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData.current[verticalColumn]?.[5]} />
+          <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData.current[verticalColumn]?.[4]} />
+          <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData.current[verticalColumn]?.[3]} />
+          <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData.current[verticalColumn]?.[2]} />
+          <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={visaPolicyData.current[verticalColumn]?.[1]} />
         </div>
         <br/>
         <br/>
         <br/>
-        <p className={styles.textDiv}>{'Freedom of Movement: ' + visaPolicyData[verticalColumn]?.[7]}</p>
+        <p className={styles.textDiv}>{'Freedom of Movement: ' + visaPolicyData.current[verticalColumn]?.[7]}</p>
         <div className={styles.progressBarDesktop}>
-          <FreedomOfMovement max={42.4} count={visaPolicyData[verticalColumn]?.[7]}/>
+          <FreedomOfMovement max={42.4} count={visaPolicyData.current[verticalColumn]?.[7]}/>
         </div>
       </div>
       </td>
@@ -123,8 +122,8 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
         <p className={styles.rank}>{order?.[verticalColumn]}</p>
         <Passport image={(passports[rankRender?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRender?.[verticalColumn]?.[0]]}/>
         <p className={styles.text}>{textRender(verticalColumn)}</p>
-        <p className={styles.text}>{'Total: ' + visaPolicyData[verticalColumn]?.[6]}</p>
-        <p className={styles.text}>{'Freedom of Movement: ' + visaPolicyData[verticalColumn]?.[7]}</p>
+        <p className={styles.text}>{'Total: ' + visaPolicyData.current[verticalColumn]?.[6]}</p>
+        <p className={styles.text}>{'Freedom of Movement: ' + visaPolicyData.current[verticalColumn]?.[7]}</p>
       </td>
       {
       (width.width <= 800) ?
@@ -134,11 +133,11 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
           <tbody>
             <tr>
               <td>
-                <p>{visaPolicyData[verticalColumn]?.[1]}</p>
-                <p>{visaPolicyData[verticalColumn]?.[2]}</p>
-                <p>{visaPolicyData[verticalColumn]?.[3]}</p>
-                <p>{visaPolicyData[verticalColumn]?.[4]}</p>
-                <p>{visaPolicyData[verticalColumn]?.[5]}</p>
+                <p>{visaPolicyData.current[verticalColumn]?.[1]}</p>
+                <p>{visaPolicyData.current[verticalColumn]?.[2]}</p>
+                <p>{visaPolicyData.current[verticalColumn]?.[3]}</p>
+                <p>{visaPolicyData.current[verticalColumn]?.[4]}</p>
+                <p>{visaPolicyData.current[verticalColumn]?.[5]}</p>
               </td>
               <td>
                 <p>🟩 Visa-free</p>
@@ -170,7 +169,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
       <SortBy
         sortBy={sortBy}
         setSortBy={setSortBy}
-        setVisaPolicyData={setVisaPolicyData}
+        visaPolicyData={visaPolicyData}
         setRankRender={setRankRender}
       />
     </div>
@@ -191,7 +190,7 @@ const Rank:React.FC<Props> = ({ visaPolicyData, rankRender, setVisaPolicyData, s
           <SortBy
             sortBy={sortBy}
             setSortBy={setSortBy}
-            setVisaPolicyData={setVisaPolicyData}
+            visaPolicyData={visaPolicyData}
             setRankRender={setRankRender}
           />
         </td>
