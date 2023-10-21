@@ -10,15 +10,15 @@ interface Props {
   priorityRef:any;
   setSelectorLoad:Function;
   tempPriorityRef:any;
-  tempDiff:any;
+  tempDiffRef:any;
   diffRef:any;
 }
 
-export default function Home({ mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiff, diffRef }:Props) {
+export default function Home({ mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef }:Props) {
 
   useEffect(() => {
     priorityRef.current = tempPriorityRef.current
-    diffRef.current = tempDiff
+    diffRef.current = tempDiffRef.current
     setSelectorLoad(true)
   })
 
