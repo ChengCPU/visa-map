@@ -36,7 +36,8 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
   const width = useContext(WidthContext)
   const { language } = useContext(LanguageContext)
 
-  const order = rankRef.current[[rankRef.current].length - 1]
+  const rankRefLength = rankRef.current.length - 1
+  const order = rankRef.current[rankRefLength]
 
   const languageCaculation = () => {
     switch(language){
