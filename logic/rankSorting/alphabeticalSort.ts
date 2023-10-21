@@ -1,4 +1,4 @@
-export default function alphabeticalSort(rankData:any, setRankRender:Function, sort:string) {
+export default function alphabeticalSort(rankData:any, rankRef:any, sort:string) {
   const unsortedData:(string | number)[][] = rankData
   if(sort == 'Ascending') {
     unsortedData.reverse()
@@ -8,5 +8,5 @@ export default function alphabeticalSort(rankData:any, setRankRender:Function, s
 
   unsortedData.push(tempArray)
 
-  setRankRender(rankData)
+  rankRef.current = rankData
 }

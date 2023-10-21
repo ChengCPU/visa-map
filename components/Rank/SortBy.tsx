@@ -7,8 +7,7 @@ import fetchSortData from '../../logic/rankSorting/fetchSortData';
 interface Props {
   sortBy:string;
   setSortBy:Function;
-  rankRender:any;
-  setRankRender:Function;
+  rankRef:any;
 }
 
 const CustomizedButtonDesktop = styled(Button)`
@@ -27,7 +26,7 @@ const sortArrayES = ['Ordenar por: Total (Descendente)', 'Ordenar por: Total (As
 const sortArrayPT = ['Ordenar por: Total (Decrescente)', 'Ordenar por: Total (Crescente)', 'Ordenar por: Sem Visto (Decrescente)', 'Ordenar por: Sem Visto (Crescente)', 'Ordenar por: Ordem alfabética (Decrescente)', 'Ordenar por: Ordem alfabética (Crescente)', 'Ordenar por: Liberdade de movimento (Decrescente)', 'Ordenar por: Liberdade de movimento (Crescente)']
 const sortArrayFR = ['Trier par: Total (Décroissant)', 'Trier par: Total (Croissant)', 'Trier par: Sans Visa (Décroissant)', 'Trier par: Sans Visa (Croissant)', 'Trier par: Ordre alphabétique (Décroissant)', 'Trier par: Ordre alphabétique (Croissant)', 'Trier par: Liberté de mouvement (Décroissant)', 'Trier par: Liberté de mouvement (Croissant)']
 
-const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRender, setRankRender }) => {
+const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef }) => {
 
   const width = useContext(WidthContext)
   const { language } = useContext(LanguageContext)
@@ -52,14 +51,14 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRender, setRankRender }
   const menuItemOnClick = (prop) => {
     setSortBy(prop)
     switch(prop) {
-      case 'Sort by: Total (Descending)': fetchSortData(rankRender, setRankRender, 1, 'Descending'); break;
-      case 'Sort by: Total (Ascending)': fetchSortData(rankRender, setRankRender, 1, 'Ascending'); break;
-      case 'Sort by: Visa-free (Descending)': fetchSortData(rankRender, setRankRender, 2, 'Descending'); break;
-      case 'Sort by: Visa-free (Ascending)': fetchSortData(rankRender, setRankRender, 2, 'Ascending'); break;
-      case 'Sort by: Alphabetical order (Descending)': fetchSortData(rankRender, setRankRender, 3, 'Descending'); break;
-      case 'Sort by: Alphabetical order (Ascending)': fetchSortData(rankRender, setRankRender, 3, 'Ascending'); break;
-      case 'Sort by: Freedom of Movement (Descending)': fetchSortData(rankRender, setRankRender, 4, 'Descending'); break;
-      case 'Sort by: Freedom of Movement (Ascending)': fetchSortData(rankRender, setRankRender, 4, 'Ascending'); break;
+      case 'Sort by: Total (Descending)': fetchSortData(rankRef, 1, 'Descending'); break;
+      case 'Sort by: Total (Ascending)': fetchSortData(rankRef, 1, 'Ascending'); break;
+      case 'Sort by: Visa-free (Descending)': fetchSortData(rankRef, 2, 'Descending'); break;
+      case 'Sort by: Visa-free (Ascending)': fetchSortData(rankRef, 2, 'Ascending'); break;
+      case 'Sort by: Alphabetical order (Descending)': fetchSortData(rankRef, 3, 'Descending'); break;
+      case 'Sort by: Alphabetical order (Ascending)': fetchSortData(rankRef, 3, 'Ascending'); break;
+      case 'Sort by: Freedom of Movement (Descending)': fetchSortData(rankRef, 4, 'Descending'); break;
+      case 'Sort by: Freedom of Movement (Ascending)': fetchSortData(rankRef, 4, 'Ascending'); break;
     }
     handleClose()
   }

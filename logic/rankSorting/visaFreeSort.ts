@@ -1,4 +1,4 @@
-export default function visaFreeSort(rankData:any, setRankRender:Function, sort:string) {
+export default function visaFreeSort(rankData:any, rankRef:any, sort:string) {
   const unsortedData:(string | number)[][] = rankData
   let tempDataVf:(string | number)[]
   let tempDataFom:(string | number)[]
@@ -70,5 +70,5 @@ export default function visaFreeSort(rankData:any, setRankRender:Function, sort:
 
   sortedData.push(tempArray)
 
-  setRankRender(sortedData)
+  rankRef.current = sortedData
 }

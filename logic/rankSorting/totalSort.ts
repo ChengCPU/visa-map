@@ -1,4 +1,4 @@
-export default function totalSort(rankData:any, setRankRender:Function, sort:string) {
+export default function totalSort(rankData:any, rankRef:any, sort:string) {
   const unsortedData:(string | number)[][] = rankData
 
   for(let i = 0; i < unsortedData.length; i++) {
@@ -86,5 +86,5 @@ export default function totalSort(rankData:any, setRankRender:Function, sort:str
 
   sortedData.push(tempArray)
   
-  setRankRender(sortedData)
+  rankRef.current = sortedData
 }

@@ -1,4 +1,4 @@
-export default function freedomOfMovementSort(rankData:any, setRankRender:Function, sort:string) {
+export default function freedomOfMovementSort(rankData:any, rankRef:any, sort:string) {
   const unsortedData:(string | number)[][] = rankData
 
   for(let i = 0; i < unsortedData.length; i++) {
@@ -85,5 +85,5 @@ export default function freedomOfMovementSort(rankData:any, setRankRender:Functi
 
   sortedData.push(tempArray)
   
-  setRankRender(sortedData)
+  rankRef.current = sortedData
 }
