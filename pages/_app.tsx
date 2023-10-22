@@ -244,7 +244,7 @@ function MyApp({ Component, pageProps }) {
   const [sortBy, setSortBy] = useState<string>('Sort by: Total (Descending)')
   const [percentage, setPercentage] = useState<number>(0)
   const [width, setWidth] = useState(0)
-  const mousePosRef = useRef<any>([])
+  const [mousePos, setMousePos] = useState<number[]>([])
   const [hover, setHover] = useState<boolean>(false)
   const [countrySelect, setCountrySelect] = useState<string>('')
   const [selectorLoad, setSelectorLoad] = useState<boolean>(true);
@@ -261,7 +261,7 @@ function MyApp({ Component, pageProps }) {
     setWidth(document.body.clientWidth - 2)
     fetchSortData(rankRef, 1, 'Descending')
 
-    const handleMouseMove = (event:any) => {mousePosRef.current = [event.clientX, event.clientY]}
+    const handleMouseMove = (event) => {setMousePos([event.clientX, event.clientY])}
     window.addEventListener('mousemove', handleMouseMove)
 
     return () => {
@@ -296,7 +296,7 @@ function MyApp({ Component, pageProps }) {
         rankRef={rankRef}
         sortBy={sortBy}
         setSortBy={setSortBy}
-        mousePosRef={mousePosRef}
+        mousePos={mousePos}
         hover={hover}
         setHover={setHover}
         priorityRef={priorityRef}
