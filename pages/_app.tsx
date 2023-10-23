@@ -8,7 +8,6 @@ import { useState, useEffect, useRef } from 'react'
 import { Drawer } from '@mui/material'
 //logic imports
 import reset from '../logic/reset'
-import selectArrayCalculation from '../logic/selectArrayCalculation'
 import mainCalculation from '../logic/visaPolicyCalculation/mainCalculation'
 import subCalculation from '../logic/visaPolicyCalculation/subCalculation'
 import fetchSortData from '../logic/rankSorting/fetchSortData'
