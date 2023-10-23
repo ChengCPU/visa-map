@@ -234,7 +234,6 @@ function MyApp({ Component, pageProps }) {
   const [secondToggle, setSecondToggle] = useState<boolean>(false) //used by reset function to trigger secondToggle useEffect
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
   const [select, setSelect] = useState<Select>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
-  const [selectArray, setSelectArray] = useState<null | string[]>([null,null,null,null,null,null,null,null,null,null,null]) // keeps track of which passport is currently selected
   const [assignedColors, setAssignedColors] = useState<object[]>([color,color,color,color,color,color,color,color,color,color,color]) // keeps track of each color for each passport
   const [percentage, setPercentage] = useState<number>(0)
   const [width, setWidth] = useState(0)
@@ -244,6 +243,7 @@ function MyApp({ Component, pageProps }) {
   const [language, setLanguage] = useState<string>('🇬🇧EN')
   const [countrySelect, setCountrySelect] = useState<string>('')
   const [selectorLoad, setSelectorLoad] = useState<boolean>(true)
+  const selectArrayRef = useRef<any>([null,null,null,null,null,null,null,null,null,null,null])
   const priorityRef = useRef<any>(color) //priority is the color that is passed onto each country component as context
   const tempPriorityRef = useRef<any>(color)
   const rankRef = useRef<any>([])
@@ -273,14 +273,14 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   useEffect(() => {
-    if(selectArray[select.selection] != null && selectArray[select.selection] != select.passport) { reset(setAssignedColors, priorityRef, tempPriorityRef, secondToggle, setSecondToggle, diffRef, tempDiffRef); return }
-    selectArrayCalculation(selectArray, setSelectArray, select)
-    if(selectArray[select.selection] != null) { mainCalculation(selectArray[select.selection], assignedColors, setAssignedColors, select, priorityRef, selectArray, diffRef, setPercentage) }
+    if(selectArrayRef.current[select.selection] != null && selectArrayRef.current[select.selection] != select.passport) { reset(setAssignedColors, priorityRef, tempPriorityRef, secondToggle, setSecondToggle, diffRef, tempDiffRef); return }
+    selectArrayRef.current[select.selection] = select.passport
+    if(selectArrayRef.current[select.selection] != null) { mainCalculation(selectArrayRef.current[select.selection], assignedColors, setAssignedColors, select, priorityRef, selectArrayRef, diffRef, setPercentage) }
   }, [toggle])
 
   useEffect(() => {
-    subCalculation(selectArray, assignedColors, setAssignedColors, priorityRef, diffRef, setPercentage)
-    selectArrayCalculation(selectArray, setSelectArray, select)
+    subCalculation(selectArrayRef, assignedColors, setAssignedColors, priorityRef, diffRef, setPercentage)
+    selectArrayRef.current[select.selection] = select.passport
   }, [secondToggle])
 
   return (
@@ -291,7 +291,7 @@ function MyApp({ Component, pageProps }) {
     <LanguageContext.Provider value={languageProvider}>
     <WidthContext.Provider value={widthProvider}>
       <Component {...pageProps}
-        selectArray={selectArray}
+        selectArrayRef={selectArrayRef}
         assignedColors={assignedColors}
         rankRef={rankRef}
         sortBy={sortBy}
@@ -314,8 +314,7 @@ function MyApp({ Component, pageProps }) {
         setSelect={setSelect}
         toggle={toggle}
         setToggle={setToggle}
-        selectArray={selectArray}
-        setSelectArray={setSelectArray}
+        selectArrayRef={selectArrayRef}
         priorityRef={priorityRef}
         tempPriorityRef={tempPriorityRef}
         setAssignedColors={setAssignedColors}

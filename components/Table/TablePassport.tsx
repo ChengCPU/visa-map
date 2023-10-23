@@ -3,16 +3,16 @@ import { PassportContext } from '../../logic/context/PassportContext';
 import Passport from '../Selector/Passport';
 import TablePassportSVG from './TablePassportSVG';
 interface Props {
-  selectArray:null | string[];
+  selectArrayRef:any;
   horizontalColumn:number;
 }
 
-const TablePassport:React.FC<Props> = ({ selectArray, horizontalColumn }) => {
+const TablePassport:React.FC<Props> = ({ selectArrayRef, horizontalColumn }) => {
 
   const passports = useContext(PassportContext) //useContext makes the passport imports available through passports variable
 
   const passportCalculation = () => {
-    switch(selectArray[horizontalColumn]) { //the [num] prop is a number ranging from 0-9 that is representative of each 10 selector button components
+    switch(selectArrayRef.current[horizontalColumn]) { //the [num] prop is a number ranging from 0-9 that is representative of each 10 selector button components
       case "abkhazia" : return passports.abkhazia
       case "afghanistan": return passports.afghanistan
       case "albania": return passports.albania
@@ -223,7 +223,7 @@ const TablePassport:React.FC<Props> = ({ selectArray, horizontalColumn }) => {
   }
 
   return (
-    (selectArray[horizontalColumn] == null) ? <TablePassportSVG /> : <Passport image={passportCalculation()}/>
+    (selectArrayRef.current[horizontalColumn] == null) ? <TablePassportSVG /> : <Passport image={passportCalculation()}/>
   )
 }
 

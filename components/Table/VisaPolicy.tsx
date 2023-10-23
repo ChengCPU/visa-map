@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { LanguageContext } from '../../logic/context/LanguageContext';
 interface Props {
   assignedColors:object[];
-  selectArray:null | string[];
+  selectArrayRef:any;
   verticalColumn:number;
   horizontalColumn:number;
 }
@@ -12,7 +12,7 @@ const namesES = ['País de origen', 'Permiso requerido', 'OECS libertad de movim
 const namesPT = ['País natal', 'Permissão necessária', 'OECS liberdade de movimento', 'MERCOSUR liberdade de movimento', 'EU liberdade de movimento', 'GCC liberdade de movimento', ' Liberdade de movimento', 'Sem visto', 'Visto na chegada/Visto eletrônico', 'Visto na chegada', 'Visto eletrônico', 'Permissão especial/Verificação de antecedentes', 'Visto simplificado', 'Necessária confirmação', 'Visto necessário']
 const namesFR = ['Pays natal', 'Permis requis', 'OECS liberté de mouvement', 'MERCOSUR liberté de mouvement', 'EU liberté de mouvement', 'GCC liberté de mouvement', 'Liberté de mouvement', 'Sans visa', 'Visa à l\'arrivée/Visa électronique', 'Visa à l\'arrivée', 'Visa électronique', 'Permis spécial/Vérification des antécédents', 'Visa simplifié', 'Confirmation requise', 'Visa requis']
 
-const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, verticalColumn, horizontalColumn }) => {
+const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArrayRef, verticalColumn, horizontalColumn }) => {
 
   const { language } = useContext(LanguageContext)
 
@@ -73,10 +73,10 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArray, verticalColum
         padding: 10px;
         color: ${(assignedColors[horizontalColumn]?.[colors[verticalColumn]] == 13) ? '#FFFFFF' : '#222222'};
         border: 1px solid #222222;
-        background-color: ${(selectArray[horizontalColumn] != null) ? colorCalculation() : '#333333'};
+        background-color: ${(selectArrayRef.current[horizontalColumn] != null) ? colorCalculation() : '#333333'};
       }
     `}</style>
-    {(selectArray[horizontalColumn] != null) ? visaPolicyCalculation(verticalColumn) : null}
+    {(selectArrayRef.current[horizontalColumn] != null) ? visaPolicyCalculation(verticalColumn) : null}
     </td>
   )
 }

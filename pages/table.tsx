@@ -12,12 +12,12 @@ const horizontalColumn:number[] = [0,1,2,3,4,5,6,7,8,9]
 let verticalColumn:number[] = []
 for(let countryCount = 0; countryCount < countriesEN.length; countryCount++) {verticalColumn.push(countryCount)}
 interface Props {
-	selectArray:null | string[];
+	selectArrayRef:any;
   assignedColors:object[];
   setSelectorLoad:Function;
 }
 
-const Table:React.FC<Props> = ({ selectArray, assignedColors, setSelectorLoad }) => {
+const Table:React.FC<Props> = ({ selectArrayRef, assignedColors, setSelectorLoad }) => {
 
   useEffect(() => {
     setSelectorLoad(true);
@@ -35,7 +35,7 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, setSelectorLoad })
   }
 
   const renderPassports = (horizontalColumn: number[]) => {
-    return horizontalColumn.map(horizontalColumn => (selectArray[horizontalColumn] != null || horizontalColumn == 0) ? <th key={horizontalColumn}><TablePassport selectArray={selectArray} horizontalColumn={horizontalColumn}/></th> : null)
+    return horizontalColumn.map(horizontalColumn => (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) ? <th key={horizontalColumn}><TablePassport selectArrayRef={selectArrayRef} horizontalColumn={horizontalColumn}/></th> : null)
   }
 
   const renderTables = (verticalColumn:number[], horizontalColumn:number[], flags:string[]) => {
@@ -48,11 +48,11 @@ const Table:React.FC<Props> = ({ selectArray, assignedColors, setSelectorLoad })
       `}</style>
       <Country country={languageCaculation()[verticalColumn]} flag={flags[verticalColumn]} />
       {horizontalColumn.map(horizontalColumn =>
-        (selectArray[horizontalColumn] != null || horizontalColumn == 0) ?
+        (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) ?
         <VisaPolicy
           key={horizontalColumn}
           assignedColors={assignedColors}
-          selectArray={selectArray}
+          selectArrayRef={selectArrayRef}
           verticalColumn={verticalColumn}
           horizontalColumn={horizontalColumn}
         />
