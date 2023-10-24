@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../../logic/context/LanguageContext';
 interface Props {
-  assignedColors:object[];
+  assignedColorsRef:any;
   selectArrayRef:any;
   verticalColumn:number;
   horizontalColumn:number;
@@ -12,7 +12,7 @@ const namesES = ['País de origen', 'Permiso requerido', 'OECS libertad de movim
 const namesPT = ['País natal', 'Permissão necessária', 'OECS liberdade de movimento', 'MERCOSUR liberdade de movimento', 'EU liberdade de movimento', 'GCC liberdade de movimento', ' Liberdade de movimento', 'Sem visto', 'Visto na chegada/Visto eletrônico', 'Visto na chegada', 'Visto eletrônico', 'Permissão especial/Verificação de antecedentes', 'Visto simplificado', 'Necessária confirmação', 'Visto necessário']
 const namesFR = ['Pays natal', 'Permis requis', 'OECS liberté de mouvement', 'MERCOSUR liberté de mouvement', 'EU liberté de mouvement', 'GCC liberté de mouvement', 'Liberté de mouvement', 'Sans visa', 'Visa à l\'arrivée/Visa électronique', 'Visa à l\'arrivée', 'Visa électronique', 'Permis spécial/Vérification des antécédents', 'Visa simplifié', 'Confirmation requise', 'Visa requis']
 
-const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArrayRef, verticalColumn, horizontalColumn }) => {
+const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, verticalColumn, horizontalColumn }) => {
 
   const { language } = useContext(LanguageContext)
 
@@ -26,7 +26,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArrayRef, verticalCo
   }
 
   const colorCalculation = () => {
-    switch(assignedColors[horizontalColumn]?.[colors[verticalColumn]]) {
+    switch(assignedColorsRef.current[horizontalColumn]?.[colors[verticalColumn]]) {
       case 0: return 'rgb(255,20,147)';
       case 1: return 'rgb(255,0,0)';
       case 2: return 'rgb(255,145,0)';
@@ -47,7 +47,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArrayRef, verticalCo
   }
 
   const visaPolicyCalculation = (main:number) => {
-    switch(assignedColors[horizontalColumn]?.[colors[verticalColumn]]) {
+    switch(assignedColorsRef.current[horizontalColumn]?.[colors[verticalColumn]]) {
       case 0: return languageCaculation(0);
       case 1: return languageCaculation(1);
       case 2: return languageCaculation(2);
@@ -71,7 +71,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColors, selectArrayRef, verticalCo
     <td className={'text'}><style jsx>{`
       .text {
         padding: 10px;
-        color: ${(assignedColors[horizontalColumn]?.[colors[verticalColumn]] == 13) ? '#FFFFFF' : '#222222'};
+        color: ${(assignedColorsRef.current[horizontalColumn]?.[colors[verticalColumn]] == 13) ? '#FFFFFF' : '#222222'};
         border: 1px solid #222222;
         background-color: ${(selectArrayRef.current[horizontalColumn] != null) ? colorCalculation() : '#333333'};
       }

@@ -13,11 +13,11 @@ let verticalColumn:number[] = []
 for(let countryCount = 0; countryCount < countriesEN.length; countryCount++) {verticalColumn.push(countryCount)}
 interface Props {
 	selectArrayRef:any;
-  assignedColors:object[];
+  assignedColorsRef:any;
   setSelectorLoad:Function;
 }
 
-const Table:React.FC<Props> = ({ selectArrayRef, assignedColors, setSelectorLoad }) => {
+const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad }) => {
 
   useEffect(() => {
     setSelectorLoad(true);
@@ -51,7 +51,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColors, setSelectorLoad
         (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) ?
         <VisaPolicy
           key={horizontalColumn}
-          assignedColors={assignedColors}
+          assignedColorsRef={assignedColorsRef}
           selectArrayRef={selectArrayRef}
           verticalColumn={verticalColumn}
           horizontalColumn={horizontalColumn}
