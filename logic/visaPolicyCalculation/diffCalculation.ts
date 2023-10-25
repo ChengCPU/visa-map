@@ -25,28 +25,56 @@ export default function diffCalculation(selectArrayRef:any, assignedColorsRef:an
     //Mercosur freedom of movement
     if(assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 3) {diffObject[countryCodes[x]] = 1}
     //EU freedom of movement
-    if(assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 4) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 4) {diffObject[countryCodes[x]] = 1}
     //GCC freedom of movement
     if(assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 5) {diffObject[countryCodes[x]] = 1}
     //Freedom of movement
-    if(assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 6) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[y()][colors[x]] == 6) {diffObject[countryCodes[x]] = 1}
     //visa free
-    if(assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 7) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[y()][colors[x]] == 7) {diffObject[countryCodes[x]] = 1}
     //visa on arrival/evisa
-    if(assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 8) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[y()][colors[x]] == 8) {diffObject[countryCodes[x]] = 1}
     //visa on arrival
-    if(assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 9) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[y()][colors[x]] == 9) {diffObject[countryCodes[x]] = 1}
     //evisa
-    if(assignedColorsRef.current[0][colors[x]] != 10 && assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 10) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 10 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 5 && assignedColorsRef.current[0][colors[x]] != 4 && assignedColorsRef.current[0][colors[x]] != 3 && assignedColorsRef.current[0][colors[x]] != 2 && assignedColorsRef.current[y()][colors[x]] == 10) {diffObject[countryCodes[x]] = 1}
     //special permit
-    if(assignedColorsRef.current[0][colors[x]] != 11 && assignedColorsRef.current[0][colors[x]] != 10 && assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 11) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 11 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 10 && assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[y()][colors[x]] == 11) {diffObject[countryCodes[x]] = 1}
     //simplified visa
-    if(assignedColorsRef.current[0][colors[x]] != 12 && assignedColorsRef.current[0][colors[x]] != 11 && assignedColorsRef.current[0][colors[x]] != 10 && assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 12) {diffObject[countryCodes[x]] = 1}
+    if(assignedColorsRef.current[0][colors[x]] != 12 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[0][colors[x]] != 11 && assignedColorsRef.current[0][colors[x]] != 10 && assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[y()][colors[x]] == 12) {diffObject[countryCodes[x]] = 1}
   }
 
   for(let j = 0; j < selectArrayRefLength; j++) {
     if(diffObject[countryCodes[colors.indexOf(selectArrayRef.current[j] + 'Color')]] == 1) {
       diffObject[countryCodes[colors.indexOf(selectArrayRef.current[j] + 'Color')]] = 0
+
+      if(selectArrayRef.current[j] == 'france') {
+        diffObject.PM = 0
+        diffObject.MF = 0
+        diffObject.BL = 0
+        diffObject.GP = 0
+        diffObject.MQ = 0
+        diffObject.GF = 0
+        diffObject.PF = 0
+        diffObject.YT = 0
+        diffObject.RE = 0
+        diffObject.NC = 0
+        diffObject.WF = 0
+        continue
+      }
+
+      if(selectArrayRef.current[j] == 'unitedStates') {
+        diffObject.AS = 0
+        diffObject.VI = 0
+        diffObject.GU = 0
+        diffObject.MP = 0
+        continue
+      }
+
+      if(selectArrayRef.current[j] == 'denmark') {
+        diffObject.GL = 0
+        diffObject.FO = 0
+      }
     }
   }
 
