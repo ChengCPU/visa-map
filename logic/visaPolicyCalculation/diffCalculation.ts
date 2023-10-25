@@ -44,5 +44,11 @@ export default function diffCalculation(selectArrayRef:any, assignedColorsRef:an
     if(assignedColorsRef.current[0][colors[x]] != 12 && assignedColorsRef.current[0][colors[x]] != 11 && assignedColorsRef.current[0][colors[x]] != 10 && assignedColorsRef.current[0][colors[x]] != 9 && assignedColorsRef.current[0][colors[x]] != 8 && assignedColorsRef.current[0][colors[x]] != 7 && assignedColorsRef.current[0][colors[x]] != 6 && assignedColorsRef.current[0][colors[x]] != 0 && assignedColorsRef.current[y()][colors[x]] == 12) {diffObject[countryCodes[x]] = 1}
   }
 
+  for(let j = 0; j < selectArrayRefLength; j++) {
+    if(diffObject[countryCodes[colors.indexOf(selectArrayRef.current[j] + 'Color')]] == 1) {
+      diffObject[countryCodes[colors.indexOf(selectArrayRef.current[j] + 'Color')]] = 0
+    }
+  }
+
   diffRef.current = diffObject
 }
