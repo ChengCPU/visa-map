@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { LanguageContext } from '../../logic/context/LanguageContext';
+import { useContext } from 'react'
+import { LanguageContext } from '../../logic/context/LanguageContext'
 interface Props {
   assignedColorsRef:any;
   selectArrayRef:any;

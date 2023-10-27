@@ -1,7 +1,7 @@
-import { Drawer } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import SelectorButtonContainer from './SelectorButtonContainer';
-import SelectorPassportContainer from './SelectorPassportContainer';
+import { Drawer } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import SelectorButtonContainer from './SelectorButtonContainer'
+import SelectorPassportContainer from './SelectorPassportContainer'
 interface Props {
   Drawer:any;
   openDrawer:boolean;

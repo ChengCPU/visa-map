@@ -1,7 +1,7 @@
-import PassportMap from '../components/Map/PassportMap';
-import InfoBox from '../components/InfoBox';
-import { useState, useEffect } from 'react';
-import individualVisaPolicyCalculation from '../logic/individualVisaPolicyCalculation';
+import PassportMap from '../components/Map/PassportMap'
+import InfoBox from '../components/InfoBox'
+import { useState, useEffect } from 'react'
+import individualVisaPolicyCalculation from '../logic/individualVisaPolicyCalculation'
 interface Props {
   setHover:Function;
   priorityRef:any;

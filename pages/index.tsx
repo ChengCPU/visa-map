@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import Map from '../components/Map/Map';
-import Head from 'next/head';
-import InfoBox from '../components/InfoBox';
+import { useEffect } from 'react'
+import Map from '../components/Map/Map'
+import Head from 'next/head'
+import InfoBox from '../components/InfoBox'
 interface Props {
   mousePos:number | boolean[];
   hover:boolean;

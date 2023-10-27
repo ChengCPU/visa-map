@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import { PassportContext } from '../../logic/context/PassportContext';
-import Passport from '../Selector/Passport';
-import TablePassportSVG from './TablePassportSVG';
+import { useContext } from 'react'
+import { PassportContext } from '../../logic/context/PassportContext'
+import Passport from '../Selector/Passport'
+import TablePassportSVG from './TablePassportSVG'
 interface Props {
   selectArrayRef:any;
   horizontalColumn:number;

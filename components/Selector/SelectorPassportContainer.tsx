@@ -1,7 +1,7 @@
-import React from 'react';
-import { useContext, useState } from 'react';
-import { PassportContext } from '../../logic/context/PassportContext';
-import SelectorPassport from './SelectorPassport';
+import React from 'react'
+import { useContext, useState } from 'react'
+import { PassportContext } from '../../logic/context/PassportContext'
+import SelectorPassport from './SelectorPassport'
 interface Props {
   setOpenDrawer:Function;
   select:{

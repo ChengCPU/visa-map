@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { WidthContext } from '../../logic/context/WidthContext';
-import ProgressBar from '../ProgressBar';
-import SelectorButton from './SelectorButton';
-import styles from '../../styles/SelectorButtonContainer.module.css';
+import { useContext } from 'react'
+import { WidthContext } from '../../logic/context/WidthContext'
+import ProgressBar from '../ProgressBar'
+import SelectorButton from './SelectorButton'
+import styles from '../../styles/SelectorButtonContainer.module.css'
 interface Props {
   setOpenDrawer:Function;
   select:{

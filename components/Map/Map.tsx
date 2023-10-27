@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import { WidthContext } from '../../logic/context/WidthContext';
-import MapSVG from './MapSVG';
+import { useContext } from 'react'
+import { WidthContext } from '../../logic/context/WidthContext'
+import MapSVG from './MapSVG'
 interface Props {setHover:Function;}
 
 const Map:React.FC<Props>= ({ setHover }) => {

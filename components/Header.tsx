@@ -1,8 +1,8 @@
-import { Button, Stack, createTheme, ThemeProvider } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import Link from 'next/link';
-import LanguageSelect from './LanguageSelect';
-import styles from '../styles/Header.module.css';
+import { Button, Stack, createTheme, ThemeProvider } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import Link from 'next/link'
+import LanguageSelect from './LanguageSelect'
+import styles from '../styles/Header.module.css'
 interface Props {
   language:string;
   setLanguage:Function;
