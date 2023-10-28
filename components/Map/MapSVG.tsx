@@ -113,6 +113,7 @@ import Kazakhstan from '../countries/Kazakhstan'
 import Kenya from '../countries/Kenya'
 import Kiribati from '../countries/Kiribati'
 import Kosovo from '../countries/Kosovo'
+import Kurdistan from '../countries/Kurdistan'
 import Kuwait from '../countries/Kuwait'
 import Kyrgyzstan from '../countries/Kyrgyzstan'
 import Laos from '../countries/Laos'
@@ -460,6 +461,7 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
     <JanMayen />
     <Kiribati />
     <Kosovo />
+    <Kurdistan />
     <Kuwait />
     <Lebanon />
     <Lesotho />
