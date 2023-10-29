@@ -4,6 +4,7 @@ import { WidthContext } from '../logic/context/WidthContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import Passport from '../components/Selector/Passport'
 import SortBy from '../components/Rank/SortBy'
+import InfoText from '../components/Rank/InfoText'
 import VisaRequired from '../components/Rank/VisaRequired'
 import EVisa from '../components/Rank/EVisa'
 import VisaOnArrival from '../components/Rank/VisaOnArrival'
@@ -100,6 +101,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
           <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[3]} />
           <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[2]} />
           <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[1]} />
+          <InfoText count={rankRef.current[verticalColumn]}/>
         </div>
         <br/>
         <br/>
