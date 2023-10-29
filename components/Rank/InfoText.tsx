@@ -39,7 +39,7 @@ const InfoText:React.FC<Props> = ({count}) => {
       }
       `}</style>
       <div className={'content'}>
-        <div className={'box'}> Visa-free: {count[1]}; VoA/E-visa: {count[2]}; Visa on Arrival: {count[3]}; E-visa: {count[4]}; Visa required: {count[5]};</div>
+        <div className={'box'}> Visa-free: {count?.[1]}; VoA/E-visa: {count?.[2]}; Visa on Arrival: {count?.[3]}; E-visa: {count?.[4]}; Visa required: {count?.[5]};</div>
       </div>
     </div>
   );
