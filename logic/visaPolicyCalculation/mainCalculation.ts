@@ -81,6 +81,13 @@ export default function mainCalculation(country:string, assignedColorsRef:any, s
           case 'rgb(255,179,191)': break; //freedom of movement (light pink)
           case 'rgb(50,205,50)': break; //visa free (green)
           case 'rgb(161,224,123)': break; //visa on arrival/evisa (light green)
+          case 'rgb(135,206,250)': //evisa (blue)
+            for(let voaEvCalc = 0; voaEvCalc < assignedColorsRefLength; voaEvCalc++) {
+              switch(assignedColorsRef.current[voaEvCalc][colors[subColorCalculation]]) {
+                case 'rgb(255,20,147)': break; //home country (pink)
+                case 'rgb(255,179,191)': break; //freedom of movement (light pink)
+                case 'rgb(50,205,50)': break; //visa free (green)
+              default: if(voaEvCalc == assignedColorsRefLength - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(161,224,123)'}}}
         default: if(voa == assignedColorsRefLength - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(255,255,92)'}}}
     break;
     case 10: //evisa (blue)
