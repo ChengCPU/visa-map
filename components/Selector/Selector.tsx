@@ -6,11 +6,7 @@ interface Props {
   Drawer:any;
   openDrawer:boolean;
   setOpenDrawer:Function;
-  select:{
-    selection:number;
-    passport:null | string;
-  };
-  setSelect:Function;
+  selectRef:any;
   toggle:boolean;
   setToggle:Function;
   selectArrayRef:any;
@@ -30,21 +26,19 @@ const CustomizedDrawer = styled(Drawer)`
   }
 `
 
-const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, select, setSelect, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef }) => {
+const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef }) => {
   return (
     <>
     <CustomizedDrawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
       <SelectorPassportContainer
         setOpenDrawer={setOpenDrawer}
-        select={select}
-        setSelect={setSelect}
+        selectRef={selectRef}
         toggle={toggle}
         setToggle={setToggle} />
     </CustomizedDrawer>
       <SelectorButtonContainer
         setOpenDrawer={setOpenDrawer}
-        select={select}
-        setSelect={setSelect}
+        selectRef={selectRef}
         selectArrayRef={selectArrayRef}
         priorityRef={priorityRef}
         tempPriorityRef={tempPriorityRef}

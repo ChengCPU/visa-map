@@ -5,11 +5,7 @@ import SelectorButton from './SelectorButton'
 import styles from '../../styles/SelectorButtonContainer.module.css'
 interface Props {
   setOpenDrawer:Function;
-  select:{
-    selection: number;
-    passport: null | string;
-  };
-  setSelect:Function;
+  selectRef:any;
   selectArrayRef:any;
   priorityRef:any;
   tempPriorityRef:any;
@@ -21,7 +17,7 @@ interface Props {
   tempDiffRef:any;
 }
 
-const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSelect, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef }) => {
+const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef }) => {
   
   const width = useContext(WidthContext)
 
@@ -33,7 +29,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, select, setSel
   const renderSelectorButtons = (selectorButtonArray:number[]) => {
     return selectorButtonArray.map(selectorButtonArray =>
       (selectorButtonArray == 0 || selectArrayRef.current[selectorButtonArray - 1] != null) ?
-      <SelectorButton key={selectorButtonArray} setOpenDrawer={setOpenDrawer} select={select} setSelect={setSelect} selectArrayRef={selectArrayRef} num={selectorButtonArray} />
+      <SelectorButton key={selectorButtonArray} setOpenDrawer={setOpenDrawer} selectRef={selectRef} selectArrayRef={selectArrayRef} num={selectorButtonArray} />
       : null
     )
   }

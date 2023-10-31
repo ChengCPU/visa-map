@@ -222,7 +222,6 @@ import zambia from '/public/passports/zambia.webp'
 import zimbabwe from '/public/passports/zimbabwe.webp'
 import '../styles/globals.css'
 const passportsProvider:any = {abkhazia,afghanistan,albania,algeria,andorra,angola,anguilla,antiguaAndBarbuda,argentina,armenia,australia,austria,azerbaijan,bahamas,bahrain,bangladesh,barbados,belarus,belgium,belize,benin,bermuda,bhutan,bolivia,bosniaAndHerzegovina,botswana,brazil,britishVirginIslands,brunei,bulgaria,burkinaFaso,burundi,cambodia,cameroon,canada,capeVerde,caymanIslands,centralAfricanRepublic,chad,chile,china,colombia,comoros,costaRica,croatia,cuba,cyprus,czechRepublic,democraticRepublicOfTheCongo,eastTimor,denmark,djibouti,dominica,dominicanRepublic,ecuador,egypt,elSalvador,equatorialGuinea,eritrea,estonia,eswatini,ethiopia,fiji,finland,france,gabon,gambia,georgia,germany,ghana,greece,grenada,guatemala,guinea,guineaBissau,guyana,haiti,honduras,hongKong,hungary,iceland,india,indonesia,iran,iraq,ireland,israel,italy,ivoryCoast,jamaica,japan,jordan,kazakhstan,kenya,kiribati,kuwait,kyrgyzstan,laos,latvia,lebanon,lesotho,liberia,libya,liechtenstein,lithuania,luxembourg,macao,madagascar,malawi,malaysia,maldives,mali,malta,marshallIslands,mauritania,mauritius,mexico,micronesia,moldova,monaco,mongolia,montenegro,montserrat,morocco,mozambique,myanmar,namibia,nauru,nepal,netherlands,newZealand,nicaragua,niger,nigeria,northKorea,northMacedonia,norway,oman,pakistan,palau,panama,papuaNewGuinea,paraguay,peru,philippines,poland,portugal,qatar,republicOfTheCongo,romania,russia,rwanda,saintHelena,saintKittsAndNevis,saintLucia,saintVincentAndTheGrenadines,samoa,sanMarino,saoTomeAndPrincipe,saudiArabia,senegal,serbia,seychelles,sierraLeone,singapore,slovakia,slovenia,solomonIslands,somalia,southAfrica,southKorea,southOssetia,southSudan,spain,sriLanka,sudan,suriname,sweden,switzerland,syria,taiwan,tajikistan,tanzania,thailand,togo,tonga,trinidadAndTobago,tunisia,turkey,turkmenistan,turksAndCaicos,tuvalu,uganda,ukraine,unitedArabEmirates,unitedKingdom,unitedStates,uruguay,uzbekistan,vanuatu,vaticanCity,venezuela,vietnam,yemen,zambia,zimbabwe}
-interface Select {selection:number;passport:null | string;}
 
 function MyApp({ Component, pageProps }) {
   //base rgb variable used to reset rgb values
@@ -231,7 +230,6 @@ function MyApp({ Component, pageProps }) {
   const [toggle, setToggle] = useState<boolean>(false) //used by SelectorPassport to trigger useEffect
   const [secondToggle, setSecondToggle] = useState<boolean>(false) //used by reset function to trigger secondToggle useEffect
   const [openDrawer, setOpenDrawer] = useState<boolean>(false) //MUI drawer toggle
-  const [select, setSelect] = useState<Select>({ selection: 0, passport: null }) //used to keep track of which button is currently selected
   const [percentage, setPercentage] = useState<number>(0)
   const [width, setWidth] = useState(0)
   const [mousePos, setMousePos] = useState<number[]>([])
@@ -240,6 +238,7 @@ function MyApp({ Component, pageProps }) {
   const [language, setLanguage] = useState<string>('🇬🇧EN')
   const [countrySelect, setCountrySelect] = useState<string>('')
   const [selectorLoad, setSelectorLoad] = useState<boolean>(true)
+  const selectRef = useRef<any>({ selection: 0, passport: null })
   const assignedColorsRef = useRef<any>([color,color,color,color,color,color,color,color,color,color,color])
   const selectArrayRef = useRef<any>([null,null,null,null,null,null,null,null,null,null,null])
   const priorityRef = useRef<any>(color) //priority is the color that is passed onto each country component as context
@@ -271,7 +270,7 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   useEffect(() => {
-    if(selectArrayRef.current[select.selection] != null && selectArrayRef.current[select.selection] != select.passport) {
+    if(selectArrayRef.current[selectRef.current.selection] != null && selectArrayRef.current[selectRef.current.selection] != selectRef.current.passport) {
       priorityRef.current = color
       tempPriorityRef.current = color
       assignedColorsRef.current = [color,color,color,color,color,color,color,color,color,color,color]
@@ -279,13 +278,13 @@ function MyApp({ Component, pageProps }) {
       tempDiffRef.current = {AB:0,AF:0,AL:0,DZ:0,AS:0,AD:0,AO:0,AI:0,AG:0,AR:0,AM:0,AK:0,AW:0,AC:0,AU:0,AT:0,AZ:0,BS:0,BH:0,BD:0,BB:0,BY:0,BE:0,BZ:0,BJ:0,BM:0,BT:0,BO:0,XB:0,BA:0,BW:0,BR:0,IO:0,VG:0,BN:0,BG:0,BF:0,BI:0,KH:0,CM:0,CA:0,CV:0,KY:0,CF:0,TD:0,CL:0,CN:0,CO:0,KM:0,CK:0,CR:0,HR:0,CU:0,CW:0,CY:0,CZ:0,CD:0,DK:0,DJ:0,DM:0,DO:0,TL:0,EC:0,EG:0,SV:0,GQ:0,ER:0,EE:0,SZ:0,ET:0,FK:0,FO:0,FJ:0,FI:0,FR:0,GF:0,PF:0,GA:0,GM:0,GE:0,DE:0,GH:0,GI:0,GR:0,GL:0,GD:0,GP:0,GU:0,GT:0,GN:0,GW:0,GY:0,HT:0,HN:0,HK:0,HU:0,IS:0,IN:0,ID:0,IR:0,IQ:0,IE:0,IL:0,IT:0,CI:0,JM:0,XM:0,JP:0,JO:0,KZ:0,KE:0,KI:0,XK:0,KX:0,KW:0,KG:0,LA:0,LV:0,LB:0,LS:0,LR:0,LY:0,LI:0,LT:0,LU:0,MO:0,MG:0,MW:0,MY:0,MV:0,ML:0,MT:0,MH:0,MQ:0,MR:0,MU:0,YT:0,MX:0,FM:0,MD:0,MC:0,MN:0,ME:0,MS:0,MA:0,MZ:0,MM:0,NA:0,NR:0,NP:0,NL:0,NC:0,NZ:0,NI:0,NE:0,NG:0,NU:0,RC:0,MP:0,KP:0,MK:0,NO:0,OM:0,PK:0,PW:0,PS:0,PA:0,PG:0,PY:0,PE:0,PH:0,PN:0,PL:0,PT:0,QA:0,CG:0,RE:0,RO:0,RU:0,RW:0,XS:0,BL:0,SH:0,KN:0,LC:0,MF:0,PM:0,VC:0,WS:0,SM:0,ST:0,SA:0,SN:0,RS:0,SC:0,SL:0,SG:0,XE:0,SX:0,SK:0,SI:0,SB:0,SO:0,XX:0,ZA:0,KR:0,XO:0,SS:0,ES:0,LK:0,SD:0,SR:0,XV:0,SE:0,CH:0,SY:0,TW:0,TJ:0,TZ:0,TH:0,TG:0,TK:0,TO:0,XT:0,TT:0,TX:0,TN:0,TR:0,TM:0,TC:0,TV:0,UG:0,UA:0,AE:0,GB:0,US:0,VI:0,UY:0,UZ:0,VU:0,VA:0,VE:0,VN:0,WF:0,EH:0,YE:0,ZM:0,ZW:0}
       setSecondToggle(!secondToggle)
     }
-    selectArrayRef.current[select.selection] = select.passport
-    if(selectArrayRef.current[select.selection] != null) { mainCalculation(selectArrayRef.current[select.selection], assignedColorsRef, select, priorityRef, selectArrayRef, diffRef, setPercentage) }
+    selectArrayRef.current[selectRef.current.selection] = selectRef.current.passport
+    if(selectArrayRef.current[selectRef.current.selection] != null) { mainCalculation(selectArrayRef.current[selectRef.current.selection], assignedColorsRef, selectRef, priorityRef, selectArrayRef, diffRef, setPercentage) }
   }, [toggle])
 
   useEffect(() => {
     subCalculation(selectArrayRef, assignedColorsRef, priorityRef, diffRef, setPercentage)
-    selectArrayRef.current[select.selection] = select.passport
+    selectArrayRef.current[selectRef.current.selection] = selectRef.current.passport
   }, [secondToggle])
 
   return (
@@ -315,8 +314,7 @@ function MyApp({ Component, pageProps }) {
         Drawer={Drawer}
         openDrawer={openDrawer}
         setOpenDrawer={setOpenDrawer}
-        select={select}
-        setSelect={setSelect}
+        selectRef={selectRef}
         toggle={toggle}
         setToggle={setToggle}
         selectArrayRef={selectArrayRef}
