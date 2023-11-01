@@ -1,0 +1,36 @@
+.container {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.visaText {
+  margin-top:40px;
+}
+.text {
+  cursor: pointer;
+  background-color: rgb(100,100,100);
+}
+.backwardArrow {
+  cursor: pointer;
+  background-color: rgb(100,100,100);
+}
+.input {
+  margin-top: 71px;
+  inline-size: 182px;
+  overflow-wrap: break-word;
+}
+.inputText:hover {
+  cursor: pointer;
+  background-color: rgb(100,100,100);
+}
+.map {
+  position: relative;
+  margin-left: 10px;
+}

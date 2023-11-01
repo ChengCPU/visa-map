@@ -1,6 +1,7 @@
 import PassportMap from '../components/Map/PassportMap'
 import InfoBox from '../components/InfoBox'
 import { useState, useEffect } from 'react'
+import styles from '../styles/Visapolicy.module.css'
 import individualVisaPolicyCalculation from '../logic/individualVisaPolicyCalculation'
 interface Props {
   setHover:Function;
@@ -37,46 +38,9 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
 
   return (
     <>
-    <div><style jsx>{`
-        .container {
-          position:relative;
-          display: flex;
-          justify-content: center;
-          color: rgb(255, 255, 255);
-          -webkit-touch-callout: none;
-          -webkit-user-select: none;
-          -khtml-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
-        .visaText {
-          margin-top:40px;
-        }
-        .text {
-          cursor: pointer;
-          background-color: rgb(100,100,100);
-        }
-        .backwardArrow {
-          cursor: pointer;
-          background-color: rgb(100,100,100);
-        }
-        .input {
-          margin-top: 71px;
-          inline-size: 182px;
-          overflow-wrap: break-word;
-        }
-        .inputText:hover {
-          cursor: pointer;
-          background-color: rgb(100,100,100);
-        }
-        .map {
-          position: relative;
-          margin-left: 10px;
-        }
-      `}</style>
+    <div>
       {(display == true) ? 
-      <div className={'map'}>
+      <div className={styles.map}>
         <br />
         <br />
         <br />
@@ -85,11 +49,11 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
       </div>
       : null}
       {(display == false) ?
-      <div className={'container'}>
-        <div className={'visaText'}>
+      <div className={styles.container}>
+        <div className={styles.visaText}>
           <h1>Visa policy of:</h1>
         </div>
-        <div className={'input'}>
+        <div className={styles.input}>
           <input
             type="text"
             placeholder=""
@@ -98,7 +62,7 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
           />
           {filterValue && (
             filteredOptions.map((option, index) => (
-              <p className={'inputText'} onClick={() => {
+              <p className={styles.inputText} onClick={() => {
                 setSelected(countriesAndTerritories[options.indexOf(option)])
                 individualVisaPolicyCalculation(countriesAndTerritories[options.indexOf(option)], priorityRef, selected)
                 setFilterValue('')
@@ -110,11 +74,11 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
       </div>
       : null}
       {(display == true) ?
-      <div className={'container'} 
+      <div className={styles.container} 
         onClick={() => {
           setDisplay(false)
         }}>
-        <p className={'text'}>{flags[countriesAndTerritories.indexOf(selected)] + ' ' + options[countriesAndTerritories.indexOf(selected)]}</p>
+        <p className={styles.text}>{flags[countriesAndTerritories.indexOf(selected)] + ' ' + options[countriesAndTerritories.indexOf(selected)]}</p>
       </div>
       : null}
     </div>
