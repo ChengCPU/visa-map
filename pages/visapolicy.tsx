@@ -64,7 +64,7 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
             filteredOptions.map((option, index) => (
               <p className={styles.inputText} onClick={() => {
                 setSelected(countriesAndTerritories[options.indexOf(option)])
-                individualVisaPolicyCalculation(countriesAndTerritories[options.indexOf(option)], priorityRef, selected)
+                individualVisaPolicyCalculation(countriesAndTerritories[options.indexOf(option)], priorityRef)
                 setFilterValue('')
                 setDisplay(true)
               }} key={index}>{flags[options.indexOf(option)] + ' ' + option}</p>

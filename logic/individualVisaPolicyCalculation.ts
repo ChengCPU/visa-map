@@ -1,7 +1,7 @@
 const countries:string[] = ['abkhazia','afghanistan','albania','algeria','americanSamoa','andorra','angola','anguilla','antiguaAndBarbuda','argentina','armenia','artsakh','aruba','ascensionIsland','australia','austria','azerbaijan','bahamas','bahrain','bangladesh','barbados','belarus','belgium','belize','benin','bermuda','bhutan','bolivia','bonaire','bosniaAndHerzegovina','botswana','brazil','britishIndianOceanTerritory','britishVirginIslands','brunei','bulgaria','burkinaFaso','burundi','cambodia','cameroon','canada','capeVerde','caymanIslands','centralAfricanRepublic','chad','chile','china','colombia','comoros','cookIslands','costaRica','croatia','cuba','curacao','cyprus','czechRepublic','democraticRepublicOfTheCongo','denmark','djibouti','dominica','dominicanRepublic','eastTimor','ecuador','egypt','elSalvador','equatorialGuinea','eritrea','estonia','eswatini','ethiopia','falklandIslands','faroeIslands','fiji','finland','france','frenchGuiana','frenchPolynesia','gabon','gambia','georgia','germany','ghana','gibraltar','greece','greenland','grenada','guadeloupe','guam','guatemala','guinea','guineaBissau','guyana','haiti','honduras','hongKong','hungary','iceland','india','indonesia','iran','iraq','ireland','israel','italy','ivoryCoast','jamaica','janMayen','japan','jordan','kazakhstan','kenya','kiribati','kosovo','kurdistan','kuwait','kyrgyzstan','laos','latvia','lebanon','lesotho','liberia','libya','liechtenstein','lithuania','luxembourg','macao','madagascar','malawi','malaysia','maldives','mali','malta','marshallIslands','martinique','mauritania','mauritius','mayotte','mexico','micronesia','moldova','monaco','mongolia','montenegro','montserrat','morocco','mozambique','myanmar','namibia','nauru','nepal','netherlands','newCaledonia','newZealand','nicaragua','niger','nigeria','niue','northernCyprus','northernMarianaIslands','northKorea','northMacedonia','norway','oman','pakistan','palau','palestine','panama','papuaNewGuinea','paraguay','peru','philippines','pitcairnIslands','poland','portugal','qatar','republicOfTheCongo','reunion','romania','russia','rwanda','saba','saintBarthelemy','saintHelena','saintKittsAndNevis','saintLucia','saintMartin','saintPierreAndMiquelon','saintVincentAndTheGrenadines','samoa','sanMarino','saoTomeAndPrincipe','saudiArabia','senegal','serbia','seychelles','sierraLeone','singapore','sintEustatius','sintMaarten','slovakia','slovenia','solomonIslands','somalia','somaliland','southAfrica','southKorea','southOssetia','southSudan','spain','sriLanka','sudan','suriname','svalbard','sweden','switzerland','syria','taiwan','tajikistan','tanzania','thailand','togo','tokelau','tonga','transnistria','trinidadAndTobago','tristanDaCunha','tunisia','turkey','turkmenistan','turksAndCaicos','tuvalu','uganda','ukraine','unitedArabEmirates','unitedKingdom','unitedStates','unitedStatesVirginIslands','uruguay','uzbekistan','vanuatu','vaticanCity','venezuela','vietnam','wallisAndFutuna','westernSahara','yemen','zambia','zimbabwe']
 const colors:string[] = ['abkhaziaColor','afghanistanColor','albaniaColor','algeriaColor','americanSamoaColor','andorraColor','angolaColor','anguillaColor','antiguaAndBarbudaColor','argentinaColor','armeniaColor','artsakhColor','arubaColor','ascensionIslandColor','australiaColor','austriaColor','azerbaijanColor','bahamasColor','bahrainColor','bangladeshColor','barbadosColor','belarusColor','belgiumColor','belizeColor','beninColor','bermudaColor','bhutanColor','boliviaColor','bonaireColor','bosniaAndHerzegovinaColor','botswanaColor','brazilColor','britishIndianOceanTerritoryColor','britishVirginIslandsColor','bruneiColor','bulgariaColor','burkinaFasoColor','burundiColor','cambodiaColor','cameroonColor','canadaColor','capeVerdeColor','caymanIslandsColor','centralAfricanRepublicColor','chadColor','chileColor','chinaColor','colombiaColor','comorosColor','cookIslandsColor','costaRicaColor','croatiaColor','cubaColor','curacaoColor','cyprusColor','czechRepublicColor','democraticRepublicOfTheCongoColor','denmarkColor','djiboutiColor','dominicaColor','dominicanRepublicColor','eastTimorColor','ecuadorColor','egyptColor','elSalvadorColor','equatorialGuineaColor','eritreaColor','estoniaColor','eswatiniColor','ethiopiaColor','falklandIslandsColor','faroeIslandsColor','fijiColor','finlandColor','franceColor','frenchGuianaColor','frenchPolynesiaColor','gabonColor','gambiaColor','georgiaColor','germanyColor','ghanaColor','gibraltarColor','greeceColor','greenlandColor','grenadaColor','guadeloupeColor','guamColor','guatemalaColor','guineaColor','guineaBissauColor','guyanaColor','haitiColor','hondurasColor','hongKongColor','hungaryColor','icelandColor','indiaColor','indonesiaColor','iranColor','iraqColor','irelandColor','israelColor','italyColor','ivoryCoastColor','jamaicaColor','janMayenColor','japanColor','jordanColor','kazakhstanColor','kenyaColor','kiribatiColor','kosovoColor','kurdistanColor','kuwaitColor','kyrgyzstanColor','laosColor','latviaColor','lebanonColor','lesothoColor','liberiaColor','libyaColor','liechtensteinColor','lithuaniaColor','luxembourgColor','macaoColor','madagascarColor','malawiColor','malaysiaColor','maldivesColor','maliColor','maltaColor','marshallIslandsColor','martiniqueColor','mauritaniaColor','mauritiusColor','mayotteColor','mexicoColor','micronesiaColor','moldovaColor','monacoColor','mongoliaColor','montenegroColor','montserratColor','moroccoColor','mozambiqueColor','myanmarColor','namibiaColor','nauruColor','nepalColor','netherlandsColor','newCaledoniaColor','newZealandColor','nicaraguaColor','nigerColor','nigeriaColor','niueColor','northernCyprusColor','northernMarianaIslandsColor','northKoreaColor','northMacedoniaColor','norwayColor','omanColor','pakistanColor','palauColor','palestineColor','panamaColor','papuaNewGuineaColor','paraguayColor','peruColor','philippinesColor','pitcairnIslandsColor','polandColor','portugalColor','qatarColor','republicOfTheCongoColor','reunionColor','romaniaColor','russiaColor','rwandaColor','sabaColor','saintBarthelemyColor','saintHelenaColor','saintKittsAndNevisColor','saintLuciaColor','saintMartinColor','saintPierreAndMiquelonColor','saintVincentAndTheGrenadinesColor','samoaColor','sanMarinoColor','saoTomeAndPrincipeColor','saudiArabiaColor','senegalColor','serbiaColor','seychellesColor','sierraLeoneColor','singaporeColor','sintEustatiusColor','sintMaartenColor','slovakiaColor','sloveniaColor','solomonIslandsColor','somaliaColor','somalilandColor','southAfricaColor','southKoreaColor','southOssetiaColor','southSudanColor','spainColor','sriLankaColor','sudanColor','surinameColor','svalbardColor','swedenColor','switzerlandColor','syriaColor','taiwanColor','tajikistanColor','tanzaniaColor','thailandColor','togoColor','tokelauColor','tongaColor','transnistriaColor','trinidadAndTobagoColor','tristanDaCunhaColor','tunisiaColor','turkeyColor','turkmenistanColor','turksAndCaicosColor','tuvaluColor','ugandaColor','ukraineColor','unitedArabEmiratesColor','unitedKingdomColor','unitedStatesColor','unitedStatesVirginIslandsColor','uruguayColor','uzbekistanColor','vanuatuColor','vaticanCityColor','venezuelaColor','vietnamColor','wallisAndFutunaColor','westernSaharaColor','yemenColor','zambiaColor','zimbabweColor']
 
-export default function individualVisaPolicyCalculation(countryCode:string, priorityRef:any, selected:string) {
+export default function individualVisaPolicyCalculation(countryCode:string, priorityRef:any) {
   fetch('visaPolicy.json')
   .then((res) => res.json())
   .then((data) => {
@@ -10,55 +10,25 @@ export default function individualVisaPolicyCalculation(countryCode:string, prio
 
   for(let i = 0; i < countries.length; i++) {
     switch(data[countries[i]]?.[countryCode]) {
-      case 0:
-        color[colors[i]] = 'rgb(255,20,147)'
-        break;
-      case 1:
-        color[colors[i]] = 'rgb(255,0,0)'
-        break;
-      case 2:
-        color[colors[i]] = 'rgb(255,145,0)'
-        break;
-      case 3:
-        color[colors[i]] = 'rgb(0,135,93)'
-        break;
-      case 4:
-        color[colors[i]] = 'rgb(0,51,153)'
-        break;
-      case 5:
-        color[colors[i]] = 'rgb(153,123,61)'
-        break;
-      case 6:
-        color[colors[i]] = 'rgb(255,179,191)'
-        break;
-      case 7:
-        color[colors[i]] = 'rgb(50,205,50)'
-        break;
-      case 8:
-        color[colors[i]] = 'rgb(161,224,123)'
-        break;
-      case 9:
-        color[colors[i]] = 'rgb(255,255,92)'
-        break;
-      case 10:
-        color[colors[i]] = 'rgb(135,206,250)'
-        break;
-      case 11:
-        color[colors[i]] = 'rgb(118,65,171)'
-        break;
-      case 12:
-        color[colors[i]] = 'rgb(200,200,200)'
-        break;
-      case 13:
-        color[colors[i]] = 'rgb(0,0,0)'
-        break;
-      case 14:
-        color[colors[i]] = 'rgb(150,150,150)'
-        break;
+      case 0: color[colors[i]] = 'rgb(255,20,147)'; break
+      case 1: color[colors[i]] = 'rgb(255,0,0)'; break
+      case 2: color[colors[i]] = 'rgb(255,145,0)'; break
+      case 3: color[colors[i]] = 'rgb(0,135,93)'; break
+      case 4: color[colors[i]] = 'rgb(0,51,153)'; break
+      case 5: color[colors[i]] = 'rgb(153,123,61)'; break
+      case 6: color[colors[i]] = 'rgb(255,179,191)'; break
+      case 7: color[colors[i]] = 'rgb(50,205,50)'; break
+      case 8: color[colors[i]] = 'rgb(161,224,123)'; break
+      case 9: color[colors[i]] = 'rgb(255,255,92)'; break
+      case 10: color[colors[i]] = 'rgb(135,206,250)'; break
+      case 11: color[colors[i]] = 'rgb(118,65,171)'; break
+      case 12: color[colors[i]] = 'rgb(200,200,200)'; break
+      case 13: color[colors[i]] = 'rgb(0,0,0)'; break
+      case 14: color[colors[i]] = 'rgb(150,150,150)'; break
     }
   }
 
-  switch(selected) {
+  switch(countryCode) {
     case 'AS': color.americanSamoaColor = 'rgb(255,20,147)'; break
     case 'AK': color.artsakhColor = 'rgb(255,20,147)'; break
     case 'AW': color.arubaColor = 'rgb(255,20,147)'; break
@@ -73,30 +43,28 @@ export default function individualVisaPolicyCalculation(countryCode:string, prio
     case 'GI': color.gibraltarColor = 'rgb(255,20,147)'; break
     case 'GP': color.guadeloupeColor = 'rgb(255,20,147)'; break
     case 'GU': color.guamColor = 'rgb(255,20,147)'; break
-    case 'XM':
-    case 'JE':
-    case 'MQ':
-    case 'YT':
-    case 'NC':
-    case 'NU':
-    case 'NF':
-    case 'RC':
-    case 'MP':
-    case 'PN':
-    case 'RE':
-    case 'XS':
-    case 'BL':
-    case 'MF':
-    case 'PM':
-    case 'XE':
-    case 'SX':
-    case 'XX':
-    case 'XV':
-    case 'TK':
-    case 'XT':
+    case 'XM': color.janMayenColor = 'rgb(255,20,147)'; break
+    case 'MQ': color.martiniqueColor = 'rgb(255,20,147)'; break
+    case 'YT': color.mayotteColor = 'rgb(255,20,147)'; break
+    case 'NC': color.newCaledoniaColor = 'rgb(255,20,147)'; break
+    case 'NU': color.niueColor = 'rgb(255,20,147)'; break
+    case 'RC': color.northernCyprusColor = 'rgb(255,20,147)'; break
+    case 'MP': color.northernMarianaIslandsColor = 'rgb(255,20,147)'; break
+    case 'PN': color.pitcairnIslandsColor = 'rgb(255,20,147)'; break
+    case 'RE': color.reunionColor = 'rgb(255,20,147)'; break
+    case 'XS': color.sabaColor = 'rgb(255,20,147)'; break
+    case 'BL': color.saintBarthelemyColor = 'rgb(255,20,147)'; break
+    case 'MF': color.saintMartinColor = 'rgb(255,20,147)'; break
+    case 'PM': color.saintPierreAndMiquelonColor = 'rgb(255,20,147)'; break
+    case 'XE': color.sintEustatiusColor = 'rgb(255,20,147)'; break
+    case 'SX': color.sintMaartenColor = 'rgb(255,20,147)'; break
+    case 'XX': color.somalilandColor = 'rgb(255,20,147)'; break
+    case 'XV': color.svalbardColor = 'rgb(255,20,147)'; break
+    case 'TK': color.tokelauColor = 'rgb(255,20,147)'; break
+    case 'XT': color.transnistriaColor = 'rgb(255,20,147)'; break
     case 'TX': color.tristanDaCunhaColor = 'rgb(255,20,147)'; break
-    case 'VI':
-    case 'WF':
+    case 'VI': color.unitedStatesVirginIslandsColor = 'rgb(255,20,147)'; break
+    case 'WF': color.wallisAndFutunaColor = 'rgb(255,20,147)'; break
   }
 
   color.frenchGuianaColor = color.franceColor
