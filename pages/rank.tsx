@@ -31,7 +31,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
 
   useEffect(() => {
     setSelectorLoad(false);
-  })
+  }, [])
 
   const passports = useContext(PassportContext)
   const width = useContext(WidthContext)

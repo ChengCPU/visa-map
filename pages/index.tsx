@@ -20,7 +20,7 @@ export default function Home({ mousePos, hover, setHover, countrySelect, priorit
     priorityRef.current = tempPriorityRef.current
     diffRef.current = tempDiffRef.current
     setSelectorLoad(true)
-  })
+  }, [])
 
   return (
     <>

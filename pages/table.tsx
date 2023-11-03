@@ -21,7 +21,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
 
   useEffect(() => {
     setSelectorLoad(true);
-  })
+  }, [])
   
   const { language } = useContext(LanguageContext)
 
