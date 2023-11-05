@@ -42,38 +42,22 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }
 
   const rgbToText = (rgb:string) => {
     switch(rgb) {
-      case 'rgb(255,20,147)':
-        return languageCaculation()[0]
-      case 'rgb(255,0,0)':
-        return languageCaculation()[1]
-      case 'rgb(255,145,0)':
-        return languageCaculation()[2]
-      case 'rgb(0,135,93)':
-        return languageCaculation()[3]
-      case 'rgb(0,51,153)':
-        return languageCaculation()[4]
-      case 'rgb(153,123,61)':
-        return languageCaculation()[5]
-      case 'rgb(255,179,191)':
-        return languageCaculation()[6]
-      case 'rgb(50,205,50)':
-        return languageCaculation()[7]
-      case 'rgb(161,224,123)':
-        return languageCaculation()[8]
-      case 'rgb(255,255,92)':
-        return languageCaculation()[9]
-      case 'rgb(135,206,250)':
-        return languageCaculation()[10]
-      case 'rgb(118,65,171)':
-        return languageCaculation()[11]
-      case 'rgb(200,200,200)':
-        return languageCaculation()[12]
-      case 'rgb(0,0,0)':
-        return languageCaculation()[13]
-      case 'rgb(149,150,150)':
-        return languageCaculation()[14]
-      case 'rgb(150,150,150)':
-        return languageCaculation()[14]
+      case 'rgb(255,20,147)': return languageCaculation()[0]
+      case 'rgb(255,0,0)': return languageCaculation()[1]
+      case 'rgb(255,145,0)': return languageCaculation()[2]
+      case 'rgb(0,135,93)': return languageCaculation()[3]
+      case 'rgb(0,51,153)': return languageCaculation()[4]
+      case 'rgb(153,123,61)': return languageCaculation()[5]
+      case 'rgb(255,179,191)': return languageCaculation()[6]
+      case 'rgb(50,205,50)': return languageCaculation()[7]
+      case 'rgb(161,224,123)': return languageCaculation()[8]
+      case 'rgb(255,255,92)': return languageCaculation()[9]
+      case 'rgb(135,206,250)': return languageCaculation()[10]
+      case 'rgb(118,65,171)': return languageCaculation()[11]
+      case 'rgb(200,200,200)': return languageCaculation()[12]
+      case 'rgb(0,0,0)': return languageCaculation()[13]
+      case 'rgb(149,150,150)': return languageCaculation()[14]
+      case 'rgb(150,150,150)': return languageCaculation()[14]
     }
   }
 
