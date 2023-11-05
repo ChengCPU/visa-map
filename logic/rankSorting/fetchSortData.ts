@@ -39,10 +39,10 @@ export default function fetchSortData(rankRef:any, num:number, sort:string) {
     rankRef.current = rankData
     
     switch(num) {
-      case 1: totalSort(rankData, rankRef, sort); break;
-      case 2: visaFreeSort(rankData, rankRef, sort); break;
-      case 3: alphabeticalSort(rankData, rankRef, sort); break;
-      case 4: freedomOfMovementSort(rankData, rankRef, sort); break;
+      case 1: totalSort(rankData, rankRef, sort); break
+      case 2: visaFreeSort(rankData, rankRef, sort); break
+      case 3: alphabeticalSort(rankData, rankRef, sort); break
+      case 4: freedomOfMovementSort(rankData, rankRef, sort); break
     }
   })
 }

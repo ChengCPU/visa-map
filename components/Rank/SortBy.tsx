@@ -40,25 +40,25 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef }) => {
     }
   }
 
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
-  };
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
   const menuItemOnClick = (prop) => {
     setSortBy(prop)
     switch(prop) {
-      case 'Sort by: Total (Descending)': fetchSortData(rankRef, 1, 'Descending'); break;
-      case 'Sort by: Total (Ascending)': fetchSortData(rankRef, 1, 'Ascending'); break;
-      case 'Sort by: Visa-free (Descending)': fetchSortData(rankRef, 2, 'Descending'); break;
-      case 'Sort by: Visa-free (Ascending)': fetchSortData(rankRef, 2, 'Ascending'); break;
-      case 'Sort by: Alphabetical order (Descending)': fetchSortData(rankRef, 3, 'Descending'); break;
-      case 'Sort by: Alphabetical order (Ascending)': fetchSortData(rankRef, 3, 'Ascending'); break;
-      case 'Sort by: Freedom of Movement (Descending)': fetchSortData(rankRef, 4, 'Descending'); break;
-      case 'Sort by: Freedom of Movement (Ascending)': fetchSortData(rankRef, 4, 'Ascending'); break;
+      case 'Sort by: Total (Descending)': fetchSortData(rankRef, 1, 'Descending'); break
+      case 'Sort by: Total (Ascending)': fetchSortData(rankRef, 1, 'Ascending'); break
+      case 'Sort by: Visa-free (Descending)': fetchSortData(rankRef, 2, 'Descending'); break
+      case 'Sort by: Visa-free (Ascending)': fetchSortData(rankRef, 2, 'Ascending'); break
+      case 'Sort by: Alphabetical order (Descending)': fetchSortData(rankRef, 3, 'Descending'); break
+      case 'Sort by: Alphabetical order (Ascending)': fetchSortData(rankRef, 3, 'Ascending'); break
+      case 'Sort by: Freedom of Movement (Descending)': fetchSortData(rankRef, 4, 'Descending'); break
+      case 'Sort by: Freedom of Movement (Ascending)': fetchSortData(rankRef, 4, 'Ascending'); break
     }
     handleClose()
   }

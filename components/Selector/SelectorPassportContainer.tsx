@@ -16,10 +16,10 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, t
 
   const passports = useContext(PassportContext)
 
-  const [filterValue, setFilterValue] = useState<string>('');
+  const [filterValue, setFilterValue] = useState<string>('')
   const filteredOptions = countriesWithPassports.filter(option =>
     option.toLowerCase().includes(filterValue.toLowerCase())
-  );
+  )
 
   const convertCountryNames = (passportsMap) => {
     return passportsArray[countriesWithPassports.indexOf(passportsMap)]

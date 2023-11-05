@@ -4,7 +4,7 @@ export default function alphabeticalSort(rankData:any, rankRef:any, sort:string)
     unsortedData.reverse()
   }
 
-  const tempArray:number[] = Array.from({ length: rankData.length }, (_, index) => index + 1);
+  const tempArray:number[] = Array.from({ length: rankData.length }, (_, index) => index + 1)
 
   unsortedData.push(tempArray)
 

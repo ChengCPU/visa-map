@@ -27,42 +27,42 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
 
   const colorCalculation = () => {
     switch(assignedColorsRef.current[horizontalColumn]?.[colors[verticalColumn]]) {
-      case 0: return 'rgb(255,20,147)';
-      case 1: return 'rgb(255,0,0)';
-      case 2: return 'rgb(255,145,0)';
-      case 3: return 'rgb(0,135,93)';
-      case 4: return 'rgb(0,51,153)';
-      case 5: return 'rgb(153,123,61)';
-      case 6: return 'rgb(255,179,191)';
-      case 7: return 'rgb(50,205,50)';
-      case 8: return 'rgb(161,224,123)';
-      case 9: return 'rgb(255,255,92)';
-      case 10: return 'rgb(135,206,250)';
-      case 11: return 'rgb(118,65,171)';
-      case 12: return 'rgb(200,200,200)';
-      case 13: return 'rgb(0,0,0)';
-      case 14: return 'rgb(149,150,150)';
-      default: return '#333333';
+      case 0: return 'rgb(255,20,147)'
+      case 1: return 'rgb(255,0,0)'
+      case 2: return 'rgb(255,145,0)'
+      case 3: return 'rgb(0,135,93)'
+      case 4: return 'rgb(0,51,153)'
+      case 5: return 'rgb(153,123,61)'
+      case 6: return 'rgb(255,179,191)'
+      case 7: return 'rgb(50,205,50)'
+      case 8: return 'rgb(161,224,123)'
+      case 9: return 'rgb(255,255,92)'
+      case 10: return 'rgb(135,206,250)'
+      case 11: return 'rgb(118,65,171)'
+      case 12: return 'rgb(200,200,200)'
+      case 13: return 'rgb(0,0,0)'
+      case 14: return 'rgb(149,150,150)'
+      default: return '#333333'
     }
   }
 
   const visaPolicyCalculation = (main:number) => {
     switch(assignedColorsRef.current[horizontalColumn]?.[colors[verticalColumn]]) {
-      case 0: return languageCaculation(0);
-      case 1: return languageCaculation(1);
-      case 2: return languageCaculation(2);
-      case 3: return languageCaculation(3);
-      case 4: return languageCaculation(4);
-      case 5: return languageCaculation(5);
-      case 6: return languageCaculation(6);
-      case 7: return languageCaculation(7);
-      case 8: return languageCaculation(8);
-      case 9: return languageCaculation(9);
-      case 10: return languageCaculation(10);
-      case 11: return languageCaculation(11);
-      case 12: return languageCaculation(12);
-      case 13: return languageCaculation(13);
-      case 14: return languageCaculation(14);
+      case 0: return languageCaculation(0)
+      case 1: return languageCaculation(1)
+      case 2: return languageCaculation(2)
+      case 3: return languageCaculation(3)
+      case 4: return languageCaculation(4)
+      case 5: return languageCaculation(5)
+      case 6: return languageCaculation(6)
+      case 7: return languageCaculation(7)
+      case 8: return languageCaculation(8)
+      case 9: return languageCaculation(9)
+      case 10: return languageCaculation(10)
+      case 11: return languageCaculation(11)
+      case 12: return languageCaculation(12)
+      case 13: return languageCaculation(13)
+      case 14: return languageCaculation(14)
       default: return null;
     }
   }

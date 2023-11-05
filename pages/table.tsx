@@ -20,7 +20,7 @@ interface Props {
 const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad }) => {
 
   useEffect(() => {
-    setSelectorLoad(true);
+    setSelectorLoad(true)
   }, [])
   
   const { language } = useContext(LanguageContext)

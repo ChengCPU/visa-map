@@ -234,7 +234,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, selectRef, selectArrayR
   
   return (
     <Button title={selectArrayRef.current[num] == null ? null : passportTextCalculation(num).charAt(0).toUpperCase() + passportTextCalculation(num).slice(1)} onClick={() => {
-      setOpenDrawer(true);
+      setOpenDrawer(true)
       selectRef.current = { selection: num, passport: selectRef.current.passport }
     }}>
     {(selectArrayRef.current[num] == null) ? <SelectorSVG /> : <Passport image={passportCalculation()}/>} 

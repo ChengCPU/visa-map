@@ -2,17 +2,17 @@ export default function totalSort(rankData:any, rankRef:any, sort:string) {
   const unsortedData:(string | number)[][] = rankData
 
   for(let i = 0; i < unsortedData.length; i++) {
-    let current:string | number = unsortedData[i]?.[6];
-    let current2:(string | number)[] = unsortedData[i];
-    let j:number;
+    let current:string | number = unsortedData[i]?.[6]
+    let current2:(string | number)[] = unsortedData[i]
+    let j:number
 
     for(j = i - 1; j >= 0 && unsortedData[j][6] > current; j--) {
       unsortedData[j + 1] = unsortedData[j]
       unsortedData[j + 1][6] = unsortedData[j][6]
     }
 
-    unsortedData[j + 1] = current2;
-    unsortedData[j + 1][6] = current;
+    unsortedData[j + 1] = current2
+    unsortedData[j + 1][6] = current
   }
   
   const sortedData:(string | number)[][] = unsortedData.reverse()

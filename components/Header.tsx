@@ -18,7 +18,7 @@ const theme = createTheme({
       },
     },
   }
-});
+})
 
 const CustomizedButton = styled(Button)`
   background-color: #32cd32;

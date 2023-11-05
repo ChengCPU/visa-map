@@ -30,7 +30,7 @@ interface Props {
 const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) => {
 
   useEffect(() => {
-    setSelectorLoad(false);
+    setSelectorLoad(false)
   }, [])
 
   const passports = useContext(PassportContext)
