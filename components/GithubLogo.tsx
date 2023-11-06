@@ -11,7 +11,7 @@ const GithubLogo:React.FC = () => {
         position: absolute;
       }
       `}</style>
-      <a href='https://github.com/ChengCPU/visa-map' target='_blank'><Image height={38} width={41.2} src={logo}/></a>
+      <a href='https://github.com/ChengCPU/visa-map' target='_blank' rel="noreferrer"><Image height={38} width={40} src={logo} alt={'Github'}/></a>
     </div>
   )
 }
