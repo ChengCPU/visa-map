@@ -1,5 +1,6 @@
 import { Button, Stack, createTheme, ThemeProvider } from '@mui/material'
 import { styled } from '@mui/material/styles'
+import GithubLogo from './GithubLogo'
 import Link from 'next/link'
 import LanguageSelect from './LanguageSelect'
 import styles from '../styles/Header.module.css'
@@ -44,6 +45,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
   return (
     <ThemeProvider theme={theme}>
     <Stack direction="row" spacing={1} className={styles.container}>
+      <GithubLogo />
       <Link href='/'><CustomizedButton variant="contained">{languageCaculation()[0]}</CustomizedButton></Link>
       <Link href='/table'><CustomizedButton variant="contained">{languageCaculation()[1]}</CustomizedButton></Link>
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
