@@ -69,6 +69,7 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }
       position: absolute;
       left: ${mousePos[0] + 5 + 'px'};
       top: ${mousePos[1] + 5 + 'px'};
+      height: 67px;
       border-radius: 8px;
       border-color: black;
       border-style: solid;
@@ -81,19 +82,32 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }
       pointer-events:none;
     }
     .legend {
+      position: relative;
+      bottom: 32px;
       display:flex;
+      margin-left: 0.75px;
       align-items:center;
       justify-content:left;
+    }
+    .country {
+      position: relative;
+      display:flex;
+      bottom:10px;
+    }
+    .text {
+      margin-left: 4px;
     }
     `}</style>
       <table>
         <tbody>
           <tr>
             <td>
-              <p>{flags[countries.indexOf(countrySelect)] + ' ' + languageCaculation2()[countries.indexOf(countrySelect)]?.charAt(0).toUpperCase() + languageCaculation2()[countries.indexOf(countrySelect)]?.slice(1)}</p>
+              <div className={'country'}>
+                <p>{flags[countries.indexOf(countrySelect)] + ' ' + languageCaculation2()[countries.indexOf(countrySelect)]?.charAt(0).toUpperCase() + languageCaculation2()[countries.indexOf(countrySelect)]?.slice(1)}</p>
+              </div>
               <div className={'legend'}>
                 <Rectangle color={priorityRef.current[countrySelect + 'Color']}/>
-                <p>{rgbToText(priorityRef.current[countrySelect + 'Color'])}</p>
+                <p className={'text'}>{rgbToText(priorityRef.current[countrySelect + 'Color'])}</p>
               </div>
             </td>
           </tr>
