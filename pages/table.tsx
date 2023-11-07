@@ -15,11 +15,17 @@ interface Props {
 	selectArrayRef:any;
   assignedColorsRef:any;
   setSelectorLoad:Function;
+  priorityRef:any;
+  tempPriorityRef:any;
+  diffRef:any;
+  tempDiffRef:any;
 }
 
-const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad }) => {
+const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
 
   useEffect(() => {
+    tempPriorityRef.current = priorityRef.current
+    tempDiffRef.current = diffRef.current
     setSelectorLoad(true)
   }, [])
   

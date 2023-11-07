@@ -25,11 +25,17 @@ interface Props {
   setSortBy:Function;
   mobile:boolean;
   setSelectorLoad:Function;
+  priorityRef:any;
+  tempPriorityRef:any;
+  diffRef:any;
+  tempDiffRef:any;
 }
 
-const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) => {
+const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
 
   useEffect(() => {
+    tempPriorityRef.current = priorityRef.current
+    tempDiffRef.current = diffRef.current
     setSelectorLoad(false)
   }, [])
 
