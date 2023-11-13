@@ -2,7 +2,7 @@ import PassportMap from '../components/Map/PassportMap'
 import InfoBox from '../components/InfoBox'
 import { useState, useEffect } from 'react'
 import styles from '../styles/Visapolicy.module.css'
-import individualVisaPolicyCalculation from '../logic/individualVisaPolicyCalculation'
+import individualVisaPolicyCalculation from '../logic/visaPolicyCalculation/individualVisaPolicyCalculation'
 interface Props {
   setHover:Function;
   priorityRef:any;
