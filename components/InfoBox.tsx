@@ -63,40 +63,41 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }
 
   return (
     (hover == true) ?
-    <div className={'infoBox'}><style jsx>{`
-    .infoBox {
-      background-color: white;
-      position: absolute;
-      left: ${mousePos[0] + 5 + 'px'};
-      top: ${mousePos[1] + 5 + 'px'};
-      height: 67px;
-      border-radius: 8px;
-      border-color: black;
-      border-style: solid;
-      border-width: 2px;
-      user-select: none;
-      -moz-user-select: none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-      -o-user-select: none;
-      pointer-events:none;
-    }
-    .legend {
-      position: relative;
-      bottom: 32px;
-      display:flex;
-      margin-left: 0.75px;
-      align-items:center;
-      justify-content:left;
-    }
-    .country {
-      position: relative;
-      display:flex;
-      bottom:10px;
-    }
-    .text {
-      margin-left: 4px;
-    }
+    <div className={'infoBox'}>
+    <style jsx>{`
+      .infoBox {
+        background-color: white;
+        position: absolute;
+        left: ${mousePos[0] + 5 + 'px'};
+        top: ${mousePos[1] + 5 + 'px'};
+        height: 67px;
+        border-radius: 8px;
+        border-color: black;
+        border-style: solid;
+        border-width: 2px;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        pointer-events:none;
+      }
+      .legend {
+        position: relative;
+        bottom: 32px;
+        display:flex;
+        margin-left: 0.75px;
+        align-items:center;
+        justify-content:left;
+      }
+      .country {
+        position: relative;
+        display:flex;
+        bottom:10px;
+      }
+      .text {
+        margin-left: 4px;
+      }
     `}</style>
       <table>
         <tbody>

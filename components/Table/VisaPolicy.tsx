@@ -68,7 +68,8 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
   }
 
   return (
-    <td className={'text'}><style jsx>{`
+    <td className={'text'}>
+    <style jsx>{`
       .text {
         padding: 10px;
         color: ${(assignedColorsRef.current[horizontalColumn]?.[colors[verticalColumn]] == 13) ? '#FFFFFF' : '#222222'};

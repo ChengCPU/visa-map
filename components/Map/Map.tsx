@@ -17,11 +17,12 @@ const Map:React.FC<Props>= ({ setHover }) => {
     :
     null
     }
-    <div className={'container'}><style jsx>{`
-    .container {
-      position: relative;
-      margin-left: 10px;
-    }
+    <div className={'container'}>
+    <style jsx>{`
+      .container {
+        position: relative;
+        margin-left: 10px;
+      }
     `}</style>
     <MapSVG setHover={setHover}/>
     {

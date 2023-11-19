@@ -259,12 +259,12 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
   return (
     <div className={'container'}>
     <style jsx>{`
-    .container {
-      display: flex;
-      justify-content: center;
-      align-content: space-around;
-      position: absolute;
-    }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-content: space-around;
+        position: absolute;
+      }
     `}</style>
     <svg version="1.2" viewBox="-50 -25 2190 890" width={width.width}>
     <g onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>

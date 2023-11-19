@@ -8,7 +8,8 @@ interface Props {
 const VisaOnArrival:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
   return (
     <>
-    <div className={'visaOnArrival'}><style jsx>{`.visaOnArrival {
+    <div className={'visaOnArrival'}>
+    <style jsx>{`.visaOnArrival {
       margin: 0px;
       padding: 8px 0px 0px;
       width: ${widthCalculation('visaOnArrival', verticalColumn)}px;
@@ -17,8 +18,10 @@ const VisaOnArrival:React.FC<Props> = ({ widthCalculation, marginCalculation, ve
       position:absolute;
       text-align: left;
       float: left;
-    }`}</style></div>
-    <p className={'visaOnArrivalText'}><style jsx>{`.visaOnArrivalText {
+    }`}</style>
+    </div>
+    <p className={'visaOnArrivalText'}>
+    <style jsx>{`.visaOnArrivalText {
       margin: 5px;
       margin-left: ${marginCalculation('visaOnArrival', verticalColumn)}px;
       text-align: center;

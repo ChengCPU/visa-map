@@ -48,9 +48,9 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
     return verticalColumn.map(verticalColumn =>
     <tr className={'subRow'} key={verticalColumn}>
       <style jsx>{`
-      .subRow {
-        background-color: #333333;
-      }
+        .subRow {
+          background-color: #333333;
+        }
       `}</style>
       <Country country={languageCaculation()[verticalColumn]} flag={flags[verticalColumn]} />
       {horizontalColumn.map(horizontalColumn =>
@@ -75,15 +75,15 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
 	<br />
 	<div className={'container'}>
     <style jsx>{`
-    .container {
-      align-content: space-around;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: static;
-      width:100%;
-      border-spacing: 0;
-    }
+      .container {
+        align-content: space-around;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: static;
+        width:100%;
+        border-spacing: 0;
+      }
     `}</style>
     <table cellSpacing="0" cellPadding="0">
 			<tbody>

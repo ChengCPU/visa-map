@@ -6,7 +6,8 @@ interface Props {
 const FreedomOfMovement:React.FC<Props> = ({ count, max }) => {
   return (
     <>
-    <div className={'visaFree'}><style jsx>{`.visaFree {
+    <div className={'visaFree'}>
+    <style jsx>{`.visaFree {
       margin: 0px;
       padding: 8px 0px 0px;
       width: ${Math.max(4, (count/max) * 100)}%;
@@ -15,8 +16,10 @@ const FreedomOfMovement:React.FC<Props> = ({ count, max }) => {
       position:absolute;
       text-align: left;
       float: left;
-    }`}</style></div>
-    <p className={'visaFreeText'}><style jsx>{`.visaFreeText {
+    }`}</style>
+    </div>
+    <p className={'visaFreeText'}>
+    <style jsx>{`.visaFreeText {
       margin: 5px;
       text-align: center;
       position:absolute;

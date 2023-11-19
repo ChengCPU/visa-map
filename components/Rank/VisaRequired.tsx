@@ -8,7 +8,8 @@ interface Props {
 const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
   return (
     <>
-    <div className={'visaRequired'}><style jsx>{`.visaRequired {
+    <div className={'visaRequired'}>
+    <style jsx>{`.visaRequired {
       margin: 0px;
       padding: 8px 0px 0px;
       width: ${widthCalculation('visaRequired', verticalColumn)}px;
@@ -17,8 +18,10 @@ const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, ver
       position:absolute;
       text-align: left;
       float: left;
-    }`}</style></div>
-    <p className={'visaRequired'}><style jsx>{`.visaRequired {
+    }`}</style>
+    </div>
+    <p className={'visaRequired'}>
+    <style jsx>{`.visaRequired {
       margin: 5px;
       margin-left: ${marginCalculation('visaRequired', verticalColumn)}px;
       text-align: center;

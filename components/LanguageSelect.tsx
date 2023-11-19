@@ -37,10 +37,10 @@ const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
   return (
     <div className={'container'}>
       <style jsx>{`
-      .container {
-        right:40px;
-        position: absolute;
-      }
+        .container {
+          right:40px;
+          position: absolute;
+        }
       `}</style>
       <CustomizedButton onClick={handleClick}>{language}</CustomizedButton>
       <Menu

@@ -8,7 +8,8 @@ interface Props {
 const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
   return (
     <>
-    <div className={'evisa'}><style jsx>{`.evisa {
+    <div className={'evisa'}>
+    <style jsx>{`.evisa {
       margin: 0px;
       padding: 8px 0px 0px;
       width: ${widthCalculation('evisa', verticalColumn)}px;
@@ -17,8 +18,10 @@ const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalCo
       position:absolute;
       text-align: left;
       float: left;
-    }`}</style></div>
-    <p className={'evisa'}><style jsx>{`.evisa {
+    }`}</style>
+    </div>
+    <p className={'evisa'}>
+    <style jsx>{`.evisa {
       margin: 5px;
       margin-left: ${marginCalculation('evisa', verticalColumn)}px;
       text-align: center;

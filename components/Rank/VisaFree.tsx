@@ -8,7 +8,8 @@ interface Props {
 const VisaFree:React.FC<Props> = ({ widthCalculation, verticalColumn, count }) => {
   return (
     <>
-    <div className={'visaFree'}><style jsx>{`.visaFree {
+    <div className={'visaFree'}>
+    <style jsx>{`.visaFree {
       margin: 0px;
       padding: 8px 0px 0px;
       width: ${widthCalculation('visaFree', verticalColumn)}px;
@@ -17,8 +18,10 @@ const VisaFree:React.FC<Props> = ({ widthCalculation, verticalColumn, count }) =
       position:absolute;
       text-align: left;
       float: left;
-    }`}</style></div>
-    <p className={'visaFreeText'}><style jsx>{`.visaFreeText {
+    }`}</style>
+    </div>
+    <p className={'visaFreeText'}>
+    <style jsx>{`.visaFreeText {
       margin: 5px;
       text-align: center;
       position:absolute;
