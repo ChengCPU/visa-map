@@ -46,7 +46,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
   const rankRefLength = rankRef.current.length - 1
   const order = rankRef.current[rankRefLength]
 
-  const languageCaculation = (count:number) => {
+  const languageCalculation = (count:number) => {
     switch(count) {
       case 0:
         switch(language) {
@@ -97,7 +97,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
 
   const textRender = (verticalColumn:any) => {
     if(rankRef.current[verticalColumn]?.[0] == undefined) {return}
-    return languageCaculation(0)[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + languageCaculation(0)[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.slice(1)
+    return languageCalculation(0)[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + languageCalculation(0)[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.slice(1)
   }
 
   const passportRankRenderDesktop = (verticalColumn:any) => {
@@ -122,7 +122,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         <br/>
         <br/>
         <br/>
-        <p className={styles.textDiv}>{languageCaculation(1) + rankRef.current[verticalColumn]?.[7]}</p>
+        <p className={styles.textDiv}>{languageCalculation(1) + rankRef.current[verticalColumn]?.[7]}</p>
         <div className={styles.progressBarDesktop}>
           <FreedomOfMovement max={42.4} count={rankRef.current[verticalColumn]?.[7]}/>
         </div>
