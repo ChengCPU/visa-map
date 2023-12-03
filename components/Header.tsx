@@ -11,7 +11,6 @@ interface Props {
 
 const theme = createTheme({
   components: {
-    // Name of the component
     MuiButton: {
       defaultProps: {
         disableRipple: true,
