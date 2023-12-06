@@ -7,7 +7,7 @@ const GithubLogo:React.FC = () => {
       <style jsx>{`
         .container {
           top:4px;
-          left:10px;
+          left:20px;
           position: absolute;
         }
       `}</style>
