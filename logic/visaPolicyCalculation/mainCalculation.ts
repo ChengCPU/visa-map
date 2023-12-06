@@ -18,11 +18,11 @@ export default function mainCalculation(enableDiffCalculation:boolean, country:s
           case 'rgb(255,20,147)': break //home country (pink)
         default: if(OECSfom == assignedColorsRefLength - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(255,145,0)'}}}
     break
-    case 3: //MERCSOUR freedom of movement (dark green)
-      for(let MERCSOURfom = 0; MERCSOURfom < assignedColorsRefLength; MERCSOURfom++) {
-        switch(assignedColorsRef.current[MERCSOURfom][colors[subColorCalculation]]) {
+    case 3: //MERCOSUR freedom of movement (dark green)
+      for(let MERCOSURfom = 0; MERCOSURfom < assignedColorsRefLength; MERCOSURfom++) {
+        switch(assignedColorsRef.current[MERCOSURfom][colors[subColorCalculation]]) {
           case 'rgb(255,20,147)': break //home country (pink)
-        default: if(MERCSOURfom == assignedColorsRefLength - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(0,135,93)'}}}
+        default: if(MERCOSURfom == assignedColorsRefLength - 1) {priorityRef.current[colors[subColorCalculation]] = 'rgb(0,135,93)'}}}
     break
     case 4: //EU freedom of movement (dark blue)
       for(let EUfom = 0; EUfom < assignedColorsRefLength; EUfom++) {
