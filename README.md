@@ -1,5 +1,5 @@
 <p align="center">
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-green.svg" alt="license"/></a>
+<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-GPL--3.0-green.svg" alt="license"/></a>
 <a><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="Contributions welcome"/></a>
 <a><img src="https://img.shields.io/github/contributors/ChengCPU/visa-map.svg" alt="GitHub contributors"/></a>
 <a><img src="https://img.shields.io/github/commit-activity/y/ChengCPU/visa-map.svg" alt="GitHub commits"/></a>
