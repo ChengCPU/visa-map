@@ -4,6 +4,7 @@ import { DiffContext } from '../logic/context/DiffContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { WidthContext } from '../logic/context/WidthContext'
 import { CountrySelectContext } from '../logic/context/CountrySelectContext'
+import { Analytics } from '@vercel/analytics/react';
 import { useState, useEffect, useRef } from 'react'
 import { Drawer } from '@mui/material'
 //logic imports
@@ -331,6 +332,7 @@ function MyApp({ Component, pageProps }) {
         language={language}
         setLanguage={setLanguage}
       />
+      <Analytics />
     </WidthContext.Provider>
     </LanguageContext.Provider>
     </PassportContext.Provider>
