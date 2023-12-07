@@ -38,6 +38,7 @@ const ProgressBar:React.FC<Props> = ({ verticalColumn, width, height, color, per
       text: {
         fill: '#ffffff',
         fontSize: '20px',
+        userSelect: 'none',
       },
       background: {
         fill: '#3e98c7',
