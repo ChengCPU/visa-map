@@ -334,6 +334,7 @@ function MyApp({ Component, pageProps }) {
         setLanguage={setLanguage}
       />
       <Analytics />
+      <SpeedInsights />
     </WidthContext.Provider>
     </LanguageContext.Provider>
     </PassportContext.Provider>
