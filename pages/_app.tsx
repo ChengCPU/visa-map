@@ -5,6 +5,7 @@ import { LanguageContext } from '../logic/context/LanguageContext'
 import { WidthContext } from '../logic/context/WidthContext'
 import { CountrySelectContext } from '../logic/context/CountrySelectContext'
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useEffect, useRef } from 'react'
 import { Drawer } from '@mui/material'
 //logic imports
