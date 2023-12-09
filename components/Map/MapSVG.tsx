@@ -1,5 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { WidthContext } from '../../logic/context/WidthContext'
+import panzoom from 'panzoom'
 import Abkhazia from '../countries/Abkhazia'
 import Afghanistan from '../countries/Afghanistan'
 import Albania from '../countries/Albania'
@@ -256,8 +257,22 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
 
   const width = useContext(WidthContext)
 
+  const panzoomRef = useRef(null);
+
+  useEffect(() => {
+    if(panzoomRef.current) {
+      const pz = panzoom(panzoomRef.current, {
+        smoothScroll: false
+      })
+
+      return () => {
+        pz.dispose()
+      }
+    }
+  }, [])
+
   return (
-    <div className={'container'}>
+    <div ref={panzoomRef} className={'container'}>
     <style jsx>{`
       .container {
         display: flex;
@@ -266,7 +281,7 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
         position: absolute;
       }
     `}</style>
-    <svg version="1.2" viewBox="-50 -25 2190 890" width={width.width}>
+    <svg id='scene' version="1.2" viewBox="-50 -25 2190 890" width={width.width}>
     <g onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
     <Afghanistan />
     <Albania />

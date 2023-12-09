@@ -1,5 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { WidthContext } from '../../logic/context/WidthContext'
+import panzoom from 'panzoom'
 import Abkhazia from '../countries/Abkhazia'
 import Afghanistan from '../countries/Afghanistan'
 import Albania from '../countries/Albania'
@@ -257,6 +258,20 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
 
   const width = useContext(WidthContext)
 
+  const panzoomRef = useRef(null);
+
+  useEffect(() => {
+    if(panzoomRef.current) {
+      const pz = panzoom(panzoomRef.current, {
+        smoothScroll: false
+      })
+
+      return () => {
+        pz.dispose()
+      }
+    }
+  }, [])
+
   const selectedCalculation = (selected:string) => {
     switch(selected) {
       case 'AS': return <AmericanSamoa />
@@ -299,7 +314,7 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
   }
 
   return (
-    <div className={'container'}>
+    <div ref={panzoomRef} className={'container'}>
     <style jsx>{`
       .container {
         display: flex;
