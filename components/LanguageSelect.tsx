@@ -35,25 +35,19 @@ const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
   }
 
   return (
-    <div className={'container'}>
-      <style jsx>{`
-        .container {
-          right:40px;
-          position: absolute;
-        }
-      `}</style>
-      <CustomizedButton onClick={handleClick}>{language}</CustomizedButton>
-      <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-      {renderMenuItems(languageArray)}
-      </Menu>
-    </div>
+    <>
+    <CustomizedButton onClick={handleClick}>{language}</CustomizedButton>
+    <Menu
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      MenuListProps={{
+        'aria-labelledby': 'basic-button',
+      }}
+    >
+    {renderMenuItems(languageArray)}
+    </Menu>
+    </>
   )
 }
 

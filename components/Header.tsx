@@ -1,9 +1,10 @@
+import { useContext } from 'react'
+import { WidthContext } from '../logic/context/WidthContext'
 import { Button, Stack, createTheme, ThemeProvider } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import GithubLogo from './GithubLogo'
 import Link from 'next/link'
 import LanguageSelect from './LanguageSelect'
-import styles from '../styles/Header.module.css'
 interface Props {
   language:string;
   setLanguage:Function;
@@ -32,8 +33,10 @@ const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa']
 
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
 
+  const width = useContext(WidthContext)
+
   const languageCaculation = () => {
-    switch(language){
+    switch(language) {
       case '🇬🇧EN': return headerEN
       case '🇪🇸ES': return headerES
       case '🇵🇹PT': return headerPT
@@ -42,19 +45,42 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
   }
 
   return (
+    <div className={'container'}>
+    <style jsx>{`
+      .container {
+        align-content: space-around;
+        padding: 0 0.5rem;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left:0px;
+        top:0px;
+        height:40px;
+        width:100%;
+        background-color: #111111;
+        z-index: 2;
+      }
+      ${(width.width <= 800) ? null : '.languageSelect {right:40px; position: absolute;}'}
+    `}</style>
     <ThemeProvider theme={theme}>
-    <Stack direction="row" spacing={1} className={styles.container}>
-      <GithubLogo />
+    <Stack direction="row" spacing={1}>
+      {(width.width <= 800) ? null : <GithubLogo />}
       <Link href='/'><CustomizedButton variant="contained">{languageCaculation()[0]}</CustomizedButton></Link>
       <Link href='/table'><CustomizedButton variant="contained">{languageCaculation()[1]}</CustomizedButton></Link>
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
       <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation()[3]}</CustomizedButton></Link>
-      <LanguageSelect
-        language={language}
-        setLanguage={setLanguage}
-      />
+      <div className={'languageSelect'}>
+        <LanguageSelect
+          language={language}
+          setLanguage={setLanguage}
+        />
+      </div>
     </Stack>
     </ThemeProvider>
+    </div>
   )
 }
 
