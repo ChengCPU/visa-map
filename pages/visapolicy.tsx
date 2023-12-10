@@ -1,7 +1,8 @@
-import PassportMap from '../components/Map/PassportMap'
-import InfoBox from '../components/InfoBox'
 import { useState, useEffect, useContext } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
+import Head from 'next/head'
+import PassportMap from '../components/Map/PassportMap'
+import InfoBox from '../components/InfoBox'
 import styles from '../styles/Visapolicy.module.css'
 import individualVisaPolicyCalculation from '../logic/visaPolicyCalculation/individualVisaPolicyCalculation'
 interface Props {
@@ -48,6 +49,11 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
 
   return (
     <>
+    <Head>
+      <title>Visa-map</title>
+      <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
+      <link rel="shortcut icon" href="/favicon.png" />
+    </Head>
     <div>
       {(display == true) ? 
       <div className={styles.map}>

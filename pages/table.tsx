@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
+import Head from 'next/head'
 import Country from '../components/Table/Country'
 import VisaPolicy from '../components/Table/VisaPolicy'
 import TablePassport from '../components/Table/TablePassport'
@@ -70,6 +71,10 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
 
   return (
 	<>
+  <Head>
+    <title>Visa-map</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+  </Head>
 	<br />
 	<br />
 	<br />

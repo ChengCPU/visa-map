@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react'
 import { PassportContext } from '../logic/context/PassportContext'
 import { WidthContext } from '../logic/context/WidthContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
+import Head from 'next/head'
 import Passport from '../components/Selector/Passport'
 import SortBy from '../components/Rank/SortBy'
 import InfoText from '../components/Rank/InfoText'
@@ -177,6 +178,10 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
 
   return (
     <>
+    <Head>
+      <title>Visa-map</title>
+      <link rel="shortcut icon" href="/favicon.png" />
+    </Head>
     <br />
     <br />
     <br />
