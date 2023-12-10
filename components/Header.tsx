@@ -63,7 +63,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
         background-color: #111111;
         z-index: 2;
       }
-      ${(width.width <= 800) ? null : '.languageSelect {right:40px; position: absolute;}'}
+      ${(width.width > 800) ? '.languageSelect {right:40px; position: absolute;}' : null}
     `}</style>
     <ThemeProvider theme={theme}>
     <Stack direction="row" spacing={1}>
