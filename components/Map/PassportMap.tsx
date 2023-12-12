@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
-import panzoom from 'panzoom'
+import Panzoom from 'panzoom'
 import Abkhazia from '../countries/Abkhazia'
 import Afghanistan from '../countries/Afghanistan'
 import Albania from '../countries/Albania'
@@ -262,15 +262,26 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
 
   useEffect(() => {
     if(panzoomRef.current) {
-      const pz = panzoom(panzoomRef.current, {
-        smoothScroll: false
-      })
+      let panzoom = null
+
+      if(dimensions.width > 800) {
+        panzoom = Panzoom(panzoomRef.current, {
+          smoothScroll: false,
+        })
+      } else {
+        panzoom = Panzoom(panzoomRef.current, {
+          smoothScroll: false,
+          initialX: dimensions.width / 2,
+          initialY: 0,
+          initialZoom: 3
+        })
+      }
 
       return () => {
-        pz.dispose()
+        panzoom.dispose()
       }
     }
-  }, [])
+  }, [dimensions.width])
 
   const selectedCalculation = (selected:string) => {
     switch(selected) {
