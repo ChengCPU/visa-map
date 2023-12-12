@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { WidthContext } from '../logic/context/WidthContext'
+import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { Button, Stack, createTheme, ThemeProvider } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import GithubLogo from './GithubLogo'
@@ -33,7 +33,7 @@ const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa']
 
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
 
-  const width = useContext(WidthContext)
+  const dimensions = useContext(DimensionsContext)
 
   const languageCaculation = () => {
     switch(language) {
@@ -63,11 +63,11 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
         background-color: #111111;
         z-index: 2;
       }
-      ${(width.width > 800) ? '.languageSelect {right:40px; position: absolute;}' : null}
+      ${(dimensions.width > 800) ? '.languageSelect {right:40px; position: absolute;}' : null}
     `}</style>
     <ThemeProvider theme={theme}>
     <Stack direction="row" spacing={1}>
-      {(width.width <= 800) ? null : <GithubLogo />}
+      {(dimensions.width <= 800) ? null : <GithubLogo />}
       <Link href='/'><CustomizedButton variant="contained">{languageCaculation()[0]}</CustomizedButton></Link>
       <Link href='/table'><CustomizedButton variant="contained">{languageCaculation()[1]}</CustomizedButton></Link>
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>

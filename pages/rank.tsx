@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { PassportContext } from '../logic/context/PassportContext'
-import { WidthContext } from '../logic/context/WidthContext'
+import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import Head from 'next/head'
 import Passport from '../components/Selector/Passport'
@@ -41,7 +41,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
   }, [])
 
   const passports = useContext(PassportContext)
-  const width = useContext(WidthContext)
+  const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
 
   const rankRefLength = rankRef.current.length - 1
@@ -144,7 +144,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         <p className={styles.text}>{'Freedom of Movement: ' + rankRef.current[verticalColumn]?.[7]}</p>
       </td>
       {
-      (width.width <= 800) ?
+      (dimensions.width <= 800) ?
       <td>
         <div className={styles.visaPolicyText}>
         <table>
@@ -186,7 +186,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     <br />
     <br />
     {
-    (width.width <= 800) ?
+    (dimensions.width <= 800) ?
     <div className={styles.centered}>
       <SortBy
         sortBy={sortBy}
@@ -196,11 +196,11 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     </div>
     : null
     }
-    <table cellSpacing="0" cellPadding="20" className={(width.width <= 800) ? styles.containerMobile : styles.containerDesktop}>
+    <table cellSpacing="0" cellPadding="20" className={(dimensions.width <= 800) ? styles.containerMobile : styles.containerDesktop}>
       <tbody>
       <tr>
         {
-        (width.width <= 800) ?
+        (dimensions.width <= 800) ?
         null
         :
         <>
@@ -217,7 +217,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         </>
         }
       </tr>
-      {(width.width <= 800) ? passportRankRenderMobile(verticalColumn) : passportRankRenderDesktop(verticalColumn)}
+      {(dimensions.width <= 800) ? passportRankRenderMobile(verticalColumn) : passportRankRenderDesktop(verticalColumn)}
       </tbody>
     </table>
     <br />
@@ -227,7 +227,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     <br />
     <br />
     {
-    (width.width <= 800) ?
+    (dimensions.width <= 800) ?
     <>
     <br />
     <br />

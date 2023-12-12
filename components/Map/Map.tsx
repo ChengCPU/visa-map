@@ -1,18 +1,18 @@
 import { useContext } from 'react'
-import { WidthContext } from '../../logic/context/WidthContext'
+import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import MapSVG from './MapSVG'
 interface Props {setHover:Function;}
 
 const Map:React.FC<Props>= ({ setHover }) => {
 
-  const width = useContext(WidthContext)
+  const dimensions = useContext(DimensionsContext)
   
   return (
     <>
     <br />
     <br />
     {
-    (width.width <= 800) ?
+    (dimensions.width <= 800) ?
     <br />
     :
     null
@@ -26,7 +26,7 @@ const Map:React.FC<Props>= ({ setHover }) => {
     `}</style>
     <MapSVG setHover={setHover}/>
     {
-    (width.width <= 800) ?
+    (dimensions.width <= 800) ?
     <>
     <br />
     <br />

@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 import { LanguageContext } from '../../logic/context/LanguageContext'
-import { WidthContext } from '../../logic/context/WidthContext'
+import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import { Button, Menu, MenuItem } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import fetchSortData from '../../logic/rankSorting/fetchSortData'
@@ -28,7 +28,7 @@ const sortArrayFR = ['Trier par: Total (Décroissant)', 'Trier par: Total (Crois
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef }) => {
 
-  const width = useContext(WidthContext)
+  const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
 
   const languageCaculation = () => {
@@ -75,7 +75,7 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef }) => {
   return (
     <div>
       {
-      (width.width <= 800) ?
+      (dimensions.width <= 800) ?
       <CustomizedButtonMobile onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonMobile>
       :
       <CustomizedButtonDesktop onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonDesktop>
