@@ -276,7 +276,10 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
           initialY: 0,
           initialZoom: 3,
           maxZoom: 25,
-          minZoom: 1.075
+          minZoom: 1.075,
+          onTouch: function(e) {
+            return false;
+          }
         })
       }
 
