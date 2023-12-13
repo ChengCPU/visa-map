@@ -266,13 +266,17 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
       if(dimensions.width > 800) {
         panzoom = Panzoom(panzoomRef.current, {
           smoothScroll: false,
+          maxZoom: 8,
+          minZoom: 0.4
         })
       } else {
         panzoom = Panzoom(panzoomRef.current, {
           smoothScroll: false,
           initialX: dimensions.width / 2,
           initialY: 0,
-          initialZoom: 3
+          initialZoom: 3,
+          maxZoom: 25,
+          minZoom: 1.075
         })
       }
 
