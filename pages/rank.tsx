@@ -136,7 +136,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
   const passportRankRenderMobile = (verticalColumn:any) => {
     return verticalColumn.map(verticalColumn =>
     <tr key={verticalColumn}>
-      <td>
+      <td className={styles.mobileBackground}>
         <p className={styles.rank}>{order?.[verticalColumn]}</p>
         <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRef.current?.[verticalColumn]?.[0]]}/>
         <p className={styles.text}>{textRender(verticalColumn)}</p>
@@ -145,7 +145,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       </td>
       {
       (dimensions.width <= 800) ?
-      <td>
+      <td className={styles.mobileBackground}>
         <div className={styles.visaPolicyText}>
         <table>
           <tbody>
@@ -193,6 +193,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         setSortBy={setSortBy}
         rankRef={rankRef}
       />
+      <br />
     </div>
     : null
     }

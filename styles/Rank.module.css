@@ -1,13 +1,8 @@
+.containerMobile,
 .containerDesktop {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.containerMobile {
-  display: flex;
-  align-items: left;
-  justify-content: left;
 }
 
 .text {
@@ -27,14 +22,8 @@
   color: rgb(255, 255, 255);
 }
 
-.progressBarMobile {
-  margin: 0px;
-  padding: 0px 0px 0px;
-  width: 362px;
-  position:relative;
-  text-align: left;
-  float: left;
-  margin-right: 140px;
+.mobileBackground {
+  background-color: rgb(43, 41, 41);
 }
 
 .progressBarDesktop {
