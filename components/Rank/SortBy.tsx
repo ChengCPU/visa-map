@@ -74,8 +74,7 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef }) => {
 
   return (
     <div>
-      {
-      (dimensions.width <= 800) ?
+      {(dimensions.width <= 800) ?
       <CustomizedButtonMobile onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonMobile>
       :
       <CustomizedButtonDesktop onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonDesktop>

@@ -38,8 +38,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, sel
     <>
     {(selectorLoad == true) ?
     <div className={styles.container}>
-      {
-      (dimensions.width <= 800) ?
+      {(dimensions.width <= 800) ?
       null
       :
       <div className={styles.text}>

@@ -11,12 +11,10 @@ const Map:React.FC<Props>= ({ setHover }) => {
     <>
     <br />
     <br />
-    {
-    (dimensions.width <= 800) ?
+    {(dimensions.width <= 800) ?
     <br />
     :
-    null
-    }
+    null}
     <div className={'container'}>
     <style jsx>{`
       .container {
@@ -25,8 +23,7 @@ const Map:React.FC<Props>= ({ setHover }) => {
       }
     `}</style>
     <MapSVG setHover={setHover}/>
-    {
-    (dimensions.width <= 800) ?
+    {(dimensions.width <= 800) ?
     <>
     <br />
     <br />
@@ -37,8 +34,7 @@ const Map:React.FC<Props>= ({ setHover }) => {
     <br />
     <br />
     </>
-    : null
-    }
+    : null}
     </div>
     </>
   )
