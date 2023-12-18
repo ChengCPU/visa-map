@@ -18,6 +18,7 @@ interface Props {
   setPercentage:Function;
   selectorLoad:boolean;
   tempDiffRef:any;
+  ESTAbanRef:any;
 }
 
 const CustomizedDrawer = styled(Drawer)`
@@ -26,7 +27,7 @@ const CustomizedDrawer = styled(Drawer)`
   }
 `
 
-const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef }) => {
+const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef, ESTAbanRef }) => {
   return (
     <>
     <CustomizedDrawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
@@ -47,7 +48,8 @@ const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle
         percentage={percentage}
         setPercentage={setPercentage}
         selectorLoad={selectorLoad}
-        tempDiffRef={tempDiffRef} />
+        tempDiffRef={tempDiffRef}
+        ESTAbanRef={ESTAbanRef} />
     </>
   )
 }
