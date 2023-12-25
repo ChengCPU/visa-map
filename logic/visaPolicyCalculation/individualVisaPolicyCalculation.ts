@@ -42,6 +42,7 @@ export default function individualVisaPolicyCalculation(countryCode:string, prio
     case 'GP': color.guadeloupeColor = 'rgb(255,20,147)'; break
     case 'GU': color.guamColor = 'rgb(255,20,147)'; break
     case 'XM': color.janMayenColor = 'rgb(255,20,147)'; break
+    case 'KX': color.kurdistanColor = 'rgb(255,20,147)'; break
     case 'MQ': color.martiniqueColor = 'rgb(255,20,147)'; break
     case 'YT': color.mayotteColor = 'rgb(255,20,147)'; break
     case 'NC': color.newCaledoniaColor = 'rgb(255,20,147)'; break
