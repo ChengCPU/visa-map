@@ -47,3 +47,13 @@
   font-size: 20px;
   font-family: proxima,sans-serif;
 }
+
+.textSeparator {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+}
+
+.separator {
+  flex: 1; /* This makes the separator expand and take remaining space */
+  margin: 0 10px; /* Adjust spacing as needed */
+}
