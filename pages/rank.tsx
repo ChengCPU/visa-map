@@ -111,7 +111,11 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
       <td>
       <div className={styles.progressBarsContainer}>
-        <p className={styles.textDiv}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
+        <div className={styles.textSeparator}>
+          <p className={styles.textDiv}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
+          <div className={styles.separator}></div>
+          <p className={styles.textDiv}>{'Visa-free km2: ' + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+        </div>
         <div className={styles.progressBarDesktop}>
           <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[5]} />
           <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[4]} />
@@ -142,6 +146,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         <p className={styles.text}>{textRender(verticalColumn)}</p>
         <p className={styles.text}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
         <p className={styles.text}>{'Freedom of Movement: ' + rankRef.current[verticalColumn]?.[7]}</p>
+        <p className={styles.text}>{'Visa-free km2: ' + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
       </td>
       {
       (dimensions.width <= 800) ?

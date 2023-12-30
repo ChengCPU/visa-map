@@ -21,10 +21,10 @@ const CustomizedButtonMobile = styled(Button)`
   left: 18px;
 `
 
-const sortArrayEN = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)', 'Sort by: Alphabetical order (Descending)', 'Sort by: Alphabetical order (Ascending)', 'Sort by: Freedom of Movement (Descending)', 'Sort by: Freedom of Movement (Ascending)']
-const sortArrayES = ['Ordenar por: Total (Descendente)', 'Ordenar por: Total (Ascendente)', 'Ordenar por: Visado Libre (Descendente)', 'Ordenar por: Visado Libre (Ascendente)', 'Ordenar por: Orden alfabetico (Descendente)', 'Ordenar por: Orden alfabetico (Ascendente)', 'Ordenar por: Libertad de movimiento (Descendente)', 'Ordenar por: Libertad de movimiento (Ascendente)']
-const sortArrayPT = ['Ordenar por: Total (Decrescente)', 'Ordenar por: Total (Crescente)', 'Ordenar por: Sem Visto (Decrescente)', 'Ordenar por: Sem Visto (Crescente)', 'Ordenar por: Ordem alfabética (Decrescente)', 'Ordenar por: Ordem alfabética (Crescente)', 'Ordenar por: Liberdade de movimento (Decrescente)', 'Ordenar por: Liberdade de movimento (Crescente)']
-const sortArrayFR = ['Trier par: Total (Décroissant)', 'Trier par: Total (Croissant)', 'Trier par: Sans Visa (Décroissant)', 'Trier par: Sans Visa (Croissant)', 'Trier par: Ordre alphabétique (Décroissant)', 'Trier par: Ordre alphabétique (Croissant)', 'Trier par: Liberté de mouvement (Décroissant)', 'Trier par: Liberté de mouvement (Croissant)']
+const sortArrayEN = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)', 'Sort by: Alphabetical order (Descending)', 'Sort by: Alphabetical order (Ascending)', 'Sort by: Freedom of Movement (Descending)', 'Sort by: Freedom of Movement (Ascending)', 'Sort by: Visa-free km2 (Descending)', 'Sort by: Visa-free km2 (Ascending)']
+const sortArrayES = ['Ordenar por: Total (Descendente)', 'Ordenar por: Total (Ascendente)', 'Ordenar por: Visado Libre (Descendente)', 'Ordenar por: Visado Libre (Ascendente)', 'Ordenar por: Orden alfabetico (Descendente)', 'Ordenar por: Orden alfabetico (Ascendente)', 'Ordenar por: Libertad de movimiento (Descendente)', 'Ordenar por: Libertad de movimiento (Ascendente)', 'Ordenar por: Visado Libre km2 (Descendente)', 'Ordenar por: Visado Libre km2 (Ascendente)']
+const sortArrayPT = ['Ordenar por: Total (Decrescente)', 'Ordenar por: Total (Crescente)', 'Ordenar por: Sem Visto (Decrescente)', 'Ordenar por: Sem Visto (Crescente)', 'Ordenar por: Ordem alfabética (Decrescente)', 'Ordenar por: Ordem alfabética (Crescente)', 'Ordenar por: Liberdade de movimento (Decrescente)', 'Ordenar por: Liberdade de movimento (Crescente)', 'Ordenar por: Sem Visto km2 (Decrescente)', 'Ordenar por: Sem Visto km2 (Crescente)']
+const sortArrayFR = ['Trier par: Total (Décroissant)', 'Trier par: Total (Croissant)', 'Trier par: Sans Visa (Décroissant)', 'Trier par: Sans Visa (Croissant)', 'Trier par: Ordre alphabétique (Décroissant)', 'Trier par: Ordre alphabétique (Croissant)', 'Trier par: Liberté de mouvement (Décroissant)', 'Trier par: Liberté de mouvement (Croissant)', 'Trier par: Sans Visa km2 (Décroissant)', 'Trier par: Sans Visa km2 (Croissant)']
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef }) => {
 
@@ -59,11 +59,13 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef }) => {
       case 'Sort by: Alphabetical order (Ascending)': fetchSortData(rankRef, 3, 'Ascending'); break
       case 'Sort by: Freedom of Movement (Descending)': fetchSortData(rankRef, 4, 'Descending'); break
       case 'Sort by: Freedom of Movement (Ascending)': fetchSortData(rankRef, 4, 'Ascending'); break
+      case 'Sort by: Visa-free km2 (Descending)': fetchSortData(rankRef, 5, 'Descending'); break
+      case 'Sort by: Visa-free km2 (Ascending)': fetchSortData(rankRef, 5, 'Ascending'); break
     }
     handleClose()
   }
   
-  const sortArray = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)', 'Sort by: Alphabetical order (Descending)', 'Sort by: Alphabetical order (Ascending)', 'Sort by: Freedom of Movement (Descending)', 'Sort by: Freedom of Movement (Ascending)']
+  const sortArray = ['Sort by: Total (Descending)', 'Sort by: Total (Ascending)', 'Sort by: Visa-free (Descending)', 'Sort by: Visa-free (Ascending)', 'Sort by: Alphabetical order (Descending)', 'Sort by: Alphabetical order (Ascending)', 'Sort by: Freedom of Movement (Descending)', 'Sort by: Freedom of Movement (Ascending)', 'Sort by: Visa-free km2 (Descending)', 'Sort by: Visa-free km2 (Ascending)']
   const renderMenuItems = (sortArray:string[]) => {
     return sortArray.map(sortArray =>
       (sortBy != sortArray) ?
