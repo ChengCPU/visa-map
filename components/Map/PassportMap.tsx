@@ -12,7 +12,6 @@ import Anguilla from '../countries/Anguilla'
 import AntiguaAndBarbuda from '../countries/AntiguaAndBarbuda'
 import Argentina from '../countries/Argentina'
 import Armenia from '../countries/Armenia'
-import Artsakh from '../countries/Artsakh'
 import Aruba from '../countries/Aruba'
 import AscensionIsland from '../countries/AscensionIsland'
 import Australia from '../countries/Australia'
@@ -290,7 +289,6 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
   const selectedCalculation = (selected:string) => {
     switch(selected) {
       case 'AS': return <AmericanSamoa />
-      case 'AK': return <Artsakh />
       case 'AW': return <Aruba />
       case 'AC': return <AscensionIsland />
       case 'CK': return <CookIslands />
