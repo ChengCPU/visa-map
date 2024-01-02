@@ -198,7 +198,27 @@ export default function mainCalculation(enableDiffCalculation:boolean, country:s
               case 10: crFlag = true; break;
               case 11: crFlag = true; break;
               case 12: crFlag = true; break;
-              case 14: priorityRef.current[colors[sub]] = 'rgb(150,150,150)'; crFlag = true; break;
+              case 14: 
+                let vrFlag = false
+                for(let vr = 0; vr < assignedColorsRefLength; vr++) {
+                  switch(assignedColorsRef.current[vr][colors[sub]]) {
+                    case 0: vrFlag = true; break;
+                    case 1: vrFlag = true; break;
+                    case 2: vrFlag = true; break;
+                    case 3: vrFlag = true; break;
+                    case 4: vrFlag = true; break;
+                    case 5: vrFlag = true; break;
+                    case 6: vrFlag = true; break;
+                    case 7: vrFlag = true; break;
+                    case 8: vrFlag = true; break;
+                    case 9: vrFlag = true; break;
+                    case 10: vrFlag = true; break;
+                    case 11: vrFlag = true; break;
+                    case 12: vrFlag = true; break;
+                  }
+                }
+                if(vrFlag == true) { break; }
+                priorityRef.current[colors[sub]] = 'rgb(150,150,150)'; crFlag = true;
             }
           }
           if(crFlag == true) { break; }
