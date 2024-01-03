@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Aruba:React.FC = () => {
 
-  const { arubaColor } = useContext(ColorContext)
+  const { aw } = useContext(ColorContext)
   const { AW } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'aruba'} onMouseOver={() => setCountrySelect('aruba')}>
   <style jsx>{`
   .aruba {
-  fill: ${arubaColor};
+  fill: ${aw};
   stroke-width: 1;
   }
   `}</style>

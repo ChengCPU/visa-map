@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Anguilla:React.FC = () => {
 
-  const { anguillaColor } = useContext(ColorContext)
+  const { ai } = useContext(ColorContext)
   const { AI } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'anguilla'} onMouseOver={() => setCountrySelect('anguilla')}>
   <style jsx>{`
   .anguilla {
-  fill: ${anguillaColor};
+  fill: ${ai};
   stroke-width: 1;
   }
   `}</style>

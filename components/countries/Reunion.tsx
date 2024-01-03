@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Reunion:React.FC = () => {
 
-  const { reunionColor } = useContext(ColorContext)
+  const { re } = useContext(ColorContext)
   const { RE } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'reunion'} onMouseOver={() => setCountrySelect('reunion')}>
   <style jsx>{`
   .reunion {
-  fill: ${reunionColor};
+  fill: ${re};
   stroke-width: 1;
   }
   `}</style>

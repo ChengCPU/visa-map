@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Tonga:React.FC = () => {
 
-  const { tongaColor } = useContext(ColorContext)
+  const { to } = useContext(ColorContext)
   const { TO } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'tonga'} onMouseOver={() => setCountrySelect('tonga')}>
   <style jsx>{`
   .tonga {
-  fill: ${tongaColor};
+  fill: ${to};
   stroke-width: 1;
   }
   `}</style>

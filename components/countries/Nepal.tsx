@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Nepal:React.FC = () => {
 
-  const { nepalColor } = useContext(ColorContext)
+  const { np } = useContext(ColorContext)
   const { NP } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'nepal'} onMouseOver={() => setCountrySelect('nepal')}>
   <style jsx>{`
   .nepal {
-  fill: ${nepalColor};
+  fill: ${np};
   stroke-width: 1;
   }
   `}</style>

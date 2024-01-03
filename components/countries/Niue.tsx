@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Niue:React.FC = () => {
 
-  const { niueColor } = useContext(ColorContext)
+  const { nu } = useContext(ColorContext)
   const { NU } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'niue'} onMouseOver={() => setCountrySelect('niue')}>
   <style jsx>{`
   .niue {
-  fill: ${niueColor};
+  fill: ${nu};
   stroke-width: 1;
   }
   `}</style>

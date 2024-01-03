@@ -1,63 +1,64 @@
 import { fetchAndCacheJsonData } from '../jsonUtils';
 import diffCalculation from './diffCalculation'
 import percentageCalculation from '../percentageCalculation'
-const colors:string[] = ['abkhaziaColor','afghanistanColor','albaniaColor','algeriaColor','americanSamoaColor','andorraColor','angolaColor','anguillaColor','antiguaAndBarbudaColor','argentinaColor','armeniaColor','arubaColor','ascensionIslandColor','australiaColor','austriaColor','azerbaijanColor','bahamasColor','bahrainColor','bangladeshColor','barbadosColor','belarusColor','belgiumColor','belizeColor','beninColor','bermudaColor','bhutanColor','boliviaColor','bonaireColor','bosniaAndHerzegovinaColor','botswanaColor','brazilColor','britishIndianOceanTerritoryColor','britishVirginIslandsColor','bruneiColor','bulgariaColor','burkinaFasoColor','burundiColor','cambodiaColor','cameroonColor','canadaColor','capeVerdeColor','caymanIslandsColor','centralAfricanRepublicColor','chadColor','chileColor','chinaColor','colombiaColor','comorosColor','cookIslandsColor','costaRicaColor','croatiaColor','cubaColor','curacaoColor','cyprusColor','czechRepublicColor','democraticRepublicOfTheCongoColor','denmarkColor','djiboutiColor','dominicaColor','dominicanRepublicColor','eastTimorColor','ecuadorColor','egyptColor','elSalvadorColor','equatorialGuineaColor','eritreaColor','estoniaColor','eswatiniColor','ethiopiaColor','falklandIslandsColor','faroeIslandsColor','fijiColor','finlandColor','franceColor','frenchGuianaColor','frenchPolynesiaColor','gabonColor','gambiaColor','georgiaColor','germanyColor','ghanaColor','gibraltarColor','greeceColor','greenlandColor','grenadaColor','guadeloupeColor','guamColor','guatemalaColor','guineaColor','guineaBissauColor','guyanaColor','haitiColor','hondurasColor','hongKongColor','hungaryColor','icelandColor','indiaColor','indonesiaColor','iranColor','iraqColor','irelandColor','israelColor','italyColor','ivoryCoastColor','jamaicaColor','janMayenColor','japanColor','jordanColor','kazakhstanColor','kenyaColor','kiribatiColor','kosovoColor','kurdistanColor','kuwaitColor','kyrgyzstanColor','laosColor','latviaColor','lebanonColor','lesothoColor','liberiaColor','libyaColor','liechtensteinColor','lithuaniaColor','luxembourgColor','macaoColor','madagascarColor','malawiColor','malaysiaColor','maldivesColor','maliColor','maltaColor','marshallIslandsColor','martiniqueColor','mauritaniaColor','mauritiusColor','mayotteColor','mexicoColor','micronesiaColor','moldovaColor','monacoColor','mongoliaColor','montenegroColor','montserratColor','moroccoColor','mozambiqueColor','myanmarColor','namibiaColor','nauruColor','nepalColor','netherlandsColor','newCaledoniaColor','newZealandColor','nicaraguaColor','nigerColor','nigeriaColor','niueColor','northernCyprusColor','northernMarianaIslandsColor','northKoreaColor','northMacedoniaColor','norwayColor','omanColor','pakistanColor','palauColor','palestineColor','panamaColor','papuaNewGuineaColor','paraguayColor','peruColor','philippinesColor','pitcairnIslandsColor','polandColor','portugalColor','qatarColor','republicOfTheCongoColor','reunionColor','romaniaColor','russiaColor','rwandaColor','sabaColor','saintBarthelemyColor','saintHelenaColor','saintKittsAndNevisColor','saintLuciaColor','saintMartinColor','saintPierreAndMiquelonColor','saintVincentAndTheGrenadinesColor','samoaColor','sanMarinoColor','saoTomeAndPrincipeColor','saudiArabiaColor','senegalColor','serbiaColor','seychellesColor','sierraLeoneColor','singaporeColor','sintEustatiusColor','sintMaartenColor','slovakiaColor','sloveniaColor','solomonIslandsColor','somaliaColor','somalilandColor','southAfricaColor','southKoreaColor','southOssetiaColor','southSudanColor','spainColor','sriLankaColor','sudanColor','surinameColor','svalbardColor','swedenColor','switzerlandColor','syriaColor','taiwanColor','tajikistanColor','tanzaniaColor','thailandColor','togoColor','tokelauColor','tongaColor','transnistriaColor','trinidadAndTobagoColor','tristanDaCunhaColor','tunisiaColor','turkeyColor','turkmenistanColor','turksAndCaicosColor','tuvaluColor','ugandaColor','ukraineColor','unitedArabEmiratesColor','unitedKingdomColor','unitedStatesColor','unitedStatesVirginIslandsColor','uruguayColor','uzbekistanColor','vanuatuColor','vaticanCityColor','venezuelaColor','vietnamColor','wallisAndFutunaColor','westernSaharaColor','yemenColor','zambiaColor','zimbabweColor']
+const ISOcodesLowercase:string[] = ['ab','af','al','dz','as','ad','ao','ai','ag','ar','am','aw','ac','au','at','az','bs','bh','bd','bb','by','be','bz','bj','bm','bt','bo','xb','ba','bw','br','io','vg','bn','bg','bf','bi','kh','cm','ca','cv','ky','cf','td','cl','cn','co','km','ck','cr','hr','cu','cw','cy','cz','cd','dk','dj','dm','do','tl','ec','eg','sv','gq','er','ee','sz','et','fk','fo','fj','fi','fr','gf','pf','ga','gm','ge','de','gh','gi','gr','gl','gd','gp','gu','gt','gn','gw','gy','ht','hn','hk','hu','is','in','id','ir','iq','ie','il','it','ci','jm','xm','jp','jo','kz','ke','ki','xk','kx','kw','kg','la','lv','lb','ls','lr','ly','li','lt','lu','mo','mg','mw','my','mv','ml','mt','mh','mq','mr','mu','yt','mx','fm','md','mc','mn','me','ms','ma','mz','mm','na','nr','np','nl','nc','nz','ni','ne','ng','nu','rc','mp','kp','mk','no','om','pk','pw','ps','pa','pg','py','pe','ph','pn','pl','pt','qa','cg','re','ro','ru','rw','xs','bl','sh','kn','lc','mf','pm','vc','ws','sm','st','sa','sn','rs','sc','sl','sg','xe','sx','sk','si','sb','so','xx','za','kr','xo','ss','es','lk','sd','sr','xv','se','ch','sy','tw','tj','tz','th','tg','tk','to','xt','tt','tx','tn','tr','tm','tc','tv','ug','ua','ae','gb','us','vi','uy','uz','vu','va','ve','vn','wf','eh','ye','zm','zw']
+const ISOcodes:string[] = ['AB','AF','AL','DZ','AS','AD','AO','AI','AG','AR','AM','AW','AC','AU','AT','AZ','BS','BH','BD','BB','BY','BE','BZ','BJ','BM','BT','BO','XB','BA','BW','BR','IO','VG','BN','BG','BF','BI','KH','CM','CA','CV','KY','CF','TD','CL','CN','CO','KM','CK','CR','HR','CU','CW','CY','CZ','CD','DK','DJ','DM','DO','TL','EC','EG','SV','GQ','ER','EE','SZ','ET','FK','FO','FJ','FI','FR','GF','PF','GA','GM','GE','DE','GH','GI','GR','GL','GD','GP','GU','GT','GN','GW','GY','HT','HN','HK','HU','IS','IN','ID','IR','IQ','IE','IL','IT','CI','JM','XM','JP','JO','KZ','KE','KI','XK','KX','KW','KG','LA','LV','LB','LS','LR','LY','LI','LT','LU','MO','MG','MW','MY','MV','ML','MT','MH','MQ','MR','MU','YT','MX','FM','MD','MC','MN','ME','MS','MA','MZ','MM','NA','NR','NP','NL','NC','NZ','NI','NE','NG','NU','RC','MP','KP','MK','NO','OM','PK','PW','PS','PA','PG','PY','PE','PH','PN','PL','PT','QA','CG','RE','RO','RU','RW','XS','BL','SH','KN','LC','MF','PM','VC','WS','SM','ST','SA','SN','RS','SC','SL','SG','XE','SX','SK','SI','SB','SO','XX','ZA','KR','XO','SS','ES','LK','SD','SR','XV','SE','CH','SY','TW','TJ','TZ','TH','TG','TK','TO','XT','TT','TX','TN','TR','TM','TC','TV','UG','UA','AE','GB','US','VI','UY','UZ','VU','VA','VE','VN','WF','EH','YE','ZM','ZW']
 const data = await fetchAndCacheJsonData()
 
 export default function mainCalculation(subCalculation:boolean, country:string, assignedColorsRef:any, selectRef:any, priorityRef:any, selectArrayRef:any, diffRef:any, setPercentage:Function, ESTAbanRef:any) {
-  if(subCalculation == false) { assignedColorsRef.current.push({ abkhaziaColor: 14, afghanistanColor: 14, albaniaColor: 14, algeriaColor: 14, americanSamoaColor: 14, andorraColor: 14, angolaColor: 14, anguillaColor: 14, antiguaAndBarbudaColor: 14, argentinaColor: 14, armeniaColor: 14, arubaColor: 14, ascensionIslandColor: 14, australiaColor: 14, austriaColor: 14, azerbaijanColor: 14, bahamasColor: 14, bahrainColor: 14, bangladeshColor: 14, barbadosColor: 14, belarusColor: 14, belgiumColor: 14, belizeColor: 14, beninColor: 14, bermudaColor: 14, bhutanColor: 14, boliviaColor: 14, bonaireColor: 14, bosniaAndHerzegovinaColor: 14, botswanaColor: 14, brazilColor: 14, britishIndianOceanTerritoryColor: 14, britishVirginIslandsColor: 14, bruneiColor: 14, bulgariaColor: 14, burkinaFasoColor: 14, burundiColor: 14, cambodiaColor: 14, cameroonColor: 14, canadaColor: 14, capeVerdeColor: 14, caymanIslandsColor: 14, centralAfricanRepublicColor: 14, chadColor: 14, chileColor: 14, chinaColor: 14, colombiaColor: 14, comorosColor: 14, cookIslandsColor: 14, costaRicaColor: 14, croatiaColor: 14, cubaColor: 14, curacaoColor: 14, cyprusColor: 14, czechRepublicColor: 14, democraticRepublicOfTheCongoColor: 14, denmarkColor: 14, djiboutiColor: 14, dominicaColor: 14, dominicanRepublicColor: 14, eastTimorColor: 14, ecuadorColor: 14, egyptColor: 14, elSalvadorColor: 14, equatorialGuineaColor: 14, eritreaColor: 14, estoniaColor: 14, eswatiniColor: 14, ethiopiaColor: 14, falklandIslandsColor: 14, faroeIslandsColor: 14, fijiColor: 14, finlandColor: 14, franceColor: 14, frenchGuianaColor: 14, frenchPolynesiaColor: 14, gabonColor: 14, gambiaColor: 14, georgiaColor: 14, germanyColor: 14, ghanaColor: 14, gibraltarColor: 14, greeceColor: 14, greenlandColor: 14, grenadaColor: 14, guadeloupeColor: 14, guamColor: 14, guatemalaColor: 14, guineaColor: 14, guineaBissauColor: 14, guyanaColor: 14, haitiColor: 14, hondurasColor: 14, hongKongColor: 14, hungaryColor: 14, icelandColor: 14, indiaColor: 14, indonesiaColor: 14, iranColor: 14, iraqColor: 14, irelandColor: 14, kosovoColor: 14, kurdistanColor: 14, israelColor: 14, italyColor: 14, ivoryCoastColor: 14, jamaicaColor: 14, janMayenColor: 14, japanColor: 14, jordanColor: 14, kazakhstanColor: 14, kenyaColor: 14, kiribatiColor: 14, kuwaitColor: 14, kyrgyzstanColor: 14, laosColor: 14, latviaColor: 14, lebanonColor: 14, lesothoColor: 14, liberiaColor: 14, libyaColor: 14, liechtensteinColor: 14, lithuaniaColor: 14, luxembourgColor: 14, macaoColor: 14, madagascarColor: 14, malawiColor: 14, malaysiaColor: 14, maldivesColor: 14, maliColor: 14, maltaColor: 14, marshallIslandsColor: 14, martiniqueColor: 14, mauritaniaColor: 14, mauritiusColor: 14, mayotteColor: 14, mexicoColor: 14, micronesiaColor: 14, moldovaColor: 14, monacoColor: 14, mongoliaColor: 14, montenegroColor: 14, montserratColor: 14, moroccoColor: 14, mozambiqueColor: 14, myanmarColor: 14, namibiaColor: 14, nauruColor: 14, nepalColor: 14, netherlandsColor: 14, newCaledoniaColor: 14, newZealandColor: 14, nicaraguaColor: 14, nigerColor: 14, nigeriaColor: 14, niueColor: 14, northernCyprusColor: 14, northernMarianaIslandsColor: 14, northKoreaColor: 14, northMacedoniaColor: 14, norwayColor: 14, omanColor: 14, pakistanColor: 14, palauColor: 14, palestineColor: 14, panamaColor: 14, papuaNewGuineaColor: 14, paraguayColor: 14, peruColor: 14, philippinesColor: 14, pitcairnIslandsColor: 14, polandColor: 14, portugalColor: 14, qatarColor: 14, republicOfTheCongoColor: 14, reunionColor: 14, romaniaColor: 14, russiaColor: 14, rwandaColor: 14, sabaColor: 14, saintBarthelemyColor: 14, saintHelenaColor: 14, saintKittsAndNevisColor: 14, saintLuciaColor: 14, saintMartinColor: 14, saintPierreAndMiquelonColor: 14, saintVincentAndTheGrenadinesColor: 14, samoaColor: 14, sanMarinoColor: 14, saoTomeAndPrincipeColor: 14, saudiArabiaColor: 14, senegalColor: 14, serbiaColor: 14, seychellesColor: 14, sierraLeoneColor: 14, singaporeColor: 14, sintEustatiusColor: 14, sintMaartenColor: 14, slovakiaColor: 14, sloveniaColor: 14, solomonIslandsColor: 14, somaliaColor: 14, somalilandColor: 14, southAfricaColor: 14, southKoreaColor: 14, southOssetiaColor: 14, southSudanColor: 14, spainColor: 14, sriLankaColor: 14, sudanColor: 14, surinameColor: 14, svalbardColor: 14, swedenColor: 14, switzerlandColor: 14, syriaColor: 14, taiwanColor: 14, tajikistanColor: 14, tanzaniaColor: 14, thailandColor: 14, togoColor: 14, tokelauColor: 14, tongaColor: 14, transnistriaColor: 14, trinidadAndTobagoColor: 14, tristanDaCunhaColor:14, tunisiaColor: 14, turkeyColor: 14, turkmenistanColor: 14, turksAndCaicosColor: 14, tuvaluColor: 14, ugandaColor: 14, ukraineColor: 14, unitedArabEmiratesColor: 14, unitedKingdomColor: 14, unitedStatesColor: 14, unitedStatesVirginIslandsColor: 14, uruguayColor: 14, uzbekistanColor: 14, vanuatuColor: 14, vaticanCityColor: 14, venezuelaColor: 14, vietnamColor: 14, wallisAndFutunaColor: 14, westernSaharaColor: 14, yemenColor: 14, zambiaColor: 14, zimbabweColor: 14 }) }
-  assignedColorsRef.current[selectRef.current.selection] = { abkhaziaColor: data[country].AB, afghanistanColor: data[country].AF, albaniaColor: data[country].AL, algeriaColor: data[country].DZ, americanSamoaColor: data[country].AS, andorraColor: data[country].AD, angolaColor: data[country].AO, anguillaColor: data[country].AI, antiguaAndBarbudaColor: data[country].AG, argentinaColor: data[country].AR, armeniaColor: data[country].AM, arubaColor: data[country].AW, ascensionIslandColor: data[country].AC, australiaColor: data[country].AU, austriaColor: data[country].AT, azerbaijanColor: data[country].AZ, bahamasColor: data[country].BS, bahrainColor: data[country].BH, bangladeshColor: data[country].BD, barbadosColor: data[country].BB, belarusColor: data[country].BY, belgiumColor: data[country].BE, belizeColor: data[country].BZ, beninColor: data[country].BJ, bermudaColor: data[country].BM, bhutanColor: data[country].BT, boliviaColor: data[country].BO, bonaireColor: data[country].XB, bosniaAndHerzegovinaColor: data[country].BA, botswanaColor: data[country].BW, brazilColor: data[country].BR, britishIndianOceanTerritoryColor: data[country].IO, britishVirginIslandsColor: data[country].VG, bruneiColor: data[country].BN, bulgariaColor: data[country].BG, burkinaFasoColor: data[country].BF, burundiColor: data[country].BI, cambodiaColor: data[country].KH, cameroonColor: data[country].CM, canadaColor: data[country].CA, capeVerdeColor: data[country].CV, caymanIslandsColor: data[country].KY, centralAfricanRepublicColor: data[country].CF, chadColor: data[country].TD, chileColor: data[country].CL, chinaColor: data[country].CN, colombiaColor: data[country].CO, comorosColor: data[country].KM, cookIslandsColor: data[country].CK, costaRicaColor: data[country].CR, croatiaColor: data[country].HR, cubaColor: data[country].CU, curacaoColor: data[country].CW, cyprusColor: data[country].CY, czechRepublicColor: data[country].CZ, democraticRepublicOfTheCongoColor: data[country].CD, denmarkColor: data[country].DK, djiboutiColor: data[country].DJ, dominicaColor: data[country].DM, dominicanRepublicColor: data[country].DO, eastTimorColor: data[country].TL, ecuadorColor: data[country].EC, egyptColor: data[country].EG, elSalvadorColor: data[country].SV, equatorialGuineaColor: data[country].GQ, eritreaColor: data[country].ER, estoniaColor: data[country].EE, eswatiniColor: data[country].SZ, ethiopiaColor: data[country].ET, falklandIslandsColor: data[country].FK, faroeIslandsColor: data[country].FO, fijiColor: data[country].FJ, finlandColor: data[country].FI, franceColor: data[country].FR, frenchGuianaColor: data[country].GF, frenchPolynesiaColor: data[country].PF, gabonColor: data[country].GA, gambiaColor: data[country].GM, georgiaColor: data[country].GE, germanyColor: data[country].DE, ghanaColor: data[country].GH, gibraltarColor: data[country].GI, greeceColor: data[country].GR, greenlandColor: data[country].GL, grenadaColor: data[country].GD, guadeloupeColor: data[country].GP, guamColor: data[country].GU, guatemalaColor: data[country].GT, guineaColor: data[country].GN, guineaBissauColor: data[country].GW, guyanaColor: data[country].GY, haitiColor: data[country].HT, hondurasColor: data[country].HN, hongKongColor: data[country].HK, hungaryColor: data[country].HU, icelandColor: data[country].IS, indiaColor: data[country].IN, indonesiaColor: data[country].ID, iranColor: data[country].IR, iraqColor: data[country].IQ, irelandColor: data[country].IE, israelColor: data[country].IL, italyColor: data[country].IT, ivoryCoastColor: data[country].CI, jamaicaColor: data[country].JM, janMayenColor: data[country].XM, japanColor: data[country].JP, jordanColor: data[country].JO, kazakhstanColor: data[country].KZ, kenyaColor: data[country].KE, kiribatiColor: data[country].KI, kosovoColor: data[country].XK, kurdistanColor: data[country].KX, kuwaitColor: data[country].KW, kyrgyzstanColor: data[country].KG, laosColor: data[country].LA, latviaColor: data[country].LV, lebanonColor: data[country].LB, lesothoColor: data[country].LS, liberiaColor: data[country].LR, libyaColor: data[country].LY, liechtensteinColor: data[country].LI, lithuaniaColor: data[country].LT, luxembourgColor: data[country].LU, macaoColor: data[country].MO, madagascarColor: data[country].MG, malawiColor: data[country].MW, malaysiaColor: data[country].MY, maldivesColor: data[country].MV, maliColor: data[country].ML, maltaColor: data[country].MT, marshallIslandsColor: data[country].MH, martiniqueColor: data[country].MQ, mauritaniaColor: data[country].MR, mauritiusColor: data[country].MU, mayotteColor: data[country].YT, mexicoColor: data[country].MX, micronesiaColor: data[country].FM, moldovaColor: data[country].MD, monacoColor: data[country].MC, mongoliaColor: data[country].MN, montenegroColor: data[country].ME, montserratColor: data[country].MS, moroccoColor: data[country].MA, mozambiqueColor: data[country].MZ, myanmarColor: data[country].MM, namibiaColor: data[country].NA, nauruColor: data[country].NR, nepalColor: data[country].NP, netherlandsColor: data[country].NL, newCaledoniaColor: data[country].NC, newZealandColor: data[country].NZ, nicaraguaColor: data[country].NI, nigerColor: data[country].NE, nigeriaColor: data[country].NG, niueColor: data[country].NU, northernCyprusColor: data[country].RC, northernMarianaIslandsColor: data[country].MP, northKoreaColor: data[country].KP, northMacedoniaColor: data[country].MK, norwayColor: data[country].NO, omanColor: data[country].OM, pakistanColor: data[country].PK, palauColor: data[country].PW, palestineColor: data[country].PS, panamaColor: data[country].PA, papuaNewGuineaColor: data[country].PG, paraguayColor: data[country].PY, peruColor: data[country].PE, philippinesColor: data[country].PH, pitcairnIslandsColor: data[country].PN, polandColor: data[country].PL, portugalColor: data[country].PT, qatarColor: data[country].QA, republicOfTheCongoColor: data[country].CG, reunionColor: data[country].RE, romaniaColor: data[country].RO, russiaColor: data[country].RU, rwandaColor: data[country].RW, sabaColor: data[country].XS, saintBarthelemyColor: data[country].BL, saintHelenaColor: data[country].SH, saintKittsAndNevisColor: data[country].KN, saintLuciaColor: data[country].LC, saintMartinColor: data[country].MF, saintPierreAndMiquelonColor: data[country].PM, saintVincentAndTheGrenadinesColor: data[country].VC, samoaColor: data[country].WS, sanMarinoColor: data[country].SM, saoTomeAndPrincipeColor: data[country].ST, saudiArabiaColor: data[country].SA, senegalColor: data[country].SN, serbiaColor: data[country].RS, seychellesColor: data[country].SC, sierraLeoneColor: data[country].SL, singaporeColor: data[country].SG, sintEustatiusColor: data[country].XE, sintMaartenColor: data[country].SX, slovakiaColor: data[country].SK, sloveniaColor: data[country].SI, solomonIslandsColor: data[country].SB, somaliaColor: data[country].SO, somalilandColor: data[country].XX, southAfricaColor: data[country].ZA, southKoreaColor: data[country].KR, southOssetiaColor: data[country].XO, southSudanColor: data[country].SS, spainColor: data[country].ES, sriLankaColor: data[country].LK, sudanColor: data[country].SD, surinameColor: data[country].SR, svalbardColor: data[country].XV, swedenColor: data[country].SE, switzerlandColor: data[country].CH, syriaColor: data[country].SY, taiwanColor: data[country].TW, tajikistanColor: data[country].TJ, tanzaniaColor: data[country].TZ, thailandColor: data[country].TH, togoColor: data[country].TG, tokelauColor: data[country].TK, tongaColor: data[country].TO, transnistriaColor: data[country].XT, trinidadAndTobagoColor: data[country].TT, tristanDaCunhaColor: data[country].TX, tunisiaColor: data[country].TN, turkeyColor: data[country].TR, turkmenistanColor: data[country].TM, turksAndCaicosColor: data[country].TC, tuvaluColor: data[country].TV, ugandaColor: data[country].UG, ukraineColor: data[country].UA, unitedArabEmiratesColor: data[country].AE, unitedKingdomColor: data[country].GB, unitedStatesColor: data[country].US, unitedStatesVirginIslandsColor: data[country].VI, uruguayColor: data[country].UY, uzbekistanColor: data[country].UZ, vanuatuColor: data[country].VU, vaticanCityColor: data[country].VA, venezuelaColor: data[country].VE, vietnamColor: data[country].VN, wallisAndFutunaColor: data[country].WF, westernSaharaColor: data[country].EH, yemenColor: data[country].YE, zambiaColor: data[country].ZM, zimbabweColor: data[country].ZW }
+  if(subCalculation == false) { assignedColorsRef.current.push({AB:14,AF:14,AL:14,DZ:14,AS:14,AD:14,AO:14,AI:14,AG:14,AR:14,AM:14,AW:14,AC:14,AU:14,AT:14,AZ:14,BS:14,BH:14,BD:14,BB:14,BY:14,BE:14,BZ:14,BJ:14,BM:14,BT:14,BO:14,XB:14,BA:14,BW:14,BR:14,IO:14,VG:14,BN:14,BG:14,BF:14,BI:14,KH:14,CM:14,CA:14,CV:14,KY:14,CF:14,TD:14,CL:14,CN:14,CO:14,KM:14,CK:14,CR:14,HR:14,CU:14,CW:14,CY:14,CZ:14,CD:14,DK:14,DJ:14,DM:14,DO:14,TL:14,EC:14,EG:14,SV:14,GQ:14,ER:14,EE:14,SZ:14,ET:14,FK:14,FO:14,FJ:14,FI:14,FR:14,GF:14,PF:14,GA:14,GM:14,GE:14,DE:14,GH:14,GI:14,GR:14,GL:14,GD:14,GP:14,GU:14,GT:14,GN:14,GW:14,GY:14,HT:14,HN:14,HK:14,HU:14,IS:14,IN:14,ID:14,IR:14,IQ:14,IE:14,IL:14,IT:14,CI:14,JM:14,XM:14,JP:14,JO:14,KZ:14,KE:14,KI:14,XK:14,KX:14,KW:14,KG:14,LA:14,LV:14,LB:14,LS:14,LR:14,LY:14,LI:14,LT:14,LU:14,MO:14,MG:14,MW:14,MY:14,MV:14,ML:14,MT:14,MH:14,MQ:14,MR:14,MU:14,YT:14,MX:14,FM:14,MD:14,MC:14,MN:14,ME:14,MS:14,MA:14,MZ:14,MM:14,NA:14,NR:14,NP:14,NL:14,NC:14,NZ:14,NI:14,NE:14,NG:14,NU:14,RC:14,MP:14,KP:14,MK:14,NO:14,OM:14,PK:14,PW:14,PS:14,PA:14,PG:14,PY:14,PE:14,PH:14,PN:14,PL:14,PT:14,QA:14,CG:14,RE:14,RO:14,RU:14,RW:14,XS:14,BL:14,SH:14,KN:14,LC:14,MF:14,PM:14,VC:14,WS:14,SM:14,ST:14,SA:14,SN:14,RS:14,SC:14,SL:14,SG:14,XE:14,SX:14,SK:14,SI:14,SB:14,SO:14,XX:14,ZA:14,KR:14,XO:14,SS:14,ES:14,LK:14,SD:14,SR:14,XV:14,SE:14,CH:14,SY:14,TW:14,TJ:14,TZ:14,TH:14,TG:14,TK:14,TO:14,XT:14,TT:14,TX:14,TN:14,TR:14,TM:14,TC:14,TV:14,UG:14,UA:14,AE:14,GB:14,US:14,VI:14,UY:14,UZ:14,VU:14,VA:14,VE:14,VN:14,WF:14,EH:14,YE:14,ZM:14,ZW:14}) }
+  assignedColorsRef.current[selectRef.current.selection] = {AB:data[country].AB,AF:data[country].AF,AL:data[country].AL,DZ:data[country].DZ,AS:data[country].AS,AD:data[country].AD,AO:data[country].AO,AI:data[country].AI,AG:data[country].AG,AR:data[country].AR,AM:data[country].AM,AW:data[country].AW,AC:data[country].AC,AU:data[country].AU,AT:data[country].AT,AZ:data[country].AZ,BS:data[country].BS,BH:data[country].BH,BD:data[country].BD,BB:data[country].BB,BY:data[country].BY,BE:data[country].BE,BZ:data[country].BZ,BJ:data[country].BJ,BM:data[country].BM,BT:data[country].BT,BO:data[country].BO,XB:data[country].XB,BA:data[country].BA,BW:data[country].BW,BR:data[country].BR,IO:data[country].IO,VG:data[country].VG,BN:data[country].BN,BG:data[country].BG,BF:data[country].BF,BI:data[country].BI,KH:data[country].KH,CM:data[country].CM,CA:data[country].CA,CV:data[country].CV,KY:data[country].KY,CF:data[country].CF,TD:data[country].TD,CL:data[country].CL,CN:data[country].CN,CO:data[country].CO,KM:data[country].KM,CK:data[country].CK,CR:data[country].CR,HR:data[country].HR,CU:data[country].CU,CW:data[country].CW,CY:data[country].CY,CZ:data[country].CZ,CD:data[country].CD,DK:data[country].DK,DJ:data[country].DJ,DM:data[country].DM,DO:data[country].DO,TL:data[country].TL,EC:data[country].EC,EG:data[country].EG,SV:data[country].SV,GQ:data[country].GQ,ER:data[country].ER,EE:data[country].EE,SZ:data[country].SZ,ET:data[country].ET,FK:data[country].FK,FO:data[country].FO,FJ:data[country].FJ,FI:data[country].FI,FR:data[country].FR,GF:data[country].GF,PF:data[country].PF,GA:data[country].GA,GM:data[country].GM,GE:data[country].GE,DE:data[country].DE,GH:data[country].GH,GI:data[country].GI,GR:data[country].GR,GL:data[country].GL,GD:data[country].GD,GP:data[country].GP,GU:data[country].GU,GT:data[country].GT,GN:data[country].GN,GW:data[country].GW,GY:data[country].GY,HT:data[country].HT,HN:data[country].HN,HK:data[country].HK,HU:data[country].HU,IS:data[country].IS,IN:data[country].IN,ID:data[country].ID,IR:data[country].IR,IQ:data[country].IQ,IE:data[country].IE,IL:data[country].IL,IT:data[country].IT,CI:data[country].CI,JM:data[country].JM,XM:data[country].XM,JP:data[country].JP,JO:data[country].JO,KZ:data[country].KZ,KE:data[country].KE,KI:data[country].KI,XK:data[country].XK,KX:data[country].KX,KW:data[country].KW,KG:data[country].KG,LA:data[country].LA,LV:data[country].LV,LB:data[country].LB,LS:data[country].LS,LR:data[country].LR,LY:data[country].LY,LI:data[country].LI,LT:data[country].LT,LU:data[country].LU,MO:data[country].MO,MG:data[country].MG,MW:data[country].MW,MY:data[country].MY,MV:data[country].MV,ML:data[country].ML,MT:data[country].MT,MH:data[country].MH,MQ:data[country].MQ,MR:data[country].MR,MU:data[country].MU,YT:data[country].YT,MX:data[country].MX,FM:data[country].FM,MD:data[country].MD,MC:data[country].MC,MN:data[country].MN,ME:data[country].ME,MS:data[country].MS,MA:data[country].MA,MZ:data[country].MZ,MM:data[country].MM,NA:data[country].NA,NR:data[country].NR,NP:data[country].NP,NL:data[country].NL,NC:data[country].NC,NZ:data[country].NZ,NI:data[country].NI,NE:data[country].NE,NG:data[country].NG,NU:data[country].NU,RC:data[country].RC,MP:data[country].MP,KP:data[country].KP,MK:data[country].MK,NO:data[country].NO,OM:data[country].OM,PK:data[country].PK,PW:data[country].PW,PS:data[country].PS,PA:data[country].PA,PG:data[country].PG,PY:data[country].PY,PE:data[country].PE,PH:data[country].PH,PN:data[country].PN,PL:data[country].PL,PT:data[country].PT,QA:data[country].QA,CG:data[country].CG,RE:data[country].RE,RO:data[country].RO,RU:data[country].RU,RW:data[country].RW,XS:data[country].XS,BL:data[country].BL,SH:data[country].SH,KN:data[country].KN,LC:data[country].LC,MF:data[country].MF,PM:data[country].PM,VC:data[country].VC,WS:data[country].WS,SM:data[country].SM,ST:data[country].ST,SA:data[country].SA,SN:data[country].SN,RS:data[country].RS,SC:data[country].SC,SL:data[country].SL,SG:data[country].SG,XE:data[country].XE,SX:data[country].SX,SK:data[country].SK,SI:data[country].SI,SB:data[country].SB,SO:data[country].SO,XX:data[country].XX,ZA:data[country].ZA,KR:data[country].KR,XO:data[country].XO,SS:data[country].SS,ES:data[country].ES,LK:data[country].LK,SD:data[country].SD,SR:data[country].SR,XV:data[country].XV,SE:data[country].SE,CH:data[country].CH,SY:data[country].SY,TW:data[country].TW,TJ:data[country].TJ,TZ:data[country].TZ,TH:data[country].TH,TG:data[country].TG,TK:data[country].TK,TO:data[country].TO,XT:data[country].XT,TT:data[country].TT,TX:data[country].TX,TN:data[country].TN,TR:data[country].TR,TM:data[country].TM,TC:data[country].TC,TV:data[country].TV,UG:data[country].UG,UA:data[country].UA,AE:data[country].AE,GB:data[country].GB,US:data[country].US,VI:data[country].VI,UY:data[country].UY,UZ:data[country].UZ,VU:data[country].VU,VA:data[country].VA,VE:data[country].VE,VN:data[country].VN,WF:data[country].WF,EH:data[country].EH,YE:data[country].YE,ZM:data[country].ZM,ZW:data[country].ZW}
   const assignedColorsRefLength = assignedColorsRef.current.length
 
   for(let main = 0; main < assignedColorsRefLength; main++) {
-    for(let sub = 0; sub < colors.length; sub++) {
-      switch(assignedColorsRef.current[main][colors[sub]]) {
-        case 0: priorityRef.current[colors[sub]] = 'rgb(255,20,147)'; break; //home country (pink)
-        case 1: priorityRef.current[colors[sub]] = 'rgb(255,0,0)'; break; //permit required (red)
+    for(let sub = 0; sub < ISOcodes.length; sub++) {
+      switch(assignedColorsRef.current[main][ISOcodes[sub]]) {
+        case 0: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(255,20,147)'; break; //home country (pink)
+        case 1: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(255,0,0)'; break; //permit required (red)
         case 2: //OECS freedom of movement (orange)
           let oecsFlag = false
           for(let oecs = 0; oecs < assignedColorsRefLength; oecs++) {
-            switch(assignedColorsRef.current[oecs][colors[sub]]) {
+            switch(assignedColorsRef.current[oecs][ISOcodes[sub]]) {
               case 0: oecsFlag = true; break;
             }
           }
           if(oecsFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(255,145,0)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(255,145,0)'
         break;
         case 3: //MERCOSUR freedom of movement (dark green)
           let msFlag = false
           for(let ms = 0; ms < assignedColorsRefLength; ms++) {
-            switch(assignedColorsRef.current[ms][colors[sub]]) {
+            switch(assignedColorsRef.current[ms][ISOcodes[sub]]) {
               case 0: msFlag = true; break;
             }
           }
           if(msFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(0,135,93)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(0,135,93)'
         break;
         case 4: //EU freedom of movement (dark blue)
           let euFlag = false
           for(let eu = 0; eu < assignedColorsRefLength; eu++) {
-            switch(assignedColorsRef.current[eu][colors[sub]]) {
+            switch(assignedColorsRef.current[eu][ISOcodes[sub]]) {
               case 0: euFlag = true; break;
             }
           }
           if(euFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(0,51,153)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(0,51,153)'
         break;
         case 5: //GCC freedom of movement (brown)
           let gccFlag = false
           for(let gcc = 0; gcc < assignedColorsRefLength; gcc++) {
-            switch(assignedColorsRef.current[gcc][colors[sub]]) {
+            switch(assignedColorsRef.current[gcc][ISOcodes[sub]]) {
               case 0: gccFlag = true; break;
             }
           }
           if(gccFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(153,123,61)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(153,123,61)'
         break;
         case 6: //freedom of movement (light pink)
           let fomFlag = false
           for(let fom = 0; fom < assignedColorsRefLength; fom++) {
-            switch(assignedColorsRef.current[fom][colors[sub]]) {
+            switch(assignedColorsRef.current[fom][ISOcodes[sub]]) {
               case 0: fomFlag = true; break;
               case 1: fomFlag = true; break;
               case 2: fomFlag = true; break;
@@ -67,12 +68,12 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
             }
           }
           if(fomFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(255,179,191)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(255,179,191)'
         break;
         case 7: //visa free (green)
           let vfFlag = false
           for(let vf = 0; vf < assignedColorsRefLength; vf++) {
-            switch(assignedColorsRef.current[vf][colors[sub]]) {
+            switch(assignedColorsRef.current[vf][ISOcodes[sub]]) {
               case 0: vfFlag = true; break;
               case 1: vfFlag = true; break;
               case 2: vfFlag = true; break;
@@ -83,12 +84,12 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
             }
           }
           if(vfFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(50,205,50)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(50,205,50)'
         break;
         case 8: //visa on arrival/evisa (light green)
           let voaevFlag = false
           for(let voaev = 0; voaev < assignedColorsRefLength; voaev++) {
-            switch(assignedColorsRef.current[voaev][colors[sub]]) {
+            switch(assignedColorsRef.current[voaev][ISOcodes[sub]]) {
               case 0: voaevFlag = true; break;
               case 1: voaevFlag = true; break;
               case 2: voaevFlag = true; break;
@@ -100,12 +101,12 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
             }
           }
           if(voaevFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(161,224,123)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'
         break;
         case 9: //visa on arrival (yellow)
           let voaFlag = false
           for(let voa = 0; voa < assignedColorsRefLength; voa++) {
-            switch(assignedColorsRef.current[voa][colors[sub]]) {
+            switch(assignedColorsRef.current[voa][ISOcodes[sub]]) {
               case 0: voaFlag = true; break;
               case 1: voaFlag = true; break;
               case 2: voaFlag = true; break;
@@ -115,16 +116,16 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 6: voaFlag = true; break;
               case 7: voaFlag = true; break;
               case 8: voaFlag = true; break;
-              case 10: priorityRef.current[colors[sub]] = 'rgb(161,224,123)'; voaFlag = true; break;
+              case 10: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; voaFlag = true; break;
             }
           }
           if(voaFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(255,255,92)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(255,255,92)'
         break;
         case 10: //evisa (blue)
           let evFlag = false
           for(let ev = 0; ev < assignedColorsRefLength; ev++) {
-            switch(assignedColorsRef.current[ev][colors[sub]]) {
+            switch(assignedColorsRef.current[ev][ISOcodes[sub]]) {
               case 0: evFlag = true; break;
               case 1: evFlag = true; break;
               case 2: evFlag = true; break;
@@ -134,16 +135,16 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 6: evFlag = true; break;
               case 7: evFlag = true; break;
               case 8: evFlag = true; break;
-              case 9: priorityRef.current[colors[sub]] = 'rgb(161,224,123)'; evFlag = true; break;
+              case 9: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; evFlag = true; break;
             }
           }
           if(evFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(135,206,250)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(135,206,250)'
         break;
         case 11: //Special permit/police check (purple)
           let spFlag = false
           for(let sp = 0; sp < assignedColorsRefLength; sp++) {
-            switch(assignedColorsRef.current[sp][colors[sub]]) {
+            switch(assignedColorsRef.current[sp][ISOcodes[sub]]) {
               case 0: spFlag = true; break;
               case 1: spFlag = true; break;
               case 2: spFlag = true; break;
@@ -158,12 +159,12 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
             }
           }
           if(spFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(118,65,171)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(118,65,171)'
         break;
         case 12: //simplified visa (light grey)
           let svFlag = false
           for(let sv = 0; sv < assignedColorsRefLength; sv++) {
-            switch(assignedColorsRef.current[sv][colors[sub]]) {
+            switch(assignedColorsRef.current[sv][ISOcodes[sub]]) {
               case 0: svFlag = true; break;
               case 1: svFlag = true; break;
               case 2: svFlag = true; break;
@@ -179,12 +180,12 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
             }
           }
           if(svFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(200,200,200)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(200,200,200)'
         break;
         case 13: //confirmation required (black)
           let crFlag = false
           for(let cr = 0; cr < assignedColorsRefLength; cr++) {
-            switch(assignedColorsRef.current[cr][colors[sub]]) {
+            switch(assignedColorsRef.current[cr][ISOcodes[sub]]) {
               case 0: crFlag = true; break;
               case 1: crFlag = true; break;
               case 2: crFlag = true; break;
@@ -201,7 +202,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 14: 
                 let vrFlag = false
                 for(let vr = 0; vr < assignedColorsRefLength; vr++) {
-                  switch(assignedColorsRef.current[vr][colors[sub]]) {
+                  switch(assignedColorsRef.current[vr][ISOcodes[sub]]) {
                     case 0: vrFlag = true; break;
                     case 1: vrFlag = true; break;
                     case 2: vrFlag = true; break;
@@ -218,11 +219,11 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
                   }
                 }
                 if(vrFlag == true) { break; }
-                priorityRef.current[colors[sub]] = 'rgb(150,150,150)'; crFlag = true;
+                priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(150,150,150)'; crFlag = true;
             }
           }
           if(crFlag == true) { break; }
-          priorityRef.current[colors[sub]] = 'rgb(0,0,0)'
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(0,0,0)'
         break;
       }
     }

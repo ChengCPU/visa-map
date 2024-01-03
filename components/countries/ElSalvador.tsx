@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const ElSalvador:React.FC = () => {
 
-  const { elSalvadorColor } = useContext(ColorContext)
+  const { sv } = useContext(ColorContext)
   const { SV } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'elSalvador'} onMouseOver={() => setCountrySelect('elSalvador')}>
   <style jsx>{`
   .elSalvador {
-  fill: ${elSalvadorColor};
+  fill: ${sv};
   stroke-width: 1;
   }
   `}</style>

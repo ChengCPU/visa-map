@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Palau:React.FC = () => {
 
-  const { palauColor } = useContext(ColorContext)
+  const { pw } = useContext(ColorContext)
   const { PW } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'palau'} onMouseOver={() => setCountrySelect('palau')}>
   <style jsx>{`
   .palau {
-  fill: ${palauColor};
+  fill: ${pw};
   stroke-width: 1;
   }
   `}</style>

@@ -5,7 +5,7 @@ import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
 
 const Tokelau:React.FC = () => {
 
-  const { tokelauColor } = useContext(ColorContext)
+  const { tk } = useContext(ColorContext)
   const { TK } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
@@ -13,7 +13,7 @@ return (
 <g className={'tokelau'} onMouseOver={() => setCountrySelect('tokelau')}>
   <style jsx>{`
   .tokelau {
-  fill: ${tokelauColor};
+  fill: ${tk};
   stroke-width: 1;
   }
   `}</style>
