@@ -28,7 +28,6 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
   const { language } = useContext(LanguageContext)
 
   useEffect(() => {
-    console.log(countriesAndTerritories.length)
     tempPriorityRef.current = priorityRef.current
     priorityRef.current = color
     tempDiffRef.current = diffRef.current
@@ -128,7 +127,6 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
           {filterValue && (
             filteredOptions.map((option, index) => (
               <p className={'inputText'} onClick={() => {
-                console.log(countriesAndTerritories[options.indexOf(option)])
                 setSelected(countriesAndTerritories[options.indexOf(option)])
                 individualVisaPolicyCalculation(countriesAndTerritories[options.indexOf(option)], priorityRef)
                 setFilterValue('')
