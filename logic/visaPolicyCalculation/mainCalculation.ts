@@ -232,14 +232,14 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
 
 //State sponsors of terrorism ESTA ban
 const ESTAban = () => {
-  priorityRef.current.unitedStatesColor = 'rgb(150,150,150)'
-  priorityRef.current.unitedStatesVirginIslandsColor = 'rgb(150,150,150)'
-  if(priorityRef.current.guamColor == 'rgb(135,206,250)') {
-    priorityRef.current.guamColor = 'rgb(150,150,150)'
+  priorityRef.current.us = 'rgb(150,150,150)'
+  priorityRef.current.vi = 'rgb(150,150,150)'
+  if(priorityRef.current.gu == 'rgb(135,206,250)') {
+    priorityRef.current.gu = 'rgb(150,150,150)'
     diffRef.current.GU = 1
   }
-  if(priorityRef.current.northernMarianaIslandsColor == 'rgb(135,206,250)') {
-    priorityRef.current.northernMarianaIslandsColor = 'rgb(150,150,150)'
+  if(priorityRef.current.mp == 'rgb(135,206,250)') {
+    priorityRef.current.mp = 'rgb(150,150,150)'
     diffRef.current.MP = 1
   }
 
@@ -249,10 +249,10 @@ const ESTAban = () => {
 }
 
 switch(country) {
-  case 'cuba': if(priorityRef.current.unitedStatesColor == 'rgb(135,206,250)') {ESTAban()} break;
-  case 'syria': if(priorityRef.current.unitedStatesColor == 'rgb(135,206,250)') {ESTAban()} break;
-  case 'iran': if(priorityRef.current.unitedStatesColor == 'rgb(135,206,250)') {ESTAban()} break;
-  case 'northKorea': if(priorityRef.current.unitedStatesColor == 'rgb(135,206,250)') {ESTAban()} break;
+  case 'cuba': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
+  case 'syria': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
+  case 'iran': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
+  case 'northKorea': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
 }
 
 if(ESTAbanRef.current == true) {
