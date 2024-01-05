@@ -24,7 +24,7 @@ export default function fetchSortData(rankRef:any, num:number, sort:string) {
       if(data[passport][countriesAndTerritories[countriesLoop]] == 9 || countriesLoop == countriesAndTerritories.length - 1) {
         visaOnArrivalCount++
       }
-      if(data[passport][countriesAndTerritories[countriesLoop]] == 10 || countriesLoop == countriesAndTerritories.length - 1) {
+      if(data[passport][countriesAndTerritories[countriesLoop]] == 10 || data[passport][countriesAndTerritories[countriesLoop]] == 15 || countriesLoop == countriesAndTerritories.length - 1) {
         eVisaCount++
       }
       if(data[passport][countriesAndTerritories[countriesLoop]] == 2 || data[passport][countriesAndTerritories[countriesLoop]] == 3 || data[passport][countriesAndTerritories[countriesLoop]] == 4 || data[passport][countriesAndTerritories[countriesLoop]] == 5 || data[passport][countriesAndTerritories[countriesLoop]] == 6) {

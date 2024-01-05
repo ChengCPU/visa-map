@@ -86,6 +86,23 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
           if(vfFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(50,205,50)'
         break;
+        case 15: //Electronic Travel Authorization (light/dark green)
+          let etaFlag = false
+          for(let eta = 0; eta < assignedColorsRefLength; eta++) {
+            switch(assignedColorsRef.current[eta][ISOcodes[sub]]) {
+              case 0: etaFlag = true; break;
+              case 1: etaFlag = true; break;
+              case 2: etaFlag = true; break;
+              case 3: etaFlag = true; break;
+              case 4: etaFlag = true; break;
+              case 5: etaFlag = true; break;
+              case 6: etaFlag = true; break;
+              case 7: etaFlag = true; break;
+            }
+          }
+          if(etaFlag == true) { break; }
+          priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(81,205,123)'
+        break;
         case 8: //visa on arrival/evisa (light green)
           let voaevFlag = false
           for(let voaev = 0; voaev < assignedColorsRefLength; voaev++) {
@@ -98,6 +115,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: voaevFlag = true; break;
               case 6: voaevFlag = true; break;
               case 7: voaevFlag = true; break;
+              case 15: voaevFlag = true; break;
             }
           }
           if(voaevFlag == true) { break; }
@@ -115,6 +133,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: voaFlag = true; break;
               case 6: voaFlag = true; break;
               case 7: voaFlag = true; break;
+              case 15: voaFlag = true; break;
               case 8: voaFlag = true; break;
               case 10: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; voaFlag = true; break;
             }
@@ -134,6 +153,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: evFlag = true; break;
               case 6: evFlag = true; break;
               case 7: evFlag = true; break;
+              case 15: evFlag = true; break;
               case 8: evFlag = true; break;
               case 9: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; evFlag = true; break;
             }
@@ -153,6 +173,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: spFlag = true; break;
               case 6: spFlag = true; break;
               case 7: spFlag = true; break;
+              case 15: spFlag = true; break;
               case 8: spFlag = true; break;
               case 9: spFlag = true; break;
               case 10: spFlag = true; break;
@@ -173,6 +194,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: svFlag = true; break;
               case 6: svFlag = true; break;
               case 7: svFlag = true; break;
+              case 15: svFlag = true; break;
               case 8: svFlag = true; break;
               case 9: svFlag = true; break;
               case 10: svFlag = true; break;
@@ -194,6 +216,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: crFlag = true; break;
               case 6: crFlag = true; break;
               case 7: crFlag = true; break;
+              case 15: crFlag = true; break;
               case 8: crFlag = true; break;
               case 9: crFlag = true; break;
               case 10: crFlag = true; break;
@@ -211,6 +234,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
                     case 5: vrFlag = true; break;
                     case 6: vrFlag = true; break;
                     case 7: vrFlag = true; break;
+                    case 15: vrFlag = true; break;
                     case 8: vrFlag = true; break;
                     case 9: vrFlag = true; break;
                     case 10: vrFlag = true; break;
@@ -228,7 +252,6 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
       }
     }
   }
-
 
 //State sponsors of terrorism ESTA ban
 const ESTAban = () => {

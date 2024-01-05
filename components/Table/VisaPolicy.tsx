@@ -25,6 +25,10 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     }
   }
 
+  const ETAcalc = () => {
+    return 'Electronic Travel Authorization'
+  }
+
   const colorCalculation = () => {
     switch(assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]]) {
       case 0: return 'rgb(255,20,147)'
@@ -35,6 +39,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
       case 5: return 'rgb(153,123,61)'
       case 6: return 'rgb(255,179,191)'
       case 7: return 'rgb(50,205,50)'
+      case 15: return 'rgb(81,205,123)'
       case 8: return 'rgb(161,224,123)'
       case 9: return 'rgb(255,255,92)'
       case 10: return 'rgb(135,206,250)'
@@ -56,6 +61,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
       case 5: return languageCaculation(5)
       case 6: return languageCaculation(6)
       case 7: return languageCaculation(7)
+      case 15: return ETAcalc()
       case 8: return languageCaculation(8)
       case 9: return languageCaculation(9)
       case 10: return languageCaculation(10)
