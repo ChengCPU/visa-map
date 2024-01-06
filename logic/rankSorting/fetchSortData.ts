@@ -15,16 +15,16 @@ export default function fetchSortData(rankRef:any, num:number, sort:string) {
 
   for(const passport of passportsArray) {
     for(let countriesLoop = 0; countriesLoop < countriesAndTerritories.length; countriesLoop++) {
-      if(data[passport][countriesAndTerritories[countriesLoop]] == 14 || data[passport][countriesAndTerritories[countriesLoop]] == 12 || data[passport][countriesAndTerritories[countriesLoop]] == 11 || data[passport][countriesAndTerritories[countriesLoop]] == 13 || countriesLoop == countriesAndTerritories.length - 1) {
+      if(data[passport][countriesAndTerritories[countriesLoop]] == 15 || data[passport][countriesAndTerritories[countriesLoop]] == 14 || data[passport][countriesAndTerritories[countriesLoop]] == 13 || data[passport][countriesAndTerritories[countriesLoop]] == 12 || countriesLoop == countriesAndTerritories.length - 1) {
         visaRequiredCount++
       }
-      if(data[passport][countriesAndTerritories[countriesLoop]] == 8 || countriesLoop == countriesAndTerritories.length - 1) {
+      if(data[passport][countriesAndTerritories[countriesLoop]] == 9 || countriesLoop == countriesAndTerritories.length - 1) {
         visaOnArrivalEVisaCount++
       }
-      if(data[passport][countriesAndTerritories[countriesLoop]] == 9 || countriesLoop == countriesAndTerritories.length - 1) {
+      if(data[passport][countriesAndTerritories[countriesLoop]] == 10 || countriesLoop == countriesAndTerritories.length - 1) {
         visaOnArrivalCount++
       }
-      if(data[passport][countriesAndTerritories[countriesLoop]] == 10 || data[passport][countriesAndTerritories[countriesLoop]] == 15 || countriesLoop == countriesAndTerritories.length - 1) {
+      if(data[passport][countriesAndTerritories[countriesLoop]] == 8 || data[passport][countriesAndTerritories[countriesLoop]] == 11 || countriesLoop == countriesAndTerritories.length - 1) {
         eVisaCount++
       }
       if(data[passport][countriesAndTerritories[countriesLoop]] == 2 || data[passport][countriesAndTerritories[countriesLoop]] == 3 || data[passport][countriesAndTerritories[countriesLoop]] == 4 || data[passport][countriesAndTerritories[countriesLoop]] == 5 || data[passport][countriesAndTerritories[countriesLoop]] == 6) {

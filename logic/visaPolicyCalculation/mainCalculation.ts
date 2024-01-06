@@ -86,7 +86,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
           if(vfFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(50,205,50)'
         break;
-        case 15: //Electronic Travel Authorization (light/dark green)
+        case 8: //Electronic Travel Authorization (light/dark green)
           let etaFlag = false
           for(let eta = 0; eta < assignedColorsRefLength; eta++) {
             switch(assignedColorsRef.current[eta][ISOcodes[sub]]) {
@@ -103,7 +103,7 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
           if(etaFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(81,205,123)'
         break;
-        case 8: //visa on arrival/evisa (light green)
+        case 9: //visa on arrival/evisa (light green)
           let voaevFlag = false
           for(let voaev = 0; voaev < assignedColorsRefLength; voaev++) {
             switch(assignedColorsRef.current[voaev][ISOcodes[sub]]) {
@@ -115,13 +115,13 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: voaevFlag = true; break;
               case 6: voaevFlag = true; break;
               case 7: voaevFlag = true; break;
-              case 15: voaevFlag = true; break;
+              case 8: voaevFlag = true; break;
             }
           }
           if(voaevFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'
         break;
-        case 9: //visa on arrival (yellow)
+        case 10: //visa on arrival (yellow)
           let voaFlag = false
           for(let voa = 0; voa < assignedColorsRefLength; voa++) {
             switch(assignedColorsRef.current[voa][ISOcodes[sub]]) {
@@ -133,15 +133,15 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: voaFlag = true; break;
               case 6: voaFlag = true; break;
               case 7: voaFlag = true; break;
-              case 15: voaFlag = true; break;
               case 8: voaFlag = true; break;
-              case 10: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; voaFlag = true; break;
+              case 9: voaFlag = true; break;
+              case 11: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; voaFlag = true; break;
             }
           }
           if(voaFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(255,255,92)'
         break;
-        case 10: //evisa (blue)
+        case 11: //evisa (blue)
           let evFlag = false
           for(let ev = 0; ev < assignedColorsRefLength; ev++) {
             switch(assignedColorsRef.current[ev][ISOcodes[sub]]) {
@@ -153,15 +153,15 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: evFlag = true; break;
               case 6: evFlag = true; break;
               case 7: evFlag = true; break;
-              case 15: evFlag = true; break;
               case 8: evFlag = true; break;
-              case 9: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; evFlag = true; break;
+              case 9: evFlag = true; break;
+              case 10: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; evFlag = true; break;
             }
           }
           if(evFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(135,206,250)'
         break;
-        case 11: //Special permit/police check (purple)
+        case 12: //Special permit/police check (purple)
           let spFlag = false
           for(let sp = 0; sp < assignedColorsRefLength; sp++) {
             switch(assignedColorsRef.current[sp][ISOcodes[sub]]) {
@@ -173,16 +173,16 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: spFlag = true; break;
               case 6: spFlag = true; break;
               case 7: spFlag = true; break;
-              case 15: spFlag = true; break;
               case 8: spFlag = true; break;
               case 9: spFlag = true; break;
               case 10: spFlag = true; break;
+              case 11: spFlag = true; break;
             }
           }
           if(spFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(118,65,171)'
         break;
-        case 12: //simplified visa (light grey)
+        case 13: //simplified visa (light grey)
           let svFlag = false
           for(let sv = 0; sv < assignedColorsRefLength; sv++) {
             switch(assignedColorsRef.current[sv][ISOcodes[sub]]) {
@@ -194,17 +194,17 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: svFlag = true; break;
               case 6: svFlag = true; break;
               case 7: svFlag = true; break;
-              case 15: svFlag = true; break;
               case 8: svFlag = true; break;
               case 9: svFlag = true; break;
               case 10: svFlag = true; break;
               case 11: svFlag = true; break;
+              case 12: svFlag = true; break;
             }
           }
           if(svFlag == true) { break; }
           priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(200,200,200)'
         break;
-        case 13: //confirmation required (black)
+        case 14: //confirmation required (black)
           let crFlag = false
           for(let cr = 0; cr < assignedColorsRefLength; cr++) {
             switch(assignedColorsRef.current[cr][ISOcodes[sub]]) {
@@ -216,13 +216,13 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 5: crFlag = true; break;
               case 6: crFlag = true; break;
               case 7: crFlag = true; break;
-              case 15: crFlag = true; break;
               case 8: crFlag = true; break;
               case 9: crFlag = true; break;
               case 10: crFlag = true; break;
               case 11: crFlag = true; break;
               case 12: crFlag = true; break;
-              case 14: 
+              case 13: crFlag = true; break;
+              case 15: 
                 let vrFlag = false
                 for(let vr = 0; vr < assignedColorsRefLength; vr++) {
                   switch(assignedColorsRef.current[vr][ISOcodes[sub]]) {
@@ -234,12 +234,12 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
                     case 5: vrFlag = true; break;
                     case 6: vrFlag = true; break;
                     case 7: vrFlag = true; break;
-                    case 15: vrFlag = true; break;
                     case 8: vrFlag = true; break;
                     case 9: vrFlag = true; break;
                     case 10: vrFlag = true; break;
                     case 11: vrFlag = true; break;
                     case 12: vrFlag = true; break;
+                    case 13: vrFlag = true; break;
                   }
                 }
                 if(vrFlag == true) { break; }

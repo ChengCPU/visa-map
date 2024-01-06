@@ -16,14 +16,14 @@ export default function individualVisaPolicyCalculation(countryCode:string, prio
       case 5: ISOcolor[isoCodesLowercase[i]] = 'rgb(153,123,61)'; break
       case 6: ISOcolor[isoCodesLowercase[i]] = 'rgb(255,179,191)'; break
       case 7: ISOcolor[isoCodesLowercase[i]] = 'rgb(50,205,50)'; break
-      case 15: ISOcolor[isoCodesLowercase[i]] = 'rgb(81,205,123)'; break
-      case 8: ISOcolor[isoCodesLowercase[i]] = 'rgb(161,224,123)'; break
-      case 9: ISOcolor[isoCodesLowercase[i]] = 'rgb(255,255,92)'; break
-      case 10: ISOcolor[isoCodesLowercase[i]] = 'rgb(135,206,250)'; break
-      case 11: ISOcolor[isoCodesLowercase[i]] = 'rgb(118,65,171)'; break
-      case 12: ISOcolor[isoCodesLowercase[i]] = 'rgb(200,200,200)'; break
-      case 13: ISOcolor[isoCodesLowercase[i]] = 'rgb(0,0,0)'; break
-      case 14: ISOcolor[isoCodesLowercase[i]] = 'rgb(150,150,150)'; break
+      case 8: ISOcolor[isoCodesLowercase[i]] = 'rgb(81,205,123)'; break
+      case 9: ISOcolor[isoCodesLowercase[i]] = 'rgb(161,224,123)'; break
+      case 10: ISOcolor[isoCodesLowercase[i]] = 'rgb(255,255,92)'; break
+      case 11: ISOcolor[isoCodesLowercase[i]] = 'rgb(135,206,250)'; break
+      case 12: ISOcolor[isoCodesLowercase[i]] = 'rgb(118,65,171)'; break
+      case 13: ISOcolor[isoCodesLowercase[i]] = 'rgb(200,200,200)'; break
+      case 14: ISOcolor[isoCodesLowercase[i]] = 'rgb(0,0,0)'; break
+      case 15: ISOcolor[isoCodesLowercase[i]] = 'rgb(150,150,150)'; break
     }
   }
 

@@ -4,7 +4,7 @@ export default function percentageCalculation(priorityRef:any, setPercentage:Fun
   let globalCount = 0
 
   for(let global = 0; global < ISOcodesLowercase.length; global++) {
-    if(priorityRef.current[ISOcodesLowercase[global]] != 'rgb(149,150,150)' && priorityRef.current[ISOcodesLowercase[global]] != 'rgb(150,150,150)' && priorityRef.current[ISOcodesLowercase[global]] != 'rgb(0,0,0)' && priorityRef.current[ISOcodesLowercase[global]] != 'rgb(255,0,0)' && priorityRef.current[ISOcodesLowercase[global]] != 'rgb(200,200,200)') {
+    if(priorityRef.current[ISOcodesLowercase[global]] != 'rgb(150,150,150)' && priorityRef.current[ISOcodesLowercase[global]] != 'rgb(0,0,0)' && priorityRef.current[ISOcodesLowercase[global]] != 'rgb(255,0,0)' && priorityRef.current[ISOcodesLowercase[global]] != 'rgb(200,200,200)') {
       globalCount++
       if(global == ISOcodesLowercase.length - 1) {
         setPercentage(globalCount)

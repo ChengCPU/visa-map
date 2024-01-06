@@ -39,14 +39,14 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
       case 5: return 'rgb(153,123,61)'
       case 6: return 'rgb(255,179,191)'
       case 7: return 'rgb(50,205,50)'
-      case 15: return 'rgb(81,205,123)'
-      case 8: return 'rgb(161,224,123)'
-      case 9: return 'rgb(255,255,92)'
-      case 10: return 'rgb(135,206,250)'
-      case 11: return 'rgb(118,65,171)'
-      case 12: return 'rgb(200,200,200)'
-      case 13: return 'rgb(0,0,0)'
-      case 14: return 'rgb(149,150,150)'
+      case 8: return 'rgb(81,205,123)'
+      case 9: return 'rgb(161,224,123)'
+      case 10: return 'rgb(255,255,92)'
+      case 11: return 'rgb(135,206,250)'
+      case 12: return 'rgb(118,65,171)'
+      case 13: return 'rgb(200,200,200)'
+      case 14: return 'rgb(0,0,0)'
+      case 15: return 'rgb(149,150,150)'
       default: return '#333333'
     }
   }
@@ -61,14 +61,14 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
       case 5: return languageCaculation(5)
       case 6: return languageCaculation(6)
       case 7: return languageCaculation(7)
-      case 15: return ETAcalc()
-      case 8: return languageCaculation(8)
-      case 9: return languageCaculation(9)
-      case 10: return languageCaculation(10)
-      case 11: return languageCaculation(11)
-      case 12: return languageCaculation(12)
-      case 13: return languageCaculation(13)
-      case 14: return languageCaculation(14)
+      case 8: return ETAcalc()
+      case 9: return languageCaculation(8)
+      case 10: return languageCaculation(9)
+      case 11: return languageCaculation(10)
+      case 12: return languageCaculation(11)
+      case 13: return languageCaculation(12)
+      case 14: return languageCaculation(13)
+      case 15: return languageCaculation(14)
       default: return null;
     }
   }
