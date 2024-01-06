@@ -37,6 +37,7 @@ export default function Home({ mousePos, hover, setHover, countrySelect, priorit
       hover={hover}
       countrySelect={countrySelect}
       priorityRef={priorityRef}
+      selected={null}
     />
     </>
   )

@@ -17,9 +17,10 @@ interface Props {
   hover:boolean;
   countrySelect:string;
   priorityRef:any;
+  selected:string | null;
 }
 
-const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }) => {
+const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef, selected }) => {
 
   const { language } = useContext(LanguageContext)
 
@@ -41,11 +42,25 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }
     }
   }
 
-  const ETAcalc = () => {
-    return 'Electronic Travel Authorization'
+  const indexISOCalc = (key:string) => {
+    switch(key) {
+      case 'ca':
+      case 'gb':
+        return 'Electronic Travel Authorization'
+    }
   }
 
-  const rgbToText = (rgb:string) => {
+  const visaPolicyISOCalc = () => {
+    switch(selected) {
+      case 'CA':
+      case 'GB':
+        return 'Electronic Travel Authorization'
+    }
+  }
+
+  const ETAfunction = (selected != null) ? visaPolicyISOCalc : indexISOCalc
+
+  const rgbToText = (rgb:string, key:string) => {
     switch(rgb) {
       case 'rgb(255,20,147)': return languageCaculation()[0]
       case 'rgb(255,0,0)': return languageCaculation()[1]
@@ -55,7 +70,7 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }
       case 'rgb(153,123,61)': return languageCaculation()[5]
       case 'rgb(255,179,191)': return languageCaculation()[6]
       case 'rgb(50,205,50)': return languageCaculation()[7]
-      case 'rgb(81,205,123)': return ETAcalc()
+      case 'rgb(81,205,123)': return ETAfunction(key)
       case 'rgb(161,224,123)': return languageCaculation()[8]
       case 'rgb(255,255,92)': return languageCaculation()[9]
       case 'rgb(135,206,250)': return languageCaculation()[10]
@@ -113,7 +128,7 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef }
               </div>
               <div className={'legend'}>
                 <Rectangle color={priorityRef.current[ISOcodesLowercase[countries.indexOf(countrySelect)]]}/>
-                <p className={'text'}>{rgbToText(priorityRef.current[ISOcodesLowercase[countries.indexOf(countrySelect)]])}</p>
+                <p className={'text'}>{rgbToText(priorityRef.current[ISOcodesLowercase[countries.indexOf(countrySelect)]], ISOcodesLowercase[countries.indexOf(countrySelect)])}</p>
               </div>
             </td>
           </tr>

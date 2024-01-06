@@ -150,6 +150,7 @@ const VisaPolicy:React.FC<Props> = ({ setHover, priorityRef, setSelectorLoad, te
       hover={hover}
       countrySelect={countrySelect}
       priorityRef={priorityRef}
+      selected={selected}
     />
     </>
   )

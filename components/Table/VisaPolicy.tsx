@@ -25,8 +25,12 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     }
   }
 
-  const ETAcalc = () => {
-    return 'Electronic Travel Authorization'
+  const ETAcalc = (iso:string) => {
+    switch(iso) {
+      case 'CA':
+      case 'GB':
+        return 'Electronic Travel Authorization'
+    }
   }
 
   const colorCalculation = () => {
@@ -61,7 +65,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
       case 5: return languageCaculation(5)
       case 6: return languageCaculation(6)
       case 7: return languageCaculation(7)
-      case 8: return ETAcalc()
+      case 8: return ETAcalc(ISOcodes[verticalColumn])
       case 9: return languageCaculation(8)
       case 10: return languageCaculation(9)
       case 11: return languageCaculation(10)
@@ -78,7 +82,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     <style jsx>{`
       .text {
         padding: 10px;
-        color: ${(assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]] == 13) ? '#FFFFFF' : '#222222'};
+        color: ${(assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]] == 14) ? '#FFFFFF' : '#222222'};
         border: 1px solid #222222;
         background-color: ${(selectArrayRef.current[horizontalColumn] != null) ? colorCalculation() : '#333333'};
       }
