@@ -70,6 +70,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
       case 'NZ':
         return 'Electronic Travel Authorization'
       case 'AU':
+        //check for eVisitor eligibility before applying ETA
         if(australiaEvisitor.includes(countrySelect)) {
           return 'eVisitor'
         }
