@@ -46,6 +46,7 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef, 
     switch(key) {
       case 'ca':
       case 'gb':
+      case 'nz':
         return 'Electronic Travel Authorization'
     }
   }
@@ -54,6 +55,7 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef, 
     switch(selected) {
       case 'CA':
       case 'GB':
+      case 'NZ':
         return 'Electronic Travel Authorization'
     }
   }

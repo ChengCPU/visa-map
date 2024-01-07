@@ -29,6 +29,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     switch(iso) {
       case 'CA':
       case 'GB':
+      case 'NZ':
         return 'Electronic Travel Authorization'
     }
   }
