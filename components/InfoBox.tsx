@@ -12,7 +12,9 @@ const countriesEN:string[] = ['abkhazia','afghanistan','albania','algeria','amer
 const countriesES:string[] = ['abjasia','afganistán','albania','argelia','samoa Americana','andorra','angola','anguila','antigua y Barbuda','argentina','armenia','aruba','isla Ascencion','australia','austria','azerbaiyán','bahamas','bahrein','bangladesh','barbados','bielorrusia','bélgica','belice','benín','bermudas','bután','bolivia','bonaire','bosnia y Herzegovina','botswana','brasil','territorio Británico del Océano Índico','islas Vírgenes Británicas ','brunei','bulgaria','burkina Faso','burundi','camboya','camerún','canadá','cabo Verde','islas Caimán','república Centroafricana','chad','chile','china','colombia','comoras','islas Cook','costa Rica','croacia','cuba','curazao','chipre','república Checa','república Democrática del Congo','dinamarca','yibuti','domenica','república Dominicana','timor-Leste','ecuador','egipto','el Salvador','guinea Ecuatorial','eritrea','estonia','esuatini','etiopía','islas Malvinas','islas Feroe','fiyi','finlandia','francia','guayana Francesa','polinesia Francesa','gabón','gambia','georgia','alemania','ghana','gibraltar','grecia','groenlandia','granada','guadalupe','guam','guatemala','guinea','guinea Bissau','guyana','haití','honduras','hong Kong','hungría','islandia','india','indonesia','irán','irak','irlanda','israel','italia','costa de marfil','jamaica','jan Mayen','japón','jordania','kazajstán','kenia','kiribati','kosovo','curdistán','kuwait','kirguistán','laos','letonia','líbano','lesotho','liberia','libia','liechtenstein','lituania','luxemburgo','macao','madagascar','malawi','malasia','maldivas','mali','malta','islas Marshall','martinica','mauritania','mauricio','mayotte','méjico','micronesia','moldavia','mónaco','mongolia','montenegro','montserrat','marruecos','mozambique','myanmar','namibia','nauru','nepal','países Bajos','nueva Caledonia','nueva Zelanda','nicaragua','níger','nigeria','niue','chipre del norte','islas Marianas del Norte','corea del Norte','macedonia del Norte','noruega','omán','pakistán','palau','palestina','panamá','papúa Nueva Guinea','paraguay','perú','filipinas','islas Pitcairn','polonia','portugal','catar','república del Congo','réunion','rumania','rusia','ruanda','saba','san Bartolomé','santa Elena','san Cristóbal y Nieves','santa Lucía','san Martín','san Pedro y Miquelón','san Vicente y las Granadinas','samoa','san Marino','santo Tomé y Príncipe','arabia Saudita','senegal','serbia','seychelles','sierra Leona','singapur','san Eustaquio','san Martín','slovaquia','eslovenia','islas Solomon','somalia','somalilandia','sudáfrica','corea del Sur','osetia del Sur','sudán del Sur','españa','sri Lanka','sudán','suriname','svalbard','suecia','suiza','siria','taiwán','tayikistán','tanzania','tailandia','togo','tokelau','tonga','transnistria','trinidad y Tobago','tristán De Cunha','túnez','turquía','turkmenistán','islas Turcas y Caicos','tuvalu','uganda','ucrania','emiratos Árabes Unidos','reino Unido','estados Unidos','islas Vírgenes de los Estados Unidos','uruguay','uzbekistan','vanuatu','santa Sede','venezuela','vietnam','wallis y Futuna','sahara Occidental','yemen','zambia','zimbabue']
 const countriesPT:string[] = ['abcázia','afeganistão','albânia','argélia','samoa Americana','andorra','angola','anguila','antígua e Barbuda','argentina','arménia','aruba','ilha Da Ascensão','austrália','áustria','azerbaijão','baamas','baharem','bangladesh','barbados','bielorrússia','bélgica','belize','benim','bermudas','butão','bolívia','bonaire','bósnia e Herzegovina','botsuana','brasil','território Britânico do Oceano Índico','ilhas Virgens Britânicas','brunei','bulgária','burkina Faso','burundi','camboja','camarões','canadá','cabo Verde','ilhas Caymans','república Centro-Africana','chade','chile','china','colômbia','comores','ilhas Cook','costa Rica','croácia','cuba','curaçau','chipre','república Checa','república Democrática do Congo ','dinamarca','djibouti','dominica','república Dominicana','timor-Leste','equador','egipto','el Salvador','guiné Equatorial','eritreia','estónia','esuatini','etiópia','ilhas Malvinas','ilhas Faroé','fídji','finlândia','frança','guiana Francesa','polinésia Francesa','gabão','gâmbia','geórgia','alemanha','gana','gibraltar','grécia','gronelândia','granada','guadalupe','guam','guatemala','guiné-Conakri','guiné-Bissau','guiana','haiti','honduras','hong Kong','hungria','islândia','índia','indonésia','irão','iraque','irlanda','israel','itália','costa do Marfim','jamaica','jan Mayen','japão','jordânia','cazaquistão','quénia','kiribati','kosovo','curdistão','koweit','quirguistão','laos','letónia','líbano','lesoto','libéria','líbia','liechtenstein','lituânia','luxemburgo','macau','madagáscar','malaui','malásia','maldivas','mali','malta','ilhas Marshalls','martinica','mauritânia','maurícias','mayotte','méxico','micronésia','moldávia','mónaco','mongólia','montenegro','monserrate','marrocos','moçambique','myanmar','namíbia','nauru','nepal','países Baixos','nova Caledônia','nova Zelândia','nicarágua','níger','nigéria','niue','chipre del Norte','marianas Setentrionais','coreia do Nortea','macedónia do Norte','noruega','oman','paquistão','palau','palestina','panamá','papua-Nova Guiné','paraguai','peru','filipinas','ilhas Pitcairn','polónia','portugal','qatar','república do Congo','reunião','roménia','rússia','ruanda','saba','são Bartolomeu','santa Helena','são Cristóvão e Neves','santa Lúcia','são Martinho','são Pedro e Miquelão','são Vicente e as Granadinas','samoa','san Marino','são Tomé e Príncipe','arábia Saudita','senegal','sérvia','seychelles','serra Leoa','singapura','santo Eustáquio','são Martinho','eslováquia','eslovénia','ilhas Salomão','somália','somalilândia','áfrica do Sul','coreia do Sul','ossétia do Sul','sudão do Sul','espanha','sri Lanka','sudão','suriname','svalbard','suécia','suíça','síria','taiwan','tajiquistão','tanzânia','tailândia','togo','tokelau','tonga','transdniestre','trinidad e Tobago','tristão Da Cunha','tunísia','turquia','turquemenistão','turcas e Caicos ','tuvalu','uganda','ucrânia','emiratos Árabes Unidos','reino Unido','estados Unidos da América','ilhas Virgens Americanas','uruguai','uzbequistão','vanuatu','santa Sé','venezuela','vietnã','wallis e Futuna','saara Ocidental','iémen','zâmbia','zimbabwe']
 const countriesFR:string[] = ['abkhazie','afghanistan','albanie','algérie','samoa Américaines','andorre','angola','anguilla','antigua-et-Barbuda','argentine','arménie','aruba','île De L\'ascension','australie','autriche','azerbaïdjan','bahamas','bahreïn','bangladesh','barbade','biélorussie','belgique','belize','bénin','bermudes','bhoutan','bolivie','bonaire','bosnie-Herzégovine','botswana','brésil','territoire britannique de l\'océan Indien','Îles Vierges britanniques','brunei','bulgarie','burkina Faso','burundi','cambodge','cameroun','canada','cap-Vert','îles Caïmans','république centrafricaine','tchad','chili','chine','colombie','comores','îles Cook','costa Rica','croatie','cuba','curacao','chypre','république tchèque','république Démocratique du Congo','danemark','djibouti','dominique','république dominicaine','timor Oriental','équateur','égypte','salvador','guinée équatoriale','érythrée','estonie','eswatini','éthiopie','îles Malouines','îles Féroé','fidji','finlande','france','guyane','polynésie française','gabon','gambie','géorgie','allemagne','ghana','gibraltar','grèce','groenland','grenade','guadeloupe','guam','guatemala','guinée','guinée-Bissau','guyana','haïti','honduras','hong Kong','hongrie','islande','inde','indonésie','iran','irak','irlande','israël','italie','côte d\'Ivoire','jamaïque','jan Mayen','japon','jordanie','kazakhstan','kenya','kiribati','kosovo','kurdistan','koweït','kirghizistan','laos','lettonie','liban','lesotho','liberia','libye','liechtenstein','lituanie','luxembourg','macao','madagascar','malawi','malaisie','maldives','mali','malte','îles Marshall','martinique','mauritanie','maurice','mayotte','mexique','micronésie','moldavie','monaco','mongolie','monténégro','montserrat','maroc','mozambique','myanmar','namibie','nauru','népal','pays-Bas','nouvelle-Calédonie','nouvelle-Zélande','nicaragua','niger','nigeria','niue','chypre du Nord','îles Mariannes du Nord','corée du Nord','macédoine du Nord','norvège','oman','pakistan','palaos','palestina','panamá','papouasie-Nouvelle-Guinée','paraguay','pérou','philippines','îles Pitcairn','pologne','portugal','qatar','république du Congo','la Réunion','roumanie','russie','rouanda','saba','saint-Barthélemy','sainte-Hélène','saint-Christophe-et-Niévès','sainte-Lucie','saint-Martin','saint-Pierre-et-Miquelon','saint-Vincent-et-les Grenadines','samoa','saint-Marin','são Tomé-et-Príncipe','arabie Saoudite','sénégal','serbie','seychelles','sierra Leone','singapour','saint Eustache','st Martin','slovaquie','slovénie','îles Salomon','somalie','somaliland','afrique du Sud','corée du Sud','ossétie du Sud','soudan du Sud','espagne','sri Lanca','soudan','suriname','svalbard','suède','suisse','syrie','taïwan','tadjikistan','tanzanie','thaïlande','togo','tokelau','tonga','transnistrie','trinité-et-Tobago','tristan Da Cunha','tunisie','turquie','turkménistan','îles Turques-et-Caïques','tuvalu','ouganda','ukraine','émirats arabes unis','royaume-Uni','états-Unis d\'Amérique','îles Vierges des États-Unis','uruguay','ouzbékistan','vanuatu','saint-Siège','venezuela','viêt Nam','wallis-et-Futuna','sahara Occidental','yémen','zambie','zimbábue']
+const australiaEvisitor:string[] = ['austria','belgium','bulgaria','croatia','cyprus','czechRepublic','denmark','estonia','finland','france','germany','greece','hungary','ireland','italy','latvia','lithuania','luxembourg','malta','netherlands','poland','portugal','romania','slovakia','spain','sweden','andorra','iceland','liechtenstein','monaco','norway','sanMarino','switzerland','unitedKingdom','vaticanCity']
 interface Props {
+  selectArrayRef:any;
   mousePos:number | boolean[];
   hover:boolean;
   countrySelect:string;
@@ -20,12 +22,12 @@ interface Props {
   selected:string | null;
 }
 
-const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef, selected }) => {
+const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelect, priorityRef, selected }) => {
 
   const { language } = useContext(LanguageContext)
 
   const languageCaculation = () => {
-    switch(language){
+    switch(language) {
       case '🇬🇧EN': return policyEN
       case '🇪🇸ES': return policyES
       case '🇵🇹PT': return policyPT
@@ -34,7 +36,7 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef, 
   }
 
   const languageCaculation2 = () => {
-    switch(language){
+    switch(language) {
       case '🇬🇧EN': return countriesEN
       case '🇪🇸ES': return countriesES
       case '🇵🇹PT': return countriesPT
@@ -48,6 +50,16 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef, 
       case 'gb':
       case 'nz':
         return 'Electronic Travel Authorization'
+      case 'au':
+          //check for eVisitor eligibility before applying ETA
+          let i = 0;
+          while(selectArrayRef.current[i] != null) {
+            if(australiaEvisitor.includes((selectArrayRef.current[i]))) {
+              return 'eVisitor'
+            }
+            i++
+          }
+        return 'Electronic Travel Authorization'
     }
   }
 
@@ -56,6 +68,11 @@ const InfoBox:React.FC<Props> = ({ mousePos, hover, countrySelect, priorityRef, 
       case 'CA':
       case 'GB':
       case 'NZ':
+        return 'Electronic Travel Authorization'
+      case 'AU':
+        if(australiaEvisitor.includes(countrySelect)) {
+          return 'eVisitor'
+        }
         return 'Electronic Travel Authorization'
     }
   }

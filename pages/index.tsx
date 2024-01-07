@@ -3,6 +3,7 @@ import Map from '../components/Map/Map'
 import Head from 'next/head'
 import InfoBox from '../components/InfoBox'
 interface Props {
+  selectArrayRef:any;
   mousePos:number | boolean[];
   hover:boolean;
   setHover:Function;
@@ -14,7 +15,7 @@ interface Props {
   diffRef:any;
 }
 
-export default function Home({ mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef }:Props) {
 
   useEffect(() => {
     priorityRef.current = tempPriorityRef.current
@@ -33,6 +34,7 @@ export default function Home({ mousePos, hover, setHover, countrySelect, priorit
       setHover={setHover}
     />
     <InfoBox
+      selectArrayRef={selectArrayRef}
       mousePos={mousePos}
       hover={hover}
       countrySelect={countrySelect}
