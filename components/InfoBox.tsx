@@ -45,38 +45,26 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
   }
 
   const indexISOCalc = (key:string) => {
-    switch(key) {
-      case 'ca':
-      case 'gb':
-      case 'nz':
-        return 'Electronic Travel Authorization'
-      case 'au':
-          //check for eVisitor eligibility before applying ETA
-          let i = 0;
-          while(selectArrayRef.current[i] != null) {
-            if(australiaEvisitor.includes((selectArrayRef.current[i]))) {
-              return 'eVisitor'
-            }
-            i++
-          }
-        return 'Electronic Travel Authorization'
-    }
+    return ETAcodes[key.toUpperCase()]
   }
 
   const visaPolicyISOCalc = () => {
-    switch(selected) {
-      case 'CA':
-      case 'GB':
-      case 'NZ':
-        return 'Electronic Travel Authorization'
-      case 'AU':
-        //check for eVisitor eligibility before applying ETA
-        if(australiaEvisitor.includes(countrySelect)) {
-          return 'eVisitor'
-        }
-        return 'Electronic Travel Authorization'
-    }
+    return ETAcodes[selected]
   }
+
+  const auETAcalc = () => {
+    let i = 0
+    while(selectArrayRef.current[i] != null) {
+      if(australiaEvisitor.includes((selectArrayRef.current[i]))) {
+        return 'eVisitor'
+      }
+      i++
+    }
+
+    return 'Electronic Travel Authorization'
+  }
+
+  const ETAcodes = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'Electronic Travel Authorization',AU:auETAcalc()}
 
   const ETAfunction = (selected != null) ? visaPolicyISOCalc : indexISOCalc
 
