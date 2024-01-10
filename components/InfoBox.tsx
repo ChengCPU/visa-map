@@ -64,7 +64,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
     return 'Electronic Travel Authorization'
   }
 
-  const ETAcodes = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'Electronic Travel Authorization',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'OK Board',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS'}
+  const ETAcodes = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'Electronic Travel Authorization',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'OK Board',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization'}
 
   const ETAfunction = (selected != null) ? visaPolicyISOCalc : indexISOCalc
 
