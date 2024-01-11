@@ -40,7 +40,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     return 'Electronic Travel Authorization'
   }
 
-  const ETAcodes = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'Electronic Travel Authorization',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'OK Board',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization'}
+  const ETAcodes = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'Electronic Travel Authorization',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization'}
 
   const colorCalculation = () => {
     switch(assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]]) {
