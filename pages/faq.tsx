@@ -74,7 +74,7 @@ const Faq:React.FC<Props> = ({  }) => {
         </CustomizedAccordionSummary>
         <CustomizedAccordionDetails>
           <Typography>
-            The primary criterion for passport inclusion is the availability of reliable and accurate data. For passports with limited but substantial international recognition and rare variants of passports, there simply isn't enough reliable information to conclusively add them, knowing that the information is accurate.
+            The primary criterion for passport inclusion is the availability of reliable and accurate data. For passports with limited but substantial international recognition and rare variants of passports, there simply {`isn't`} enough reliable information to conclusively add them, knowing that the information is accurate.
           </Typography>
         </CustomizedAccordionDetails>
       </Accordion>
@@ -83,7 +83,7 @@ const Faq:React.FC<Props> = ({  }) => {
           aria-controls="panel2-content"
           id="panel2-header"
         >
-          <Typography>I found some information on this website that isn't correct. How can I change it?</Typography>
+          <Typography>I found some information on this website that {`isn't`} correct. How can I change it?</Typography>
         </CustomizedAccordionSummary>
         <CustomizedAccordionDetails>
           <Typography>
