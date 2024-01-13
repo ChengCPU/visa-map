@@ -26,10 +26,10 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
 `
 
-const headerEN = ['Map', 'Table', 'Rank', 'Visa']
-const headerES = ['Mapa', 'Tabla', 'Rango', 'Visado']
-const headerPT = ['Mapa', 'Tabela', 'Classificação', 'Visado']
-const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa']
+const headerEN = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
+const headerES = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
+const headerPT = ['Mapa', 'Tabela', 'Classificação', 'Visado', 'FAQ']
+const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
 
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
 
@@ -72,6 +72,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
       <Link href='/table'><CustomizedButton variant="contained">{languageCaculation()[1]}</CustomizedButton></Link>
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
       <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation()[3]}</CustomizedButton></Link>
+      {(dimensions.width <= 800) ? null : <Link href='/faq'><CustomizedButton variant="contained">{languageCaculation()[4]}</CustomizedButton></Link>}
       <div className={'languageSelect'}>
         <LanguageSelect
           language={language}
