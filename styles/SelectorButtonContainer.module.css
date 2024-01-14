@@ -25,3 +25,8 @@
   background-color: red;
   user-select: none;
 }
+
+.faq {
+  position: absolute;
+  left: 7px;
+}

@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import ProgressBar from '../ProgressBar'
+import FAQbutton from './FAQbutton'
 import SelectorButton from './SelectorButton'
 import styles from '../../styles/SelectorButtonContainer.module.css'
 interface Props {
@@ -40,7 +41,9 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, sel
     {(selectorLoad == true) ?
     <div className={styles.container}>
       {(dimensions.width <= 800) ?
-      null
+      <div className={styles.faq}>
+        <FAQbutton />
+      </div>
       :
       <div className={styles.text}>
         <ProgressBar percentage={percentage} verticalColumn={null} width={'100px'} height={'100px'} color={'rgb(255,255,255)'} />
