@@ -28,7 +28,7 @@ const CustomizedButton = styled(Button)`
 
 const headerEN = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
 const headerES = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
-const headerPT = ['Mapa', 'Tabela', 'Classificação', 'Visado', 'FAQ']
+const headerPT = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
 const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
 
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
