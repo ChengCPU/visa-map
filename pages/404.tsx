@@ -25,6 +25,10 @@ export default function Custom404() {
 		<br />
 		<br />
 		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 		<style jsx>{`
 			.container {
 				user-select: none;
