@@ -6,7 +6,6 @@ import FourZeroFour from '../public/404.gif'
 export default function Custom404() {
 	const router = useRouter();
 
-	/*
   useEffect(() => {
     const redirectTimer = setTimeout(() => {
       router.push('/');
@@ -14,7 +13,6 @@ export default function Custom404() {
 
     return () => clearTimeout(redirectTimer);
   }, [router]);
-	*/
 
 	return (
 		<div className={'container'}>
