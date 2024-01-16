@@ -1,8 +1,5 @@
-export default function alphabeticalSort(rankData:any, rankRef:any, sort:string) {
+export default function alphabeticalSort(rankData:any, rankRef:any) {
   const unsortedData:(string | number)[][] = rankData
-  if(sort == 'Ascending') {
-    unsortedData.reverse()
-  }
 
   const tempArray:number[] = Array.from({ length: rankData.length }, (_, index) => index + 1)
 

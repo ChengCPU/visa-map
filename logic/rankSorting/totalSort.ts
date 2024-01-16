@@ -1,4 +1,4 @@
-export default function totalSort(rankData:any, rankRef:any, sort:string) {
+export default function totalSort(rankData:any, rankRef:any) {
   const unsortedData:(string | number)[][] = rankData
 
   for(let i = 0; i < unsortedData.length; i++) {
@@ -61,10 +61,6 @@ export default function totalSort(rankData:any, rankRef:any, sort:string) {
 
   for(let b = 0; b < sortedData.length; b++) {
     freedomOfMovementCheck(b)
-  }
-
-  if(sort == 'Ascending') {
-    sortedData.reverse()
   }
 
   const tempArray:number[] = Array.from({ length: rankData.length }, (_, index) => index + 1);

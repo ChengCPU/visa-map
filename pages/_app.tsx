@@ -234,7 +234,7 @@ function MyApp({ Component, pageProps }) {
   const [dimensions, setDimensions] = useState<{width: number; height: number;}>({width: 0, height: 0})
   const [mousePos, setMousePos] = useState<number[]>([])
   const [hover, setHover] = useState<boolean>(false)
-  const [sortBy, setSortBy] = useState<string>('Sort by: Total (Descending)')
+  const [sortBy, setSortBy] = useState<string>('Sort by: Total')
   const [language, setLanguage] = useState<string>('🇬🇧EN')
   const [countrySelect, setCountrySelect] = useState<string>('')
   const [selectorLoad, setSelectorLoad] = useState<boolean>(true)
@@ -261,7 +261,7 @@ function MyApp({ Component, pageProps }) {
       height: document.documentElement.clientHeight
     })
 
-    fetchSortData(rankRef, 1, 'Descending')
+    fetchSortData(rankRef, 1)
 
     const handleMouseMove = (event) => {setMousePos([event.clientX, event.clientY])}
     window.addEventListener('mousemove', handleMouseMove)

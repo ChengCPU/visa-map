@@ -1,4 +1,4 @@
-export default function freedomOfMovementSort(rankData:any, rankRef:any, sort:string) {
+export default function freedomOfMovementSort(rankData:any, rankRef:any) {
   const unsortedData:(string | number)[][] = rankData
 
   for(let i = 0; i < unsortedData.length; i++) {
@@ -60,10 +60,6 @@ export default function freedomOfMovementSort(rankData:any, rankRef:any, sort:st
   
   for(let t = 0; t < sortedData.length; t++) {
     visaOnArrivalEvisaCheck(t)
-  }
-
-  if(sort == 'Ascending') {
-    sortedData.reverse()
   }
 
   const tempArray:number[] = Array.from({ length: rankData.length }, (_, index) => index + 1);

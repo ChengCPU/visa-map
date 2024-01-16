@@ -1,4 +1,4 @@
-export default function visaFreeAreaSort(rankData:any, rankRef:any, sort:string) {
+export default function visaFreeAreaSort(rankData:any, rankRef:any) {
   const unsortedData:(string | number)[][] = rankData
   let tempDataVf:(string | number)[]
   let tempDataFom:(string | number)[]
@@ -47,10 +47,6 @@ export default function visaFreeAreaSort(rankData:any, rankRef:any, sort:string)
     freedomOfMovementCheck(b)
   }
 
-  if(sort == 'Ascending') {
-    sortedData.reverse()
-  }
-
   const tempArray:number[] = Array.from({ length: rankData.length }, (_, index) => index + 1);
 
   let count:number = 0;
@@ -69,8 +65,6 @@ export default function visaFreeAreaSort(rankData:any, rankRef:any, sort:string)
   }
 
   sortedData.push(tempArray)
-
-  console.log(sortedData)
 
   rankRef.current = sortedData
 }
