@@ -1,10 +1,11 @@
-import { useContext, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { PassportContext } from '../logic/context/PassportContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import Head from 'next/head'
 import Passport from '../components/Selector/Passport'
 import SortBy from '../components/Rank/SortBy'
+import SortByOrder from '../components/Rank/SortByOrder'
 import InfoText from '../components/Rank/InfoText'
 import VisaRequired from '../components/Rank/VisaRequired'
 import EVisa from '../components/Rank/EVisa'
@@ -43,6 +44,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
   const passports = useContext(PassportContext)
   const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
+  const [sort, setSort] = useState<boolean>(false)
 
   const rankRefLength = rankRef.current.length - 1
   const order = rankRef.current[rankRefLength]
@@ -192,11 +194,19 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     <br />
     {(dimensions.width <= 800) ?
     <div className={styles.centered}>
+      <div>
       <SortBy
         sortBy={sortBy}
         setSortBy={setSortBy}
         rankRef={rankRef}
+        setSort={setSort}
       />
+      <SortByOrder
+        rankRef={rankRef}
+        sort={sort}
+        setSort={setSort}
+      />
+      </div>
       <br />
     </div>
     : null}
@@ -211,11 +221,19 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         <td></td>
         <td></td>
         <td>
-          <SortBy
-            sortBy={sortBy}
-            setSortBy={setSortBy}
-            rankRef={rankRef}
-          />
+          <div>
+            <SortBy
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              rankRef={rankRef}
+              setSort={setSort}
+            />
+            <SortByOrder
+              rankRef={rankRef}
+              sort={sort}
+              setSort={setSort}
+            />
+          </div>
         </td>
         </>
         }
