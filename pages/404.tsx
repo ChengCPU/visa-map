@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
 import Image from 'next/image'
 import FourZeroFour from '../public/404.gif'
 
@@ -15,18 +16,24 @@ export default function Custom404() {
   }, [router]);
 
 	return (
+		<>
+		<Head>
+			<title>Visa-map</title>
+			<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
+			<link rel="shortcut icon" href="/favicon.png" />
+		</Head>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 		<div className={'container'}>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
 		<style jsx>{`
 			.container {
 				user-select: none;
@@ -46,5 +53,6 @@ export default function Custom404() {
 		<p className={'text'}>{"You're not supposed to be here."}</p>
 		<p className={'text'}>{"(Redirecting...)"}</p>
 		</div>
+		</>
 	)
 }
