@@ -81,6 +81,8 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
 	<div className={'container'}>
     <style jsx>{`
       .container {
+        overflow-x: hidden;
+        min-width: 100%; /* Set a minimum width for the container */
         align-content: space-around;
         display: flex;
         align-items: center;
@@ -89,8 +91,12 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
         width:100%;
         border-spacing: 0;
       }
+      .customTable {
+        width: 100%;
+        border-collapse: collapse;
+      }
     `}</style>
-    <table cellSpacing="0" cellPadding="0">
+    <table className={'.customTable'} cellSpacing="0" cellPadding="0">
 			<tbody>
 				<tr>
           <th></th>
