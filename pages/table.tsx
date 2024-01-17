@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
+import { DimensionsContext } from '../logic/context/DimensionsContext'
 import Head from 'next/head'
 import Country from '../components/Table/Country'
 import VisaPolicy from '../components/Table/VisaPolicy'
@@ -30,6 +31,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
     setSelectorLoad(true)
   }, [])
   
+  const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
 
   const languageCaculation = () => {
@@ -81,22 +83,21 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
 	<div className={'container'}>
     <style jsx>{`
       .container {
-        overflow-x: hidden;
-        min-width: 100%; /* Set a minimum width for the container */
-        align-content: space-around;
+        overflow-x: scroll;
+        ${(dimensions.width <= 800) ?
+        null
+        :
+        `
         display: flex;
         align-items: center;
         justify-content: center;
+        `
+        }
         position: static;
-        width:100%;
         border-spacing: 0;
       }
-      .customTable {
-        width: 100%;
-        border-collapse: collapse;
-      }
     `}</style>
-    <table className={'.customTable'} cellSpacing="0" cellPadding="0">
+    <table cellSpacing="0" cellPadding="0">
 			<tbody>
 				<tr>
           <th></th>
@@ -104,7 +105,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
 				</tr>
           {renderTables(verticalColumn, horizontalColumn, flags)}
 			</tbody>
-	</table>
+	  </table>
 	</div>
   <br />
   <br />
