@@ -22,27 +22,16 @@ export default function Custom404() {
 			<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
 			<link rel="shortcut icon" href="/favicon.png" />
 		</Head>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
 		<div className={'container'}>
 		<style jsx>{`
 			.container {
+				height: 80vh;
 				user-select: none;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
 			}
-
 			.text {
 				color: #FFFFFF;
 			}
