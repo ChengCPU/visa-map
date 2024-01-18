@@ -20,7 +20,7 @@ export default function visaFreeAreaSort(rankData:any, rankRef:any) {
   const sortedData:(string | number)[][] = unsortedData.reverse()
 
   const visaOnArrivalEvisaCheck:Function = (x:number) => {
-    if(sortedData[x]?.[2] < sortedData[x + 1]?.[2] && sortedData[x]?.[1] == sortedData[x + 1]?.[1]) {
+    if(sortedData[x]?.[2] < sortedData[x + 1]?.[2] && sortedData[x]?.[8] == sortedData[x + 1]?.[8]) {
       tempDataVf = sortedData[x + 1]
       sortedData[x + 1] = sortedData[x]
       sortedData[x] = tempDataVf
@@ -30,7 +30,7 @@ export default function visaFreeAreaSort(rankData:any, rankRef:any) {
   }
 
   const freedomOfMovementCheck:Function = (x:number) => {
-    if(sortedData[x]?.[7] < sortedData[x + 1]?.[7] && sortedData[x]?.[1] == sortedData[x + 1]?.[1]) {
+    if(sortedData[x]?.[7] < sortedData[x + 1]?.[7] && sortedData[x]?.[8] == sortedData[x + 1]?.[8]) {
       tempDataFom = sortedData[x + 1]
       sortedData[x + 1] = sortedData[x]
       sortedData[x] = tempDataFom
@@ -52,13 +52,13 @@ export default function visaFreeAreaSort(rankData:any, rankRef:any) {
   let count:number = 0;
   for(let i = 0; i < rankData.length - 1; i++) {
     tempArray[i] = tempArray[i] - count
-    if(rankData[i][1] == rankData[i + 1][1] && rankData[i][2] == rankData[i + 1][2] && rankData[i][3] == rankData[i + 1][3] && rankData[i][4] == rankData[i + 1][4] && rankData[i][5] == rankData[i + 1][5] && rankData[i][6] == rankData[i + 1][6]) {
+    if(rankData[i][1] == rankData[i + 1][1] && rankData[i][2] == rankData[i + 1][2] && rankData[i][3] == rankData[i + 1][3] && rankData[i][4] == rankData[i + 1][4] && rankData[i][5] == rankData[i + 1][5] && rankData[i][6] == rankData[i + 1][6] && rankData[i][7] == rankData[i + 1][7] && rankData[i][8] == rankData[i + 1][8]) {
       count++
     }
   }
 
   let x:number = rankData.length - 2
-  if(rankData[x][1] == rankData[x + 1][1] && rankData[x][2] == rankData[x + 1][2] && rankData[x][3] == rankData[x + 1][3] && rankData[x][4] == rankData[x + 1][4] && rankData[x][5] == rankData[x + 1][5] && rankData[x][6] == rankData[x + 1][6]) {
+  if(rankData[x][1] == rankData[x + 1][1] && rankData[x][2] == rankData[x + 1][2] && rankData[x][3] == rankData[x + 1][3] && rankData[x][4] == rankData[x + 1][4] && rankData[x][5] == rankData[x + 1][5] && rankData[x][6] == rankData[x + 1][6] && rankData[x][7] == rankData[x + 1][7] && rankData[x][8] == rankData[x + 1][8]) {
     tempArray[x + 1] = tempArray[x]
   } else {
     tempArray[x + 1] = tempArray[x] + 1
