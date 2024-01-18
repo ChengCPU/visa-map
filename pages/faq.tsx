@@ -6,7 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Head from 'next/head'
 interface Props {
-
+  setSelectorLoad:Function;
 }
 
 const CustomizedAccordionSummary = styled(AccordionSummary)`
@@ -19,7 +19,11 @@ const CustomizedAccordionDetails = styled(AccordionDetails)`
   color: #FFFFFF;
 `
 
-const Faq:React.FC<Props> = ({  }) => {
+const Faq:React.FC<Props> = ({ setSelectorLoad }) => {
+
+  useEffect(() => {
+    setSelectorLoad(false)
+  }, [])
 
   return (
     <>
