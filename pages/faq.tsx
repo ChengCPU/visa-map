@@ -1,9 +1,10 @@
 import { useContext, useEffect } from 'react'
+import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { styled } from '@mui/material/styles'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
+import Accordion from '@mui/material/Accordion'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import Typography from '@mui/material/Typography'
 import Head from 'next/head'
 interface Props {
   setSelectorLoad:Function;
@@ -25,6 +26,8 @@ const Faq:React.FC<Props> = ({ setSelectorLoad }) => {
     setSelectorLoad(false)
   }, [])
 
+  const dimensions = useContext(DimensionsContext)
+
   return (
     <>
     <Head>
@@ -41,6 +44,7 @@ const Faq:React.FC<Props> = ({ setSelectorLoad }) => {
           position: absolute;
           left: 50%;
           transform: translate(-50%);
+          ${dimensions.width <= 800 ? 'width: 300px;' : null}
         }
       `}</style>
       <Accordion>
