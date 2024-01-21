@@ -315,7 +315,6 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
       case 'PM': return <SaintPierreAndMiquelon />
       case 'XE': return <SintEustatius />
       case 'SX': return <SintMaarten />
-      case 'XX': return <Somaliland />
       case 'XV': return <Svalbard />
       case 'TK': return <Tokelau />
       case 'XT': return <Transnistria />
@@ -453,6 +452,7 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
     <Slovenia />
     <SolomonIslands />
     <Somalia />
+    <Somaliland />
     <SouthAfrica />
     <SouthKorea />
     <SouthSudan />
