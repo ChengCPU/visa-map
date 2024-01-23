@@ -33,6 +33,12 @@ interface Props {
   tempDiffRef:any;
 }
 
+const namesEN = ['Home country', 'Permit required', 'OECS freedom of movement', 'MERCOSUR freedom of movement', 'EU freedom of movement', 'GCC freedom of movement', 'Freedom of movement', 'Visa-free', 'Visa on arrival/E-visa', 'Visa on arrival', 'E-visa', 'Special permit/Police check', 'Simplified visa', 'Confirmation required', 'Visa required']
+const namesES = ['País de origen', 'Permiso requerido', 'OECS libertad de movimiento', 'MERCOSUR libertad de movimiento', 'EU libertad de movimiento', 'GCC libertad de movimiento', 'Libertad de movimiento', 'Visado libre', 'Visado a llegada/Visado electronico', 'Visado a llegada', 'Visado electronico', 'Permiso especial/Verificación de antecedentes', 'Visado simplificado', 'Confirmación requerida', 'Visado requerido']
+const namesPT = ['País natal', 'Permissão necessária', 'OECS liberdade de movimento', 'MERCOSUR liberdade de movimento', 'EU liberdade de movimento', 'GCC liberdade de movimento', ' Liberdade de movimento', 'Sem visto', 'Visto na chegada/Visto eletrônico', 'Visto na chegada', 'Visto eletrônico', 'Permissão especial/Verificação de antecedentes', 'Visto simplificado', 'Necessária confirmação', 'Visto necessário']
+const namesFR = ['Pays natal', 'Permis requis', 'OECS liberté de mouvement', 'MERCOSUR liberté de mouvement', 'EU liberté de mouvement', 'GCC liberté de mouvement', 'Liberté de mouvement', 'Sans visa', 'Visa à l\'arrivée/Visa électronique', 'Visa à l\'arrivée', 'Visa électronique', 'Permis spécial/Vérification des antécédents', 'Visa simplifié', 'Confirmation requise', 'Visa requis']
+
+
 const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
 
   useEffect(() => {
@@ -50,20 +56,30 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
   const order = rankRef.current[rankRefLength]
 
   const languageCalculation = (count:number) => {
-    switch(count) {
-      case 0:
-        switch(language) {
-          case '🇬🇧EN': return countriesEN
-          case '🇪🇸ES': return countriesES
-          case '🇵🇹PT': return countriesPT
-          case '🇫🇷FR': return countriesFR
+    switch(language) {
+      case '🇬🇧EN':
+        switch(count) {
+          case 0: return countriesEN
+          case 1: return 'Freedom of movement: '
+          case 2: return 'Visa-free km2: '
         }
-      case 1:
-        switch(language) {
-          case '🇬🇧EN': return 'Freedom of movement: '
-          case '🇪🇸ES': return 'Libertad de movimiento: '
-          case '🇵🇹PT': return 'Liberdade de movimento: '
-          case '🇫🇷FR': return 'Liberté de mouvement: '
+      case '🇪🇸ES':
+        switch(count) {
+          case 0: return countriesES
+          case 1: return 'Libertad de movimiento: '
+          case 2: return 'km2 Visado libre: '
+        }
+      case '🇵🇹PT':
+        switch(count) {
+          case 0: return countriesPT
+          case 1: return 'Liberdade de movimento: '
+          case 2: return 'km2 Sem visto: '
+        }
+      case '🇫🇷FR':
+        switch(count) {
+          case 0: return countriesFR
+          case 1: return 'Liberté de mouvement: '
+          case 2: return 'km2 Sans visa: '
         }
     }
   }
@@ -116,7 +132,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         <div className={styles.textSeparator}>
           <p className={styles.textDiv}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
           <div className={styles.separator}></div>
-          <p className={styles.textDiv}>{'Visa-free km2: ' + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+          <p className={styles.textDiv}>{languageCalculation(2) + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
         </div>
         <div className={styles.progressBarDesktop}>
           <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[5]} />
@@ -148,7 +164,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         <p className={styles.text}>{textRender(verticalColumn)}</p>
         <p className={styles.text}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
         <p className={styles.text}>{'Freedom of Movement: ' + rankRef.current[verticalColumn]?.[7]}</p>
-        <p className={styles.text}>{'Visa-free km2: ' + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+        <p className={styles.text}>{languageCalculation(2) + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
       </td>
       {
       (dimensions.width <= 800) ?
