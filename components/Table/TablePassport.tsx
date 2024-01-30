@@ -182,6 +182,7 @@ const TablePassport:React.FC<Props> = ({ selectArrayRef, horizontalColumn }) => 
       case 'slovenia': return passports.slovenia
       case 'solomonIslands': return passports.solomonIslands
       case 'somalia': return passports.somalia
+      case 'somaliland': return passports.somaliland
       case 'southAfrica': return passports.southAfrica
       case 'southKorea': return passports.southKorea
       case 'southOssetia': return passports.southOssetia
