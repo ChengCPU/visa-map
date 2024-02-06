@@ -29,6 +29,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
       <title>Visa-map</title>
       <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
       <link rel="shortcut icon" href="/favicon.png" />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8601557341492669" crossOrigin="anonymous"></script>
     </Head>
     <Map
       setHover={setHover}
