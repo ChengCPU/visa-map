@@ -12,7 +12,7 @@
 
 # Website
 
-https://visa-map-two.vercel.app/
+https://visamap.co
 
 # Contribute
 
