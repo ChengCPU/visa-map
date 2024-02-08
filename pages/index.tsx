@@ -29,7 +29,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     <Head>
       <title>Visa-map</title>
       <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
-      <meta name="google-adsense-account" content="ca-pub-8601557341492669"></meta>
+      <meta name="google-adsense-account" content="ca-pub-7088061295215371"></meta>
       <link rel="shortcut icon" href="/favicon.png" />
     </Head>
     <Map
