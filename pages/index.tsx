@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import Map from '../components/Map/Map'
 import Head from 'next/head'
-import Script from 'next/script'
 import InfoBox from '../components/InfoBox'
 interface Props {
   selectArrayRef:any;
