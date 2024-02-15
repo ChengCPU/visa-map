@@ -1,6 +1,14 @@
+import Head from 'next/head'
+
 const Privacy:React.FC = () => {
 
   return (
+    <>
+    <Head>
+			<title>Visa-map</title>
+			<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
+			<link rel="shortcut icon" href="/favicon.png" />
+		</Head>
     <div className={'container'}>
 		<style jsx>{`
 			.container {
@@ -184,6 +192,7 @@ const Privacy:React.FC = () => {
     <br />
     <br />
     </div>
+    </>
   )
 }
 
