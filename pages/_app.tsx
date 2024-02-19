@@ -239,10 +239,11 @@ function MyApp({ Component, pageProps }) {
   const [language, setLanguage] = useState<string>('🇬🇧EN')
   const [countrySelect, setCountrySelect] = useState<string>('')
   const [selectorLoad, setSelectorLoad] = useState<boolean>(true)
+  const [proToggle, setProToggle] = useState<boolean>(false)
   const ESTAbanRef = useRef<boolean>(false)
   const selectRef = useRef<{selection: number; passport: null | string}>({ selection: 0, passport: null })
   const assignedColorsRef = useRef<any>([])
-  const selectArrayRef = useRef<any>([null,null,null,null,null,null,null,null,null,null,null])
+  const selectArrayRef = useRef<(null | string)[]>(new Array(10).fill(null))
   const priorityRef = useRef<any>(ISOcolor) //priority is the color that is passed onto each country component as context
   const tempPriorityRef = useRef<any>(ISOcolor)
   const rankRef = useRef<Array<[string | number]>>([])
@@ -323,6 +324,7 @@ function MyApp({ Component, pageProps }) {
         setSelectorLoad={setSelectorLoad}
         diffRef={diffRef}
         tempDiffRef={tempDiffRef}
+        setProToggle={setProToggle}
       />
       <Selector
         Drawer={Drawer}
@@ -341,10 +343,12 @@ function MyApp({ Component, pageProps }) {
         selectorLoad={selectorLoad}
         tempDiffRef={tempDiffRef}
         ESTAbanRef={ESTAbanRef}
+        proToggle={proToggle}
       />
       <Header
         language={language}
         setLanguage={setLanguage}
+        proToggle={proToggle}
       />
       <Analytics />
       <SpeedInsights />

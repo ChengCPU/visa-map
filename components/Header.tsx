@@ -8,6 +8,7 @@ import LanguageSelect from './LanguageSelect'
 interface Props {
   language:string;
   setLanguage:Function;
+  proToggle:boolean;
 }
 
 const theme = createTheme({
@@ -31,7 +32,7 @@ const headerES = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
 const headerPT = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
 const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
 
-const Header:React.FC<Props> = ({ language, setLanguage }) => {
+const Header:React.FC<Props> = ({ language, setLanguage, proToggle }) => {
 
   const dimensions = useContext(DimensionsContext)
 
@@ -63,6 +64,12 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
         background-color: #111111;
         z-index: 2;
       }
+      .text {
+        top: 15px;
+        right: 600px;
+        position: absolute;
+        color: #FFFFFF;
+      }
       ${(dimensions.width > 800) ? '.languageSelect {right:40px; position: absolute;}' : null}
     `}</style>
     <ThemeProvider theme={theme}>
@@ -73,6 +80,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
       <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation()[3]}</CustomizedButton></Link>
       {(dimensions.width <= 800) ? null : <Link href='/faq'><CustomizedButton variant="contained">{languageCaculation()[4]}</CustomizedButton></Link>}
+      {(proToggle) ? <p className={'text'}>proToggle: true</p> : null}
       <div className={'languageSelect'}>
         <LanguageSelect
           language={language}
