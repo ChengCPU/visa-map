@@ -135,7 +135,23 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 7: voaFlag = true; break;
               case 8: voaFlag = true; break;
               case 9: voaFlag = true; break;
-              case 11: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; voaFlag = true; break;
+              case 11: //visa on arrival/evisa addition (light green)
+                let voaevsubFlag = false
+                for(let voaevsub = 0; voaevsub < assignedColorsRefLength; voaevsub++) {
+                  switch(assignedColorsRef.current[voaevsub][ISOcodes[sub]]) {
+                    case 0: voaevsubFlag = true; break;
+                    case 1: voaevsubFlag = true; break;
+                    case 2: voaevsubFlag = true; break;
+                    case 3: voaevsubFlag = true; break;
+                    case 4: voaevsubFlag = true; break;
+                    case 5: voaevsubFlag = true; break;
+                    case 6: voaevsubFlag = true; break;
+                    case 7: voaevsubFlag = true; break;
+                    case 8: voaevsubFlag = true; break;
+                  }
+                }
+                if(voaevsubFlag == true) { break; }
+                priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; voaFlag = true; break;
             }
           }
           if(voaFlag == true) { break; }
@@ -155,7 +171,23 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
               case 7: evFlag = true; break;
               case 8: evFlag = true; break;
               case 9: evFlag = true; break;
-              case 10: priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; evFlag = true; break;
+              case 10: //visa on arrival/evisa addition (light green)
+                let voaevsubFlag = false
+                for(let voaevsub = 0; voaevsub < assignedColorsRefLength; voaevsub++) {
+                  switch(assignedColorsRef.current[voaevsub][ISOcodes[sub]]) {
+                    case 0: voaevsubFlag = true; break;
+                    case 1: voaevsubFlag = true; break;
+                    case 2: voaevsubFlag = true; break;
+                    case 3: voaevsubFlag = true; break;
+                    case 4: voaevsubFlag = true; break;
+                    case 5: voaevsubFlag = true; break;
+                    case 6: voaevsubFlag = true; break;
+                    case 7: voaevsubFlag = true; break;
+                    case 8: voaevsubFlag = true; break;
+                  }
+                }
+                if(voaevsubFlag == true) { break; }
+                priorityRef.current[ISOcodesLowercase[sub]] = 'rgb(161,224,123)'; evFlag = true; break;
             }
           }
           if(evFlag == true) { break; }
