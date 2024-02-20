@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
+import { ProToggleContext } from '../logic/context/ProToggleContext'
 import { Button, Stack, createTheme, ThemeProvider } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import GithubLogo from './GithubLogo'
@@ -8,7 +9,6 @@ import LanguageSelect from './LanguageSelect'
 interface Props {
   language:string;
   setLanguage:Function;
-  proToggle:boolean;
 }
 
 const theme = createTheme({
@@ -32,9 +32,10 @@ const headerES = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
 const headerPT = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
 const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
 
-const Header:React.FC<Props> = ({ language, setLanguage, proToggle }) => {
+const Header:React.FC<Props> = ({ language, setLanguage }) => {
 
   const dimensions = useContext(DimensionsContext)
+  const proToggle = useContext(ProToggleContext)
 
   const languageCaculation = () => {
     switch(language) {
@@ -80,7 +81,7 @@ const Header:React.FC<Props> = ({ language, setLanguage, proToggle }) => {
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
       <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation()[3]}</CustomizedButton></Link>
       {(dimensions.width <= 800) ? null : <Link href='/faq'><CustomizedButton variant="contained">{languageCaculation()[4]}</CustomizedButton></Link>}
-      {(proToggle) ? <p className={'text'}>proToggle: true</p> : null}
+      {(proToggle.proToggle) ? <p className={'text'}>proToggle: true</p> : null}
       <div className={'languageSelect'}>
         <LanguageSelect
           language={language}

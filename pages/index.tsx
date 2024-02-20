@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { ProToggleContext } from '../logic/context/ProToggleContext'
 import Map from '../components/Map/Map'
 import Head from 'next/head'
 import InfoBox from '../components/InfoBox'
@@ -13,10 +14,11 @@ interface Props {
   tempPriorityRef:any;
   tempDiffRef:any;
   diffRef:any;
-  setProToggle:Function;
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, setProToggle }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef }:Props) {
+
+  const proToggle = useContext(ProToggleContext)
 
   useEffect(() => {
     priorityRef.current = tempPriorityRef.current
@@ -39,7 +41,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     if(typedText[typedText.length - 1] == 'o' || typedText[typedText.length - 1] == 'O') {
       if(typedText[typedText.length - 2] != null && typedText[typedText.length - 2] == 'r' || typedText[typedText.length - 2] == 'R') {
         if(typedText[typedText.length - 3] != null && typedText[typedText.length - 3] == 'p' || typedText[typedText.length - 3] == 'P') {
-          setProToggle(true)
+          proToggle.setProToggle(true)
           document.removeEventListener('keydown', handleKeyPress);
         }
       }

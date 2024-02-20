@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
+import { ProToggleContext } from '../../logic/context/ProToggleContext'
 import ProgressBar from '../ProgressBar'
 import FAQbutton from './FAQbutton'
 import SelectorButton from './SelectorButton'
@@ -16,19 +17,19 @@ interface Props {
   selectorLoad:boolean;
   tempDiffRef:any;
   ESTAbanRef:any;
-  proToggle:boolean;
 }
 
-const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef, ESTAbanRef, proToggle }) => {
+const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef, ESTAbanRef }) => {
   
+  const dimensions = useContext(DimensionsContext)
+  const proToggle = useContext(ProToggleContext)
+
   useEffect(() => {
     selectArrayRef.current.push(null,null,null,null,null)
-  }, [proToggle])
-
-  const dimensions = useContext(DimensionsContext)
+  }, [proToggle.proToggle])
 
   let selectorButtonArray:number[] = []
-  if(proToggle == true) {
+  if(proToggle.proToggle == true) {
     selectorButtonArray = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
   } else {
     if(dimensions.width <= 800) {

@@ -4,6 +4,7 @@ import { DiffContext } from '../logic/context/DiffContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { CountrySelectContext } from '../logic/context/CountrySelectContext'
+import { ProToggleContext } from '../logic/context/ProToggleContext'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useEffect, useRef } from 'react'
@@ -256,6 +257,7 @@ function MyApp({ Component, pageProps }) {
   const languageProvider:any = { language: language }
   const dimensionsProvider:any = { width: dimensions.width, height: dimensions.height }
   const countrySelectProvider:any = { setCountrySelect: setCountrySelect }
+  const proToggleProvider:any = { proToggle: proToggle, setProToggle: setProToggle }
 
   useEffect(() => {
     setDimensions({
@@ -309,6 +311,7 @@ function MyApp({ Component, pageProps }) {
     <PassportContext.Provider value={passportsProvider}>
     <LanguageContext.Provider value={languageProvider}>
     <DimensionsContext.Provider value={dimensionsProvider}>
+    <ProToggleContext.Provider value={proToggleProvider}>
       <Component {...pageProps}
         selectArrayRef={selectArrayRef}
         assignedColorsRef={assignedColorsRef}
@@ -324,7 +327,6 @@ function MyApp({ Component, pageProps }) {
         setSelectorLoad={setSelectorLoad}
         diffRef={diffRef}
         tempDiffRef={tempDiffRef}
-        setProToggle={setProToggle}
       />
       <Selector
         Drawer={Drawer}
@@ -343,15 +345,14 @@ function MyApp({ Component, pageProps }) {
         selectorLoad={selectorLoad}
         tempDiffRef={tempDiffRef}
         ESTAbanRef={ESTAbanRef}
-        proToggle={proToggle}
       />
       <Header
         language={language}
         setLanguage={setLanguage}
-        proToggle={proToggle}
       />
       <Analytics />
       <SpeedInsights />
+    </ProToggleContext.Provider>
     </DimensionsContext.Provider>
     </LanguageContext.Provider>
     </PassportContext.Provider>
