@@ -14,9 +14,10 @@ interface Props {
   tempPriorityRef:any;
   tempDiffRef:any;
   diffRef:any;
+  panzoomReset:boolean;
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset }:Props) {
 
   const proToggle = useContext(ProToggleContext)
 
@@ -62,6 +63,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     </Head>
     <Map
       setHover={setHover}
+      panzoomReset={panzoomReset}
     />
     <InfoBox
       selectArrayRef={selectArrayRef}

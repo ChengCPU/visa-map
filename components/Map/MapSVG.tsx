@@ -251,9 +251,10 @@ import Zambia from '../countries/Zambia'
 import Zimbabwe from '../countries/Zimbabwe'
 interface Props {
   setHover:Function;
+  panzoomReset:boolean;
 }
 
-const MapSVG:React.FC<Props> = ({ setHover }) => {
+const MapSVG:React.FC<Props> = ({ setHover, panzoomReset }) => {
 
   const dimensions = useContext(DimensionsContext)
   const proToggle = useContext(ProToggleContext)
@@ -290,10 +291,10 @@ const MapSVG:React.FC<Props> = ({ setHover }) => {
         panzoom.dispose()
       }
     }
-  }, [dimensions.width, proToggle.proToggle])
+  }, [dimensions.width, proToggle.proToggle, panzoomReset])
 
   return (
-    <div ref={panzoomRef} className={'container'}>
+    <div ref={panzoomRef} id={'map'} className={'container'}>
     <style jsx>{`
       .container {
         display: flex;

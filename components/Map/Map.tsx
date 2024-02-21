@@ -1,9 +1,12 @@
 import { useContext } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import MapSVG from './MapSVG'
-interface Props {setHover:Function;}
+interface Props {
+  setHover:Function;
+  panzoomReset:boolean;
+}
 
-const Map:React.FC<Props>= ({ setHover }) => {
+const Map:React.FC<Props>= ({ setHover, panzoomReset }) => {
 
   const dimensions = useContext(DimensionsContext)
   
@@ -22,7 +25,10 @@ const Map:React.FC<Props>= ({ setHover }) => {
         margin-left: 10px;
       }
     `}</style>
-    <MapSVG setHover={setHover}/>
+    <MapSVG 
+      setHover={setHover}
+      panzoomReset={panzoomReset}
+    />
     {(dimensions.width <= 800) ?
     <>
     <br />

@@ -241,6 +241,7 @@ function MyApp({ Component, pageProps }) {
   const [countrySelect, setCountrySelect] = useState<string>('')
   const [selectorLoad, setSelectorLoad] = useState<boolean>(true)
   const [proToggle, setProToggle] = useState<boolean>(false)
+  const [panzoomReset, setPanzoomReset] = useState<boolean>(false)
   const ESTAbanRef = useRef<boolean>(false)
   const selectRef = useRef<{selection: number; passport: null | string}>({ selection: 0, passport: null })
   const assignedColorsRef = useRef<any>([])
@@ -327,6 +328,7 @@ function MyApp({ Component, pageProps }) {
         setSelectorLoad={setSelectorLoad}
         diffRef={diffRef}
         tempDiffRef={tempDiffRef}
+        panzoomReset={panzoomReset}
       />
       <Selector
         Drawer={Drawer}
@@ -349,6 +351,8 @@ function MyApp({ Component, pageProps }) {
       <Header
         language={language}
         setLanguage={setLanguage}
+        panzoomReset={panzoomReset}
+        setPanzoomReset={setPanzoomReset}
       />
       <Analytics />
       <SpeedInsights />
