@@ -117,7 +117,7 @@ const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoo
       <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation()[2]}</CustomizedButton></Link>
       <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation()[3]}</CustomizedButton></Link>
       {(dimensions.width <= 800) ? null : <Link href='/faq'><CustomizedButton variant="contained">{languageCaculation()[4]}</CustomizedButton></Link>}
-      {(proToggle.proToggle) ? <p className={'text'}>proToggle: true</p> : null}
+      {(proToggle.proToggle) ? <p className={'text'}>Developer mode</p> : null}
       {(proToggle.proToggle) ? <button className={'screenshot'} onClick={() => takeScreenshot()}>📸</button> : null}
       <div className={'languageSelect'}>
         <LanguageSelect
