@@ -68,7 +68,7 @@ Example: France now requires United States passport holders to get a visa.
 10: Visa on arrival (yellow)
 11: E-visa (blue)
 12: Special permit/police check (purple)
-13: Simplified visa (light grey)
+13: Simplified visa (light gray)
 14: Confirmation required (black)
 15: Visa required (gray)
 ```
