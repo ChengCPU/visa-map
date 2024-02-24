@@ -53,11 +53,11 @@ const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoo
   const takeScreenshot = () => {
     setPanzoomReset(!panzoomReset)
     const element = document.getElementById('map');
-    element.style.backgroundColor = '#222222'
 
     const options = {
       scale: 4,
-    };
+      backgroundColor: '#222222',
+    }
 
     html2canvas(element, options).then(canvas => {
       if(canvas) {
