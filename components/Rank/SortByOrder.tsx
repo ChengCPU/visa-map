@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
