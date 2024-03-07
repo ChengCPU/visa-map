@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useRef } from 'react'
+import { useEffect, useContext, useRef } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import { ProToggleContext } from '../../logic/context/ProToggleContext'
 import Panzoom from 'panzoom'
