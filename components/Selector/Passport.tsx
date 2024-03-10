@@ -7,7 +7,6 @@ const Passport:React.FC<Props> = ({ image }) => {
     <Image
       alt={'passport'}
       src={(image == null) ? defaultImage : image}
-      style={{width: 60, height: 90.4}}
     />
   )
 }
