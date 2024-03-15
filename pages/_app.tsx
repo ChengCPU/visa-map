@@ -244,7 +244,7 @@ function MyApp({ Component, pageProps }) {
   const [panzoomReset, setPanzoomReset] = useState<boolean>(false)
   const ESTAbanRef = useRef<boolean>(false)
   const selectRef = useRef<{selection: number; passport: null | string}>({ selection: 0, passport: null })
-  const assignedColorsRef = useRef<any>([])
+  const assignedColorsRef = useRef<{[key:string]:string}[]>([])
   const selectArrayRef = useRef<(null | string)[]>(new Array(10).fill(null))
   const priorityRef = useRef<{[key:string]:string}>(ISOcolor) //priority is the color that is passed onto each country component as context
   const tempPriorityRef = useRef<{[key:string]:string}>(ISOcolor)
