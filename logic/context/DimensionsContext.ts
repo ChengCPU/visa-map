@@ -1,4 +1,4 @@
 import { createContext } from 'react'
-interface ContextTypes { width:number, height:number}
+interface ContextTypes {[key:string]:number}
 
 export const DimensionsContext = createContext<ContextTypes>({} as any)
