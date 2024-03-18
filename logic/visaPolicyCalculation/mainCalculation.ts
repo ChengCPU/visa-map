@@ -289,11 +289,11 @@ export default function mainCalculation(subCalculation:boolean, country:string, 
 const ESTAban = () => {
   priorityRef.current.us = 'rgb(150,150,150)'
   priorityRef.current.vi = 'rgb(150,150,150)'
-  if(priorityRef.current.gu == 'rgb(135,206,250)') {
+  if(priorityRef.current.gu == 'rgb(81,205,123)') {
     priorityRef.current.gu = 'rgb(150,150,150)'
     diffRef.current.GU = 1
   }
-  if(priorityRef.current.mp == 'rgb(135,206,250)') {
+  if(priorityRef.current.mp == 'rgb(81,205,123)') {
     priorityRef.current.mp = 'rgb(150,150,150)'
     diffRef.current.MP = 1
   }
@@ -304,10 +304,10 @@ const ESTAban = () => {
 }
 
 switch(country) {
-  case 'cuba': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
-  case 'syria': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
-  case 'iran': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
-  case 'northKorea': if(priorityRef.current.us == 'rgb(135,206,250)') {ESTAban()} break;
+  case 'cuba': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+  case 'syria': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+  case 'iran': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+  case 'northKorea': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
 }
 
 if(ESTAbanRef.current == true) {
