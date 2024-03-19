@@ -303,11 +303,15 @@ const ESTAban = () => {
   ESTAbanRef.current = true
 }
 
-switch(country) {
-  case 'cuba': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
-  case 'syria': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
-  case 'iran': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
-  case 'northKorea': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+if(priorityRef.current.us == 'rgb(50,205,50)' || priorityRef.current.us == 'rgb(255,20,147)') {
+  ESTAbanRef.current = false
+} else {
+  switch(country) {
+    case 'cuba': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+    case 'syria': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+    case 'iran': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+    case 'northKorea': if(priorityRef.current.us == 'rgb(81,205,123)') {ESTAban()} break;
+  }
 }
 
 if(ESTAbanRef.current == true) {
@@ -315,5 +319,5 @@ if(ESTAbanRef.current == true) {
 }
 
 if(subCalculation == false) { diffCalculation(selectArrayRef, assignedColorsRef, diffRef) }
-percentageCalculation(priorityRef, setPercentage)
+  percentageCalculation(priorityRef, setPercentage)
 }

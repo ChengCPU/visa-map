@@ -265,10 +265,10 @@ function MyApp({ Component, pageProps }) {
     ESTAbanRef.current = false
     while(selectArrayRef.current[i] != null) {
       switch(selectArrayRef.current[i]) {
-        case 'cuba': ESTAbanRef.current = true; break;
-        case 'syria': ESTAbanRef.current = true; break;
-        case 'iran': ESTAbanRef.current = true; break;
-        case 'northKorea': ESTAbanRef.current = true; break;
+        case 'cuba': if(priorityRef.current.us != 'rgb(50,205,50)' && priorityRef.current.us != 'rgb(255,20,147)') {ESTAbanRef.current = true}; break;
+        case 'syria': if(priorityRef.current.us != 'rgb(50,205,50)' && priorityRef.current.us != 'rgb(255,20,147)') {ESTAbanRef.current = true}; break;
+        case 'iran': if(priorityRef.current.us != 'rgb(50,205,50)' && priorityRef.current.us != 'rgb(255,20,147)') {ESTAbanRef.current = true}; break;
+        case 'northKorea': if(priorityRef.current.us != 'rgb(50,205,50)' && priorityRef.current.us != 'rgb(255,20,147)') {ESTAbanRef.current = true}; break;
       }
       i++
     }
