@@ -1,8 +1,9 @@
-import { Button } from "@mui/material"
+import { MutableRefObject } from 'react'
+import { Button } from '@mui/material'
 import Passport from "./Passport"
 interface Props {
   setOpenDrawer:Function;
-  selectRef:any;
+  selectRef:MutableRefObject<{selection:number;passport:null|string}>;
   toggle:boolean;
   setToggle:Function;
   image:object;

@@ -1,10 +1,10 @@
 import React from 'react'
-import { useContext, useState } from 'react'
+import { useContext, useState, MutableRefObject } from 'react'
 import { PassportContext } from '../../logic/context/PassportContext'
 import SelectorPassport from './SelectorPassport'
 interface Props {
   setOpenDrawer:Function;
-  selectRef:any;
+  selectRef:MutableRefObject<{selection:number;passport:null|string}>;
   toggle:boolean;
   setToggle:Function;
 }

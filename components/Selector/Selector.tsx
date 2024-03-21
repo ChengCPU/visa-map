@@ -1,24 +1,25 @@
+import { MutableRefObject } from 'react'
 import { Drawer } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import SelectorButtonContainer from './SelectorButtonContainer'
 import SelectorPassportContainer from './SelectorPassportContainer'
 interface Props {
-  Drawer:any;
+  Drawer:Function;
   openDrawer:boolean;
   setOpenDrawer:Function;
-  selectRef:any;
+  selectRef:MutableRefObject<{selection:number;passport:null|string}>;
   toggle:boolean;
   setToggle:Function;
-  selectArrayRef:any;
-  priorityRef:any;
-  tempPriorityRef:any;
-  assignedColorsRef:any;
-  diffRef:any;
+  selectArrayRef:MutableRefObject<(null|string)[]>;
+  priorityRef:MutableRefObject<{[key:string]:string}>;
+  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
+  assignedColorsRef:MutableRefObject<{[key:string]:string}[]>;
+  diffRef:MutableRefObject<{[key:string]:number}>;
   percentage:number;
   setPercentage:Function;
   selectorLoad:boolean;
-  tempDiffRef:any;
-  ESTAbanRef:any;
+  tempDiffRef:MutableRefObject<{[key:string]:number}>;
+  ESTAbanRef:MutableRefObject<boolean>;
 }
 
 const CustomizedDrawer = styled(Drawer)`

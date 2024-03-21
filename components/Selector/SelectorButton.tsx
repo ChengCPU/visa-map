@@ -1,12 +1,12 @@
-import { useContext } from 'react'
+import { useContext, MutableRefObject } from 'react'
 import { PassportContext } from '../../logic/context/PassportContext'
 import { Button } from '@mui/material'
 import SelectorSVG from './SelectorSVG'
 import Passport from './Passport'
 interface Props {
   setOpenDrawer:Function;
-  selectRef:any;
-  selectArrayRef:any;
+  selectRef:MutableRefObject<{selection:number;passport:null|string}>;
+  selectArrayRef:MutableRefObject<(null|string)[]>;
   num:number;
 }
 
