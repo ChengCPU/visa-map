@@ -53,6 +53,14 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
   }
 
   const auETAcalc = () => {
+    if(selected != null) {
+      if(australiaEvisitor.includes((countrySelect))) {
+        return 'eVisitor'
+      }
+
+      return 'Electronic Travel Authorization'
+    }
+
     let i = 0
     while(selectArrayRef.current[i] != null) {
       if(australiaEvisitor.includes((selectArrayRef.current[i]))) {
