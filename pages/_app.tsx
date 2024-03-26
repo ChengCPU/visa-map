@@ -244,7 +244,7 @@ function MyApp({ Component, pageProps }) {
   const [panzoomReset, setPanzoomReset] = useState<boolean>(false)
   const ESTAbanRef = useRef<boolean>(false)
   const selectRef = useRef<{selection:number;passport:null|string}>({selection:0,passport:null})
-  const assignedColorsRef = useRef<{[key:string]:string}[]>([])
+  const assignedColorsRef = useRef<{[key:string]:number}[]>([])
   const selectArrayRef = useRef<(null|string)[]>(new Array(10).fill(null))
   const priorityRef = useRef<{[key:string]:string}>(ISOcolor) //priority is the color that is passed onto each country component as context
   const tempPriorityRef = useRef<{[key:string]:string}>(ISOcolor)
@@ -261,7 +261,7 @@ function MyApp({ Component, pageProps }) {
   const proToggleProvider:{proToggle:boolean;setProToggle:Function} = {proToggle:proToggle,setProToggle:setProToggle}
 
   const ESTAbancalc = () => {
-    let i = 0
+    let i:number = 0
     ESTAbanRef.current = false
     while(selectArrayRef.current[i] != null) {
       switch(selectArrayRef.current[i]) {
@@ -282,7 +282,7 @@ function MyApp({ Component, pageProps }) {
 
     fetchSortData(rankRef, 1)
 
-    const handleMouseMove = (event) => {setMousePos([event.clientX, event.clientY])}
+    const handleMouseMove = (event:any) => {setMousePos([event.clientX, event.clientY])}
     window.addEventListener('mousemove', handleMouseMove)
 
     return () => {

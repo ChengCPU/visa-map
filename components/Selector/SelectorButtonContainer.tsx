@@ -10,7 +10,7 @@ interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
   priorityRef:MutableRefObject<{[key:string]:string}>;
   tempPriorityRef:MutableRefObject<{[key:string]:string}>;
-  assignedColorsRef:MutableRefObject<{[key:string]:string}[]>;
+  assignedColorsRef:MutableRefObject<{[key:string]:number}[]>;
   diffRef:MutableRefObject<{[key:string]:number}>;
   percentage:number;
   setPercentage:Function;
