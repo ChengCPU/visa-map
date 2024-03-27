@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { PassportContext } from '../../logic/context/PassportContext'
+import { StaticImageData } from 'next/image'
 import Passport from '../Selector/Passport'
 import TablePassportSVG from './TablePassportSVG'
 interface Props {
@@ -9,10 +10,10 @@ interface Props {
 
 const TablePassport:React.FC<Props> = ({ selectArrayRef, horizontalColumn }) => {
 
-  const passports = useContext(PassportContext) //useContext makes the passport imports available through passports variable
+  const passports:{[key:string]:StaticImageData} = useContext(PassportContext)
 
   const passportCalculation = () => {
-    switch(selectArrayRef.current[horizontalColumn]) { //the [num] prop is a number ranging from 0-9 that is representative of each 10 selector button components
+    switch(selectArrayRef.current[horizontalColumn]) {
       case 'abkhazia' : return passports.abkhazia
       case 'afghanistan': return passports.afghanistan
       case 'albania': return passports.albania

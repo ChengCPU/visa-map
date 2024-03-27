@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { PassportContext } from '../logic/context/PassportContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
+import { StaticImageData } from 'next/image'
 import Head from 'next/head'
 import Passport from '../components/Selector/Passport'
 import SortBy from '../components/Rank/SortBy'
@@ -41,7 +42,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     setSelectorLoad(false)
   }, [])
 
-  const passports = useContext(PassportContext)
+  const passports:{[key:string]:StaticImageData} = useContext(PassportContext)
   const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
   const [sort, setSort] = useState<boolean>(false)
