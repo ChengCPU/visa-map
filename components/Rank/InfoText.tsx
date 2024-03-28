@@ -1,8 +1,8 @@
 interface Props {
-  count:any;
+  count:number;
 }
 
-const InfoText:React.FC<Props> = ({count}) => {
+const InfoText:React.FC<Props> = ({ count }) => {
   return (
     <div className={'container'}>
     <style jsx>{`

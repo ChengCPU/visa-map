@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, MutableRefObject } from 'react'
 import { PassportContext } from '../logic/context/PassportContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
@@ -28,10 +28,10 @@ interface Props {
   setSortBy:Function;
   mobile:boolean;
   setSelectorLoad:Function;
-  priorityRef:any;
-  tempPriorityRef:any;
-  diffRef:any;
-  tempDiffRef:any;
+  priorityRef:MutableRefObject<{[key:string]:string}>;
+  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
+  diffRef:MutableRefObject<{[key:string]:number}>;
+  tempDiffRef:MutableRefObject<{[key:string]:number}>;
 }
 
 const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
@@ -79,7 +79,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     }
   }
 
-  const widthCalculation = (visaPolicy:string, verticalColumn:any) => {
+  const widthCalculation = (visaPolicy:string, verticalColumn:number) => {
     switch(visaPolicy) {
       case 'visaRequired':
         return 500

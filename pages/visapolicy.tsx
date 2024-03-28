@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, MutableRefObject } from 'react'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import Head from 'next/head'
@@ -6,13 +6,13 @@ import PassportMap from '../components/Map/PassportMap'
 import InfoBox from '../components/InfoBox'
 import individualVisaPolicyCalculation from '../logic/visaPolicyCalculation/individualVisaPolicyCalculation'
 interface Props {
-  selectArrayRef:any;
+  selectArrayRef:MutableRefObject<(null|string)[]>;
   setHover:Function;
-  priorityRef:any;
+  priorityRef:MutableRefObject<{[key:string]:string}>;
   setSelectorLoad:Function;
-  tempPriorityRef:any;
-  diffRef:any;
-  tempDiffRef:any;
+  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
+  diffRef:MutableRefObject<{[key:string]:number}>;
+  tempDiffRef:MutableRefObject<{[key:string]:number}>;
   mousePos:number | boolean[];
   hover:boolean;
   countrySelect:string;

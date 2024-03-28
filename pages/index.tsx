@@ -1,19 +1,19 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, MutableRefObject } from 'react'
 import { ProToggleContext } from '../logic/context/ProToggleContext'
 import Map from '../components/Map/Map'
 import Head from 'next/head'
 import InfoBox from '../components/InfoBox'
 interface Props {
-  selectArrayRef:any;
+  selectArrayRef:MutableRefObject<(null|string)[]>;
   mousePos:number | boolean[];
   hover:boolean;
   setHover:Function;
   countrySelect:string;
-  priorityRef:any;
+  priorityRef:MutableRefObject<{[key:string]:string}>;
   setSelectorLoad:Function;
-  tempPriorityRef:any;
-  tempDiffRef:any;
-  diffRef:any;
+  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
+  tempDiffRef:MutableRefObject<{[key:string]:number}>;
+  diffRef:MutableRefObject<{[key:string]:number}>;
   panzoomReset:boolean;
 }
 

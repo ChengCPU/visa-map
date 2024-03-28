@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, MutableRefObject } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import Head from 'next/head'
@@ -14,13 +14,13 @@ const horizontalColumn:number[] = [0,1,2,3,4,5,6,7,8,9]
 let verticalColumn:number[] = []
 for(let countryCount = 0; countryCount < countriesEN.length; countryCount++) {verticalColumn.push(countryCount)}
 interface Props {
-	selectArrayRef:any;
-  assignedColorsRef:any;
+	selectArrayRef:MutableRefObject<(null|string)[]>;
+  assignedColorsRef:MutableRefObject<{[key:string]:number}[]>;
   setSelectorLoad:Function;
-  priorityRef:any;
-  tempPriorityRef:any;
-  diffRef:any;
-  tempDiffRef:any;
+  priorityRef:MutableRefObject<{[key:string]:string}>;
+  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
+  diffRef:MutableRefObject<{[key:string]:number}>;
+  tempDiffRef:MutableRefObject<{[key:string]:number}>;
 }
 
 const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
