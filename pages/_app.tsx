@@ -13,7 +13,6 @@ import { Drawer } from '@mui/material'
 //logic imports
 import mainCalculation from '../logic/visaPolicyCalculation/mainCalculation'
 import fetchSortData from '../logic/rankSorting/fetchSortData'
-import visaDurationCalc from '../logic/visaDurationCalc'
 //component imports
 import Header from '../components/Header'
 import Selector from '../components/Selector/Selector'
