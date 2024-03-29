@@ -256,10 +256,10 @@ interface Props {
 
 const MapSVG:React.FC<Props> = ({ setHover, panzoomReset }) => {
 
-  const dimensions = useContext(DimensionsContext)
-  const proToggle = useContext(ProToggleContext)
+  const dimensions:{width:number;height:number} = useContext(DimensionsContext)
+  const proToggle:{proToggle:boolean;setProToggle:Function} = useContext(ProToggleContext)
 
-  const panzoomRef = useRef(null);
+  const panzoomRef = useRef(null)
 
   useEffect(() => {
     if(panzoomRef.current) {

@@ -22,18 +22,18 @@ const CustomizedButtonMobile = styled(Button)`
   left: 18px;
 `
 
-const sortArrayEN = ['Sort by: Total','Sort by: Visa-free','Sort by: Alphabetical order','Sort by: Freedom of Movement','Sort by: Visa-free km2']
-const sortArrayES = ['Ordenar por: Total','Ordenar por: Visado Libre','Ordenar por: Orden alfabetico','Ordenar por: Libertad de movimiento','Ordenar por: Visado Libre km2']
-const sortArrayPT = ['Ordenar por: Total', 'Ordenar por: Sem Visto', 'Ordenar por: Ordem alfabética', 'Ordenar por: Liberdade de movimento', 'Ordenar por: Sem Visto km2']
-const sortArrayFR = ['Trier par: Total', 'Trier par: Sans Visa', 'Trier par: Ordre alphabétique', 'Trier par: Liberté de mouvement', 'Trier par: Sans Visa km2']
+const sortArrayEN:string[] = ['Sort by: Total','Sort by: Visa-free','Sort by: Alphabetical order','Sort by: Freedom of Movement','Sort by: Visa-free km2']
+const sortArrayES:string[] = ['Ordenar por: Total','Ordenar por: Visado Libre','Ordenar por: Orden alfabetico','Ordenar por: Libertad de movimiento','Ordenar por: Visado Libre km2']
+const sortArrayPT:string[] = ['Ordenar por: Total', 'Ordenar por: Sem Visto', 'Ordenar por: Ordem alfabética', 'Ordenar por: Liberdade de movimento', 'Ordenar por: Sem Visto km2']
+const sortArrayFR:string[] = ['Trier par: Total', 'Trier par: Sans Visa', 'Trier par: Ordre alphabétique', 'Trier par: Liberté de mouvement', 'Trier par: Sans Visa km2']
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
 
-  const dimensions = useContext(DimensionsContext)
+  const dimensions:{width:number;height:number} = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
 
-  const languageCaculation = () => {
-    switch(language){
+  const languageCaculation:Function = () => {
+    switch(language) {
       case '🇬🇧EN': return sortArrayEN
       case '🇪🇸ES': return sortArrayES
       case '🇵🇹PT': return sortArrayPT
@@ -46,11 +46,13 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   }
+
   const handleClose = () => {
     setSort(false)
     setAnchorEl(null)
   }
-  const menuItemOnClick = (prop) => {
+
+  const menuItemOnClick:Function = (prop) => {
     setSortBy(prop)
     switch(prop) {
       case 'Sort by: Total': fetchSortData(rankRef, 1); break
@@ -62,8 +64,8 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
     handleClose()
   }
   
-  const sortArray = ['Sort by: Total','Sort by: Visa-free','Sort by: Alphabetical order','Sort by: Freedom of Movement','Sort by: Visa-free km2']
-  const renderMenuItems = (sortArray:string[]) => {
+  const sortArray:string[] = ['Sort by: Total','Sort by: Visa-free','Sort by: Alphabetical order','Sort by: Freedom of Movement','Sort by: Visa-free km2']
+  const renderMenuItems:Function = (sortArray:string[]) => {
     return sortArray.map(sortArray =>
       (sortBy != sortArray) ?
       <MenuItem key={sortArray} onClick={() => menuItemOnClick(sortArray)}>{languageCaculation()[sortArrayEN.indexOf(sortArray)]}</MenuItem>

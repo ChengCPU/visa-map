@@ -1,4 +1,5 @@
 import { MutableRefObject } from 'react'
+import { StaticImageData } from 'next/image'
 import { Button } from '@mui/material'
 import Passport from "./Passport"
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
   selectRef:MutableRefObject<{selection:number;passport:null|string}>;
   toggle:boolean;
   setToggle:Function;
-  image:object;
+  image:StaticImageData;
   name:string;
   passportName:string;
 }

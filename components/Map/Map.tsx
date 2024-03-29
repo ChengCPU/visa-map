@@ -8,7 +8,7 @@ interface Props {
 
 const Map:React.FC<Props>= ({ setHover, panzoomReset }) => {
 
-  const dimensions = useContext(DimensionsContext)
+  const dimensions:{width:number;height:number} = useContext(DimensionsContext)
   
   return (
     <>

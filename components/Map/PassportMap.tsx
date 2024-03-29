@@ -254,9 +254,9 @@ interface Props {
 
 const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
 
-  const dimensions = useContext(DimensionsContext)
+  const dimensions:{width:number;height:number} = useContext(DimensionsContext)
 
-  const panzoomRef = useRef(null);
+  const panzoomRef = useRef(null)
 
   useEffect(() => {
     if(panzoomRef.current) {

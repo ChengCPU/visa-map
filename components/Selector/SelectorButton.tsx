@@ -18,7 +18,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, selectRef, selectArrayR
 
   const passports:{[key:string]:StaticImageData} = useContext(PassportContext)
 
-  const passportCalculation = () => {
+  const passportCalculation:Function = () => {
     switch(selectArrayRef.current[num]) {
       case 'abkhazia' : return passports.abkhazia
       case 'afghanistan': return passports.afghanistan
@@ -230,7 +230,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, selectRef, selectArrayR
     }
   }
 
-  const passportTextCalculation = (n:number) => {
+  const passportTextCalculation:Function = (n:number) => {
     return countriesWithPassports[passportsArray.indexOf(selectArrayRef.current[n])]
   }
   

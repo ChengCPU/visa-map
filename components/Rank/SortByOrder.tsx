@@ -23,7 +23,7 @@ const CustomizedButtonMobile = styled(Button)`
 
 const SortByOrder:React.FC<Props> = ({ rankRef, sort, setSort }) => {
 
-  const dimensions = useContext(DimensionsContext)
+  const dimensions:{width:number;height:number} = useContext(DimensionsContext)
 
   return (
     <>
