@@ -1,10 +1,10 @@
-import { useContext } from 'react'
+import { useContext, MutableRefObject } from 'react'
 import { PassportContext } from '../../logic/context/PassportContext'
 import { StaticImageData } from 'next/image'
 import Passport from '../Selector/Passport'
 import TablePassportSVG from './TablePassportSVG'
 interface Props {
-  selectArrayRef:any;
+  selectArrayRef:MutableRefObject<(null|string)[]>;
   horizontalColumn:number;
 }
 
@@ -12,7 +12,7 @@ const TablePassport:React.FC<Props> = ({ selectArrayRef, horizontalColumn }) => 
 
   const passports:{[key:string]:StaticImageData} = useContext(PassportContext)
 
-  const passportCalculation = () => {
+  const passportCalculation:Function = () => {
     switch(selectArrayRef.current[horizontalColumn]) {
       case 'abkhazia' : return passports.abkhazia
       case 'afghanistan': return passports.afghanistan

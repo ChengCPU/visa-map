@@ -18,8 +18,8 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
 
   const { language } = useContext(LanguageContext)
 
-  const languageCaculation = (num:number) => {
-    switch(language){
+  const languageCaculation:Function = (num:number) => {
+    switch(language) {
       case '🇬🇧EN': return namesEN[num]
       case '🇪🇸ES': return namesES[num]
       case '🇵🇹PT': return namesPT[num]
@@ -27,7 +27,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     }
   }
 
-  const auETAcalc = () => {
+  const auETAcalc:Function = () => {
     let i = 0
     while(selectArrayRef.current[i] != null) {
       i++
@@ -40,9 +40,9 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     return 'Electronic Travel Authorization'
   }
 
-  const ETAcodes = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',LK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM'}
+  const ETAcodes:{[key:string]:string | Function} = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',LK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM'}
 
-  const colorCalculation = () => {
+  const colorCalculation:Function = () => {
     switch(assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]]) {
       case 0: return 'rgb(255,20,147)'
       case 1: return 'rgb(255,0,0)'
@@ -64,7 +64,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     }
   }
 
-  const visaPolicyCalculation = () => {
+  const visaPolicyCalculation:Function = () => {
     switch(assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]]) {
       case 0: return languageCaculation(0)
       case 1: return languageCaculation(1)

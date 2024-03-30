@@ -31,17 +31,17 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
 `
 
-const headerEN = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
-const headerES = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
-const headerPT = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
-const headerFR = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
+const headerEN:string[] = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
+const headerES:string[] = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
+const headerPT:string[] = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
+const headerFR:string[] = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
 
 const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoomReset }) => {
 
-  const dimensions = useContext(DimensionsContext)
-  const proToggle = useContext(ProToggleContext)
+  const dimensions:{width:number;height:number} = useContext(DimensionsContext)
+  const proToggle:{proToggle:boolean;setProToggle:Function} = useContext(ProToggleContext)
 
-  const languageCaculation = () => {
+  const languageCaculation:Function = () => {
     switch(language) {
       case '🇬🇧EN': return headerEN
       case '🇪🇸ES': return headerES
@@ -50,7 +50,7 @@ const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoo
     }
   }
 
-  const takeScreenshot = () => {
+  const takeScreenshot:Function = () => {
     setPanzoomReset(!panzoomReset)
     const element = document.getElementById('map');
 
