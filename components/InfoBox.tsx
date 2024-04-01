@@ -26,7 +26,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
 
   const { language } = useContext(LanguageContext)
 
-  const languageCaculation = () => {
+  const languageCaculation:Function = () => {
     switch(language) {
       case '🇬🇧EN': return policyEN
       case '🇪🇸ES': return policyES
@@ -35,7 +35,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
     }
   }
 
-  const languageCaculation2 = () => {
+  const languageCaculation2:Function = () => {
     switch(language) {
       case '🇬🇧EN': return countriesEN
       case '🇪🇸ES': return countriesES
@@ -44,15 +44,15 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
     }
   }
 
-  const indexISOCalc = (key:string) => {
+  const indexISOCalc:Function = (key:string) => {
     return ETAcodes[key.toUpperCase()]
   }
 
-  const visaPolicyISOCalc = () => {
+  const visaPolicyISOCalc:Function = () => {
     return ETAcodes[selected]
   }
 
-  const auETAcalc = () => {
+  const auETAcalc:Function = () => {
     if(selected != null) {
       if(australiaEvisitor.includes((countrySelect))) {
         return 'eVisitor'
@@ -72,11 +72,11 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
     return 'Electronic Travel Authorization'
   }
 
-  const ETAcodes = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',LK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM'}
+  const ETAcodes:{[key:string]:string | Function} = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',LK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver'}
 
-  const ETAfunction = (selected != null) ? visaPolicyISOCalc : indexISOCalc
+  const ETAfunction:Function = (selected != null) ? visaPolicyISOCalc : indexISOCalc
 
-  const rgbToText = (rgb:string, key:string) => {
+  const rgbToText:Function = (rgb:string, key:string) => {
     switch(rgb) {
       case 'rgb(255,20,147)': return languageCaculation()[0]
       case 'rgb(255,0,0)': return languageCaculation()[1]
