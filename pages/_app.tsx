@@ -4,7 +4,6 @@ import { DiffContext } from '../logic/context/DiffContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { CountrySelectContext } from '../logic/context/CountrySelectContext'
-import { ProToggleContext } from '../logic/context/ProToggleContext'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useEffect, useRef } from 'react'
@@ -241,7 +240,6 @@ function MyApp({ Component, pageProps }) {
   const [language, setLanguage] = useState<string>('🇬🇧EN')
   const [countrySelect, setCountrySelect] = useState<string>('')
   const [selectorLoad, setSelectorLoad] = useState<boolean>(true)
-  const [proToggle, setProToggle] = useState<boolean>(false)
   const [panzoomReset, setPanzoomReset] = useState<boolean>(false)
   const ESTAbanRef = useRef<boolean>(false)
   const selectRef = useRef<{selection:number;passport:null|string}>({selection:0,passport:null})
@@ -258,7 +256,6 @@ function MyApp({ Component, pageProps }) {
   const languageProvider:{[key:string]:string} = {language:language}
   const dimensionsProvider:{width:number;height:number} = {width:dimensions.width,height:dimensions.height}
   const countrySelectProvider:{setCountrySelect:Function} = {setCountrySelect:setCountrySelect}
-  const proToggleProvider:{proToggle:boolean;setProToggle:Function} = {proToggle:proToggle,setProToggle:setProToggle}
 
   const ESTAbancalc = () => {
     let i:number = 0
@@ -319,7 +316,6 @@ function MyApp({ Component, pageProps }) {
     <PassportContext.Provider value={passportsProvider}>
     <LanguageContext.Provider value={languageProvider}>
     <DimensionsContext.Provider value={dimensionsProvider}>
-    <ProToggleContext.Provider value={proToggleProvider}>
       <Component {...pageProps}
         selectArrayRef={selectArrayRef}
         assignedColorsRef={assignedColorsRef}
@@ -363,7 +359,6 @@ function MyApp({ Component, pageProps }) {
       />
       <Analytics />
       <SpeedInsights />
-    </ProToggleContext.Provider>
     </DimensionsContext.Provider>
     </LanguageContext.Provider>
     </PassportContext.Provider>
