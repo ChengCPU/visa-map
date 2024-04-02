@@ -14,9 +14,10 @@ interface Props {
   tempDiffRef:MutableRefObject<{[key:string]:number}>;
   diffRef:MutableRefObject<{[key:string]:number}>;
   panzoomReset:boolean;
+  visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset, visaDurationRef }:Props) {
 
   useEffect(() => {
     priorityRef.current = tempPriorityRef.current
@@ -30,6 +31,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
       <title>Visa-map</title>
       <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
       <link rel="shortcut icon" href="/favicon.png" />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></script>
     </Head>
     <Map
       setHover={setHover}
@@ -42,6 +44,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
       countrySelect={countrySelect}
       priorityRef={priorityRef}
       selected={null}
+      visaDurationRef={visaDurationRef}
     />
     </>
   )
