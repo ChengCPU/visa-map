@@ -56,6 +56,7 @@ const VisaPolicy:React.FC<Props> = ({ selectArrayRef, setHover, priorityRef, set
       <title>Visa-map</title>
       <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
       <link rel="shortcut icon" href="/favicon.png" />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></script>
     </Head>
     <div>
       <style jsx>{`

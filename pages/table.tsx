@@ -76,6 +76,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
   <Head>
     <title>Visa-map</title>
     <link rel="shortcut icon" href="/favicon.png" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></script>
   </Head>
 	<br />
 	<br />
