@@ -1,6 +1,5 @@
 import { useEffect, useContext, useRef } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
-import { ProToggleContext } from '../../logic/context/ProToggleContext'
 import Panzoom from 'panzoom'
 import Abkhazia from '../countries/Abkhazia'
 import Afghanistan from '../countries/Afghanistan'
@@ -257,7 +256,6 @@ interface Props {
 const MapSVG:React.FC<Props> = ({ setHover, panzoomReset }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
-  const proToggle:{proToggle:boolean;setProToggle:Function} = useContext(ProToggleContext)
 
   const panzoomRef = useRef(null)
 
@@ -268,7 +266,7 @@ const MapSVG:React.FC<Props> = ({ setHover, panzoomReset }) => {
       if(dimensions.width > 800) {
         panzoom = Panzoom(panzoomRef.current, {
           smoothScroll: false,
-          maxZoom: (proToggle.proToggle) ? 50 : 8,
+          maxZoom: 8,
           minZoom: 0.4
         })
       } else {
@@ -291,7 +289,7 @@ const MapSVG:React.FC<Props> = ({ setHover, panzoomReset }) => {
         panzoom.dispose()
       }
     }
-  }, [dimensions.width, proToggle.proToggle, panzoomReset])
+  }, [dimensions.width, panzoomReset])
 
   return (
     <div ref={panzoomRef} id={'map'} className={'container'}>
