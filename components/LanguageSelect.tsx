@@ -25,8 +25,8 @@ const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
     handleClose()
   }
 
-  const languageArray = ['🇬🇧EN', '🇪🇸ES', '🇵🇹PT', '🇫🇷FR']
-  const renderMenuItems = (languageArray:string[]) => {
+  const languageArray:string[] = ['🇬🇧EN', '🇪🇸ES', '🇵🇹PT', '🇫🇷FR']
+  const renderMenuItems:Function = (languageArray:string[]) => {
     return languageArray.map(languageArray =>
       (language != languageArray) ?
       <MenuItem key={languageArray} onClick={() => menuItemOnClick(languageArray)}>{languageArray}</MenuItem>

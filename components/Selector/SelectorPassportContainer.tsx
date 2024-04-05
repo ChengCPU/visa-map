@@ -22,11 +22,11 @@ const SelectorPassportContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, t
     option.toLowerCase().includes(filterValue.toLowerCase())
   )
 
-  const convertCountryNames = (passportsMap) => {
+  const convertCountryNames:Function = (passportsMap) => {
     return passportsArray[countriesWithPassports.indexOf(passportsMap)]
   }
 
-  const convertCountryNamesSpaces = (passportsMap) => {
+  const convertCountryNamesSpaces:Function = (passportsMap) => {
     return countriesWithPassports[countriesWithPassports.indexOf(passportsMap)]
   }
 
