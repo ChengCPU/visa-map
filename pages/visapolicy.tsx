@@ -2,6 +2,7 @@ import { useState, useEffect, useContext, MutableRefObject } from 'react'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import Head from 'next/head'
+import Script from 'next/script'
 import PassportMap from '../components/Map/PassportMap'
 import InfoBox from '../components/InfoBox'
 import individualVisaPolicyCalculation from '../logic/visaPolicyCalculation/individualVisaPolicyCalculation'
@@ -56,7 +57,7 @@ const VisaPolicy:React.FC<Props> = ({ selectArrayRef, setHover, priorityRef, set
       <title>Visa-map</title>
       <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
       <link rel="shortcut icon" href="/favicon.png" />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></script>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></Script>
     </Head>
     <div>
       <style jsx>{`

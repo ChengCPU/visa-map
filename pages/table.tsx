@@ -2,6 +2,7 @@ import { useContext, useEffect, MutableRefObject } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import Head from 'next/head'
+import Script from 'next/script'
 import Country from '../components/Table/Country'
 import VisaPolicy from '../components/Table/VisaPolicy'
 import TablePassport from '../components/Table/TablePassport'
@@ -76,7 +77,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
   <Head>
     <title>Visa-map</title>
     <link rel="shortcut icon" href="/favicon.png" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></script>
+    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></Script>
   </Head>
 	<br />
 	<br />

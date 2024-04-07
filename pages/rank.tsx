@@ -4,6 +4,7 @@ import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { StaticImageData } from 'next/image'
 import Head from 'next/head'
+import Script from 'next/script'
 import Passport from '../components/Selector/Passport'
 import SortBy from '../components/Rank/SortBy'
 import SortByOrder from '../components/Rank/SortByOrder'
@@ -199,7 +200,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     <Head>
       <title>Visa-map</title>
       <link rel="shortcut icon" href="/favicon.png" />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></script>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></Script>
     </Head>
     <br />
     <br />

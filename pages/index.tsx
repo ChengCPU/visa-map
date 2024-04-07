@@ -1,6 +1,7 @@
 import { useEffect, MutableRefObject } from 'react'
 import Map from '../components/Map/Map'
 import Head from 'next/head'
+import Script from 'next/script'
 import InfoBox from '../components/InfoBox'
 interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
@@ -30,7 +31,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
       <title>Visa-map</title>
       <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
       <link rel="shortcut icon" href="/favicon.png" />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></script>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></Script>
     </Head>
     <Map
       setHover={setHover}
