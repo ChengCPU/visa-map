@@ -113,6 +113,7 @@ import Kazakhstan from '../countries/Kazakhstan'
 import Kenya from '../countries/Kenya'
 import Kiribati from '../countries/Kiribati'
 import Kosovo from '../countries/Kosovo'
+import Kurdistan from '../countries/Kurdistan'
 import Kuwait from '../countries/Kuwait'
 import Kyrgyzstan from '../countries/Kyrgyzstan'
 import Laos from '../countries/Laos'
@@ -301,6 +302,7 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
       case 'GP': return <Guadeloupe />
       case 'GU': return <Guam />
       case 'XM': return <JanMayen />
+      case 'KX': return <Kurdistan />
       case 'MQ': return <Martinique />
       case 'YT': return <Mayotte />
       case 'NC': return <NewCaledonia />
