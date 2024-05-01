@@ -22,9 +22,10 @@ interface Props {
   tempPriorityRef:MutableRefObject<{[key:string]:string}>;
   diffRef:MutableRefObject<{[key:string]:number}>;
   tempDiffRef:MutableRefObject<{[key:string]:number}>;
+  assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;
 }
 
-const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
+const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef, assignedVisaDurationRef }) => {
 
   useEffect(() => {
     tempPriorityRef.current = priorityRef.current
@@ -36,7 +37,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
   const { language } = useContext(LanguageContext)
 
   const languageCaculation = () => {
-    switch(language){
+    switch(language) {
       case '🇬🇧EN': return countriesEN
       case '🇪🇸ES': return countriesES
       case '🇵🇹PT': return countriesPT
@@ -65,6 +66,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
           selectArrayRef={selectArrayRef}
           verticalColumn={verticalColumn}
           horizontalColumn={horizontalColumn}
+          assignedVisaDurationRef={assignedVisaDurationRef}
         />
         : null
       )}

@@ -15,9 +15,10 @@ interface Props {
   tempDiffRef:MutableRefObject<{[key:string]:number}>;
   diffRef:MutableRefObject<{[key:string]:number}>;
   panzoomReset:boolean;
+  visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset, visaDurationRef }:Props) {
 
   useEffect(() => {
     priorityRef.current = tempPriorityRef.current
@@ -44,6 +45,8 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
       countrySelect={countrySelect}
       priorityRef={priorityRef}
       selected={null}
+      visaDurationRef={visaDurationRef}
+      visaPolicyDurationRef={null}
     />
     </>
   )

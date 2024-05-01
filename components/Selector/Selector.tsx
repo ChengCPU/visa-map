@@ -20,6 +20,8 @@ interface Props {
   selectorLoad:boolean;
   tempDiffRef:MutableRefObject<{[key:string]:number}>;
   ESTAbanRef:MutableRefObject<boolean>;
+  visaDurationRef:MutableRefObject<{[key:string]:number}>;
+  assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;
 }
 
 const CustomizedDrawer = styled(Drawer)`
@@ -28,7 +30,7 @@ const CustomizedDrawer = styled(Drawer)`
   }
 `
 
-const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef, ESTAbanRef }) => {
+const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef, ESTAbanRef, visaDurationRef, assignedVisaDurationRef }) => {
   return (
     <>
     <CustomizedDrawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
@@ -52,6 +54,8 @@ const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle
         selectorLoad={selectorLoad}
         tempDiffRef={tempDiffRef}
         ESTAbanRef={ESTAbanRef}
+        visaDurationRef={visaDurationRef}
+        assignedVisaDurationRef={assignedVisaDurationRef}
       />
     </>
   )

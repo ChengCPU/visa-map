@@ -12,10 +12,10 @@ interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
   verticalColumn:number;
   horizontalColumn:number;
+  assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;
 }
 
-
-const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, verticalColumn, horizontalColumn }) => {
+const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, verticalColumn, horizontalColumn, assignedVisaDurationRef }) => {
 
   const { language } = useContext(LanguageContext)
 
@@ -55,6 +55,14 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     }
   }
 
+  const visaDurationCalculation:Function = () => {
+    if(assignedVisaDurationRef.current[horizontalColumn][ISOcodes[verticalColumn]] == 0) {
+      return ''
+    } else {
+      return '(' + assignedVisaDurationRef.current[horizontalColumn][ISOcodes[verticalColumn]] + ' days)'
+    }
+  }
+
   return (
     <td className={'text'}>
     <style jsx>{`
@@ -65,7 +73,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
         background-color: ${(selectArrayRef.current[horizontalColumn] != null) ? colors[assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]]] : '#333333'};
       }
     `}</style>
-    {(selectArrayRef.current[horizontalColumn] != null) ? visaPolicyCalculation() : null}
+    {(selectArrayRef.current[horizontalColumn] != null) ? visaPolicyCalculation() + ' ' + visaDurationCalculation() : null}
     </td>
   )
 }
