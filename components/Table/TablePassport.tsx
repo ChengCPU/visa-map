@@ -109,6 +109,7 @@ const TablePassport:React.FC<Props> = ({ selectArrayRef, horizontalColumn }) => 
       case 'kazakhstan': return passports.kazakhstan
       case 'kenya': return passports.kenya
       case 'kiribati': return passports.kiribati
+      case 'kosovo': return passports.kosovo
       case 'kuwait': return passports.kuwait
       case 'kyrgyzstan': return passports.kyrgyzstan
       case 'laos': return passports.laos
@@ -155,6 +156,7 @@ const TablePassport:React.FC<Props> = ({ selectArrayRef, horizontalColumn }) => 
       case 'oman': return passports.oman
       case 'pakistan': return passports.pakistan
       case 'palau': return passports.palau
+      case 'palestine': return passports.palestine
       case 'panama': return passports.panama
       case 'papuaNewGuinea': return passports.papuaNewGuinea
       case 'paraguay': return passports.paraguay
