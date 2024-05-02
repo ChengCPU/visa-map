@@ -47,7 +47,6 @@ export default function individualVisaPolicyCalculation(countryCode:string, prio
     case 'YT': ISOcolor.yt = 'rgb(255,20,147)'; break
     case 'NC': ISOcolor.nc = 'rgb(255,20,147)'; break
     case 'NU': ISOcolor.nu = 'rgb(255,20,147)'; break
-    case 'RC': ISOcolor.rc = 'rgb(255,20,147)'; break
     case 'MP': ISOcolor.mp = 'rgb(255,20,147)'; break
     case 'PN': ISOcolor.pn = 'rgb(255,20,147)'; break
     case 'RE': ISOcolor.re = 'rgb(255,20,147)'; break

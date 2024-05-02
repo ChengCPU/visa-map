@@ -148,6 +148,7 @@ const TablePassport:React.FC<Props> = ({ selectArrayRef, horizontalColumn }) => 
       case 'nicaragua': return passports.nicaragua
       case 'niger': return passports.niger
       case 'nigeria': return passports.nigeria
+      case 'northernCyprus': return passports.northernCyprus
       case 'northKorea': return passports.northKorea
       case 'northMacedonia': return passports.northMacedonia
       case 'norway': return passports.norway

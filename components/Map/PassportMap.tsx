@@ -307,7 +307,6 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
       case 'YT': return <Mayotte />
       case 'NC': return <NewCaledonia />
       case 'NU': return <Niue />
-      case 'RC': return <NorthernCyprus />
       case 'MP': return <NorthernMarianaIslands />
       case 'PN': return <PitcairnIslands />
       case 'RE': return <Reunion />
@@ -531,6 +530,7 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
     <Montenegro />
     <Montserrat />
     <Nauru />
+    <NorthernCyprus />
     <Palau />
     <Palestine />
     <Qatar />
