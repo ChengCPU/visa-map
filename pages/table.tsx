@@ -3,7 +3,6 @@ import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import Head from 'next/head'
 import Script from 'next/script'
-import Ad from '../components/Ad'
 import Country from '../components/Table/Country'
 import VisaPolicy from '../components/Table/VisaPolicy'
 import TablePassport from '../components/Table/TablePassport'
@@ -102,7 +101,6 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
         border-spacing: 0;
       }
     `}</style>
-    <Ad />
     <table cellSpacing="0" cellPadding="0">
 			<tbody>
 				<tr>
