@@ -1,4 +1,5 @@
 import { useEffect, MutableRefObject } from 'react'
+import legendCalculation from '../logic/legendCalculation'
 import Map from '../components/Map/Map'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -18,13 +19,17 @@ interface Props {
   panzoomReset:boolean;
   visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
   legend:boolean[];
+  setLegend:Function;
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset, visaDurationRef, legend }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset, visaDurationRef, legend, setLegend }:Props) {
 
   useEffect(() => {
     priorityRef.current = tempPriorityRef.current
     diffRef.current = tempDiffRef.current
+    if(selectArrayRef.current[0] != null) {
+      legendCalculation(setLegend, priorityRef)
+    }
     setSelectorLoad(true)
   }, [])
 
