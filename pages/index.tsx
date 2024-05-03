@@ -3,6 +3,7 @@ import Map from '../components/Map/Map'
 import Head from 'next/head'
 import Script from 'next/script'
 import InfoBox from '../components/InfoBox'
+import Legend from '../components/Legend'
 interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
   mousePos:number | boolean[];
@@ -16,9 +17,10 @@ interface Props {
   diffRef:MutableRefObject<{[key:string]:number}>;
   panzoomReset:boolean;
   visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
+  legend:boolean[];
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset, visaDurationRef }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset, visaDurationRef, legend }:Props) {
 
   useEffect(() => {
     priorityRef.current = tempPriorityRef.current
@@ -37,6 +39,9 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     <Map
       setHover={setHover}
       panzoomReset={panzoomReset}
+    />
+    <Legend
+      legend={legend}
     />
     <InfoBox
       selectArrayRef={selectArrayRef}
