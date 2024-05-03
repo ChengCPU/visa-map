@@ -4,9 +4,10 @@ import Rectangle from './Map/Legend/Rectangle'
 import LegendButton from './LegendButton'
 interface Props {
   legend:boolean[];
+  position:string;
 }
 
-const Legend:React.FC<Props> = ({ legend }) => {
+const Legend:React.FC<Props> = ({ legend, position }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
   const [collapse, setCollapse] = useState(true)
@@ -30,7 +31,7 @@ const Legend:React.FC<Props> = ({ legend }) => {
       .legend {
         background-color: white;
         position: fixed;
-        bottom: 140px;
+        bottom: ${position}px;
         border-radius: 8px;
         border-color: black;
         ${(collapse) ? 'border-style: solid;' : null}

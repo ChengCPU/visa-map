@@ -347,6 +347,7 @@ function MyApp({ Component, pageProps }) {
         visaDurationRef={visaDurationRef}
         assignedVisaDurationRef={assignedVisaDurationRef}
         legend={legend}
+        setLegend={setLegend}
       />
       <Selector
         Drawer={Drawer}

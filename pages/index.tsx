@@ -42,6 +42,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     />
     <Legend
       legend={legend}
+      position={'140'}
     />
     <InfoBox
       selectArrayRef={selectArrayRef}
