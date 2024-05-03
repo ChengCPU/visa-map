@@ -102,6 +102,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
         border-spacing: 0;
       }
     `}</style>
+    <Ad />
     <table cellSpacing="0" cellPadding="0">
 			<tbody>
 				<tr>

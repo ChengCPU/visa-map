@@ -12,13 +12,13 @@ const Ad:React.FC = () => {
 
   return (
     <ins className="adsbygoogle"
-     style={{display: 'block'}}
-     data-ad-client="ca-pub-2147951612524944"
-     data-ad-slot="4685072548"
-     data-ad-format="auto"
-     data-full-width-responsive="true"
+      style={{display: 'block'}}
+      data-ad-client="ca-pub-2147951612524944"
+      data-ad-slot="1688208264"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
     />
-  );
+  )
 }
 
 export default Ad
