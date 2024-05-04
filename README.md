@@ -48,7 +48,7 @@ Example: France now requires United States passport holders to get a visa.
       v
 
 "unitedStates": {
-  "FR": 14
+  "FR": 15
 }
 ```
 
