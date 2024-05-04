@@ -16,9 +16,9 @@ https://visamap.co
 
 # Contribute
 
-## public/visapolicy.json
+## public/visaPolicy.json
 
-Visa-map uses a .json file to fetch the corresponding visa policy information for each country.
+Visa-map uses the public/visaPolicy.json file to fetch the corresponding visa policy information for each country.
 
 ![screenshot](./public/screenshot.png)
 
@@ -72,3 +72,31 @@ Example: France now requires United States passport holders to get a visa.
 14: Confirmation required (black)
 15: Visa required (gray)
 ```
+
+## public/visaDuration.json
+
+Visa duration information is stored in a different .json file (public/visaDuration.json).
+
+![screenshot1](./public/screenshot1.png)
+
+### Format:
+
+```
+"passport": {
+  "ISO 3166-1 alpha-2 code": number
+}
+```
+Example: United States -> France\
+United States passport holders can stay in France for 90 days visa-free, therefore 90 is the corresponding number.
+```
+"unitedStates": {
+  "FR": 90
+}
+```
+
+Notes:
+
+* Duration of stay is only available when the visa category is: Visa-free (7), ETA (8), Visa on arrival/E-visa (9), Visa on arrival (10), E-visa (11) or Special permit/police check (12).
+* If the visa category is: Home country (0), Freedom of movement (2-6), Confirmation required (14), Visa required (15) the assigned duration of stay is 0.
+* If the duration of stay is defined in years, months or weeks, it is converted into days (1 year = 365 days, 1 month = 30 days, 1 week = 7 days).
+* If the duration of stay is unknown, it is set to 0 until the correct information is found.
