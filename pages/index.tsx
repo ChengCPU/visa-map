@@ -53,9 +53,9 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     <div className={'container'}>
       <style jsx>{`
         .container {
-          background-color: white;
-          bottom: 215px;
-          width: 360px;
+          bottom: 140px;
+          width: 355px;
+          height: 115px;
           display: flex;
           position: fixed;
           align-items: center;
