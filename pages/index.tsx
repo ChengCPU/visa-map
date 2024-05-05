@@ -50,20 +50,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
       legend={legend}
       position={'90'}
     />
-    <div className={'container'}>
-      <style jsx>{`
-        .container {
-          bottom: 140px;
-          width: 355px;
-          height: 115px;
-          display: flex;
-          position: fixed;
-          align-items: center;
-          justify-content: center;
-        }
-      `}</style>
-      <Ad />
-    </div>
+    <Ad />
     <InfoBox
       selectArrayRef={selectArrayRef}
       mousePos={mousePos}
