@@ -55,6 +55,7 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
         .container {
           background-color: white;
           bottom: 215px;
+          width: 360px;
           display: flex;
           position: fixed;
           align-items: center;
