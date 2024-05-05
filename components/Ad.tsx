@@ -12,9 +12,9 @@ const Ad:React.FC = () => {
 
   return (
     <ins className="adsbygoogle"
-      style={{display: 'block', width: '320px', height: '100px', position: 'fixed', bottom: '140px'}}
+      style={{display: 'inline-block', width: '320px', height: '100px', position: 'fixed', bottom: '140px'}}
       data-ad-client="ca-pub-2147951612524944"
-      data-ad-slot="7338144289"
+      data-ad-slot="8038866331"
       data-ad-format="auto"
       data-full-width-responsive="true"
     />
