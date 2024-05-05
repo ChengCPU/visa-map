@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import InfoBox from '../components/InfoBox'
 import Legend from '../components/Legend'
+import Ad from '../components/Ad'
 interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
   mousePos:number | boolean[];
@@ -47,8 +48,21 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     />
     <Legend
       legend={legend}
-      position={'140'}
+      position={'90'}
     />
+    <div className={'container'}>
+      <style jsx>{`
+        .container {
+          background-color: white;
+          bottom: 215px;
+          display: flex;
+          position: fixed;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
+      <Ad />
+    </div>
     <InfoBox
       selectArrayRef={selectArrayRef}
       mousePos={mousePos}

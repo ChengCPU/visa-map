@@ -14,7 +14,7 @@ const Ad:React.FC = () => {
     <ins className="adsbygoogle"
       style={{display: 'block'}}
       data-ad-client="ca-pub-2147951612524944"
-      data-ad-slot="1688208264"
+      data-ad-slot="7338144289"
       data-ad-format="auto"
       data-full-width-responsive="true"
     />

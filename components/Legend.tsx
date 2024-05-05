@@ -31,7 +31,7 @@ const Legend:React.FC<Props> = ({ legend, position }) => {
       .legend {
         background-color: white;
         position: fixed;
-        bottom: ${position}px;
+        ${(position == '90') ? 'top: ' + position + 'px;' : 'bottom: ' + position + 'px;'}
         border-radius: 8px;
         border-color: black;
         ${(collapse) ? 'border-style: solid;' : null}
