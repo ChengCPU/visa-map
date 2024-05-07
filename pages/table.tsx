@@ -1,4 +1,4 @@
-import { useContext, useEffect, MutableRefObject } from 'react'
+import { useMemo, useContext, useEffect, MutableRefObject } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import Head from 'next/head'
@@ -36,14 +36,14 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
   const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
 
-  const languageCaculation = () => {
+  const languageCaculation = useMemo(() => {
     switch(language) {
       case '🇬🇧EN': return countriesEN
       case '🇪🇸ES': return countriesES
       case '🇵🇹PT': return countriesPT
       case '🇫🇷FR': return countriesFR
     }
-  }
+  }, [language])
 
   const renderPassports = (horizontalColumn: number[]) => {
     return horizontalColumn.map(horizontalColumn => (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) ? <th key={horizontalColumn}><TablePassport selectArrayRef={selectArrayRef} horizontalColumn={horizontalColumn}/></th> : null)
@@ -57,7 +57,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
           background-color: #333333;
         }
       `}</style>
-      <Country country={languageCaculation()[verticalColumn]} flag={flags[verticalColumn]} />
+      <Country country={languageCaculation[verticalColumn]} flag={flags[verticalColumn]} />
       {horizontalColumn.map(horizontalColumn =>
         (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) ?
         <VisaPolicy

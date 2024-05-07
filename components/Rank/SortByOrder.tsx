@@ -28,15 +28,17 @@ const SortByOrder:React.FC<Props> = ({ rankRef, sort, setSort }) => {
   return (
     <>
     {(dimensions.width <= 800) ?
-    <CustomizedButtonMobile onClick={() => {
-      setSort(!sort)
-      reverseSort(rankRef)
-    }} style={{maxWidth: '30px', minWidth: '30px'}}>{(sort) ? '⬇️' : '⬆️'}</CustomizedButtonMobile>
-    :
-    <CustomizedButtonDesktop onClick={() => {
-      setSort(!sort)
-      reverseSort(rankRef)
-    }} style={{maxWidth: '30px', minWidth: '30px'}}>{(sort) ? '⬇️' : '⬆️'}</CustomizedButtonDesktop>
+      <CustomizedButtonMobile onClick={() => {
+        setSort(!sort)
+        reverseSort(rankRef)
+      }} style={{maxWidth: '30px', minWidth: '30px'}}>{(sort) ? '⬇️' : '⬆️'}
+      </CustomizedButtonMobile>
+      :
+      <CustomizedButtonDesktop onClick={() => {
+        setSort(!sort)
+        reverseSort(rankRef)
+      }} style={{maxWidth: '30px', minWidth: '30px'}}>{(sort) ? '⬇️' : '⬆️'}
+      </CustomizedButtonDesktop>
     }
     </>
   )

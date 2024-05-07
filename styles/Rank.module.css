@@ -50,10 +50,10 @@
 
 .textSeparator {
   display: flex;
-  align-items: center; /* Align items vertically in the center */
+  align-items: center;
 }
 
 .separator {
-  flex: 1; /* This makes the separator expand and take remaining space */
-  margin: 0 10px; /* Adjust spacing as needed */
+  flex: 1;
+  margin: 0 10px;
 }

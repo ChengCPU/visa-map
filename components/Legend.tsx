@@ -10,7 +10,7 @@ interface Props {
 const Legend:React.FC<Props> = ({ legend, position }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
-  const [collapse, setCollapse] = useState(true)
+  const [collapse, setCollapse] = useState<boolean>(true)
 
   return (
     <>
@@ -23,42 +23,42 @@ const Legend:React.FC<Props> = ({ legend, position }) => {
         />
       </div>
       <style jsx>{`
-      .container {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-      }
-      .legend {
-        background-color: white;
-        position: fixed;
-        ${(position == '90') ? 'top: ' + position + 'px;' : 'bottom: ' + position + 'px;'}
-        border-radius: 8px;
-        border-color: black;
-        ${(collapse) ? 'border-style: solid;' : null}
-        border-width: 2px;
-      }
-      .element {
-        position: relative;
-        display: flex;
-        margin-left: 0.75px;
-        align-items: center;
-        justify-content: left;
-        height: 18px;
-      }
-      .text {
-        margin-left: 4px;
-      }
-      .legendButton {
-        position: absolute;
-        bottom: calc(100% + 5px);
-        left: 7%;
-        transform: translateX(-50%);
-        background-color: none;
-        padding: 2px;
-        border-radius: 5px;
-        z-index: 999;
-        ${(collapse) ? null : 'padding-left: 22px'}
-      }
+        .container {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+        }
+        .legend {
+          background-color: white;
+          position: fixed;
+          ${(position == '90') ? 'top: ' + position + 'px;' : 'bottom: ' + position + 'px;'}
+          border-radius: 8px;
+          border-color: black;
+          ${(collapse) ? 'border-style: solid;' : null}
+          border-width: 2px;
+        }
+        .element {
+          position: relative;
+          display: flex;
+          margin-left: 0.75px;
+          align-items: center;
+          justify-content: left;
+          height: 18px;
+        }
+        .text {
+          margin-left: 4px;
+        }
+        .legendButton {
+          position: absolute;
+          bottom: calc(100% + 5px);
+          left: 7%;
+          transform: translateX(-50%);
+          background-color: none;
+          padding: 2px;
+          border-radius: 5px;
+          z-index: 999;
+          ${(collapse) ? null : 'padding-left: 22px'}
+        }
     `}</style>
       {(collapse) ?
       <table>

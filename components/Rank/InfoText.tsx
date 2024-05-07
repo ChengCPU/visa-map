@@ -8,14 +8,14 @@ const InfoText:React.FC<Props> = ({ count }) => {
     <style jsx>{`
       .container {
         position: relative;
-        width: 500px; /* Set a width for the container */
-        height: 50px; /* Set a height for the container */
+        width: 500px;
+        height: 50px;
         user-select: none;
       }
       .box {
-        display:flex;
-        align-items:center;
-        justify-content:left;
+        display: flex;
+        align-items: center;
+        justify-content: left;
         border-radius: 8px;
         border-color: black;
         border-style: solid;
@@ -36,14 +36,14 @@ const InfoText:React.FC<Props> = ({ count }) => {
         padding: 15px;
       }
       .content:hover .box {
-        opacity: 1; /* Make the box visible on hover */
+        opacity: 1;
       }
     `}</style>
       <div className={'content'}>
-        <div className={'box'}> Visa-free: {count?.[1]}; VoA/E-visa: {count?.[2]}; Visa on Arrival: {count?.[3]}; E-visa: {count?.[4]}; Visa required: {count?.[5]};</div>
+        <div className={'box'}> Visa-free: {count?.[1]} VoA/E-visa: {count?.[2]} Visa on Arrival: {count?.[3]} E-visa: {count?.[4]} Visa required: {count?.[5]}</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default InfoText

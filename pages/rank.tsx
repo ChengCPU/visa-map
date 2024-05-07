@@ -117,81 +117,81 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
 
   const passportRankRenderDesktop = (verticalColumn:any) => {
     return verticalColumn.map(verticalColumn =>
-    <tr key={verticalColumn}>
-      <td className={styles.rank}>
-      <p>{order?.[verticalColumn]}</p>
-      </td>
-      <td><Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRef.current?.[verticalColumn]?.[0]]}/></td>
-      <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
-      <td>
-      <div className={styles.progressBarsContainer}>
-        <div className={styles.textSeparator}>
-          <p className={styles.textDiv}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
-          <div className={styles.separator}></div>
-          <p className={styles.textDiv}>{languageCalculation(2) + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+      <tr key={verticalColumn}>
+        <td className={styles.rank}>
+        <p>{order?.[verticalColumn]}</p>
+        </td>
+        <td><Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRef.current?.[verticalColumn]?.[0]]}/></td>
+        <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
+        <td>
+        <div className={styles.progressBarsContainer}>
+          <div className={styles.textSeparator}>
+            <p className={styles.textDiv}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
+            <div className={styles.separator}></div>
+            <p className={styles.textDiv}>{languageCalculation(2) + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+          </div>
+          <div className={styles.progressBarDesktop}>
+            <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[5]} />
+            <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[4]} />
+            <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[3]} />
+            <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[2]} />
+            <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[1]} />
+            <InfoText count={rankRef.current[verticalColumn]}/>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <p className={styles.textDiv}>{languageCalculation(1) + rankRef.current[verticalColumn]?.[7]}</p>
+          <div className={styles.progressBarDesktop}>
+            <FreedomOfMovement max={42.4} count={rankRef.current[verticalColumn]?.[7]}/>
+          </div>
         </div>
-        <div className={styles.progressBarDesktop}>
-          <VisaRequired widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[5]} />
-          <EVisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[4]} />
-          <VisaOnArrival widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[3]} />
-          <VisaOnArrivalEvisa widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[2]} />
-          <VisaFree widthCalculation={widthCalculation} marginCalculation={marginCalculation} verticalColumn={verticalColumn} count={rankRef.current[verticalColumn]?.[1]} />
-          <InfoText count={rankRef.current[verticalColumn]}/>
-        </div>
-        <br/>
-        <br/>
-        <br/>
-        <p className={styles.textDiv}>{languageCalculation(1) + rankRef.current[verticalColumn]?.[7]}</p>
-        <div className={styles.progressBarDesktop}>
-          <FreedomOfMovement max={42.4} count={rankRef.current[verticalColumn]?.[7]}/>
-        </div>
-      </div>
-      </td>
-    </tr>
+        </td>
+      </tr>
     )
   }
 
   const passportRankRenderMobile = (verticalColumn:any) => {
     return verticalColumn.map(verticalColumn =>
-    <tr key={verticalColumn}>
-      <td className={styles.mobileBackground}>
-        <p className={styles.rank}>{order?.[verticalColumn]}</p>
-        <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRef.current?.[verticalColumn]?.[0]]}/>
-        <p className={styles.text}>{textRender(verticalColumn)}</p>
-        <p className={styles.text}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
-        <p className={styles.text}>{languageCalculation(1) + rankRef.current[verticalColumn]?.[7]}</p>
-        <p className={styles.text}>{languageCalculation(2) + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
-      </td>
-      {
-      (dimensions.width <= 800) ?
-      <td className={styles.mobileBackground}>
-        <div className={styles.visaPolicyText}>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <p>{rankRef.current[verticalColumn]?.[1]}</p>
-                <p>{rankRef.current[verticalColumn]?.[2]}</p>
-                <p>{rankRef.current[verticalColumn]?.[3]}</p>
-                <p>{rankRef.current[verticalColumn]?.[4]}</p>
-                <p>{rankRef.current[verticalColumn]?.[5]}</p>
-              </td>
-              <td>
-                <p>🟩 Visa-free</p>
-                <p>🟧 VoA/E-visa</p>
-                <p>🟨 Visa on Arrival</p>
-                <p>🟦 E-visa</p>
-                <p>⬜ Visa Required</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      </td>
-      :
-      null
-      }
-    </tr>
+      <tr key={verticalColumn}>
+        <td className={styles.mobileBackground}>
+          <p className={styles.rank}>{order?.[verticalColumn]}</p>
+          <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRef.current?.[verticalColumn]?.[0]]}/>
+          <p className={styles.text}>{textRender(verticalColumn)}</p>
+          <p className={styles.text}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
+          <p className={styles.text}>{languageCalculation(1) + rankRef.current[verticalColumn]?.[7]}</p>
+          <p className={styles.text}>{languageCalculation(2) + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+        </td>
+        {
+        (dimensions.width <= 800) ?
+        <td className={styles.mobileBackground}>
+          <div className={styles.visaPolicyText}>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <p>{rankRef.current[verticalColumn]?.[1]}</p>
+                  <p>{rankRef.current[verticalColumn]?.[2]}</p>
+                  <p>{rankRef.current[verticalColumn]?.[3]}</p>
+                  <p>{rankRef.current[verticalColumn]?.[4]}</p>
+                  <p>{rankRef.current[verticalColumn]?.[5]}</p>
+                </td>
+                <td>
+                  <p>🟩 Visa-free</p>
+                  <p>🟧 VoA/E-visa</p>
+                  <p>🟨 Visa on Arrival</p>
+                  <p>🟦 E-visa</p>
+                  <p>⬜ Visa Required</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </td>
+        :
+        null
+        }
+      </tr>
     )
   }
 
@@ -208,17 +208,17 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     {(dimensions.width <= 800) ?
     <div className={styles.centered}>
       <div>
-      <SortBy
-        sortBy={sortBy}
-        setSortBy={setSortBy}
-        rankRef={rankRef}
-        setSort={setSort}
-      />
-      <SortByOrder
-        rankRef={rankRef}
-        sort={sort}
-        setSort={setSort}
-      />
+        <SortBy
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          rankRef={rankRef}
+          setSort={setSort}
+        />
+        <SortByOrder
+          rankRef={rankRef}
+          sort={sort}
+          setSort={setSort}
+        />
       </div>
       <br />
     </div>

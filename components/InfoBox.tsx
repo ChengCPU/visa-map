@@ -1,4 +1,4 @@
-import { useContext, MutableRefObject } from 'react'
+import { useMemo, useContext, MutableRefObject } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import Rectangle from './Map/Legend/Rectangle'
 const countries:string[] = ['abkhazia','afghanistan','albania','algeria','americanSamoa','andorra','angola','anguilla','antiguaAndBarbuda','argentina','armenia','aruba','ascensionIsland','australia','austria','azerbaijan','bahamas','bahrain','bangladesh','barbados','belarus','belgium','belize','benin','bermuda','bhutan','bolivia','bonaire','bosniaAndHerzegovina','botswana','brazil','britishIndianOceanTerritory','britishVirginIslands','brunei','bulgaria','burkinaFaso','burundi','cambodia','cameroon','canada','capeVerde','caymanIslands','centralAfricanRepublic','chad','chile','china','colombia','comoros','cookIslands','costaRica','croatia','cuba','curacao','cyprus','czechRepublic','democraticRepublicOfTheCongo','denmark','djibouti','dominica','dominicanRepublic','eastTimor','ecuador','egypt','elSalvador','equatorialGuinea','eritrea','estonia','eswatini','ethiopia','falklandIslands','faroeIslands','fiji','finland','france','frenchGuiana','frenchPolynesia','gabon','gambia','georgia','germany','ghana','gibraltar','greece','greenland','grenada','guadeloupe','guam','guatemala','guinea','guineaBissau','guyana','haiti','honduras','hongKong','hungary','iceland','india','indonesia','iran','iraq','ireland','israel','italy','ivoryCoast','jamaica','janMayen','japan','jordan','kazakhstan','kenya','kiribati','kosovo','kurdistan','kuwait','kyrgyzstan','laos','latvia','lebanon','lesotho','liberia','libya','liechtenstein','lithuania','luxembourg','macao','madagascar','malawi','malaysia','maldives','mali','malta','marshallIslands','martinique','mauritania','mauritius','mayotte','mexico','micronesia','moldova','monaco','mongolia','montenegro','montserrat','morocco','mozambique','myanmar','namibia','nauru','nepal','netherlands','newCaledonia','newZealand','nicaragua','niger','nigeria','niue','northernCyprus','northernMarianaIslands','northKorea','northMacedonia','norway','oman','pakistan','palau','palestine','panama','papuaNewGuinea','paraguay','peru','philippines','pitcairnIslands','poland','portugal','qatar','republicOfTheCongo','reunion','romania','russia','rwanda','saba','saintBarthelemy','saintHelena','saintKittsAndNevis','saintLucia','saintMartin','saintPierreAndMiquelon','saintVincentAndTheGrenadines','samoa','sanMarino','saoTomeAndPrincipe','saudiArabia','senegal','serbia','seychelles','sierraLeone','singapore','sintEustatius','sintMaarten','slovakia','slovenia','solomonIslands','somalia','somaliland','southAfrica','southKorea','southOssetia','southSudan','spain','sriLanka','sudan','suriname','svalbard','sweden','switzerland','syria','taiwan','tajikistan','tanzania','thailand','togo','tokelau','tonga','transnistria','trinidadAndTobago','tristanDaCunha','tunisia','turkey','turkmenistan','turksAndCaicos','tuvalu','uganda','ukraine','unitedArabEmirates','unitedKingdom','unitedStates','unitedStatesVirginIslands','uruguay','uzbekistan','vanuatu','vaticanCity','venezuela','vietnam','wallisAndFutuna','westernSahara','yemen','zambia','zimbabwe']
@@ -29,23 +29,23 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
 
   const { language } = useContext(LanguageContext)
 
-  const languageCaculation:Function = () => {
+  const languageCaculation = useMemo(() => {
     switch(language) {
       case '🇬🇧EN': return policyEN
       case '🇪🇸ES': return policyES
       case '🇵🇹PT': return policyPT
       case '🇫🇷FR': return policyFR
     }
-  }
+  }, [language])
 
-  const languageCaculation2:Function = () => {
+  const languageCaculation2 = useMemo(() => {
     switch(language) {
       case '🇬🇧EN': return countriesEN
       case '🇪🇸ES': return countriesES
       case '🇵🇹PT': return countriesPT
       case '🇫🇷FR': return countriesFR
     }
-  }
+  }, [language])
 
   const indexISOCalc:Function = (key:string) => {
     return ETAcodes[key.toUpperCase()]
@@ -81,22 +81,22 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
 
   const rgbToText:Function = (rgb:string, key:string) => {
     switch(rgb) {
-      case 'rgb(255,20,147)': return languageCaculation()[0]
-      case 'rgb(255,0,0)': return languageCaculation()[1]
-      case 'rgb(255,145,0)': return languageCaculation()[2]
-      case 'rgb(0,135,93)': return languageCaculation()[3]
-      case 'rgb(0,51,153)': return languageCaculation()[4]
-      case 'rgb(153,123,61)': return languageCaculation()[5]
-      case 'rgb(255,179,191)': return languageCaculation()[6]
-      case 'rgb(50,205,50)': return languageCaculation()[7]
+      case 'rgb(255,20,147)': return languageCaculation[0]
+      case 'rgb(255,0,0)': return languageCaculation[1]
+      case 'rgb(255,145,0)': return languageCaculation[2]
+      case 'rgb(0,135,93)': return languageCaculation[3]
+      case 'rgb(0,51,153)': return languageCaculation[4]
+      case 'rgb(153,123,61)': return languageCaculation[5]
+      case 'rgb(255,179,191)': return languageCaculation[6]
+      case 'rgb(50,205,50)': return languageCaculation[7]
       case 'rgb(81,205,123)': return ETAfunction(key)
-      case 'rgb(161,224,123)': return languageCaculation()[8]
-      case 'rgb(255,255,92)': return languageCaculation()[9]
-      case 'rgb(135,206,250)': return languageCaculation()[10]
-      case 'rgb(118,65,171)': return languageCaculation()[11]
-      case 'rgb(200,200,200)': return languageCaculation()[12]
-      case 'rgb(0,0,0)': return languageCaculation()[13]
-      case 'rgb(150,150,150)': return languageCaculation()[14]
+      case 'rgb(161,224,123)': return languageCaculation[8]
+      case 'rgb(255,255,92)': return languageCaculation[9]
+      case 'rgb(135,206,250)': return languageCaculation[10]
+      case 'rgb(118,65,171)': return languageCaculation[11]
+      case 'rgb(200,200,200)': return languageCaculation[12]
+      case 'rgb(0,0,0)': return languageCaculation[13]
+      case 'rgb(150,150,150)': return languageCaculation[14]
     }
   }
 
@@ -141,20 +141,20 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
         -khtml-user-select: none;
         -webkit-user-select: none;
         -o-user-select: none;
-        pointer-events:none;
+        pointer-events: none;
       }
       .legend {
         position: relative;
         bottom: 32px;
-        display:flex;
+        display: flex;
         margin-left: 0.75px;
-        align-items:center;
-        justify-content:left;
+        align-items: center;
+        justify-content: left;
       }
       .country {
         position: relative;
-        display:flex;
-        bottom:10px;
+        display: flex;
+        bottom: 10px;
       }
       .text {
         margin-left: 4px;
@@ -165,7 +165,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
           <tr>
             <td>
               <div className={'country'}>
-                <p>{flags[countries.indexOf(countrySelect)] + ' ' + languageCaculation2()[countries.indexOf(countrySelect)]?.charAt(0).toUpperCase() + languageCaculation2()[countries.indexOf(countrySelect)]?.slice(1)}</p>
+                <p>{flags[countries.indexOf(countrySelect)] + ' ' + languageCaculation2[countries.indexOf(countrySelect)]?.charAt(0).toUpperCase() + languageCaculation2[countries.indexOf(countrySelect)]?.slice(1)}</p>
               </div>
               <div className={'legend'}>
                 <Rectangle color={priorityRef.current[ISOcodesLowercase[countries.indexOf(countrySelect)]]}/>

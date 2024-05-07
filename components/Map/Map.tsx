@@ -19,17 +19,17 @@ const Map:React.FC<Props>= ({ setHover, panzoomReset }) => {
     :
     null}
     <div className={'container'}>
-    <style jsx>{`
-      .container {
-        position: relative;
-        margin-left: 10px;
-      }
-    `}</style>
-    <MapSVG 
-      setHover={setHover}
-      panzoomReset={panzoomReset}
-    />
-    {(dimensions.width <= 800) ?
+      <style jsx>{`
+        .container {
+          position: relative;
+          margin-left: 10px;
+        }
+      `}</style>
+      <MapSVG
+        setHover={setHover}
+        panzoomReset={panzoomReset}
+      />
+      {(dimensions.width <= 800) ?
     <>
     <br />
     <br />

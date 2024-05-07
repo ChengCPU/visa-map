@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useMemo, useState, useContext } from 'react'
 import { LanguageContext } from '../../logic/context/LanguageContext'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import { Button, Menu, MenuItem } from '@mui/material'
@@ -22,24 +22,24 @@ const CustomizedButtonMobile = styled(Button)`
   left: 18px;
 `
 
-const sortArrayEN:string[] = ['Sort by: Total','Sort by: Visa-free','Sort by: Alphabetical order','Sort by: Freedom of Movement','Sort by: Visa-free km2']
-const sortArrayES:string[] = ['Ordenar por: Total','Ordenar por: Visado Libre','Ordenar por: Orden alfabetico','Ordenar por: Libertad de movimiento','Ordenar por: Visado Libre km2']
-const sortArrayPT:string[] = ['Ordenar por: Total', 'Ordenar por: Sem Visto', 'Ordenar por: Ordem alfabética', 'Ordenar por: Liberdade de movimento', 'Ordenar por: Sem Visto km2']
-const sortArrayFR:string[] = ['Trier par: Total', 'Trier par: Sans Visa', 'Trier par: Ordre alphabétique', 'Trier par: Liberté de mouvement', 'Trier par: Sans Visa km2']
+const sortEN:string[] = ['Sort by: Total','Sort by: Visa-free','Sort by: Alphabetical order','Sort by: Freedom of Movement','Sort by: Visa-free km2']
+const sortES:string[] = ['Ordenar por: Total','Ordenar por: Visado Libre','Ordenar por: Orden alfabetico','Ordenar por: Libertad de movimiento','Ordenar por: Visado Libre km2']
+const sortPT:string[] = ['Ordenar por: Total', 'Ordenar por: Sem Visto', 'Ordenar por: Ordem alfabética', 'Ordenar por: Liberdade de movimento', 'Ordenar por: Sem Visto km2']
+const sortFR:string[] = ['Trier par: Total', 'Trier par: Sans Visa', 'Trier par: Ordre alphabétique', 'Trier par: Liberté de mouvement', 'Trier par: Sans Visa km2']
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
 
-  const languageCaculation:Function = () => {
+  const languageCaculation = useMemo(() => {
     switch(language) {
-      case '🇬🇧EN': return sortArrayEN
-      case '🇪🇸ES': return sortArrayES
-      case '🇵🇹PT': return sortArrayPT
-      case '🇫🇷FR': return sortArrayFR
+      case '🇬🇧EN': return sortEN
+      case '🇪🇸ES': return sortES
+      case '🇵🇹PT': return sortPT
+      case '🇫🇷FR': return sortFR
     }
-  }
+  }, [language])
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
@@ -68,7 +68,7 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
   const renderMenuItems:Function = (sortArray:string[]) => {
     return sortArray.map(sortArray =>
       (sortBy != sortArray) ?
-      <MenuItem key={sortArray} onClick={() => menuItemOnClick(sortArray)}>{languageCaculation()[sortArrayEN.indexOf(sortArray)]}</MenuItem>
+      <MenuItem key={sortArray} onClick={() => menuItemOnClick(sortArray)}>{languageCaculation[sortEN.indexOf(sortArray)]}</MenuItem>
       : null
     )
   }
@@ -76,9 +76,9 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
   return (
     <>
       {(dimensions.width <= 800) ?
-      <CustomizedButtonMobile onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonMobile>
+      <CustomizedButtonMobile onClick={handleClick}>{languageCaculation[sortEN.indexOf(sortBy)]}</CustomizedButtonMobile>
       :
-      <CustomizedButtonDesktop onClick={handleClick}>{languageCaculation()[sortArrayEN.indexOf(sortBy)]}</CustomizedButtonDesktop>
+      <CustomizedButtonDesktop onClick={handleClick}>{languageCaculation[sortEN.indexOf(sortBy)]}</CustomizedButtonDesktop>
       }
       <Menu
         anchorEl={anchorEl}
