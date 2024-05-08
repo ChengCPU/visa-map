@@ -26,6 +26,7 @@ const sortEN:string[] = ['Sort by: Total','Sort by: Visa-free','Sort by: Alphabe
 const sortES:string[] = ['Ordenar por: Total','Ordenar por: Visado Libre','Ordenar por: Orden alfabetico','Ordenar por: Libertad de movimiento','Ordenar por: Visado Libre km2']
 const sortPT:string[] = ['Ordenar por: Total', 'Ordenar por: Sem Visto', 'Ordenar por: Ordem alfabética', 'Ordenar por: Liberdade de movimento', 'Ordenar por: Sem Visto km2']
 const sortFR:string[] = ['Trier par: Total', 'Trier par: Sans Visa', 'Trier par: Ordre alphabétique', 'Trier par: Liberté de mouvement', 'Trier par: Sans Visa km2']
+const sortHR:string[] = ['Sortiraj po: Ukupno','Sortiraj po: Bez vize','Sortiraj po: Abecedno','Sortiraj po: Sloboda kretanja','Sortiraj po: Bez vize km2']
 
 const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
 
@@ -38,6 +39,7 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
       case '🇪🇸ES': return sortES
       case '🇵🇹PT': return sortPT
       case '🇫🇷FR': return sortFR
+      case '🇭🇷HR': return sortHR
     }
   }, [language])
 

@@ -32,6 +32,7 @@ const headerEN:string[] = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
 const headerES:string[] = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
 const headerPT:string[] = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
 const headerFR:string[] = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
+const headerHR:string[] = ['Karta', 'Tablica', 'Rang', 'Viza', 'FAQ']
 
 const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoomReset }) => {
 
@@ -43,6 +44,7 @@ const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoo
       case '🇪🇸ES': return headerES
       case '🇵🇹PT': return headerPT
       case '🇫🇷FR': return headerFR
+      case '🇭🇷HR': return headerHR
     }
   }, [language])
 

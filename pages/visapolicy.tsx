@@ -54,6 +54,7 @@ const VisaPolicy:React.FC<Props> = ({ selectArrayRef, setHover, priorityRef, set
       case '🇪🇸ES': return 'Política de visas de:'
       case '🇵🇹PT': return 'Política de vistos de:'
       case '🇫🇷FR': return 'Politique de visa de:'
+      case '🇭🇷HR': return 'Vizna politika:'
     }
   }, [language])
 
