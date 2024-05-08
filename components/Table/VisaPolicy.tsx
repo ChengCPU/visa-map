@@ -5,6 +5,7 @@ const policyEN:string[] = ['Home country', 'Permit required', 'OECS freedom of m
 const policyES:string[] = ['País de origen', 'Permiso requerido', 'OECS libertad de movimiento', 'MERCOSUR libertad de movimiento', 'EU libertad de movimiento', 'GCC libertad de movimiento', 'Libertad de movimiento', 'Visado libre', 'Visado a llegada/Visado electronico', 'Visado a llegada', 'Visado electronico', 'Permiso especial/Verificación de antecedentes', 'Visado simplificado', 'Confirmación requerida', 'Visado requerido']
 const policyPT:string[] = ['País natal', 'Permissão necessária', 'OECS liberdade de movimento', 'MERCOSUR liberdade de movimento', 'EU liberdade de movimento', 'GCC liberdade de movimento', ' Liberdade de movimento', 'Sem visto', 'Visto na chegada/Visto eletrônico', 'Visto na chegada', 'Visto eletrônico', 'Permissão especial/Verificação de antecedentes', 'Visto simplificado', 'Necessária confirmação', 'Visto necessário']
 const policyFR:string[] = ['Pays natal', 'Permis requis', 'OECS liberté de mouvement', 'MERCOSUR liberté de mouvement', 'EU liberté de mouvement', 'GCC liberté de mouvement', 'Liberté de mouvement', 'Sans visa', 'Visa à l\'arrivée/Visa électronique', 'Visa à l\'arrivée', 'Visa électronique', 'Permis spécial/Vérification des antécédents', 'Visa simplifié', 'Confirmation requise', 'Visa requis']
+const policyHR:string[] = ['Domovina', 'Potrebna je dozvola', 'OECS sloboda kretanja', 'MERCOSUR sloboda kretanja', 'EU sloboda kretanja', 'GCC sloboda kretanja', 'Sloboda kretanja', 'Bez vize', 'Viza po dolasku/E-viza', 'Viza po dolasku', 'E-viza', 'Posebna dozvola/Policijska provjera', 'Pojednostavljena viza', 'Potrebna je potvrda', 'Potrebna je viza']
 const policyColors:string[] = ['rgb(255,20,147)','rgb(255,0,0)','rgb(255,145,0)','rgb(0,135,93)','rgb(0,51,153)','rgb(153,123,61)','rgb(255,179,191)','rgb(50,205,50)','rgb(81,205,123)','rgb(161,224,123)','rgb(255,255,92)','rgb(135,206,250)','rgb(118,65,171)','rgb(200,200,200)','rgb(0,0,0)','rgb(150,150,150)']
 const australiaEvisitor:string[] = ['austria','belgium','bulgaria','croatia','cyprus','czechRepublic','denmark','estonia','finland','france','germany','greece','hungary','ireland','italy','latvia','lithuania','luxembourg','malta','netherlands','poland','portugal','romania','slovakia','spain','sweden','andorra','iceland','liechtenstein','monaco','norway','sanMarino','switzerland','unitedKingdom','vaticanCity']
 interface Props {
@@ -25,6 +26,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
       case '🇪🇸ES': return policyES
       case '🇵🇹PT': return policyPT
       case '🇫🇷FR': return policyFR
+      case '🇭🇷HR': return policyHR
     }
   }, [language])
 
