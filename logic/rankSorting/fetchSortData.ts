@@ -46,10 +46,10 @@ export default function fetchSortData(rankRef:any, num:number) {
   }
 
   //Adding extra freedom of movement count to denmark due to territories being classified as home country
-  rankData[49][7] += 2
+  rankData[50][7] += 2
   
   //Adding extra freedom of movement count to france due to territories being classified as home country
-  rankData[64][7] += 11
+  rankData[65][7] += 11
 
   rankRef.current = rankData
   
