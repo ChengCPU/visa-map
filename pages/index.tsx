@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import InfoBox from '../components/InfoBox'
 import Legend from '../components/Legend'
-import Ad from '../components/Ad'
+import Ad from '../components/Ads/Ad'
 interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
   mousePos:number | boolean[];
