@@ -51,6 +51,10 @@ export default function fetchSortData(rankRef:any, num:number) {
   //Adding extra freedom of movement count to france due to territories being classified as home country
   rankData[65][7] += 11
 
+  //Abkhazia & South Ossetia removing singular E-visa access
+  rankData[0][4] = 0
+  rankData[176][4] = 0
+
   rankRef.current = rankData
   
   switch(num) {
