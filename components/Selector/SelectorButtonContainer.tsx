@@ -41,8 +41,7 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, sel
   }
 
   return (
-    <>
-    {(selectorLoad == true) ?
+    selectorLoad &&
     <div className={'container'}>
       <style jsx>{`
         .container {
@@ -99,8 +98,6 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, sel
         setLegend(new Array(15).fill(false))
       }}>X</button>
     </div>
-    : null}
-    </>
   )
 }
 

@@ -63,7 +63,7 @@ const Faq:React.FC<Props> = ({ setSelectorLoad }) => {
           position: absolute;
           left: 50%;
           transform: translate(-50%);
-          ${dimensions.width <= 800 ? 'width: 300px;' : null}
+          ${dimensions.width <= 800 && 'width: 300px;'}
         }
       `}</style>
       <Accordion>

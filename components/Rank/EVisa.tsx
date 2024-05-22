@@ -32,7 +32,7 @@ const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalCo
           user-select: none;
         }
       `}</style>
-      {(count == 0) ? null : count}
+      {count > 0 && count}
     </p>
     </>
   )

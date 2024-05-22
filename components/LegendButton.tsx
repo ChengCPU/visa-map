@@ -12,7 +12,7 @@ const CustomizedButton = styled(Button)`
 
 const LegendButton:React.FC<Props> = ({ collapse, setCollapse }) => {
   return (
-    <CustomizedButton onClick={() => setCollapse(!collapse)}variant="contained" size="small" style={{maxWidth: '25px', maxHeight: '25px', minWidth: '25px', minHeight: '25px'}}>{(collapse) ? '▼' : '▲'}</CustomizedButton>
+    <CustomizedButton onClick={() => setCollapse(!collapse)} variant="contained" size="small" style={{maxWidth: '25px', maxHeight: '25px', minWidth: '25px', minHeight: '25px'}}>{(collapse) ? '▼' : '▲'}</CustomizedButton>
   )
 }
 

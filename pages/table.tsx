@@ -49,7 +49,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
   }, [language])
 
   const renderPassports = (horizontalColumn: number[]) => {
-    return horizontalColumn.map(horizontalColumn => (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) ? <th key={horizontalColumn}><TablePassport selectArrayRef={selectArrayRef} horizontalColumn={horizontalColumn}/></th> : null)
+    return horizontalColumn.map(horizontalColumn => (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) && <th key={horizontalColumn}><TablePassport selectArrayRef={selectArrayRef} horizontalColumn={horizontalColumn}/></th>)
   }
 
   const renderTables = (verticalColumn:number[], horizontalColumn:number[], flags:string[]) => {
@@ -62,7 +62,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
       `}</style>
       <Country country={languageCaculation[verticalColumn]} flag={flags[verticalColumn]} />
       {horizontalColumn.map(horizontalColumn =>
-        (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) ?
+        (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) &&
         <VisaPolicy
           key={horizontalColumn}
           assignedColorsRef={assignedColorsRef}
@@ -71,7 +71,6 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
           horizontalColumn={horizontalColumn}
           assignedVisaDurationRef={assignedVisaDurationRef}
         />
-        : null
       )}
     </tr>
     )
@@ -101,9 +100,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
     <style jsx>{`
       .container {
         overflow-x: scroll;
-        ${(dimensions.width <= 800) ?
-        null
-        :
+        ${(dimensions.width > 800) &&
         `
         display: flex;
         align-items: center;

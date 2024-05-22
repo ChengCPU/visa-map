@@ -77,7 +77,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
           background-color: ${(selectArrayRef.current[horizontalColumn] != null) ? policyColors[assignedColorsRef.current[horizontalColumn]?.[ISOcodes[verticalColumn]]] : '#333333'};
         }
       `}</style>
-      {(selectArrayRef.current[horizontalColumn] != null) ? visaPolicyCalculation() + ' ' + visaDurationCalculation() : null}
+      {selectArrayRef.current[horizontalColumn] != null && visaPolicyCalculation() + ' ' + visaDurationCalculation()}
     </td>
   )
 }

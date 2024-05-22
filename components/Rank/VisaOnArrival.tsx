@@ -32,7 +32,7 @@ const VisaOnArrival:React.FC<Props> = ({ widthCalculation, marginCalculation, ve
           user-select: none;
         }
       `}</style>
-      {(count == 0) ? null : count}
+      {count > 0 && count}
     </p>
     </>
   )

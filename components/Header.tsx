@@ -79,16 +79,16 @@ const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoo
           position: absolute;
           color: #FFFFFF;
         }
-        ${(dimensions.width > 800) ? '.languageSelect {right: 40px; position: absolute;}' : null}
+        ${dimensions.width > 800 && '.languageSelect {right: 40px; position: absolute;}'}
       `}</style>
       <ThemeProvider theme={theme}>
         <Stack direction="row" spacing={1}>
-          {(dimensions.width <= 800) ? null : <GithubLogo />}
+          {dimensions.width > 800 && <GithubLogo />}
           <Link href='/'><CustomizedButton variant="contained">{languageCaculation[0]}</CustomizedButton></Link>
           <Link href='/table'><CustomizedButton variant="contained">{languageCaculation[1]}</CustomizedButton></Link>
           <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation[2]}</CustomizedButton></Link>
           <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation[3]}</CustomizedButton></Link>
-          {(dimensions.width <= 800) ? null : <Link href='/faq'><CustomizedButton variant="contained">{languageCaculation[4]}</CustomizedButton></Link>}
+          {dimensions.width > 800 && <Link href='/faq'><CustomizedButton variant="contained">{languageCaculation[4]}</CustomizedButton></Link>}
           <div className={'languageSelect'}>
             <LanguageSelect
               language={language}

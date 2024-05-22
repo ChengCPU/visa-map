@@ -32,7 +32,7 @@ const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, ver
           user-select: none;
         }
       `}</style>
-      {(count == 0) ? null : count}
+      {count > 0 && count}
     </p>
     </>
   )

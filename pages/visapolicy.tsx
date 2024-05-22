@@ -118,7 +118,7 @@ const VisaPolicy:React.FC<Props> = ({ selectArrayRef, setHover, priorityRef, set
           margin-left: 10px;
         }
       `}</style>
-      {(display == true) ? 
+      {(display == true) &&
       <div className={'map'}>
         <br />
         <br />
@@ -126,8 +126,8 @@ const VisaPolicy:React.FC<Props> = ({ selectArrayRef, setHover, priorityRef, set
         <br />
         <PassportMap setHover={setHover} selected={selected} />
       </div>
-      : null}
-      {(display == false) ?
+      }
+      {(display == false) &&
       <div className={'container'}>
         <div className={(dimensions.width > 800) ? 'visaText' : 'mobileText'}>
           <h1>{languageCaculation}</h1>
@@ -153,15 +153,15 @@ const VisaPolicy:React.FC<Props> = ({ selectArrayRef, setHover, priorityRef, set
           )}
         </div>
       </div>
-      : null}
-      {(display == true) ?
+      }
+      {(display == true) &&
       <div className={'container'} 
         onClick={() => {
           setDisplay(false)
         }}>
         <p className={'text'}>{flags[ISOcodes.indexOf(selected)] + ' ' + options[ISOcodes.indexOf(selected)]}</p>
       </div>
-      : null}
+      }
     </div>
     {(dimensions.width > 800) ?
     <InfoBox

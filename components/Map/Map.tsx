@@ -14,10 +14,7 @@ const Map:React.FC<Props>= ({ setHover, panzoomReset }) => {
     <>
     <br />
     <br />
-    {(dimensions.width <= 800) ?
-    <br />
-    :
-    null}
+    {dimensions.width <= 800 && <br />}
     <div className={'container'}>
       <style jsx>{`
         .container {
@@ -29,18 +26,18 @@ const Map:React.FC<Props>= ({ setHover, panzoomReset }) => {
         setHover={setHover}
         panzoomReset={panzoomReset}
       />
-      {(dimensions.width <= 800) ?
-    <>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    </>
-    : null}
+      {dimensions.width <= 800 &&
+      <>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      </>
+      }
     </div>
     </>
   )

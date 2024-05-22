@@ -127,7 +127,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
   const VisaDurationFunction:Function = (selected != null) ? visaPolicyDefine : indexDefine
 
   return (
-    (hover == true) ?
+    hover &&
     <div className={'infoBox'}>
     <style jsx>{`
       .infoBox {
@@ -180,8 +180,6 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
         </tbody>
       </table>
     </div>
-    :
-    null
   )
 }
 
