@@ -95,6 +95,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
       }
     `}</style>
   <AdTable />
+  <br />
   </div>
 	<div className={'container'}>
     <style jsx>{`

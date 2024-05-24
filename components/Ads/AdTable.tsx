@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const Ad:React.FC = () => {
+const AdTable:React.FC = () => {
   useEffect(() => {
     try {
       //@ts-ignore
@@ -12,13 +12,12 @@ const Ad:React.FC = () => {
 
   return (
     <ins className="adsbygoogle"
-      style={{display: 'block'}}
+      style={{display: 'inline-block', width: '320px', height: '100px'}}
       data-ad-client="ca-pub-2147951612524944"
-      data-ad-slot="7554363172"
-      data-ad-format="auto"
+      data-ad-slot="8953121045"
       data-full-width-responsive="true"
     />
   )
 }
 
-export default Ad
+export default AdTable
