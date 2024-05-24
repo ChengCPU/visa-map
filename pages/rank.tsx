@@ -188,7 +188,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     <br />
     <br />
     <br />
-    {(dimensions.width <= 800) ?
+    {dimensions.width <= 800 &&
     <div className={styles.centered}>
       <div>
         <SortBy
@@ -205,13 +205,11 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       </div>
       <br />
     </div>
-    : null}
+    }
     <table cellSpacing="0" cellPadding="20" className={(dimensions.width <= 800) ? styles.containerMobile : styles.containerDesktop}>
       <tbody>
       <tr>
-        {(dimensions.width <= 800) ?
-        null
-        :
+        {(dimensions.width > 800) &&
         <>
         <td></td>
         <td></td>
@@ -243,13 +241,13 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     <br />
     <br />
     <br />
-    {(dimensions.width <= 800) ?
+    {(dimensions.width <= 800) &&
     <>
     <br />
     <br />
     <br />
     </>
-    : null}
+    }
     </>
   )
 }
