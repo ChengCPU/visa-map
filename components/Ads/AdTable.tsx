@@ -12,7 +12,7 @@ const AdTable:React.FC = () => {
 
   return (
     <ins className="adsbygoogle"
-      style={{display: 'inline-block', width: '320px', height: '100px'}}
+      style={{display: 'inline-block', width: '320px', height: '100px', marginBottom: '10px'}}
       data-ad-client="ca-pub-2147951612524944"
       data-ad-slot="8953121045"
       data-full-width-responsive="true"
