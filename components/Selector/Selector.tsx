@@ -23,6 +23,7 @@ interface Props {
   visaDurationRef:MutableRefObject<{[key:string]:number}>;
   assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;
   setLegend:Function;
+  tableDiffRef:MutableRefObject<boolean[]>;
 }
 
 const CustomizedDrawer = styled(Drawer)`
@@ -31,7 +32,7 @@ const CustomizedDrawer = styled(Drawer)`
   }
 `
 
-const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef, ESTAbanRef, visaDurationRef, assignedVisaDurationRef, setLegend }) => {
+const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle, setToggle, selectArrayRef, priorityRef, tempPriorityRef, assignedColorsRef, diffRef, percentage, setPercentage, selectorLoad, tempDiffRef, ESTAbanRef, visaDurationRef, assignedVisaDurationRef, setLegend, tableDiffRef }) => {
   return (
     <>
     <CustomizedDrawer anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
@@ -58,6 +59,7 @@ const Selector:React.FC<Props> = ({ openDrawer, setOpenDrawer, selectRef, toggle
         visaDurationRef={visaDurationRef}
         assignedVisaDurationRef={assignedVisaDurationRef}
         setLegend={setLegend}
+        tableDiffRef={tableDiffRef}
       />
     </>
   )

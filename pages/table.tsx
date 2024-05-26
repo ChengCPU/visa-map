@@ -25,9 +25,10 @@ interface Props {
   diffRef:MutableRefObject<{[key:string]:number}>;
   tempDiffRef:MutableRefObject<{[key:string]:number}>;
   assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;
+  tableDiffRef:MutableRefObject<number[]>;
 }
 
-const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef, assignedVisaDurationRef }) => {
+const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef, assignedVisaDurationRef, tableDiffRef }) => {
 
   useEffect(() => {
     tempPriorityRef.current = priorityRef.current
@@ -57,7 +58,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
     <tr className={'subRow'} key={verticalColumn}>
       <style jsx>{`
         .subRow {
-          background-color: #333333;
+          background-color: ${tableDiffRef.current[verticalColumn] ? '#B3BD00;' : '#333333;'}
         }
       `}</style>
       <Country country={languageCaculation[verticalColumn]} flag={flags[verticalColumn]} />
