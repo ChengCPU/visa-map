@@ -104,7 +104,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         <td className={styles.rank}>
         <p>{order?.[verticalColumn]}</p>
         </td>
-        <td><Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRef.current?.[verticalColumn]?.[0]]}/></td>
+        <td><Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] != undefined) && passports[rankRef.current?.[verticalColumn]?.[0]]}/></td>
         <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
         <td>
         <div className={styles.progressBarsContainer}>
@@ -139,14 +139,13 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       <tr key={verticalColumn}>
         <td className={styles.mobileBackground}>
           <p className={styles.rank}>{order?.[verticalColumn]}</p>
-          <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] == undefined) ? null : passports[rankRef.current?.[verticalColumn]?.[0]]}/>
+          <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] != undefined) && passports[rankRef.current?.[verticalColumn]?.[0]]}/>
           <p className={styles.text}>{textRender(verticalColumn)}</p>
           <p className={styles.text}>{'Total: ' + rankRef.current[verticalColumn]?.[6]}</p>
           <p className={styles.text}>{languageCalculation[dataSize - 2] + rankRef.current[verticalColumn]?.[7]}</p>
           <p className={styles.text}>{languageCalculation[dataSize - 1] + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
         </td>
-        {
-        (dimensions.width <= 800) ?
+        {(dimensions.width <= 800) &&
         <td className={styles.mobileBackground}>
           <div className={styles.visaPolicyText}>
           <table>
@@ -171,8 +170,6 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
           </table>
           </div>
         </td>
-        :
-        null
         }
       </tr>
     )
