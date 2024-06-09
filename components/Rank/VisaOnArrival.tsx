@@ -1,11 +1,10 @@
 interface Props {
-  widthCalculation:Function;
-  marginCalculation:Function;
-  verticalColumn:number;
+  width:number;
+  margin:number;
   count:number;
 }
 
-const VisaOnArrival:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
+const VisaOnArrival:React.FC<Props> = ({ width, margin, count }) => {
   return (
     <>
     <div className={'visaOnArrival'}>
@@ -13,7 +12,7 @@ const VisaOnArrival:React.FC<Props> = ({ widthCalculation, marginCalculation, ve
         .visaOnArrival {
           margin: 0px;
           padding: 8px 0px 0px;
-          width: ${widthCalculation('visaOnArrival', verticalColumn)}px;
+          width: ${width}px;
           height: 20px;
           background: rgb(255, 255, 0);
           position: absolute;
@@ -26,7 +25,7 @@ const VisaOnArrival:React.FC<Props> = ({ widthCalculation, marginCalculation, ve
       <style jsx>{`
         .visaOnArrivalText {
           margin: 5px;
-          margin-left: ${marginCalculation('visaOnArrival', verticalColumn)}px;
+          margin-left: ${margin}px;
           text-align: center;
           position: absolute;
           user-select: none;

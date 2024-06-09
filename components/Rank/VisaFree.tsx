@@ -1,11 +1,9 @@
 interface Props {
-  widthCalculation:Function;
-  marginCalculation:Function;
-  verticalColumn:number;
+  width:number;
   count:number;
 }
 
-const VisaFree:React.FC<Props> = ({ widthCalculation, verticalColumn, count }) => {
+const VisaFree:React.FC<Props> = ({ width, count }) => {
   return (
     <>
     <div className={'visaFree'}>
@@ -13,7 +11,7 @@ const VisaFree:React.FC<Props> = ({ widthCalculation, verticalColumn, count }) =
         .visaFree {
           margin: 0px;
           padding: 8px 0px 0px;
-          width: ${widthCalculation('visaFree', verticalColumn)}px;
+          width: ${width}px;
           height: 20px;
           background: rgb(50, 205, 50);
           position: absolute;

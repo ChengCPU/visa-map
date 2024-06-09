@@ -1,11 +1,10 @@
 interface Props {
-  widthCalculation:Function;
-  marginCalculation:Function;
-  verticalColumn:number;
+  width:number;
+  margin:number;
   count:number;
 }
 
-const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
+const VisaRequired:React.FC<Props> = ({ width, margin, count }) => {
   return (
     <>
     <div className={'visaRequired'}>
@@ -13,7 +12,7 @@ const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, ver
         .visaRequired {
           margin: 0px;
           padding: 8px 0px 0px;
-          width: ${widthCalculation('visaRequired', verticalColumn)}px;
+          width: ${width}px;
           height: 20px;
           background: rgb(150, 150, 150);
           position: absolute;
@@ -26,7 +25,7 @@ const VisaRequired:React.FC<Props> = ({ widthCalculation, marginCalculation, ver
       <style jsx>{`
         .visaRequired {
           margin: 5px;
-          margin-left: ${marginCalculation('visaRequired', verticalColumn)}px;
+          margin-left: ${margin}px;
           text-align: center;
           position: absolute;
           user-select: none;

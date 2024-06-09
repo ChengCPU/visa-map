@@ -1,11 +1,10 @@
 interface Props {
-  widthCalculation:Function;
-  marginCalculation:Function;
-  verticalColumn:number;
+  width:number;
+  margin:number;
   count:number;
 }
 
-const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalColumn, count }) => {
+const EVisa:React.FC<Props> = ({ width, margin, count }) => {
   return (
     <>
     <div className={'evisa'}>
@@ -13,7 +12,7 @@ const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalCo
         .evisa {
           margin: 0px;
           padding: 8px 0px 0px;
-          width: ${widthCalculation('evisa', verticalColumn)}px;
+          width: ${width}px;
           height: 20px;
           background: rgb(135, 206, 250);
           position: absolute;
@@ -26,7 +25,7 @@ const EVisa:React.FC<Props> = ({ widthCalculation, marginCalculation, verticalCo
       <style jsx>{`
         .evisaText {
           margin: 5px;
-          margin-left: ${marginCalculation('evisa', verticalColumn)}px;
+          margin-left: ${margin}px;
           text-align: center;
           position: absolute;
           user-select: none;
