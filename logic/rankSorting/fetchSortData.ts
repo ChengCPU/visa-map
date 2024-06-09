@@ -56,6 +56,10 @@ export default function fetchSortData(rankRef:any, num:number) {
   rankData[176][4] = 0
 
   rankRef.current = rankData
+
+  if(num == 6) {
+    return rankRef.current
+  }
   
   switch(num) {
     case 1: totalSort(rankData, rankRef); break
