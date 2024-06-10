@@ -1,3 +1,26 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.spacer {
+  width: 50px;
+}
+
+.input,
+.mobileInput {
+  inline-size: 182px;
+  overflow-wrap: break-word;
+}
+
+.mobileInput {
+  top: 40px;
+  z-index: 1;
+  position: absolute;
+}
+
 .containerMobile,
 .containerDesktop {
   display: flex;
@@ -56,4 +79,12 @@
 .separator {
   flex: 1;
   margin: 0 10px;
+}
+
+.inputText {
+  color: white;
+}
+.inputText:hover {
+  cursor: pointer;
+  background-color: rgb(100,100,100);
 }
