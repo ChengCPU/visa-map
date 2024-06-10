@@ -1,4 +1,4 @@
-import { useState, useMemo, useContext, useEffect, MutableRefObject } from 'react'
+import { useState, useCallback, useMemo, useContext, useEffect, MutableRefObject } from 'react'
 import { PassportContext } from '../logic/context/PassportContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
@@ -46,14 +46,13 @@ interface Props {
 
 const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
 
-
   useEffect(() => {
     tempPriorityRef.current = priorityRef.current
     tempDiffRef.current = diffRef.current
     setSelectorLoad(false)
     unsortedData = fetchSortData(rankRef, 6)
   }, [])
-
+  
   const passports:{[key:string]:StaticImageData} = useContext(PassportContext)
   const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
@@ -63,11 +62,22 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
   const [filterValue1, setFilterValue1] = useState<string>('')
   const [selected, setSelected] = useState<string>('')
   const [selected1, setSelected1] = useState<string>('')
-  const filteredOptions = options.filter(option => option.toLowerCase().includes(filterValue.toLowerCase()))
-  const filteredOptions1 = options1.filter(option1 => option1.toLowerCase().includes(filterValue1.toLowerCase()))
 
-  const rankRefLength = rankRef.current.length - 1
-  const order = rankRef.current[rankRefLength]
+  const filteredOptions = useMemo(() => {
+    return options.filter(option => option.toLowerCase().includes(filterValue.toLowerCase()))
+  }, [filterValue])
+  
+  const filteredOptions1 = useMemo(() => {
+    return options1.filter(option1 => option1.toLowerCase().includes(filterValue1.toLowerCase()))
+  }, [filterValue1])
+  
+  const rankRefLength = useMemo(() => {
+    return rankRef.current.length - 1
+  }, [rankRef.current])
+  
+  const order = useMemo(() => {
+    return rankRef.current[rankRefLength]
+  }, [rankRef.current])
 
   const languageCalculation = useMemo(() => {
     switch(language) {
@@ -79,7 +89,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
     }
   }, [language])
 
-  const widthCalculation = (visaPolicy:string, verticalColumn:number) => {
+  const widthCalculation = useCallback((visaPolicy:string, verticalColumn:number) => {
     switch(visaPolicy) {
       case 'visaRequired':
         return 500
@@ -94,9 +104,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       case 'visaFree':
         return rankRef.current[verticalColumn]?.[1] * 2
     }
-  }
+  }, [])
 
-  const widthCalculationCompare = (visaPolicy:string, index:number) => {
+  const widthCalculationCompare = useCallback((visaPolicy:string, index:number) => {
     switch(visaPolicy) {
       case 'visaRequired':
         return 500
@@ -111,9 +121,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       case 'visaFree':
         return unsortedData[index]?.[1] * 2
     }
-  }
+  }, [])
 
-  const marginCalculation = (visaPolicy:string, verticalColumn:any) => {
+  const marginCalculation = useCallback((visaPolicy:string, verticalColumn:number) => {
     switch(visaPolicy) {
       case 'visaRequired':
         return (rankRef.current[verticalColumn]?.[1] * 2) + (rankRef.current[verticalColumn]?.[2] * 2) + (rankRef.current[verticalColumn]?.[3] * 2) + (rankRef.current[verticalColumn]?.[4] * 2) + 2
@@ -124,9 +134,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       case 'visaOnArrivalEvisa':
         return (rankRef.current[verticalColumn]?.[1] * 2) + 1
     }
-  }
+  }, [])
 
-  const marginCalculationCompare = (visaPolicy:string, index:number) => {
+  const marginCalculationCompare = useCallback((visaPolicy:string, index:number) => {
     switch(visaPolicy) {
       case 'visaRequired':
         return (unsortedData[index]?.[1] * 2) + (unsortedData[index]?.[2] * 2) + (unsortedData[index]?.[3] * 2) + (unsortedData[index]?.[4] * 2) + 2
@@ -137,14 +147,47 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       case 'visaOnArrivalEvisa':
         return (unsortedData[index]?.[1] * 2) + 1
     }
-  }
+  }, [])
 
-  const textRender = (verticalColumn:any) => {
+  const textRender = useCallback((verticalColumn:number) => {
     if(rankRef.current[verticalColumn]?.[0] == undefined) {return}
     return languageCalculation[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + languageCalculation[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.slice(1)
-  }
+  }, [])
 
-  const passportRankRenderDesktop = (verticalColumn:any) => {
+  const passportCompareRenderDesktop = useCallback((index:number) => {
+    return (
+      <>
+      <td><Passport image={passports[passportsArray[index]]}/></td>
+      <td><p className={styles.text}>{options[index]}</p></td>
+      <td>
+      <div className={styles.progressBarsContainer}>
+        <div className={styles.textSeparator}>
+          <p className={styles.textDiv}>{'Total: ' + unsortedData[index]?.[6]}</p>
+          <div className={styles.separator}></div>
+          <p className={styles.textDiv}>{languageCalculation[dataSize - 1] + unsortedData[index]?.[8].toLocaleString()}</p>
+        </div>
+        <div className={styles.progressBarDesktop}>
+          <VisaRequired width={widthCalculationCompare('visaRequired', index)} margin={marginCalculationCompare('visaRequired', index)} count={unsortedData[index]?.[5]} />
+          <EVisa width={widthCalculationCompare('eVisa', index)} margin={marginCalculationCompare('eVisa', index)} count={unsortedData[index]?.[4]} />
+          <VisaOnArrival width={widthCalculationCompare('visaOnArrival', index)} margin={marginCalculationCompare('visaOnArrival', index)} count={unsortedData[index]?.[3]} />
+          <VisaOnArrivalEvisa width={widthCalculationCompare('visaOnArrivalEvisa', index)} margin={marginCalculationCompare('visaOnArrivalEvisa', index)} count={unsortedData[index]?.[2]} />
+          <VisaFree width={widthCalculationCompare('visaFree', index)} count={unsortedData[index]?.[1]} />
+          <InfoText count={unsortedData[index]?.[7]}/>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <p className={styles.textDiv}>{languageCalculation[dataSize - 2] + unsortedData[index]?.[7]}</p>
+        <div className={styles.progressBarDesktop}>
+          <FreedomOfMovement max={42.4} count={unsortedData[index]?.[7]}/>
+        </div>
+      </div>
+      </td>
+      </>
+    )
+  }, [])
+
+  const passportRankRenderDesktop = useCallback((verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
       <tr key={verticalColumn}>
         <td className={styles.rank}>
@@ -178,42 +221,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         </td>
       </tr>
     )
-  }
+  }, [rankRef.current])
 
-  const passportCompareRenderDesktop = (index:number) => {
-    return (
-      <>
-      <td><Passport image={passports[passportsArray[index]]}/></td>
-      <td><p className={styles.text}>{options[index]}</p></td>
-      <td>
-      <div className={styles.progressBarsContainer}>
-        <div className={styles.textSeparator}>
-          <p className={styles.textDiv}>{'Total: ' + unsortedData[index]?.[6]}</p>
-          <div className={styles.separator}></div>
-          <p className={styles.textDiv}>{languageCalculation[dataSize - 1] + unsortedData[index]?.[8].toLocaleString()}</p>
-        </div>
-        <div className={styles.progressBarDesktop}>
-          <VisaRequired width={widthCalculationCompare('visaRequired', index)} margin={marginCalculationCompare('visaRequired', index)} count={unsortedData[index]?.[5]} />
-          <EVisa width={widthCalculationCompare('eVisa', index)} margin={marginCalculationCompare('eVisa', index)} count={unsortedData[index]?.[4]} />
-          <VisaOnArrival width={widthCalculationCompare('visaOnArrival', index)} margin={marginCalculationCompare('visaOnArrival', index)} count={unsortedData[index]?.[3]} />
-          <VisaOnArrivalEvisa width={widthCalculationCompare('visaOnArrivalEvisa', index)} margin={marginCalculationCompare('visaOnArrivalEvisa', index)} count={unsortedData[index]?.[2]} />
-          <VisaFree width={widthCalculationCompare('visaFree', index)} count={unsortedData[index]?.[1]} />
-          <InfoText count={unsortedData[index]?.[7]}/>
-        </div>
-        <br/>
-        <br/>
-        <br/>
-        <p className={styles.textDiv}>{languageCalculation[dataSize - 2] + unsortedData[index]?.[7]}</p>
-        <div className={styles.progressBarDesktop}>
-          <FreedomOfMovement max={42.4} count={unsortedData[index]?.[7]}/>
-        </div>
-      </div>
-      </td>
-      </>
-    )
-  }
-
-  const passportRankRenderMobile = (verticalColumn:any) => {
+  const passportRankRenderMobile = useCallback((verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
       <tr key={verticalColumn}>
         <td className={styles.mobileBackground}>
@@ -252,7 +262,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
         }
       </tr>
     )
-  }
+  }, [rankRef.current])
 
   return (
     <>
@@ -334,57 +344,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
       </tbody>
     </table>
     {!compareToggle && (
-      <div className={'container'}>
-        <style jsx>{`
-          .container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            margin: 50px;
-          }
-          .spacer {
-            width: 20px;
-          }
-          .container1 {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            color: rgb(255, 255, 255);
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-          }
-          .visaText,
-          .mobileText {
-            margin-top: 40px;
-          }
-          .mobileText {
-            top: 0;
-            left: 0;
-          }
-          .input,
-          .mobileInput {
-            inline-size: 182px;
-            overflow-wrap: break-word;
-          }
-          .mobileInput {
-            top: 40px;
-            z-index: 1;
-            position: absolute;
-          }
-          .inputText {
-            color: white;
-          }
-          .inputText:hover {
-            cursor: pointer;
-            background-color: rgb(100,100,100);
-          }
-        `}</style>
-        <div className={'container'}>
-          <div className={(dimensions.width > 800) ? 'input' : 'mobileInput'}>
+      <div className={styles.container}>
+        <div className={styles.container}>
+          <div className={styles.input}>
             <input
               type="text"
               placeholder=""
@@ -393,7 +355,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
             />
             {filterValue && (
               filteredOptions.map((option, index) => (
-                <p className={'inputText'} onClick={() => {
+                <p className={styles.inputText} onClick={() => {
                   setSelected(ISOcodes[options.indexOf(option)])
                   setFilterValue('')
                 }} key={index}>{flags[options.indexOf(option)] + ' ' + option}</p>
@@ -401,9 +363,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
             )}
           </div>
         </div>
-        <div className="spacer"></div>
-        <div className={'container'}>
-          <div className={(dimensions.width > 800) ? 'input' : 'mobileInput'}>
+        <div className={styles.spacer}></div>
+        <div className={styles.container}>
+          <div className={styles.input}>
             <input
               type="text"
               placeholder=""
@@ -412,7 +374,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
             />
             {filterValue1 && (
               filteredOptions1.map((option1, index1) => (
-                <p className={'inputText'} onClick={() => {
+                <p className={styles.inputText} onClick={() => {
                   setSelected1(ISOcodes[options.indexOf(option1)])
                   setFilterValue1('')
                 }} key={index1}>{flags[options.indexOf(option1)] + ' ' + option1}</p>
