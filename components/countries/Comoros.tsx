@@ -24,7 +24,7 @@ return (
   </pattern>
   <rect x="0" y="0" width="100%" height="100%" fill="url(#km)" />
 </defs>
-{(KM == 1) ?
+{KM ?
 <circle fill="url(#km)" r="5" cy="576" cx="1234" stroke="black"/>
 :
 <circle r="5" cy="576" cx="1234" stroke="black"/>

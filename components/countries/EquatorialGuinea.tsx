@@ -24,7 +24,7 @@ return (
   </pattern>
   <rect x="0" y="0" width="100%" height="100%" fill="url(#gq)" />
 </defs>
-{(GQ == 1) ?
+{GQ ?
 <>
 <path fill="url(#gq)" d="M1050.3 487.3l0 7.7-8.2 0-1.9 0.3-1.1-0.9 1.9-7.2 9.3 0.1z" />
 <circle fill="url(#gq)" r="5" cy="491" cx="1045" stroke="black"/>

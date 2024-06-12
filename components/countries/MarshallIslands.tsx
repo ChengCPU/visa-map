@@ -24,7 +24,7 @@ return (
   </pattern>
   <rect x="0" y="0" width="100%" height="100%" fill="url(#mh)" />
 </defs>
-{(MH == 1) ?
+{MH ?
 <circle fill="url(#mh)" r="5" cy="456" cx="1953" stroke="black"/>
 :
 <circle r="5" cy="456" cx="1953" stroke="black"/>

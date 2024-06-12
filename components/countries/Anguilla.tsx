@@ -24,7 +24,7 @@ return (
   </pattern>
   <rect x="0" y="0" width="100%" height="100%" fill="url(#ai)" />
 </defs>
-{(AI == 1) ?
+{AI ?
 <circle fill="url(#ai)" r="2.5" cy="380" cx="635" stroke="black"/>
 :
 <circle r="2.5" cy="380" cx="635" stroke="black"/>

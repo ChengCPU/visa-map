@@ -24,7 +24,7 @@ return (
   </pattern>
   <rect x="0" y="0" width="100%" height="100%" fill="url(#mq)" />
 </defs>
-{(MQ == 1) ?
+{MQ ?
 <circle fill="url(#mq)" r="2.5" cy="413" cx="648" stroke="black"/>
 :
 <circle r="2.5" cy="413" cx="648" stroke="black"/>

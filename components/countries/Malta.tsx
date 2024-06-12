@@ -24,7 +24,7 @@ return (
   </pattern>
   <rect x="0" y="0" width="100%" height="100%" fill="url(#mt)" /> 
 </defs>
-{(MT == 1) ?
+{MT ?
 <circle fill="url(#mt)" r="4" cy="271" cx="1062" stroke="black"/>
 :
 <circle r="4" cy="271" cx="1062" stroke="black"/>
