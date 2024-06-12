@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 interface Props {
@@ -10,10 +11,10 @@ interface Props {
 
 const ProgressBar:React.FC<Props> = ({ verticalColumn, width, height, color, percentage }) => {
 
-  const valueCalculation:Function = () => {
+  const valueCalculation:Function = useCallback(() => {
     if(verticalColumn == null) {return Math.round((percentage * 100 / 247) * 10) / 10}
     return Math.round((percentage * 100 / 247) * 10) / 10
-  }
+  }, [percentage])
 
   return (
     <div style={{ width: width, height: height, color: color }}>
