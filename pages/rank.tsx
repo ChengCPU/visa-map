@@ -172,7 +172,6 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pri
           <VisaOnArrival width={widthCalculationCompare('visaOnArrival', index)} margin={marginCalculationCompare('visaOnArrival', index)} count={unsortedData[index]?.[3]} />
           <VisaOnArrivalEvisa width={widthCalculationCompare('visaOnArrivalEvisa', index)} margin={marginCalculationCompare('visaOnArrivalEvisa', index)} count={unsortedData[index]?.[2]} />
           <VisaFree width={widthCalculationCompare('visaFree', index)} count={unsortedData[index]?.[1]} />
-          <InfoText count={unsortedData[index]?.[7]}/>
         </div>
         <br/>
         <br/>
