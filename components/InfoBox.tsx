@@ -51,14 +51,6 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
     }
   }, [language])
 
-  const indexISOCalc = useCallback((key:string) => {
-    return ETAcodes[key.toUpperCase()]
-  }, [])
-
-  const visaPolicyISOCalc = useCallback(() => {
-    return ETAcodes[selected]
-  }, [])
-
   const auETAcalc = useCallback(() => {
     if(selected != null) {
       if(australiaEvisitor.includes((countrySelect))) {
@@ -81,7 +73,21 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
 
   const ETAcodes:{[key:string]:string | Function} = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card'}
 
-  const ETAfunction:Function = (selected != null) ? visaPolicyISOCalc : indexISOCalc
+  const indexISOCalc = useCallback((key:string) => {
+    return ETAcodes[key.toUpperCase()]
+  }, [selected])
+
+  const visaPolicyISOCalc = useCallback(() => {
+    return ETAcodes[selected]
+  }, [selected])
+
+  const ETAfunction:Function = useMemo(() => {
+    if(selected != null) {
+      return visaPolicyISOCalc
+    } else {
+      return indexISOCalc
+    }
+  }, [selected])
 
   const rgbToText:Function = useCallback((rgb:string, key:string) => {
     switch(rgb) {
@@ -102,9 +108,9 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
       case 'rgb(0,0,0)': return languageCaculation[13]
       case 'rgb(150,150,150)': return languageCaculation[14]
     }
-  }, [])
+  }, [selected])
 
-  const indexDefine:Function = () => {
+  const indexDefine:Function = useCallback(() => {
     if(visaDurationRef.current == undefined) {
       return ''
     } else {
@@ -114,17 +120,23 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
         return ' (' + visaDurationRef.current[ISOcodes[countries.indexOf(countrySelect)]] + ' ' + languageCaculation[15] + ')'
       }
     }
-  }
+  }, [countrySelect])
 
-  const visaPolicyDefine:Function = () => {
+  const visaPolicyDefine:Function = useCallback(() => {
     if(visaPolicyDurationRef.current[ISOcodes[countries.indexOf(countrySelect)]] == 0) {
       return ''
     } else {
       return ' (' + visaPolicyDurationRef.current[ISOcodes[countries.indexOf(countrySelect)]] + ' ' + languageCaculation[15] + ')'
     }
-  }
+  }, [countrySelect])
 
-  const VisaDurationFunction:Function = (selected != null) ? visaPolicyDefine : indexDefine
+  const VisaDurationFunction:Function = useMemo(() => {
+    if(selected != null) {
+      return visaPolicyDefine
+    } else {
+      return indexDefine
+    }
+  }, [countrySelect])
 
   return (
     hover &&

@@ -5,6 +5,11 @@ import { styled } from '@mui/material/styles'
 import GithubLogo from './GithubLogo'
 import Link from 'next/link'
 import LanguageSelect from './LanguageSelect'
+const headerEN:string[] = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
+const headerES:string[] = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
+const headerPT:string[] = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
+const headerFR:string[] = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
+const headerHR:string[] = ['Karta', 'Tablica', 'Rang', 'Viza', 'FAQ']
 interface Props {
   language:string;
   setLanguage:Function;
@@ -28,13 +33,7 @@ const CustomizedButton = styled(Button)`
   color: #FFFFFF;
 `
 
-const headerEN:string[] = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
-const headerES:string[] = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
-const headerPT:string[] = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
-const headerFR:string[] = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
-const headerHR:string[] = ['Karta', 'Tablica', 'Rang', 'Viza', 'FAQ']
-
-const Header:React.FC<Props> = ({ language, setLanguage, panzoomReset, setPanzoomReset }) => {
+const Header:React.FC<Props> = ({ language, setLanguage }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
 

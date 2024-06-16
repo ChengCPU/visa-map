@@ -69,11 +69,9 @@ const SortBy:React.FC<Props> = ({ sortBy, setSortBy, rankRef, setSort }) => {
   
   const renderMenuItems:Function = useCallback((sortArray:string[]) => {
     return sortArray.map(sortArray =>
-      (sortBy != sortArray) ?
-      <MenuItem key={sortArray} onClick={() => menuItemOnClick(sortArray)}>{languageCaculation[sortEN.indexOf(sortArray)]}</MenuItem>
-      : null
+      (sortBy != sortArray) && <MenuItem key={sortArray} onClick={() => menuItemOnClick(sortArray)}>{languageCaculation[sortEN.indexOf(sortArray)]}</MenuItem>
     )
-  }, [])
+  }, [anchorEl])
 
   return (
     <>

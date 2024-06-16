@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useContext } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import Panzoom from 'panzoom'
 import Abkhazia from '../countries/Abkhazia'
@@ -286,7 +286,7 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
     }
   }, [dimensions.width])
 
-  const selectedCalculation:Function = (selected:string) => {
+  const selectedCalculation:Function = useCallback((selected:string) => {
     switch(selected) {
       case 'AS': return <AmericanSamoa />
       case 'AW': return <Aruba />
@@ -323,7 +323,7 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
       case 'VI': return <UnitedStatesVirginIslands />
       case 'WF': return <WallisAndFutuna />
     }
-  }
+  }, [])
 
   return (
     <div ref={panzoomRef} className={'container'}>
