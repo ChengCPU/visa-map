@@ -2,15 +2,18 @@ import { useContext } from 'react'
 import { ColorContext } from '../../logic/context/ColorContext'
 import { DiffContext } from '../../logic/context/DiffContext'
 import { CountrySelectContext } from '../../logic/context/CountrySelectContext'
+interface Props {
+  hover:string;
+}
 
-const FrenchGuiana:React.FC = () => {
+const FrenchGuiana:React.FC<Props> = ({ hover }) => {
 
   const { gf } = useContext(ColorContext)
   const { GF } = useContext(DiffContext)
   const { setCountrySelect } = useContext(CountrySelectContext)
 
 return (
-<g className={'frenchGuiana'} onMouseOver={() => setCountrySelect('frenchGuiana')}>
+<g className={'frenchGuiana'} onMouseOver={() => setCountrySelect(hover)}>
   <style jsx>{`
   .frenchGuiana {
   fill: ${gf};

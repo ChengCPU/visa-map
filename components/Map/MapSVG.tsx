@@ -345,13 +345,13 @@ const MapSVG:React.FC<Props> = ({ setHover, panzoomReset }) => {
           <Ethiopia />
           <Finland />
           <France />
-          <FrenchGuiana />
+          <FrenchGuiana hover={'frenchGuiana'}/>
           <Gabon />
           <Georgia />
           <Germany />
           <Ghana />
           <Greece />
-          <Greenland />
+          <Greenland hover={'greenland'}/>
           <Guatemala />
           <Guinea />
           <GuineaBissau />

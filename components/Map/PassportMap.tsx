@@ -379,13 +379,13 @@ const MapSVG:React.FC<Props> = ({ setHover, selected }) => {
           <Ethiopia />
           <Finland />
           <France />
-          <FrenchGuiana />
+          <FrenchGuiana hover={'france'}/>
           <Gabon />
           <Georgia />
           <Germany />
           <Ghana />
           <Greece />
-          <Greenland />
+          <Greenland hover={'denmark'}/>
           <Guatemala />
           <Guinea />
           <GuineaBissau />
