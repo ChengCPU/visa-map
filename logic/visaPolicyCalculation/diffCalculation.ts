@@ -10,6 +10,14 @@ export default function diffCalculation(selectArrayRef:MutableRefObject<(null|st
   }
   
   const selectArrayRefLength:number = selectArrayRef.current.length
+  let selectArrayRefNullLength:number = -1
+
+  for(let n = 0; n < selectArrayRefLength; n++) {
+    selectArrayRefNullLength++
+    if(selectArrayRef.current[n] == null) {
+      break
+    }
+  }
 
   const y = () => {
     for(let i = 0; i < selectArrayRefLength; i++) {
@@ -48,6 +56,14 @@ export default function diffCalculation(selectArrayRef:MutableRefObject<(null|st
     if(assignedColorsRef.current[0][ISOcodes[x]] != 12 && assignedColorsRef.current[0][ISOcodes[x]] != 0 && assignedColorsRef.current[0][ISOcodes[x]] != 11 && assignedColorsRef.current[0][ISOcodes[x]] != 10 && assignedColorsRef.current[0][ISOcodes[x]] != 9 && assignedColorsRef.current[0][ISOcodes[x]] != 8 && assignedColorsRef.current[0][ISOcodes[x]] != 7 && assignedColorsRef.current[0][ISOcodes[x]] != 6 && assignedColorsRef.current[y()][ISOcodes[x]] == 12) {diffObject[ISOcodes[x]] = 1; continue}
     //simplified visa
     if(assignedColorsRef.current[0][ISOcodes[x]] != 13 && assignedColorsRef.current[0][ISOcodes[x]] != 0 && assignedColorsRef.current[0][ISOcodes[x]] != 12 && assignedColorsRef.current[0][ISOcodes[x]] != 11 && assignedColorsRef.current[0][ISOcodes[x]] != 10 && assignedColorsRef.current[0][ISOcodes[x]] != 9 && assignedColorsRef.current[0][ISOcodes[x]] != 8 && assignedColorsRef.current[0][ISOcodes[x]] != 7 && assignedColorsRef.current[0][ISOcodes[x]] != 6 && assignedColorsRef.current[y()][ISOcodes[x]] == 13) {diffObject[ISOcodes[x]] = 1; continue}
+  }
+
+  for(let b = 0; b < selectArrayRefNullLength; b++) {
+    for(let h = 0; h < ISOcodes.length; h++) {
+      if(assignedColorsRef.current[b][ISOcodes[h]] == 0) {
+        diffObject[ISOcodes[h]] = 0
+      }
+    }
   }
 
   for(let j = 0; j < selectArrayRefLength; j++) {
