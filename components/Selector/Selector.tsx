@@ -14,11 +14,11 @@ interface Props {
   priorityRef:MutableRefObject<{[key:string]:string}>;
   tempPriorityRef:MutableRefObject<{[key:string]:string}>;
   assignedColorsRef:MutableRefObject<{[key:string]:number}[]>;
-  diffRef:MutableRefObject<{[key:string]:number}>;
+  diffRef:MutableRefObject<{[key:string]:boolean}>;
   percentage:number;
   setPercentage:Function;
   selectorLoad:boolean;
-  tempDiffRef:MutableRefObject<{[key:string]:number}>;
+  tempDiffRef:MutableRefObject<{[key:string]:boolean}>;
   ESTAbanRef:MutableRefObject<boolean>;
   visaDurationRef:MutableRefObject<{[key:string]:number}>;
   assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;

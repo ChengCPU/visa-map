@@ -15,8 +15,8 @@ interface Props {
   priorityRef:MutableRefObject<{[key:string]:string}>;
   setSelectorLoad:Function;
   tempPriorityRef:MutableRefObject<{[key:string]:string}>;
-  tempDiffRef:MutableRefObject<{[key:string]:number}>;
-  diffRef:MutableRefObject<{[key:string]:number}>;
+  tempDiffRef:MutableRefObject<{[key:string]:boolean}>;
+  diffRef:MutableRefObject<{[key:string]:boolean}>;
   panzoomReset:boolean;
   visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
   legend:boolean[];

@@ -40,8 +40,8 @@ interface Props {
   setSelectorLoad:Function;
   priorityRef:MutableRefObject<{[key:string]:string}>;
   tempPriorityRef:MutableRefObject<{[key:string]:string}>;
-  diffRef:MutableRefObject<{[key:string]:number}>;
-  tempDiffRef:MutableRefObject<{[key:string]:number}>;
+  diffRef:MutableRefObject<{[key:string]:boolean}>;
+  tempDiffRef:MutableRefObject<{[key:string]:boolean}>;
 }
 
 const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
