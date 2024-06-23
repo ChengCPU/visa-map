@@ -24,18 +24,13 @@ interface Props {
   assignedColorsRef:MutableRefObject<{[key:string]:number}[]>;
   setSelectorLoad:Function;
   priorityRef:MutableRefObject<{[key:string]:string}>;
-  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
-  diffRef:MutableRefObject<{[key:string]:boolean}>;
-  tempDiffRef:MutableRefObject<{[key:string]:boolean}>;
   assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;
   tableDiffRef:MutableRefObject<number[]>;
 }
 
-const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef, assignedVisaDurationRef, tableDiffRef }) => {
+const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, assignedVisaDurationRef, tableDiffRef }) => {
 
   useEffect(() => {
-    tempPriorityRef.current = priorityRef.current
-    tempDiffRef.current = diffRef.current
     setSelectorLoad(true)
   }, [])
   

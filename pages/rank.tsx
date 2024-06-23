@@ -39,18 +39,13 @@ interface Props {
   mobile:boolean;
   setSelectorLoad:Function;
   priorityRef:MutableRefObject<{[key:string]:string}>;
-  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
-  diffRef:MutableRefObject<{[key:string]:boolean}>;
-  tempDiffRef:MutableRefObject<{[key:string]:boolean}>;
 }
 
-const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, priorityRef, tempPriorityRef, diffRef, tempDiffRef }) => {
+const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, priorityRef }) => {
 
   useEffect(() => {
-    tempPriorityRef.current = priorityRef.current
-    tempDiffRef.current = diffRef.current
-    setSelectorLoad(false)
     unsortedData = fetchSortData(rankRef, 6)
+    setSelectorLoad(false)
   }, [])
   
   const passports:{[key:string]:StaticImageData} = useContext(PassportContext)

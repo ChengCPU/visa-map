@@ -14,16 +14,13 @@ interface Props {
   countrySelect:string;
   priorityRef:MutableRefObject<{[key:string]:string}>;
   setSelectorLoad:Function;
-  tempPriorityRef:MutableRefObject<{[key:string]:string}>;
-  tempDiffRef:MutableRefObject<{[key:string]:boolean}>;
-  diffRef:MutableRefObject<{[key:string]:boolean}>;
   panzoomReset:boolean;
   visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
   legend:boolean[];
   setLegend:Function;
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, tempPriorityRef, tempDiffRef, diffRef, panzoomReset, visaDurationRef, legend, setLegend }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, panzoomReset, visaDurationRef, legend, setLegend }:Props) {
 
   const title = 'Visa-map: visualize the strength of your passport'
   const description = 'Easily visualize travel requirements for passports and visas. Get up-to-date information on document needs for various countries.'
@@ -44,8 +41,6 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
   };
 
   useEffect(() => {
-    priorityRef.current = tempPriorityRef.current
-    diffRef.current = tempDiffRef.current
     if(selectArrayRef.current[0] != null) { legendCalculation(setLegend, priorityRef) }
     setSelectorLoad(true)
   }, [])
