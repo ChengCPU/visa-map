@@ -1,12 +1,15 @@
-import { useContext } from 'react'
+import { useContext, MutableRefObject } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import MapSVG from './MapSVG'
 interface Props {
   setHover:Function;
   panzoomReset:boolean;
+  priorityRef:MutableRefObject<{[key:string]:string}>;
+  diffRef:MutableRefObject<{[key:string]:boolean}>;
+  setCountrySelect:Function;
 }
 
-const Map:React.FC<Props>= ({ setHover, panzoomReset }) => {
+const Map:React.FC<Props>= ({ setHover, panzoomReset, priorityRef, diffRef, setCountrySelect }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
   
@@ -25,6 +28,9 @@ const Map:React.FC<Props>= ({ setHover, panzoomReset }) => {
       <MapSVG
         setHover={setHover}
         panzoomReset={panzoomReset}
+        priorityRef={priorityRef}
+        diffRef={diffRef}
+        setCountrySelect={setCountrySelect}
       />
       {dimensions.width <= 800 &&
       <>

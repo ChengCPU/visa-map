@@ -18,9 +18,11 @@ interface Props {
   visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
   legend:boolean[];
   setLegend:Function;
+  diffRef:MutableRefObject<{[key:string]:boolean}>;
+  setCountrySelect:Function;
 }
 
-export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, panzoomReset, visaDurationRef, legend, setLegend }:Props) {
+export default function Home({ selectArrayRef, mousePos, hover, setHover, countrySelect, priorityRef, setSelectorLoad, panzoomReset, visaDurationRef, legend, setLegend, diffRef, setCountrySelect }:Props) {
 
   const title = 'Visa-map: visualize the strength of your passport'
   const description = 'Easily visualize travel requirements for passports and visas. Get up-to-date information on document needs for various countries.'
@@ -69,6 +71,9 @@ export default function Home({ selectArrayRef, mousePos, hover, setHover, countr
     <Map
       setHover={setHover}
       panzoomReset={panzoomReset}
+      priorityRef={priorityRef}
+      diffRef={diffRef}
+      setCountrySelect={setCountrySelect}
     />
     <Legend
       legend={legend}
