@@ -108,7 +108,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
       case 'rgb(0,0,0)': return languageCaculation[13]
       case 'rgb(150,150,150)': return languageCaculation[14]
     }
-  }, [selected])
+  }, [language])
 
   const indexDefine:Function = useCallback(() => {
     if(visaDurationRef.current == undefined) {
