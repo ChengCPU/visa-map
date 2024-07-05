@@ -68,10 +68,6 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
   const rankRefLength = useMemo(() => {
     return rankRef.current.length - 1
   }, [rankRef.current])
-  
-  const order = useMemo(() => {
-    return rankRef.current[rankRefLength]
-  }, [rankRef.current])
 
   const languageCalculation = useMemo(() => {
     switch(language) {
@@ -146,7 +142,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
   const textRender = useCallback((verticalColumn:number) => {
     if(rankRef.current[verticalColumn]?.[0] == undefined) {return}
     return languageCalculation[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + languageCalculation[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.slice(1)
-  }, [])
+  }, [rankRef.current, language])
 
   const passportCompareRenderDesktop = useCallback((index:number) => {
     return (
@@ -184,7 +180,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
     return verticalColumn.map(verticalColumn =>
       <tr key={verticalColumn}>
         <td className={styles.rank}>
-        <p>{order?.[verticalColumn]}</p>
+        <p>{rankRef.current[rankRefLength]?.[verticalColumn]}</p>
         </td>
         <td><Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] != undefined) && passports[rankRef.current?.[verticalColumn]?.[0]]}/></td>
         <td><p className={styles.text}>{textRender(verticalColumn)}</p></td>
@@ -214,13 +210,13 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
         </td>
       </tr>
     )
-  }, [language])
+  }, [rankRef.current, language])
 
   const passportRankRenderMobile = useCallback((verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
       <tr key={verticalColumn}>
         <td className={styles.mobileBackground}>
-          <p className={styles.rank}>{order?.[verticalColumn]}</p>
+          <p className={styles.rank}>{rankRef.current[rankRefLength]?.[verticalColumn]}</p>
           <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] != undefined) && passports[rankRef.current?.[verticalColumn]?.[0]]}/>
           <p className={styles.text}>{textRender(verticalColumn)}</p>
           <p className={styles.text}>{languageCalculation[dataSize - 1] + rankRef.current[verticalColumn]?.[6]}</p>
@@ -255,7 +251,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
         }
       </tr>
     )
-  }, [rankRef.current])
+  }, [rankRef.current, language])
 
   return (
     <>
