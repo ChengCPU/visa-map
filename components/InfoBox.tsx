@@ -73,22 +73,6 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
 
   const ETAcodes:{[key:string]:string | Function} = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card',KH:'e-Arrival Card'}
 
-  const indexISOCalc = useCallback((key:string) => {
-    return ETAcodes[key.toUpperCase()]
-  }, [selected])
-
-  const visaPolicyISOCalc = useCallback(() => {
-    return ETAcodes[selected]
-  }, [selected])
-
-  const ETAfunction:Function = useMemo(() => {
-    if(selected != null) {
-      return visaPolicyISOCalc
-    } else {
-      return indexISOCalc
-    }
-  }, [selected])
-
   const rgbToText:Function = useCallback((rgb:string, key:string) => {
     switch(rgb) {
       case 'rgb(255,20,147)': return languageCaculation[0]
@@ -99,7 +83,12 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
       case 'rgb(153,123,61)': return languageCaculation[5]
       case 'rgb(255,179,191)': return languageCaculation[6]
       case 'rgb(50,205,50)': return languageCaculation[7]
-      case 'rgb(81,205,123)': return ETAfunction(key)
+      case 'rgb(81,205,123)': 
+        if(selected != null) {
+          return ETAcodes[selected]
+        } else {
+          return ETAcodes[key.toUpperCase()]
+        }
       case 'rgb(161,224,123)': return languageCaculation[8]
       case 'rgb(255,255,92)': return languageCaculation[9]
       case 'rgb(135,206,250)': return languageCaculation[10]
@@ -108,7 +97,7 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
       case 'rgb(0,0,0)': return languageCaculation[13]
       case 'rgb(150,150,150)': return languageCaculation[14]
     }
-  }, [language])
+  }, [language, selected])
 
   const indexDefine:Function = useCallback(() => {
     if(visaDurationRef.current == undefined) {

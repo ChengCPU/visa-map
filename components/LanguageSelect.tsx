@@ -33,7 +33,7 @@ const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
     return languageArray.map(languageArray =>
       language != languageArray && <MenuItem key={languageArray} onClick={() => menuItemOnClick(languageArray)}>{languageArray}</MenuItem>
     )
-  }, [])
+  }, [language])
 
   return (
     <>
