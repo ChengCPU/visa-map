@@ -241,7 +241,7 @@ function MyApp({ Component, pageProps }) {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false)
   const [percentage, setPercentage] = useState<number>(0)
   const [dimensions, setDimensions] = useState<{width:number;height:number;}>({width:0,height:0})
-  const [mousePos, setMousePos] = useState<number[]>([])
+  const [mousePos, setMousePos] = useState<{x:number,y:number}>({x:0,y:0})
   const [hover, setHover] = useState<boolean>(false)
   const [sortBy, setSortBy] = useState<string>('Sort by: Total')
   const [language, setLanguage] = useState<string>('🇬🇧EN')
@@ -285,7 +285,7 @@ function MyApp({ Component, pageProps }) {
 
     fetchSortData(rankRef, 1)
 
-    const handleMouseMove = (event:any) => {setMousePos([event.clientX, event.clientY])}
+    const handleMouseMove = (event:any) => {setMousePos({x:event.clientX, y:event.clientY})}
     window.addEventListener('mousemove', handleMouseMove)
 
     return () => {

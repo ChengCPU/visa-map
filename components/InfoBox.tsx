@@ -18,7 +18,7 @@ const countriesHR:string[] = ['abhazija','afganistan','albanija','alžir','ameri
 const australiaEvisitor:string[] = ['austria','belgium','bulgaria','croatia','cyprus','czechRepublic','denmark','estonia','finland','france','germany','greece','hungary','ireland','italy','latvia','lithuania','luxembourg','malta','netherlands','poland','portugal','romania','slovakia','spain','sweden','andorra','iceland','liechtenstein','monaco','norway','sanMarino','switzerland','unitedKingdom','vaticanCity']
 interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
-  mousePos:number | boolean[];
+  mousePos:{x:number,y:number};
   hover:boolean;
   countrySelect:string;
   priorityRef:MutableRefObject<{[key:string]:string}>;
@@ -134,8 +134,8 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
       .infoBox {
         background-color: white;
         position: absolute;
-        left: ${mousePos[0] + 5 + 'px'};
-        top: ${mousePos[1] + 5 + 'px'};
+        left: ${mousePos.x + 5 + 'px'};
+        top: ${mousePos.y + 5 + 'px'};
         height: 67px;
         border-radius: 8px;
         border-color: black;

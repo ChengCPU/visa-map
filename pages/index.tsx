@@ -8,7 +8,7 @@ import Legend from '../components/Legend'
 import Ad from '../components/Ads/Ad'
 interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
-  mousePos:number | boolean[];
+  mousePos:{x:number,y:number};
   hover:boolean;
   setHover:Function;
   countrySelect:string;

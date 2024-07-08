@@ -14,7 +14,7 @@ interface Props {
   setHover:Function;
   priorityRef:MutableRefObject<{[key:string]:string}>;
   setSelectorLoad:Function;
-  mousePos:number | boolean[];
+  mousePos:{x:number,y:number};
   hover:boolean;
   countrySelect:string;
   visaDurationRef:MutableRefObject<{[key:string]:number}[]>;
