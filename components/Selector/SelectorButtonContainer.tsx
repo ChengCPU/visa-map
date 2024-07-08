@@ -1,4 +1,4 @@
-import { useMemo, useContext, MutableRefObject } from 'react'
+import { useMemo, useContext, useCallback, MutableRefObject } from 'react'
 import { DimensionsContext } from '../../logic/context/DimensionsContext'
 import ProgressBar from '../ProgressBar'
 import FAQbutton from './FAQbutton'
@@ -32,11 +32,11 @@ const SelectorButtonContainer:React.FC<Props> = ({ setOpenDrawer, selectRef, sel
     }
   }, [dimensions])
 
-  const renderSelectorButtons:Function = (selectorButtonArray:number[]) => {
+  const renderSelectorButtons:Function = useCallback((selectorButtonArray:number[]) => {
     return selectorButtonArray.map(selectorButtonArray =>
-      (selectorButtonArray == 0 || selectArrayRef.current[selectorButtonArray - 1] != null) ? <SelectorButton key={selectorButtonArray} setOpenDrawer={setOpenDrawer} selectRef={selectRef} selectArrayRef={selectArrayRef} num={selectorButtonArray} /> : null
+      (selectorButtonArray == 0 || selectArrayRef.current[selectorButtonArray - 1] != null) && <SelectorButton key={selectorButtonArray} setOpenDrawer={setOpenDrawer} selectRef={selectRef} selectArrayRef={selectArrayRef} num={selectorButtonArray} />
     )
-  }
+  }, [])
 
   return (
     selectorLoad &&
