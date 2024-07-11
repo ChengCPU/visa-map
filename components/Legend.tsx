@@ -2,6 +2,9 @@ import { useState, useContext } from 'react'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import Rectangle from './Map/Legend/Rectangle'
 import LegendButton from './LegendButton'
+const legendArray:number[] = Array.from({length:15},(_,index) => index)
+const rgb:string[] = ['rgb(255,20,147)','rgb(255,145,0)','rgb(0,135,93)','rgb(0,51,153)','rgb(153,123,61)','rgb(255,179,191)','rgb(50,205,50)','rgb(81,205,123)','rgb(161,224,123)','rgb(255,255,92)','rgb(135,206,250)','rgb(118,65,171)','rgb(200,200,200)','rgb(150,150,150)','rgb(0,0,0)']
+const policy:string[] = ['Home country','OECS','MERCOSUR','EU','GCC','Freedom of movement','Visa-free','ETA/ESTA','Visa on arrival/E-visa','Visa on arrival','E-visa','Special permit','Simplified visa','Visa required','Confirmation required']
 interface Props {
   legend:boolean[];
   position:string;
@@ -11,6 +14,29 @@ const Legend:React.FC<Props> = ({ legend, position }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
   const [collapse, setCollapse] = useState<boolean>(true)
+
+  const renderLegend = (legendArray:number[]) => {
+    return legendArray.map(legendArray => 
+      legend[legendArray] &&
+      <div className={'element'}>
+        <style jsx>{`
+          .element {
+            position: relative;
+            display: flex;
+            margin-left: 0.75px;
+            align-items: center;
+            justify-content: left;
+            height: 18px;
+          }
+          .text {
+            margin-left: 4px;
+          }
+        `}</style>
+          <Rectangle color={rgb[legendArray]}/>
+          <p className={'text'}>{policy[legendArray]}</p>
+      </div>
+    )
+  }
 
   return (
     (dimensions.width <= 800 && legend[13]) &&
@@ -64,81 +90,7 @@ const Legend:React.FC<Props> = ({ legend, position }) => {
         <tbody>
           <tr>
             <td>
-              {legend[0] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(255,20,147)'}/>
-                <p className={'text'}>{'Home country'}</p>
-              </div>}
-              {legend[1] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(255,145,0)'}/>
-                <p className={'text'}>{'OECS'}</p>
-              </div>}
-              {legend[2] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(0,135,93)'}/>
-                <p className={'text'}>{'MERCOSUR'}</p>
-              </div>}
-              {legend[3] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(0,51,153)'}/>
-                <p className={'text'}>{'EU'}</p>
-              </div>}
-              {legend[4] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(153,123,61)'}/>
-                <p className={'text'}>{'GCC'}</p>
-              </div>}
-              {legend[5] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(255,179,191)'}/>
-                <p className={'text'}>{'Freedom of movement'}</p>
-              </div>}
-              {legend[6] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(50,205,50)'}/>
-                <p className={'text'}>{'Visa-free'}</p>
-              </div>}
-              {legend[7] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(81,205,123)'}/>
-                <p className={'text'}>{'ETA/ESTA'}</p>
-              </div>}
-              {legend[8] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(161,224,123)'}/>
-                <p className={'text'}>{'Visa on arrival/E-visa'}</p>
-              </div>}
-              {legend[9] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(255,255,92)'}/>
-                <p className={'text'}>{'Visa on arrival'}</p>
-              </div>}
-              {legend[10] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(135,206,250)'}/>
-                <p className={'text'}>{'E-visa'}</p>
-              </div>}
-              {legend[11] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(118,65,171)'}/>
-                <p className={'text'}>{'Special permit'}</p>
-              </div>}
-              {legend[12] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(200,200,200)'}/>
-                <p className={'text'}>{'Simplified visa'}</p>
-              </div>}
-              {legend[13] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(150,150,150)'}/>
-                <p className={'text'}>{'Visa required'}</p>
-              </div>}
-              {legend[14] &&
-              <div className={'element'}>
-                <Rectangle color={'rgb(0,0,0)'}/>
-                <p className={'text'}>{'Confirmation required'}</p>
-              </div>}
+              {renderLegend(legendArray)}
             </td>
           </tr>
         </tbody>
