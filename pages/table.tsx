@@ -1,4 +1,4 @@
-import { useState, useMemo, useContext, useEffect, MutableRefObject } from 'react'
+import { useState, useMemo, useContext, useEffect, useCallback, MutableRefObject } from 'react'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import Head from 'next/head'
@@ -23,12 +23,11 @@ interface Props {
 	selectArrayRef:MutableRefObject<(null|string)[]>;
   assignedColorsRef:MutableRefObject<{[key:string]:number}[]>;
   setSelectorLoad:Function;
-  priorityRef:MutableRefObject<{[key:string]:string}>;
   assignedVisaDurationRef:MutableRefObject<{[key:string]:number}[]>;
   tableDiffRef:MutableRefObject<number[]>;
 }
 
-const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, priorityRef, assignedVisaDurationRef, tableDiffRef }) => {
+const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorLoad, assignedVisaDurationRef, tableDiffRef }) => {
 
   useEffect(() => {
     setSelectorLoad(true)
@@ -36,18 +35,6 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
   
   const dimensions = useContext(DimensionsContext)
   const { language } = useContext(LanguageContext)
-
-  const [checked, setChecked] = useState<boolean>(true)
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if(checked) {
-      tempTableDiffRef = tableDiffRef.current
-      tableDiffRef.current = falseArray
-    } else {
-      tableDiffRef.current = tempTableDiffRef
-    }
-    
-    setChecked(event.target.checked)
-  }
 
   const languageCaculation = useMemo(() => {
     switch(language) {
@@ -59,11 +46,23 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
     }
   }, [language])
 
-  const renderPassports = (horizontalColumn: number[]) => {
-    return horizontalColumn.map(horizontalColumn => (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) && <th key={horizontalColumn}><TablePassport selectArrayRef={selectArrayRef} horizontalColumn={horizontalColumn}/></th>)
-  }
+  const [checked, setChecked] = useState<boolean>(true)
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    if(checked) {
+      tempTableDiffRef = tableDiffRef.current
+      tableDiffRef.current = falseArray
+    } else {
+      tableDiffRef.current = tempTableDiffRef
+    }
+    
+    setChecked(event.target.checked)
+  }, [checked])
 
-  const renderTables = (verticalColumn:number[], horizontalColumn:number[], flags:string[]) => {
+  const renderPassports = useCallback((horizontalColumn: number[]) => {
+    return horizontalColumn.map(horizontalColumn => (selectArrayRef.current[horizontalColumn] != null || horizontalColumn == 0) && <th key={horizontalColumn}><TablePassport selectArrayRef={selectArrayRef} horizontalColumn={horizontalColumn}/></th>)
+  }, [])
+
+  const renderTables = useCallback((verticalColumn:number[], horizontalColumn:number[], flags:string[]) => {
     return verticalColumn.map(verticalColumn =>
     <tr className={'subRow'} key={verticalColumn}>
       <style jsx>{`
@@ -85,7 +84,7 @@ const Table:React.FC<Props> = ({ selectArrayRef, assignedColorsRef, setSelectorL
       )}
     </tr>
     )
-  }
+  }, [language])
 
   return (
 	<>

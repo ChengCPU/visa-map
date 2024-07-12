@@ -59,7 +59,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     } else {
       return languageCaculation[num - 1]
     }
-  }, [])
+  }, [language])
 
   const visaDurationCalculation:Function = useCallback(() => {
     if(assignedVisaDurationRef.current[horizontalColumn][ISOcodes[verticalColumn]] == 0) {
@@ -67,7 +67,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     } else {
       return '(' + assignedVisaDurationRef.current[horizontalColumn][ISOcodes[verticalColumn]] + ' ' + languageCaculation[15] + ')'
     }
-  }, [])
+  }, [language])
 
   return (
     <td className={'text'}>
