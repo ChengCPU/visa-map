@@ -1,6 +1,14 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
+interface Props {
+  setSelectorLoad:Function;
+}
 
-const Privacy:React.FC = () => {
+const Privacy:React.FC<Props> = ({ setSelectorLoad }) => {
+
+  useEffect(() => {
+    setSelectorLoad(false)
+  }, [])
 
   return (
     <>
