@@ -39,8 +39,8 @@ export default function Custom404() {
 			<h1 className={'text'}>404</h1>
 			<Image src={FourZeroFour} alt={'404'} height={200} width={200}/>
 			<br />
-			<p className={'text'}>{"You're not supposed to be here."}</p>
-			<p className={'text'}>{"(Redirecting...)"}</p>
+			<p className={'text'}>{'You\'re not supposed to be here.'}</p>
+			<p className={'text'}>{'(Redirecting...)'}</p>
 		</div>
 		</>
 	)
