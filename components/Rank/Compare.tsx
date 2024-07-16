@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles'
 interface Props {
   compareToggle:boolean;
   setCompareToggle:Function;
+  text:string;
 }
 
 const CustomizedButtonDesktop = styled(Button)`
@@ -10,7 +11,7 @@ const CustomizedButtonDesktop = styled(Button)`
   color: #FFFFFF;
 `
 
-const Compare:React.FC<Props> = ({ compareToggle, setCompareToggle}) => {
+const Compare:React.FC<Props> = ({ compareToggle, setCompareToggle, text}) => {
   return (
     <div className={'container'}>
       <style jsx>{`
@@ -18,7 +19,7 @@ const Compare:React.FC<Props> = ({ compareToggle, setCompareToggle}) => {
           position: absolute;
         }
       `}</style>
-      <CustomizedButtonDesktop  onClick={() => setCompareToggle(!compareToggle)}>Compare</CustomizedButtonDesktop>
+      <CustomizedButtonDesktop  onClick={() => setCompareToggle(!compareToggle)}>{text}</CustomizedButtonDesktop>
     </div>
   )
 }
