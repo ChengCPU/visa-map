@@ -7,8 +7,8 @@ interface Props {
 }
 
 const CustomizedButtonDesktop = styled(Button)`
-  background-color: #32cd32;
-  color: #FFFFFF;
+  background-color:#32cd32;
+  color:#FFFFFF;
 `
 
 const Compare:React.FC<Props> = ({ compareToggle, setCompareToggle, text}) => {
@@ -16,7 +16,7 @@ const Compare:React.FC<Props> = ({ compareToggle, setCompareToggle, text}) => {
     <div className={'container'}>
       <style jsx>{`
         .container {
-          position: absolute;
+          position:absolute;
         }
       `}</style>
       <CustomizedButtonDesktop  onClick={() => setCompareToggle(!compareToggle)}>{text}</CustomizedButtonDesktop>
