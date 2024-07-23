@@ -108,6 +108,7 @@ import IvoryCoast from '../countries/IvoryCoast'
 import Jamaica from '../countries/Jamaica'
 import JanMayen from '../countries/JanMayen'
 import Japan from '../countries/Japan'
+import Jeju from '../countries/Jeju'
 import Jordan from '../countries/Jordan'
 import Kazakhstan from '../countries/Kazakhstan'
 import Kenya from '../countries/Kenya'
@@ -496,6 +497,7 @@ const MapSVG:React.FC<Props> = ({ setHover, panzoomReset, priorityRef, diffRef, 
           <HongKong hk={priorityRef.current.hk} HK={diffRef.current.HK} setCountrySelect={setCountrySelect} />
           <Jamaica jm={priorityRef.current.jm} JM={diffRef.current.JM} setCountrySelect={setCountrySelect} />
           <JanMayen xm={priorityRef.current.xm} XM={diffRef.current.XM} setCountrySelect={setCountrySelect} />
+          <Jeju jj={priorityRef.current.jj} JJ={diffRef.current.JJ} setCountrySelect={setCountrySelect} />
           <Kiribati ki={priorityRef.current.ki} KI={diffRef.current.KI} setCountrySelect={setCountrySelect} />
           <Kosovo xk={priorityRef.current.xk} XK={diffRef.current.XK} setCountrySelect={setCountrySelect} />
           <Kurdistan kx={priorityRef.current.kx} KX={diffRef.current.KX} setCountrySelect={setCountrySelect} />

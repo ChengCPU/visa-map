@@ -108,6 +108,7 @@ import IvoryCoast from '../countries/IvoryCoast'
 import Jamaica from '../countries/Jamaica'
 import JanMayen from '../countries/JanMayen'
 import Japan from '../countries/Japan'
+import Jeju from '../countries/Jeju'
 import Jordan from '../countries/Jordan'
 import Kazakhstan from '../countries/Kazakhstan'
 import Kenya from '../countries/Kenya'
@@ -304,6 +305,7 @@ const MapSVG:React.FC<Props> = ({ setHover, selected, priorityRef, setCountrySel
       case 'GP': return <Guadeloupe gp={priorityRef.current.gp} GP={false} setCountrySelect={setCountrySelect} />
       case 'GU': return <Guam gu={priorityRef.current.gu} GU={false} setCountrySelect={setCountrySelect} />
       case 'XM': return <JanMayen xm={priorityRef.current.xm} XM={false} setCountrySelect={setCountrySelect} />
+      case 'JJ': return <Jeju jj={priorityRef.current.jj} JJ={false} setCountrySelect={setCountrySelect} />
       case 'KX': return <Kurdistan kx={priorityRef.current.kx} KX={false} setCountrySelect={setCountrySelect} />
       case 'MQ': return <Martinique mq={priorityRef.current.mq} MQ={false} setCountrySelect={setCountrySelect} />
       case 'YT': return <Mayotte yt={priorityRef.current.yt} YT={false} setCountrySelect={setCountrySelect} />
