@@ -8,7 +8,7 @@ function getBaseUrl() {
 
 export const fetchAndCacheJsonData = async():Promise<any> => {
   if(cachedJsonData) {
-    return cachedJsonData;
+    return cachedJsonData
   }
 
   try {
@@ -23,7 +23,7 @@ export const fetchAndCacheJsonData = async():Promise<any> => {
     return data
   } catch (error) {
     console.error('Error fetching JSON data:', error)
-    
+
     return null
   }
 };
