@@ -13,7 +13,6 @@ import assignedVisaDurationCalculation from '../logic/visaPolicyCalculation/assi
 import visaDurationCalculation from '../logic/visaPolicyCalculation/visaDurationCalculation'
 import legendCalculation from '../logic/legendCalculation'
 import tableDiffCalculation from '../logic/tableDiffCalculation'
-import israelESTA from '../logic/israelESTA'
 //component imports
 import Header from '../components/Header'
 import Selector from '../components/Selector/Selector'
@@ -303,7 +302,6 @@ function MyApp({ Component, pageProps }) {
       diffRef.current = {AB:false,AF:false,AL:false,DZ:false,AS:false,AD:false,AO:false,AI:false,AG:false,AR:false,AM:false,AW:false,AC:false,AU:false,AT:false,AZ:false,BS:false,BH:false,BD:false,BB:false,BY:false,BE:false,BZ:false,BJ:false,BM:false,BT:false,BO:false,XB:false,BA:false,BW:false,BR:false,IO:false,VG:false,BN:false,BG:false,BF:false,BI:false,KH:false,CM:false,CA:false,CV:false,KY:false,CF:false,TD:false,CL:false,CN:false,CO:false,KM:false,CK:false,CR:false,HR:false,CU:false,CW:false,CY:false,CZ:false,CD:false,DK:false,DJ:false,DM:false,DO:false,TL:false,EC:false,EG:false,SV:false,GQ:false,ER:false,EE:false,SZ:false,ET:false,FK:false,FO:false,FJ:false,FI:false,FR:false,GF:false,PF:false,GA:false,GM:false,GE:false,DE:false,GH:false,GI:false,GR:false,GL:false,GD:false,GP:false,GU:false,GT:false,GN:false,GW:false,GY:false,HT:false,HN:false,HK:false,HU:false,IS:false,IN:false,ID:false,IR:false,IQ:false,IE:false,IL:false,IT:false,CI:false,JM:false,XM:false,JP:false,JJ:false,JO:false,KZ:false,KE:false,KI:false,XK:false,KX:false,KW:false,KG:false,LA:false,LV:false,LB:false,LS:false,LR:false,LY:false,LI:false,LT:false,LU:false,MO:false,MG:false,MW:false,MY:false,MV:false,ML:false,MT:false,MH:false,MQ:false,MR:false,MU:false,YT:false,MX:false,FM:false,MD:false,MC:false,MN:false,ME:false,MS:false,MA:false,MZ:false,MM:false,NA:false,NR:false,NP:false,NL:false,NC:false,NZ:false,NI:false,NE:false,NG:false,NU:false,RC:false,MP:false,KP:false,MK:false,NO:false,OM:false,PK:false,PW:false,PS:false,PA:false,PG:false,PY:false,PE:false,PH:false,PN:false,PL:false,PT:false,QA:false,CG:false,RE:false,RO:false,RU:false,RW:false,XS:false,BL:false,SH:false,KN:false,LC:false,MF:false,PM:false,VC:false,WS:false,SM:false,ST:false,SA:false,SN:false,RS:false,SC:false,SL:false,SG:false,XE:false,SX:false,SK:false,SI:false,SB:false,SO:false,XX:false,ZA:false,KR:false,XO:false,SS:false,ES:false,LK:false,SD:false,SR:false,XV:false,SE:false,CH:false,SY:false,TW:false,TJ:false,TZ:false,TH:false,TG:false,TK:false,TO:false,XT:false,TT:false,TX:false,TN:false,TR:false,TM:false,TC:false,TV:false,UG:false,UA:false,AE:false,GB:false,US:false,VI:false,UY:false,UZ:false,VU:false,VA:false,VE:false,VN:false,WF:false,EH:false,YE:false,ZM:false,ZW:false}
       ESTAbanRef.current = false
       ESTAbancalc()
-      israelESTA(selectArrayRef, ESTAbanRef)
 
       mainCalculation(true, selectArrayRef.current[selectRef.current.selection], assignedColorsRef, selectRef, priorityRef, selectArrayRef, diffRef, setPercentage, ESTAbanRef, visaDurationRef)
       assignedVisaDurationCalculation(selectRef, assignedVisaDurationRef)
@@ -315,7 +313,6 @@ function MyApp({ Component, pageProps }) {
 
     ESTAbancalc()
     selectArrayRef.current[selectRef.current.selection] = selectRef.current.passport
-    israelESTA(selectArrayRef, ESTAbanRef)
     if(selectArrayRef.current[selectRef.current.selection] != null) { mainCalculation(false, selectArrayRef.current[selectRef.current.selection], assignedColorsRef, selectRef, priorityRef, selectArrayRef, diffRef, setPercentage, ESTAbanRef, visaDurationRef); assignedVisaDurationCalculation(selectRef, assignedVisaDurationRef); visaDurationCalculation(selectRef, visaDurationRef, priorityRef, assignedColorsRef); legendCalculation(setLegend, priorityRef); tableDiffCalculation(tableDiffRef, assignedColorsRef, assignedVisaDurationRef) }
   }, [toggle])
 
