@@ -5,11 +5,11 @@ import { styled } from '@mui/material/styles'
 import GithubLogo from './GithubLogo'
 import Link from 'next/link'
 import LanguageSelect from './LanguageSelect'
-const headerEN:string[] = ['Map', 'Table', 'Rank', 'Visa', 'FAQ']
-const headerES:string[] = ['Mapa', 'Tabla', 'Rango', 'Visado', 'FAQ']
-const headerPT:string[] = ['Mapa', 'Tabela', 'Classe', 'Visado', 'FAQ']
-const headerFR:string[] = ['Carte', 'Tableau', 'Rang', 'Visa', 'FAQ']
-const headerHR:string[] = ['Karta', 'Tablica', 'Rang', 'Viza', 'FAQ']
+const headerEN:string[] = ['map','table','rank','visa','blog','faq']
+const headerES:string[] = ['mapa','tabla','rango','visado','blog','faq']
+const headerPT:string[] = ['mapa','tabela','classe','visado','blog','faq']
+const headerFR:string[] = ['carte','tableau','rang','visa','blog','faq']
+const headerHR:string[] = ['karta','tablica','rang','viza','blog','faq']
 interface Props {
   language:string;
   setLanguage:Function;
@@ -28,7 +28,7 @@ const theme = createTheme({
   }
 })
 
-const CustomizedButton = styled(Button)`
+const p = styled(Button)`
   background-color: #32cd32;
   color: #FFFFFF;
 `
@@ -57,7 +57,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
           padding-bottom: 4px;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: ${dimensions.width > 800 ? 'center' : 'left'};
           position: fixed;
           left: 0px;
           top: 0px;
@@ -66,34 +66,37 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
           background-color: #111111;
           z-index: 2;
         }
-        .text {
-          top: 15px;
-          right: 600px;
-          position: absolute;
-          color: #FFFFFF;
-        }
         .screenshot {
           top: 13px;
           right: 550px;
           position: absolute;
           color: #FFFFFF;
         }
-        ${dimensions.width > 800 && '.languageSelect {right: 40px; position: absolute;}'}
+        p {
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+        p:visited {
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+        p:hover {
+          color: #FFFFFF;
+          text-decoration: underline;
+        }
       `}</style>
       <ThemeProvider theme={theme}>
         <Stack direction="row" spacing={1}>
           {dimensions.width > 800 && <GithubLogo />}
-          <Link href='/'><CustomizedButton variant="contained">{languageCaculation[0]}</CustomizedButton></Link>
-          <Link href='/table'><CustomizedButton variant="contained">{languageCaculation[1]}</CustomizedButton></Link>
-          <Link href='/rank'><CustomizedButton variant="contained">{languageCaculation[2]}</CustomizedButton></Link>
-          <Link href='/visapolicy'><CustomizedButton variant="contained">{languageCaculation[3]}</CustomizedButton></Link>
-          {dimensions.width > 800 && <Link href='/faq'><CustomizedButton variant="contained">{languageCaculation[4]}</CustomizedButton></Link>}
-          <div className={'languageSelect'}>
-            <LanguageSelect
-              language={language}
-              setLanguage={setLanguage}
-            />
-          </div>
+          <Link href='/'><p>{'/' + languageCaculation[0] + '/'}</p></Link>
+          <Link href='/table'><p>{'/' + languageCaculation[1] + '/'}</p></Link>
+          <Link href='/rank'><p>{'/' + languageCaculation[2] + '/'}</p></Link>
+          <Link href='/visapolicy'><p>{'/' + languageCaculation[3] + '/'}</p></Link>
+          {dimensions.width > 800 && <Link href='/faq'><p>{'/' + languageCaculation[5] + '/'}</p></Link>}
+          <LanguageSelect
+            language={language}
+            setLanguage={setLanguage}
+          />
         </Stack>
       </ThemeProvider>
     </div>

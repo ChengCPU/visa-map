@@ -1,54 +1,61 @@
-import { useState, useCallback } from 'react'
-import { Button, Menu, MenuItem } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { useCallback } from 'react'
+
 interface Props {
-  language:string;
-  setLanguage:Function;
+  language: string;
+  setLanguage: Function;
 }
 
-const CustomizedButton = styled(Button)`
-  background-color: #32cd32;
-  color: #FFFFFF;
-`
+const languageArray: string[] = ['🇬🇧EN','🇪🇸ES','🇵🇹PT','🇫🇷FR','🇭🇷HR']
 
-const languageArray:string[] = ['🇬🇧EN', '🇪🇸ES', '🇵🇹PT', '🇫🇷FR', '🇭🇷HR']
+const LanguageSelect: React.FC<Props> = ({ language, setLanguage }) => {
 
-const LanguageSelect:React.FC<Props> = ({ language, setLanguage }) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const open = Boolean(anchorEl)
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
+  const handleChange = (event) => {
+    setLanguage(event.target.value)
+  };
 
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  const menuItemOnClick = (prop) => {
-    setLanguage(prop)
-    handleClose()
-  }
-
-  const renderMenuItems:Function = useCallback((languageArray:string[]) => {
-    return languageArray.map(languageArray =>
-      language != languageArray && <MenuItem key={languageArray} onClick={() => menuItemOnClick(languageArray)}>{languageArray}</MenuItem>
+  const renderOptions: Function = useCallback((languageArray: string[]) => {
+    return languageArray.map(language =>
+      <option key={language} value={language}>{language}</option>
     )
   }, [language])
 
   return (
-    <>
-    <CustomizedButton onClick={handleClick}>{language}</CustomizedButton>
-    <Menu
-      anchorEl={anchorEl}
-      open={open}
-      onClose={handleClose}
-      MenuListProps={{
-        'aria-labelledby': 'basic-button',
-      }}
-    >
-    {renderMenuItems(languageArray)}
-    </Menu>
-    </>
+    <div className="select-container">
+      <select className="language-select" value={language} onChange={handleChange}>
+        {renderOptions(languageArray)}
+      </select>
+
+      <style jsx>{`
+        .select-container {
+          height:30px;
+          top:8px;
+          right:25px;
+          position: absolute;
+        }
+        
+        .language-select {
+          height: 30px;
+          padding: 5px;
+          background-color: #000;
+          color: #fff;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          font-size: 14px;
+          appearance: none;
+          background-position-x: calc(100% - 10px);
+          background-position-y: center;
+        }
+        
+        .language-select:hover {
+          border-color: #ccc;
+        }
+
+        .language-select:focus {
+          outline: none;
+          border-color: #ccc;
+        }
+      `}</style>
+    </div>
   )
 }
 
