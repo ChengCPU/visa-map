@@ -1,9 +1,9 @@
 import { useMemo, useContext } from 'react'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
-import { Button, Stack, createTheme, ThemeProvider } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { Stack, createTheme, ThemeProvider } from '@mui/material'
 import GithubLogo from './GithubLogo'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import LanguageSelect from './LanguageSelect'
 const headerEN:string[] = ['map','table','rank','visa','blog','faq']
 const headerES:string[] = ['mapa','tabla','rango','visado','blog','faq']
@@ -28,14 +28,12 @@ const theme = createTheme({
   }
 })
 
-const p = styled(Button)`
-  background-color: #32cd32;
-  color: #FFFFFF;
-`
-
 const Header:React.FC<Props> = ({ language, setLanguage }) => {
 
   const dimensions:{width:number;height:number} = useContext(DimensionsContext)
+
+  const router = useRouter()
+  const { pathname } = useMemo(() => { return router }, [router])
 
   const languageCaculation = useMemo(() => {
     switch(language) {
@@ -72,6 +70,21 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
           position: absolute;
           color: #FFFFFF;
         }
+        .map {
+          ${(pathname === '/') && 'text-decoration: underline;'}
+        }
+        .table {
+          ${(pathname.includes('/table')) && 'text-decoration: underline;'}
+        }
+        .rank {
+          ${(pathname.includes('/rank')) && 'text-decoration: underline;'}
+        }
+        .visapolicy {
+          ${(pathname.includes('/visapolicy')) && 'text-decoration: underline;'}
+        }
+        .faq {
+          ${(pathname.includes('/faq')) && 'text-decoration: underline;'}
+        }
         p {
           color: #FFFFFF;
           text-decoration: none;
@@ -88,11 +101,11 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
       <ThemeProvider theme={theme}>
         <Stack direction="row" spacing={1}>
           {dimensions.width > 800 && <GithubLogo />}
-          <Link href='/'><p>{'/' + languageCaculation[0] + '/'}</p></Link>
-          <Link href='/table'><p>{'/' + languageCaculation[1] + '/'}</p></Link>
-          <Link href='/rank'><p>{'/' + languageCaculation[2] + '/'}</p></Link>
-          <Link href='/visapolicy'><p>{'/' + languageCaculation[3] + '/'}</p></Link>
-          {dimensions.width > 800 && <Link href='/faq'><p>{'/' + languageCaculation[5] + '/'}</p></Link>}
+          <Link href='/'><p className={'map'}>{'/' + languageCaculation[0] + '/'}</p></Link>
+          <Link href='/table'><p className={'table'}>{'/' + languageCaculation[1] + '/'}</p></Link>
+          <Link href='/rank'><p className={'rank'}>{'/' + languageCaculation[2] + '/'}</p></Link>
+          <Link href='/visapolicy'><p className={'visapolicy'}>{'/' + languageCaculation[3] + '/'}</p></Link>
+          {dimensions.width > 800 && <Link href='/faq'><p className={'faq'}>{'/' + languageCaculation[5] + '/'}</p></Link>}
           <LanguageSelect
             language={language}
             setLanguage={setLanguage}
