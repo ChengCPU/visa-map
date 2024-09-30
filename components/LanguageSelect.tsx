@@ -11,7 +11,7 @@ const LanguageSelect: React.FC<Props> = ({ language, setLanguage }) => {
 
   const handleChange = (event) => {
     setLanguage(event.target.value)
-  };
+  }
 
   const renderOptions: Function = useCallback((languageArray: string[]) => {
     return languageArray.map(language =>
@@ -24,7 +24,6 @@ const LanguageSelect: React.FC<Props> = ({ language, setLanguage }) => {
       <select className="language-select" value={language} onChange={handleChange}>
         {renderOptions(languageArray)}
       </select>
-
       <style jsx>{`
         .select-container {
           height:30px;
@@ -32,7 +31,6 @@ const LanguageSelect: React.FC<Props> = ({ language, setLanguage }) => {
           right:25px;
           position: absolute;
         }
-        
         .language-select {
           height: 30px;
           padding: 5px;
@@ -45,11 +43,9 @@ const LanguageSelect: React.FC<Props> = ({ language, setLanguage }) => {
           background-position-x: calc(100% - 10px);
           background-position-y: center;
         }
-        
         .language-select:hover {
           border-color: #ccc;
         }
-
         .language-select:focus {
           outline: none;
           border-color: #ccc;
