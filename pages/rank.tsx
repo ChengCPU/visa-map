@@ -57,23 +57,17 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
 
   const languageCalculation = useMemo(() => {
     switch(language) {
-      case '🇬🇧EN': return dataEN
-      case '🇪🇸ES': return dataES
-      case '🇵🇹PT': return dataPT
-      case '🇫🇷FR': return dataFR
-      case '🇭🇷HR': return dataHR
+      case '🇬🇧EN': return [dataEN, sortEN]
+      case '🇪🇸ES': return [dataES, sortES]
+      case '🇵🇹PT': return [dataPT, sortPT]
+      case '🇫🇷FR': return [dataFR, sortFR]
+      case '🇭🇷HR': return [dataHR, sortHR]
     }
   }, [language])
 
   const handleChange = (event) => {
     setSortBy(event.target.value)
-    switch(event.target.value) {
-      case 'Sort by: Total': fetchSortData(rankRef, 1); break
-      case 'Sort by: Visa-free': fetchSortData(rankRef, 2); break
-      case 'Sort by: Alphabetical order': fetchSortData(rankRef, 3); break
-      case 'Sort by: Freedom of Movement': fetchSortData(rankRef, 4); break
-      case 'Sort by: Visa-free km2': fetchSortData(rankRef, 5); break
-    }
+    fetchSortData(rankRef, languageCalculation[1].indexOf(event.target.value) + 1)
   }
 
   const renderOptions: Function = useCallback((languageArray: string[]) => {
@@ -114,7 +108,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
 
   const textRender = useCallback((verticalColumn:number) => {
     if(rankRef.current[verticalColumn]?.[0] == undefined) {return}
-    return languageCalculation[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + languageCalculation[passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.slice(1)
+    return languageCalculation[0][passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.charAt(0).toUpperCase() + languageCalculation[0][passportsArray.indexOf(rankRef.current?.[verticalColumn]?.[0])]?.slice(1)
   }, [rankRef.current, language])
 
   const passportRankRenderDesktop = useCallback((verticalColumn:number[]) => {
@@ -128,9 +122,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
         <td>
         <div className={styles.progressBarsContainer}>
           <div className={styles.textSeparator}>
-            <p className={styles.textDiv}>{languageCalculation[dataSize - 2] + rankRef.current[verticalColumn]?.[6]}</p>
+            <p className={styles.textDiv}>{languageCalculation[0][dataSize - 1] + rankRef.current[verticalColumn]?.[6]}</p>
             <div className={styles.separator}></div>
-            <p className={styles.textDiv}>{languageCalculation[dataSize - 3] + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+            <p className={styles.textDiv}>{languageCalculation[0][dataSize - 2] + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
           </div>
           <div className={styles.progressBarDesktop}>
             <VisaRequired width={widthCalculation('visaRequired', verticalColumn)} margin={marginCalculation('visaRequired', verticalColumn)} count={rankRef.current[verticalColumn]?.[5]} />
@@ -143,7 +137,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
           <br/>
           <br/>
           <br/>
-          <p className={styles.textDiv}>{languageCalculation[dataSize - 4] + rankRef.current[verticalColumn]?.[7]}</p>
+          <p className={styles.textDiv}>{languageCalculation[0][dataSize - 3] + rankRef.current[verticalColumn]?.[7]}</p>
           <div className={styles.progressBarDesktop}>
             <FreedomOfMovement max={42.4} count={rankRef.current[verticalColumn]?.[7]}/>
           </div>
@@ -160,9 +154,9 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
           <p className={styles.rank}>{rankRef.current[rankRefLength]?.[verticalColumn]}</p>
           <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] != undefined) && passports[rankRef.current?.[verticalColumn]?.[0]]}/>
           <p className={styles.text}>{textRender(verticalColumn)}</p>
-          <p className={styles.text}>{languageCalculation[dataSize - 2] + rankRef.current[verticalColumn]?.[6]}</p>
-          <p className={styles.text}>{languageCalculation[dataSize - 4] + rankRef.current[verticalColumn]?.[7]}</p>
-          <p className={styles.text}>{languageCalculation[dataSize - 3] + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
+          <p className={styles.text}>{languageCalculation[0][dataSize - 1] + rankRef.current[verticalColumn]?.[6]}</p>
+          <p className={styles.text}>{languageCalculation[0][dataSize - 3] + rankRef.current[verticalColumn]?.[7]}</p>
+          <p className={styles.text}>{languageCalculation[0][dataSize - 2] + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
         </td>
         {(dimensions.width <= 800) &&
         <td className={styles.mobileBackground}>
@@ -217,7 +211,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
           <td>
             <div className={'sortByContainer'}>
               <select className={'sortBy'} value={sortBy} onChange={handleChange}>
-                {renderOptions(sortEN)}
+                {renderOptions(languageCalculation[1])}
               </select>
               <style jsx>{`
                 .sortByContainer {
