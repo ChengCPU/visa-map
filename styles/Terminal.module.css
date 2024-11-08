@@ -1,0 +1,67 @@
+.terminal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  display: none;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.terminal.open {
+  display: flex;
+}
+
+.body {
+  padding: 10px;
+  overflow-y: auto;
+  flex: 1;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.userInput {
+  color: lightgreen;
+}
+
+.systemResponse {
+  color: lightgray;
+}
+
+.commandForm {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.prompt {
+  color: lightgray;
+  margin-right: 5px;
+}
+
+.commandInput {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 600px;
+  outline: none;
+  caret-color: white;
+}
+
+.commandInput:focus {
+  border-color: lightblue;
+}
+
+.commandInput::placeholder {
+  color: transparent;
+}

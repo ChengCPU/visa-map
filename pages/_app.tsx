@@ -16,6 +16,7 @@ import tableDiffCalculation from '../logic/tableDiffCalculation'
 //component imports
 import Header from '../components/Header'
 import Selector from '../components/Selector/Selector'
+import Terminal from '../components/Terminal'
 //passport imports
 import abkhazia from '/public/passports/abkhazia.webp'
 import afghanistan from '/public/passports/afghanistan.webp'
@@ -368,6 +369,7 @@ function MyApp({ Component, pageProps }) {
         panzoomReset={panzoomReset}
         setPanzoomReset={setPanzoomReset}
       />
+      <Terminal />
       <Analytics />
       <SpeedInsights />
     </DimensionsContext.Provider>
