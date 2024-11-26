@@ -20,7 +20,7 @@ const SaintLucia:React.FC<Props> = ({ lc, LC, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#lc)" />
     </defs>
-    <circle fill={LC && "url(#lc)"} r="3.25" cy="419" cx="645" stroke="black"/>
+    <circle fill={LC ? "url(#lc)" : null} r="3.25" cy="419" cx="645" stroke="black"/>
     </g>
   )
 }

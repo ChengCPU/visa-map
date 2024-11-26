@@ -20,7 +20,7 @@ const SaintKittsAndNevis:React.FC<Props> = ({ kn, KN, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#kn)" />
     </defs>
-    <circle fill={KN && "url(#kn)"} r="3.25" cy="395" cx="635" stroke="black"/>
+    <circle fill={KN ? "url(#kn)" : null} r="3.25" cy="395" cx="635" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Palau:React.FC<Props> = ({ pw, PW, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#pw)" />
     </defs>
-    <circle fill={PW && "url(#pw)"} r="5" cy="453" cx="1747" stroke="black"/>
+    <circle fill={PW ? "url(#pw)" : null} r="5" cy="453" cx="1747" stroke="black"/>
     </g>
   )
 }

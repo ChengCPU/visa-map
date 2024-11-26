@@ -20,7 +20,7 @@ const Micronesia:React.FC<Props> = ({ fm, FM, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#fm)" />
     </defs>
-    <circle fill={FM && "url(#fm)"} r="5" cy="457" cx="1881" stroke="black"/>
+    <circle fill={FM ? "url(#fm)" : null} r="5" cy="457" cx="1881" stroke="black"/>
     </g>
   )
 }

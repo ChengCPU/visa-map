@@ -20,7 +20,7 @@ const Transnistria:React.FC<Props> = ({ xt, XT, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#xt)" />
     </defs>
-    <circle fill={XT && "url(#xt)"} r="2.5" cy="198" cx="1132.7" stroke="black"/>
+    <circle fill={XT ? "url(#xt)" : null} r="2.5" cy="198" cx="1132.7" stroke="black"/>
     </g>
   )
 }

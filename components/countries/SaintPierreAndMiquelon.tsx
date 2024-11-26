@@ -20,7 +20,7 @@ const SaintPierreAndMiquelon:React.FC<Props> = ({ pm, PM, setCountrySelect }) =>
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#pm)" />
     </defs>
-    <circle fill={PM && "url(#pm)"} r="5" cy="202" cx="707" stroke="black"/>
+    <circle fill={PM ? "url(#pm)" : null} r="5" cy="202" cx="707" stroke="black"/>
     </g>
   )
 }

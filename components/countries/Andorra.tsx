@@ -20,7 +20,7 @@ const Andorra:React.FC<Props> = ({ ad, AD, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#ad)" />
     </defs>
-    <circle fill={AD && "url(#ad)"} r="4" cy="230" cx="993" stroke="black"/>
+    <circle fill={AD ? "url(#ad)" : null} r="4" cy="230" cx="993" stroke="black"/>
     </g>
   )
 }

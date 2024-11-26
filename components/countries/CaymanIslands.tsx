@@ -20,7 +20,7 @@ const CaymanIslands:React.FC<Props> = ({ ky, KY, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#ky)" />
     </defs>
-    <circle fill={KY && "url(#ky)"} r="5" cy="377" cx="532" stroke="black"/>
+    <circle fill={KY ? "url(#ky)" : null} r="5" cy="377" cx="532" stroke="black"/>
     </g>
   )
 }

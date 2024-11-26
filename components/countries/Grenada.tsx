@@ -20,7 +20,7 @@ const Grenada:React.FC<Props> = ({ gd, GD, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#gd)" />
     </defs>
-    <circle fill={GD && "url(#gd)"} r="3.25" cy="428" cx="638" stroke="black"/>
+    <circle fill={GD ? "url(#gd)" : null} r="3.25" cy="428" cx="638" stroke="black"/>
     </g>
   )
 }

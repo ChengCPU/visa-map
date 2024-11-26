@@ -20,7 +20,7 @@ const Martinique:React.FC<Props> = ({ mq, MQ, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mq)" />
     </defs>
-    <circle fill={MQ && "url(#mq)"} r="2.5" cy="413" cx="648" stroke="black"/>
+    <circle fill={MQ ? "url(#mq)" : null} r="2.5" cy="413" cx="648" stroke="black"/>
     </g>
   )
 }

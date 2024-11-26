@@ -20,7 +20,7 @@ const Kiribati:React.FC<Props> = ({ ki, KI, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#ki)" />
     </defs>
-    <circle fill={KI && "url(#ki)"} r="5" cy="490" cx="1960" stroke="black"/>
+    <circle fill={KI ? "url(#ki)" : null} r="5" cy="490" cx="1960" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Nauru:React.FC<Props> = ({ nr, NR, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#nr)" />
     </defs>
-    <circle fill={NR && "url(#nr)"} r="5" cy="505" cx="1933" stroke="black"/>
+    <circle fill={NR ? "url(#nr)" : null} r="5" cy="505" cx="1933" stroke="black"/>
     </g>
   )
 }

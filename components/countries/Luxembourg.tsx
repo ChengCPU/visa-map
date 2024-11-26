@@ -20,7 +20,7 @@ const Luxembourg:React.FC<Props> = ({ lu, LU, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#lu)" />
     </defs>
-    <circle fill={LU && "url(#lu)"} r="4" cy="185" cx="1016" stroke="black"/>
+    <circle fill={LU ? "url(#lu)" : null} r="4" cy="185" cx="1016" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Saba:React.FC<Props> = ({ xs, XS, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#xs)" />
     </defs>
-    <circle fill={XS && "url(#xs)"} r="2.5" cy="392" cx="624" stroke="black"/>
+    <circle fill={XS ? "url(#xs)" : null} r="2.5" cy="392" cx="624" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Bonaire:React.FC<Props> = ({ xb, XB, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#xb)" />
     </defs>
-    <circle fill={XB && "url(#xb)"} r="2.5" cy="424" cx="606" stroke="black"/>
+    <circle fill={XB ? "url(#xb)" : null} r="2.5" cy="424" cx="606" stroke="black"/>
     </g>
   )
 }

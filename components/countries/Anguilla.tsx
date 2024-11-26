@@ -20,7 +20,7 @@ const Anguilla:React.FC<Props> = ({ ai, AI, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#ai)" />
     </defs>
-    <circle fill={AI && "url(#ai)"} r="2.5" cy="380" cx="635" stroke="black"/>
+    <circle fill={AI ? "url(#ai)" : null} r="2.5" cy="380" cx="635" stroke="black"/>
     </g>
   )
 }

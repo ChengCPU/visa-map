@@ -20,7 +20,7 @@ const AmericanSamoa:React.FC<Props> = ({ as, AS, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#as)" />
     </defs>
-    <circle fill={AS && "url(#as)"} r="5" cy="596" cx="29" stroke="black"/>
+    <circle fill={AS ? "url(#as)" : null} r="5" cy="596" cx="29" stroke="black"/>
     </g>
   )
 }

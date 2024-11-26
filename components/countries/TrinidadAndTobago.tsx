@@ -20,7 +20,7 @@ const TrinidadAndTobago:React.FC<Props> = ({ tt, TT, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#tt)" />
     </defs>
-    <circle fill={TT && "url(#tt)"} r="3.25" cy="435" cx="640" stroke="black"/>
+    <circle fill={TT ? "url(#tt)" : null} r="3.25" cy="435" cx="640" stroke="black"/>
     </g>
   )
 }

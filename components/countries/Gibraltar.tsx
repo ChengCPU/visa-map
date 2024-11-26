@@ -20,7 +20,7 @@ const Gibraltar:React.FC<Props> = ({ gi, GI, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#gi)" />
     </defs>
-    <circle fill={GI && "url(#gi)"} r="4" cy="270" cx="958" stroke="black"/>
+    <circle fill={GI ? "url(#gi)" : null} r="4" cy="270" cx="958" stroke="black"/>
     </g>
   )
 }

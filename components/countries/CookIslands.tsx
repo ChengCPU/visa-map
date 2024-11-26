@@ -20,7 +20,7 @@ const CookIslands:React.FC<Props> = ({ ck, CK, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#ck)" />
     </defs>
-    <circle fill={CK && "url(#ck)"} r="5" cy="631" cx="100" stroke="black"/>
+    <circle fill={CK ? "url(#ck)" : null} r="5" cy="631" cx="100" stroke="black"/>
     </g>
   )
 }

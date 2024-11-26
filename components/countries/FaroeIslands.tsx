@@ -20,7 +20,7 @@ const FaroeIslands:React.FC<Props> = ({ fo, FO, setCountrySelect }) => {
     </pattern>
     <rect x="0" y="0" width="100%" height="100%" fill="url(#fo)" />
   </defs>
-  <circle fill={FO && "url(#fo)"} r="5" cy="109" cx="954" stroke="black"/>
+  <circle fill={FO ? "url(#fo)" : null} r="5" cy="109" cx="954" stroke="black"/>
   </g>
   )
 }

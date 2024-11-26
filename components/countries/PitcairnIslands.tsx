@@ -20,7 +20,7 @@ const PitcairnIslands:React.FC<Props> = ({ pn, PN, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#pn)" />
     </defs>
-    <circle fill={PN && "url(#pn)"} r="5" cy="660" cx="300" stroke="black"/>
+    <circle fill={PN ? "url(#pn)" : null} r="5" cy="660" cx="300" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Malta:React.FC<Props> = ({ mt, MT, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mt)" /> 
     </defs>
-    <circle fill={MT && "url(#mt)"} r="4" cy="271" cx="1062" stroke="black"/>
+    <circle fill={MT ? "url(#mt)" : null} r="4" cy="271" cx="1062" stroke="black"/>
     </g>
   )
 }

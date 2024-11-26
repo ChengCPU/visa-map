@@ -20,7 +20,7 @@ const NorthernCyprus:React.FC<Props> = ({ rc, RC, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#rc)" />
     </defs>
-    <circle fill={RC && "url(#rc)"} r="3" cy="274.5" cx="1165" stroke="black"/>
+    <circle fill={RC ? "url(#rc)" : null} r="3" cy="274.5" cx="1165" stroke="black"/>
     </g>
   )
 }

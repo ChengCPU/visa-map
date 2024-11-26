@@ -20,7 +20,7 @@ const JanMayen:React.FC<Props> = ({ xm, XM, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#xm)" />
     </defs>
-    <circle fill={XM && "url(#xm)"} r="5" cy="60" cx="952" stroke="black"/>
+    <circle fill={XM ? "url(#xm)" : null} r="5" cy="60" cx="952" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Monaco:React.FC<Props> = ({ mc, MC, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mc)" />
     </defs>
-    <circle fill={MC && "url(#mc)"} r="4" cy="224" cx="1021" stroke="black"/>
+    <circle fill={MC ? "url(#mc)" : null} r="4" cy="224" cx="1021" stroke="black"/>
     </g>
   )
 }

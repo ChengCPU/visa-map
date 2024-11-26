@@ -20,7 +20,7 @@ const SouthOssetia:React.FC<Props> = ({ xo, XO, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#xo)" />
     </defs>
-    <circle fill={XO && "url(#xo)"} r="3.5" cy="229" cx="1212" stroke="black"/>
+    <circle fill={XO ? "url(#xo)" : null} r="3.5" cy="229" cx="1212" stroke="black"/>
     </g>
   )
 }

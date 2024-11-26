@@ -20,7 +20,7 @@ const Seychelles:React.FC<Props> = ({ sc, SC, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#sc)" />
     </defs>
-    <circle fill={SC && "url(#sc)"} r="5" cy="531" cx="1300" stroke="black"/>
+    <circle fill={SC ? "url(#sc)" : null} r="5" cy="531" cx="1300" stroke="black"/>
     </g>
   )
 }

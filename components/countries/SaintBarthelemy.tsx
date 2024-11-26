@@ -20,7 +20,7 @@ const SaintBarthelemy:React.FC<Props> = ({ bl, BL, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#bl)" />
     </defs>
-    <circle fill={BL && "url(#bl)"} r="2.5" cy="388" cx="627" stroke="black"/>
+    <circle fill={BL ? "url(#bl)" : null} r="2.5" cy="388" cx="627" stroke="black"/>
     </g>
   )
 }

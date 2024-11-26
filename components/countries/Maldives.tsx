@@ -20,7 +20,7 @@ const Maldives:React.FC<Props> = ({ mv, MV, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mv)" />
     </defs>
-    <circle fill={MV && "url(#mv)"} r="5" cy="474" cx="1402" stroke="black"/>
+    <circle fill={MV ? "url(#mv)" : null} r="5" cy="474" cx="1402" stroke="black"/>
     </g>
   )
 }

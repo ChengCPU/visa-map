@@ -20,7 +20,7 @@ const Abkhazia:React.FC<Props> = ({ ab, AB, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#ab)" />
     </defs>
-    <circle fill={AB && "url(#ab)"} r="3.5" cy="227" cx="1199" stroke="black"/>
+    <circle fill={AB ? "url(#ab)" : null} r="3.5" cy="227" cx="1199" stroke="black"/>
     </g>
   )
 }

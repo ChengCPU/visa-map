@@ -20,7 +20,7 @@ const Comoros:React.FC<Props> = ({ km, KM, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#km)" />
     </defs>
-    <circle fill={KM && "url(#km)"} r="5" cy="576" cx="1234" stroke="black"/>
+    <circle fill={KM ? "url(#km)" : null} r="5" cy="576" cx="1234" stroke="black"/>
     </g>
   )
 }

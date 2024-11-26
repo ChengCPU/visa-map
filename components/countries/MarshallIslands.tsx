@@ -20,7 +20,7 @@ const MarshallIslands:React.FC<Props> = ({ mh, MH, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mh)" />
     </defs>
-    <circle fill={MH && "url(#mh)"} r="5" cy="456" cx="1953" stroke="black"/>
+    <circle fill={MH ? "url(#mh)" : null} r="5" cy="456" cx="1953" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Jamaica:React.FC<Props> = ({ jm, JM, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#jm)" />
     </defs>
-    <circle fill={JM && "url(#jm)"} r="5" cy="386" cx="554.5" stroke="black"/>
+    <circle fill={JM ? "url(#jm)" : null} r="5" cy="386" cx="554.5" stroke="black"/>
     </g>
   )
 }

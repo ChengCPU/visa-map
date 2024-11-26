@@ -20,7 +20,7 @@ const BritishVirginIslands:React.FC<Props> = ({ vg, VG, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#vg)" />
     </defs>
-    <circle fill={VG && "url(#vg)"} r="2.5" cy="382" cx="625" stroke="black"/>
+    <circle fill={VG ? "url(#vg)" : null} r="2.5" cy="382" cx="625" stroke="black"/>
     </g>
   )
 }

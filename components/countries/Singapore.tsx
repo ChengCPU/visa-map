@@ -20,7 +20,7 @@ const Singapore:React.FC<Props> = ({ sg, SG, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#sg)" />
     </defs>
-    <circle fill={SG && "url(#sg)"} r="5" cy="492" cx="1575" stroke="black"/>
+    <circle fill={SG ? "url(#sg)" : null} r="5" cy="492" cx="1575" stroke="black"/>
     </g>
   )
 }

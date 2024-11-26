@@ -20,7 +20,7 @@ const Macao:React.FC<Props> = ({ mo, MO, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mo)" />
     </defs>
-    <circle fill={MO && "url(#mo)"} r="4" cy="360" cx="1614" stroke="black"/>
+    <circle fill={MO ? "url(#mo)" : null} r="4" cy="360" cx="1614" stroke="black"/>
     </g>
   )
 }

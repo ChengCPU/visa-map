@@ -20,7 +20,7 @@ const Tuvalu:React.FC<Props> = ({ tv, TV, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#tv)" />
     </defs>
-    <circle fill={TV && "url(#tv)"} r="5" cy="556" cx="1998" stroke="black"/>
+    <circle fill={TV ? "url(#tv)" : null} r="5" cy="556" cx="1998" stroke="black"/>
     </g>
   )
 }

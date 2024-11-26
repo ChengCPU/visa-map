@@ -20,7 +20,7 @@ const TurksAndCaicos:React.FC<Props> = ({ tc, TC, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#tc)" />
     </defs>
-    <circle fill={TC && "url(#tc)"} r="4" cy="361" cx="587" stroke="black"/>
+    <circle fill={TC ? "url(#tc)" : null} r="4" cy="361" cx="587" stroke="black"/>
     </g>
   )
 }

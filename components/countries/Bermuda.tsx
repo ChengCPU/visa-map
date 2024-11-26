@@ -20,7 +20,7 @@ const Bermuda:React.FC<Props> = ({ bm, BM, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#bm)" />
     </defs>
-    <circle fill={BM && "url(#bm)"} r="5" cy="294" cx="637" stroke="black"/>
+    <circle fill={BM ? "url(#bm)" : null} r="5" cy="294" cx="637" stroke="black"/>
     </g>
   )
 }

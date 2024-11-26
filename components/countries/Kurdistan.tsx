@@ -20,7 +20,7 @@ const Kurdistan:React.FC<Props> = ({ kx, KX, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#kx)" />
     </defs>
-    <circle fill={KX && "url(#kx)"} r="5" cy="262" cx="1220" stroke="black"/>
+    <circle fill={KX ? "url(#kx)" : null} r="5" cy="262" cx="1220" stroke="black"/>
     </g>
   )
 }

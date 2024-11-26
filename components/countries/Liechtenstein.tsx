@@ -20,7 +20,7 @@ const Liechtenstein:React.FC<Props> = ({ li, LI, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#li)" />
     </defs>
-    <circle fill={LI && "url(#li)"} r="4" cy="200" cx="1038" stroke="black"/>
+    <circle fill={LI ? "url(#li)" : null} r="4" cy="200" cx="1038" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Montserrat:React.FC<Props> = ({ ms, MS, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#ms)" />
     </defs>
-    <circle fill={MS && "url(#ms)"} r="2.5" cy="401" cx="637" stroke="black"/>
+    <circle fill={MS ? "url(#ms)" : null} r="2.5" cy="401" cx="637" stroke="black"/>
     </g>
   )
 }

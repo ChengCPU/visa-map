@@ -20,7 +20,7 @@ const Mauritius:React.FC<Props> = ({ mu, MU, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mu)" />
     </defs>
-    <circle fill={MU && "url(#mu)"} r="5" cy="630" cx="1307" stroke="black"/>
+    <circle fill={MU ? "url(#mu)" : null} r="5" cy="630" cx="1307" stroke="black"/>
     </g>
   )
 }

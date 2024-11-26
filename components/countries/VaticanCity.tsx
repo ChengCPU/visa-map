@@ -20,7 +20,7 @@ const VaticanCity:React.FC<Props> = ({ va, VA, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#va)" />
     </defs>
-    <circle fill={VA && "url(#va)"} r="4" cy="235" cx="1053" stroke="black"/>
+    <circle fill={VA ? "url(#va)" : null} r="4" cy="235" cx="1053" stroke="black"/>
     </g>
   )
 }

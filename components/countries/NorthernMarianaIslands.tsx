@@ -20,7 +20,7 @@ const NorthernMarianaIslands:React.FC<Props> = ({ mp, MP, setCountrySelect }) =>
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#mp)" />
     </defs>
-    <circle fill={MP && "url(#mp)"} r="5" cy="396" cx="1802" stroke="black"/>
+    <circle fill={MP ? "url(#mp)" : null} r="5" cy="396" cx="1802" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const UnitedStatesVirginIslands:React.FC<Props> = ({ vi, VI, setCountrySelect })
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#vi)" />
     </defs>
-    <circle fill={VI && "url(#vi)"} r="2.5" cy="387" cx="622" stroke="black"/>
+    <circle fill={VI ? "url(#vi)" : null} r="2.5" cy="387" cx="622" stroke="black"/>
     </g>
   )
 }

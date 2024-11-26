@@ -20,7 +20,7 @@ const Jeju:React.FC<Props> = ({ jj, JJ, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#jj)" />
     </defs>
-    <circle fill={JJ && "url(#jj)"} r="3.5" cy="290" cx="1667" stroke="black"/>
+    <circle fill={JJ ? "url(#jj)" : null} r="3.5" cy="290" cx="1667" stroke="black"/>
     </g>
   )
 }

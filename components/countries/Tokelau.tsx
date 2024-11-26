@@ -20,7 +20,7 @@ const Tokelau:React.FC<Props> = ({ tk, TK, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#tk)" />
     </defs>
-    <circle fill={TK && "url(#tk)"} r="5" cy="560" cx="25" stroke="black"/>
+    <circle fill={TK ? "url(#tk)" : null} r="5" cy="560" cx="25" stroke="black"/>
     </g>
   )
 }

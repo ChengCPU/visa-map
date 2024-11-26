@@ -20,7 +20,7 @@ const Cyprus:React.FC<Props> = ({ cy, CY, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#cy)" />
     </defs>
-    <circle fill={CY && "url(#cy)"} r="4" cy="280" cx="1160" stroke="black"/>
+    <circle fill={CY ? "url(#cy)" : null} r="4" cy="280" cx="1160" stroke="black"/>
     </g>
   )
 }

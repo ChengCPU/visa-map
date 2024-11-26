@@ -20,7 +20,7 @@ const BritishIndianOceanTerritory:React.FC<Props> = ({ io, IO, setCountrySelect 
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#io)" />
     </defs>
-    <circle fill={IO && "url(#io)"} r="5" cy="550" cx="1395" stroke="black"/>
+    <circle fill={IO ? "url(#io)" : null} r="5" cy="550" cx="1395" stroke="black"/>
     </g>
   )
 }

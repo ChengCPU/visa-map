@@ -20,7 +20,7 @@ const Guadeloupe:React.FC<Props> = ({ gp, GP, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#gp)" />
     </defs>
-    <circle fill={GP && "url(#gp)"} r="2.5" cy="403" cx="642" stroke="black"/>
+    <circle fill={GP ? "url(#gp)" : null} r="2.5" cy="403" cx="642" stroke="black"/>
     </g>
   )
 }

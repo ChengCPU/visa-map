@@ -20,7 +20,7 @@ const SaintHelena:React.FC<Props> = ({ sh, SH, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#sh)" />
     </defs>
-    <circle fill={SH && "url(#sh)"} r="5" cy="600" cx="947" stroke="black"/>
+    <circle fill={SH ? "url(#sh)" : null} r="5" cy="600" cx="947" stroke="black"/>
     </g>
   )
 }

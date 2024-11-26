@@ -20,7 +20,7 @@ const SintEustatius:React.FC<Props> = ({ xe, XE, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#xe)" />
     </defs>
-    <circle fill={XE && "url(#xe)"} r="2.5" cy="393.5" cx="629" stroke="black"/>
+    <circle fill={XE ? "url(#xe)" : null} r="2.5" cy="393.5" cx="629" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const Tonga:React.FC<Props> = ({ to, TO, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#to)" />
     </defs>
-    <circle fill={TO && "url(#to)"} r="5" cy="630" cx="13" stroke="black"/>
+    <circle fill={TO ? "url(#to)" : null} r="5" cy="630" cx="13" stroke="black"/>
     </g>
   )
 }

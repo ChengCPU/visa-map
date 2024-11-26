@@ -20,7 +20,7 @@ const Niue:React.FC<Props> = ({ nu, NU, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#nu)" />
     </defs>
-    <circle fill={NU && "url(#nu)"} r="5" cy="615" cx="32" stroke="black"/>
+    <circle fill={NU ? "url(#nu)" : null} r="5" cy="615" cx="32" stroke="black"/>
     </g>
   )
 }

@@ -20,7 +20,7 @@ const TristanDaCunha:React.FC<Props> = ({ tx, TX, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#tx)" />
     </defs>
-    <circle fill={TX && "url(#tx)"} r="4" cy="745" cx="910" stroke="black"/>
+    <circle fill={TX ? "url(#tx)" : null} r="4" cy="745" cx="910" stroke="black"/>
     </g>
   )
 }

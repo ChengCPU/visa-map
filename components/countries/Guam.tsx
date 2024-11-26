@@ -20,7 +20,7 @@ const Guam:React.FC<Props> = ({ gu, GU, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#gu)" />
     </defs>
-    <circle fill={GU && "url(#gu)"} r="5" cy="414" cx="1800" stroke="black"/>
+    <circle fill={GU ? "url(#gu)" : null} r="5" cy="414" cx="1800" stroke="black"/>
     </g>
   )
 }

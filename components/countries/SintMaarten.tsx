@@ -20,7 +20,7 @@ const SintMaarten:React.FC<Props> = ({ sx, SX, setCountrySelect }) => {
       </pattern>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#sx)" />
     </defs>
-    <circle fill={SX && "url(#sx)"} r="2.5" cy="384" cx="630" stroke="black"/>
+    <circle fill={SX ? "url(#sx)" : null} r="2.5" cy="384" cx="630" stroke="black"/>
     </g>
   )
 }
