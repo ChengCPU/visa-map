@@ -16,6 +16,9 @@ const countriesPT:string[] = ['abcázia','afeganistão','albânia','argélia','s
 const countriesFR:string[] = ['abkhazie','afghanistan','albanie','algérie','samoa Américaines','andorre','angola','anguilla','antigua-et-Barbuda','argentine','arménie','aruba','île De L\'ascension','australie','autriche','azerbaïdjan','bahamas','bahreïn','bangladesh','barbade','biélorussie','belgique','belize','bénin','bermudes','bhoutan','bolivie','bonaire','bosnie-Herzégovine','botswana','brésil','territoire britannique de l\'océan Indien','Îles Vierges britanniques','brunei','bulgarie','burkina Faso','burundi','cambodge','cameroun','canada','cap-Vert','îles Caïmans','république centrafricaine','tchad','chili','chine','colombie','comores','îles Cook','costa Rica','croatie','cuba','curacao','chypre','république tchèque','république Démocratique du Congo','danemark','djibouti','dominique','république dominicaine','timor Oriental','équateur','égypte','salvador','guinée équatoriale','érythrée','estonie','eswatini','éthiopie','îles Malouines','îles Féroé','fidji','finlande','france','guyane','polynésie française','gabon','gambie','géorgie','allemagne','ghana','gibraltar','grèce','groenland','grenade','guadeloupe','guam','guatemala','guinée','guinée-Bissau','guyana','haïti','honduras','hong Kong','hongrie','islande','inde','indonésie','iran','irak','irlande','israël','italie','côte d\'Ivoire','jamaïque','jan Mayen','japon','jeju','jordanie','kazakhstan','kenya','kiribati','kosovo','kurdistan','koweït','kirghizistan','laos','lettonie','liban','lesotho','liberia','libye','liechtenstein','lituanie','luxembourg','macao','madagascar','malawi','malaisie','maldives','mali','malte','îles Marshall','martinique','mauritanie','maurice','mayotte','mexique','micronésie','moldavie','monaco','mongolie','monténégro','montserrat','maroc','mozambique','myanmar','namibie','nauru','népal','pays-Bas','nouvelle-Calédonie','nouvelle-Zélande','nicaragua','niger','nigeria','niue','chypre du Nord','îles Mariannes du Nord','corée du Nord','macédoine du Nord','norvège','oman','pakistan','palaos','palestina','panamá','papouasie-Nouvelle-Guinée','paraguay','pérou','philippines','îles Pitcairn','pologne','portugal','qatar','république du Congo','la Réunion','roumanie','russie','rouanda','saba','saint-Barthélemy','sainte-Hélène','saint-Christophe-et-Niévès','sainte-Lucie','saint-Martin','saint-Pierre-et-Miquelon','saint-Vincent-et-les Grenadines','samoa','saint-Marin','são Tomé-et-Príncipe','arabie Saoudite','sénégal','serbie','seychelles','sierra Leone','singapour','saint Eustache','st Martin','slovaquie','slovénie','îles Salomon','somalie','somaliland','afrique du Sud','corée du Sud','ossétie du Sud','soudan du Sud','espagne','sri Lanca','soudan','suriname','svalbard','suède','suisse','syrie','taïwan','tadjikistan','tanzanie','thaïlande','togo','tokelau','tonga','transnistrie','trinité-et-Tobago','tristan Da Cunha','tunisie','turquie','turkménistan','îles Turques-et-Caïques','tuvalu','ouganda','ukraine','émirats arabes unis','royaume-Uni','états-Unis d\'Amérique','îles Vierges des États-Unis','uruguay','ouzbékistan','vanuatu','saint-Siège','venezuela','viêt Nam','wallis-et-Futuna','sahara Occidental','yémen','zambie','zimbábue']
 const countriesHR:string[] = ['abhazija','afganistan','albanija','alžir','američka Samoa','andora','angola','angvila','antigua i Barbuda','argentina','armenija','aruba','otok Ascension','australija','austrija','azerbajdžan','bahami','bahrein','bangladeš','barbados','bjelarus','belgija','belize','benin','bermudi','butan','bolivija','bonaire','bosna i hercegovina','bocvana','brazil','britanski Indijskooceanski Teritorij','britanski Djevičanski Otoci','brunej','bugarska','burkina Faso','burundi','kambodža','kamerun','kanada','zelenortski Otoci','kajmanski Otoci','srednjoafrička Republika','čad','čile','kina','kolumbija','komori','cookovo Otočje','kostarika','hrvatska','kuba','curaçao','cipar','češka Republika','demokratska Republika Kongo','danska','džibuti','dominika','dominikanska Republika','istočni Timor','ekvador','egipat','el Salvador','ekvatorska Gvineja','eritreja','estonija','esvatini','etiopija','falklandski Otoci','farski Otoci','fidži','finska','francuska','francuska Gvajana','francuska Polinezija','gabon','gambija','gruzija','njemačka','gana','gibraltar','grčka','grenland','grenada','gvadalupa','guam','gvatemala','gvineja','gvineja Bisau','gvajana','haiti','honduras','hong Kong','mađarska','island','indija','indonezija','iran','irak','irska','izrael','italija','obala bjelokosti','jamajka','jan Mayen','japan','jeju','jordan','kazahstan','kenija','kiribati','kosovo','kurdistan','kuvajt','kirgistan','laos','latvija','libanon','lesoto','liberija','libija','lihtenštajn','litva','luksemburg','makao','madagaskar','malavi','malezija','maldivi','mali','malta','maršalovi Otoci','martinik','mauritanija','mauricijus','mayotte','meksiko','mikronezija','moldova','monako','mongolija','crna gora','montserrat','maroko','mozambik','mjanmar','namibija','nauru','nepal','nizozemska','nova Kaledonija','novi Zeland','nikaragva','niger','nigerija','niue','sjeverni Cipar','sjevernomarijanski Otoci','sjeverna Koreja','sjeverna Makedonija','norveška','oman','pakistan','palau','palestina','panama','papua Nova Gvineja','paragvaj','peru','filipini','pitcairnovo Otočje','poljska','portugal','katar','republika Kongo','réunion','rumunjska','rusija','ruanda','saba','sveti Bartolomej','sveta Helena','sveti Kitts i Nevis','sveta Lucija','sveti Martin','sveti Petar i Mikelon','sveti Vincent i Grenadini','samoa','san Marino','sveti Toma i Princip','saudijska Arabija','senegal','srbija','sejšeli','sijera Leone','singapur','sveti Eustahije','sveti Martin','slovačka','slovenija','solomonski Otoci','somalija','somaliland','južna Afrika','južna Koreja','južna Osetija','južni Sudan','španjolska','šri lanka','sudan','surinam','svalbard','švedska','švicarska','sirija','tajvan','tadžikistan','tanzanija','tajland','togo','tokelau','tonga','pridnjestrovlje','trinidad i Tobago','tristan Da Cunha','tunis','turska','turkmenistan','otoci Turks i Caicos','tuvalu','uganda','ukrajina','ujedinjeni Arapski Emirati','ujedinjena Kraljevina','sjedinjene Američke Države','američki Djevičanski Otoci','urugvaj','uzbekistan','vanuatu','vatikan','venezuela','vijetnam','wallis i Futuna','zapadna Sahara','jemen','zambija','zimbabve']
 const australiaEvisitor:string[] = ['austria','belgium','bulgaria','croatia','cyprus','czechRepublic','denmark','estonia','finland','france','germany','greece','hungary','ireland','italy','latvia','lithuania','luxembourg','malta','netherlands','poland','portugal','romania','slovakia','spain','sweden','andorra','iceland','liechtenstein','monaco','norway','sanMarino','switzerland','unitedKingdom','vaticanCity']
+const guamCNMIETA:string[] = ['china','hongKong','malaysia','nauru','papuaNewGuinea']
+const guamCNMIETAESTA:string[] = ['australia','brunei','japan','newZealand','singapore','southKorea','taiwan','unitedKingdom']
+const guamCNMIESTA:string[] = ['andorra','australia','austria','belgium','brunei','chile','croatia','czechRepublic','denmark','estonia','finland','france','germany','greece','hungary','iceland','ireland','israel','italy','japan','latvia','liechtenstein','lithuania','luxembourg','malta','monaco','netherlands','newZealand','norway','poland','portugal','qatar','sanMarino','singapore','slovakia','slovenia','southKorea','spain','sweden','switzerland','taiwan','unitedKingdom']
 interface Props {
   selectArrayRef:MutableRefObject<(null|string)[]>;
   mousePos:{x:number,y:number};
@@ -71,7 +74,42 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
     return 'Electronic Travel Authorization'
   }, [])
 
-  const ETAcodes:{[key:string]:string | Function} = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card',KH:'e-Arrival Card',BM:'Electronic Travel Authorization',PH:'Electronic Travel Authorization',JJ:'K-ETA',LK:'Electronic Travel Authorization'}
+  const guamCNMIETAcalc = useCallback(() => {
+    if(selected != undefined) {
+      if(guamCNMIETAESTA.includes((countrySelect))) {
+        return 'ETA (45 days) / ESTA'
+      }
+
+      if(guamCNMIETA.includes((countrySelect))) {
+        return 'ETA'
+      }
+
+      return 'ESTA'
+    }
+
+    let j:number = 0
+    while(selectArrayRef.current[j] != null) {
+      if(guamCNMIETAESTA.includes((selectArrayRef.current[j]))) {
+        return 'ETA (45 days) / ESTA'
+      }
+
+      if(guamCNMIETA.includes((selectArrayRef.current[j]))) {
+        let k:number = 0
+        while(selectArrayRef.current[k] != null) {
+          if(guamCNMIESTA.includes((selectArrayRef.current[k]))) {
+            return 'ETA (45 days) / ESTA'
+          }
+          k++;
+        }
+        return 'ETA'
+      }
+      j++
+    }
+
+    return 'ESTA'
+  }, [countrySelect])
+
+  const ETAcodes:{[key:string]:string | Function} = {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:guamCNMIETAcalc(),MP:guamCNMIETAcalc(),AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card',KH:'e-Arrival Card',BM:'Electronic Travel Authorization',PH:'Electronic Travel Authorization',JJ:'K-ETA',LK:'Electronic Travel Authorization'}
 
   const rgbToText:Function = useCallback((rgb:string, key:string) => {
     switch(rgb) {

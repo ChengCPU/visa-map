@@ -8,6 +8,8 @@ const policyFR:string[] = ['Pays natal','Permis requis','Liberté de mouvement O
 const policyHR:string[] = ['Domovina','Potrebna je dozvola','OECS sloboda kretanja','MERCOSUR sloboda kretanja','EU sloboda kretanja','GCC sloboda kretanja','Sloboda kretanja','Bez vize','Viza po dolasku/E-viza','Viza po dolasku','E-viza','Posebna dozvola/Policijska provjera','Pojednostavljena viza','Potrebna je potvrda','Potrebna je viza','dani']
 const policyColors:string[] = ['rgb(255,20,147)','rgb(255,0,0)','rgb(255,145,0)','rgb(0,135,93)','rgb(0,51,153)','rgb(153,123,61)','rgb(255,179,191)','rgb(50,205,50)','rgb(81,205,123)','rgb(161,224,123)','rgb(255,255,92)','rgb(135,206,250)','rgb(118,65,171)','rgb(200,200,200)','rgb(0,0,0)','rgb(150,150,150)']
 const australiaEvisitor:string[] = ['austria','belgium','bulgaria','croatia','cyprus','czechRepublic','denmark','estonia','finland','france','germany','greece','hungary','ireland','italy','latvia','lithuania','luxembourg','malta','netherlands','poland','portugal','romania','slovakia','spain','sweden','andorra','iceland','liechtenstein','monaco','norway','sanMarino','switzerland','unitedKingdom','vaticanCity']
+const guamCNMIETA:string[] = ['china','hongKong','malaysia','nauru','papuaNewGuinea']
+const guamCNMIETAESTA:string[] = ['australia','brunei','china','hongKong','japan','malaysia','nauru','newZealand','papuaNewGuinea','singapore','southKorea','taiwan','unitedKingdom']
 interface Props {
   assignedColorsRef:MutableRefObject<{[key:string]:number}[]>;
   selectArrayRef:MutableRefObject<(null|string)[]>;
@@ -44,8 +46,26 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     return 'Electronic Travel Authorization'
   }, [])
 
+  const guamCNMIETAcalc:Function = useCallback(() => {
+    let j:number = 0
+    while(selectArrayRef.current[j] != null) {
+      j++
+    }
+    j--
+
+    if(guamCNMIETA.includes((selectArrayRef.current[j]))) {
+      return 'ETA'
+    }
+
+    if(guamCNMIETAESTA.includes((selectArrayRef.current[j]))) {
+      return 'ETA (45 days) / ESTA'
+    }
+
+    return 'ESTA'
+  }, [])
+
   const ETAcodes:{[key:string]:string | Function} = useMemo(() => {
-    return {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:'ESTA',MP:'ESTA',AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card',KH:'e-Arrival Card',BM:'Electronic Travel Authorization',PH:'Electronic Travel Authorization',JJ:'K-ETA',LK:'Electronic Travel Authorization'}
+    return {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:guamCNMIETAcalc(),MP:guamCNMIETAcalc(),AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card',KH:'e-Arrival Card',BM:'Electronic Travel Authorization',PH:'Electronic Travel Authorization',JJ:'K-ETA',LK:'Electronic Travel Authorization'}
   }, [])
 
   const visaPolicyCalculation:Function = useCallback(() => {
