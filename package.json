@@ -15,19 +15,22 @@
     "@vercel/speed-insights": "^1.0.0",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
-    "next": "^14.0.3",
+    "next": "15.0.3",
     "panzoom": "^9.4.3",
-    "react": "18.2.0",
+    "react": "19.0.0-rc-66855b96-20241106",
     "react-circular-progressbar": "^2.1.0",
-    "react-dom": "18.2.0"
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.7",
     "@types/node": "^18.7.23",
-    "@types/react": "^18.0.21",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
     "eslint": "8.22.0",
-    "eslint-config-next": "12.2.5",
+    "eslint-config-next": "15.0.3",
     "gh-pages": "^4.0.0",
     "typescript": "^4.8.4"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1"
   }
 }
