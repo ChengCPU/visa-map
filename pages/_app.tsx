@@ -371,10 +371,7 @@ function MyApp({ Component, pageProps }) {
         panzoomReset={panzoomReset}
         setPanzoomReset={setPanzoomReset}
       />
-      <Terminal
-        selectArrayRef={selectArrayRef}
-        priorityRef={priorityRef}
-      />
+      <Terminal />
       <Analytics />
       <SpeedInsights />
     </DimensionsContext.Provider>
