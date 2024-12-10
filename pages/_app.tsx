@@ -285,7 +285,7 @@ function MyApp({ Component, pageProps }) {
       height: document.documentElement.clientHeight
     })
 
-    fetchSortData(rankRef, 1, passportDataRef)
+    fetchSortData(rankRef, 1)
 
     const handleMouseMove = (event:any) => {setMousePos({x:event.clientX, y:event.clientY})}
     window.addEventListener('mousemove', handleMouseMove)
