@@ -43,7 +43,7 @@ const VisaPolicy:React.FC<Props> = ({ selectArrayRef, setHover, priorityRef, set
   const [filterValue, setFilterValue] = useState<string>('')
   const [display, setDisplay] = useState<boolean>(false)
   const [selected, setSelected] = useState<string>('')
-  const visaPolicyDurationRef = useRef<{[key:string]:number}>()
+  const visaPolicyDurationRef = useRef<{[key:string]:number}>({})
   const filteredOptions = options.filter(option => option.toLowerCase().includes(filterValue.toLowerCase()))
 
   const languageCaculation = useMemo(() => {
