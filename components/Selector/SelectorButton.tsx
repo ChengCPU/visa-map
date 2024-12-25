@@ -19,7 +19,7 @@ const SelectorButton:React.FC<Props> = ({ setOpenDrawer, selectRef, selectArrayR
   const passports:{[key:string]:StaticImageData} = useContext(PassportContext)
   
   return (
-    <Button title={selectArrayRef.current[num] != null && passportsArrayWithSpaces[passportsArray.indexOf(selectArrayRef.current[num])].charAt(0).toUpperCase() + passportsArrayWithSpaces[passportsArray.indexOf(selectArrayRef.current[num])].slice(1)} onClick={() => {
+    <Button title={selectArrayRef.current[num] != null ? passportsArrayWithSpaces[passportsArray.indexOf(selectArrayRef.current[num])].charAt(0).toUpperCase() + passportsArrayWithSpaces[passportsArray.indexOf(selectArrayRef.current[num])].slice(1) : ''} onClick={() => {
       setOpenDrawer(true)
       selectRef.current = { selection: num, passport: selectRef.current.passport }
     }}>
