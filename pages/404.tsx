@@ -1,8 +1,20 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Image from 'next/image'
 import FourZeroFour from '../public/404.gif'
 
 export default function Custom404() {
+	const router = useRouter()
+
+  useEffect(() => {
+    const redirectTimer = setTimeout(() => {
+      router.push('/')
+    }, 1000)
+
+    return () => clearTimeout(redirectTimer)
+  }, [router])
+
 	return (
 		<>
 		<Head>
