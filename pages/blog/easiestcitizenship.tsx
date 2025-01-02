@@ -138,7 +138,7 @@ const EasiestCitizenship:React.FC<Props> = ({ passportDataRef }) => {
         <div style={{backgroundImage: `url(${worldMap.src})`,backgroundSize: 'cover',backgroundPosition: 'center',height: '200px',width: '100%'}}>
           <h1 id={'main'}>{'Which country is the easiest to naturalize in?'}</h1>
           <p id={'author'}>{'Written by CCPU'}</p>
-          <p id={'date'}>{'July 5, 2024'}</p>
+          <p id={'date'}>{'January 4, 2024'}</p>
         </div>
           <p>{'The ease of naturalization can vary based on several factors, such as how easily one can obtain residency, whether permanent residency is required, whether multiple nationalities are allowed, language proficiency requirements, military service obligations, among other requirements.'}</p>
           <p>{'The first step toward naturalization is obtaining a residence permit, and countries have different policies for this. Some provide residency through investment programs, while others require employment, family reunification, or refugee status. The complexity and cost of these processes can greatly affect how easily someone can become a resident.'}</p>
