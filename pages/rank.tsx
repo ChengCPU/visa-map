@@ -37,12 +37,13 @@ interface Props {
   setSortBy:Function;
   mobile:boolean;
   setSelectorLoad:Function;
+  passportDataRef:MutableRefObject<Array<[string|number]>>;
 }
 
-const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) => {
+const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, passportDataRef }) => {
 
   useEffect(() => {
-    unsortedData = fetchSortData(rankRef, 6)
+    unsortedData = fetchSortData(rankRef, 6, passportDataRef)
     setSelectorLoad(false)
   }, [])
   
@@ -67,7 +68,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad }) =
 
   const handleChange = (event) => {
     setSortBy(event.target.value)
-    fetchSortData(rankRef, languageCalculation[1].indexOf(event.target.value) + 1)
+    fetchSortData(rankRef, languageCalculation[1].indexOf(event.target.value) + 1, passportDataRef)
   }
 
   const renderOptions: Function = useCallback((languageArray: string[]) => {
