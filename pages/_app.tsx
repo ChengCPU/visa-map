@@ -1,6 +1,7 @@
 import { PassportContext } from '../logic/context/PassportContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
+import { PassportDataContext } from'../logic/context/PassportDataContext'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useEffect, useRef } from 'react'
@@ -264,6 +265,7 @@ function MyApp({ Component, pageProps }) {
 
   const languageProvider:{[key:string]:string} = {language:language}
   const dimensionsProvider:{width:number;height:number} = {width:dimensions.width,height:dimensions.height}
+  const passportDataProvider:{passportDataRef:any} = {passportDataRef:passportDataRef}
 
   const ESTAbancalc = () => {
     let i:number = 0
@@ -285,7 +287,7 @@ function MyApp({ Component, pageProps }) {
       height: document.documentElement.clientHeight
     })
 
-    fetchSortData(rankRef, 1)
+    fetchSortData(rankRef, 1, passportDataRef)
 
     const handleMouseMove = (event:any) => {setMousePos({x:event.clientX, y:event.clientY})}
     window.addEventListener('mousemove', handleMouseMove)
@@ -321,6 +323,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <PassportContext.Provider value={passportsProvider}>
+    <PassportDataContext.Provider value={passportDataProvider}>
     <LanguageContext.Provider value={languageProvider}>
     <DimensionsContext.Provider value={dimensionsProvider}>
       <Component {...pageProps}
@@ -376,6 +379,7 @@ function MyApp({ Component, pageProps }) {
       <SpeedInsights />
     </DimensionsContext.Provider>
     </LanguageContext.Provider>
+    </PassportDataContext.Provider>
     </PassportContext.Provider>
   )
 }

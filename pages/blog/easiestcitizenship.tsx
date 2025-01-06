@@ -1,4 +1,5 @@
-import { useState, useCallback, MutableRefObject } from 'react'
+import { useState, useCallback, useContext } from 'react'
+import { PassportDataContext } from '../../logic/context/PassportDataContext'
 import argentina from '../../components/Blog/EasiestCitizenship/images/argentina.png'
 import peru from '../../components/Blog/EasiestCitizenship/images/peru.png'
 import dominicanRepublic from '../../components/Blog/EasiestCitizenship/images/dominicanRepublic.png'
@@ -16,9 +17,6 @@ import MessageBox from '../../components/Blog/MessageBox'
 import VisaTable from '../../components/Blog/VisaTable'
 import ArticleTable from '../../components/Blog/ArticleTable'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TableSortLabel, Paper } from '@mui/material'
-interface Props {
-  passportDataRef:MutableRefObject<Array<[string|number]>>;
-}
 
 const textRed:{[key:string]:string} = {
   position:'relative',
@@ -81,9 +79,11 @@ const stableSort = (array, comparator) => {
   return stabilizedThis.map((el) => el[0])
 }
 
-const EasiestCitizenship:React.FC<Props> = ({ passportDataRef }) => {
+const EasiestCitizenship:React.FC = () => {
   const [order, setOrder] = useState<string>('asc')
   const [orderBy, setOrderBy] = useState<string>('residency')
+
+  const { passportDataRef } = useContext(PassportDataContext)
 
   const handleRequestSort = useCallback((event, property) => {
     const isAsc = orderBy === property && order === 'asc'
