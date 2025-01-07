@@ -1,5 +1,7 @@
-import { useState, useCallback, useContext } from 'react'
+import { useState, useEffect, useCallback, useContext } from 'react'
+import Head from 'next/head'
 import { PassportDataContext } from '../../logic/context/PassportDataContext'
+import { SelectorLoadContext } from '../../logic/context/SelectorLoadContext'
 import argentina from '../../components/Blog/EasiestCitizenship/images/argentina.png'
 import peru from '../../components/Blog/EasiestCitizenship/images/peru.png'
 import dominicanRepublic from '../../components/Blog/EasiestCitizenship/images/dominicanRepublic.png'
@@ -80,10 +82,15 @@ const stableSort = (array, comparator) => {
 }
 
 const EasiestCitizenship:React.FC = () => {
+  const { passportDataRef } = useContext(PassportDataContext)
+  const { setSelectorLoad } = useContext(SelectorLoadContext)
+
+  useEffect(() => {
+    setSelectorLoad(false)
+  }, [])
+  
   const [order, setOrder] = useState<string>('asc')
   const [orderBy, setOrderBy] = useState<string>('residency')
-
-  const { passportDataRef } = useContext(PassportDataContext)
 
   const handleRequestSort = useCallback((event, property) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -92,6 +99,12 @@ const EasiestCitizenship:React.FC = () => {
   }, [order, orderBy])
 
   return (
+    <>
+    <Head>
+      <title>{'Visa-map'}</title>
+      <meta name='viewport' content='width=device-width, user-scalable=no'></meta>
+      <link rel='shortcut icon' href='/favicon.png' />
+    </Head>
     <div className={'background'}>
       <style jsx>{`
         .background {
@@ -393,6 +406,7 @@ const EasiestCitizenship:React.FC = () => {
           <p><strong>{'Further reading: '}</strong><a href={'https://www.migracion.gob.bo/index.php/node/213'}>{'Naturalization through permanence (Spanish)'}</a></p>
       </div>
     </div>
+    </>
   )
 }
 

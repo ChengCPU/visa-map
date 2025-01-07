@@ -2,6 +2,7 @@ import { PassportContext } from '../logic/context/PassportContext'
 import { LanguageContext } from '../logic/context/LanguageContext'
 import { DimensionsContext } from '../logic/context/DimensionsContext'
 import { PassportDataContext } from'../logic/context/PassportDataContext'
+import { SelectorLoadContext } from '../logic/context/SelectorLoadContext'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useEffect, useRef } from 'react'
@@ -266,6 +267,7 @@ function MyApp({ Component, pageProps }) {
   const languageProvider:{[key:string]:string} = {language:language}
   const dimensionsProvider:{width:number;height:number} = {width:dimensions.width,height:dimensions.height}
   const passportDataProvider:{passportDataRef:any} = {passportDataRef:passportDataRef}
+  const selectorProvider:{setSelectorLoad:any} = {setSelectorLoad:setSelectorLoad}
 
   const ESTAbancalc = () => {
     let i:number = 0
@@ -324,6 +326,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <PassportContext.Provider value={passportsProvider}>
     <PassportDataContext.Provider value={passportDataProvider}>
+    <SelectorLoadContext.Provider value={selectorProvider}>
     <LanguageContext.Provider value={languageProvider}>
     <DimensionsContext.Provider value={dimensionsProvider}>
       <Component {...pageProps}
@@ -379,6 +382,7 @@ function MyApp({ Component, pageProps }) {
       <SpeedInsights />
     </DimensionsContext.Provider>
     </LanguageContext.Provider>
+    </SelectorLoadContext.Provider>
     </PassportDataContext.Provider>
     </PassportContext.Provider>
   )
