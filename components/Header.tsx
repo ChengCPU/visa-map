@@ -82,6 +82,9 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
         .visapolicy {
           ${(pathname.includes('/visapolicy')) && 'text-decoration: underline;'}
         }
+        .blog {
+          ${(pathname.includes('/blog')) && 'text-decoration: underline;'}
+        }
         .faq {
           ${(pathname.includes('/faq')) && 'text-decoration: underline;'}
         }
@@ -105,6 +108,7 @@ const Header:React.FC<Props> = ({ language, setLanguage }) => {
           <Link href='/table'><p className={'table'}>{'/' + languageCaculation[1] + '/'}</p></Link>
           <Link href='/rank'><p className={'rank'}>{'/' + languageCaculation[2] + '/'}</p></Link>
           <Link href='/visapolicy'><p className={'visapolicy'}>{'/' + languageCaculation[3] + '/'}</p></Link>
+          <Link href='/blog'><p className={'blog'}>{'/' + languageCaculation[4] + '/'}</p></Link>
           {dimensions.width > 800 && <Link href='/faq'><p className={'faq'}>{'/' + languageCaculation[5] + '/'}</p></Link>}
           <LanguageSelect
             language={language}

@@ -1,13 +1,11 @@
 import { useEffect, MutableRefObject } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import worldMap from '../components/Blog/EasiestCitizenship/images/map.png'
 interface Props {
   setSelectorLoad:Function;
-  passportDataRef:MutableRefObject<Array<[string|number]>>;
 }
 
-const Blog:React.FC<Props> = ({ setSelectorLoad, passportDataRef }) => {
+const Blog:React.FC<Props> = ({ setSelectorLoad }) => {
 
   useEffect(() => {
     setSelectorLoad(false)
@@ -16,7 +14,7 @@ const Blog:React.FC<Props> = ({ setSelectorLoad, passportDataRef }) => {
   return (
     <>
     <Head>
-			<title>Visa-map</title>
+			<title>{'Visa-map'}</title>
 			<meta name='viewport' content='width=device-width, user-scalable=no'></meta>
 			<link rel='shortcut icon' href='/favicon.png' />
 		</Head>
@@ -25,9 +23,12 @@ const Blog:React.FC<Props> = ({ setSelectorLoad, passportDataRef }) => {
         .container {
           display: flex;
           flex-direction: column;
-          margin: 0 auto;
-          width: 600px;
           margin-top: 60px;
+          align-items: center;
+          color: #FFFFFF
+        }
+        h2 {
+          margin: 0px;
         }
         .article {
           width: 200px;
@@ -37,29 +38,29 @@ const Blog:React.FC<Props> = ({ setSelectorLoad, passportDataRef }) => {
           width: 200px;
           height: 100px;
         }
-        h1 {
-          color:#FFFFFF;
-          margin: 5px;
+        .date {
+          font-weight: bold;
+          font-size: .75rem;
         }
         .article-list {
+          white-space: normal;
           list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        .article-list li {
-          margin: 10px 0;
-        }
-        .article-list li a {
-          text-decoration: none;
-          color: #0070f3;
-          font-size: 1.2rem;
-        }
-        .article-list li a:hover {
-          text-decoration: underline;
         }
       `}</style>
       <ul className='article-list'>
-        <li style={{backgroundImage: `url(${worldMap.src})`,backgroundSize: 'cover',backgroundPosition: 'center',height: '100px',width: '100%'}} className={'article'}><Link href='/blog/easiestcitizenship'><h1>{'Which country is the easiest to naturalize in?'}</h1></Link></li>
+        <li>
+          <Link href={'/blog/easiestcitizenship'}><h2>{'Which country is the easiest to naturalize in?'}</h2></Link>
+          <div>
+            <time className={'date'}>{'Jan 5, 2025 '}</time>
+              <small><time>{'(updated Jan 5, 2025 - 18:45 UTC) '}</time></small>
+            <span>{' • '}</span>
+            <span>{'7 minutes to read'}</span>
+            <span>{' • '}</span>
+            <span></span>
+            <span>{'by '}<Link href={'https://github.com/ChengCPU'}>{'CCPU'}</Link></span>
+          </div>
+            <span><strong>{'a good starting resource for anyone wanting a second passport'}</strong></span>
+        </li>
       </ul>
     </div>
     </>
