@@ -18,7 +18,7 @@ const IndividualPassport:React.FC<Props> = ({ data, image, text }) => {
   const widthCalculation = useCallback((visaPolicy:string, data:any) => {
     switch(visaPolicy) {
       case 'visaRequired':
-        return 333
+        return 315
       case 'eVisa':
         if(data?.[2] < 13) {return (data?.[1] * 1.3) + (data?.[2] * 1.3) + (data?.[3] * 1.3) + (data?.[4] * 1.3) + 6}
         return (data?.[1] * 1.3) + (data?.[2] * 1.3) + (data?.[3] * 1.3) + (data?.[4] * 1.3)
@@ -67,7 +67,7 @@ const IndividualPassport:React.FC<Props> = ({ data, image, text }) => {
           justify-content: flex-start;
         }
         .imageDiv {
-          margin-right: 20px;
+          margin-right: 10px;
         }
         .textSection {
           color: rgb(255, 255, 255);
@@ -75,7 +75,7 @@ const IndividualPassport:React.FC<Props> = ({ data, image, text }) => {
           max-width: 300px;
         }
         .progressBarsContainer {
-          width: 350px;
+          width: 290px;
         }
         .progressBarDesktop {
           margin: 0px;
@@ -122,7 +122,7 @@ const IndividualPassport:React.FC<Props> = ({ data, image, text }) => {
                   </div>
                   <div className={'horizontal'}>
                     <Rectangle color={'rgb(161,224,123)'}/>
-                    <p className={'text'}>{'Visa on arrival/E-visa: ' + data?.[2]}</p>
+                    <p className={'text'}>{'VoA/E-visa: ' + data?.[2]}</p>
                   </div>
                   <div className={'horizontal'}>
                     <Rectangle color={'rgb(255,255,92)'}/>
