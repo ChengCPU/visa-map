@@ -25,7 +25,8 @@ const Blog:React.FC<Props> = ({ setSelectorLoad }) => {
           flex-direction: column;
           margin-top: 60px;
           align-items: center;
-          color: #FFFFFF
+          color: #FFFFFF;
+          margin-right: 38px;
         }
         h2 {
           margin: 0px;
