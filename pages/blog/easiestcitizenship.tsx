@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useContext } from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
 import { PassportDataContext } from '../../logic/context/PassportDataContext'
 import { SelectorLoadContext } from '../../logic/context/SelectorLoadContext'
 import argentina from '../../components/Blog/EasiestCitizenship/images/argentina.png'
@@ -100,6 +101,7 @@ const EasiestCitizenship:React.FC = () => {
 
   return (
     <>
+    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2147951612524944" crossOrigin="anonymous"></Script>
     <Head>
       <title>{'Visa-map'}</title>
       <meta name='viewport' content='width=device-width, user-scalable=no'></meta>
