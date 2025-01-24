@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback, useContext } from 'react'
-import Head from 'next/head'
-import Script from 'next/script'
 import { PassportDataContext } from '../../logic/context/PassportDataContext'
 import { SelectorLoadContext } from '../../logic/context/SelectorLoadContext'
+import Head from 'next/head'
+import Script from 'next/script'
 import argentina from '../../components/Blog/EasiestCitizenship/images/argentina.png'
 import peru from '../../components/Blog/EasiestCitizenship/images/peru.png'
 import dominicanRepublic from '../../components/Blog/EasiestCitizenship/images/dominicanRepublic.png'
@@ -19,6 +19,7 @@ import worldMap from '../../components/Blog/EasiestCitizenship/images/map.png'
 import MessageBox from '../../components/Blog/MessageBox'
 import VisaTable from '../../components/Blog/VisaTable'
 import ArticleTable from '../../components/Blog/ArticleTable'
+import AdBlog from '../../components/Ads/AdBlog'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TableSortLabel, Paper } from '@mui/material'
 
 const textRed:{[key:string]:string} = {
@@ -160,6 +161,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Residency can be divided into two categories: temporary residency and permanent residency.'}</p>
           <MessageBox text={'Temporary residency is granted for a limited time and is usually dependent on meeting specific conditions, such as employment, investment, or study.'} />
           <MessageBox text={'Permanent residency allows a person to stay in a country indefinitely, typically without any conditions to maintain the status. It is usually harder to obtain than temporary residency and is granted to temporary residents who meet the specific requirements set by each country, usually after a designated period of time.'} />
+          <AdBlog />
           <p>{'When applying for citizenship, countries state the amount of days per year that you must spend physically present in the country to be eligible for naturalization. This is called a '}<strong>{'physical presence requirement.'}</strong></p>
           <p>{'Other countries don\'t have a physical presence requirement, but instead require proof of ties to the country. These can be rental contracts or proof of property ownership, setting up a business, recurring bills, etc.'}</p>
           <p><strong>{'Below is a summary of naturalization requirements for each country.'}</strong></p>
@@ -243,6 +245,7 @@ const EasiestCitizenship:React.FC = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <AdBlog />
         <h1>{'Argentina 🇦🇷'}</h1>
           <p><strong>{'If you’re looking for one of the fastest routes to citizenship, Argentina is the top choice.'}</strong></p>
           <p>{'Argentina offers one of the shortest residency requirements for naturalization worldwide, with only '}<strong>{'2 years of temporary or permanent residency'}</strong>{' needed to qualify. This is significantly shorter than most other countries\' paths to citizenship.'}</p>
@@ -262,6 +265,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~1 year to be processed, making for a residence permit to passport time of '}<strong>{'3 years.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.argentina.gob.ar/servicio/obtener-la-ciudadania-argentina'}>{'Obtain Argentine Citizenship (Spanish)'}</a>{' '}<a href={'https://www.argentina.gob.ar/servicio/obtener-una-residencia-temporaria-como-rentista'}>{'Temporary residency for people of independent means (Spanish)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Peru 🇵🇪'}</h1>
           <p><strong>{'Another similar option, also in South America, is Peru.'}</strong></p>
           <p>{'Peru, similarly to Argentina, offers a '}<strong>{'2 year'}</strong>{' residency requirement for naturalization. Obtaining residency is somewhat easier than in Argentina, and the processing times for naturalization are shorter.'}</p>
@@ -277,6 +281,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~30 working days to be processed, making for a residence permit to passport time of '}<strong>{'2 years and 1 month.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.gob.pe/12580'}>{'Apply for Peruvian nationality by naturalization (Spanish)'}</a>{' '}<a href={'https://www.gob.pe/12875-solicitud-de-visa-para-residentes-segun-su-calidad-migratoria-visa-para-residente-para-rentista?token=vqcapGkovvsZo372DKNh2owR2qGHJccC3YvveX25Et4'}>{'Request residency for people of independent means (Spanish)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Dominican Republic 🇩🇴'}</h1>
           <p><strong>{'The Dominican Republic, a popular destination for tourists and retirees, offers naturalization after only 2 years of residency.'}</strong></p>
           <p>{'The Dominican Republic has a very lenient immigration and citizenship policy. While the passport is not particularly strong, it is still an excellent choice for anyone seeking out a second passport.'}</p>
@@ -290,6 +295,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~12 months to be processed, making for an average residence permit to passport time of '}<strong>{'3  years.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://mip.gob.do/transparencia/images/docs/Servicio_al_Publico/Naturalizaciones/Naturalizaci%C3%B3n%20Ordinaria/REQUISITOS%20NATURALIZACION%20ORDINARIO.pdf'}>{'Requirements for ordinary naturalization (Spanish)'}</a>{' '}<a href={'https://migracion.gob.do/servicio/residencia-por-inversion-en-calidad-de-rentista/'}>{'Request residency by means of passive income (Spanish)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Ireland 🇮🇪'}</h1>
           <p><strong>{'Ireland has the most leniant policies on citizenship out of any country in the EU.'}</strong></p>
           <p>{'Not only do they offer one of the shortest time periods for citizenship, that being, '}<strong>{'5 years'}</strong>{', they also don\'t require permanent residency to apply for citizenship. Any time spent in Ireland as a temporary resident (except on a student visa) counts towards the 5 years of residency required.'}</p>
@@ -307,6 +313,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~19 months to be processed, making for an average residence permit to passport time of '}<strong>{'6 & 1/2 years.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.citizensinformation.ie/en/moving-country/irish-citizenship/becoming-an-irish-citizen-through-naturalisation/'}>{'Becoming an Irish citizen through naturalisation (English)'}</a>{' '}<a href={'https://www.gov.ie/en/service/73858-how-to-get-an-irish-residence-permit/#how-irish-residence-permits-irp-are-issued'}>{'How to get an Irish Residence Permit (English)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Ecuador 🇪🇨'}</h1>
           <p><strong>{'Ecuador\'s citizenship program is similar to neighbouring countries, offering citizenship for anyone resident in Ecuador for 3 years with temporary or permanent residence.'}</strong></p>
           <p>{'Unlike the other neighbouring countries, at the time of the application, you must be in posession of permanent residency. You can apply for permanent residency after 2 years of temporary residency in Ecuador.'}</p>
@@ -321,6 +328,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~12 months to be processed, making for an average residence permit to passport time of '}<strong>{'4 years.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.gob.ec/mremh/tramites/obtencion-nacionalidad-ecuatoriana-carta-naturalizacion'}>{'Obtain Ecuadorian citizenship (Spanish)'}</a>{' '}<a href={'https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-rentista-trabajo-remoto-visa-nomada'}>{'Residency concession for remote workers (Spanish)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Canada 🇨🇦'}</h1>
           <p><strong>{'Canada\'s naturalization process is more difficult than others on this list due to the requirement of 3 years with permanent residency to be eligible for citizenship.'}</strong></p>
           <p>{'Each day in Canada as a temporary resident counts as half a day subtracted from the 3 year period, with a maximum of 365 days being subtracted.'}</p>
@@ -336,6 +344,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~6 months to be processed, making the fastest residence permit to passport time a period of '}<strong>{'3 & 1/2 years'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html'}>{'Apply for citizenship: Who can apply (English)'}</a>{' '}<a href={'https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html'}>{'Immigrate to Canada (English)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Paraguay 🇵🇾'}</h1>
           <p><strong>{'Paraguay stands out by having one of the most leniant residency programs in the world.'}</strong></p>
           <p>{'The main requirement for naturalization is to have spent '}<strong>{'3 years'}</strong>{' in Paraguay while posessing a permanent residence permit.'}</p>
@@ -351,6 +360,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~12 months to be processed, making the average residence permit to passport time a period of '}<strong>{'4 years'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.pj.gov.py/contenido/463-carta-de-naturalizacion/463'}>{'Naturalization (Spanish)'}</a>{' '}<a href={'https://migraciones.gov.py/residencia-temporal/'}>{'Temporary residency (Spanish)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Brazil 🇧🇷'}</h1>
           <p><strong>{'Brazil\'s passport is the second strongest in South America, obtainable after 4 years of permanent residency.'}</strong></p>
           <p>{'Additionally, the residency requirement is lowered to '}<strong>{'1 year'}</strong>{' for citizens of Portuguese-speaking countries.'}</p>
@@ -366,6 +376,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~6 months to be processed, making the average residence permit to passport time a period of '}<strong>{'4 years and 6 months.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.gov.br/mj/pt-br/assuntos/seus-direitos/migracoes/naturalizacao/o-que-e-naturalizacao/naturalizacao-ordinaria/ter-residencia-em-territorio-nacional-pelo-prazo-estabelecido-pela-lei-brasileira/view'}>{'Ordinary naturalization (Portuguese)'}</a>{' '}<a href={'https://portaldeimigracao.mj.gov.br/pt/nav-guiada/rn-36'}>{'Property investment: Normative resolution #36 (Portuguese)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'United States 🇺🇸'}</h1>
           <p><strong>{'The United States receives more immigrants annually than any other country, and has a long history of immigration.'}</strong></p>
           <p>{'Due to this, naturalization requirements are easy to meet. To be eligible, '}<strong>{'5 years'}</strong>{' of residence with a green card (permanent residency) are required.'}</p>
@@ -380,6 +391,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~7 months to be processed, making the fastest residence permit to passport time a period of '}<strong>{'5 years and 7 months.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.uscis.gov/citizenship/learn-about-citizenship/citizenship-and-naturalization/i-am-a-lawful-permanent-resident-of-5-years'}>{'Citizenship and Naturalization (English)'}</a>{' '}<a href={'https://www.uscis.gov/green-card/green-card-eligibility-categories'}>{'Green Card Eligibility Categories (English)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Armenia 🇦🇲'}</h1>
           <p><strong>{'Armenia\'s citizenship and residency policy is notably more lenient than those of its neighboring countries.'}</strong></p>
           <p>{'To obtain citizenship in Armenia, only '}<strong>{'3 years'}</strong>{' of temporary or permanent residency are required.'}</p>
@@ -393,6 +405,7 @@ const EasiestCitizenship:React.FC = () => {
           <p>{'Once applied, citizenship applications take ~3 months to be processed, making the residence permit to passport time a period of '}<strong>{'3 years and 3 months.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://www.mfa.am/en/citizenship/'}>{'Citizenship, Republic of Armenia (English)'}</a>{' '}<a href={'https://www.mfa.am/en/residency/'}>{'Temporary and Permanent Residency in Armenia (English)'}</a></p>
           <div className={'spacer'} />
+        <AdBlog />
         <h1>{'Bolivia 🇧🇴'}</h1>
           <p><strong>{'Bolivia\'s citizenship program requires that individuals must have resided in the country for 3 years, either with temporary or permanent residency, to qualify for naturalization.'}</strong></p>
           <p>{'While the Bolivian passport is substantially weaker than passports of neighbouring countries, it is still an excellent choice for anyone seeking a second passport.'}</p>
