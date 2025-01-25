@@ -12,7 +12,7 @@ const AdBlog:React.FC = () => {
 
   return (
     <ins className="adsbygoogle"
-      style={{display: 'inline-block'}}
+      style={{display: 'block'}}
       data-ad-client="ca-pub-2147951612524944"
       data-ad-slot="7264562755"
       data-ad-format="auto"
