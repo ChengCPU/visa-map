@@ -13,6 +13,7 @@ import VisaOnArrival from '../components/Rank/VisaOnArrival'
 import VisaOnArrivalEvisa from '../components/Rank/VisaOnArrivalEvisa'
 import VisaFree from '../components/Rank/VisaFree'
 import FreedomOfMovement from '../components/Rank/FreedomOfMovement'
+import MobilePassport from '../components/Rank/MobilePassport'
 import fetchSortData from '../logic/rankSorting/fetchSortData'
 import reverseSort from '../logic/rankSorting/reverseSort'
 import styles from '../styles/Rank.module.css'
@@ -150,42 +151,7 @@ const Rank:React.FC<Props> = ({ rankRef, sortBy, setSortBy, setSelectorLoad, pas
 
   const passportRankRenderMobile = useCallback((verticalColumn:number[]) => {
     return verticalColumn.map(verticalColumn =>
-      <tr key={verticalColumn}>
-        <td className={styles.mobileBackground}>
-          <p className={styles.rank}>{rankRef.current[rankRefLength]?.[verticalColumn]}</p>
-          <Passport image={(passports[rankRef.current?.[verticalColumn]?.[0]] != undefined) && passports[rankRef.current?.[verticalColumn]?.[0]]}/>
-          <p className={styles.text}>{textRender(verticalColumn)}</p>
-          <p className={styles.text}>{languageCalculation[0][dataSize - 1] + rankRef.current[verticalColumn]?.[6]}</p>
-          <p className={styles.text}>{languageCalculation[0][dataSize - 3] + rankRef.current[verticalColumn]?.[7]}</p>
-          <p className={styles.text}>{languageCalculation[0][dataSize - 2] + rankRef.current[verticalColumn]?.[8].toLocaleString()}</p>
-        </td>
-        {(dimensions.width <= 800) &&
-        <td className={styles.mobileBackground}>
-          <div className={styles.visaPolicyText}>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <p>{rankRef.current[verticalColumn]?.[1]}</p>
-                  <p>{rankRef.current[verticalColumn]?.[2]}</p>
-                  <p>{rankRef.current[verticalColumn]?.[3]}</p>
-                  <p>{rankRef.current[verticalColumn]?.[4]}</p>
-                  <p>{rankRef.current[verticalColumn]?.[5]}</p>
-                </td>
-                <td>
-                  <p>🟩 Visa-free</p>
-                  <p>🟧 VoA/E-visa</p>
-                  <p>🟨 Visa on Arrival</p>
-                  <p>🟦 E-visa</p>
-                  <p>⬜ Visa Required</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-        </td>
-        }
-      </tr>
+      <MobilePassport key={verticalColumn} data={rankRef.current?.[verticalColumn]}image={passports[rankRef.current[verticalColumn]?.[0]]} text={rankRef.current[rankRefLength]?.[verticalColumn] + '. ' + textRender(verticalColumn)}/>
     )
   }, [rankRef.current, language])
 
