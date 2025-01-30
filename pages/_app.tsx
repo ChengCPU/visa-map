@@ -378,6 +378,7 @@ function MyApp({ Component, pageProps }) {
         panzoomReset={panzoomReset}
         setPanzoomReset={setPanzoomReset}
       />
+      <Terminal />
       <Analytics />
       <SpeedInsights />
     </DimensionsContext.Provider>
