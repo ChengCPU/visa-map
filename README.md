@@ -12,7 +12,7 @@
 
 # Website
 
-https://visamap.co
+https://visamap.io
 
 # Contribute
 
