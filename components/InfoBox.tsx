@@ -76,6 +76,10 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
 
   const guamCNMIETAcalc = useCallback(() => {
     if(selected != undefined) {
+      if(countrySelect == 'china') {
+        return 'EVS-TAP'
+      }
+
       if(guamCNMIETAESTA.includes((countrySelect))) {
         return 'ETA (45 days) / ESTA'
       }
@@ -100,6 +104,9 @@ const InfoBox:React.FC<Props> = ({ selectArrayRef, mousePos, hover, countrySelec
             return 'ETA (45 days) / ESTA'
           }
           k++;
+        }
+        if(selectArrayRef.current[j] == 'china') {
+          return 'EVS-TAP'
         }
         return 'ETA'
       }

@@ -54,6 +54,9 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
     j--
 
     if(guamCNMIETA.includes((selectArrayRef.current[j]))) {
+      if(selectArrayRef.current[j] == 'china') {
+        return 'EVS-TAP'
+      }
       return 'ETA'
     }
 
