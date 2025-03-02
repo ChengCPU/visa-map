@@ -6,6 +6,7 @@ import Script from 'next/script'
 import argentina from '../../components/Blog/EasiestCitizenship/images/argentina.png'
 import peru from '../../components/Blog/EasiestCitizenship/images/peru.png'
 import dominicanRepublic from '../../components/Blog/EasiestCitizenship/images/dominicanRepublic.png'
+import germany from '../../components/Blog/EasiestCitizenship/images/germany.png'
 import ireland from '../../components/Blog/EasiestCitizenship/images/ireland.png'
 import ecuador from '../../components/Blog/EasiestCitizenship/images/ecuador.png'
 import canada from '../../components/Blog/EasiestCitizenship/images/canada.png'
@@ -46,6 +47,7 @@ const rows = [
   data('🇵🇪 Peru',2,99,'Yes','No','Yes'),
   data('🇩🇴 Dominican Republic',2,99,'Yes','No','Yes'),
   data('🇨🇦 Canada',99,3,'Yes','No','Yes'),
+  data('🇩🇪 Germany',5,99,'Yes','No','Yes'),
   data('🇮🇪 Ireland',5,99,'Yes','No','No'),
   data('🇺🇸 United States',99,5,'Yes','No','Yes'),
   data('🇧🇷 Brazil',99,4,'Yes','Yes','Yes'),
@@ -155,6 +157,7 @@ const EasiestCitizenship:React.FC = () => {
           <h1 id={'main'}>{'Which country is the easiest to naturalize in?'}</h1>
           <p id={'author'}>{'Written by CCPU'}</p>
           <p id={'date'}>{'January 4, 2024'}</p>
+          <p id={'date'}>{'Updated March 2, 2025'}</p>
         </div>
           <p>{'The ease of naturalization can vary based on several factors, such as how easily one can obtain residency, whether permanent residency is required, whether multiple nationalities are allowed, language proficiency requirements, military service obligations, among other requirements.'}</p>
           <p>{'The first step toward naturalization is obtaining a residence permit, and countries have different policies for this. Some provide residency through investment programs, while others require employment, family reunification, or refugee status. The complexity and cost of these processes can greatly affect how easily someone can become a resident.'}</p>
@@ -292,15 +295,31 @@ const EasiestCitizenship:React.FC = () => {
           </ul>
           <p><strong>{'How to obtain residency: '}</strong>{'To obtain residency in the Dominican Republic, you must prove a permanent monthly income of $2,000 USD through investments, rental income, retirement funds, pensions, etc.'}</p>
           <p><strong>{'Physical presence requirement: '}</strong>{'Although not explicitly stated, it is advisable to spend enough time to establish connections in the country that you can substantiate.'}</p>
-          <p>{'Once applied, citizenship applications take ~12 months to be processed, making for an average residence permit to passport time of '}<strong>{'3  years.'}</strong></p>
+          <p>{'Once applied, citizenship applications take ~12 months to be processed, making for an average residence permit to passport time of '}<strong>{'3 years.'}</strong></p>
           <p><strong>{'Further reading: '}</strong><a href={'https://mip.gob.do/transparencia/images/docs/Servicio_al_Publico/Naturalizaciones/Naturalizaci%C3%B3n%20Ordinaria/REQUISITOS%20NATURALIZACION%20ORDINARIO.pdf'}>{'Requirements for ordinary naturalization (Spanish)'}</a>{' '}<a href={'https://migracion.gob.do/servicio/residencia-por-inversion-en-calidad-de-rentista/'}>{'Request residency by means of passive income (Spanish)'}</a></p>
+          <div className={'spacer'} />
+        <AdBlog />
+        <h1>{'Germany 🇩🇪'}</h1>
+          <p><strong>{'Germany has recently eased its citizenship requirements, making it a highly appealing option.'}</strong></p>
+          <p>{'Under the revised nationality law, naturalization is now possible after just '}<strong>{'5 years'}</strong>{' of residence. For those who demonstrate exceptional "integration efforts"—such as achieving C1-level German proficiency, completing an academic program in German, or entering the workforce, the required residency period is reduced to '}<strong>{'3 years.'}</strong></p>
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[3]} image={germany} text={'Germany 🇩🇪'}/>} right={<VisaTable data={[true,true,true,true,true,true,true,false,true,true,true,true]}/>} />
+          <p><strong>{'Key Benefits of Irish Citizenship:'}</strong></p>
+          <ul>
+            <li><strong>{'Dual citizenship:'}</strong>{' Germany allows dual and multiple citizenships without limitations.'}</li>
+            <li><strong>{'EU Citizenship:'}</strong>{' Citizens of EU member countries can apply for residency in other member states based solely on their citizenship.'}</li>
+            <li><strong>{'Strong passport:'}</strong>{' The German passport regularly ranks as the singular best passport for travel freedom.'}</li>
+          </ul>
+          <p><strong>{'How to obtain residency: '}</strong>{'German residency can be obtained easily obtained by citizens of EU member countries under the EU freedom of movement agreement. Other routes to residency include work, study, investment, etc.'}</p>
+          <p><strong>{'Physical presence requirement: '}</strong>{'Half of the time before applying for naturalization must be spent physically present in Germany.'}</p>
+          <p>{'Once applied, citizenship applications take ~3 to 12 months to be processed, making for an average residence permit to passport time of '}<strong>{'5 & 1/2 years.'}</strong></p>
+          <p><strong>{'Further reading: '}</strong><a href={'https://www.bmi.bund.de/EN/topics/migration/naturalization/naturalization-node.html'}>{'Naturalization (English)'}</a>{' '}<a href={'https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/heimat/reform-staatsangehoerigkeitsrecht/reform-staatsangehoerigkeitsrecht-liste.html'}>{'Questions and answers: Reform of nationality law (German)'}</a></p>
           <div className={'spacer'} />
         <AdBlog />
         <h1>{'Ireland 🇮🇪'}</h1>
           <p><strong>{'Ireland has the most leniant policies on citizenship out of any country in the EU.'}</strong></p>
           <p>{'Not only do they offer one of the shortest time periods for citizenship, that being, '}<strong>{'5 years'}</strong>{', they also don\'t require permanent residency to apply for citizenship. Any time spent in Ireland as a temporary resident (except on a student visa) counts towards the 5 years of residency required.'}</p>
           <p>{'They are also one of the very few countries that don\'t require any language proficiency tests when applying for citizenship.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[3]} image={ireland} text={'Ireland 🇮🇪'}/>} right={<VisaTable data={[true,true,true,true,true,true,true,false,true,true,true,true]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[4]} image={ireland} text={'Ireland 🇮🇪'}/>} right={<VisaTable data={[true,true,true,true,true,true,true,false,true,true,true,true]}/>} />
           <p><strong>{'Key Benefits of Irish Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship:'}</strong>{' Ireland allows dual and multiple citizenships without limitations.'}</li>
@@ -317,7 +336,7 @@ const EasiestCitizenship:React.FC = () => {
         <h1>{'Ecuador 🇪🇨'}</h1>
           <p><strong>{'Ecuador\'s citizenship program is similar to neighbouring countries, offering citizenship for anyone resident in Ecuador for 3 years with temporary or permanent residence.'}</strong></p>
           <p>{'Unlike the other neighbouring countries, at the time of the application, you must be in posession of permanent residency. You can apply for permanent residency after 2 years of temporary residency in Ecuador.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[4]} image={ecuador} text={'Ecuador 🇪🇨'}/>} right={<VisaTable data={[false,false,false,false,false,false,false,true,true,true,true,false]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[5]} image={ecuador} text={'Ecuador 🇪🇨'}/>} right={<VisaTable data={[false,false,false,false,false,false,false,true,true,true,true,false]}/>} />
           <p><strong>{'Key Benefits of Ecuador Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship: '}</strong>{'Ecuador allows dual and multiple citizenships without limitations.'}</li>
@@ -332,7 +351,7 @@ const EasiestCitizenship:React.FC = () => {
         <h1>{'Canada 🇨🇦'}</h1>
           <p><strong>{'Canada\'s naturalization process is more difficult than others on this list due to the requirement of 3 years with permanent residency to be eligible for citizenship.'}</strong></p>
           <p>{'Each day in Canada as a temporary resident counts as half a day subtracted from the 3 year period, with a maximum of 365 days being subtracted.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[5]} image={canada} text={'Canada 🇨🇦'}/>} right={<VisaTable data={[true,true,true,true,true,true,true,false,false,true,true,true]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[6]} image={canada} text={'Canada 🇨🇦'}/>} right={<VisaTable data={[true,true,true,true,true,true,true,false,false,true,true,true]}/>} />
           <p><strong>{'Key Benefits of Canadian Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship:'}</strong>{' Canada allows dual and multiple citizenships without limitations.'}</li>
@@ -348,7 +367,7 @@ const EasiestCitizenship:React.FC = () => {
         <h1>{'Paraguay 🇵🇾'}</h1>
           <p><strong>{'Paraguay stands out by having one of the most leniant residency programs in the world.'}</strong></p>
           <p>{'The main requirement for naturalization is to have spent '}<strong>{'3 years'}</strong>{' in Paraguay while posessing a permanent residence permit.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[6]} image={paraguay} text={'Paraguay 🇵🇾'}/>} right={<VisaTable data={[true,false,false,true,false,false,false,true,false,true,false,true]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[7]} image={paraguay} text={'Paraguay 🇵🇾'}/>} right={<VisaTable data={[true,false,false,true,false,false,false,true,false,true,false,true]}/>} />
           <p><strong>{'Key Benefits of Paraguay Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship:'}</strong>{' Paraguay allows dual and multiple citizenships without limitations.'}</li>
@@ -364,7 +383,7 @@ const EasiestCitizenship:React.FC = () => {
         <h1>{'Brazil 🇧🇷'}</h1>
           <p><strong>{'Brazil\'s passport is the second strongest in South America, obtainable after 4 years of permanent residency.'}</strong></p>
           <p>{'Additionally, the residency requirement is lowered to '}<strong>{'1 year'}</strong>{' for citizens of Portuguese-speaking countries.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[7]} image={brazil} text={'Brazil 🇧🇷'}/>} right={<VisaTable data={[true,false,false,true,false,true,true,true,false,true,true,false]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[8]} image={brazil} text={'Brazil 🇧🇷'}/>} right={<VisaTable data={[true,false,false,true,false,true,true,true,false,true,true,false]}/>} />
           <p><strong>{'Key Benefits of Brazilian Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship:'}</strong>{' Brazil allows dual and multiple citizenships without limitations.'}</li>
@@ -380,7 +399,7 @@ const EasiestCitizenship:React.FC = () => {
         <h1>{'United States 🇺🇸'}</h1>
           <p><strong>{'The United States receives more immigrants annually than any other country, and has a long history of immigration.'}</strong></p>
           <p>{'Due to this, naturalization requirements are easy to meet. To be eligible, '}<strong>{'5 years'}</strong>{' of residence with a green card (permanent residency) are required.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[8]} image={unitedStates} text={'United States 🇺🇸'}/>} right={<VisaTable data={[true,true,true,true,true,true,true,false,false,true,true,true]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[9]} image={unitedStates} text={'United States 🇺🇸'}/>} right={<VisaTable data={[true,true,true,true,true,true,true,false,false,true,true,true]}/>} />
           <p><strong>{'Key Benefits of American Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship:'}</strong>{' America allows dual and multiple citizenships without limitations.'}</li>
@@ -395,7 +414,7 @@ const EasiestCitizenship:React.FC = () => {
         <h1>{'Armenia 🇦🇲'}</h1>
           <p><strong>{'Armenia\'s citizenship and residency policy is notably more lenient than those of its neighboring countries.'}</strong></p>
           <p>{'To obtain citizenship in Armenia, only '}<strong>{'3 years'}</strong>{' of temporary or permanent residency are required.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[9]} image={armenia} text={'Armenia 🇦🇲'}/>} right={<VisaTable data={[false,false,false,false,false,false,false,true,true,false,false,false]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[10]} image={armenia} text={'Armenia 🇦🇲'}/>} right={<VisaTable data={[false,false,false,false,false,false,false,true,true,false,false,false]}/>} />
           <p><strong>{'Key Benefits of Armenian Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship:'}</strong>{' Armenia allows dual and multiple citizenships without limitations.'}</li>
@@ -409,7 +428,7 @@ const EasiestCitizenship:React.FC = () => {
         <h1>{'Bolivia 🇧🇴'}</h1>
           <p><strong>{'Bolivia\'s citizenship program requires that individuals must have resided in the country for 3 years, either with temporary or permanent residency, to qualify for naturalization.'}</strong></p>
           <p>{'While the Bolivian passport is substantially weaker than passports of neighbouring countries, it is still an excellent choice for anyone seeking a second passport.'}</p>
-          <ArticleTable left={<IndividualPassport data={passportDataRef.current[10]} image={bolivia} text={'Bolivia 🇧🇴'}/>} right={<VisaTable data={[false,false,false,false,false,false,false,true,false,false,false,true]}/>} />
+          <ArticleTable left={<IndividualPassport data={passportDataRef.current[11]} image={bolivia} text={'Bolivia 🇧🇴'}/>} right={<VisaTable data={[false,false,false,false,false,false,false,true,false,false,false,true]}/>} />
           <p><strong>{'Key Benefits of Bolivian Citizenship:'}</strong></p>
           <ul>
             <li><strong>{'Dual citizenship:'}</strong>{' Bolivia allows dual and multiple citizenships without limitations.'}</li>
