@@ -57,7 +57,7 @@ export default function fetchSortData(rankRef:MutableRefObject<Array<[string|num
   rankData[176][4] = 0
 
   const passportDataArray:Array<[string|number]> = []
-  const passportDataIndexes:number[] = [8,147,53,86,55,35,146,26,202,9,23]
+  const passportDataIndexes:number[] = [8,147,53,69,86,55,35,146,26,202,9,23]
   for(const passportData of passportDataIndexes) {
     passportDataArray.push(rankData[passportData])
   }
