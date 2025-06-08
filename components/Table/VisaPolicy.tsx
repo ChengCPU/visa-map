@@ -68,7 +68,7 @@ const VisaPolicy:React.FC<Props> = ({ assignedColorsRef, selectArrayRef, vertica
   }, [])
 
   const ETAcodes:{[key:string]:string | Function} = useMemo(() => {
-    return {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:guamCNMIETAcalc(),MP:guamCNMIETAcalc(),AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card',KH:'e-Arrival Card',BM:'Electronic Travel Authorization',PH:'Electronic Travel Authorization',JJ:'K-ETA',LK:'Electronic Travel Authorization',IL:'ETA-IL',TH:'Thailand Digital Arrival Card'}
+    return {CA:'Electronic Travel Authorization',GB:'Electronic Travel Authorization',NZ:'NZeTA',AU:auETAcalc(),US:'ESTA',VI:'ESTA',GU:guamCNMIETAcalc(),MP:guamCNMIETAcalc(),AS:'EPWP',KR:'K-ETA',HK:'Pre-arrival Registration',SC:'SEBS',KE:'Electronic Travel Authorization',PK:'Electronic Travel Authorization',CV:'EASE',MA:'AEVM',SA:'Electronic Visa Waiver',MX:'Electronic Authorization System',MY:'Digital Arrival Card',KH:'e-Arrival Card',BM:'Electronic Travel Authorization',PH:'Electronic Travel Authorization',JJ:'K-ETA',LK:'Electronic Travel Authorization',IL:'ETA-IL',TH:'Thailand Digital Arrival Card',KN:'Electronic Travel Authorization'}
   }, [])
 
   const visaPolicyCalculation:Function = useCallback(() => {
